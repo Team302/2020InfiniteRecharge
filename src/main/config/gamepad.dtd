@@ -1,0 +1,20 @@
+<!ELEMENT gamepad (controller* )>
+
+<!ELEMENT controller (button*, axis*)>
+<!ATTLIST controller 
+          id        ( 0 | 1 | 2 | 3 | 4 | 5 ) "0"
+          type      ( xbox | buttonbox ) "xbox"
+>
+
+<!ELEMENT button EMPTY>
+<!ATTLIST button 
+          id CDATA #REQUIRED
+          type (standard | toggle) "standard" 
+>
+
+<!ELEMENT axis EMPTY>
+<!ATTLIST axis 
+          id CDATA #REQUIRED
+          profile (linear | squared | cubed) "cubed" 
+          deadband (standard | scaled ) "standard"
+>

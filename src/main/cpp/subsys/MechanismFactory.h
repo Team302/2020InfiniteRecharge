@@ -1,0 +1,89 @@
+
+//====================================================================================================================================================
+/// Copyright 2019 Lake Orion Robotics FIRST Team 302
+///
+/// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+/// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+/// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+///
+/// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+///
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+/// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+/// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+/// OR OTHER DEALINGS IN THE SOFTWARE.
+//====================================================================================================================================================
+
+//========================================================================================================
+/// MechanismFactory.h
+//========================================================================================================
+///
+/// File Description:
+///     This controls the creation of mechanisms/subsystems
+///
+//========================================================================================================
+
+#pragma once
+
+// C++ Includes
+#include <map>
+#include <memory>
+
+// FRC includes
+
+// Team 302 includes
+#include <subsys/IMechanism.h>
+#include <subsys/MechanismTypes.h>
+#include <hw/interfaces/IDragonMotorController.h>
+#include <hw/DragonSolenoid.h>
+#include <hw/DragonServo.h>
+#include <hw/DragonAnalogInput.h>
+#include <hw/DragonDigitalInput.h>
+
+
+// Third Party Includes
+
+
+class MechanismFactory
+{
+	public:
+
+		static MechanismFactory* GetMechanismFactory();
+
+
+		//=====================================================================================
+		/// Method:         GetIMechanism
+		/// Description:    Find or create the requested mechanism
+		/// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
+		///                                 doesn't exist and cannot be created.
+		//=====================================================================================
+		IMechanism* GetIMechanism
+		(
+			MechanismTypes::MECHANISM_TYPE			type		// <I> - manipulator type
+		);
+
+		//=====================================================================================
+		/// Method:         CreateIMechanism
+		/// Description:    Find or create the requested mechanism
+		/// Returns:        IMechanism*     pointer to the mechanism or nullptr if mechanism 
+		///                                 doesn't exist and cannot be created.
+		//=====================================================================================
+		IMechanism*  CreateIMechanism
+		(
+			MechanismTypes::MECHANISM_TYPE			type,
+			const IDragonMotorControllerMap&        motorControllers,   // <I> - Motor Controllers
+			const DragonSolenoidVector&             solenoids,          // <I> - Solenoids
+			const DragonDigitalInputVector&         digitalInputs,      // <I> - Digital Inputs
+			const DragonAnalogInputVector&          analogInputs,       // <I> - Analog Inputs
+			const DragonServoVector&                servos              // <I> - servos
+		);
+
+	private:
+		MechanismFactory() = default;
+		virtual ~MechanismFactory() = default;
+
+		static MechanismFactory*	m_mechanismFactory;
+
+		std::map<MechanismTypes::MECHANISM_TYPE, IMechanism*> m_mechanisms;
+
+};

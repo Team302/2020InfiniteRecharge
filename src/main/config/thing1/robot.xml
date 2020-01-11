@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE robot SYSTEM "robot.dtd">
+<robot>
+   
+    
+<!-- ====================================================
+	 Pigeon
+	 ==================================================== -->    
+    <pigeon canId="30" />
+       
+
+<!-- ====================================================
+	 PDP
+	 ==================================================== -->    
+	<pdp canId="31" />
+    
+<!-- ====================================================
+	 Lidars
+	 ==================================================== -->    
+
+	 
+	 
+<!-- ====================================================
+	 camera
+	==================================================== -->
+
+	
+       
+<!-- ====================================================
+	 Chassis
+	 ====================================================  -->
+    <chassis type="0"
+    		 wheelDiameter="6.285"
+             wheelBase="25.0"  
+             track="18.0">
+             
+ 		<!-- Left (middle, front, back) -->
+         <motor usage="1"
+               canId="0"
+			   type="cantalon"
+               inverted="true"
+        	   feedbackDevice="0"
+          	   countsPerRev="1"
+		   	   brakeMode="false"
+        	   gearRatio="6.0" 
+        	   peakCurrentDuration="50"
+        	   continuousCurrentLimit="30"
+        	   peakCurrentLimit="40" 
+        	   currentLimiting="true"  />
+
+         <motor usage="2"
+               canId="1"
+			   type="cantalon"
+               inverted="true"
+        	   feedbackDevice="0"
+          	   countsPerRev="1"
+		   	   brakeMode="false"
+        	   gearRatio="6.0" 
+        	   peakCurrentDuration="50"
+        	   continuousCurrentLimit="30"
+        	   peakCurrentLimit="40" 
+        	   currentLimiting="true"  />		
+			   
+ 		<!-- Left (middle, front, back) -->
+        <motor usage="4"
+               canId="3"
+			   type="cantalon"
+               inverted="true"
+         	   feedbackDevice="0"
+          	   countsPerRev="1"
+		   	   brakeMode="false"
+        	   gearRatio="6.0" 
+        	   peakCurrentDuration="50"
+        	   continuousCurrentLimit="30"
+        	   peakCurrentLimit="40" 
+        	   currentLimiting="true"  />
+        <motor usage="5"
+               canId="2"
+			   type="cantalon"
+               inverted="true"
+         	   feedbackDevice="0"
+          	   countsPerRev="1"
+		   	   brakeMode="false"
+        	   gearRatio="6.0" 
+        	   peakCurrentDuration="50"
+        	   continuousCurrentLimit="30"
+        	   peakCurrentLimit="40" 
+        	   currentLimiting="true"  />
+
+               
+    </chassis>  
+ 
+<!-- ====================================================
+	 Mechanisms
+	 ==================================================== -->    
+    
+ 
+</robot>

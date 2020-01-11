@@ -1,0 +1,7 @@
+<!ELEMENT mechdata (mechanismData*)>
+
+<!ELEMENT mechanismData EMPTY>
+<!ATTLIST mechanismData 
+          paramType         CDATA #REQUIRED
+          value             CDATA #REQUIRED
+>
