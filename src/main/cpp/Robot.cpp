@@ -30,16 +30,19 @@
 
 // FRC includes
 #include <frc/smartdashboard/SmartDashboard.h>
+#include <frc/XboxController.h>
 
 // Team 302 Includes
 #include <Robot.h>
 #include <xmlhw/RobotDefn.h>
 #include <auton/CyclePrimitives.h>
+#include <gamepad/DragonXBox.h>
+#include <gamepad/IDragonGamePad.h>
 
-Robot::Robot() : TimedRobot( 10.0 )
-{
+#include <TestChassis.h>
 
-}
+
+
 
 ///-----------------------------------------------------------------------
 /// Method:      RobotInit
@@ -56,6 +59,16 @@ void Robot::RobotInit()
 
     // Display the autonomous choices on the dashboard for selection.
     m_cyclePrims = new CyclePrimitives();
+    m_chassis = new TestChassis();
+    m_xbox = new DragonXBox(0);
+
+    m_xbox->SetAxisProfile(IDragonGamePad::LEFT_JOYSTICK_Y,IDragonGamePad::CUBED);
+    m_xbox->SetAxisProfile(IDragonGamePad::RIGHT_JOYSTICK_X,IDragonGamePad::CUBED);
+
+    m_xbox->SetAxisDeadband(IDragonGamePad::LEFT_JOYSTICK_Y, IDragonGamePad::APPLY_STANDARD_DEADBAND);
+    m_xbox->SetAxisDeadband(IDragonGamePad::RIGHT_JOYSTICK_X, IDragonGamePad::APPLY_STANDARD_DEADBAND);
+    
+   
 
 }
 
@@ -69,6 +82,7 @@ void Robot::RobotInit()
 ///-----------------------------------------------------------------------
 void Robot::RobotPeriodic() 
 {
+   
 
 }
 
@@ -117,7 +131,17 @@ void Robot::TeleopInit()
 ///-----------------------------------------------------------------------
 void Robot::TeleopPeriodic() 
 {
+    double turnRate = .5;
+    double y = m_xbox->GetAxisValue(IDragonGamePad::LEFT_JOYSTICK_Y);
+    double x = m_xbox->GetAxisValue(IDragonGamePad::RIGHT_JOYSTICK_X);
 
+    double leftSpeed = y + turnRate*x;
+    double rightSpeed = y - turnRate*x;
+
+    m_chassis->SetLeftRightPower(leftSpeed, rightSpeed);
+
+    frc::SmartDashboard::PutNumber("Left Speed", leftSpeed);
+    frc::SmartDashboard::PutNumber("Right Speed", rightSpeed);
 }
 
 

@@ -30,13 +30,17 @@
 
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
+#include <frc/XboxController.h>
 
 #include <auton/CyclePrimitives.h>
+#include <gamepad/DragonXBox.h>
+
+#include <TestChassis.h>
 
 class Robot : public frc::TimedRobot 
 {
   public:
-      Robot();
+      
       ~Robot() = default;
 
       void RobotInit() override;
@@ -50,5 +54,7 @@ class Robot : public frc::TimedRobot
 
   private:
       CyclePrimitives* m_cyclePrims;
+      TestChassis* m_chassis;
+      DragonXBox* m_xbox;
 
 };
