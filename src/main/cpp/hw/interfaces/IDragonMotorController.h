@@ -25,7 +25,6 @@
 
 // Team 302 includes
 #include <hw/usages/MotorControllerUsage.h>
-#include <controllers/ControlModes.h>
 
 // Third Party Includes
 
@@ -37,33 +36,23 @@
 class IDragonMotorController
 {
     public:
+        enum DRAGON_CONTROL_MODE {
+            PERCENT_OUTPUT,
+            ROTATIONS,
+            RPS
+        };
+
+
         // Getters
-        /// @brief  Return the number of revolutions the output shaft has spun
-        /// @return double number of revolutions
         virtual double GetRotations() const = 0;
-
-        /// @brief  Return the angular velocity in revolutions per second
-        /// @return double angular velocity in revolutions per second
         virtual double GetRPS() const = 0;
-
-        /// @brief  Return the usage of the motor
-        /// @return MotorControllerUsage::MOTOR_CONTROLLER_USAGE - what the motor is used for
         virtual MotorControllerUsage::MOTOR_CONTROLLER_USAGE GetType() const = 0;
-
-        /// @brief  Return the current usage
-        /// @return double - amperage usage for the controller
         virtual double GetCurrent() const = 0;
-
-        /// @brief  Return the CAN ID
-        /// @return int - CAN ID
         virtual int GetID() const = 0;
-
-        /// @brief  Return the speedcontroller 
-        /// @return std::shared_ptr<frc::SpeedControll> - pointer to the speed controller object
         virtual std::shared_ptr<frc::SpeedController> GetSpeedController() const = 0;
 
         // Setters
-        virtual void SetControlMode(ControlModes::CONTROL_TYPE mode) = 0;
+        virtual void SetControlMode(DRAGON_CONTROL_MODE mode) = 0;
         virtual void Set(double value) = 0;
         virtual void SetRotationOffset(double rotations) = 0;
         virtual void SetVoltageRamping(double ramping, double closedLoopRamping = -1) = 0;

@@ -32,16 +32,15 @@ class MechanismTypes
         {
             UNKNOWN_MECHANISM = -1,
             DRIVETRAIN_SIDE,
-            INTAKE,
-            HUMAN_PLAYER_FLAP,
-            IMPELLER,
-            BALL_TRANSFER,
-            TURRET,
             SHOOTER,
-            SHOOTER_HOOD,
-            CONTROL_TABLE_MANIPULATOR,
+            ELEVATOR,
+            WRIST,
+            INTAKE,
+            ARM,
+            EXTENDER,
             CLIMBER,
-            CRAWLER,
+            BEAK,
+            TAIL,
             MAX_MECHANISM_TYPES
         };
 };

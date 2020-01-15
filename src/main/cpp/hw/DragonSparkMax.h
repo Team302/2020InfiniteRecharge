@@ -10,8 +10,6 @@
 #include <memory>
 
 #include <frc/SpeedController.h>
-
-#include <controllers/ControlModes.h>
 #include <hw/interfaces/IDragonMotorController.h>
 #include <hw/usages/MotorControllerUsage.h>
 
@@ -49,7 +47,7 @@ class DragonSparkMax : public IDragonMotorController
         
 
         // Setters
-        void SetControlMode(ControlModes::CONTROL_TYPE mode) override;
+        void SetControlMode(IDragonMotorController::DRAGON_CONTROL_MODE mode) override;
         void Set(double value) override;
         void SetRotationOffset(double rotations) override;
         void SetVoltageRamping(double ramping, double rampingClosedLoop = -1) override; // seconds 0 to full, set to 0 to disable
@@ -67,7 +65,7 @@ class DragonSparkMax : public IDragonMotorController
         int m_id;
         int m_pdp;
         std::shared_ptr<rev::CANSparkMax> m_spark;
-        ControlModes::CONTROL_TYPE m_controlMode;
+        DRAGON_CONTROL_MODE m_controlMode;
         double m_outputRotationOffset;
         double m_gearRatio;
         MotorControllerUsage::MOTOR_CONTROLLER_USAGE m_deviceType;    
