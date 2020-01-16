@@ -65,5 +65,6 @@ class Robot : public frc::TimedRobot
     const int K_I = 0.0;
     const int K_D = 0.0;
     const int K_F = 0.0;
+    double m_initialPosition;
 
 };

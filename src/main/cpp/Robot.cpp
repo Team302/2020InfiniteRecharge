@@ -63,12 +63,15 @@ void Robot::RobotInit()
                                         0, 
                                         10);
     m_turretTalon->SetSensorPhase(false);
-    m_turretTalon->ConfigForwardLimitSwitchSource(ctre::phoenix::motorcontrol::LimitSwitchSource::LimitSwitchSource_FeedbackConnector, ctre::phoenix::motorcontrol::LimitSwitchNormal::LimitSwitchNormal_NormallyOpen);
-    m_turretTalon->ConfigReverseLimitSwitchSource(ctre::phoenix::motorcontrol::LimitSwitchSource::LimitSwitchSource_FeedbackConnector, ctre::phoenix::motorcontrol::LimitSwitchNormal::LimitSwitchNormal_NormallyClosed);
+    //m_turretTalon->ConfigForwardLimitSwitchSource(ctre::phoenix::motorcontrol::LimitSwitchSource::LimitSwitchSource_FeedbackConnector, ctre::phoenix::motorcontrol::LimitSwitchNormal::LimitSwitchNormal_NormallyOpen);
+    //m_turretTalon->ConfigReverseLimitSwitchSource(ctre::phoenix::motorcontrol::LimitSwitchSource::LimitSwitchSource_FeedbackConnector, ctre::phoenix::motorcontrol::LimitSwitchNormal::LimitSwitchNormal_NormallyClosed);
     m_turretTalon->SetStatusFramePeriod(StatusFrameEnhanced::Status_13_Base_PIDF0, 10, 10);
     m_turretTalon->SetStatusFramePeriod(StatusFrameEnhanced::Status_10_MotionMagic, 10, 10);
     m_turretTalon->ConfigNominalOutputForward(0, 10);
     m_turretTalon->ConfigNominalOutputReverse(0, 10);
+    m_turretTalon->ConfigPeakOutputForward(1,10);
+    m_turretTalon->ConfigPeakOutputReverse(-1,10);
+
     m_turretTalon->SelectProfileSlot(0, 0);
     m_turretTalon->ConfigMotionCruiseVelocity(1500, 10);
     m_turretTalon->ConfigMotionAcceleration(1500, 10);
@@ -84,6 +87,8 @@ void Robot::RobotInit()
     
     
     m_turretTalon->SetInverted(false);
+
+    m_initialPosition = m_turretTalon->GetSelectedSensorPosition();
 
 }
 
@@ -149,16 +154,15 @@ void Robot::TeleopPeriodic()
     double currentPosition = m_turretTalon->GetSelectedSensorPosition();
     if (m_xbox->IsButtonPressed(IDragonGamePad::A_BUTTON))
     {
-        m_turretTalon->Set(ctre::phoenix::motorcontrol::ControlMode::Position, currentPosition + 1000);
+        m_turretTalon->Set(ctre::phoenix::motorcontrol::ControlMode::MotionMagic, m_initialPosition + 1000.0);
         frc::SmartDashboard::PutBoolean("SetPosition", true);
     }
 
     else
     {
+        m_turretTalon->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, power);
         frc::SmartDashboard::PutBoolean("SetPosition", false);
     }
-    
-    m_turretTalon->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, power);
     double position = m_turretTalon->GetSelectedSensorPosition();
     bool forwardLimitSwitch = m_turretTalon->GetSensorCollection().IsFwdLimitSwitchClosed();
     bool reverseLimitSwitch = m_turretTalon->GetSensorCollection().IsRevLimitSwitchClosed();
