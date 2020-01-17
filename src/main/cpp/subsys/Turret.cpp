@@ -39,22 +39,22 @@ bool Turret::IsSolenoidActivated()
     return false;
 }
 
-double Turret::GetCurrentPosition()
+double Turret::GetCurrentPosition() 
 {
     return m_turretMotor->GetRotations();
 }
 
-double Turret::GetTargetPosition()
+double Turret::GetTargetPosition() 
 {
     return m_targetPosition;
 }
 
-double Turret::GetCurrentSpeed()
+double Turret::GetCurrentSpeed() 
 {
     return m_turretMotor->GetRPS();
 }
 
-double Turret::GetTargetSpeed()
+double Turret::GetTargetSpeed()  
 {
     return m_targetSpeed;
 }
