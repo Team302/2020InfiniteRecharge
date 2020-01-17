@@ -191,33 +191,33 @@ IMechanism*  MechanismFactory::CreateIMechanism
 	return subsys;
 }
 
-	shared_ptr<IDragonMotorController> MechanismFactory::GetMotorController
-	(
-		const IDragonMotorControllerMap&				motorControllers,
-		MotorControllerUsage::MOTOR_CONTROLLER_USAGE	usage
-	)
+shared_ptr<IDragonMotorController> MechanismFactory::GetMotorController
+(
+	const IDragonMotorControllerMap&				motorControllers,
+	MotorControllerUsage::MOTOR_CONTROLLER_USAGE	usage
+)
+{
+	shared_ptr<IDragonMotorController> motor;
+	auto it = motorControllers.find( usage );
+	if ( it != motorControllers.end() )  // found it
 	{
-		shared_ptr<IDragonMotorController> motor;
-		auto it = motorControllers.find( usage );
-		if ( it != motorControllers.end() )  // found it
-		{
-			motor = it->second;
-		}
-		else
-		{
-			string msg = "motor not found; usage = ";
-			msg += to_string( usage );
-			Logger::GetLogger()->LogError( string( "MechanismFactory::GetMotorController" ), msg );
-		}
-		
-		if ( motor.get() == nullptr )
-		{
-			string msg = "motor is nullptr; usage = ";
-			msg += to_string( usage );
-			Logger::GetLogger()->LogError( string( "MechanismFactory::GetMotorController" ), msg );
-		}
-		return motor;
+		motor = it->second;
 	}
+	else
+	{
+		string msg = "motor not found; usage = ";
+		msg += to_string( usage );
+		Logger::GetLogger()->LogError( string( "MechanismFactory::GetMotorController" ), msg );
+	}
+	
+	if ( motor.get() == nullptr )
+	{
+		string msg = "motor is nullptr; usage = ";
+		msg += to_string( usage );
+		Logger::GetLogger()->LogError( string( "MechanismFactory::GetMotorController" ), msg );
+	}
+	return motor;
+}
 
 
 
