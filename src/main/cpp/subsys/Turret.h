@@ -23,27 +23,27 @@ class Turret : public IMechanism{
   (
     ControlModes::CONTROL_TYPE controlType,
     double                                   value       
-  );
+  ) override;
 
   void ActivateSolenoid
   (
     bool     activate
-  );
+  ) override;
 
-  bool IsSolenoidActivated();
+  bool IsSolenoidActivated() override;
 
-  double GetCurrentPosition();
+  double GetCurrentPosition() override;
 
-  double GetTargetPosition();
+  double GetTargetPosition() override;
 
-  double GetCurrentSpeed();
+  double GetCurrentSpeed() override;
 
-  double GetTargetSpeed();
+  double GetTargetSpeed() override;
 
   void SetControlConstants
   (
     ControlData*                                pid                 
-  );
+  ) override;
  private:
   IDragonMotorController* m_turretMotor;
   double m_targetSpeed;
