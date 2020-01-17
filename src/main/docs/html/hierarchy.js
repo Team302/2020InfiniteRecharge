@@ -75,7 +75,8 @@ var hierarchy =
       [ "DragonUltrasonicPWM", "class_dragon_ultrasonic_p_w_m.html", null ]
     ] ],
     [ "IMechanism", "class_i_mechanism.html", [
-      [ "DriveTrainSide", "class_drive_train_side.html", null ]
+      [ "DriveTrainSide", "class_drive_train_side.html", null ],
+      [ "Intake", "class_intake.html", null ]
     ] ],
     [ "IMechController", "class_i_mech_controller.html", [
       [ "VelocityController", "class_velocity_controller.html", null ]

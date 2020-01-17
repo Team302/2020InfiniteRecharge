@@ -36,7 +36,7 @@
 class Robot : public frc::TimedRobot 
 {
   public:
-      Robot();
+      Robot() = default;
       ~Robot() = default;
 
       void RobotInit() override;

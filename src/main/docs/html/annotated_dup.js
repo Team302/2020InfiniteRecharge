@@ -69,6 +69,7 @@ var annotated_dup =
     [ "IDragonSensor", "class_i_dragon_sensor.html", "class_i_dragon_sensor" ],
     [ "IMechanism", "class_i_mechanism.html", "class_i_mechanism" ],
     [ "IMechController", "class_i_mech_controller.html", "class_i_mech_controller" ],
+    [ "Intake", "class_intake.html", "class_intake" ],
     [ "IPrimitive", "class_i_primitive.html", "class_i_primitive" ],
     [ "IProfile", "class_i_profile.html", "class_i_profile" ],
     [ "ITeleopDrive", "class_i_teleop_drive.html", "class_i_teleop_drive" ],

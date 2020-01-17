@@ -102,11 +102,13 @@ IMechanism*  MechanismFactory::GetIMechanism
 IMechanism*  MechanismFactory::CreateIMechanism
 (
 	MechanismTypes::MECHANISM_TYPE			type,
-    const IDragonMotorControllerMap&        motorControllers,   // <I> - Motor Controllers
+    const IDragonMotorControllerMap&        motorControllers    // <I> - Motor Controllers
+	/**
     const DragonSolenoidVector&             solenoids,          // <I> - Solenoids
     const DragonDigitalInputVector&         digitalInputs,      // <I> - Digital Inputs
     const DragonAnalogInputVector&          analogInputs,       // <I> - Analog Inputs
     const DragonServoVector&                servos              // <I> - servos
+	**/
 
 )
 {
@@ -128,35 +130,95 @@ IMechanism*  MechanismFactory::CreateIMechanism
         {
             case MechanismTypes::MECHANISM_TYPE::INTAKE:
             {
-                /***
-                auto it = motorControllers.find( MotorControllerUsage::MOTOR_CONTROLLER_USAGE::INTAKE );
-                if ( it != motorControllers.end() )  // found it
-                {
-                    auto motor = it->second;
-                    if ( motor.get() != nullptr )
-                    {
-                        subsys = new Intake( motor );
-                    }
-                    else
-                    {
-                        Logger::GetLogger()->LogError( string( "MechanismFactory::CreateIMechanism" ), string( "intake motor is nullptr" ) );
-                    }
-                }
-                else
-                {
-                    Logger::GetLogger()->LogError( string( "MechanismFactory::CreateIMechanism" ), string( "intake motor not found" ) );
-                }
-                ***/
+				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::INTAKE );
+				if ( motor.get() != nullptr )
+				{
+					// todo get solenoid & create intake
+				}
             }
             break;
 
+			case MechanismTypes::MECHANISM_TYPE::HUMAN_PLAYER_FLAP:
+			{
+			}
+			break;
+			
+			case MechanismTypes::MECHANISM_TYPE::IMPELLER:
+			{
+			}
+			break;
+			
+			case MechanismTypes::MECHANISM_TYPE::BALL_TRANSFER:
+			{
+			}
+			break;			
+			
+			case MechanismTypes::MECHANISM_TYPE::SHOOTER:
+			{
+			}
+			break;			
+			
+			case MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD:
+			{
+			}
+			break;		
+			
+			case MechanismTypes::MECHANISM_TYPE::CONTROL_TABLE_MANIPULATOR:
+			{
+			}
+			break;		
+			
+			case MechanismTypes::MECHANISM_TYPE::CLIMBER:
+			{
+			}
+			break;		
+			
+			case MechanismTypes::MECHANISM_TYPE::CRAWLER:
+			{
+			}
+			break;
+			
             default:
+			{
+				string msg = "unknown Mechanism type ";
+				msg += to_string( type );
+				Logger::GetLogger()->LogError( "MechanismFactory::CreateIMechanism", msg );
+			}
             break;
         }
     }
 
 	return subsys;
 }
+
+	shared_ptr<IDragonMotorController> MechanismFactory::GetMotorController
+	(
+		const IDragonMotorControllerMap&				motorControllers,
+		MotorControllerUsage::MOTOR_CONTROLLER_USAGE	usage
+	)
+	{
+		shared_ptr<IDragonMotorController> motor;
+		auto it = motorControllers.find( usage );
+		if ( it != motorControllers.end() )  // found it
+		{
+			motor = it->second;
+		}
+		else
+		{
+			string msg = "motor not found; usage = ";
+			msg += to_string( usage );
+			Logger::GetLogger()->LogError( string( "MechanismFactory::GetMotorController" ), msg );
+		}
+		
+		if ( motor.get() == nullptr )
+		{
+			string msg = "motor is nullptr; usage = ";
+			msg += to_string( usage );
+			Logger::GetLogger()->LogError( string( "MechanismFactory::GetMotorController" ), msg );
+		}
+		return motor;
+	}
+
 
 
 

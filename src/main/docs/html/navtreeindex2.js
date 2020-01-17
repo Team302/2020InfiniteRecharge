@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"class_arcade_drive.html#aeeaff99c7ea86131d1e52381fc7e00b5":[0,0,5,2],
+"class_auton_selector.html":[0,0,6],
+"class_auton_selector.html#a02a4524799ea71bf859451d5fa93873a":[0,0,6,0],
+"class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa0e46f0dd53d0a15b52e956ec2f7d03c9":[0,0,6,0,1],
 "class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa233ea253c2f85ac3d8010054def4b353":[0,0,6,0,5],
 "class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa23dd3ab5ef9cc880c789c62d6c19c5e6":[0,0,6,0,9],
 "class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa3b67044073039efc6a8d8307c98a0112":[0,0,6,0,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "class_dragon_servo.html#acde1c9ebb88a9989bbd7412bd66d7fecae11e09800f4494ee3e2e58d7ce3fac45":[0,0,35,0,1],
 "class_dragon_servo.html#ae0793a737303c3d5d4b3be3ae2e6f4bf":[0,0,35,10],
 "class_dragon_servo.html#aee8898539d2f386f2692783db6fba490":[0,0,35,8],
-"class_dragon_servo_factory.html":[0,0,36],
-"class_dragon_servo_factory.html#a1c23088e5f17bf7d2985b9a5dd4582d2":[0,0,36,0],
-"class_dragon_servo_factory.html#a8f7c0fa98b6862288c6074f428e3aa30":[0,0,36,1],
-"class_dragon_solenoid.html":[0,0,37],
-"class_dragon_solenoid.html#a14c20f84e61027cda80c22dcccd59033":[0,0,37,2]
+"class_dragon_servo_factory.html":[0,0,36]
 };

@@ -40,7 +40,6 @@
 #include <xmlhw/ChassisDefn.h>
 #include <xmlhw/RobotDefn.h>
 #include <xmlhw/MechanismDefn.h>
-//#include <xmlhw/PCMDefn.h>
 #include <xmlhw/PDPDefn.h>
 #include <utils/Logger.h>
 
@@ -71,7 +70,6 @@ void RobotDefn::ParseXML()
     {
         unique_ptr<ChassisDefn> chassisXML = make_unique<ChassisDefn>();
         unique_ptr<MechanismDefn> mechanismXML = make_unique<MechanismDefn>();
-     //   unique_ptr<PCMDefn> pcmXML;
         unique_ptr<PDPDefn> pdpXML = make_unique<PDPDefn>();
 
         // get the root node <robot>
@@ -103,10 +101,6 @@ void RobotDefn::ParseXML()
                     {
                         Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create MechanismDefn" );
                     }
-                }
-                else if ( strcmp( child.name(), "pcm") == 0 )
-                {
-//                    PCMDefn::ParseXML( child );
                 }
                 else if (strcmp(child.name(), "pdp") == 0)
                 {

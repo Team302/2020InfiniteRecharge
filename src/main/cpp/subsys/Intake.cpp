@@ -142,6 +142,16 @@ double Intake::GetTargetSpeed
 }
 
 
+/// @brief  Set the control constants (e.g. PIDF values).
+/// @param [in] ControlData*                                   pid:  the control constants
+/// @return void
+void Intake::SetControlConstants
+(
+    ControlData*                                pid                 
+)
+{
+    
+}
 
 
 

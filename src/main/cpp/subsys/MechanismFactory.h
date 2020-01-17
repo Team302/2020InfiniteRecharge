@@ -71,14 +71,21 @@ class MechanismFactory
 		IMechanism*  CreateIMechanism
 		(
 			MechanismTypes::MECHANISM_TYPE			type,
-			const IDragonMotorControllerMap&        motorControllers,   // <I> - Motor Controllers
+			const IDragonMotorControllerMap&        motorControllers    // <I> - Motor Controllers
+			/**
 			const DragonSolenoidVector&             solenoids,          // <I> - Solenoids
 			const DragonDigitalInputVector&         digitalInputs,      // <I> - Digital Inputs
 			const DragonAnalogInputVector&          analogInputs,       // <I> - Analog Inputs
 			const DragonServoVector&                servos              // <I> - servos
+			**/
 		);
 
 	private:
+		std::shared_ptr<IDragonMotorController> GetMotorController
+		(
+			const IDragonMotorControllerMap&				motorControllers,
+			MotorControllerUsage::MOTOR_CONTROLLER_USAGE	usage
+		);
 		MechanismFactory() = default;
 		virtual ~MechanismFactory() = default;
 

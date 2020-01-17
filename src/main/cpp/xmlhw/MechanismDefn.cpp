@@ -82,17 +82,41 @@ IMechanism* MechanismDefn::ParseXML
             string typeStr = attr.as_string();
             for_each( typeStr.begin(), typeStr.end(), [](char & c){c = ::toupper(c);});
 
-            if ( typeStr.compare( "SHOOTER") == 0 )
+            if ( typeStr.compare( "INTAKE") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::INTAKE;
+            }
+            else if ( typeStr.compare( "HUMAN_PLAYER_FLAP") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::HUMAN_PLAYER_FLAP;
+            }
+            else if ( typeStr.compare( "IMPELLER") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::IMPELLER;
+            }
+            else if ( typeStr.compare( "BALL_TRANSFER") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::BALL_TRANSFER;
+            }
+            else if ( typeStr.compare( "SHOOTER") == 0 )
             {
                 type = MechanismTypes::MECHANISM_TYPE::SHOOTER;
             }
-            else if ( typeStr.compare( "INTAKE") == 0 )
+            else if ( typeStr.compare( "SHOOTER_HOOD") == 0 )
             {
-                type = MechanismTypes::MECHANISM_TYPE::INTAKE;
+                type = MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD;
+            }
+            else if ( typeStr.compare( "CONTROL_TABLE_MANIPULATOR") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::CONTROL_TABLE_MANIPULATOR;
             }
             else if ( typeStr.compare( "CLIMBER") == 0 )
             {
                 type = MechanismTypes::MECHANISM_TYPE::CLIMBER;
+            }
+            else if ( typeStr.compare( "CRAWLER") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::CRAWLER;
             }
             else
             {
@@ -135,6 +159,7 @@ IMechanism* MechanismDefn::ParseXML
                 Logger::GetLogger()->LogError( "MechanismDefn", "unable to create MotorDefn" );
             }
         }
+		/** No analog Inputs this year???
         else if ( strcmp( child.name(), "analogInput") == 0 )
         {
             if ( analogXML == nullptr )
@@ -151,6 +176,7 @@ IMechanism* MechanismDefn::ParseXML
                 Logger::GetLogger()->LogError( "MechanismDefn", "unable to create AnalogInputDefn" );
             }
         }
+		** No DigitalInputs this year????
         else if ( strcmp( child.name(), "digitalInput") == 0 )
         {
             if ( digitalXML == nullptr )
@@ -167,6 +193,7 @@ IMechanism* MechanismDefn::ParseXML
                 Logger::GetLogger()->LogError( "MechanismDefn", "unable to create DigitalInputDefn" );
             }
         }
+		** no servos this year???
         else if ( strcmp( child.name(), "servo") == 0 )
         {
             if ( servoXML == nullptr )
@@ -183,6 +210,7 @@ IMechanism* MechanismDefn::ParseXML
                 Logger::GetLogger()->LogError( "MechanismDefn", "unable to create ServoDefn" );
             }
         }
+		**/
         else if ( strcmp( child.name(), "solenoid" ) == 0 )
         {
             // todo parse solenoids

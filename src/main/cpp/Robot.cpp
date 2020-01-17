@@ -36,10 +36,6 @@
 #include <xmlhw/RobotDefn.h>
 #include <auton/CyclePrimitives.h>
 
-Robot::Robot() : TimedRobot( 10.0 )
-{
-
-}
 
 ///-----------------------------------------------------------------------
 /// Method:      RobotInit
