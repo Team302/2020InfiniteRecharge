@@ -217,7 +217,7 @@ IMechanism* MechanismDefn::ParseXML
         }
         else
         {
-                Logger::GetLogger()->LogError( "MechanismDefn", "unknown child" );
+            Logger::GetLogger()->LogError( "MechanismDefn", "unknown child" );
         }
     }
 
@@ -226,7 +226,7 @@ IMechanism* MechanismDefn::ParseXML
     if ( !hasError )
     {
         MechanismFactory* factory =  MechanismFactory::GetMechanismFactory();
-        mech = factory->GetIMechanism( type );
+        mech = factory->CreateIMechanism( type, motors );
     }
 
     return mech;
