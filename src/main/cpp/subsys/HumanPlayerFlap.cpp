@@ -31,19 +31,27 @@
 using namespace std;
 
 HumanPlayerFlap::HumanPlayerFlap
-
 (
-    std::shared_ptr<IDragonMotorController>
+    std::shared_ptr<DragonSolenoid>     solenoid
 ) : m_openFlap( solenoid )
+{
 
 if (m_openFlap.get() == nullptr )
 {
-    Logger::GetLogger()->LogError( string( "Intake constructor" ), string( "solenoid is nullptr" ) );
+    Logger::GetLogger()->LogError( string( "Human Player Flap constructor" ), string( "solenoid is nullptr" ) );
+}
+
+}
+
+MechanismTypes::MECHANISM_TYPE HumanPlayerFlap::GetType() const
+{
+    return MechanismTypes::MECHANISM_TYPE::HUMAN_PLAYER_FLAP;
 }
 
 void HumanPlayerFlap::SetOutput
 (
-
+     ControlModes::CONTROL_TYPE controlType,
+     double                                   value    
 )
 {
     Logger::GetLogger()->LogError( string("HumanPlayerFlap::SetOutput"), string("No master") );
@@ -54,13 +62,13 @@ void HumanPlayerFlap::ActivateSolenoid
     bool activate 
 )
 {
-    if ( m_crawlingLifter != nullptr )
+    if ( m_openFlap != nullptr )
     {
-        m_crawlingLifter->Set( activate );
+        m_openFlap->Set( activate );
     }
     else
     {
-    Logger::GetLogger()->LogError( string("Intake::ActivateSolenoid"), string("No crawlingLifter") );
+    Logger::GetLogger()->LogError( string("HumanPlayerFlap::ActivateSolenoid"), string("No openFlap") );
     }
 }
 
@@ -71,9 +79,9 @@ bool HumanPlayerFlap::IsSolenoidActivated
 {
     bool on = false;
 
-    if ( m_crawlingLifter != nullptr )
+    if ( m_openFlap != nullptr )
     {
-       on = m_crawlingLifter -> Get();
+       on = m_openFlap -> Get();
     }
     else
     {
@@ -117,4 +125,12 @@ double HumanPlayerFlap::GetTargetSpeed
 {
     Logger::GetLogger()->LogError(string("HumanPlayerFlap::GetCurrentPosition"),string( "Called"));
     return 0.0;     //subj. to change
+}
+
+void HumanPlayerFlap::SetControlConstants
+(
+    ControlData*    pid
+)
+{
+    Logger::GetLogger()->LogError(string("HumanPlayerFlap::SetControlConstants"), string("Called"));
 }
