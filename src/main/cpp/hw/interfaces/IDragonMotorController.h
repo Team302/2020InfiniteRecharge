@@ -77,4 +77,3 @@ class IDragonMotorController
         virtual ~IDragonMotorController() = default;
 };
 
-typedef std::map <MotorControllerUsage::MOTOR_CONTROLLER_USAGE, std::shared_ptr<IDragonMotorController>> IDragonMotorControllerMap;

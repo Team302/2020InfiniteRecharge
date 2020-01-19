@@ -24,6 +24,7 @@
 // FRC includes
 
 // Team 302 includes
+#include <hw/usages/ServoUsage.h>
 #include <hw/DragonServo.h>
 
 // Third Party Includes
@@ -57,7 +58,7 @@ class DragonServoFactory
         //=======================================================================================
         std::shared_ptr<DragonServo> CreateDragonServo
         (
-            DragonServo::SERVO_USAGE    deviceUsage,        
+            ServoUsage::SERVO_USAGE     deviceUsage,        
             int                         deviceID,           
             double                      minAngle,           
             double                      maxAngle            
@@ -71,7 +72,7 @@ class DragonServoFactory
         //=======================================================================================
         std::shared_ptr<DragonServo> CreateDragonServo
         (
-            DragonServo::SERVO_USAGE    deviceUsage        
+            ServoUsage::SERVO_USAGE    deviceUsage        
         );
 
 
@@ -82,6 +83,6 @@ class DragonServoFactory
 
         static DragonServoFactory*        m_instance;
 
-        std::map <DragonServo::SERVO_USAGE, std::shared_ptr<DragonServo>> m_servos;
+        std::map <ServoUsage::SERVO_USAGE, std::shared_ptr<DragonServo>> m_servos;
 
 };

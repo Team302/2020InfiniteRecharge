@@ -35,6 +35,11 @@
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismTypes.h>
 #include <hw/interfaces/IDragonMotorController.h>
+#include <hw/usages/IDragonMotorControllerMap.h>
+#include <hw/usages/AnalogInputMap.h>
+#include <hw/usages/DigitalInputMap.h>
+#include <hw/usages/DragonSolenoidMap.h>
+#include <hw/usages/ServoMap.h>
 #include <hw/DragonSolenoid.h>
 #include <hw/DragonServo.h>
 #include <hw/DragonAnalogInput.h>
@@ -71,13 +76,11 @@ class MechanismFactory
 		IMechanism*  CreateIMechanism
 		(
 			MechanismTypes::MECHANISM_TYPE			type,
-			const IDragonMotorControllerMap&        motorControllers    // <I> - Motor Controllers
-			/**
-			const DragonSolenoidVector&             solenoids,          // <I> - Solenoids
-			const DragonDigitalInputVector&         digitalInputs,      // <I> - Digital Inputs
-			const DragonAnalogInputVector&          analogInputs,       // <I> - Analog Inputs
-			const DragonServoVector&                servos              // <I> - servos
-			**/
+			const IDragonMotorControllerMap&        motorControllers,   // <I> - Motor Controllers
+			const DragonSolenoidMap&                solenoids,
+			const ServoMap&						    servos,
+			const DigitalInputMap&					digitalInputs,
+			const AnalogInputMap&                   analogInputs
 		);
 
 	private:
@@ -85,6 +88,26 @@ class MechanismFactory
 		(
 			const IDragonMotorControllerMap&				motorControllers,
 			MotorControllerUsage::MOTOR_CONTROLLER_USAGE	usage
+		);
+		std::shared_ptr<DragonSolenoid> GetSolenoid
+		(
+			const DragonSolenoidMap&						solenoids,
+			SolenoidUsage::SOLENOID_USAGE					usage
+		);
+		std::shared_ptr<DragonServo> GetServo
+		(
+			const ServoMap&									servos,
+			ServoUsage::SERVO_USAGE							usage
+		);
+		std::shared_ptr<DragonDigitalInput> GetDigitalInput
+		(
+			const DigitalInputMap&							digitaInputs,
+			DigitalInputUsage::DIGITAL_SENSOR_USAGE			usage
+		);
+		std::shared_ptr<DragonAnalogInput> GetAnalogInput
+		(
+			const AnalogInputMap&							analogInputs,
+			AnalogInputUsage::ANALOG_SENSOR_USAGE			usage
 		);
 		MechanismFactory() = default;
 		virtual ~MechanismFactory() = default;

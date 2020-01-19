@@ -31,7 +31,11 @@
 
 // Team 302 includes
 #include <hw/interfaces/IDragonMotorController.h>
-#include <hw/usages/MotorControllerUsage.h>
+#include <hw/usages/IDragonMotorControllerMap.h>
+#include <hw/usages/AnalogInputMap.h>
+#include <hw/usages/DigitalInputMap.h>
+#include <hw/usages/DragonSolenoidMap.h>
+#include <hw/usages/ServoMap.h>
 #include <hw/DragonSolenoid.h>
 #include <hw/DragonServo.h>
 #include <hw/DragonAnalogInput.h>
@@ -102,14 +106,11 @@ IMechanism*  MechanismFactory::GetIMechanism
 IMechanism*  MechanismFactory::CreateIMechanism
 (
 	MechanismTypes::MECHANISM_TYPE			type,
-    const IDragonMotorControllerMap&        motorControllers    // <I> - Motor Controllers
-	/**
-    const DragonSolenoidVector&             solenoids,          // <I> - Solenoids
-    const DragonDigitalInputVector&         digitalInputs,      // <I> - Digital Inputs
-    const DragonAnalogInputVector&          analogInputs,       // <I> - Analog Inputs
-    const DragonServoVector&                servos              // <I> - servos
-	**/
-
+	const IDragonMotorControllerMap&        motorControllers,   // <I> - Motor Controllers
+	const DragonSolenoidMap&                solenoids,
+	const ServoMap&						    servos,
+	const DigitalInputMap&					digitalInputs,
+	const AnalogInputMap&                   analogInputs
 )
 {
 	IMechanism* subsys = nullptr;
@@ -133,28 +134,53 @@ IMechanism*  MechanismFactory::CreateIMechanism
 				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::INTAKE );
 				if ( motor.get() != nullptr )
 				{
-					// todo get solenoid & create intake
+					auto solenoid = GetSolenoid( solenoids, SolenoidUsage::SOLENOID_USAGE::INTAKE );
+					if ( solenoid.get() != nullptr )
+					{
+					// todo get create intake
+					}
 				}
             }
             break;
 
 			case MechanismTypes::MECHANISM_TYPE::HUMAN_PLAYER_FLAP:
 			{
+				auto solenoid = GetSolenoid( solenoids, SolenoidUsage::SOLENOID_USAGE::HUMAN_PLAYER_FLAP );
+				if ( solenoid.get() != nullptr )
+				{
+				// todo get create human player flap
+				}
 			}
 			break;
 			
 			case MechanismTypes::MECHANISM_TYPE::IMPELLER:
 			{
+				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::IMPELLER );
+				if ( motor.get() != nullptr )
+				{
+					// todo get create impeller
+				}
 			}
 			break;
 			
 			case MechanismTypes::MECHANISM_TYPE::BALL_TRANSFER:
 			{
+				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::BALL_TRANSFER );
+				if ( motor.get() != nullptr )
+				{
+					// todo get create ball transfer
+				}
 			}
 			break;			
 			
 			case MechanismTypes::MECHANISM_TYPE::SHOOTER:
 			{
+				auto motor1 = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::SHOOTER_1 );
+				auto motor2 = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::SHOOTER_2 );
+				if ( motor1.get() != nullptr && motor2.get() != nullptr )
+				{
+					// todo get create shooter
+				}
 			}
 			break;			
 			
@@ -219,7 +245,115 @@ shared_ptr<IDragonMotorController> MechanismFactory::GetMotorController
 	return motor;
 }
 
+shared_ptr<DragonSolenoid> MechanismFactory::GetSolenoid
+(
+	const DragonSolenoidMap&						solenoids,
+	SolenoidUsage::SOLENOID_USAGE					usage
+)
+{
+	shared_ptr<DragonSolenoid> solenoid;
+	auto it = solenoids.find( usage );
+	if ( it != solenoids.end() )  // found it
+	{
+		solenoid = it->second;
+	}
+	else
+	{
+		string msg = "solenoid not found; usage = ";
+		msg += to_string( usage );
+		Logger::GetLogger()->LogError( string( "MechanismFactory::GetSolenoid" ), msg );
+	}
+	
+	if ( solenoid.get() == nullptr )
+	{
+		string msg = "solenoid is nullptr; usage = ";
+		msg += to_string( usage );
+		Logger::GetLogger()->LogError( string( "MechanismFactory::GetSolenoid" ), msg );
+	}
+	return solenoid;
+}
+shared_ptr<DragonServo> MechanismFactory::GetServo
+(
+	const ServoMap&									servos,
+	ServoUsage::SERVO_USAGE							usage
+)
+{
+	shared_ptr<DragonServo> servo;
+	auto it = servos.find( usage );
+	if ( it != servos.end() )  // found it
+	{
+		servo = it->second;
+	}
+	else
+	{
+		string msg = "servo not found; usage = ";
+		msg += to_string( usage );
+		Logger::GetLogger()->LogError( string( "MechanismFactory::GetServo" ), msg );
+	}
+	
+	if ( servo.get() == nullptr )
+	{
+		string msg = "servo is nullptr; usage = ";
+		msg += to_string( usage );
+		Logger::GetLogger()->LogError( string( "MechanismFactory::GetServo" ), msg );
+	}
+	return servo;
 
+}
+shared_ptr<DragonDigitalInput> MechanismFactory::GetDigitalInput
+(
+	const DigitalInputMap&							digitaInputs,
+	DigitalInputUsage::DIGITAL_SENSOR_USAGE			usage
+)
+{
+	shared_ptr<DragonDigitalInput> dio;
+	auto it = digitaInputs.find( usage );
+	if ( it != digitaInputs.end() )  // found it
+	{
+		dio = it->second;
+	}
+	else
+	{
+		string msg = "digital input not found; usage = ";
+		msg += to_string( usage );
+		Logger::GetLogger()->LogError( string( "MechanismFactory::GetDigitalInput" ), msg );
+	}
+	
+	if ( dio.get() == nullptr )
+	{
+		string msg = "digital input is nullptr; usage = ";
+		msg += to_string( usage );
+		Logger::GetLogger()->LogError( string( "MechanismFactory::GetDigitalInput" ), msg );
+	}
+	return dio;
+}
+shared_ptr<DragonAnalogInput> MechanismFactory::GetAnalogInput
+(
+	const AnalogInputMap&							analogInputs,
+	AnalogInputUsage::ANALOG_SENSOR_USAGE			usage
+)
+{
+	shared_ptr<DragonAnalogInput> anIn;
+	auto it = analogInputs.find( usage );
+	if ( it != analogInputs.end() )  // found it
+	{
+		anIn = it->second;
+	}
+	else
+	{
+		string msg = "analog input not found; usage = ";
+		msg += to_string( usage );
+		Logger::GetLogger()->LogError( string( "MechanismFactory::GetAnalogInput" ), msg );
+	}
+	
+	if ( anIn.get() == nullptr )
+	{
+		string msg = "analog input is nullptr; usage = ";
+		msg += to_string( usage );
+		Logger::GetLogger()->LogError( string( "MechanismFactory::GetAnalogInput" ), msg );
+	}
+	return anIn;
+}
 
 
 

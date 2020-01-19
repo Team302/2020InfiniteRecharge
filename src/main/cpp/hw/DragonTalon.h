@@ -24,6 +24,7 @@ class DragonTalon : public IDragonMotorController
 {
   public:
     // Enums
+    /**
     enum TALON_SENSOR_TYPE
     {
         NO_SENSOR = -1,
@@ -49,6 +50,7 @@ class DragonTalon : public IDragonMotorController
         MOTION_MAGIC,
         MAX_TALON_MODES
     };
+    **/
 
     // Constructors
     DragonTalon() = delete;

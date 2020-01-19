@@ -1,5 +1,5 @@
 var class_digital_input_factory =
 [
-    [ "CreateInput", "class_digital_input_factory.html#a45276776f42806c14ea412818ef446f0", null ],
-    [ "GetInput", "class_digital_input_factory.html#a5f316246c7807adacbc47e4271805bdb", null ]
+    [ "CreateInput", "class_digital_input_factory.html#ac6fffa4ecfb92fb48cc939ad5e2d1eab", null ],
+    [ "GetInput", "class_digital_input_factory.html#a53c277332cda19ccbdfdef7e526b22bc", null ]
 ];

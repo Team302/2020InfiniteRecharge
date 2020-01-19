@@ -21,6 +21,9 @@ var dir_c85cb826952b1679a37b077c3741c8c1 =
     [ "Intake.h", "_intake_8h.html", [
       [ "Intake", "class_intake.html", "class_intake" ]
     ] ],
+    [ "Intake.hxx", "_intake_8hxx.html", [
+      [ "Intake", "class_intake.html", "class_intake" ]
+    ] ],
     [ "MechanismFactory.cpp", "_mechanism_factory_8cpp.html", null ],
     [ "MechanismFactory.h", "_mechanism_factory_8h.html", [
       [ "MechanismFactory", "class_mechanism_factory.html", "class_mechanism_factory" ]

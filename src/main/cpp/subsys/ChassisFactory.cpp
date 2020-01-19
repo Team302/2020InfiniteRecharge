@@ -5,6 +5,7 @@
 #include <subsys/ChassisFactory.h>
 #include <subsys/DragonChassis.h>
 #include <hw/interfaces/IDragonMotorController.h>
+#include <hw/usages/IDragonMotorControllerMap.h>
 
 #include <utils/Logger.h>
 
@@ -49,18 +50,16 @@ shared_ptr<IChassis> ChassisFactory::CreateChassis
             shared_ptr<IDragonMotorController>  leftMaster;
             shared_ptr<IDragonMotorController>  rightMaster;
             
-            vector<shared_ptr<IDragonMotorController>> leftSlaves;
-            vector<shared_ptr<IDragonMotorController>> rightSlaves;
+            shared_ptr<IDragonMotorController> leftSlave;
+            shared_ptr<IDragonMotorController> rightSlave;
 
-            leftMaster = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::BACK_LEFT_DRIVE);
-            auto slave = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::FRONT_LEFT_DRIVE);
-            leftSlaves.push_back( slave );
+            leftMaster = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::LEFT_DRIVE_MASTER);
+            leftSlave = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::LEFT_DRIVE_FOLLOWER);
             
-            rightMaster = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::BACK_RIGHT_DRIVE);
-            slave = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::FRONT_RIGHT_DRIVE);
-            rightSlaves.push_back( slave );
+            rightMaster = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::RIGHT_DRIVE_MASTER);
+            rightSlave = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::RIGHT_DRIVE_FOLLOWER);
             
-            chassis = make_shared<DragonChassis>(  wheelDiameter, wheelBase, track, leftMaster, rightMaster, leftSlaves, rightSlaves );
+            chassis = make_shared<DragonChassis>(  wheelDiameter, wheelBase, track, leftMaster, rightMaster, leftSlave, rightSlave );
         }
         break;
 

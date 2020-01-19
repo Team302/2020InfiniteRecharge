@@ -49,6 +49,12 @@ Intake::Intake
 
 }
 
+MechanismTypes::MECHANISM_TYPE Intake::GetType() const 
+{
+    return MechanismTypes::MECHANISM_TYPE::INTAKE;
+}
+
+
 
 void Intake::SetOutput
 (ControlModes::CONTROL_TYPE controlType,
@@ -150,7 +156,7 @@ void Intake::SetControlConstants
     ControlData*                                pid                 
 )
 {
-    
+    Logger::GetLogger()->LogError(string("Intake::SetControlConstants"), string("Called"));
 }
 
 

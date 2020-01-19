@@ -40,15 +40,15 @@ using namespace std;
 
 /// @brief    Create and initialize the DriveTrainSide sub-mechanism
 /// @param [in] std::shared_ptr<IDragonMotorController>   master - master motor for the DriveTrainSide
-/// @param [in] std::vector<std::shared_ptr<IDragonMotorController>>    followers - slave motors for the DriveTrainSide
+/// @param [in] std::shared_ptr<IDragonMotorController>    follower - slave motor for the DriveTrainSide
 /// @param [in] double    wheelSize - diameter of the wheel in inches.
 DriveTrainSide::DriveTrainSide
 (
     shared_ptr<IDragonMotorController>                      master,
-    vector<shared_ptr<IDragonMotorController>>              followers,
+    shared_ptr<IDragonMotorController>                      follower,
     double                                                  wheelSize
 ) : m_master( master ),
-    m_slaves( move( followers ) ), 
+    m_slave( follower ), 
     m_wheelSize( wheelSize ),
     m_target( 0.0 )
 {

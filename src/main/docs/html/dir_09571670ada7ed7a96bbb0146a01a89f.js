@@ -6,7 +6,11 @@ var dir_09571670ada7ed7a96bbb0146a01a89f =
     [ "DragonAnalogInput.cpp", "_dragon_analog_input_8cpp.html", null ],
     [ "DragonAnalogInput.h", "_dragon_analog_input_8h.html", "_dragon_analog_input_8h" ],
     [ "DragonDigitalInput.cpp", "_dragon_digital_input_8cpp.html", null ],
-    [ "DragonDigitalInput.h", "_dragon_digital_input_8h.html", "_dragon_digital_input_8h" ],
+    [ "DragonDigitalInput.h", "_dragon_digital_input_8h.html", [
+      [ "DragonDigitalInput", "class_dragon_digital_input.html", "class_dragon_digital_input" ]
+    ] ],
+    [ "DragonFalcon.cpp", "_dragon_falcon_8cpp.html", null ],
+    [ "DragonFalcon.h", "_dragon_falcon_8h.html", "_dragon_falcon_8h" ],
     [ "DragonLidar.cpp", "_dragon_lidar_8cpp.html", null ],
     [ "DragonLidar.h", "_dragon_lidar_8h.html", [
       [ "DragonLidar", "class_dragon_lidar.html", "class_dragon_lidar" ]
@@ -28,9 +32,13 @@ var dir_09571670ada7ed7a96bbb0146a01a89f =
       [ "DragonPositionSensor", "class_dragon_position_sensor.html", "class_dragon_position_sensor" ]
     ] ],
     [ "DragonServo.cpp", "_dragon_servo_8cpp.html", null ],
-    [ "DragonServo.h", "_dragon_servo_8h.html", "_dragon_servo_8h" ],
+    [ "DragonServo.h", "_dragon_servo_8h.html", [
+      [ "DragonServo", "class_dragon_servo.html", "class_dragon_servo" ]
+    ] ],
     [ "DragonSolenoid.cpp", "_dragon_solenoid_8cpp.html", null ],
-    [ "DragonSolenoid.h", "_dragon_solenoid_8h.html", "_dragon_solenoid_8h" ],
+    [ "DragonSolenoid.h", "_dragon_solenoid_8h.html", [
+      [ "DragonSolenoid", "class_dragon_solenoid.html", "class_dragon_solenoid" ]
+    ] ],
     [ "DragonSparkMax.cpp", "_dragon_spark_max_8cpp.html", null ],
     [ "DragonSparkMax.h", "_dragon_spark_max_8h.html", [
       [ "DragonSparkMax", "class_dragon_spark_max.html", "class_dragon_spark_max" ]

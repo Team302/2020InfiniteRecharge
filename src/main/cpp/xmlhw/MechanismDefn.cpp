@@ -32,10 +32,17 @@
 #include <subsys/MechanismFactory.h>
 #include <subsys/IMechanism.h>
 
+#include <hw/usages/IDragonMotorControllerMap.h>
+#include <hw/usages/AnalogInputMap.h>
+#include <hw/usages/DigitalInputMap.h>
+#include <hw/usages/DragonSolenoidMap.h>
+#include <hw/usages/ServoMap.h>
+
 #include <xmlhw/AnalogInputDefn.h>
 #include <xmlhw/DigitalInputDefn.h>
 #include <xmlhw/MotorDefn.h>
 #include <xmlhw/ServoDefn.h> 
+#include <xmlhw/SolenoidDefn.h>
 
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismTypes.h>
@@ -68,11 +75,6 @@ IMechanism* MechanismDefn::ParseXML
     MechanismTypes::MECHANISM_TYPE type = MechanismTypes::UNKNOWN_MECHANISM;
 
     bool hasError       = false;
-
-    unique_ptr<MotorDefn> motorXML;
-    unique_ptr<AnalogInputDefn> analogXML;
-    unique_ptr<DigitalInputDefn> digitalXML;
-    unique_ptr<ServoDefn> servoXML;
 
     // Parse/validate xml
     for (xml_attribute attr = mechanismNode.first_attribute(); attr; attr = attr.next_attribute())
@@ -136,84 +138,59 @@ IMechanism* MechanismDefn::ParseXML
     }
 
     // Parse/validate subobject xml
+    unique_ptr<MotorDefn> motorXML = make_unique<MotorDefn>();
+    unique_ptr<AnalogInputDefn> analogXML = make_unique<AnalogInputDefn>();
+    unique_ptr<DigitalInputDefn> digitalXML = make_unique<DigitalInputDefn>();
+    unique_ptr<ServoDefn> servoXML = make_unique<ServoDefn>();
+    unique_ptr<SolenoidDefn> solenoidXML = make_unique<SolenoidDefn>();
+
     IDragonMotorControllerMap motors;
+    ServoMap servos;
+    DragonSolenoidMap solenoids;
+    AnalogInputMap analogInputs;
+    DigitalInputMap digitalInputs;
+
     for (xml_node child = mechanismNode.first_child(); child  && !hasError; child = child.next_sibling())
     {
         if ( strcmp( child.name(), "motor") == 0 )
         {
-            if ( motorXML == nullptr )
+            auto motor = motorXML.get()->ParseXML(child);
+            if ( motor.get() != nullptr )
             {
-                motorXML = make_unique<MotorDefn>();
-            }
-
-            if ( motorXML != nullptr )
-            {
-                auto motor = motorXML->ParseXML(child);
-                if ( motor.get() != nullptr )
-                {
-                    motors[ motor.get()->GetType() ] =  motor ;
-                }
-            }
-            else
-            {
-                Logger::GetLogger()->LogError( "MechanismDefn", "unable to create MotorDefn" );
+                motors[ motor.get()->GetType() ] =  motor ;
             }
         }
-		/** No analog Inputs this year???
         else if ( strcmp( child.name(), "analogInput") == 0 )
         {
-            if ( analogXML == nullptr )
+            auto analogIn = analogXML->ParseXML(child);
+            if ( analogIn.get() != nullptr )
             {
-                analogXML = make_unique<AnalogInputDefn>();
-            }
-
-            if ( analogXML != nullptr )
-            {
-                auto analogIn = analogXML->ParseXML(child);
-            }
-            else
-            {
-                Logger::GetLogger()->LogError( "MechanismDefn", "unable to create AnalogInputDefn" );
+                analogInputs[analogIn.get()->GetUsage()] = analogIn;
             }
         }
-		** No DigitalInputs this year????
         else if ( strcmp( child.name(), "digitalInput") == 0 )
         {
-            if ( digitalXML == nullptr )
+            auto digitalIn = digitalXML->ParseXML(child);
+            if ( digitalIn.get() != nullptr )
             {
-                digitalXML = make_unique<DigitalInputDefn>();
-            }
-
-            if ( digitalXML != nullptr )
-            {
-                auto digitalIn = digitalXML->ParseXML(child);
-            }
-            else
-            {
-                Logger::GetLogger()->LogError( "MechanismDefn", "unable to create DigitalInputDefn" );
+                digitalInputs[digitalIn.get()->GetType()] = digitalIn;
             }
         }
-		** no servos this year???
         else if ( strcmp( child.name(), "servo") == 0 )
         {
-            if ( servoXML == nullptr )
+            auto servo = servoXML->ParseXML(child);
+            if ( servo.get() != nullptr )
             {
-                servoXML = make_unique<ServoDefn>();
-            }
-
-            if ( servoXML != nullptr )
-            {
-                servoXML->ParseXML(child);
-            }
-            else
-            {
-                Logger::GetLogger()->LogError( "MechanismDefn", "unable to create ServoDefn" );
+                servos[servo.get()->GetUsage()] = servo;
             }
         }
-		**/
         else if ( strcmp( child.name(), "solenoid" ) == 0 )
         {
-            // todo parse solenoids
+            auto sol = solenoidXML->ParseXML(child);
+            if ( sol.get() != nullptr )
+            {
+                solenoids[sol.get()->GetType()] = sol;
+            }
         }
         else
         {
@@ -226,7 +203,7 @@ IMechanism* MechanismDefn::ParseXML
     if ( !hasError )
     {
         MechanismFactory* factory =  MechanismFactory::GetMechanismFactory();
-        mech = factory->CreateIMechanism( type, motors );
+        mech = factory->CreateIMechanism( type, motors, solenoids, servos, digitalInputs, analogInputs );
     }
 
     return mech;

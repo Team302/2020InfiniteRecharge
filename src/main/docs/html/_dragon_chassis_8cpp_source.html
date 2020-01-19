@@ -116,16 +116,16 @@ $(document).ready(function(){initNavTree('_dragon_chassis_8cpp_source.html','');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<a class="code" href="class_dragon_chassis.html#a58b6034bf0e83f44cfdfa83d99632e9e">DragonChassis::DragonChassis</a></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#aba9f5e637454156e0d3e5c8898d4f43f">   43</a></span>&#160;(</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#a0fe145c70986165ffa4e69f455465b35">   43</a></span>&#160;(</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">double</span>                                                  wheelDiameter,      </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">double</span>                                                  wheelBase,          </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">double</span>                                                  track,              </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::shared_ptr&lt;IDragonMotorController&gt;                 leftMaster,</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::shared_ptr&lt;IDragonMotorController&gt;                 rightMaster,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::vector&lt;std::shared_ptr&lt;IDragonMotorController&gt;&gt;    leftFollowers,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::vector&lt;std::shared_ptr&lt;IDragonMotorController&gt;&gt;    rightFollowers</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;) : m_leftSide( <span class="keyword">new</span> <a class="code" href="class_drive_train_side.html">DriveTrainSide</a>( leftMaster, leftFollowers, wheelDiameter ) ),</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    m_rightSide( <span class="keyword">new</span> <a class="code" href="class_drive_train_side.html">DriveTrainSide</a>( rightMaster, rightFollowers, wheelDiameter ) ),</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::shared_ptr&lt;IDragonMotorController&gt;                 leftFollower,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::shared_ptr&lt;IDragonMotorController&gt;                 rightFollower</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;) : m_leftSide( <span class="keyword">new</span> <a class="code" href="class_drive_train_side.html">DriveTrainSide</a>( leftMaster, leftFollower, wheelDiameter ) ),</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    m_rightSide( <span class="keyword">new</span> <a class="code" href="class_drive_train_side.html">DriveTrainSide</a>( rightMaster, rightFollower, wheelDiameter ) ),</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_wheelBase( wheelBase ),</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_wheelTrack( track )</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>

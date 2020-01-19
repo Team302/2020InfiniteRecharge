@@ -5,6 +5,7 @@
 
 #include <subsys/IChassis.h>
 #include <hw/interfaces/IDragonMotorController.h>
+#include <hw/usages/IDragonMotorControllerMap.h>
 
 class ChassisFactory
 {

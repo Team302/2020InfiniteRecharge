@@ -77,6 +77,13 @@ class HardwareIDValidation
             std::string  methodID       // <I> - class::method identifier for message
         );
 
+        static bool ValidateSolenoidChannel
+        (
+            int          channel,       // <I> - Solenoid Channel to validate
+            std::string  methodID       // <I> - class::method identifier for message
+        );
+
+
         //======================================================================================
         /// Method:       ValidateID
         /// Description:  Check the ID against the valid range.  If it is invalid the logger
@@ -92,6 +99,7 @@ class HardwareIDValidation
             std::string  methodID,      // <I> - class::method identifier for message
             std::string  errorMsg       // <I> - error message
         );
+
 
 };
 

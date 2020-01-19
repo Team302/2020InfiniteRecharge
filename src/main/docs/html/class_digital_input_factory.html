@@ -101,10 +101,10 @@ $(document).ready(function(){initNavTree('class_digital_input_factory.html','');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a45276776f42806c14ea412818ef446f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dragon_digital_input.html">DragonDigitalInput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_input_factory.html#a45276776f42806c14ea412818ef446f0">CreateInput</a> (<a class="el" href="class_dragon_digital_input.html#a5978e6af791b83e55b7f183ed2504b45">DragonDigitalInput::DIGITAL_INPUT_TYPE</a> type, int digitalID, bool reversed)</td></tr>
-<tr class="separator:a45276776f42806c14ea412818ef446f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f316246c7807adacbc47e4271805bdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dragon_digital_input.html">DragonDigitalInput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_input_factory.html#a5f316246c7807adacbc47e4271805bdb">GetInput</a> (<a class="el" href="class_dragon_digital_input.html#a5978e6af791b83e55b7f183ed2504b45">DragonDigitalInput::DIGITAL_INPUT_TYPE</a> type)</td></tr>
-<tr class="separator:a5f316246c7807adacbc47e4271805bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6fffa4ecfb92fb48cc939ad5e2d1eab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dragon_digital_input.html">DragonDigitalInput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_input_factory.html#ac6fffa4ecfb92fb48cc939ad5e2d1eab">CreateInput</a> (<a class="el" href="class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46">DigitalInputUsage::DIGITAL_SENSOR_USAGE</a> type, int digitalID, bool reversed)</td></tr>
+<tr class="separator:ac6fffa4ecfb92fb48cc939ad5e2d1eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53c277332cda19ccbdfdef7e526b22bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dragon_digital_input.html">DragonDigitalInput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_digital_input_factory.html#a53c277332cda19ccbdfdef7e526b22bc">GetInput</a> (<a class="el" href="class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46">DigitalInputUsage::DIGITAL_SENSOR_USAGE</a> type)</td></tr>
+<tr class="separator:a53c277332cda19ccbdfdef7e526b22bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -118,10 +118,10 @@ Static Public Member Functions</h2></td></tr>
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
 <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. File Description: This controls the creation of Digital inputs </p>
 
-<p class="definition">Definition at line <a class="el" href="_digital_input_factory_8h_source.html#l00040">40</a> of file <a class="el" href="_digital_input_factory_8h_source.html">DigitalInputFactory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_digital_input_factory_8h_source.html#l00041">41</a> of file <a class="el" href="_digital_input_factory_8h_source.html">DigitalInputFactory.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a45276776f42806c14ea412818ef446f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45276776f42806c14ea412818ef446f0">&#9670;&nbsp;</a></span>CreateInput()</h2>
+<a id="ac6fffa4ecfb92fb48cc939ad5e2d1eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6fffa4ecfb92fb48cc939ad5e2d1eab">&#9670;&nbsp;</a></span>CreateInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -129,7 +129,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_dragon_digital_input.html">DragonDigitalInput</a> * DigitalInputFactory::CreateInput </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_dragon_digital_input.html#a5978e6af791b83e55b7f183ed2504b45">DragonDigitalInput::DIGITAL_INPUT_TYPE</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46">DigitalInputUsage::DIGITAL_SENSOR_USAGE</a>&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
@@ -153,7 +153,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Method: CreateInput Description: Create the requested Digital input Returns: IMechanism* pointer to the mechanism or nullptr if mechanism doesn't exist and cannot be created. </p>
 
-<p class="definition">Definition at line <a class="el" href="_digital_input_factory_8cpp_source.html#l00064">64</a> of file <a class="el" href="_digital_input_factory_8cpp_source.html">DigitalInputFactory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_digital_input_factory_8cpp_source.html#l00065">65</a> of file <a class="el" href="_digital_input_factory_8cpp_source.html">DigitalInputFactory.cpp</a>.</p>
 
 </div>
 </div>
@@ -180,12 +180,12 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_digital_input_factory_8cpp_source.html#l00047">47</a> of file <a class="el" href="_digital_input_factory_8cpp_source.html">DigitalInputFactory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_digital_input_factory_8cpp_source.html#l00048">48</a> of file <a class="el" href="_digital_input_factory_8cpp_source.html">DigitalInputFactory.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a5f316246c7807adacbc47e4271805bdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f316246c7807adacbc47e4271805bdb">&#9670;&nbsp;</a></span>GetInput()</h2>
+<a id="a53c277332cda19ccbdfdef7e526b22bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53c277332cda19ccbdfdef7e526b22bc">&#9670;&nbsp;</a></span>GetInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +193,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_dragon_digital_input.html">DragonDigitalInput</a> * DigitalInputFactory::GetInput </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_dragon_digital_input.html#a5978e6af791b83e55b7f183ed2504b45">DragonDigitalInput::DIGITAL_INPUT_TYPE</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46">DigitalInputUsage::DIGITAL_SENSOR_USAGE</a>&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
         </tr>
@@ -201,7 +201,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Method: GetInput Description: Get the requested Digital input Returns: IMechanism* pointer to the mechanism or nullptr if mechanism doesn't exist. </p>
 
-<p class="definition">Definition at line <a class="el" href="_digital_input_factory_8cpp_source.html#l00092">92</a> of file <a class="el" href="_digital_input_factory_8cpp_source.html">DigitalInputFactory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_digital_input_factory_8cpp_source.html#l00089">89</a> of file <a class="el" href="_digital_input_factory_8cpp_source.html">DigitalInputFactory.cpp</a>.</p>
 
 </div>
 </div>
