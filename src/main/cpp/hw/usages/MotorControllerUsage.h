@@ -40,10 +40,10 @@ class MotorControllerUsage
         enum MOTOR_CONTROLLER_USAGE
         {
             UNKNOWN_MOTOR_CONTROLLER_USAGE = -1,
-            LEFT_DRIVE_FOLLOWER,
             LEFT_DRIVE_MASTER,
-            RIGHT_DRIVE_FOLLOWER,
+            LEFT_DRIVE_FOLLOWER,
             RIGHT_DRIVE_MASTER,
+            RIGHT_DRIVE_FOLLOWER,
             INTAKE,
             IMPELLER,
             BALL_TRANSFER,

@@ -29,17 +29,16 @@
 <!-- ====================================================
 	 Chassis
 	 ====================================================  -->
-    <chassis type="0"
+    <chassis type="TANK"
     		 wheelDiameter="6.285"
              wheelBase="25.0"  
              track="18.0">
              
- 		<!-- Left (middle, front, back) -->
-         <motor usage="1"
+         <motor usage="RIGHT_DRIVE_MASTER"
                canId="0"
-			   type="cantalon"
+			   type="TALONSRX"
                inverted="true"
-        	   feedbackDevice="0"
+        	   feedbackDevice="QUADENCODER"
           	   countsPerRev="1"
 		   	   brakeMode="false"
         	   gearRatio="6.0" 
@@ -48,11 +47,11 @@
         	   peakCurrentLimit="40" 
         	   currentLimiting="true"  />
 
-         <motor usage="2"
+         <motor usage="RIGHT_DRIVE_FOLLOWER"
                canId="1"
-			   type="cantalon"
+			   type="TALONSRX"
                inverted="true"
-        	   feedbackDevice="0"
+        	   feedbackDevice="QUADENCODER"
           	   countsPerRev="1"
 		   	   brakeMode="false"
         	   gearRatio="6.0" 
@@ -62,11 +61,11 @@
         	   currentLimiting="true"  />		
 			   
  		<!-- Left (middle, front, back) -->
-        <motor usage="4"
+        <motor usage="LEFT_DRIVE_MASTER"
                canId="3"
-			   type="cantalon"
+			   type="TALONSRX"
                inverted="true"
-         	   feedbackDevice="0"
+         	   feedbackDevice="QUADENCODER"
           	   countsPerRev="1"
 		   	   brakeMode="false"
         	   gearRatio="6.0" 
@@ -74,11 +73,11 @@
         	   continuousCurrentLimit="30"
         	   peakCurrentLimit="40" 
         	   currentLimiting="true"  />
-        <motor usage="5"
+        <motor usage="LEFT_DRIVE_FOLLOWER"
                canId="2"
-			   type="cantalon"
+			   type="TALONSRX"
                inverted="true"
-         	   feedbackDevice="0"
+         	   feedbackDevice="QUADENCODER"
           	   countsPerRev="1"
 		   	   brakeMode="false"
         	   gearRatio="6.0" 

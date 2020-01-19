@@ -150,7 +150,6 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
         if ( strcmp( attr.name(), "usage" ) == 0 )
         {
              usage = attr.value();
-             transform(usage.begin(), usage.end(), usage.begin(), ::toupper);
         }
 		// CAN ID 0 thru 62 are valid
         else if ( strcmp( attr.name(), "canId" ) == 0 )
@@ -168,7 +167,6 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
         else if ( strcmp( attr.name(), "type" ) == 0 )
         {
             mtype = attr.value();
-            transform(mtype.begin(), mtype.end(), mtype.begin(), ::toupper);
         }
 		// inverted
         else if ( strcmp( attr.name(), "inverted" ) == 0 )
