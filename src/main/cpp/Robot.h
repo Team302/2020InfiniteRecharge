@@ -33,10 +33,15 @@
 
 #include <auton/CyclePrimitives.h>
 
+#include <hw/DragonLimelight.h>
+
+#include <gamepad/DragonXBox.h>
+
+#include <ctre/Phoenix.h>
+#include <frc/XboxController.h>
 class Robot : public frc::TimedRobot 
 {
   public:
-      Robot() = default;
       ~Robot() = default;
 
       void RobotInit() override;
@@ -50,5 +55,13 @@ class Robot : public frc::TimedRobot
 
   private:
       CyclePrimitives* m_cyclePrims;
-
+      DragonLimelight* m_limelight;
+      TalonSRX* m_turretTalon;
+    DragonXBox* m_xbox;
+    const int TURRET_ID = 0;
+    const int K_P = 20.0;
+    const int K_I = 0.0;
+    const int K_D = 0.0;
+    const int K_F = 0.0;
+    double m_initialPosition;
 };

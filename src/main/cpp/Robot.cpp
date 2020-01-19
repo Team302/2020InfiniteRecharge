@@ -35,6 +35,10 @@
 #include <Robot.h>
 #include <xmlhw/RobotDefn.h>
 #include <auton/CyclePrimitives.h>
+#include <hw/interfaces/IDragonSensor.h>
+#include <hw/factories/DragonMotorControllerFactory.h>
+
+#include <ctre/Phoenix.h>
 
 
 ///-----------------------------------------------------------------------
@@ -52,6 +56,41 @@ void Robot::RobotInit()
 
     // Display the autonomous choices on the dashboard for selection.
     m_cyclePrims = new CyclePrimitives();
+    m_limelight= new DragonLimelight(IDragonSensor::SENSOR_USAGE::UNKNOWN_SENSOR, "limelight", 0.0, 0.0, 0.0, 0.0);
+    m_turretTalon = new TalonSRX(TURRET_ID);
+    m_xbox = new DragonXBox(0);
+
+    m_turretTalon->ConfigFactoryDefault();
+    m_turretTalon->ConfigSelectedFeedbackSensor(FeedbackDevice::QuadEncoder,
+                                        0, 
+                                        10);
+    m_turretTalon->SetSensorPhase(false);
+    //m_turretTalon->ConfigForwardLimitSwitchSource(ctre::phoenix::motorcontrol::LimitSwitchSource::LimitSwitchSource_FeedbackConnector, ctre::phoenix::motorcontrol::LimitSwitchNormal::LimitSwitchNormal_NormallyOpen);
+    //m_turretTalon->ConfigReverseLimitSwitchSource(ctre::phoenix::motorcontrol::LimitSwitchSource::LimitSwitchSource_FeedbackConnector, ctre::phoenix::motorcontrol::LimitSwitchNormal::LimitSwitchNormal_NormallyClosed);
+    m_turretTalon->SetStatusFramePeriod(StatusFrameEnhanced::Status_13_Base_PIDF0, 10, 10);
+    m_turretTalon->SetStatusFramePeriod(StatusFrameEnhanced::Status_10_MotionMagic, 10, 10);
+    m_turretTalon->ConfigNominalOutputForward(0, 10);
+    m_turretTalon->ConfigNominalOutputReverse(0, 10);
+    m_turretTalon->ConfigPeakOutputForward(1,10);
+    m_turretTalon->ConfigPeakOutputReverse(-1,10);
+
+    m_turretTalon->SelectProfileSlot(0, 0);
+    m_turretTalon->ConfigMotionCruiseVelocity(1500, 10);
+    m_turretTalon->ConfigMotionAcceleration(1500, 10);
+    
+
+    m_turretTalon->Config_kP(0, K_P);
+    m_turretTalon->Config_kI(0, K_I);
+    m_turretTalon->Config_kD(0, K_I);
+    m_turretTalon->Config_kF(0, K_F);
+
+
+
+    
+    
+    m_turretTalon->SetInverted(false);
+
+    m_initialPosition = m_turretTalon->GetSelectedSensorPosition();
 
 }
 
@@ -113,7 +152,26 @@ void Robot::TeleopInit()
 ///-----------------------------------------------------------------------
 void Robot::TeleopPeriodic() 
 {
+    double power = m_xbox->GetAxisValue(IDragonGamePad::LEFT_JOYSTICK_Y) * .5;
+    if (m_xbox->IsButtonPressed(IDragonGamePad::A_BUTTON))
+    {
+        m_turretTalon->Set(ctre::phoenix::motorcontrol::ControlMode::MotionMagic, m_initialPosition + 1000.0);
+        frc::SmartDashboard::PutBoolean("SetPosition", true);
+    }
 
+    else
+    {
+        m_turretTalon->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, power);
+        frc::SmartDashboard::PutBoolean("SetPosition", false);
+    }
+    frc::SmartDashboard::PutNumber("Horizontal Offset", m_limelight->GetTargetVerticalOffset());
+    frc::SmartDashboard::PutNumber("Vertical Offset", m_limelight->GetTargetHorizontalOffset());
+    frc::SmartDashboard::PutNumber("Turret Position", m_turretTalon->GetSelectedSensorPosition()/3400.0 *360.0);
+    double tx = m_limelight->GetTargetVerticalOffset()/ 360.0 * 3400.0;
+    double currentPosition = m_turretTalon->GetSelectedSensorPosition();
+    double targetPosition = currentPosition - tx - 200;
+    frc::SmartDashboard::PutNumber("Target Position", targetPosition);
+    m_turretTalon->Set(ctre::phoenix::motorcontrol::ControlMode::MotionMagic, targetPosition);
 }
 
 
