@@ -15,7 +15,7 @@ Turret::Turret(IDragonMotorController* motorController): m_targetPosition(0.0),
 m_targetSpeed(0.0)
 {
     m_turretMotor = motorController;
-    m_initialPosition = m_turretMotor->GetRotations();
+    m_initialPosition = GetCurrentPosition();
 }
 
 MechanismTypes::MECHANISM_TYPE Turret::GetType() const
@@ -25,8 +25,26 @@ MechanismTypes::MECHANISM_TYPE Turret::GetType() const
 
 void Turret::SetOutput(ControlModes::CONTROL_TYPE controlType, double value)
 {
-  m_turretMotor->SetControlMode(controlType);
-  m_turretMotor->Set(value);
+    switch(controlType)
+    {
+        case ControlModes::CONTROL_TYPE::POSITION_DEGREES:
+        case ControlModes::CONTROL_TYPE::TRAPEZOID:
+            m_targetPosition = value;
+            break;
+
+        case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
+            m_targetSpeed = value;
+            break;
+
+        default:
+            break;
+    }
+
+            
+
+    m_turretMotor->SetControlMode(controlType);
+    m_turretMotor->Set(value);
+
 }
 
 void Turret::ActivateSolenoid(bool activate)
@@ -39,22 +57,22 @@ bool Turret::IsSolenoidActivated()
     return false;
 }
 
-double Turret::GetCurrentPosition() 
+double Turret::GetCurrentPosition() const
 {
-    return m_turretMotor->GetRotations();
+    return m_turretMotor->GetRotations() * 360.0;
 }
 
-double Turret::GetTargetPosition() 
+double Turret::GetTargetPosition() const
 {
     return m_targetPosition;
 }
 
-double Turret::GetCurrentSpeed() 
+double Turret::GetCurrentSpeed() const
 {
-    return m_turretMotor->GetRPS();
+    return m_turretMotor->GetRPS() * 360.0;
 }
 
-double Turret::GetTargetSpeed()  
+double Turret::GetTargetSpeed() const
 {
     return m_targetSpeed;
 }
