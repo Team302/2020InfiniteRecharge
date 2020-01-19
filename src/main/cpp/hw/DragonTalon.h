@@ -12,7 +12,7 @@
 
 #include <frc/SpeedController.h>
 
-
+#include <controllers/ControlModes.h>
 #include <hw/interfaces/IDragonMotorController.h>
 #include <hw/usages/MotorControllerUsage.h>
 
@@ -72,7 +72,7 @@ class DragonTalon : public IDragonMotorController
     double GetCurrent() const override;
 
     // Setters (override)
-    void SetControlMode(IDragonMotorController::DRAGON_CONTROL_MODE mode) override; //:D
+    void SetControlMode(ControlModes::CONTROL_TYPE mode) override; //:D
     void Set(double value) override;
     void SetRotationOffset(double rotations) override;
     void SetVoltageRamping(double ramping, double rampingClosedLoop = -1) override; // seconds 0 to full, set to 0 to disable
@@ -82,8 +82,6 @@ class DragonTalon : public IDragonMotorController
     void Invert(bool inverted) override; 
 
     // Setters (TalonSRX)
-    // more complete SetControlMode method compared to the overrided one
-    void SetControlMode(TALON_CONTROL_MODE mode); 
     void SetSensorInverted(bool inverted);
 
 	// Method:		SelectClosedLoopProfile
@@ -118,7 +116,7 @@ class DragonTalon : public IDragonMotorController
 
   private:
     std::shared_ptr<ctre::phoenix::motorcontrol::can::WPI_TalonSRX>  m_talon;
-    TALON_CONTROL_MODE m_controlMode;
+    ctre::phoenix::motorcontrol::ControlMode m_controlMode;
     MotorControllerUsage::MOTOR_CONTROLLER_USAGE m_type;
 
     int m_id;

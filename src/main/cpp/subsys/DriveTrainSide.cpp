@@ -73,15 +73,15 @@ MechanismTypes::MECHANISM_TYPE DriveTrainSide::GetType() const
 /// @return     void
 void DriveTrainSide::SetOutput
 (
-    ControlModes::CONTROL_TYPE controlType,
-    double                                   value       
+    ControlModes::CONTROL_TYPE              controlType,
+    double                                  value       
 ) 
 {
     m_target = value;
     if ( m_master != nullptr )
     {
         // todo map mechanism control mode to motor control mode (create method)
-        m_master->SetControlMode( IDragonMotorController::DRAGON_CONTROL_MODE::PERCENT_OUTPUT );
+        m_master->SetControlMode( controlType );
         m_master->Set( value );
     }
     else
