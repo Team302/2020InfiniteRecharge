@@ -82,17 +82,41 @@ IMechanism* MechanismDefn::ParseXML
             string typeStr = attr.as_string();
             for_each( typeStr.begin(), typeStr.end(), [](char & c){c = ::toupper(c);});
 
-            if ( typeStr.compare( "SHOOTER") == 0 )
+            if ( typeStr.compare( "CHASSIS") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::WRIST;
+            }
+            else if ( typeStr.compare( "SHOOTER") == 0 )
             {
                 type = MechanismTypes::MECHANISM_TYPE::SHOOTER;
+            }
+            else if ( typeStr.compare( "ELEVATOR") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::ELEVATOR;
+            }
+            else if ( typeStr.compare( "WRIST") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::WRIST;
             }
             else if ( typeStr.compare( "INTAKE") == 0 )
             {
                 type = MechanismTypes::MECHANISM_TYPE::INTAKE;
             }
+            else if ( typeStr.compare( "ARM") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::ARM;
+            }            
+            else if ( typeStr.compare( "EXTENDER") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::EXTENDER;
+            }
             else if ( typeStr.compare( "CLIMBER") == 0 )
             {
                 type = MechanismTypes::MECHANISM_TYPE::CLIMBER;
+            }
+            else if ( typeStr.compare( "BEAK") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::BEAK;
             }
             else
             {

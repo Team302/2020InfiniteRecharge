@@ -126,6 +126,18 @@ IMechanism*  MechanismFactory::CreateIMechanism
         // Create the mechanism
         switch ( type )
         {
+            case MechanismTypes::MECHANISM_TYPE::DRIVETRAIN_SIDE:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::SHOOTER:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::ELEVATOR:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::WRIST:
+            break;
+
             case MechanismTypes::MECHANISM_TYPE::INTAKE:
             {
                 /***
@@ -148,6 +160,18 @@ IMechanism*  MechanismFactory::CreateIMechanism
                 }
                 ***/
             }
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::EXTENDER:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::CLIMBER:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::BEAK:
+            break;
+
+            case MechanismTypes::MECHANISM_TYPE::TAIL:
             break;
 
             default:
