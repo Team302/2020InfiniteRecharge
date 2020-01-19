@@ -98,7 +98,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
         auto smax = new DragonSparkMax( canID, pdpID, MotorControllerUsage::GetInstance()->GetUsage(usage), brushedBrushless, gearRatio );
         smax->Invert( inverted );
         smax->EnableBrakeMode( brakeMode );
-        smax->InvertEncoder( sensorInverted );
+        smax->SetSensorInverted( sensorInverted );
         smax->EnableCurrentLimiting( enableCurrentLimit );
         smax->SetSmartCurrentLimiting( continuousCurrentLimit );
         if ( slaveTo > -1 )

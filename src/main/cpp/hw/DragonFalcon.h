@@ -42,81 +42,76 @@
 
 class DragonFalcon : public IDragonMotorController
 {
-  public:
-    // Constructors
-    DragonFalcon() = delete;
-    DragonFalcon
-    (
-        MotorControllerUsage::MOTOR_CONTROLLER_USAGE deviceType, 
-        int deviceID, 
-        int pdpID, 
-        int countsPerRev, 
-        double gearRatio
-    );
-    virtual ~DragonFalcon() = default;
+    public:
+        // Constructors
+        DragonFalcon() = delete;
+        DragonFalcon
+        (
+            MotorControllerUsage::MOTOR_CONTROLLER_USAGE deviceType, 
+            int deviceID, 
+            int pdpID, 
+            int countsPerRev, 
+            double gearRatio
+        );
+        virtual ~DragonFalcon() = default;
 
 
-    // Getters (override)
-    double GetRotations() const override;
-    double GetRPS() const override;
-    MotorControllerUsage::MOTOR_CONTROLLER_USAGE GetType() const override;
-    int GetID() const override;
-    std::shared_ptr<frc::SpeedController> GetSpeedController() const override;
-    double GetCurrent() const override;
+        // Getters (override)
+        double GetRotations() const override;
+        double GetRPS() const override;
+        MotorControllerUsage::MOTOR_CONTROLLER_USAGE GetType() const override;
+        int GetID() const override;
+        std::shared_ptr<frc::SpeedController> GetSpeedController() const override;
+        double GetCurrent() const override;
 
-    // Setters (override)
-    void SetControlMode(ControlModes::CONTROL_TYPE mode) override; //:D
-    void Set(double value) override;
-    void SetRotationOffset(double rotations) override;
-    void SetVoltageRamping(double ramping, double rampingClosedLoop = -1) override; // seconds 0 to full, set to 0 to disable
-    void EnableCurrentLimiting(bool enabled) override; 
-    void EnableBrakeMode(bool enabled) override; 
-    void SetPIDF(double p, double i, double d, double f, int slot = 0) override; 
-    void Invert(bool inverted) override; 
+        // Setters (override)
+        void SetControlMode(ControlModes::CONTROL_TYPE mode) override; //:D
+        void Set(double value) override;
+        void SetRotationOffset(double rotations) override;
+        void SetVoltageRamping(double ramping, double rampingClosedLoop = -1) override; // seconds 0 to full, set to 0 to disable
+        void EnableCurrentLimiting(bool enabled) override; 
+        void EnableBrakeMode(bool enabled) override; 
+        void Invert(bool inverted) override; 
+        void SetSensorInverted(bool inverted) override;
 
-    // Setters (TalonSRX)
-    void SetSensorInverted(bool inverted);
+        /// @brief  Set the control constants (e.g. PIDF values).
+        /// @param [in] ControlData*   pid - the control constants
+        /// @return void
+        void SetControlConstants(ControlData* controlInfo) override;
 
-	// Method:		SelectClosedLoopProfile
-	// Description:	Selects which profile slot to use for closed-loop control
-	// Returns:		void
-	void SelectClosedLoopProfile(int slot, int pidIndex);// <I> - 0 for primary closed loop, 1 for cascaded closed-loop
+        // Method:		SelectClosedLoopProfile
+        // Description:	Selects which profile slot to use for closed-loop control
+        // Returns:		void
+        void SelectClosedLoopProfile(int slot, int pidIndex);// <I> - 0 for primary closed loop, 1 for cascaded closed-loop
 
-    int ConfigSelectedFeedbackSensor
-    (
-        ctre::phoenix::motorcontrol::FeedbackDevice feedbackDevice, 
-        int pidIdx, 
-        int timeoutMs
-    ); 
-    int ConfigSelectedFeedbackSensor
-    (
-        ctre::phoenix::motorcontrol::RemoteFeedbackDevice feedbackDevice, 
-        int pidIdx, 
-        int timeoutMs
-    ); 
-	int ConfigPeakCurrentLimit(int amps, int timeoutMs); 
-	int ConfigPeakCurrentDuration(int milliseconds, int timeoutMs); 
-	int ConfigContinuousCurrentLimit(int amps, int timeoutMs); 
+        int ConfigSelectedFeedbackSensor
+        (
+            ctre::phoenix::motorcontrol::FeedbackDevice feedbackDevice, 
+            int pidIdx, 
+            int timeoutMs
+        ); 
+        int ConfigSelectedFeedbackSensor
+        (
+            ctre::phoenix::motorcontrol::RemoteFeedbackDevice feedbackDevice, 
+            int pidIdx, 
+            int timeoutMs
+        ); 
+        int ConfigPeakCurrentLimit(int amps, int timeoutMs); 
+        int ConfigPeakCurrentDuration(int milliseconds, int timeoutMs); 
+        int ConfigContinuousCurrentLimit(int amps, int timeoutMs); 
 
-    void SetAsSlave(int masterCANID); 
+        void SetAsSlave(int masterCANID); 
 
-    //Methods for Motion Magic control mode
-	void ConfigMotionAcceleration(float maxMotionAcceleration);      // in rotations per second per second
-	void ConfigMotionCruiseVelocity(float maxMotionCruiseVelocity);  // in rotations per second
-    void ConfigPeakOutput(double percentOutput);
-    void ConfigNominalOutput(double nominalOutput);
+    private:
+        std::shared_ptr<ctre::phoenix::motorcontrol::can::WPI_TalonFX>  m_talon;
+        ctre::phoenix::motorcontrol::ControlMode m_controlMode;
+        MotorControllerUsage::MOTOR_CONTROLLER_USAGE m_type;
 
-
-  private:
-    std::shared_ptr<ctre::phoenix::motorcontrol::can::WPI_TalonFX>  m_talon;
-    ctre::phoenix::motorcontrol::ControlMode m_controlMode;
-    MotorControllerUsage::MOTOR_CONTROLLER_USAGE m_type;
-
-    int m_id;
-    int m_pdp;
-    int m_countsPerRev;
-    int m_tickOffset;
-    double m_gearRatio;
+        int m_id;
+        int m_pdp;
+        int m_countsPerRev;
+        int m_tickOffset;
+        double m_gearRatio;
 };
 
 typedef std::vector<DragonFalcon*> DragonFalconVector;
