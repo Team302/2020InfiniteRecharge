@@ -117,7 +117,7 @@ class MechanismFactory
 		std::shared_ptr<Intake> 			m_intake;
 		std::shared_ptr<HumanPlayerFlap>	m_humanPlayerFlap;
 		std::shared_ptr<BallTransfer>		m_ballTransfer;
-		std::shared_ptr<ControlPanel>		m_controlPanel
+		std::shared_ptr<ControlPanel>		m_controlPanel;
 
 		MechanismFactory() = default;
 		virtual ~MechanismFactory() = default;

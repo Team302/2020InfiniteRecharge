@@ -47,6 +47,7 @@
 #include <utils/Logger.h>
 #include <subsys/BallTransfer.h>
 #include <subsys/HumanPlayerFlap.h>
+#include <subsys/ControlPanel.h>
 
 // Third Party Includes
 
@@ -199,7 +200,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 					auto solenoid = GetSolenoid( solenoids, SolenoidUsage::SOLENOID_USAGE::CONTROL_TABLE_MANIPULATOR );
 					if ( solenoid.get() != nullptr )
 					{
-						auto //color sensor = GetColorSensor(colorsensor, colorsensorusage::COLOR_SENSOR_USAGE::CONTROL_TABLE_MANIPULATOR );
+						//color sensor = GetColorSensor(colorsensor, colorsensorusage::COLOR_SENSOR_USAGE::CONTROL_TABLE_MANIPULATOR );
 						//if ( colorsensor.get() !=nullptr )
 						{
 							m_controlPanel = std::make_shared<ControlPanel>( motorControllers, solenoids, nullptr);
