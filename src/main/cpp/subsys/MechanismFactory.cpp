@@ -45,6 +45,7 @@
 #include <subsys/MechanismTypes.h>
 //#include <subsys/Intake.h>
 #include <utils/Logger.h>
+#include <subsys/Impeller.h>
 
 // Third Party Includes
 
@@ -158,7 +159,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::IMPELLER );
 				if ( motor.get() != nullptr )
 				{
-					// todo get create impeller
+					m_Impeller = new Impeller(motor);
 				}
 			}
 			break;
