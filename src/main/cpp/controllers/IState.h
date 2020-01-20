@@ -14,39 +14,18 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once 
+#pragma once
 
-// Standard C++ includes
-#include <memory>
-
-// Team 302 include
-#include <controllers/teleopdrive/ThrottleSteerDrive.h>
-#include <subsys/IChassis.h>
-#include <gamepad/DragonXBox.h>
-#include <controllers/IState.h>
-
-// CTRE includes 
-
-
-/*========================================================================================================
- * GTADrive.h
- *========================================================================================================
- *
- * File Description:  This class calculates the drive percents for a tank drive
- *
- *========================================================================================================*/
-class GTADrive : public ThrottleSteerDrive 
+///	 @interface     IState
+///  @brief      	Interface for state classes
+class IState
 {
-    public:
-    
-        GTADrive() = default;
-        ~GTADrive() = default;
+	public:
+        
+        IState() = default;
+        ~IState() = default;
 
-        void Init() override;
-
-    protected:
-        double GetSteer() override;
-        double GetThrottle() override;
-    private:
-
+        virtual void Init() = 0;
+        virtual void Run() = 0;
+        virtual bool AtTarget() const = 0;
 };

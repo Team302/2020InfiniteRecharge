@@ -11,11 +11,13 @@
 #include <hw/usages/MotorControllerUsage.h>
 #include <xmlhw/MotorDefn.h>
 #include <hw/DragonTalon.h>
+#include <hw/DragonFalcon.h>
 #include <hw/DragonSparkMax.h>
 #include <utils/Logger.h>
 
-#include <ctre/phoenix/MotorControl/CAN/TalonSRX.h>
-#include <ctre/phoenix/MotorControl/FeedbackDevice.h>
+#include <ctre/phoenix/motorcontrol/can/TalonSRX.h>
+#include <ctre/phoenix/motorcontrol/can/TalonFX.h>
+#include <ctre/phoenix/motorcontrol/FeedbackDevice.h>
 #include <rev/CANSparkMax.h>
 
 using namespace std;
@@ -73,8 +75,27 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
     auto type = m_typeMap.find(mtype)->second;
     if ( type == MOTOR_TYPE::TALONSRX )
     {
-        // TODO:: set PDP ID
         auto talon = new DragonTalon( MotorControllerUsage::GetInstance()->GetUsage(usage), canID, pdpID, countsPerRev, gearRatio );
+        talon->EnableBrakeMode( brakeMode );
+        talon->Invert( inverted );
+        talon->SetSensorInverted( sensorInverted );
+        talon->ConfigSelectedFeedbackSensor( feedbackDevice, 0, 50 );
+        talon->ConfigSelectedFeedbackSensor( feedbackDevice, 1, 50 );
+
+        talon->ConfigPeakCurrentLimit( peakCurrentLimit, 50 );
+        talon->ConfigPeakCurrentDuration( peakCurrentDuration, 50 );
+        talon->ConfigContinuousCurrentLimit( continuousCurrentLimit, 50 );
+        talon->EnableCurrentLimiting( enableCurrentLimit );
+
+        if ( slaveTo > -1 )
+        {
+            talon->SetAsSlave( slaveTo );
+        }
+        controller.reset( talon );
+    }
+    else if ( type == MOTOR_TYPE::FALCON )
+    {
+        auto talon = new DragonFalcon( MotorControllerUsage::GetInstance()->GetUsage(usage), canID, pdpID, countsPerRev, gearRatio );
         talon->EnableBrakeMode( brakeMode );
         talon->Invert( inverted );
         talon->SetSensorInverted( sensorInverted );

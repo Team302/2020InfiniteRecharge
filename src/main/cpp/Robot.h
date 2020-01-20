@@ -31,6 +31,11 @@
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
 
+#include <controllers/teleopdrive/ArcadeDrive.h>
+#include <controllers/teleopdrive/GTADrive.h>
+#include <controllers/teleopdrive/TankDrive.h>
+#include <controllers/IState.h>
+
 #include <auton/CyclePrimitives.h>
 
 class Robot : public frc::TimedRobot 
@@ -50,5 +55,17 @@ class Robot : public frc::TimedRobot
 
   private:
       CyclePrimitives* m_cyclePrims;
+
+      std::shared_ptr<ArcadeDrive>    m_arcade;
+      std::shared_ptr<TankDrive>      m_tank;
+      std::shared_ptr<GTADrive>       m_gta;
+      std::shared_ptr<IState>         m_currentDrive;
+
+      frc::SendableChooser<std::string>   m_driveModeChooser;                    
+      const std::string                   m_driveModeArcade = "Arcade";      
+      const std::string                   m_driveModeGTA = "GTA";       
+      const std::string                   m_driveModeTank = "Tank";       
+      std::string                         m_driveModeSelected;       
+
 
 };

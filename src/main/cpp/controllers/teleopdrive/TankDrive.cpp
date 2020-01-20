@@ -21,6 +21,7 @@
 
 // Team 302 Includes
 #include <controllers/teleopdrive/TankDrive.h>
+#include <controllers/IState.h>
 #include <gamepad/TeleopControl.h>
 #include <subsys/IChassis.h>
 #include <subsys/ChassisFactory.h>
@@ -33,32 +34,43 @@ using namespace std;
 /// @brief Drive differential chassis with one joystick controlling each side of the robot
 
 /// @brief initialize the object 
-TankDrive::TankDrive() : ITeleopDrive(),
+TankDrive::TankDrive() : IState(),
                          m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis() ),
                          m_controller( TeleopControl::GetInstance() )
 {
-    if ( m_controller != nullptr  )
+    if ( m_chassis.get() == nullptr )
+    {
+        Logger::GetLogger()->LogError( string( "TankDrive::Init"), string("Chassis is a nullptr"));
+    }
+
+    if ( m_controller == nullptr )
+    {
+        Logger::GetLogger()->LogError( string( "TankDrive::Init"), string("teleopControl is a nullptr"));
+    }
+}
+
+void TankDrive::Init()
+{
+    if ( m_controller != nullptr )
     {
         m_controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL, IDragonGamePad::AXIS_PROFILE::CUBED );
         m_controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL, IDragonGamePad::AXIS_PROFILE::CUBED );
     }
-    else
+}
+/// @brief  Read two joysticks and drive a differential chassis (each joystick drives a separate side)
+/// @return void
+void TankDrive::Run()
+{
+    if ( m_controller != nullptr && m_chassis.get() != nullptr )
     {
-        Logger::GetLogger()->LogError( string( "TankDrive::TankDrive"), string("TelopControl is nullptr"));
-    }
+        auto left = m_controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL );
+        auto right = m_controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL );
 
-    if ( m_chassis.get() == nullptr )
-    {
-        Logger::GetLogger()->LogError( string( "TankDrive::TankDrive"), string("Chassis is nullptr"));
+        m_chassis.get()->SetOutput( ControlModes::PERCENT_OUTPUT, left, right );
     }
 }
 
-/// @brief  Read two joysticks and drive a differential chassis (each joystick drives a separate side)
-/// @return void
-void TankDrive::Drive()
+bool TankDrive::AtTarget() const 
 {
-    auto left = m_controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL );
-    auto right = m_controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL );
-
-    m_chassis.get()->SetOutput( ControlModes::PERCENT_OUTPUT, left, right );
+    return false;
 }
