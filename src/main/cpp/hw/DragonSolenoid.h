@@ -2,34 +2,25 @@
  * DragonSolenoid.h
  */
 
-#ifndef SRC_SUBSYS_COMPONENTS_DRAGONSOLENOID_H_
-#define SRC_SUBSYS_COMPONENTS_DRAGONSOLENOID_H_
+#pragma once
 
-#include <vector>
+#include <memory>
 #include <frc/Solenoid.h>
+#include <hw/usages/SolenoidUsage.h>
 
-using namespace frc;
 
 class DragonSolenoid
 {
     public:
-        enum DRAGON_SOLENOID_USAGE
-        {
-            CONTROL_4BAR,
-            GRABBER_CLUTCH,
-            GRABBER_POSITION,
-            SIDEHANGER_LATCH,
-            SIDEHANGER_LATCH2
-        };
         DragonSolenoid() = delete;
         DragonSolenoid
         (
-            DRAGON_SOLENOID_USAGE usage,
+            SolenoidUsage::SOLENOID_USAGE usage,
             int  pcmID,
 			int  channel,
             bool reversed
         );
-        virtual ~DragonSolenoid();
+        virtual ~DragonSolenoid() = default;
 
         void Set
         (
@@ -43,14 +34,11 @@ class DragonSolenoid
         );
         void StartPulse();
 
-        DRAGON_SOLENOID_USAGE GetType() const;
+        SolenoidUsage::SOLENOID_USAGE GetType() const;
 
 
     private:
-        DRAGON_SOLENOID_USAGE                   m_type;
-        Solenoid*                               m_solenoid;
+        SolenoidUsage::SOLENOID_USAGE           m_type;
+        std::shared_ptr<frc::Solenoid>          m_solenoid;
         bool                                    m_reversed;
 };
-typedef std::vector<DragonSolenoid*> DragonSolenoidVector;
-
-#endif /* SRC_SUBSYS_COMPONENTS_DRAGONSOLENOID_H_ */

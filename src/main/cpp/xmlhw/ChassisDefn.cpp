@@ -36,7 +36,6 @@
 //#include <hw/DragonTalon.h>
 #include <xmlhw/ChassisDefn.h>
 #include <xmlhw/MotorDefn.h>
-#include <controllers/PIDDefn.h>
 #include <utils/Logger.h>
 
 // Third Party includes
@@ -68,7 +67,7 @@ void ChassisDefn::ParseXML
     // process attributes
     for (xml_attribute attr = chassisNode.first_attribute(); attr && !hasError; attr = attr.next_attribute())
     {
-        if ( strcmp( attr.name(), "type" ) )
+        if ( strcmp( attr.name(), "type" ) == 0 )
         {
             auto val = string( attr.value() );
             if ( val.compare( "MECANUM") == 0 )
@@ -110,29 +109,17 @@ void ChassisDefn::ParseXML
 
     // Process child element nodes
     IDragonMotorControllerMap motors;
-    unique_ptr<MotorDefn> motorXML;
-    vector<ControlData*> pidControlVector;
+    unique_ptr<MotorDefn> motorXML = make_unique<MotorDefn>();
+
     for (xml_node child = chassisNode.first_child(); child; child = child.next_sibling())
     {
     	if ( strcmp( child.name(), "motor") == 0 )
     	{
-    	    if ( motorXML == nullptr )
+            auto motor = motorXML.get()->ParseXML(child);
+            if ( motor.get() != nullptr )
             {
-    	        motorXML = make_unique<MotorDefn>();
+                motors[ motor.get()->GetType() ] =  motor ;
             }
-
-    	    if ( motorXML != nullptr )
-    	    {
-                auto motor = motorXML->ParseXML(child);
-                if ( motor.get() != nullptr )
-                {
-                    motors[ motor.get()->GetType() ] =  motor ;
-                }
-            }
-    	    else  // log errors
-            {
-                Logger::GetLogger()->LogError( string("ChassisDefn::ParseXML"), "unable to create MotorDefn" );
-    	    }
     	}
     	else  // log errors
     	{

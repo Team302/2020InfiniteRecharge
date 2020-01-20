@@ -1,26 +1,5 @@
 var class_dragon_talon =
 [
-    [ "TALON_CONTROL_MODE", "class_dragon_talon.html#a8f2b4982607580f1e3802ed17adf3898", [
-      [ "PERCENT", "class_dragon_talon.html#a8f2b4982607580f1e3802ed17adf3898a07a61d9ae977c585bc1791c7db1ffc07", null ],
-      [ "POSITION", "class_dragon_talon.html#a8f2b4982607580f1e3802ed17adf3898a246d5498961bb68145d7fbd33e2bbaf5", null ],
-      [ "VELOCITY", "class_dragon_talon.html#a8f2b4982607580f1e3802ed17adf3898aab135bf7ec8dd2da31c0ec686d612720", null ],
-      [ "FOLLOWER", "class_dragon_talon.html#a8f2b4982607580f1e3802ed17adf3898a80b75255db2b28deb32d4f793451fce3", null ],
-      [ "MOTION_MAGIC", "class_dragon_talon.html#a8f2b4982607580f1e3802ed17adf3898a1eb45b041018ef61484fc19fa4ae78d0", null ],
-      [ "MAX_TALON_MODES", "class_dragon_talon.html#a8f2b4982607580f1e3802ed17adf3898a5e79c3203147fc0389d0e795bc02b8ec", null ]
-    ] ],
-    [ "TALON_SENSOR_TYPE", "class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2f", [
-      [ "NO_SENSOR", "class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2fadd7ee0d457226829dbb18fff69888420", null ],
-      [ "QUAD_ENCODER", "class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2fa0029610947de64848cbe0684adaa096b", null ],
-      [ "UNKNOWN_SENSOR", "class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2fadc36048a5953025b599867a2156b08af", null ],
-      [ "ANALOG_POT", "class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2fa8a9ad208c8096158adcfa22c07a74cf0", null ],
-      [ "ANALOG_ENCODER", "class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2fa1f8586a3442e1bdee642a10c20155a1b", null ],
-      [ "ENCODER_RISING", "class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2fa70efcf5741913ec5effd829bee5e9c6c", null ],
-      [ "ENCODER_FALLING", "class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2fa6d9f9b8b9e718aa3400775850d6bf2ca", null ],
-      [ "CTRE_MAG_ENCODER_RELATIVE", "class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2fa68260540cbd10ddcc9bd0e50f7a39c98", null ],
-      [ "CTRE_MAG_ENCODER_ABSOLUTE", "class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2fa1f559da66295726e1d29d5b2fe23162c", null ],
-      [ "PULSE_WIDTH", "class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2fa88114a39d9de0817acc45556d1ae7904", null ],
-      [ "MAX_SENSOR_TYPES", "class_dragon_talon.html#a66446a3989d6a8e7e163f97e9ea98e2fa8b3a4d192b12d4b0da758868577aba90", null ]
-    ] ],
     [ "DragonTalon", "class_dragon_talon.html#a418dee044c4b4b81492517ff06a1af19", null ],
     [ "DragonTalon", "class_dragon_talon.html#a393722e0f0d72e954cabb23d7eb6378b", null ],
     [ "~DragonTalon", "class_dragon_talon.html#ab8f1e716887c90d21de3a7a98a2cc8a3", null ],
@@ -45,8 +24,7 @@ var class_dragon_talon =
     [ "SelectClosedLoopProfile", "class_dragon_talon.html#ae9efb3be1b1474163bd43f4d37ddace8", null ],
     [ "Set", "class_dragon_talon.html#a32074257a1082666c5c25fbb9cb90d33", null ],
     [ "SetAsSlave", "class_dragon_talon.html#ad17df52ab49a083f925d20bd9802cf6c", null ],
-    [ "SetControlMode", "class_dragon_talon.html#a8ae00977df8b7722c226a9f7bbcd4745", null ],
-    [ "SetControlMode", "class_dragon_talon.html#a852dccf7d90b0e3209d73bdb1c13b18f", null ],
+    [ "SetControlMode", "class_dragon_talon.html#a51ae73cebf47695a4c37cc874d7dd0b3", null ],
     [ "SetPIDF", "class_dragon_talon.html#ac212c4954f881aeda9cb5808b270f8c6", null ],
     [ "SetRotationOffset", "class_dragon_talon.html#a50cab200ce935067feed69d862f48156", null ],
     [ "SetSensorInverted", "class_dragon_talon.html#ad8cbe0dacf648ded3fffd397ab02f433", null ],

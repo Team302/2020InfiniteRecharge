@@ -22,7 +22,6 @@
 
 // Team 302 Includes
 #include <controllers/teleopdrive/ThrottleSteerDrive.h>
-#include <controllers/teleopdrive/ITeleopDrive.h>
 #include <gamepad/TeleopControl.h>
 #include <subsys/IChassis.h>
 #include <subsys/ChassisFactory.h>
@@ -35,7 +34,7 @@ using namespace std;
 /// @brief Drive differential chassis using a throttle input and a sheer (turn) input
 
 /// @brief initialize the object 
-ThrottleSteerDrive::ThrottleSteerDrive() : ITeleopDrive(),
+ThrottleSteerDrive::ThrottleSteerDrive() : IState(),
                                            m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis() ),
                                            m_controller( TeleopControl::GetInstance() )
 {
@@ -51,7 +50,7 @@ ThrottleSteerDrive::ThrottleSteerDrive() : ITeleopDrive(),
 
 }
 
-void ThrottleSteerDrive::Drive( )
+void ThrottleSteerDrive::Run( )
 {
     // Get throttle and steer values from the subclasses
     auto throttle = GetThrottle();
@@ -76,5 +75,10 @@ void ThrottleSteerDrive::Drive( )
     // Set the percentages
     m_chassis.get()->SetOutput( ControlModes::PERCENT_OUTPUT, left, right );
 }
+
+ bool ThrottleSteerDrive::AtTarget() const
+ {
+     return false;
+ }
 
 

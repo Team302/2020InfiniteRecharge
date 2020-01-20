@@ -177,14 +177,6 @@ void DragonSparkMax::EnableBrakeMode(bool enabled)
     m_spark->SetIdleMode(enabled ? rev::CANSparkMax::IdleMode::kBrake : rev::CANSparkMax::IdleMode::kCoast);
 }
 
-void DragonSparkMax::SetPIDF(double p, double i, double d, double f, int slot)
-{
-    m_spark->GetPIDController().SetP(p, slot);
-    m_spark->GetPIDController().SetI(i, slot);
-    m_spark->GetPIDController().SetD(d, slot);
-    m_spark->GetPIDController().SetFF(f, slot);
-}
-
 void DragonSparkMax::Invert(bool inverted)
 {
     m_spark->SetInverted(inverted);
@@ -203,10 +195,9 @@ double DragonSparkMax::GetRotationsWithGearNoOffset() const
     return m_spark->GetEncoder().GetPosition() * m_gearRatio;
 }
 
-void DragonSparkMax::InvertEncoder(bool inverted)
+void DragonSparkMax::SetSensorInverted(bool inverted)
 {
-    // m_spark->SetInverted()
-    // m_spark->GetEncoder().SetInverted(inverted);
+    m_spark->GetEncoder().SetInverted( inverted );
 }
 
 shared_ptr<CANSparkMax> DragonSparkMax::GetSparkMax() const
@@ -217,4 +208,16 @@ shared_ptr<CANSparkMax> DragonSparkMax::GetSparkMax() const
 void DragonSparkMax::SetSmartCurrentLimiting(int limit)
 {
     m_spark->SetSmartCurrentLimit(limit);
+}
+
+
+/// @brief  Set the control constants (e.g. PIDF values).
+/// @param [in] ControlData*   pid - the control constants
+/// @return void
+void DragonSparkMax::SetControlConstants(ControlData* controlInfo)
+{
+	m_spark->GetPIDController().SetP(controlInfo->GetP(), 0);
+    m_spark->GetPIDController().SetI(controlInfo->GetI(), 0);
+    m_spark->GetPIDController().SetD(controlInfo->GetD(), 0);
+    m_spark->GetPIDController().SetFF(controlInfo->GetF(), 0);
 }

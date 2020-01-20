@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/hw/interfaces/IDragonMotorController.h File Reference</title>
+<title>Team 302 Robot: hw/interfaces/IDragonMotorController.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,8 +86,7 @@ $(document).ready(function(){initNavTree('_i_dragon_motor_controller_8h.html',''
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
 <div class="title">IDragonMotorController.h File Reference</div>  </div>
 </div><!--header-->
@@ -96,6 +95,7 @@ $(document).ready(function(){initNavTree('_i_dragon_motor_controller_8h.html',''
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;frc/SpeedController.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="_motor_controller_usage_8h_source.html">hw/usages/MotorControllerUsage.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_control_modes_8h_source.html">controllers/ControlModes.h</a>&gt;</code><br />
 </div>
 <p><a href="_i_dragon_motor_controller_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -104,35 +104,13 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The general interface to motor controllers so that the specific mechanisms that use motors, don't need to special case what motor controller is being used.  <a href="class_i_dragon_motor_controller.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a36a6214ec089416c4f6b97db3690d9b5"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; <a class="el" href="class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51a">MotorControllerUsage::MOTOR_CONTROLLER_USAGE</a>, std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_dragon_motor_controller_8h.html#a36a6214ec089416c4f6b97db3690d9b5">IDragonMotorControllerMap</a></td></tr>
-<tr class="separator:a36a6214ec089416c4f6b97db3690d9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a36a6214ec089416c4f6b97db3690d9b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36a6214ec089416c4f6b97db3690d9b5">&#9670;&nbsp;</a></span>IDragonMotorControllerMap</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef std::map&lt;<a class="el" href="class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51a">MotorControllerUsage::MOTOR_CONTROLLER_USAGE</a>, std::shared_ptr&lt;<a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a>&gt; &gt; <a class="el" href="_i_dragon_motor_controller_8h.html#a36a6214ec089416c4f6b97db3690d9b5">IDragonMotorControllerMap</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_i_dragon_motor_controller_8h_source.html#l00069">69</a> of file <a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_63526b63502cfa78b1b7a69ba33f8463.html">RoboticsCM</a></li><li class="navelem"><a class="el" href="dir_8079d39d009c5e5736094b48571e301c.html">2020InfiniteRecharge</a></li><li class="navelem"><a class="el" href="dir_9fd2ab248e50e9a55f866a56384444c2.html">src</a></li><li class="navelem"><a class="el" href="dir_be474fd464d9aa4f050626b6f84f271b.html">main</a></li><li class="navelem"><a class="el" href="dir_25db0aed34722cb73b29ffb45a5ed481.html">cpp</a></li><li class="navelem"><a class="el" href="dir_3a2f81aea77c88cb1c514c8ec3cbaf4e.html">hw</a></li><li class="navelem"><a class="el" href="dir_d2eeb55121af220118c18a1eef0c6b35.html">interfaces</a></li><li class="navelem"><a class="el" href="_i_dragon_motor_controller_8h.html">IDragonMotorController.h</a></li>
+    <li class="navelem"><a class="el" href="dir_09571670ada7ed7a96bbb0146a01a89f.html">hw</a></li><li class="navelem"><a class="el" href="dir_0c16de665e8c239119e7dbcc8192a62f.html">interfaces</a></li><li class="navelem"><a class="el" href="_i_dragon_motor_controller_8h.html">IDragonMotorController.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

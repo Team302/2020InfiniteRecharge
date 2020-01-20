@@ -64,6 +64,8 @@ ControlData* PIDDefn::ParseXML
     double izone = 0.0;
     double maxAccel = 0.0;
     double cruiseVel = 0.0;
+    double peak = 1.0;
+    double nominal = 1.0;
 
     bool hasError = false;
 
@@ -102,6 +104,14 @@ ControlData* PIDDefn::ParseXML
         {
             cruiseVel = attr.as_double();
         }
+        else if ( strcmp( attr.name(), "peak") == 0 )
+        {
+            peak = attr.as_double();
+        }
+        else if ( strcmp( attr.name(), "nominal") == 0 )
+        {
+            nominal = attr.as_double();
+        }
         else
         {
             printf( "==>> PIDDefn::ParseXML invalid attribute %s \n", attr.name() );
@@ -110,7 +120,7 @@ ControlData* PIDDefn::ParseXML
     }
     if ( !hasError )
     {
-        data = new ControlData( mode, p, i, d, f, izone, maxAccel, cruiseVel );
+        data = new ControlData( mode, p, i, d, f, izone, maxAccel, cruiseVel, peak, nominal );
     }
     return data;
 }

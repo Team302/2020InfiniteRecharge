@@ -163,14 +163,6 @@ void DragonTalon::EnableBrakeMode(bool enabled)
     m_talon->SetNeutralMode(enabled ? ctre::phoenix::motorcontrol::NeutralMode::Brake : ctre::phoenix::motorcontrol::NeutralMode::Coast);
 }
 
-void DragonTalon::SetPIDF(double p, double i, double d, double f, int slot)
-{
-    m_talon->Config_kP(slot, p);
-    m_talon->Config_kI(slot, i);
-    m_talon->Config_kD(slot, d);
-    m_talon->Config_kF(slot, f);
-}
-
 void DragonTalon::Invert(bool inverted)
 {
     m_talon->SetInverted(inverted);
@@ -205,43 +197,6 @@ void DragonTalon::SelectClosedLoopProfile
 	m_talon->SelectProfileSlot( slot, pidIndex );
 }
 
-//hopefully this is correct
-void DragonTalon::ConfigMotionAcceleration
-(
-	float maxMotionAcceleration
-)
-{
-    int sensorUnitsPer100msPerSec = static_cast<int>( (maxMotionAcceleration / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio );
-	m_talon->ConfigMotionAcceleration( sensorUnitsPer100msPerSec, 0);
-}
-
-//need to change
-void DragonTalon::ConfigMotionCruiseVelocity
-(
-	float maxMotionCruiseVelocity
-)
-{
-    int sensorUnitsPer100msPerSec = static_cast<int>( (maxMotionCruiseVelocity / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio );
-	m_talon->ConfigMotionCruiseVelocity( sensorUnitsPer100msPerSec, 0);
-}
-
-void DragonTalon::ConfigPeakOutput
-(
-	double percentOutput
-)
-{
-	m_talon->ConfigPeakOutputForward(percentOutput);
-	m_talon->ConfigPeakOutputReverse(-percentOutput);
-}
-
-void DragonTalon::ConfigNominalOutput
-(
-	double nominalOutput
-)
-{
-	m_talon->ConfigNominalOutputForward(nominalOutput);
-	m_talon->ConfigNominalOutputReverse(-nominalOutput);
-}
 
 int DragonTalon::ConfigSelectedFeedbackSensor
 (
@@ -342,4 +297,33 @@ void DragonTalon::SetAsSlave
 {
     m_talon->Set( ControlMode::Follower, masterCANID );
 }
+
+
+/// @brief  Set the control constants (e.g. PIDF values).
+/// @param [in] ControlData*   pid - the control constants
+/// @return void
+void DragonTalon::SetControlConstants(ControlData* controlInfo)
+{
+	m_talon->Config_kP(0, controlInfo->GetP());
+    m_talon->Config_kI(0, controlInfo->GetI());
+    m_talon->Config_kD(0, controlInfo->GetD());
+    m_talon->Config_kF(0, controlInfo->GetF());
+
+	int sensorUnitsPer100msPerSec = static_cast<int>( (controlInfo->GetMaxAcceleration() / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio ) ;
+	m_talon->ConfigMotionAcceleration( sensorUnitsPer100msPerSec );
+
+	sensorUnitsPer100msPerSec = static_cast<int>( (controlInfo->GetCruiseVelocity() / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio );
+	m_talon->ConfigMotionCruiseVelocity( sensorUnitsPer100msPerSec, 0);
+
+	auto peak = controlInfo->GetPeakValue();
+	m_talon->ConfigPeakOutputForward(peak);
+	m_talon->ConfigPeakOutputReverse(-1.0*peak);
+
+	auto nom = controlInfo->GetNominalValue();
+	m_talon->ConfigPeakOutputForward(nom);
+	m_talon->ConfigPeakOutputReverse(-1.0*nom);
+
+}
+
+
 

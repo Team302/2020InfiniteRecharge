@@ -89,6 +89,18 @@ bool HardwareIDValidation::ValidateDIOID
     string errorMsg = "Invalid Digital IO ID " + to_string( dioID );
     return HardwareIDValidation::ValidateID( dioID, 0, 9, methodID, errorMsg );
 }
+
+bool HardwareIDValidation::ValidateSolenoidChannel
+(
+    int          channel,       // <I> - Solenoid Channel to validate
+    std::string  methodID       // <I> - class::method identifier for message
+)
+{
+    string errorMsg = "Invalid Channel ID " + to_string( channel );
+    return HardwareIDValidation::ValidateID( channel, 0, 7, methodID, errorMsg );
+}
+
+
 //======================================================================================
 /// Method:       ValidateID
 /// Description:  Check the ID against the valid range.  If it is invalid the logger

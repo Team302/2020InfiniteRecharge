@@ -47,8 +47,8 @@ class DragonChassis : public IChassis
             double 						                            track,				
             std::shared_ptr<IDragonMotorController>                 leftMaster,
             std::shared_ptr<IDragonMotorController>                 rightMaster,
-            std::vector<std::shared_ptr<IDragonMotorController>>    leftFollowers,
-            std::vector<std::shared_ptr<IDragonMotorController>>    rightFollowers
+            std::shared_ptr<IDragonMotorController>                 leftFollower,
+            std::shared_ptr<IDragonMotorController>                 rightFollower
         );
         DragonChassis() = delete;
 

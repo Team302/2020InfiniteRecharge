@@ -5,11 +5,10 @@
  *      Author: casti
  */
 
-#ifndef SUBSYS_XMLPARSING_DIGITALINPUTDEFN_H_
-#define SUBSYS_XMLPARSING_DIGITALINPUTDEFN_H_
+#pragma once
 
 // C++ Includes
-#include <iostream>
+#include <memory>
 
 // FRC includes
 
@@ -63,11 +62,9 @@ class DigitalInputDefn
         //
         // Returns:     DragonDigitalInput*
         //-----------------------------------------------------------------------
-        DragonDigitalInput* ParseXML
+        std::shared_ptr<DragonDigitalInput> ParseXML
         (
             pugi::xml_node      DigitalNode
         );
 
 };
-
-#endif /* SUBSYS_XMLPARSING_DIGITALINPUTDEFN_H_ */

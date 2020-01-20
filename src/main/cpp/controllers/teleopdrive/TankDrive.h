@@ -22,16 +22,16 @@
 // FRC includes
 
 // Team 302 include
-#include <controllers/teleopdrive/ITeleopDrive.h>
 #include <subsys/IChassis.h>
 #include <gamepad/TeleopControl.h>
+#include <controllers/IState.h>
 
 
 // Third Party includes 
 
 /// @class TankDrive
 /// @brief Drive differential chassis with one joystick controlling each side of the robot
-class TankDrive : public ITeleopDrive
+class TankDrive : public IState
 {
     public:
     
@@ -41,9 +41,12 @@ class TankDrive : public ITeleopDrive
         /// @brief clean up memory
         ~TankDrive() = default;
 
+        void Init() override;
+
         /// @brief  Read two joysticks and drive a differential chassis (each joystick drives a separate side)
         /// @return void
-        void Drive() override;
+        void Run() override;
+        bool AtTarget() const override;
 
     private:
         std::shared_ptr<IChassis> m_chassis;

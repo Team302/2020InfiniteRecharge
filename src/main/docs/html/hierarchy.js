@@ -19,6 +19,7 @@ var hierarchy =
     [ "CyclePrimitives", "class_cycle_primitives.html", null ],
     [ "DigitalInputDefn", "class_digital_input_defn.html", null ],
     [ "DigitalInputFactory", "class_digital_input_factory.html", null ],
+    [ "DigitalInputUsage", "class_digital_input_usage.html", null ],
     [ "DistanceSensorFactory", "class_distance_sensor_factory.html", null ],
     [ "DragonDigitalInput", "class_dragon_digital_input.html", null ],
     [ "DragonMath", "class_dragon_math.html", null ],
@@ -65,6 +66,7 @@ var hierarchy =
       [ "DragonXBox", "class_dragon_x_box.html", null ]
     ] ],
     [ "IDragonMotorController", "class_i_dragon_motor_controller.html", [
+      [ "DragonFalcon", "class_dragon_falcon.html", null ],
       [ "DragonSparkMax", "class_dragon_spark_max.html", null ],
       [ "DragonTalon", "class_dragon_talon.html", null ]
     ] ],
@@ -75,7 +77,9 @@ var hierarchy =
       [ "DragonUltrasonicPWM", "class_dragon_ultrasonic_p_w_m.html", null ]
     ] ],
     [ "IMechanism", "class_i_mechanism.html", [
-      [ "DriveTrainSide", "class_drive_train_side.html", null ]
+      [ "DriveTrainSide", "class_drive_train_side.html", null ],
+      [ "Intake", "class_intake.html", null ],
+      [ "Intake", "class_intake.html", null ]
     ] ],
     [ "IMechController", "class_i_mech_controller.html", [
       [ "VelocityController", "class_velocity_controller.html", null ]
@@ -137,6 +141,9 @@ var hierarchy =
       [ "FlippedAxis", "class_flipped_axis.html", null ]
     ] ],
     [ "ServoDefn", "class_servo_defn.html", null ],
+    [ "ServoUsage", "class_servo_usage.html", null ],
+    [ "SolenoidDefn", "class_solenoid_defn.html", null ],
+    [ "SolenoidUsage", "class_solenoid_usage.html", null ],
     [ "TalonTachDefn", "class_talon_tach_defn.html", null ],
     [ "TeleopControl", "class_teleop_control.html", null ],
     [ "TimedRobot", null, [

@@ -1,6 +1,6 @@
 var class_dragon_chassis =
 [
-    [ "DragonChassis", "class_dragon_chassis.html#aba9f5e637454156e0d3e5c8898d4f43f", null ],
+    [ "DragonChassis", "class_dragon_chassis.html#a0fe145c70986165ffa4e69f455465b35", null ],
     [ "DragonChassis", "class_dragon_chassis.html#a58b6034bf0e83f44cfdfa83d99632e9e", null ],
     [ "~DragonChassis", "class_dragon_chassis.html#a8e840dd932ccb1b6de98a1e362ff299a", null ],
     [ "GetCurrentLeftPosition", "class_dragon_chassis.html#a17a96d5df8c06046dc24e2d84940baad", null ],

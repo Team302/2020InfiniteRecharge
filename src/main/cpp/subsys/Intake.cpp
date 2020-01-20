@@ -49,6 +49,12 @@ Intake::Intake
 
 }
 
+MechanismTypes::MECHANISM_TYPE Intake::GetType() const 
+{
+    return MechanismTypes::MECHANISM_TYPE::INTAKE;
+}
+
+
 
 void Intake::SetOutput
 (ControlModes::CONTROL_TYPE controlType,
@@ -142,6 +148,16 @@ double Intake::GetTargetSpeed
 }
 
 
+/// @brief  Set the control constants (e.g. PIDF values).
+/// @param [in] ControlData*                                   pid:  the control constants
+/// @return void
+void Intake::SetControlConstants
+(
+    ControlData*                                pid                 
+)
+{
+    Logger::GetLogger()->LogError(string("Intake::SetControlConstants"), string("Called"));
+}
 
 
 

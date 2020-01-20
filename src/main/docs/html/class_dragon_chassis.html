@@ -109,9 +109,9 @@ Inheritance diagram for DragonChassis:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aba9f5e637454156e0d3e5c8898d4f43f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_chassis.html#aba9f5e637454156e0d3e5c8898d4f43f">DragonChassis</a> (double wheelDiameter, double wheelBase, double track, std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; leftMaster, std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; rightMaster, std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt;&gt; leftFollowers, std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt;&gt; rightFollowers)</td></tr>
-<tr class="memdesc:aba9f5e637454156e0d3e5c8898d4f43f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the subobjects and initialize the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> subsystem.  <a href="class_dragon_chassis.html#aba9f5e637454156e0d3e5c8898d4f43f">More...</a><br /></td></tr>
-<tr class="separator:aba9f5e637454156e0d3e5c8898d4f43f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fe145c70986165ffa4e69f455465b35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_chassis.html#a0fe145c70986165ffa4e69f455465b35">DragonChassis</a> (double wheelDiameter, double wheelBase, double track, std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; leftMaster, std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; rightMaster, std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; leftFollower, std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; rightFollower)</td></tr>
+<tr class="memdesc:a0fe145c70986165ffa4e69f455465b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the subobjects and initialize the <a class="el" href="class_dragon_chassis.html" title="This is a differential chassis. Each side of the robot will be treated as a separate mechanism.">DragonChassis</a> subsystem.  <a href="class_dragon_chassis.html#a0fe145c70986165ffa4e69f455465b35">More...</a><br /></td></tr>
+<tr class="separator:a0fe145c70986165ffa4e69f455465b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58b6034bf0e83f44cfdfa83d99632e9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_chassis.html#a58b6034bf0e83f44cfdfa83d99632e9e">DragonChassis</a> ()=delete</td></tr>
 <tr class="separator:a58b6034bf0e83f44cfdfa83d99632e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e840dd932ccb1b6de98a1e362ff299a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_chassis.html#a8e840dd932ccb1b6de98a1e362ff299a">~DragonChassis</a> () override</td></tr>
@@ -183,8 +183,8 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_dragon_chassis_8h_source.html#l00037">37</a> of file <a class="el" href="_dragon_chassis_8h_source.html">DragonChassis.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aba9f5e637454156e0d3e5c8898d4f43f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba9f5e637454156e0d3e5c8898d4f43f">&#9670;&nbsp;</a></span>DragonChassis() <span class="overload">[1/2]</span></h2>
+<a id="a0fe145c70986165ffa4e69f455465b35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fe145c70986165ffa4e69f455465b35">&#9670;&nbsp;</a></span>DragonChassis() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,14 +222,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt;&gt;&#160;</td>
-          <td class="paramname"><em>leftFollowers</em>, </td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt;&#160;</td>
+          <td class="paramname"><em>leftFollower</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt;&gt;&#160;</td>
-          <td class="paramname"><em>rightFollowers</em>&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt;&#160;</td>
+          <td class="paramname"><em>rightFollower</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -790,8 +790,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/subsys/<a class="el" href="_dragon_chassis_8h_source.html">DragonChassis.h</a></li>
-<li>C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/subsys/<a class="el" href="_dragon_chassis_8cpp_source.html">DragonChassis.cpp</a></li>
+<li>subsys/<a class="el" href="_dragon_chassis_8h_source.html">DragonChassis.h</a></li>
+<li>subsys/<a class="el" href="_dragon_chassis_8cpp_source.html">DragonChassis.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

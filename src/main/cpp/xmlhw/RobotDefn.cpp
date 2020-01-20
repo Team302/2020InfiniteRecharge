@@ -40,8 +40,9 @@
 #include <xmlhw/ChassisDefn.h>
 #include <xmlhw/RobotDefn.h>
 #include <xmlhw/MechanismDefn.h>
-//#include <xmlhw/PCMDefn.h>
 #include <xmlhw/PDPDefn.h>
+#include <xmlhw/PigeonDefn.h>
+#include <hw/DragonPigeon.h>
 #include <utils/Logger.h>
 
 // Third Party Includes
@@ -71,8 +72,8 @@ void RobotDefn::ParseXML()
     {
         unique_ptr<ChassisDefn> chassisXML = make_unique<ChassisDefn>();
         unique_ptr<MechanismDefn> mechanismXML = make_unique<MechanismDefn>();
-     //   unique_ptr<PCMDefn> pcmXML;
         unique_ptr<PDPDefn> pdpXML = make_unique<PDPDefn>();
+        unique_ptr<PigeonDefn> pigeonXML = make_unique<PigeonDefn>();
 
         // get the root node <robot>
         xml_node parent = doc.root();
@@ -104,10 +105,6 @@ void RobotDefn::ParseXML()
                         Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create MechanismDefn" );
                     }
                 }
-                else if ( strcmp( child.name(), "pcm") == 0 )
-                {
-//                    PCMDefn::ParseXML( child );
-                }
                 else if (strcmp(child.name(), "pdp") == 0)
                 {
                     if ( pdpXML != nullptr )
@@ -118,6 +115,18 @@ void RobotDefn::ParseXML()
                     {
                         Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create PDPDefn" );
                     }
+                }
+                else if ( strcmp(child.name(), "odometry") == 0 )
+                {
+
+                }
+                else if ( strcmp(child.name(), "feedback") == 0 )
+                {
+                    
+                }
+                else if ( strcmp(child.name(), "pigeon") == 0 )
+                {
+                    auto pigeon = pigeonXML.get()->ParseXML( child);
                 }
                 else
                 {

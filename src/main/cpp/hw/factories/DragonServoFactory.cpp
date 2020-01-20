@@ -29,6 +29,7 @@
 
 #include <hw/factories/DragonServoFactory.h>
 #include <hw/DragonServo.h>
+#include <hw/usages/ServoUsage.h>
 
 #include <utils/Logger.h>
 
@@ -66,14 +67,14 @@ DragonServoFactory* DragonServoFactory::GetInstance()
 //=======================================================================================
 shared_ptr<DragonServo> DragonServoFactory::CreateDragonServo
 (
-    DragonServo::SERVO_USAGE    deviceUsage,        
+    ServoUsage::SERVO_USAGE     deviceUsage,        
     int                         deviceID,           
     double                      minAngle,           
     double                      maxAngle            
 )
 {
     shared_ptr<DragonServo> servo = nullptr;
-    if ( deviceUsage > DragonServo::SERVO_USAGE::UNKNOWN_SERVO_USAGE && deviceUsage < DragonServo::SERVO_USAGE::MAX_SERVO_USAGES )
+    if ( deviceUsage > ServoUsage::SERVO_USAGE::UNKNOWN_SERVO_USAGE && deviceUsage < ServoUsage::SERVO_USAGE::MAX_SERVO_USAGES )
     {
         servo = m_servos.find(deviceUsage)->second;
         if ( servo != nullptr )
@@ -85,12 +86,7 @@ shared_ptr<DragonServo> DragonServoFactory::CreateDragonServo
         {       
             switch ( deviceUsage )
             {
-                case DragonServo::SERVO_USAGE::ROTATE_LIMELIGHT:
-                    servo = make_shared<DragonServo>( deviceUsage, deviceID, minAngle, maxAngle );
-                    m_servos[deviceUsage] = servo;
-                    break;
-
-                case DragonServo::SERVO_USAGE::TAIL_CONTROL:
+                case ServoUsage::SERVO_USAGE::SHOOTER_HOOD:
                     servo = make_shared<DragonServo>( deviceUsage, deviceID, minAngle, maxAngle );
                     m_servos[deviceUsage] = servo;
                     break;
@@ -115,7 +111,7 @@ shared_ptr<DragonServo> DragonServoFactory::CreateDragonServo
 //=======================================================================================
 shared_ptr<DragonServo> DragonServoFactory::CreateDragonServo
 (
-    DragonServo::SERVO_USAGE    deviceUsage        
+    ServoUsage::SERVO_USAGE    deviceUsage        
 )
 {
     return m_servos.find(deviceUsage)->second;

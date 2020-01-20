@@ -5,6 +5,7 @@
 #include <subsys/ChassisFactory.h>
 #include <subsys/DragonChassis.h>
 #include <hw/interfaces/IDragonMotorController.h>
+#include <hw/usages/IDragonMotorControllerMap.h>
 
 #include <utils/Logger.h>
 
@@ -49,52 +50,16 @@ shared_ptr<IChassis> ChassisFactory::CreateChassis
             shared_ptr<IDragonMotorController>  leftMaster;
             shared_ptr<IDragonMotorController>  rightMaster;
             
-            vector<shared_ptr<IDragonMotorController>> leftSlaves;
-            vector<shared_ptr<IDragonMotorController>> rightSlaves;
+            shared_ptr<IDragonMotorController> leftSlave;
+            shared_ptr<IDragonMotorController> rightSlave;
 
-            auto it = motors.find( MotorControllerUsage::MOTOR_CONTROLLER_USAGE::BACK_LEFT_DRIVE);
-            if ( it != motors.end() )
-            {
-                leftMaster = it->second;
-            }
-            else
-            {
-                Logger::GetLogger()->LogError( string("ChassisFactory::CreateIChassis"), string("Left master not found"));
-            }
+            leftMaster = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::LEFT_DRIVE_MASTER);
+            leftSlave = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::LEFT_DRIVE_FOLLOWER);
             
-            it = motors.find( MotorControllerUsage::MOTOR_CONTROLLER_USAGE::FRONT_LEFT_DRIVE);
-            if ( it != motors.end() )
-            {
-                leftSlaves.push_back( it->second );
-            }
-            it = motors.find( MotorControllerUsage::MOTOR_CONTROLLER_USAGE::MIDDLE_LEFT_DRIVE);
-            if ( it != motors.end() )
-            {
-                leftSlaves.push_back( it->second );
-            }
-
-            it = motors.find( MotorControllerUsage::MOTOR_CONTROLLER_USAGE::BACK_RIGHT_DRIVE);
-            if ( it != motors.end() )
-            {
-                rightMaster = it->second;
-            }
-            else
-            {
-                Logger::GetLogger()->LogError( string("ChassisFactory::CreateIChassis"), string("Right master not found"));
-            }
+            rightMaster = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::RIGHT_DRIVE_MASTER);
+            rightSlave = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::RIGHT_DRIVE_FOLLOWER);
             
-            it = motors.find( MotorControllerUsage::MOTOR_CONTROLLER_USAGE::FRONT_RIGHT_DRIVE);
-            if ( it != motors.end() )
-            {
-                rightSlaves.push_back( it->second );
-            }
-            it = motors.find( MotorControllerUsage::MOTOR_CONTROLLER_USAGE::MIDDLE_RIGHT_DRIVE);
-            if ( it != motors.end() )
-            {
-                rightSlaves.push_back( it->second );
-            }
-
-            chassis = make_shared<DragonChassis>(  wheelDiameter, wheelBase, track, leftMaster, rightMaster, leftSlaves, rightSlaves );
+            chassis = make_shared<DragonChassis>(  wheelDiameter, wheelBase, track, leftMaster, rightMaster, leftSlave, rightSlave );
         }
         break;
 
@@ -110,6 +75,33 @@ shared_ptr<IChassis> ChassisFactory::CreateChassis
     }
 
     return chassis;
+}
+shared_ptr<IDragonMotorController> ChassisFactory::GetMotorController
+(
+	const IDragonMotorControllerMap&				motorControllers,
+	MotorControllerUsage::MOTOR_CONTROLLER_USAGE	usage
+)
+{
+	shared_ptr<IDragonMotorController> motor;
+	auto it = motorControllers.find( usage );
+	if ( it != motorControllers.end() )  // found it
+	{
+		motor = it->second;
+	}
+	else
+	{
+		string msg = "motor not found; usage = ";
+		msg += to_string( usage );
+		Logger::GetLogger()->LogError( string( "ChassisFactory::GetMotorController" ), msg );
+	}
+	
+	if ( motor.get() == nullptr )
+	{
+		string msg = "motor is nullptr; usage = ";
+		msg += to_string( usage );
+		Logger::GetLogger()->LogError( string( "ChassisFactory::GetMotorController" ), msg );
+	}
+	return motor;
 }
 
 

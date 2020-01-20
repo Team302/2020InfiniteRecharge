@@ -38,12 +38,12 @@ class DriveTrainSide : public IMechanism
 
         /// @brief    Create and initialize the DriveTrainSide sub-mechanism
         /// @param [in] std::shared_ptr<IDragonMotorController>   master - master motor for the DriveTrainSide
-        /// @param [in] std::vector<std::shared_ptr<IDragonMotorController>>    followers - slave motors for the DriveTrainSide
+        /// @param [in] std::shared_ptr<IDragonMotorController>    follower - slave motor for the DriveTrainSide
         /// @param [in] double    wheelSize - diameter of the wheel in inches.
         DriveTrainSide
         (
             std::shared_ptr<IDragonMotorController>                 master,
-            std::vector<std::shared_ptr<IDragonMotorController>>    followers,
+            std::shared_ptr<IDragonMotorController>                 follower,
             double                                                  wheelSize
         );
         DriveTrainSide() = delete;
@@ -110,7 +110,7 @@ class DriveTrainSide : public IMechanism
         
     private:
         std::shared_ptr<IDragonMotorController>                 m_master;
-        std::vector<std::shared_ptr<IDragonMotorController>>    m_slaves;
+        std::shared_ptr<IDragonMotorController>                 m_slave;
         double                                                  m_wheelSize;
         double                                                  m_target;
 

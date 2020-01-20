@@ -5,6 +5,7 @@
 
 #include <subsys/IChassis.h>
 #include <hw/interfaces/IDragonMotorController.h>
+#include <hw/usages/IDragonMotorControllerMap.h>
 
 class ChassisFactory
 {
@@ -38,6 +39,11 @@ class ChassisFactory
 
 
 		private:
+			std::shared_ptr<IDragonMotorController> GetMotorController
+			(
+				const IDragonMotorControllerMap&				motorControllers,
+				MotorControllerUsage::MOTOR_CONTROLLER_USAGE	usage
+			);
 			ChassisFactory() = default;
 			~ChassisFactory() = default;
 			std::shared_ptr<IChassis>        m_chassis;

@@ -23,6 +23,7 @@
 #include <controllers/teleopdrive/ThrottleSteerDrive.h>
 #include <subsys/IChassis.h>
 #include <gamepad/DragonXBox.h>
+#include <controllers/IState.h>
 
 // CTRE includes 
 
@@ -34,13 +35,15 @@
  * File Description:  This class calculates the drive percents for a tank drive
  *
  *========================================================================================================*/
-class GTADrive : public ThrottleSteerDrive
+class GTADrive : public ThrottleSteerDrive 
 {
     public:
     
-        GTADrive();
+        GTADrive() = default;
         ~GTADrive() = default;
-               
+
+        void Init() override;
+
     protected:
         double GetSteer() override;
         double GetThrottle() override;

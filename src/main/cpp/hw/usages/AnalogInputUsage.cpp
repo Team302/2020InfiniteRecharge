@@ -40,8 +40,8 @@ AnalogInputUsage* AnalogInputUsage::GetInstance()
 
 AnalogInputUsage::AnalogInputUsage()
 {
-    m_usageMap["EXTENDER_POTENTIOMETER"]  = AnalogInputUsage::ANALOG_SENSOR_USAGE::EXTENDER_POTENTIOMETER;
     m_usageMap["PRESSURE_GAUGE"] = AnalogInputUsage::ANALOG_SENSOR_USAGE::PRESSURE_GAUGE;
+    m_usageMap["CRAWLER_LEVEL"] = AnalogInputUsage::ANALOG_SENSOR_USAGE::CRAWLER_LEVEL;
 }
 
 AnalogInputUsage::~AnalogInputUsage()
