@@ -44,6 +44,10 @@
 #include <hw/DragonServo.h>
 #include <hw/DragonAnalogInput.h>
 #include <hw/DragonDigitalInput.h>
+#include <subsys/Intake.h>
+#include <subsys/HumanPlayerFlap.h>
+#include <subsys/BallTransfer.h>
+#include <subsys/ControlPanel>
 
 
 // Third Party Includes
@@ -109,6 +113,12 @@ class MechanismFactory
 			const AnalogInputMap&							analogInputs,
 			AnalogInputUsage::ANALOG_SENSOR_USAGE			usage
 		);
+
+		std::shared_ptr<Intake> 			m_intake;
+		std::shared_ptr<HumanPlayerFlap>	m_humanPlayerFlap;
+		std::shared_ptr<BallTransfer>		m_ballTransfer;
+		std::shared_ptr<ControlPanel>		m_controlPanel
+
 		MechanismFactory() = default;
 		virtual ~MechanismFactory() = default;
 
