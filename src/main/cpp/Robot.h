@@ -59,9 +59,9 @@ class Robot : public frc::TimedRobot
       TalonSRX* m_turretTalon;
     DragonXBox* m_xbox;
     const int TURRET_ID = 0;
-    const int K_P = 20.0;
+    const int K_P = 10.0;
     const int K_I = 0.0;
-    const int K_D = 0.0;
+    const int K_D = 2.0;
     const int K_F = 0.0;
     double m_initialPosition;
 };

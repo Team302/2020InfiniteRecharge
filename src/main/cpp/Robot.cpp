@@ -65,8 +65,8 @@ void Robot::RobotInit()
                                         0, 
                                         10);
     m_turretTalon->SetSensorPhase(false);
-    //m_turretTalon->ConfigForwardLimitSwitchSource(ctre::phoenix::motorcontrol::LimitSwitchSource::LimitSwitchSource_FeedbackConnector, ctre::phoenix::motorcontrol::LimitSwitchNormal::LimitSwitchNormal_NormallyOpen);
-    //m_turretTalon->ConfigReverseLimitSwitchSource(ctre::phoenix::motorcontrol::LimitSwitchSource::LimitSwitchSource_FeedbackConnector, ctre::phoenix::motorcontrol::LimitSwitchNormal::LimitSwitchNormal_NormallyClosed);
+    m_turretTalon->ConfigForwardLimitSwitchSource(ctre::phoenix::motorcontrol::LimitSwitchSource::LimitSwitchSource_FeedbackConnector, ctre::phoenix::motorcontrol::LimitSwitchNormal::LimitSwitchNormal_Disabled);
+    m_turretTalon->ConfigReverseLimitSwitchSource(ctre::phoenix::motorcontrol::LimitSwitchSource::LimitSwitchSource_FeedbackConnector, ctre::phoenix::motorcontrol::LimitSwitchNormal::LimitSwitchNormal_Disabled);
     m_turretTalon->SetStatusFramePeriod(StatusFrameEnhanced::Status_13_Base_PIDF0, 10, 10);
     m_turretTalon->SetStatusFramePeriod(StatusFrameEnhanced::Status_10_MotionMagic, 10, 10);
     m_turretTalon->ConfigNominalOutputForward(0, 10);
@@ -152,24 +152,13 @@ void Robot::TeleopInit()
 ///-----------------------------------------------------------------------
 void Robot::TeleopPeriodic() 
 {
-    double power = m_xbox->GetAxisValue(IDragonGamePad::LEFT_JOYSTICK_Y) * .5;
-    if (m_xbox->IsButtonPressed(IDragonGamePad::A_BUTTON))
-    {
-        m_turretTalon->Set(ctre::phoenix::motorcontrol::ControlMode::MotionMagic, m_initialPosition + 1000.0);
-        frc::SmartDashboard::PutBoolean("SetPosition", true);
-    }
-
-    else
-    {
-        m_turretTalon->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, power);
-        frc::SmartDashboard::PutBoolean("SetPosition", false);
-    }
+    //m_turretTalon->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_xbox->GetAxisValue(IDragonGamePad::LEFT_JOYSTICK_Y)*.5);
     frc::SmartDashboard::PutNumber("Horizontal Offset", m_limelight->GetTargetVerticalOffset());
     frc::SmartDashboard::PutNumber("Vertical Offset", m_limelight->GetTargetHorizontalOffset());
     frc::SmartDashboard::PutNumber("Turret Position", m_turretTalon->GetSelectedSensorPosition()/3400.0 *360.0);
     double tx = m_limelight->GetTargetVerticalOffset()/ 360.0 * 3400.0;
     double currentPosition = m_turretTalon->GetSelectedSensorPosition();
-    double targetPosition = currentPosition - tx - 200;
+    double targetPosition = currentPosition - tx;
     frc::SmartDashboard::PutNumber("Target Position", targetPosition);
     m_turretTalon->Set(ctre::phoenix::motorcontrol::ControlMode::MotionMagic, targetPosition);
 }
