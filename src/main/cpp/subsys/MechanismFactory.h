@@ -125,5 +125,6 @@ class MechanismFactory
 		static MechanismFactory*	m_mechanismFactory;
 
 		std::map<MechanismTypes::MECHANISM_TYPE, IMechanism*> m_mechanisms;
+		IMechanism* m_Impeller;
 
 };
