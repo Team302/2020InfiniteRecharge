@@ -43,8 +43,10 @@
 #include <subsys/MechanismFactory.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismTypes.h>
-//#include <subsys/Intake.h>
+#include <subsys/Intake.h>
 #include <utils/Logger.h>
+#include <subsys/BallTransfer.h>
+#include <subsys/HumanPlayerFlap.h>
 
 // Third Party Includes
 
@@ -137,7 +139,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 					auto solenoid = GetSolenoid( solenoids, SolenoidUsage::SOLENOID_USAGE::INTAKE );
 					if ( solenoid.get() != nullptr )
 					{
-					// todo get create intake
+                        m_intake = std::make_shared<Intake>( motorControllers, solenoids )
 					}
 				}
             }
@@ -148,7 +150,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 				auto solenoid = GetSolenoid( solenoids, SolenoidUsage::SOLENOID_USAGE::HUMAN_PLAYER_FLAP );
 				if ( solenoid.get() != nullptr )
 				{
-				// todo get create human player flap
+                    m_humanPlayerFlap = std::make_shared<HumanPlayerFlap>( solenoids )
 				}
 			}
 			break;
@@ -168,7 +170,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::BALL_TRANSFER );
 				if ( motor.get() != nullptr )
 				{
-					// todo get create ball transfer
+					m_ballTransfer = std::make_shared<BallTransfer>( motorControllers )
 				}
 			}
 			break;			
@@ -191,6 +193,20 @@ IMechanism*  MechanismFactory::CreateIMechanism
 			
 			case MechanismTypes::MECHANISM_TYPE::CONTROL_TABLE_MANIPULATOR:
 			{
+				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::CONTROL_TABLE_MANIPULATOR );
+				if ( motor.get() != nullptr )
+				{
+					auto solenoid = GetSolenoid( solenoids, SolenoidUsage::SOLENOID_USAGE::CONTROL_TABLE_MANIPULATOR );
+					if ( solenoid.get() != nullptr )
+					{
+						auto //color sensor = GetColorSensor(colorsensor, colorsensorusage::COLOR_SENSOR_USAGE::CONTROL_TABLE_MANIPULATOR );
+						//if ( colorsensor.get() !=nullptr )
+						{
+							m_controlPanel = std::make_shared<ControlPanel>( motorControllers, solenoids, nullptr);
+							//todo replace nullptr with color sensor pointer
+						}
+					}
+				}
 			}
 			break;		
 			
@@ -203,6 +219,8 @@ IMechanism*  MechanismFactory::CreateIMechanism
 			{
 			}
 			break;
+
+        
 			
             default:
 			{
