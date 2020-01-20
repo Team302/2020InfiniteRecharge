@@ -109,9 +109,9 @@ Inheritance diagram for DriveTrainSide:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afac53df13b6f9e75e515699d339898d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drive_train_side.html#afac53df13b6f9e75e515699d339898d8">DriveTrainSide</a> (std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; master, std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt;&gt; followers, double wheelSize)</td></tr>
-<tr class="memdesc:afac53df13b6f9e75e515699d339898d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and initialize the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> sub-mechanism.  <a href="class_drive_train_side.html#afac53df13b6f9e75e515699d339898d8">More...</a><br /></td></tr>
-<tr class="separator:afac53df13b6f9e75e515699d339898d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e77f5f59f0b8082a549abf6f96abf0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drive_train_side.html#ab5e77f5f59f0b8082a549abf6f96abf0">DriveTrainSide</a> (std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; master, std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; follower, double wheelSize)</td></tr>
+<tr class="memdesc:ab5e77f5f59f0b8082a549abf6f96abf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and initialize the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> sub-mechanism.  <a href="class_drive_train_side.html#ab5e77f5f59f0b8082a549abf6f96abf0">More...</a><br /></td></tr>
+<tr class="separator:ab5e77f5f59f0b8082a549abf6f96abf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00bafd1aef6c17238ef5a180cbe21dc1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drive_train_side.html#a00bafd1aef6c17238ef5a180cbe21dc1">DriveTrainSide</a> ()=delete</td></tr>
 <tr class="separator:a00bafd1aef6c17238ef5a180cbe21dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ea7b89db9c0cb64a359e48f4ad49f92"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drive_train_side.html#a4ea7b89db9c0cb64a359e48f4ad49f92">~DriveTrainSide</a> ()=default</td></tr>
@@ -160,8 +160,8 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_drive_train_side_8h_source.html#l00035">35</a> of file <a class="el" href="_drive_train_side_8h_source.html">DriveTrainSide.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="afac53df13b6f9e75e515699d339898d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afac53df13b6f9e75e515699d339898d8">&#9670;&nbsp;</a></span>DriveTrainSide() <span class="overload">[1/2]</span></h2>
+<a id="ab5e77f5f59f0b8082a549abf6f96abf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5e77f5f59f0b8082a549abf6f96abf0">&#9670;&nbsp;</a></span>DriveTrainSide() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,8 +175,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt;&gt;&#160;</td>
-          <td class="paramname"><em>followers</em>, </td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt;&#160;</td>
+          <td class="paramname"><em>follower</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -196,7 +196,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">std::shared_ptr&lt;IDragonMotorController&gt;</td><td>master - master motor for the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">std::vector&lt;std::shared_ptr&lt;IDragonMotorController&gt;&gt;</td><td>followers - slave motors for the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">std::shared_ptr&lt;IDragonMotorController&gt;</td><td>follower - slave motor for the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">double</td><td>wheelSize - diameter of the wheel in inches. </td></tr>
   </table>
   </dd>

@@ -35,11 +35,13 @@
 #include <Robot.h>
 #include <xmlhw/RobotDefn.h>
 #include <auton/CyclePrimitives.h>
+#include <controllers/teleopdrive/ArcadeDrive.h>
+#include <controllers/teleopdrive/GTADrive.h>
+#include <controllers/teleopdrive/TankDrive.h>
 
-Robot::Robot() : TimedRobot( 10.0 )
-{
+using namespace std;
+using namespace frc;
 
-}
 
 ///-----------------------------------------------------------------------
 /// Method:      RobotInit
@@ -51,12 +53,26 @@ void Robot::RobotInit()
     // Read the robot definition from the xml configuration files and
     // create the hardware (chassis + mechanisms along with their talons,
     // solenoids, digital inputs, analog inputs, etc.
-    std::unique_ptr<RobotDefn>  robotXml = std::make_unique<RobotDefn>();
+    unique_ptr<RobotDefn>  robotXml = make_unique<RobotDefn>();
     robotXml->ParseXML();
 
     // Display the autonomous choices on the dashboard for selection.
-    m_cyclePrims = new CyclePrimitives();
+    // comment out for now since auton hasn't been implemented
+    // m_cyclePrims = new CyclePrimitives();
+    
+    // pick drive mode
+    m_driveModeChooser.SetDefaultOption( m_driveModeArcade, m_driveModeArcade);
+    m_driveModeChooser.AddOption( m_driveModeGTA, m_driveModeGTA );
+    m_driveModeChooser.AddOption( m_driveModeTank, m_driveModeTank );
 
+
+    // Create a TeleopDrive Object passing the chasis and controller objects
+    m_arcade = make_unique<ArcadeDrive>();
+    m_tank = make_unique<TankDrive>();
+    m_gta = make_unique<GTADrive>();
+    m_currentDrive = m_arcade;
+
+    SmartDashboard::PutData("Drive Mode", &m_driveModeChooser);
 }
 
 ///-----------------------------------------------------------------------
@@ -79,10 +95,8 @@ void Robot::RobotPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::AutonomousInit() 
 {
-        // run selected auton option
-    m_cyclePrims->Init();
-
-    TeleopInit();
+    // run selected auton option
+    //m_cyclePrims->Init();
 }
 
 
@@ -93,10 +107,8 @@ void Robot::AutonomousInit()
 ///-----------------------------------------------------------------------
 void Robot::AutonomousPeriodic() 
 {
-        //Real auton magic right here:
-    m_cyclePrims->RunCurrentPrimitive();
-
-    TeleopPeriodic();
+    //Real auton magic right here:
+    //m_cyclePrims->RunCurrentPrimitive();
 }
 
 
@@ -106,7 +118,25 @@ void Robot::AutonomousPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::TeleopInit() 
 {
-
+    m_driveModeSelected = m_driveModeChooser.GetSelected();
+    if(m_driveModeSelected == m_driveModeArcade) 
+    {
+        m_currentDrive == m_arcade;
+    }
+    else if ( m_driveModeSelected == m_driveModeGTA )
+    {
+        m_currentDrive = m_gta;
+    }
+    else if ( m_driveModeSelected == m_driveModeTank )
+    {
+        m_currentDrive = m_tank;
+    }
+    else
+    {
+        m_currentDrive = m_arcade;
+    }
+    m_currentDrive->Init();
+    m_currentDrive->Run();
 }
 
 
@@ -117,7 +147,7 @@ void Robot::TeleopInit()
 ///-----------------------------------------------------------------------
 void Robot::TeleopPeriodic() 
 {
-
+    m_currentDrive->Run();
 }
 
 

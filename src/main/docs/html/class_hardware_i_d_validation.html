@@ -106,6 +106,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a0aadb44d067609e1df994e06145f5f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a703f456923391db2a37e0c1160acc209"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hardware_i_d_validation.html#a703f456923391db2a37e0c1160acc209">ValidateDIOID</a> (int dioID, std::string methodID)</td></tr>
 <tr class="separator:a703f456923391db2a37e0c1160acc209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a800acffe0043d9ba504c527d0ade5eda"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hardware_i_d_validation.html#a800acffe0043d9ba504c527d0ade5eda">ValidateSolenoidChannel</a> (int channel, std::string methodID)</td></tr>
+<tr class="separator:a800acffe0043d9ba504c527d0ade5eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a404d9c89d42c4a474ce9b7919456ea7d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hardware_i_d_validation.html#a404d9c89d42c4a474ce9b7919456ea7d">ValidateID</a> (int id, int minID, int maxID, std::string methodID, std::string errorMsg)</td></tr>
 <tr class="separator:a404d9c89d42c4a474ce9b7919456ea7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -247,7 +249,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Method: ValidateID Description: Check the ID against the valid range. If it is invalid the logger utility will be called. Returns: bool true - valid false - invalid </p>
 
-<p class="definition">Definition at line <a class="el" href="_hardware_i_d_validation_8cpp_source.html#l00100">100</a> of file <a class="el" href="_hardware_i_d_validation_8cpp_source.html">HardwareIDValidation.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hardware_i_d_validation_8cpp_source.html#l00112">112</a> of file <a class="el" href="_hardware_i_d_validation_8cpp_source.html">HardwareIDValidation.cpp</a>.</p>
 
 </div>
 </div>
@@ -287,6 +289,44 @@ Static Public Member Functions</h2></td></tr>
 <p>Method: ValidatePDPID Description: Check the PDP ID against the valid range. If it is invalid the logger utility will be called. Returns: bool true - valid false - invalid </p>
 
 <p class="definition">Definition at line <a class="el" href="_hardware_i_d_validation_8cpp_source.html#l00065">65</a> of file <a class="el" href="_hardware_i_d_validation_8cpp_source.html">HardwareIDValidation.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a800acffe0043d9ba504c527d0ade5eda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a800acffe0043d9ba504c527d0ade5eda">&#9670;&nbsp;</a></span>ValidateSolenoidChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HardwareIDValidation::ValidateSolenoidChannel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>methodID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_hardware_i_d_validation_8cpp_source.html#l00094">94</a> of file <a class="el" href="_hardware_i_d_validation_8cpp_source.html">HardwareIDValidation.cpp</a>.</p>
 
 </div>
 </div>

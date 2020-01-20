@@ -27,9 +27,8 @@
 
 using namespace std;
 
-using namespace std;
 
-GTADrive::GTADrive() : ThrottleSteerDrive()
+void GTADrive::Init()
 {
     auto controller = GetController();
     if ( controller != nullptr )

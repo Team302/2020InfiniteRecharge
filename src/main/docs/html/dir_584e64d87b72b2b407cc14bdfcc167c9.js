@@ -64,6 +64,10 @@ var dir_584e64d87b72b2b407cc14bdfcc167c9 =
     [ "ServoDefn.h", "_servo_defn_8h.html", [
       [ "ServoDefn", "class_servo_defn.html", "class_servo_defn" ]
     ] ],
+    [ "SolenoidDefn.cpp", "_solenoid_defn_8cpp.html", null ],
+    [ "SolenoidDefn.h", "_solenoid_defn_8h.html", [
+      [ "SolenoidDefn", "class_solenoid_defn.html", "class_solenoid_defn" ]
+    ] ],
     [ "TalonTach.cpp", "_talon_tach_8cpp.html", null ],
     [ "TalonTach.h", "_talon_tach_8h.html", [
       [ "TalonTachDefn", "class_talon_tach_defn.html", "class_talon_tach_defn" ]

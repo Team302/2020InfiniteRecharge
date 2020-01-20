@@ -14,13 +14,11 @@ var functions_eval =
     [ "m", "functions_eval_m.html", null ],
     [ "n", "functions_eval_n.html", null ],
     [ "p", "functions_eval_p.html", null ],
-    [ "q", "functions_eval_q.html", null ],
     [ "r", "functions_eval_r.html", null ],
     [ "s", "functions_eval_s.html", null ],
     [ "t", "functions_eval_t.html", null ],
     [ "u", "functions_eval_u.html", null ],
     [ "v", "functions_eval_v.html", null ],
-    [ "w", "functions_eval_w.html", null ],
     [ "x", "functions_eval_x.html", null ],
     [ "y", "functions_eval_y.html", null ]
 ];

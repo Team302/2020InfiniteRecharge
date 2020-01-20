@@ -32,25 +32,19 @@
 // Third Party Includes
 
 
-//========================================================================================================
 /// @class AnalogInputFactory
 /// @brief This controls the creation of analog inputs
-//========================================================================================================
 class AnalogInputFactory
 {
 	public:
-		//=====================================================================================
 		/// @brief  Find or create the analog input factory
 		/// @return AnalogInputFactory* pointer to the factory
-		//=====================================================================================
 		static AnalogInputFactory* GetFactory();
 
 
-		//=====================================================================================
 		/// @brief  Create the requested analog input
 		/// @return shared_ptr<DragonAnalogInput>   the mechanism or nullptr if mechanism doesn't 
 		///         exist and cannot be created.
-		//=====================================================================================
 		std::shared_ptr<DragonAnalogInput> CreateInput
 		(
 			std::string     usage,
@@ -63,11 +57,8 @@ class AnalogInputFactory
 
 
 	private:
-		AnalogInputFactory();
+		AnalogInputFactory() = default;
 		virtual ~AnalogInputFactory() = default;
-		void CreateUsageMap();
 
 		static AnalogInputFactory*	m_factory;
-		std::map <std::string, AnalogInputUsage::ANALOG_SENSOR_USAGE> m_usageMap;
-
 };

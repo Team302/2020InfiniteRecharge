@@ -27,7 +27,7 @@
 
 using namespace std;
 
-ArcadeDrive::ArcadeDrive() : ThrottleSteerDrive()
+void ArcadeDrive::Init()
 {
     auto controller = GetController();
     if ( controller != nullptr )

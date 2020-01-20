@@ -46,10 +46,10 @@ DragonChassis::DragonChassis
     double 						                            track,				
     std::shared_ptr<IDragonMotorController>                 leftMaster,
     std::shared_ptr<IDragonMotorController>                 rightMaster,
-    std::vector<std::shared_ptr<IDragonMotorController>>    leftFollowers,
-    std::vector<std::shared_ptr<IDragonMotorController>>    rightFollowers
-) : m_leftSide( new DriveTrainSide( leftMaster, leftFollowers, wheelDiameter ) ),
-    m_rightSide( new DriveTrainSide( rightMaster, rightFollowers, wheelDiameter ) ),
+    std::shared_ptr<IDragonMotorController>                 leftFollower,
+    std::shared_ptr<IDragonMotorController>                 rightFollower
+) : m_leftSide( new DriveTrainSide( leftMaster, leftFollower, wheelDiameter ) ),
+    m_rightSide( new DriveTrainSide( rightMaster, rightFollower, wheelDiameter ) ),
     m_wheelBase( wheelBase ),
     m_wheelTrack( track )
 {

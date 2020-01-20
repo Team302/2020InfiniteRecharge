@@ -106,12 +106,12 @@ Inheritance diagram for Robot:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4fc7c70ae20623f05e06f2ecb388b6c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#a4fc7c70ae20623f05e06f2ecb388b6c4">Robot</a> ()</td></tr>
-<tr class="memdesc:a4fc7c70ae20623f05e06f2ecb388b6c4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="_robot_8cpp.html">Robot.cpp</a>.  <a href="class_robot.html#a4fc7c70ae20623f05e06f2ecb388b6c4">More...</a><br /></td></tr>
-<tr class="separator:a4fc7c70ae20623f05e06f2ecb388b6c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a136b20cc34a9cda8da9ef2c85646f747"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#a136b20cc34a9cda8da9ef2c85646f747">Robot</a> ()=default</td></tr>
+<tr class="separator:a136b20cc34a9cda8da9ef2c85646f747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a359bc5b345fc76b9451abfeea4cad6e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#a359bc5b345fc76b9451abfeea4cad6e4">~Robot</a> ()=default</td></tr>
 <tr class="separator:a359bc5b345fc76b9451abfeea4cad6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66f23dae271748d525cf3ab046375f79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#a66f23dae271748d525cf3ab046375f79">RobotInit</a> () override</td></tr>
+<tr class="memdesc:a66f23dae271748d525cf3ab046375f79"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="_robot_8cpp.html">Robot.cpp</a>.  <a href="class_robot.html#a66f23dae271748d525cf3ab046375f79">More...</a><br /></td></tr>
 <tr class="separator:a66f23dae271748d525cf3ab046375f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fad82c2250bcfb83b743b5c0dd6ed27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27">RobotPeriodic</a> () override</td></tr>
 <tr class="separator:a8fad82c2250bcfb83b743b5c0dd6ed27"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,11 +137,14 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_robot_8h_source.html#l00036">36</a> of file <a class="el" href="_robot_8h_source.html">Robot.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4fc7c70ae20623f05e06f2ecb388b6c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fc7c70ae20623f05e06f2ecb388b6c4">&#9670;&nbsp;</a></span>Robot()</h2>
+<a id="a136b20cc34a9cda8da9ef2c85646f747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a136b20cc34a9cda8da9ef2c85646f747">&#9670;&nbsp;</a></span>Robot()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Robot::Robot </td>
@@ -150,15 +153,12 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p><a class="el" href="_robot_8cpp.html">Robot.cpp</a>. </p>
-<p>Copyright 2019 Lake Orion Robotics FIRST Team 302</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. File Description: The main robot code. The Init methods get called when that state gets entered and then the Periodic methods get called every 20 milliseconds. </p>
-
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00039">39</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -215,7 +215,7 @@ Public Member Functions</h2></td></tr>
 <h2><a class="anchor" id="autotoc_md66"></a>
 Description: This initializes the autonomous state</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00080">80</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00076">76</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -246,7 +246,7 @@ Description: This initializes the autonomous state</h2>
 <h2><a class="anchor" id="autotoc_md67"></a>
 active.</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00094">94</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00090">90</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -272,12 +272,17 @@ active.</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
+
+<p><a class="el" href="_robot_8cpp.html">Robot.cpp</a>. </p>
+<p>Copyright 2019 Lake Orion Robotics FIRST Team 302</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. File Description: The main robot code. The Init methods get called when that state gets entered and then the Periodic methods get called every 20 milliseconds. </p><hr  />
 <p> Method: RobotInit Description: When the robot gets created this gets called. It initializes </p>
 <h2><a class="anchor" id="autotoc_md64"></a>
 the robot subsystems (hardware).</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00049">49</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00045">45</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -308,7 +313,7 @@ the robot subsystems (hardware).</h2>
 <h2><a class="anchor" id="autotoc_md65"></a>
 methods and before the LiveWindow and SmartDashboard updating.</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00070">70</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00066">66</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -339,7 +344,7 @@ methods and before the LiveWindow and SmartDashboard updating.</h2>
 <h2><a class="anchor" id="autotoc_md68"></a>
 Description: This initializes the teleoperated state</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00107">107</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00103">103</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -370,7 +375,7 @@ Description: This initializes the teleoperated state</h2>
 <h2><a class="anchor" id="autotoc_md69"></a>
 active.</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00118">118</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00114">114</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -401,7 +406,7 @@ active.</h2>
 <h2><a class="anchor" id="autotoc_md70"></a>
 Description: This initializes the test state</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00128">128</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00124">124</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -432,7 +437,7 @@ Description: This initializes the test state</h2>
 <h2><a class="anchor" id="autotoc_md71"></a>
 active.</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00139">139</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00135">135</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>

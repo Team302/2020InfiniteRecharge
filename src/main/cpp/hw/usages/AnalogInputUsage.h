@@ -38,8 +38,8 @@ class AnalogInputUsage
         enum ANALOG_SENSOR_USAGE
         {
             UNKNOWN_ANALOG_TYPE = -1,
-            EXTENDER_POTENTIOMETER,
             PRESSURE_GAUGE,
+            CRAWLER_LEVEL,
             MAX_ANALOG_TYPES
         };
 

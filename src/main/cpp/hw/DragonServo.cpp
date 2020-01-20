@@ -3,6 +3,7 @@
  */
 
 #include <hw/DragonServo.h>
+#include <hw/usages/ServoUsage.h>
 
 #include <frc/Servo.h>
 
@@ -10,7 +11,7 @@ using namespace frc;
 
 DragonServo::DragonServo
 (
-	DragonServo::SERVO_USAGE	deviceUsage,		// <I> - Usage of the servo
+	ServoUsage::SERVO_USAGE	    deviceUsage,		// <I> - Usage of the servo
 	int 						deviceID,			// <I> - PWM ID
 	double 						minAngle,			// <I> - Minimun desired angle
 	double						maxAngle			// <I> - Maximum desired angle
@@ -22,12 +23,8 @@ DragonServo::DragonServo
 {
     switch ( deviceUsage )
     {
-        case DragonServo::SERVO_USAGE::ROTATE_LIMELIGHT:
+        case ServoUsage::SERVO_USAGE::SHOOTER_HOOD:
             m_servo =new Servo(deviceID);
-            break;
-
-        case DragonServo::SERVO_USAGE::TAIL_CONTROL:
-            m_servo = new Servo(deviceID);
             break;
 
         default:
@@ -110,7 +107,7 @@ void DragonServo::MoveToMinAngle()
 	SetAngle( m_minAngle );
 }
 
-DragonServo::SERVO_USAGE DragonServo::GetUsage() const
+ServoUsage::SERVO_USAGE DragonServo::GetUsage() const
 {
     return m_usage;
 }

@@ -6,7 +6,9 @@ var dir_0c16de665e8c239119e7dbcc8192a62f =
     [ "IDragonDistanceSensor.h", "_i_dragon_distance_sensor_8h.html", [
       [ "IDragonDistanceSensor", "class_i_dragon_distance_sensor.html", "class_i_dragon_distance_sensor" ]
     ] ],
-    [ "IDragonMotorController.h", "_i_dragon_motor_controller_8h.html", "_i_dragon_motor_controller_8h" ],
+    [ "IDragonMotorController.h", "_i_dragon_motor_controller_8h.html", [
+      [ "IDragonMotorController", "class_i_dragon_motor_controller.html", "class_i_dragon_motor_controller" ]
+    ] ],
     [ "IDragonSensor.h", "_i_dragon_sensor_8h.html", [
       [ "IDragonSensor", "class_i_dragon_sensor.html", "class_i_dragon_sensor" ]
     ] ]

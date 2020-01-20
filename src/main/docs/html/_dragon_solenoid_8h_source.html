@@ -93,67 +93,59 @@ $(document).ready(function(){initNavTree('_dragon_solenoid_8h_source.html','');}
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * DragonSolenoid.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef SRC_SUBSYS_COMPONENTS_DRAGONSOLENOID_H_</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define SRC_SUBSYS_COMPONENTS_DRAGONSOLENOID_H_</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;frc/Solenoid.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;frc/Solenoid.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_solenoid_usage_8h.html">hw/usages/SolenoidUsage.h</a>&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>frc;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_dragon_solenoid.html">DragonSolenoid</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4a">   16</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4a">DRAGON_SOLENOID_USAGE</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aa9429b960c5d7b9567f571c219fac5893">   18</a></span>&#160;            <a class="code" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aa9429b960c5d7b9567f571c219fac5893">CONTROL_4BAR</a>,</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aa562b791b9ce1b94b77c2c78a1aff30c6">   19</a></span>&#160;            <a class="code" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aa562b791b9ce1b94b77c2c78a1aff30c6">GRABBER_CLUTCH</a>,</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aa58624d2a62c28f7362039602fe3c7cc7">   20</a></span>&#160;            <a class="code" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aa58624d2a62c28f7362039602fe3c7cc7">GRABBER_POSITION</a>,</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aac32fc4b2417a59c9a28cf53c1bb88ef3">   21</a></span>&#160;            <a class="code" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aac32fc4b2417a59c9a28cf53c1bb88ef3">SIDEHANGER_LATCH</a>,</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aab7fe344d3399615043b22d6884e9ebda">   22</a></span>&#160;            SIDEHANGER_LATCH2</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        };</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_dragon_solenoid.html">DragonSolenoid</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_dragon_solenoid.html">DragonSolenoid</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_dragon_solenoid.html">DragonSolenoid</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="class_dragon_solenoid.html#ae2628b6d3532c3c09ac9878d09556bb0">DragonSolenoid</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="class_dragon_solenoid.html#ae2628b6d3532c3c09ac9878d09556bb0">DragonSolenoid</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        (</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <a class="code" href="class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7">SolenoidUsage::SOLENOID_USAGE</a> usage,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordtype">int</span>  pcmID,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordtype">int</span>  channel,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordtype">bool</span> reversed</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_dragon_solenoid.html#ae4d5f626f14364cd7c6acd25da7d0e79">~DragonSolenoid</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dragon_solenoid.html#a9a1baa91b95f47c1f42f58e59a82c570">Set</a></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        (</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            DRAGON_SOLENOID_USAGE usage,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordtype">int</span>  pcmID,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordtype">int</span>  channel,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordtype">bool</span> reversed</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        );</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="class_dragon_solenoid.html">DragonSolenoid</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> Set</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        (</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordtype">bool</span> on</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">bool</span> Get() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">bool</span> IsBlackListed() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> SetPulseDuration</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        (</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordtype">double</span> durationSeconds</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        );</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> StartPulse();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        DRAGON_SOLENOID_USAGE GetType() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        DRAGON_SOLENOID_USAGE                   m_type;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        Solenoid*                               m_solenoid;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">bool</span>                                    m_reversed;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="_dragon_solenoid_8h.html#ab322e50f8653597b463f91c3b4ad22ea">   54</a></span>&#160;<span class="keyword">typedef</span> std::vector&lt;DragonSolenoid*&gt; <a class="code" href="_dragon_solenoid_8h.html#ab322e50f8653597b463f91c3b4ad22ea">DragonSolenoidVector</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SRC_SUBSYS_COMPONENTS_DRAGONSOLENOID_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordtype">bool</span> on</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_dragon_solenoid.html#af2a2f048bcc2d6782adbdc736fac8573">Get</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_dragon_solenoid.html#a8e3de21db1e6f8ffd09b1b80447ec192">IsBlackListed</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dragon_solenoid.html#a3b7b19681de1f63075e9f4c1e83e6ccd">SetPulseDuration</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        (</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordtype">double</span> durationSeconds</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dragon_solenoid.html#ac8a7ec83334086315c1ee77b18d77419">StartPulse</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7">SolenoidUsage::SOLENOID_USAGE</a> <a class="code" href="class_dragon_solenoid.html#a532b8bb498212618426a5cc0aecf7c3b">GetType</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7">SolenoidUsage::SOLENOID_USAGE</a>           m_type;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::shared_ptr&lt;frc::Solenoid&gt;          m_solenoid;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">bool</span>                                    m_reversed;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_dragon_solenoid_html_acfbd54215804e0243bd41112e3abbb4a"><div class="ttname"><a href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4a">DragonSolenoid::DRAGON_SOLENOID_USAGE</a></div><div class="ttdeci">DRAGON_SOLENOID_USAGE</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8h_source.html#l00016">DragonSolenoid.h:16</a></div></div>
-<div class="ttc" id="aclass_dragon_solenoid_html_acfbd54215804e0243bd41112e3abbb4aa562b791b9ce1b94b77c2c78a1aff30c6"><div class="ttname"><a href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aa562b791b9ce1b94b77c2c78a1aff30c6">DragonSolenoid::GRABBER_CLUTCH</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8h_source.html#l00019">DragonSolenoid.h:19</a></div></div>
-<div class="ttc" id="aclass_dragon_solenoid_html_acfbd54215804e0243bd41112e3abbb4aa9429b960c5d7b9567f571c219fac5893"><div class="ttname"><a href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aa9429b960c5d7b9567f571c219fac5893">DragonSolenoid::CONTROL_4BAR</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8h_source.html#l00018">DragonSolenoid.h:18</a></div></div>
-<div class="ttc" id="a_dragon_solenoid_8h_html_ab322e50f8653597b463f91c3b4ad22ea"><div class="ttname"><a href="_dragon_solenoid_8h.html#ab322e50f8653597b463f91c3b4ad22ea">DragonSolenoidVector</a></div><div class="ttdeci">std::vector&lt; DragonSolenoid * &gt; DragonSolenoidVector</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8h_source.html#l00054">DragonSolenoid.h:54</a></div></div>
-<div class="ttc" id="aclass_dragon_solenoid_html_acfbd54215804e0243bd41112e3abbb4aac32fc4b2417a59c9a28cf53c1bb88ef3"><div class="ttname"><a href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aac32fc4b2417a59c9a28cf53c1bb88ef3">DragonSolenoid::SIDEHANGER_LATCH</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8h_source.html#l00021">DragonSolenoid.h:21</a></div></div>
-<div class="ttc" id="aclass_dragon_solenoid_html"><div class="ttname"><a href="class_dragon_solenoid.html">DragonSolenoid</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8h_source.html#l00013">DragonSolenoid.h:13</a></div></div>
-<div class="ttc" id="aclass_dragon_solenoid_html_acfbd54215804e0243bd41112e3abbb4aa58624d2a62c28f7362039602fe3c7cc7"><div class="ttname"><a href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4aa58624d2a62c28f7362039602fe3c7cc7">DragonSolenoid::GRABBER_POSITION</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8h_source.html#l00020">DragonSolenoid.h:20</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_a532b8bb498212618426a5cc0aecf7c3b"><div class="ttname"><a href="class_dragon_solenoid.html#a532b8bb498212618426a5cc0aecf7c3b">DragonSolenoid::GetType</a></div><div class="ttdeci">SolenoidUsage::SOLENOID_USAGE GetType() const</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00095">DragonSolenoid.cpp:95</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_a9a1baa91b95f47c1f42f58e59a82c570"><div class="ttname"><a href="class_dragon_solenoid.html#a9a1baa91b95f47c1f42f58e59a82c570">DragonSolenoid::Set</a></div><div class="ttdeci">void Set(bool on)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00029">DragonSolenoid.cpp:29</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_a3b7b19681de1f63075e9f4c1e83e6ccd"><div class="ttname"><a href="class_dragon_solenoid.html#a3b7b19681de1f63075e9f4c1e83e6ccd">DragonSolenoid::SetPulseDuration</a></div><div class="ttdeci">void SetPulseDuration(double durationSeconds)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00070">DragonSolenoid.cpp:70</a></div></div>
+<div class="ttc" id="aclass_solenoid_usage_html_adb45b3112fbc67f57d39931571b60ef7"><div class="ttname"><a href="class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7">SolenoidUsage::SOLENOID_USAGE</a></div><div class="ttdeci">SOLENOID_USAGE</div><div class="ttdoc">Defines solenoid usages. This should be modified for each robot.</div><div class="ttdef"><b>Definition:</b> <a href="_solenoid_usage_8h_source.html#l00040">SolenoidUsage.h:40</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_ae2628b6d3532c3c09ac9878d09556bb0"><div class="ttname"><a href="class_dragon_solenoid.html#ae2628b6d3532c3c09ac9878d09556bb0">DragonSolenoid::DragonSolenoid</a></div><div class="ttdeci">DragonSolenoid()=delete</div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_ac8a7ec83334086315c1ee77b18d77419"><div class="ttname"><a href="class_dragon_solenoid.html#ac8a7ec83334086315c1ee77b18d77419">DragonSolenoid::StartPulse</a></div><div class="ttdeci">void StartPulse()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00083">DragonSolenoid.cpp:83</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_ae4d5f626f14364cd7c6acd25da7d0e79"><div class="ttname"><a href="class_dragon_solenoid.html#ae4d5f626f14364cd7c6acd25da7d0e79">DragonSolenoid::~DragonSolenoid</a></div><div class="ttdeci">virtual ~DragonSolenoid()=default</div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_a8e3de21db1e6f8ffd09b1b80447ec192"><div class="ttname"><a href="class_dragon_solenoid.html#a8e3de21db1e6f8ffd09b1b80447ec192">DragonSolenoid::IsBlackListed</a></div><div class="ttdeci">bool IsBlackListed() const</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00056">DragonSolenoid.cpp:56</a></div></div>
+<div class="ttc" id="a_solenoid_usage_8h_html"><div class="ttname"><a href="_solenoid_usage_8h.html">SolenoidUsage.h</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_af2a2f048bcc2d6782adbdc736fac8573"><div class="ttname"><a href="class_dragon_solenoid.html#af2a2f048bcc2d6782adbdc736fac8573">DragonSolenoid::Get</a></div><div class="ttdeci">bool Get() const</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00043">DragonSolenoid.cpp:43</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html"><div class="ttname"><a href="class_dragon_solenoid.html">DragonSolenoid</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8h_source.html#l00012">DragonSolenoid.h:12</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

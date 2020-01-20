@@ -1,5 +1,5 @@
 var class_dragon_servo_factory =
 [
-    [ "CreateDragonServo", "class_dragon_servo_factory.html#a1c23088e5f17bf7d2985b9a5dd4582d2", null ],
-    [ "CreateDragonServo", "class_dragon_servo_factory.html#a8f7c0fa98b6862288c6074f428e3aa30", null ]
+    [ "CreateDragonServo", "class_dragon_servo_factory.html#a1b73aabd706139b9004071299f46ee78", null ],
+    [ "CreateDragonServo", "class_dragon_servo_factory.html#a759ccaad294cd44aba94b6c1590a3f3a", null ]
 ];
