@@ -47,4 +47,4 @@ class IntakeOn : public IState
 
     IMechanism* m_intake;
 
-}
+};

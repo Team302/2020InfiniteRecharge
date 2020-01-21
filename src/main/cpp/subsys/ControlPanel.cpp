@@ -38,6 +38,7 @@ static constexpr frc::Color kGreenTarget = frc::Color(0.197, 0.561, 0.240);
 static constexpr frc::Color kRedTarget = frc::Color(0.561, 0.232, 0.114);
 static constexpr frc::Color kYellowTarget = frc::Color(0.361, 0.524, 0.113);
 
+//todo: this needs to come in as a parameter to the constructor not a static item
 static constexpr auto i2cPort = frc::I2C::Port::kOnboard;
 rev::ColorSensorV3 m_colorSensor{i2cPort};
 rev::ColorMatch m_colorMatcher;
@@ -60,13 +61,10 @@ ControlPanel::ControlPanel
     {
         Logger::GetLogger()->LogError( string( "Intake constructor" ), string( "solenoid is nullptr" ) );
     }
-m_colorMatcher.AddColorMatch(kBlueTarget);
-m_colorMatcher.AddColorMatch(kGreenTarget);
-m_colorMatcher.AddColorMatch(kRedTarget);
-m_colorMatcher.AddColorMatch(kYellowTarget);
-m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
-m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
-frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
+    m_colorMatcher.AddColorMatch(kBlueTarget);
+    m_colorMatcher.AddColorMatch(kGreenTarget);
+    m_colorMatcher.AddColorMatch(kRedTarget);
+    m_colorMatcher.AddColorMatch(kYellowTarget);
 }
 
 //ControlPanel::~ControlPanel)()

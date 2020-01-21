@@ -15,8 +15,6 @@
 #pragma once
 
 #include <string>
-#include <ctre/Phoenix.h>
-#include <frc/smartdashboard/SendableChooser.h>
 #include <subsys/IMechanism.h>
 #include <hw/DragonSolenoid.h>
 #include <hw/interfaces/IDragonMotorController.h>
@@ -32,13 +30,12 @@ class ControlPanel : public IMechanism
         );
         ControlPanel() = delete;
 
-	    //virtual ~ControlPanel() = delete;
+	    virtual ~ControlPanel() = default;
 
-        TalonSRX* m_testmotor;
 
         /// @brief          Indicates the type of mechanism this is
         /// @return         MechanismTypes::MECHANISM_TYPE
-        virtual MechanismTypes::MECHANISM_TYPE GetType() const = 0;
+        MechanismTypes::MECHANISM_TYPE GetType() const override;
 
         /// @brief      Run mechanism as defined 
         /// @param [in] ControlModes::CONTROL_TYPE   controlType:  How are the item(s) being controlled
@@ -103,10 +100,6 @@ class ControlPanel : public IMechanism
         std::shared_ptr<IDragonMotorController>     m_spinner;
         std::shared_ptr<DragonSolenoid>             m_manipulatorExtender;
         
-        frc::SendableChooser<std::string> m_chooser;
-        const std::string kAutoNameDefault = "Default";
-        const std::string kAutoNameCustom = "My Auto";
-        std::string m_autoSelected;
         
 
 

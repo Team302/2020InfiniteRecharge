@@ -13,6 +13,8 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+#pragma once 
+
 // C++ Includes
 #include <vector>
 #include <memory>
@@ -35,7 +37,6 @@
  *                   motors and solonoid for the ball transfer from hopper to shooter.
  * 
  *================================================================================================*/
-using namespace frc;
 
 class BallTransfer : public IMechanism
 {

@@ -30,6 +30,8 @@
 #include <controllers/intake/IntakeOn.h>
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
+#include <subsys/MechanismFactory.h>
+
 // Third Party Includes
 
 using namespace std;
@@ -43,7 +45,7 @@ IntakeOn::IntakeOn()
 {
     auto factory = MechanismFactory::GetMechanismFactory();
 
-    m_intake = factory -> GetIMechanism();
+    m_intake = factory -> GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE);
 }
 
 void IntakeOn::Run()           
@@ -52,7 +54,7 @@ void IntakeOn::Run()
     m_intake -> ActivateSolenoid( false );                                      //raises air cylinder
 }
 
-bool IntakeOn::AtTarget()                                                      //confirms that it worked
+bool IntakeOn::AtTarget() const                                         //confirms that it worked
 {
     return true;
 }

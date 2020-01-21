@@ -47,7 +47,7 @@
 #include <subsys/Intake.h>
 #include <subsys/HumanPlayerFlap.h>
 #include <subsys/BallTransfer.h>
-#include <subsys/ControlPanel>
+#include <subsys/ControlPanel.h>
 
 
 // Third Party Includes
@@ -114,17 +114,11 @@ class MechanismFactory
 			AnalogInputUsage::ANALOG_SENSOR_USAGE			usage
 		);
 
-		std::shared_ptr<Intake> 			m_intake;
-		std::shared_ptr<HumanPlayerFlap>	m_humanPlayerFlap;
-		std::shared_ptr<BallTransfer>		m_ballTransfer;
-		std::shared_ptr<ControlPanel>		m_controlPanel
-
 		MechanismFactory() = default;
 		virtual ~MechanismFactory() = default;
 
 		static MechanismFactory*	m_mechanismFactory;
 
 		std::map<MechanismTypes::MECHANISM_TYPE, IMechanism*> m_mechanisms;
-		IMechanism* m_Impeller;
 
 };
