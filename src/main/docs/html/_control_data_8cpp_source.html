@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/ControlData.cpp Source File</title>
+<title>Team 302 Robot: controllers/ControlData.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,8 +106,8 @@ $(document).ready(function(){initNavTree('_control_data_8cpp_source.html','');})
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_control_data_8h.html">controllers/ControlData.h</a>&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_control_modes_8h.html">controllers/ControlModes.h</a>&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<a class="code" href="class_control_data.html#ae3af77d1a24790ae1eb029d0e4268dc6">ControlData::ControlData</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_control_data.html#ae3af77d1a24790ae1eb029d0e4268dc6">   19</a></span>&#160;(</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<a class="code" href="class_control_data.html#a2db028550c1494a7853a8e942431224f">ControlData::ControlData</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_control_data.html#a2db028550c1494a7853a8e942431224f">   19</a></span>&#160;(</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a>    mode,</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">double</span>                                      proportional,</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">double</span>                                      integral,</div>
@@ -115,28 +115,32 @@ $(document).ready(function(){initNavTree('_control_data_8cpp_source.html','');})
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">double</span>                                      feedforward,</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">double</span>                                      integralZone,</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">double</span>                                      maxAcceleration,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">double</span>                                      cruiseVelocity</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;) : m_mode( mode ),</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    m_proportional( proportional ),</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    m_integral( integral ),</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    m_derivative( derivative ),</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_feedforward( feedforward ),</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    m_iZone( integralZone ),</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    m_maxAcceleration( maxAcceleration ),</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    m_cruiseVelocity( cruiseVelocity )</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">double</span>                                      cruiseVelocity,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">double</span>                                      peakVal,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">double</span>                                      nominalVal</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;) : m_mode( mode ),</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    m_proportional( proportional ),</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_integral( integral ),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    m_derivative( derivative ),</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    m_feedforward( feedforward ),</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    m_iZone( integralZone ),</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    m_maxAcceleration( maxAcceleration ),</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    m_cruiseVelocity( cruiseVelocity ),</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    m_peakValue( peakVal ),</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    m_nominalValue( nominalVal )</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
+<div class="ttc" id="aclass_control_data_html_a2db028550c1494a7853a8e942431224f"><div class="ttname"><a href="class_control_data.html#a2db028550c1494a7853a8e942431224f">ControlData::ControlData</a></div><div class="ttdeci">ControlData(ControlModes::CONTROL_TYPE mode, double proportional, double integral, double derivative, double feedforward, double integralZone, double maxAcceleration, double cruiseVelocity, double peakValue, double nominalValue)</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8cpp_source.html#l00019">ControlData.cpp:19</a></div></div>
 <div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>
-<div class="ttc" id="aclass_control_data_html_ae3af77d1a24790ae1eb029d0e4268dc6"><div class="ttname"><a href="class_control_data.html#ae3af77d1a24790ae1eb029d0e4268dc6">ControlData::ControlData</a></div><div class="ttdeci">ControlData(ControlModes::CONTROL_TYPE mode, double proportional, double integral, double derivative, double feedforward, double integralZone, double maxAcceleration, double cruiseVelocity)</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8cpp_source.html#l00019">ControlData.cpp:19</a></div></div>
 <div class="ttc" id="aclass_control_modes_html_a46c77e409ac22b3b3269f7fee2d3f736"><div class="ttname"><a href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a></div><div class="ttdeci">CONTROL_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_control_modes_8h_source.html#l00024">ControlModes.h:24</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_63526b63502cfa78b1b7a69ba33f8463.html">RoboticsCM</a></li><li class="navelem"><a class="el" href="dir_8079d39d009c5e5736094b48571e301c.html">2020InfiniteRecharge</a></li><li class="navelem"><a class="el" href="dir_9fd2ab248e50e9a55f866a56384444c2.html">src</a></li><li class="navelem"><a class="el" href="dir_be474fd464d9aa4f050626b6f84f271b.html">main</a></li><li class="navelem"><a class="el" href="dir_25db0aed34722cb73b29ffb45a5ed481.html">cpp</a></li><li class="navelem"><a class="el" href="dir_9826d9bbf1c2f77b3209e78b36ef4dba.html">controllers</a></li><li class="navelem"><a class="el" href="_control_data_8cpp.html">ControlData.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="_control_data_8cpp.html">ControlData.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

@@ -21,7 +21,7 @@
 // FRC includes
 
 // Team 302 include
-#include <controllers/teleopdrive/ITeleopDrive.h>
+#include <controllers/IState.h>
 #include <subsys/IChassis.h>
 #include <gamepad/TeleopControl.h>
 
@@ -32,13 +32,14 @@
 /// @brief Drive differential chassis using a throttle input and a sheer (turn) input
 
 
-class ThrottleSteerDrive : public ITeleopDrive
+class ThrottleSteerDrive : public IState
 {
     public:
     
         ThrottleSteerDrive();
         ~ThrottleSteerDrive() = default;
-        void Drive() override;
+        void Run() override;
+        bool AtTarget() const override;
                
     protected:
         virtual double GetSteer() = 0;

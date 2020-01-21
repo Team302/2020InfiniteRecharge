@@ -25,6 +25,8 @@ class DragonAnalogInput : AnalogInput
 		virtual ~DragonAnalogInput();
 		double GetInterpolatedValue() const;
 
+		AnalogInputUsage::ANALOG_SENSOR_USAGE GetUsage() const;
+
 	private:
 		AnalogInputUsage::ANALOG_SENSOR_USAGE	m_type;
 		float									m_voltMin;

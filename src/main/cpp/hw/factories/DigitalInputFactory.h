@@ -32,6 +32,7 @@
 
 // Team 302 includes
 #include <hw/DragonDigitalInput.h>
+#include <hw/usages/DigitalInputUsage.h>
 
 
 // Third Party Includes
@@ -52,7 +53,7 @@ class DigitalInputFactory
 		//=====================================================================================
         DragonDigitalInput* CreateInput
         (
-            DragonDigitalInput::DIGITAL_INPUT_TYPE			type,
+    		DigitalInputUsage::DIGITAL_SENSOR_USAGE			type,
             int 						                    digitalID,
             bool						                    reversed
         );
@@ -65,7 +66,7 @@ class DigitalInputFactory
 		//=====================================================================================
         DragonDigitalInput* GetInput
         (
-            DragonDigitalInput::DIGITAL_INPUT_TYPE			type
+    		DigitalInputUsage::DIGITAL_SENSOR_USAGE			type
         );
 
 
@@ -74,7 +75,5 @@ class DigitalInputFactory
 		~DigitalInputFactory();
 
 		static DigitalInputFactory*	m_factory;
-
-        DragonDigitalInput* m_armExtendMin;
 			
 };

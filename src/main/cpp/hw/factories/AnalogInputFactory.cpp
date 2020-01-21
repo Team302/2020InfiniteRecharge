@@ -32,7 +32,6 @@
 #include <hw/factories/AnalogInputFactory.h>
 #include <hw/DragonAnalogInput.h>
 #include <hw/usages/AnalogInputUsage.h>
-//#include <hw/DragonAngleSensorFactory.h>
 #include <utils/Logger.h>
 
 
@@ -41,10 +40,8 @@
 
 using namespace std;
 
-//=====================================================================================
 /// @brief  Find or create the analog input factory
 /// @return AnalogInputFactory* pointer to the factory
-//=====================================================================================
 AnalogInputFactory* AnalogInputFactory::m_factory = nullptr;
 AnalogInputFactory* AnalogInputFactory::GetFactory()
 {
@@ -56,28 +53,11 @@ AnalogInputFactory* AnalogInputFactory::GetFactory()
 }
 
 
-//=====================================================================================
-/// @brief  create the factory
-//=====================================================================================
-AnalogInputFactory::AnalogInputFactory( )
-{
-    CreateUsageMap();
-}
 
-//=====================================================================================
-/// @brief  create the map of usage string to sensor usage map
-/// @return void
-//=====================================================================================
-void AnalogInputFactory::CreateUsageMap()
-{
-    m_usageMap["EXTENDER_POTENTIOMETER"]  = AnalogInputUsage::ANALOG_SENSOR_USAGE::EXTENDER_POTENTIOMETER;
-    m_usageMap["PRESSURE_GAUGE"] = AnalogInputUsage::ANALOG_SENSOR_USAGE::PRESSURE_GAUGE;
-}
-//=====================================================================================
+
 /// @brief  Create the requested analog input
 /// @return shared_ptr<DragonAnalogInput>   the mechanism or nullptr if mechanism doesn't 
 ///         exist and cannot be created.
-//=====================================================================================
 shared_ptr<DragonAnalogInput> AnalogInputFactory::CreateInput
 (
     string  usage,
@@ -90,19 +70,9 @@ shared_ptr<DragonAnalogInput> AnalogInputFactory::CreateInput
 {
     shared_ptr<DragonAnalogInput> sensor;
 
-    auto type = m_usageMap.find(usage)->second;
+    auto type = AnalogInputUsage::GetInstance()->GetUsage( usage );
     switch ( type )
     {
-        case AnalogInputUsage::ANALOG_SENSOR_USAGE::EXTENDER_POTENTIOMETER:
-            sensor = make_shared<DragonAnalogInput>( type,
-                                                     analogID,
-                                                     voltageMin,
-                                                     voltageMax,
-                                                     outputMin,
-                                                     outputMax );
-            // TODO: Create an angle sensor + decorate it as a position sensor
-            break;
-
         case AnalogInputUsage::ANALOG_SENSOR_USAGE::PRESSURE_GAUGE:
             sensor = make_shared<DragonAnalogInput> ( type,
                                                       analogID,
@@ -110,6 +80,15 @@ shared_ptr<DragonAnalogInput> AnalogInputFactory::CreateInput
                                                       voltageMax,
                                                       outputMin,
                                                       outputMax );
+            break;
+
+        case AnalogInputUsage::ANALOG_SENSOR_USAGE::CRAWLER_LEVEL:
+            sensor = make_shared<DragonAnalogInput>( type,
+                                                     analogID,
+                                                     voltageMin,
+                                                     voltageMax,
+                                                     outputMin,
+                                                     outputMax );
             break;
 
         default:

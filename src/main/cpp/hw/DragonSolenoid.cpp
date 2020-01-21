@@ -2,28 +2,26 @@
  * DragonSolenoid.cpp
  */
 
-#include <iostream>
+#include <memory>
 #include <frc/Solenoid.h>
 #include <hw/DragonSolenoid.h>
+#include <hw/usages/SolenoidUsage.h>
+#include <utils/Logger.h>
 
 using namespace frc;
+using namespace std;
 
 DragonSolenoid::DragonSolenoid
 (
-    DragonSolenoid::DRAGON_SOLENOID_USAGE usage,
+    SolenoidUsage::SOLENOID_USAGE usage,
     int  pcmID,
 	int  channel,
     bool reversed
 ) : m_type( usage ),
-    m_solenoid( new Solenoid( pcmID, channel ) ),
+    m_solenoid( make_shared<Solenoid>( pcmID, channel ) ),
     m_reversed( reversed )
 
 {
-}
-
-DragonSolenoid::~DragonSolenoid()
-{
-    delete m_solenoid;
 }
 
 
@@ -32,14 +30,14 @@ void DragonSolenoid::Set
     bool on
 )
 {
-    if ( m_solenoid != nullptr )
+    if ( m_solenoid.get() != nullptr )
     {
         bool val = ( m_reversed ) ? !on : on;
-        m_solenoid->Set( val );
+        m_solenoid.get()->Set( val );
     }
     else
     {
-//        printf( "==> solenoid not set \n" );
+        Logger::GetLogger()->LogError( string("DragonSolenoid::Set"), string("solenoid ptr is nullptr"));
     }
 }
 bool DragonSolenoid::Get() const
@@ -51,7 +49,7 @@ bool DragonSolenoid::Get() const
     }
     else
     {
-//        printf( "==> solenoid not set \n" );
+        Logger::GetLogger()->LogError( string("DragonSolenoid::Get"), string("solenoid ptr is nullptr"));
     }
     return val;
 }
@@ -64,7 +62,7 @@ bool DragonSolenoid::IsBlackListed() const
     }
     else
     {
-//        printf( "==> solenoid not set \n" );
+        Logger::GetLogger()->LogError( string("DragonSolenoid::IsBlackListed"), string("solenoid ptr is nullptr"));
     }
     return val;
 }
@@ -79,7 +77,7 @@ void DragonSolenoid::SetPulseDuration
     }
     else
     {
-//        printf( "==> solenoid not set \n" );
+        Logger::GetLogger()->LogError( string("DragonSolenoid::SetPulseDuration"), string("solenoid ptr is nullptr"));
     }
 }
 void DragonSolenoid::StartPulse()
@@ -90,11 +88,11 @@ void DragonSolenoid::StartPulse()
     }
     else
     {
- //       printf( "==> solenoid not set \n" );
+        Logger::GetLogger()->LogError( string("DragonSolenoid::StartPulse"), string("solenoid ptr is nullptr"));
     }
 }
 
-DragonSolenoid::DRAGON_SOLENOID_USAGE DragonSolenoid::GetType() const
+SolenoidUsage::SOLENOID_USAGE DragonSolenoid::GetType() const
 {
     return m_type;
 }

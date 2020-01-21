@@ -42,20 +42,24 @@ class ControlData
             double                                      feedforward,
             double                                      integralZone,
             double                                      maxAcceleration,
-            double                                      cruiseVelocity
+            double                                      cruiseVelocity,
+            double                                      peakValue,
+            double                                      nominalValue
         );
 
 
         virtual ~ControlData() = default;
 
-        inline ControlModes::CONTROL_TYPE GetMode() { return m_mode; };
-        inline double GetP() { return m_proportional; };
-        inline double GetI() { return m_integral; };
-        inline double GetD() { return m_derivative; };
-        inline double GetF() { return m_feedforward; };
-        inline double GetIZone() { return m_iZone; };
-        inline double GetMaxAcceleration() { return m_maxAcceleration; };
-        inline double GetCruiseVelocity() { return m_cruiseVelocity; };
+        inline ControlModes::CONTROL_TYPE GetMode() const { return m_mode; };
+        inline double GetP() const { return m_proportional; };
+        inline double GetI() const { return m_integral; };
+        inline double GetD() const { return m_derivative; };
+        inline double GetF() const { return m_feedforward; };
+        inline double GetIZone() const { return m_iZone; };
+        inline double GetMaxAcceleration() const { return m_maxAcceleration; };
+        inline double GetCruiseVelocity() const { return m_cruiseVelocity; };
+        inline double GetPeakValue() const { return m_peakValue; };
+        inline double GetNominalValue() const { return m_nominalValue; };
 
  
     private:
@@ -69,6 +73,8 @@ class ControlData
         double                                      m_iZone;
         double                                      m_maxAcceleration;
         double                                      m_cruiseVelocity;
+        double                                      m_peakValue;
+        double                                      m_nominalValue;
 
 };
 

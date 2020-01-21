@@ -54,12 +54,12 @@ using namespace std;
 //		enum MOTOR_CONTROLLER_USAGE
 //		{
 //			UNKNOWN_MOTOR_CONTROLLER_USAGE = -1,
-//			FRONT_LEFT_DRIVE,
+//			LEFT_DRIVE_FOLLOWER,
 //			MIDDLE_LEFT_DRIVE,
-//			BACK_LEFT_DRIVE,
-//			FRONT_RIGHT_DRIVE,
+//			LEFT_DRIVE_MASTER,
+//			RIGHT_DRIVE_FOLLOWER,
 //			MIDDLE_RIGHT_DRIVE,
-//			BACK_RIGHT_DRIVE,
+//			RIGHT_DRIVE_MASTER,
 //			ARM_MASTER,
 //			ARM_SLAVE,
 //			ARM_EXTENSION,
@@ -150,7 +150,6 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
         if ( strcmp( attr.name(), "usage" ) == 0 )
         {
              usage = attr.value();
-             transform(usage.begin(), usage.end(), usage.begin(), ::toupper);
         }
 		// CAN ID 0 thru 62 are valid
         else if ( strcmp( attr.name(), "canId" ) == 0 )
@@ -168,7 +167,6 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
         else if ( strcmp( attr.name(), "type" ) == 0 )
         {
             mtype = attr.value();
-            transform(mtype.begin(), mtype.end(), mtype.begin(), ::toupper);
         }
 		// inverted
         else if ( strcmp( attr.name(), "inverted" ) == 0 )

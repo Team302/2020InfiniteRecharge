@@ -63,6 +63,7 @@ class DragonMotorControllerFactory
 	    enum MOTOR_TYPE
     	{
         	TALONSRX,				/// Controller is a Cross the Road Electronics (CTRE) Talon SRX on the CAN network
+			FALCON, 
         	BRUSHLESS_SPARK_MAX,	/// Controller is a Rev Robotics Spark Max controlling a brushless motor
         	BRUSHED_SPARK_MAX		/// Controller is a Rev Robotics Spark Max conrolling a brushed motor
     	};

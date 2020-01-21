@@ -40,6 +40,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", null ],
@@ -52,12 +53,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_analog_axis_8cpp.html",
-"_i_dragon_angle_position_sensor_8h.html",
-"class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa233ea253c2f85ac3d8010054def4b353",
-"class_dragon_solenoid.html#a3b7b19681de1f63075e9f4c1e83e6ccd",
-"class_i_chassis.html#a757ef3421a2a88c0c7d00e84d1c87313",
-"class_mechanism_parameters.html#a33645fbdee2537b07f48e371662ab14ea56ac972f37e32d3475d8a968844fc10d",
-"functions_eval_b.html"
+"_flipped_axis_8cpp.html",
+"_throttle_steer_drive_8cpp.html",
+"class_dragon_falcon.html",
+"class_drive_to_wall.html",
+"class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9a795d5fd6a2cf04238e4ad9f5834f0efe",
+"class_primitive_params.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

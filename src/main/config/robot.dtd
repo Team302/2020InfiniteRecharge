@@ -1,5 +1,9 @@
-<!ELEMENT robot (pdp?, pcm?, odometry?, feedback?, chassis?, mechanism* )>
+<!-- temporary leave pigeon here until odometry is plugged in -->
+<!ELEMENT> robot (pdp?, pcm?, odometry?, feedback?, chassis?, mechanism*, pigeon? )>
 
+<!-- odometry -->
+<!-- Pigeon IMU -->
+<!-- lidar -->
 <!ELEMENT odometry (pigeon?, lidar*, ultrasonic*, limelight* )>
 <!ATTLIST odometry 
           xloc CDATA 0.0
@@ -7,13 +11,6 @@
           heading CDATA 0.0
 >
 
-<!ELEMENT feedback (camera*, led*)>
-
-
-
-<!-- ====================================================
-	 Pigeon IMU
-	 ==================================================== -->
 <!ELEMENT pigeon EMPTY>
 <!ATTLIST pigeon 
           canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
@@ -25,10 +22,42 @@
                               60 | 61 | 62 ) "0"
 >
 
+<!ELEMENT lidar EMPTY>
+<!ATTLIST lidar 
+          usage              ( front | back  ) "0"
+          inputpin			 CDATA "0"
+          triggerpin		 CDATA "0"
+>
 
-<!-- ========================================s============
-	 PDP (power distribution panel) 
-	 ==================================================== -->
+<!-- feedback -->
+<!-- LEDs -->
+<!-- camera -->
+<!ELEMENT feedback (camera*, led*)>
+
+<!ELEMENT camera EMPTY>
+<!ATTLIST camera 
+          id                CDATA "0"
+          format            ( KMJPEG| KYUYV | KRGB565 | KBGR | KGRAY ) "KMJPEG"
+          width			 	CDATA "640"
+          height		 	CDATA "480"
+          fps			 	CDATA "30"
+>
+<!ELEMENT led EMPTY>
+<!ATTLIST led 
+          canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
+                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 
+                              20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 
+                              30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 
+                              40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 
+                              50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 
+                              60 | 61 | 62 ) "0"
+	  usage( front | back | top ) "front"
+>
+
+
+
+
+<!-- PDP (power distribution panel)  -->
 <!ELEMENT pdp EMPTY>
 <!ATTLIST pdp 
           canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
@@ -40,6 +69,7 @@
                               60 | 61 | 62 ) "0"
 >
 
+<!-- pcm -->
 <!ELEMENT pcm (analogInput?) >
 <!ATTLIST pcm 
           canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
@@ -51,20 +81,7 @@
                               60 | 61 | 62 ) "0"
 >
 
-<!-- ====================================================
-	 LEDs
-	 ==================================================== -->
-<!ELEMENT led EMPTY>
-<!ATTLIST led 
-          canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
-                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 
-                              20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 
-                              30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 
-                              40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 
-                              50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 
-                              60 | 61 | 62 ) "0"
-	  usage(0 | 1 | 2) "0"
->
+
 
 
 <!-- ====================================================
@@ -74,69 +91,19 @@
     Wheel Base is front-back distance between wheel centers 
     Track is the distance between wheels on an "axle"       
 	==================================================== -->
-<!ELEMENT chassis (motor*, PID*) >
+<!ELEMENT chassis (motor*) >
 <!ATTLIST chassis 
+          type              ( TANK | MECANUM ) "TANK"
           wheelDiameter     CDATA #REQUIRED
           wheelBase         CDATA #REQUIRED
           track             CDATA #REQUIRED
 >
 
 
-
-<!-- ====================================================
-        enum MECHANISM_TYPE
-        {
-            UNKNOWN_MECHANISM = -1,
-            WRIST,
-            INTAKE,
-            ARM,
-            CLIMBER,
-            MAX_MECHANISM_TYPES
-        };
-
-        enum MECHANISM_PARAM_TYPE
-        {
-            MECHANISM_PARAM_UNKNOWN = -1,
-            LEGAL_STARTING_ANGLE,
-            TEST_STARTING_ANGLE,
-            EXTENDER_LEGAL_STARTING_INCHES,
-            EXTENDER_TEST_STARTING_INCHES,
-            HATCH_FLOOR_ANGLE,
-            HATCH_HP_ANGLE,
-            HATCH_HP_HOLE_ANGLE,
-            HATCH_LOW_ANGLE,
-            HATCH_MID_ANGLE,
-            HATCH_HIGH_ANGLE,
-            CARGO_FLOOR_ANGLE,
-            CARGO_HP_ANGLE,
-            CARGO_SHIP_ANGLE,
-            CARGO_LOW_ANGLE,
-            CARGO_MID_ANGLE,
-            CARGO_HIGH_ANGLE,
-            HATCH_FLOOR_EXTENSION,
-            HATCH_HP_EXTENSION,
-            HATCH_HP_HOLE_EXTENSION,
-            HATCH_LOW_EXTENSION,
-            HATCH_MID_EXTENSION,
-            HATCH_HIGH_EXTENSION,
-            CARGO_FLOOR_EXTENSION,
-            CARGO_HP_EXTENSION,
-            CARGO_SHIP_EXTENSION,
-            CARGO_LOW_EXTENSION,
-            CARGO_MID_EXTENSION,
-            CARGO_HIGH_EXTENSION,
-            CARGO_INTAKE_SPEED_PARAM,
-            CARGO_OUTTAKE_SPEED_PARAM,
-            HATCH_INTAKE_SPEED_PARAM,
-            HATCH_OUTTAKE_SPEED_PARAM,
-            SERVO_LOCKED_POSITION_PARAM,
-            SERVO_DROPPED_POSITION_PARAM,
-            MAX_MECHANISM_PARAM_TYPES
-        };
-
-
-	==================================================== -->
-<!ELEMENT mechanism (motor*, analogInput*, digitalInput*, servo*, solenoid*, mechanismData*, PID*)>
+<!-- mechanism -->
+<!-- solenoid -->
+<!-- servo  -->
+<!ELEMENT mechanism (motor*, solenoid*, servo*, analogInput*, digitalInput*)>
 <!ATTLIST mechanism
           type              ( 0 | 1 | 2 | 3 ) "0"
 >
@@ -152,123 +119,28 @@
                               60 | 61 | 62 ) "0"
           channel             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 ) "0"
 >
-
-
-
-<!ELEMENT mechanismData EMPTY>
-<!ATTLIST mechanismData 
-          paramType         CDATA #REQUIRED
-          value             CDATA #REQUIRED
->
-
-<!-- ====================================================
-
-        enum CONTROL_MODE
-        {
-            VELOCITY,
-            POSITION,
-            MOTION_MAGIC
-        };
-
-	==================================================== -->
-<!ELEMENT PID EMPTY>
-<!ATTLIST PID
-          mode ( 0 | 1 | 2 ) "1"
-          pidtarget ( ARM | EXTENDER | GENERAL ) "GENERAL"
-          proportional CDATA "0.0"
-          integral CDATA "0.0"
-          derivative CDATA "0.0"
-          feedforward CDATA "0.0"
-          maxacceleration CDATA "0.0"
-          cruisevelocity CDATA "0.0"
->
-
-<!-- ====================================================
-        enum LIDAR_USAGE
-        {
-            FORWARD,
-            BACKWARD,
-            MAX_LIDAR_USAGES
-        };
-
-	==================================================== -->
-<!ELEMENT lidar EMPTY>
-<!ATTLIST lidar 
-          usage              ( 0 | 1  ) "0"
-          inputpin			 CDATA "0"
-          triggerpin		 CDATA "0"
->
-
-<!-- ====================================================
-	 camera
-	 
-	    enum PIXEL_FORMAT
-        {
-                UNKNOWN_PIXEL_FORMAT = -1,
-                KMJPEG,
-                KYUYV,
-                KRGB565,
-                KBGR,
-                KGRAY
-        };
-	==================================================== -->
-
-<!ELEMENT camera EMPTY>
-<!ATTLIST camera 
-          id                CDATA "0"
-          format            ( 0 | 1 | 2 | 3 | 4 ) "0"
-          width			 	CDATA "640"
-          height		 	CDATA "480"
-          fps			 	CDATA "30"
+<!ELEMENT servo EMPTY>
+<!ATTLIST servo 
+          usage             (  SHOOTER_HOOD ) "SHOOTER_HOOD"
+          pwmId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
+                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 ) "0"
+          minAngle			CDATA "0.0"
+          maxAngle          CDATA "360.0"
 >
 
 
-<!-- ====================================================
-	 motor usage options 
-	 ====================================================
-    enum MOTOR_CONTROLLER_USAGE
-    {
-        UNKNOWN_MOTOR_CONTROLLER_USAGE = -1,
-        FRONT_LEFT_DRIVE,
-        MIDDLE_LEFT_DRIVE,
-        BACK_LEFT_DRIVE,
-        FRONT_RIGHT_DRIVE,
-        MIDDLE_RIGHT_DRIVE,
-        BACK_RIGHT_DRIVE,
-        ARM_MASTER,
-        ARM_SLAVE,
-        ARM_EXTENSION,
-        WRIST,
-        INTAKE,
-        ELEVATOR_WINCH,
-        ELEVATOR_DRIVE,
-        MAX_MOTOR_CONTROLLER_USAGES
-    };
 
-		
-    ====================================================
-    motor sensor types
-    ====================================================
-    	enum TALON_SENSOR_TYPE
-		{
-			NO_SENSOR = -1,
-			QUAD_ENCODER,
-			UNKNOWN_SENSOR,
-			ANALOG_POT,
-			ANALOG_ENCODER,
-			ENCODER_RISING,
-			ENCODER_FALLING,
-			CTRE_MAG_ENCODER_RELATIVE,
-			CTRE_MAG_ENCODER_ABSOLUTE,
-			PULSE_WIDTH,
-			MAX_SENSOR_TYPES
-		};
-		
-		gearRatio is (Driving Gear Teeth):(Driven Gear Teeth) 
-	==================================================== -->
-<!ELEMENT motor EMPTY>
+<!-- shared items -->
+
+<!-- motor  -->
+<!ELEMENT motor (digitalInput*)>
 <!ATTLIST motor 
-          usage             		CDATA #REQUIRED
+          usage             	    ( LEFT_DRIVE_MASTER  | LEFT_DRIVE_FOLLOWER  |
+                                      RIGHT_DRIVE_MASTER | RIGHT_DRIVE_FOLLOWER |
+                                      INTAKE | IMPELLER | BALL_TRANSFER | TURRET | 
+                                      SHOOTER_1 | SHOOTER_2 | SHOOTER_HOOD |
+                                      CONTROL_TABLE_MANIPULATOR | 
+                                      CLIMBER | CRAWLER ) "LEFT_DRIVE_MOTOR"
           canId             		(  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
                               		  10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 
                               		  20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 
@@ -277,10 +149,13 @@
                               		  50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 
                               		  60 | 61 | 62 ) "0"
 		  pdpID						CDATA #IMPLIED
-          type              		CDATA #REQUIRED
+          type              		( TALONSRX | FALCON | BRUSHLESS_SPARK_MAX | BRUSHED_SPARK_MAX ) "TALONSRX"
           inverted          		( true | false ) "false"
           sensorInverted    		( true | false ) "false"
-          feedbackDevice    		( -1 | 0  |  2 |  3 |  4 |  5 |  6 |  7 |  8 ) "-1"
+          feedbackDevice    		( NONE | INTERNAL | QUADENCODER |  ANALOG |  
+                                      TACHOMETER | PULSEWIDTHENCODERPOSITION  |  
+                                      SENSORSUM |  SENSORDIFFERENCE |  
+                                      REMOTESENSOR0 |  REMOTESENSOR1 | SOFTWAREEMULATEDSENSOR ) "NONE"
           countsPerRev      		CDATA "0"
           gearRatio         		CDATA "1"
           brakeMode         		( true | false ) "false"
@@ -292,22 +167,10 @@
 >
 
 
-<!-- ====================================================
-	 analogInput type options 
-	 ====================================================
-	 enum ANALOG_SENSOR_USAGE
-	 {
-	 	UNKNOWN_ANALOG_TYPE = -1,
-	 	ANALOG_GENERAL,
-	 	ANALOG_GYRO,
-	 	POTENTIOMETER,
-	 	PRESSURE_GAUGE,
-	 	MAX_ANALOG_TYPES
-	 };
-	 ==================================================== -->
+<!-- analogInput  -->
 <!ELEMENT analogInput EMPTY>
 <!ATTLIST analogInput 
-          type              (  0 |  1 |  2 | 3 ) "0"
+          type              ( PRESSURE_GAUGE |  CRAWLER_LEVEL ) "PRESSURE_GAUGE"
           analogId          (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 ) "0"
           voltageMin        CDATA "0.0"
           voltageMax        CDATA "5.0"
@@ -315,29 +178,10 @@
           outputMax         CDATA #REQUIRED
 >
 
-<!-- ====================================================
-	 digitalInput 
-	 ====================================================
-	        enum DIGITAL_INPUT_TYPE
-                {
-                UNKNOWN_DIGITAL_INPUT_TYPE = -1,
-                CARGO_PRESENT,
-                HATCH_PRESENT_SIDE1,
-                HATCH_PRESENT_SIDE2,
-                ARM_MIN_POSITION,
-                ARM_MAX_POSITION,
-		            FRONT_LEFT_LINE_DETECT,
-		            FRONT_RIGHT_LINE_DETECT,
-		            BACK_LEFT_LINE_DETECT,
-		            BACK_RIGHT_LINE_DETECT,
-                MAX_DIGITAL_INPPUT_TYPES
-                };		
-
-
-	 ==================================================== -->
+<!-- digitalInput  -->
 <!ELEMENT digitalInput EMPTY>
 <!ATTLIST digitalInput 
-          usage             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 | 8 ) "0"
+          usage             ( TURRET_ANGLE_MIN | TURRET_ANGLE_MAX ) "TURRET_ANGLE_MIN"
           digitalId         (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
                               10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 
                               20 | 21 | 22 | 23 | 24 | 25 ) "0"
@@ -345,40 +189,8 @@
 >
 
 
-<!-- ====================================================
-	 servo usage options 
-	 ====================================================
- 		enum SERVO_USAGE
-		{
-			UNKNOWN_SERVO_USAGE = -1,
-			LIMELIGHT_ANGLE,
-			DROP_BUDDY_CLIMB,
-			MAX_SERVO_USAGES
-		};
 
- 	 ==================================================== -->
-<!ELEMENT servo EMPTY>
-<!ATTLIST servo 
-          usage             (  0 |  1 | 2 ) "0"
-          pwmId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
-                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 ) "0"
-          minAngle			CDATA "0.0"
-          maxAngle          CDATA "360.0"
->
-
-<!-- ====================================================
-	 TalonTach usage 
-	 ====================================================
-	 enum TALON_TACH_USAGE
-	 {
-	 	MIN_WRIST_ANGLE,
-        MAX_WRIST_ANGLE,
-        TOP_HATCH_PRESENT,
-        BOTTOM_HATCH_PRESENT,
-        ARM_BOTTOM,
-        ARM_TOP
-	 };
-	 ==================================================== -->
+<!-- TalonTach  -->
 <!ELEMENT talontach EMPTY>
 <!ATTLIST talontach 
           usage             (  0 |  1 |  2 |  3 |  4 |  5 |  6 ) "0" 

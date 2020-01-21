@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/hw/DragonSolenoid.cpp Source File</title>
+<title>Team 302 Robot: hw/DragonSolenoid.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -93,119 +93,120 @@ $(document).ready(function(){initNavTree('_dragon_solenoid_8cpp_source.html','')
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * DragonSolenoid.cpp</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;frc/Solenoid.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_solenoid_8h.html">hw/DragonSolenoid.h</a>&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>frc;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_solenoid_usage_8h.html">hw/usages/SolenoidUsage.h</a>&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_logger_8h.html">utils/Logger.h</a>&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<a class="code" href="class_dragon_solenoid.html#ae2628b6d3532c3c09ac9878d09556bb0">DragonSolenoid::DragonSolenoid</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#a14c20f84e61027cda80c22dcccd59033">   12</a></span>&#160;(</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4a">DragonSolenoid::DRAGON_SOLENOID_USAGE</a> usage,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span>  pcmID,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span>  channel,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">bool</span> reversed</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;) : m_type( usage ),</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    m_solenoid( <span class="keyword">new</span> Solenoid( pcmID, channel ) ),</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    m_reversed( reversed )</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>frc;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<a class="code" href="class_dragon_solenoid.html#ae2628b6d3532c3c09ac9878d09556bb0">DragonSolenoid::DragonSolenoid</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#a41f2a897c4e043798304d68c69870e27">   15</a></span>&#160;(</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7">SolenoidUsage::SOLENOID_USAGE</a> usage,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span>  pcmID,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span>  channel,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> reversed</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;) : m_type( usage ),</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    m_solenoid( make_shared&lt;Solenoid&gt;( pcmID, channel ) ),</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    m_reversed( reversed )</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#a3e2879cf41d8d3d627f71bdf2594deff">   24</a></span>&#160;<a class="code" href="class_dragon_solenoid.html#a3e2879cf41d8d3d627f71bdf2594deff">DragonSolenoid::~DragonSolenoid</a>()</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">delete</span> m_solenoid;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_solenoid.html#a9a1baa91b95f47c1f42f58e59a82c570">DragonSolenoid::Set</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#a9a1baa91b95f47c1f42f58e59a82c570">   31</a></span>&#160;(</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">bool</span> on</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> ( m_solenoid != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">bool</span> val = ( m_reversed ) ? !on : on;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        m_solenoid-&gt;Set( val );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//        printf( &quot;==&gt; solenoid not set \n&quot; );</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#af2a2f048bcc2d6782adbdc736fac8573">   45</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dragon_solenoid.html#af2a2f048bcc2d6782adbdc736fac8573">DragonSolenoid::Get</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> val = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> ( m_solenoid != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        val = ( m_reversed ) ? !m_solenoid-&gt;Get() : m_solenoid-&gt;Get();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//        printf( &quot;==&gt; solenoid not set \n&quot; );</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> val;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#a8e3de21db1e6f8ffd09b1b80447ec192">   58</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dragon_solenoid.html#a8e3de21db1e6f8ffd09b1b80447ec192">DragonSolenoid::IsBlackListed</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">bool</span> val = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> ( m_solenoid != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        val = m_solenoid-&gt;IsBlackListed();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">//        printf( &quot;==&gt; solenoid not set \n&quot; );</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> val;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_solenoid.html#a3b7b19681de1f63075e9f4c1e83e6ccd">DragonSolenoid::SetPulseDuration</a></div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#a3b7b19681de1f63075e9f4c1e83e6ccd">   72</a></span>&#160;(</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">double</span> durationSeconds</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> ( m_solenoid != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        m_solenoid-&gt;SetPulseDuration( durationSeconds );</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">//        printf( &quot;==&gt; solenoid not set \n&quot; );</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#ac8a7ec83334086315c1ee77b18d77419">   85</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_solenoid.html#ac8a7ec83334086315c1ee77b18d77419">DragonSolenoid::StartPulse</a>()</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> ( m_solenoid != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        m_solenoid-&gt;StartPulse();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; <span class="comment">//       printf( &quot;==&gt; solenoid not set \n&quot; );</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#a80df0533559f1fbf9513b19f148974d6">   97</a></span>&#160;<a class="code" href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4a">DragonSolenoid::DRAGON_SOLENOID_USAGE</a> <a class="code" href="class_dragon_solenoid.html#a80df0533559f1fbf9513b19f148974d6">DragonSolenoid::GetType</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> m_type;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_solenoid.html#a9a1baa91b95f47c1f42f58e59a82c570">DragonSolenoid::Set</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#a9a1baa91b95f47c1f42f58e59a82c570">   29</a></span>&#160;(</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">bool</span> on</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> ( m_solenoid.get() != nullptr )</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">bool</span> val = ( m_reversed ) ? !on : on;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        m_solenoid.get()-&gt;Set( val );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonSolenoid::Set&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;solenoid ptr is nullptr&quot;</span>));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#af2a2f048bcc2d6782adbdc736fac8573">   43</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dragon_solenoid.html#af2a2f048bcc2d6782adbdc736fac8573">DragonSolenoid::Get</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> val = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> ( m_solenoid != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        val = ( m_reversed ) ? !m_solenoid-&gt;Get() : m_solenoid-&gt;Get();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonSolenoid::Get&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;solenoid ptr is nullptr&quot;</span>));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> val;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#a8e3de21db1e6f8ffd09b1b80447ec192">   56</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dragon_solenoid.html#a8e3de21db1e6f8ffd09b1b80447ec192">DragonSolenoid::IsBlackListed</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> val = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> ( m_solenoid != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        val = m_solenoid-&gt;IsBlackListed();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonSolenoid::IsBlackListed&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;solenoid ptr is nullptr&quot;</span>));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> val;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_solenoid.html#a3b7b19681de1f63075e9f4c1e83e6ccd">DragonSolenoid::SetPulseDuration</a></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#a3b7b19681de1f63075e9f4c1e83e6ccd">   70</a></span>&#160;(</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">double</span> durationSeconds</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> ( m_solenoid != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        m_solenoid-&gt;SetPulseDuration( durationSeconds );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonSolenoid::SetPulseDuration&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;solenoid ptr is nullptr&quot;</span>));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#ac8a7ec83334086315c1ee77b18d77419">   83</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_solenoid.html#ac8a7ec83334086315c1ee77b18d77419">DragonSolenoid::StartPulse</a>()</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> ( m_solenoid != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        m_solenoid-&gt;StartPulse();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonSolenoid::StartPulse&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;solenoid ptr is nullptr&quot;</span>));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_dragon_solenoid.html#a532b8bb498212618426a5cc0aecf7c3b">   95</a></span>&#160;<a class="code" href="class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7">SolenoidUsage::SOLENOID_USAGE</a> <a class="code" href="class_dragon_solenoid.html#a532b8bb498212618426a5cc0aecf7c3b">DragonSolenoid::GetType</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> m_type;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_dragon_solenoid_html_acfbd54215804e0243bd41112e3abbb4a"><div class="ttname"><a href="class_dragon_solenoid.html#acfbd54215804e0243bd41112e3abbb4a">DragonSolenoid::DRAGON_SOLENOID_USAGE</a></div><div class="ttdeci">DRAGON_SOLENOID_USAGE</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8h_source.html#l00016">DragonSolenoid.h:16</a></div></div>
-<div class="ttc" id="aclass_dragon_solenoid_html_a3e2879cf41d8d3d627f71bdf2594deff"><div class="ttname"><a href="class_dragon_solenoid.html#a3e2879cf41d8d3d627f71bdf2594deff">DragonSolenoid::~DragonSolenoid</a></div><div class="ttdeci">virtual ~DragonSolenoid()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00024">DragonSolenoid.cpp:24</a></div></div>
-<div class="ttc" id="aclass_dragon_solenoid_html_a9a1baa91b95f47c1f42f58e59a82c570"><div class="ttname"><a href="class_dragon_solenoid.html#a9a1baa91b95f47c1f42f58e59a82c570">DragonSolenoid::Set</a></div><div class="ttdeci">void Set(bool on)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00031">DragonSolenoid.cpp:31</a></div></div>
-<div class="ttc" id="aclass_dragon_solenoid_html_a3b7b19681de1f63075e9f4c1e83e6ccd"><div class="ttname"><a href="class_dragon_solenoid.html#a3b7b19681de1f63075e9f4c1e83e6ccd">DragonSolenoid::SetPulseDuration</a></div><div class="ttdeci">void SetPulseDuration(double durationSeconds)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00072">DragonSolenoid.cpp:72</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_a532b8bb498212618426a5cc0aecf7c3b"><div class="ttname"><a href="class_dragon_solenoid.html#a532b8bb498212618426a5cc0aecf7c3b">DragonSolenoid::GetType</a></div><div class="ttdeci">SolenoidUsage::SOLENOID_USAGE GetType() const</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00095">DragonSolenoid.cpp:95</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_a9a1baa91b95f47c1f42f58e59a82c570"><div class="ttname"><a href="class_dragon_solenoid.html#a9a1baa91b95f47c1f42f58e59a82c570">DragonSolenoid::Set</a></div><div class="ttdeci">void Set(bool on)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00029">DragonSolenoid.cpp:29</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_a3b7b19681de1f63075e9f4c1e83e6ccd"><div class="ttname"><a href="class_dragon_solenoid.html#a3b7b19681de1f63075e9f4c1e83e6ccd">DragonSolenoid::SetPulseDuration</a></div><div class="ttdeci">void SetPulseDuration(double durationSeconds)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00070">DragonSolenoid.cpp:70</a></div></div>
+<div class="ttc" id="aclass_solenoid_usage_html_adb45b3112fbc67f57d39931571b60ef7"><div class="ttname"><a href="class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7">SolenoidUsage::SOLENOID_USAGE</a></div><div class="ttdeci">SOLENOID_USAGE</div><div class="ttdoc">Defines solenoid usages. This should be modified for each robot.</div><div class="ttdef"><b>Definition:</b> <a href="_solenoid_usage_8h_source.html#l00040">SolenoidUsage.h:40</a></div></div>
+<div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
 <div class="ttc" id="aclass_dragon_solenoid_html_ae2628b6d3532c3c09ac9878d09556bb0"><div class="ttname"><a href="class_dragon_solenoid.html#ae2628b6d3532c3c09ac9878d09556bb0">DragonSolenoid::DragonSolenoid</a></div><div class="ttdeci">DragonSolenoid()=delete</div></div>
-<div class="ttc" id="aclass_dragon_solenoid_html_ac8a7ec83334086315c1ee77b18d77419"><div class="ttname"><a href="class_dragon_solenoid.html#ac8a7ec83334086315c1ee77b18d77419">DragonSolenoid::StartPulse</a></div><div class="ttdeci">void StartPulse()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00085">DragonSolenoid.cpp:85</a></div></div>
-<div class="ttc" id="aclass_dragon_solenoid_html_a8e3de21db1e6f8ffd09b1b80447ec192"><div class="ttname"><a href="class_dragon_solenoid.html#a8e3de21db1e6f8ffd09b1b80447ec192">DragonSolenoid::IsBlackListed</a></div><div class="ttdeci">bool IsBlackListed() const</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00058">DragonSolenoid.cpp:58</a></div></div>
-<div class="ttc" id="aclass_dragon_solenoid_html_a80df0533559f1fbf9513b19f148974d6"><div class="ttname"><a href="class_dragon_solenoid.html#a80df0533559f1fbf9513b19f148974d6">DragonSolenoid::GetType</a></div><div class="ttdeci">DRAGON_SOLENOID_USAGE GetType() const</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00097">DragonSolenoid.cpp:97</a></div></div>
-<div class="ttc" id="aclass_dragon_solenoid_html_af2a2f048bcc2d6782adbdc736fac8573"><div class="ttname"><a href="class_dragon_solenoid.html#af2a2f048bcc2d6782adbdc736fac8573">DragonSolenoid::Get</a></div><div class="ttdeci">bool Get() const</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00045">DragonSolenoid.cpp:45</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_ac8a7ec83334086315c1ee77b18d77419"><div class="ttname"><a href="class_dragon_solenoid.html#ac8a7ec83334086315c1ee77b18d77419">DragonSolenoid::StartPulse</a></div><div class="ttdeci">void StartPulse()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00083">DragonSolenoid.cpp:83</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_a8e3de21db1e6f8ffd09b1b80447ec192"><div class="ttname"><a href="class_dragon_solenoid.html#a8e3de21db1e6f8ffd09b1b80447ec192">DragonSolenoid::IsBlackListed</a></div><div class="ttdeci">bool IsBlackListed() const</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00056">DragonSolenoid.cpp:56</a></div></div>
+<div class="ttc" id="aclass_logger_html_a98d7aec19dcdfb9d8faa46d83d927883"><div class="ttname"><a href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">Logger::LogError</a></div><div class="ttdeci">void LogError(const std::string &amp;locationIdentifier, const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00071">Logger.cpp:71</a></div></div>
+<div class="ttc" id="a_solenoid_usage_8h_html"><div class="ttname"><a href="_solenoid_usage_8h.html">SolenoidUsage.h</a></div></div>
+<div class="ttc" id="aclass_dragon_solenoid_html_af2a2f048bcc2d6782adbdc736fac8573"><div class="ttname"><a href="class_dragon_solenoid.html#af2a2f048bcc2d6782adbdc736fac8573">DragonSolenoid::Get</a></div><div class="ttdeci">bool Get() const</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_solenoid_8cpp_source.html#l00043">DragonSolenoid.cpp:43</a></div></div>
+<div class="ttc" id="aclass_logger_html_ae85cfbef8b7e6940475a5012fa1935c6"><div class="ttname"><a href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a></div><div class="ttdeci">static Logger * GetLogger()</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00052">Logger.cpp:52</a></div></div>
 <div class="ttc" id="a_dragon_solenoid_8h_html"><div class="ttname"><a href="_dragon_solenoid_8h.html">DragonSolenoid.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_63526b63502cfa78b1b7a69ba33f8463.html">RoboticsCM</a></li><li class="navelem"><a class="el" href="dir_8079d39d009c5e5736094b48571e301c.html">2020InfiniteRecharge</a></li><li class="navelem"><a class="el" href="dir_9fd2ab248e50e9a55f866a56384444c2.html">src</a></li><li class="navelem"><a class="el" href="dir_be474fd464d9aa4f050626b6f84f271b.html">main</a></li><li class="navelem"><a class="el" href="dir_25db0aed34722cb73b29ffb45a5ed481.html">cpp</a></li><li class="navelem"><a class="el" href="dir_3a2f81aea77c88cb1c514c8ec3cbaf4e.html">hw</a></li><li class="navelem"><a class="el" href="_dragon_solenoid_8cpp.html">DragonSolenoid.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_09571670ada7ed7a96bbb0146a01a89f.html">hw</a></li><li class="navelem"><a class="el" href="_dragon_solenoid_8cpp.html">DragonSolenoid.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

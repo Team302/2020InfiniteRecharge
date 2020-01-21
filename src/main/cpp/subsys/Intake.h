@@ -13,9 +13,11 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+#pragma once 
+
 // C++ Includes
-#include <vector>
 #include <memory>
+
 // FRC includes
 
 // Team 302 includes
@@ -25,27 +27,21 @@
 #include <subsys/IMechanism.h>
 #include <hw/DragonSolenoid.h>
 #include <hw/interfaces/IDragonMotorController.h>
+
 // Third Party Includes
-
-
-/*================================================================================================
- * Intake.h
- *================================================================================================
- * 
- * File Description: This class controls the intake wheels
- * 
- *================================================================================================*/
-using namespace frc;
 
 class Intake : public IMechanism
 {
     public:
 
-        Intake 
+        Intake
         (
-            std::shared_ptr<IDragonMotorController>     motorController,
-            std::shared_ptr<DragonSolenoid>             solenoid
+            std::shared_ptr<IDragonMotorController>         motorController,
+            std::shared_ptr<DragonSolenoid>                 solenoid
         );
+
+        Intake() = delete;
+        virtual ~Intake() = default;
 
         /// @brief          Indicates the type of mechanism this is
         /// @return         MechanismTypes::MECHANISM_TYPE
@@ -108,4 +104,3 @@ class Intake : public IMechanism
     std::shared_ptr<IDragonMotorController>     m_master;
     std::shared_ptr<DragonSolenoid>             m_crawlingLifter;
 };
-

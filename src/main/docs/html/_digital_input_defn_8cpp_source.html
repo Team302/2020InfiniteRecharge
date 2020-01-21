@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/xmlhw/DigitalInputDefn.cpp Source File</title>
+<title>Team 302 Robot: xmlhw/DigitalInputDefn.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,130 +104,91 @@ $(document).ready(function(){initNavTree('_digital_input_defn_8cpp_source.html',
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// C++ includes</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// FRC includes</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_digital_input_defn_8h.html">xmlhw/DigitalInputDefn.h</a>&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;frc/SmartDashboard/SmartDashboard.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// Team302 includes</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_digital_input_defn_8h.html">xmlhw/DigitalInputDefn.h</a>&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_digital_input_8h.html">hw/DragonDigitalInput.h</a>&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Third Party includes</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;pugixml/pugixml.hpp&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// FRC includes</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;frc/SmartDashboard/SmartDashboard.h&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Team302 includes</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_digital_input_usage_8h.html">hw/usages/DigitalInputUsage.h</a>&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_digital_input_defn_8h.html">xmlhw/DigitalInputDefn.h</a>&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_digital_input_8h.html">hw/DragonDigitalInput.h</a>&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_hardware_i_d_validation_8h.html">utils/HardwareIDValidation.h</a>&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using namespace </span>frc;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Third Party includes</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;pugixml/pugixml.hpp&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//-----------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// Method:      ParseXML</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Description: Parse a motor XML element and create a DragonTalon from</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//              its definition.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//&lt;!-- ====================================================</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//     digitalInput</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//     ====================================================</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//        enum DIGITAL_INPUT_TYPE</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//        {</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//            UNKNOWN_DIGITAL_INPUT_TYPE = -1,</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//            CARGO_PRESENT,</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//            HATCH_PRESENT_SIDE1,</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//            HATCH_PRESENT_SIDE2,</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//            ARM_MIN_POSITION,</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//            ARM_MAX_POSITION,</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//        FRONT_LEFT_LINE_DETECT,</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//        FRONT_RIGHT_LINE_DETECT,</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//        BACK_LEFT_LINE_DETECT,</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//        BACK_RIGHT_LINE_DETECT,</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//            MAX_DIGITAL_INPPUT_TYPES</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//        };</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//     ==================================================== --&gt;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//&lt;!ELEMENT digitalInput EMPTY&gt;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//&lt;!ATTLIST digitalInput</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//          usage             (  0 |  1 |  2 |  3 |  4 | 5 | 6 | 8 ) &quot;0&quot;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//          digitalId         (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 |</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 |</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">//                              20 | 21 | 22 | 23 | 24 | 25 ) &quot;0&quot;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//          reversed          (true | false ) &quot;false&quot;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//&gt;</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// Returns:     DragonDigitalInput*</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">//-----------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<a class="code" href="class_dragon_digital_input.html">DragonDigitalInput</a>* <a class="code" href="class_digital_input_defn.html#aef5a2703188ee60151ff5e4fa29e3d52">DigitalInputDefn::ParseXML</a></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_digital_input_defn.html#aef5a2703188ee60151ff5e4fa29e3d52">   68</a></span>&#160;(</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    pugi::xml_node DigitalNode</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// initialize the output</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="class_dragon_digital_input.html">DragonDigitalInput</a>*         input = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">using namespace </span>frc;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">using namespace </span>pugi;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//-----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// Method:      ParseXML</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// Description: Parse a motor XML element and create a DragonTalon from</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//              its definition.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Returns:     DragonDigitalInput*</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//-----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;shared_ptr&lt;DragonDigitalInput&gt; <a class="code" href="class_digital_input_defn.html#a6742373274964e8d271b958969fb8396">DigitalInputDefn::ParseXML</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_digital_input_defn.html#a6742373274964e8d271b958969fb8396">   44</a></span>&#160;(</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    xml_node DigitalNode</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// initialize the output</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    shared_ptr&lt;DragonDigitalInput&gt; input;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// initialize the attributes to default values</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46">DigitalInputUsage::DIGITAL_SENSOR_USAGE</a>  usage = DigitalInputUsage::DIGITAL_SENSOR_USAGE::UNKNOWN_DIGITAL_TYPE;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">int</span>                                     digitalID = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">bool</span>                                    reversed = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">bool</span> hasError = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Parse/validate the XML</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span> (pugi::xml_attribute attr = DigitalNode.first_attribute(); attr; attr = attr.next_attribute())</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;usage&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">string</span> usageString = string(attr.value());</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            usage = <a class="code" href="class_digital_input_usage.html#a23524187a82656be0667788f23c0f65d">DigitalInputUsage::GetInstance</a>()-&gt;<a class="code" href="class_digital_input_usage.html#acb414552a92cca2e59d7d88929a6342f">GetUsage</a>(usageString );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;digitalId&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordtype">int</span> iVal = attr.as_int();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            hasError = <a class="code" href="class_hardware_i_d_validation.html#a703f456923391db2a37e0c1160acc209">HardwareIDValidation::ValidateDIOID</a>( iVal, <span class="keywordtype">string</span>( <span class="stringliteral">&quot;DigitalInputDefn::ParseXML(digital Input pin)&quot;</span> ) );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;reversed&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            reversed = attr.as_bool();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// initialize the attributes to default values</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_dragon_digital_input.html#a5978e6af791b83e55b7f183ed2504b45">DragonDigitalInput::DIGITAL_INPUT_TYPE</a>  usage = <a class="code" href="class_dragon_digital_input.html#a5978e6af791b83e55b7f183ed2504b45a5257820264a18aae26beebc3bf68c9bb">DragonDigitalInput::UNKNOWN_DIGITAL_INPUT_TYPE</a>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">int</span>                                     digitalID = 0;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">bool</span>                                    reversed = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">bool</span> hasError = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Parse/validate the XML</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (pugi::xml_attribute attr = DigitalNode.first_attribute(); attr; attr = attr.next_attribute())</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;usage&quot;</span> ) == 0 )</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordtype">int</span> iVal = attr.as_int();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">switch</span> (iVal )</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">case</span> DragonDigitalInput::DIGITAL_INPUT_TYPE::ARM_MIN_POSITION:</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    usage = DragonDigitalInput::DIGITAL_INPUT_TYPE::ARM_MIN_POSITION;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    hasError = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    printf( <span class="stringliteral">&quot;==&gt;&gt; unknown DragonDigitalInput type %d \n&quot;</span>, iVal );</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;digitalId&quot;</span> ) == 0 )</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordtype">int</span> iVal = attr.as_int();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> ( iVal &gt;=0 &amp;&amp; iVal &lt;= 25 )</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                digitalID = iVal;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                printf( <span class="stringliteral">&quot;==&gt;&gt; DigitalInputDefn::ParseXML  invalid digitalId %d \n&quot;</span>, iVal );</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                hasError = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;reversed&quot;</span> ) == 0 )</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            reversed = attr.as_bool();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// Create the DragonDigitalInput</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> ( !hasError )</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        input = <span class="keyword">new</span> <a class="code" href="class_dragon_digital_input.html">DragonDigitalInput</a>( usage, digitalID, reversed );</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span> input;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Create the DragonDigitalInput</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> ( !hasError )</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        input = make_shared&lt;DragonDigitalInput&gt;( usage, digitalID, reversed );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> input;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_dragon_digital_input_html_a5978e6af791b83e55b7f183ed2504b45"><div class="ttname"><a href="class_dragon_digital_input.html#a5978e6af791b83e55b7f183ed2504b45">DragonDigitalInput::DIGITAL_INPUT_TYPE</a></div><div class="ttdeci">DIGITAL_INPUT_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_digital_input_8h_source.html#l00018">DragonDigitalInput.h:18</a></div></div>
+<div class="ttc" id="aclass_digital_input_defn_html_a6742373274964e8d271b958969fb8396"><div class="ttname"><a href="class_digital_input_defn.html#a6742373274964e8d271b958969fb8396">DigitalInputDefn::ParseXML</a></div><div class="ttdeci">std::shared_ptr&lt; DragonDigitalInput &gt; ParseXML(pugi::xml_node DigitalNode)</div><div class="ttdef"><b>Definition:</b> <a href="_digital_input_defn_8cpp_source.html#l00044">DigitalInputDefn.cpp:44</a></div></div>
+<div class="ttc" id="a_digital_input_usage_8h_html"><div class="ttname"><a href="_digital_input_usage_8h.html">DigitalInputUsage.h</a></div></div>
+<div class="ttc" id="aclass_digital_input_usage_html_a23524187a82656be0667788f23c0f65d"><div class="ttname"><a href="class_digital_input_usage.html#a23524187a82656be0667788f23c0f65d">DigitalInputUsage::GetInstance</a></div><div class="ttdeci">static DigitalInputUsage * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_digital_input_usage_8cpp_source.html#l00032">DigitalInputUsage.cpp:32</a></div></div>
+<div class="ttc" id="a_hardware_i_d_validation_8h_html"><div class="ttname"><a href="_hardware_i_d_validation_8h.html">HardwareIDValidation.h</a></div></div>
+<div class="ttc" id="aclass_digital_input_usage_html_acb414552a92cca2e59d7d88929a6342f"><div class="ttname"><a href="class_digital_input_usage.html#acb414552a92cca2e59d7d88929a6342f">DigitalInputUsage::GetUsage</a></div><div class="ttdeci">DIGITAL_SENSOR_USAGE GetUsage(std::string usageString)</div><div class="ttdef"><b>Definition:</b> <a href="_digital_input_usage_8cpp_source.html#l00053">DigitalInputUsage.cpp:53</a></div></div>
 <div class="ttc" id="a_dragon_digital_input_8h_html"><div class="ttname"><a href="_dragon_digital_input_8h.html">DragonDigitalInput.h</a></div></div>
-<div class="ttc" id="aclass_dragon_digital_input_html_a5978e6af791b83e55b7f183ed2504b45a5257820264a18aae26beebc3bf68c9bb"><div class="ttname"><a href="class_dragon_digital_input.html#a5978e6af791b83e55b7f183ed2504b45a5257820264a18aae26beebc3bf68c9bb">DragonDigitalInput::UNKNOWN_DIGITAL_INPUT_TYPE</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_digital_input_8h_source.html#l00020">DragonDigitalInput.h:20</a></div></div>
+<div class="ttc" id="aclass_hardware_i_d_validation_html_a703f456923391db2a37e0c1160acc209"><div class="ttname"><a href="class_hardware_i_d_validation.html#a703f456923391db2a37e0c1160acc209">HardwareIDValidation::ValidateDIOID</a></div><div class="ttdeci">static bool ValidateDIOID(int dioID, std::string methodID)</div><div class="ttdef"><b>Definition:</b> <a href="_hardware_i_d_validation_8cpp_source.html#l00084">HardwareIDValidation.cpp:84</a></div></div>
 <div class="ttc" id="a_digital_input_defn_8h_html"><div class="ttname"><a href="_digital_input_defn_8h.html">DigitalInputDefn.h</a></div></div>
-<div class="ttc" id="aclass_digital_input_defn_html_aef5a2703188ee60151ff5e4fa29e3d52"><div class="ttname"><a href="class_digital_input_defn.html#aef5a2703188ee60151ff5e4fa29e3d52">DigitalInputDefn::ParseXML</a></div><div class="ttdeci">DragonDigitalInput * ParseXML(pugi::xml_node DigitalNode)</div><div class="ttdef"><b>Definition:</b> <a href="_digital_input_defn_8cpp_source.html#l00068">DigitalInputDefn.cpp:68</a></div></div>
-<div class="ttc" id="aclass_dragon_digital_input_html"><div class="ttname"><a href="class_dragon_digital_input.html">DragonDigitalInput</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_digital_input_8h_source.html#l00014">DragonDigitalInput.h:14</a></div></div>
+<div class="ttc" id="aclass_digital_input_usage_html_a2137e04f1b7fa23da836b516e8365f46"><div class="ttname"><a href="class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46">DigitalInputUsage::DIGITAL_SENSOR_USAGE</a></div><div class="ttdeci">DIGITAL_SENSOR_USAGE</div><div class="ttdoc">Defines digital input sensor usages. This should be modified for each robot.</div><div class="ttdef"><b>Definition:</b> <a href="_digital_input_usage_8h_source.html#l00038">DigitalInputUsage.h:38</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_63526b63502cfa78b1b7a69ba33f8463.html">RoboticsCM</a></li><li class="navelem"><a class="el" href="dir_8079d39d009c5e5736094b48571e301c.html">2020InfiniteRecharge</a></li><li class="navelem"><a class="el" href="dir_9fd2ab248e50e9a55f866a56384444c2.html">src</a></li><li class="navelem"><a class="el" href="dir_be474fd464d9aa4f050626b6f84f271b.html">main</a></li><li class="navelem"><a class="el" href="dir_25db0aed34722cb73b29ffb45a5ed481.html">cpp</a></li><li class="navelem"><a class="el" href="dir_3e2a3b829bcb0c7f1e8f88d985d427f5.html">xmlhw</a></li><li class="navelem"><a class="el" href="_digital_input_defn_8cpp.html">DigitalInputDefn.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_584e64d87b72b2b407cc14bdfcc167c9.html">xmlhw</a></li><li class="navelem"><a class="el" href="_digital_input_defn_8cpp.html">DigitalInputDefn.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

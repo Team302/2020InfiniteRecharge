@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/mechanisms/IMechController.h Source File</title>
+<title>Team 302 Robot: controllers/mechanisms/IMechController.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,31 +100,25 @@ $(document).ready(function(){initNavTree('_i_mech_controller_8h_source.html','')
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="class_i_mech_controller.html#ab64c0d95b0a45649dd07664b4307f2dc">IMechController</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_i_mech_controller.html#a146e04000c38f5a657ff3633e9c9cf4e">~IMechController</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_mech_controller.html#adff4be256de927180090a848efcb4ae7">Init</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        (</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <a class="code" href="class_i_mechanism.html">IMechanism</a>*         mechanism,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="class_control_data.html">ControlData</a>*        controlData</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        ) = 0;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_mech_controller.html#a26c63d8b4ab0539d0f0902b2077356f4">Run</a>() = 0;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_i_mech_controller.html#a9d9a33ab05aec93efb40da26fb78af0f">ReachedTarget</a>() = 0;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_mech_controller.html#a43c564581e046a9483e469c6da589db9">Init</a>() = 0;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_mech_controller.html#a26c63d8b4ab0539d0f0902b2077356f4">Run</a>() = 0;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_i_mech_controller.html#a5ce7d666e9a752f34a8770830bf4d075">AtTarget</a>() = 0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
-<div class="ttc" id="aclass_i_mech_controller_html_a9d9a33ab05aec93efb40da26fb78af0f"><div class="ttname"><a href="class_i_mech_controller.html#a9d9a33ab05aec93efb40da26fb78af0f">IMechController::ReachedTarget</a></div><div class="ttdeci">virtual bool ReachedTarget()=0</div></div>
 <div class="ttc" id="aclass_i_mech_controller_html_a146e04000c38f5a657ff3633e9c9cf4e"><div class="ttname"><a href="class_i_mech_controller.html#a146e04000c38f5a657ff3633e9c9cf4e">IMechController::~IMechController</a></div><div class="ttdeci">virtual ~IMechController()=default</div></div>
 <div class="ttc" id="aclass_i_mech_controller_html"><div class="ttname"><a href="class_i_mech_controller.html">IMechController</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_mech_controller_8h_source.html#l00006">IMechController.h:6</a></div></div>
+<div class="ttc" id="aclass_i_mech_controller_html_a5ce7d666e9a752f34a8770830bf4d075"><div class="ttname"><a href="class_i_mech_controller.html#a5ce7d666e9a752f34a8770830bf4d075">IMechController::AtTarget</a></div><div class="ttdeci">virtual bool AtTarget()=0</div></div>
 <div class="ttc" id="aclass_i_mech_controller_html_ab64c0d95b0a45649dd07664b4307f2dc"><div class="ttname"><a href="class_i_mech_controller.html#ab64c0d95b0a45649dd07664b4307f2dc">IMechController::IMechController</a></div><div class="ttdeci">IMechController()=default</div></div>
-<div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00020">ControlData.h:20</a></div></div>
+<div class="ttc" id="aclass_i_mech_controller_html_a43c564581e046a9483e469c6da589db9"><div class="ttname"><a href="class_i_mech_controller.html#a43c564581e046a9483e469c6da589db9">IMechController::Init</a></div><div class="ttdeci">virtual void Init()=0</div></div>
 <div class="ttc" id="aclass_i_mech_controller_html_a26c63d8b4ab0539d0f0902b2077356f4"><div class="ttname"><a href="class_i_mech_controller.html#a26c63d8b4ab0539d0f0902b2077356f4">IMechController::Run</a></div><div class="ttdeci">virtual void Run()=0</div></div>
-<div class="ttc" id="aclass_i_mechanism_html"><div class="ttname"><a href="class_i_mechanism.html">IMechanism</a></div><div class="ttdoc">This is the interface for all subsystems.</div><div class="ttdef"><b>Definition:</b> <a href="_i_mechanism_8h_source.html#l00038">IMechanism.h:38</a></div></div>
-<div class="ttc" id="aclass_i_mech_controller_html_adff4be256de927180090a848efcb4ae7"><div class="ttname"><a href="class_i_mech_controller.html#adff4be256de927180090a848efcb4ae7">IMechController::Init</a></div><div class="ttdeci">virtual void Init(IMechanism *mechanism, ControlData *controlData)=0</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_63526b63502cfa78b1b7a69ba33f8463.html">RoboticsCM</a></li><li class="navelem"><a class="el" href="dir_8079d39d009c5e5736094b48571e301c.html">2020InfiniteRecharge</a></li><li class="navelem"><a class="el" href="dir_9fd2ab248e50e9a55f866a56384444c2.html">src</a></li><li class="navelem"><a class="el" href="dir_be474fd464d9aa4f050626b6f84f271b.html">main</a></li><li class="navelem"><a class="el" href="dir_25db0aed34722cb73b29ffb45a5ed481.html">cpp</a></li><li class="navelem"><a class="el" href="dir_9826d9bbf1c2f77b3209e78b36ef4dba.html">controllers</a></li><li class="navelem"><a class="el" href="dir_50f8238e75638f36081d30b5682d22b3.html">mechanisms</a></li><li class="navelem"><a class="el" href="_i_mech_controller_8h.html">IMechController.h</a></li>
+    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="dir_ad9163eccb036a47942ba3f16d790d30.html">mechanisms</a></li><li class="navelem"><a class="el" href="_i_mech_controller_8h.html">IMechController.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

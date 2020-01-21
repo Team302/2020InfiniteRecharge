@@ -31,6 +31,7 @@
 // Team 302 includes
 #include <hw/factories/DigitalInputFactory.h>
 #include <hw/DragonDigitalInput.h>
+#include <hw/usages/DigitalInputUsage.h>
 
 
 // Third Party Includes
@@ -62,7 +63,7 @@ DigitalInputFactory* DigitalInputFactory::GetFactory()
 //=====================================================================================
 DragonDigitalInput* DigitalInputFactory::CreateInput
 (
-    DragonDigitalInput::DIGITAL_INPUT_TYPE			type,
+    DigitalInputUsage::DIGITAL_SENSOR_USAGE			type,
     int 						                    digitalID,
     bool						                    reversed
 )
@@ -70,10 +71,6 @@ DragonDigitalInput* DigitalInputFactory::CreateInput
     DragonDigitalInput* sensor = nullptr;
     switch ( type )
     {
-        case DragonDigitalInput::ARM_MIN_POSITION:
-            sensor = m_armExtendMin == nullptr ? new DragonDigitalInput( type, digitalID, reversed ) : m_armExtendMin;
-            break;
-
         default:
             std::cout << "==>>DigitalInputFactory::CreateInput unknown type " << type << std::endl;
             break;
@@ -90,14 +87,16 @@ DragonDigitalInput* DigitalInputFactory::CreateInput
 //=====================================================================================
 DragonDigitalInput* DigitalInputFactory::GetInput
 (
-    DragonDigitalInput::DIGITAL_INPUT_TYPE			type
+    DigitalInputUsage::DIGITAL_SENSOR_USAGE			type
 )
 {
     DragonDigitalInput* sensor = nullptr;
     switch ( type )
     {
-        case DragonDigitalInput::ARM_MIN_POSITION:
-            sensor = m_armExtendMin;
+        case DigitalInputUsage::DIGITAL_SENSOR_USAGE::TURRET_ANGLE_MIN:
+            break;
+
+        case DigitalInputUsage::DIGITAL_SENSOR_USAGE::TURRET_ANGLE_MAX:
             break;
 
         default:
@@ -109,14 +108,8 @@ DragonDigitalInput* DigitalInputFactory::GetInput
 
 DigitalInputFactory::DigitalInputFactory()
 {
-    m_armExtendMin = nullptr;
 }
 
 DigitalInputFactory::~DigitalInputFactory()
 {
-    if ( m_armExtendMin != nullptr )
-    {
-        delete m_armExtendMin;
-        m_armExtendMin = nullptr;
-    }
 }

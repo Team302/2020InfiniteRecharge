@@ -49,10 +49,19 @@ Intake::Intake
 
 }
 
+<<<<<<< HEAD
 MechanismTypes::MECHANISM_TYPE Intake::GetType() const
 {
     return MechanismTypes::MECHANISM_TYPE::INTAKE;
 }
+=======
+MechanismTypes::MECHANISM_TYPE Intake::GetType() const 
+{
+    return MechanismTypes::MECHANISM_TYPE::INTAKE;
+}
+
+
+>>>>>>> master
 
 void Intake::SetOutput
 (ControlModes::CONTROL_TYPE controlType,
@@ -153,6 +162,16 @@ void Intake::SetControlConstants
     Logger::GetLogger()->LogError(string("Intake::SetControlConstants"), string("Called"));
 }
 
+/// @brief  Set the control constants (e.g. PIDF values).
+/// @param [in] ControlData*                                   pid:  the control constants
+/// @return void
+void Intake::SetControlConstants
+(
+    ControlData*                                pid                 
+)
+{
+    Logger::GetLogger()->LogError(string("Intake::SetControlConstants"), string("Called"));
+}
 
 
 

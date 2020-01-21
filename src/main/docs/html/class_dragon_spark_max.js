@@ -14,11 +14,11 @@ var class_dragon_spark_max =
     [ "GetSpeedController", "class_dragon_spark_max.html#aa479cc87e8242ca893f47662518f84d1", null ],
     [ "GetType", "class_dragon_spark_max.html#a0a1ff495bb882e7c5a5ecee6beef728e", null ],
     [ "Invert", "class_dragon_spark_max.html#ac6b2718e28d1b81f040ee8efb9786750", null ],
-    [ "InvertEncoder", "class_dragon_spark_max.html#a05f79e4d56ee0bbb79befd1ce05677b2", null ],
     [ "Set", "class_dragon_spark_max.html#a38eb54d110601f8fb7bb2e324f549016", null ],
-    [ "SetControlMode", "class_dragon_spark_max.html#aebfb463d6da34671ae1ae4cf413d8676", null ],
-    [ "SetPIDF", "class_dragon_spark_max.html#a692e9a190ad04d6ec8a5f4e166ecd62f", null ],
+    [ "SetControlConstants", "class_dragon_spark_max.html#a3d5608ab963c80b01dcfbeba3ad71f49", null ],
+    [ "SetControlMode", "class_dragon_spark_max.html#a47cda85cdba80165e485bb5bf5c41726", null ],
     [ "SetRotationOffset", "class_dragon_spark_max.html#a30be4189ed4796945e3de09a5e9131e8", null ],
+    [ "SetSensorInverted", "class_dragon_spark_max.html#a67be736e73bf22920239944c5a9ebc5d", null ],
     [ "SetSmartCurrentLimiting", "class_dragon_spark_max.html#af4d2ada3b631fae7e56521dc053f20a6", null ],
     [ "SetVoltageRamping", "class_dragon_spark_max.html#a1105074c2d2d7a2f719c8f5e41f02394", null ]
 ];

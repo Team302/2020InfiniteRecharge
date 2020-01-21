@@ -16,14 +16,10 @@ class VelocityController : public IMechController
 
         ~VelocityController() override;
 
-        void Init
-        (
-            IMechanism*         mechanism,
-            ControlData*        controlData
-        ) override;
+        void Init() override;
 
         void Run() override;
-        bool ReachedTarget() override;
+        bool AtTarget() override;
 
     private:
         IMechanism*         m_mech;

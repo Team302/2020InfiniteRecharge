@@ -24,7 +24,9 @@ ControlData::ControlData
     double                                      feedforward,
     double                                      integralZone,
     double                                      maxAcceleration,
-    double                                      cruiseVelocity
+    double                                      cruiseVelocity,
+    double                                      peakVal,
+    double                                      nominalVal
 ) : m_mode( mode ),
     m_proportional( proportional ),
     m_integral( integral ),
@@ -32,7 +34,9 @@ ControlData::ControlData
     m_feedforward( feedforward ),
     m_iZone( integralZone ),
     m_maxAcceleration( maxAcceleration ),
-    m_cruiseVelocity( cruiseVelocity )
+    m_cruiseVelocity( cruiseVelocity ),
+    m_peakValue( peakVal ),
+    m_nominalValue( nominalVal )
 {
 
 }

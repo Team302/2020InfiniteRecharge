@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/PIDDefn.cpp Source File</title>
+<title>Team 302 Robot: controllers/PIDDefn.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -155,58 +155,68 @@ $(document).ready(function(){initNavTree('_p_i_d_defn_8cpp_source.html','');});
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">double</span> izone = 0.0;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">double</span> maxAccel = 0.0;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">double</span> cruiseVel = 0.0;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> hasError = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">double</span> peak = 1.0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">double</span> nominal = 1.0;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// parse/validate xml</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">for</span> (pugi::xml_attribute attr = PIDNode.first_attribute(); attr; attr = attr.next_attribute())</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;mode&quot;</span> ) == 0 )</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            mode = (<a class="code" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a>)attr.as_int();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;proportional&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            p = attr.as_double();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }       </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;integral&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            i = attr.as_double();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }        </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;derivative&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            d = attr.as_double();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }        </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;feedforward&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            f = attr.as_double();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }        </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;izone&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            izone = attr.as_double();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;maxacceleration&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            maxAccel = attr.as_double();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;cruisevelocity&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            cruiseVel = attr.as_double();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            printf( <span class="stringliteral">&quot;==&gt;&gt; PIDDefn::ParseXML invalid attribute %s \n&quot;</span>, attr.name() );</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            hasError = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> ( !hasError )</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        data = <span class="keyword">new</span> <a class="code" href="class_control_data.html">ControlData</a>( mode, p, i, d, f, izone, maxAccel, cruiseVel );</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> data;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">bool</span> hasError = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// parse/validate xml</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span> (pugi::xml_attribute attr = PIDNode.first_attribute(); attr; attr = attr.next_attribute())</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;mode&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            mode = (<a class="code" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a>)attr.as_int();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;proportional&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            p = attr.as_double();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }       </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;         <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;integral&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            i = attr.as_double();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }        </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;derivative&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            d = attr.as_double();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }        </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;feedforward&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            f = attr.as_double();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }        </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;izone&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            izone = attr.as_double();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;maxacceleration&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            maxAccel = attr.as_double();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;cruisevelocity&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            cruiseVel = attr.as_double();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;peak&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            peak = attr.as_double();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;nominal&quot;</span>) == 0 )</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            nominal = attr.as_double();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            printf( <span class="stringliteral">&quot;==&gt;&gt; PIDDefn::ParseXML invalid attribute %s \n&quot;</span>, attr.name() );</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            hasError = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> ( !hasError )</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        data = <span class="keyword">new</span> <a class="code" href="class_control_data.html">ControlData</a>( mode, p, i, d, f, izone, maxAccel, cruiseVel, peak, nominal );</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span> data;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
@@ -218,7 +228,7 @@ $(document).ready(function(){initNavTree('_p_i_d_defn_8cpp_source.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_63526b63502cfa78b1b7a69ba33f8463.html">RoboticsCM</a></li><li class="navelem"><a class="el" href="dir_8079d39d009c5e5736094b48571e301c.html">2020InfiniteRecharge</a></li><li class="navelem"><a class="el" href="dir_9fd2ab248e50e9a55f866a56384444c2.html">src</a></li><li class="navelem"><a class="el" href="dir_be474fd464d9aa4f050626b6f84f271b.html">main</a></li><li class="navelem"><a class="el" href="dir_25db0aed34722cb73b29ffb45a5ed481.html">cpp</a></li><li class="navelem"><a class="el" href="dir_9826d9bbf1c2f77b3209e78b36ef4dba.html">controllers</a></li><li class="navelem"><a class="el" href="_p_i_d_defn_8cpp.html">PIDDefn.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="_p_i_d_defn_8cpp.html">PIDDefn.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

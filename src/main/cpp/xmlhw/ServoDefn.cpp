@@ -12,7 +12,8 @@
 #include <hw/DragonServo.h>
 #include <hw/factories/DragonServoFactory.h>
 #include <xmlhw/ServoDefn.h>
-
+#include <hw/usages/ServoUsage.h>
+#include <utils/HardwareIDValidation.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
@@ -25,27 +26,6 @@ using namespace std;
     //              its definition.
     //
     //
-    //<!-- ====================================================
-    //     servo usage options
-    //     ====================================================
-    //        enum SERVO_USAGE
-    //        {
-    //            UNKNOWN_SERVO_USAGE = -1,
-    //            SERVO_SIDEBAR_RELEASE_1,
-    //            SERVO_SIDEBAR_RELEASE_2,
-    //            MAX_SERVO_USAGES
-    //        };
-    //
-    //
-    //     ==================================================== -->
-    //<!ELEMENT servo EMPTY>
-    //<!ATTLIST servo
-    //          usage             (  0 |  1 | 2 ) "0"
-    //          pwmId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 |
-    //                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 ) "0"
-    //          minAngle          CDATA "0.0"
-    //          maxAngle          CDATA "180.0"
-    //>
     // Returns:     void        
     //-----------------------------------------------------------------------
     shared_ptr<DragonServo> ServoDefn::ParseXML
@@ -57,7 +37,7 @@ using namespace std;
 
         // initialize attributes to default values
         int pwmID = 0;
-        DragonServo::SERVO_USAGE usage = DragonServo::UNKNOWN_SERVO_USAGE;
+        ServoUsage::SERVO_USAGE usage = ServoUsage::UNKNOWN_SERVO_USAGE;
         double minAngle = 0.0;
         double maxAngle = 360.0;
 
@@ -68,26 +48,12 @@ using namespace std;
         {
             if ( strcmp( attr.name(), "usage" ) == 0 )
             {
-                int iVal = attr.as_int();
-                switch ( iVal )
-                {
-                    case DragonServo::ROTATE_LIMELIGHT:
-                        usage = DragonServo::ROTATE_LIMELIGHT;
-                        break;
-
-                    case DragonServo::TAIL_CONTROL:
-                        usage = DragonServo::TAIL_CONTROL;
-                        break;
-
-                    default:
-                        printf( "==>> Invalid servo usage %d \n", iVal );
-                        hasError = true;
-                        break;
-                }
+                usage = ServoUsage::GetInstance()->GetUsage( string( attr.value()));
             }
             else if ( strcmp( attr.name(), "pwmId" ) == 0 )
             {
                 pwmID = attr.as_int();
+                hasError = HardwareIDValidation::ValidateDIOID( pwmID, string( "ServoDefn::ParseXML(PWM ID)" ) );
             }
             else if ( strcmp( attr.name(), "minAngle" ) == 0 )
             {
