@@ -49,6 +49,23 @@ class TeleopControl
             GTA_DRIVE_BACKWARD,
             GTA_DRIVE_STEER,
             SWITCH_DRIVE_MODE,
+            CLIMBER_EXTEND,
+            CLIMBER_LIFT,
+            CLIMBER_CRAWL,
+            IMPELLER_SPIN,
+            IMPELLER_STOP,
+            IMPELLER_AGITATE,
+            INTAKE_ON,
+            INTAKE_OFF,
+            SHOOTER_PREPARE_TO_SHOOT,
+            SHOOTER_AUTO_SHOOT,
+            SHOOTER_MANUAL_AIM,
+            SHOOTER_MANUAL_ADJUST_DISTANCE,
+            SHOOTER_MANUAL_SHOOT,
+            CONTROL_PANNEL_STOW,
+            CONTROL_PANNEL_RAISE,
+            CONTROL_PANNEL_SPIN_WHEEL,
+            CONTROL_PANNEL_TURN_TO_COLOR,
             MAX_FUNCTIONS
         };
 
