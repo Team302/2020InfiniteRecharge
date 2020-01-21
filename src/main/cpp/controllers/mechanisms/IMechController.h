@@ -9,12 +9,8 @@ class IMechController
         IMechController() = default;
         virtual ~IMechController() = default;
 
-        virtual void Init
-        (
-            IMechanism*         mechanism,
-            ControlData*        controlData
-        ) = 0;
+        virtual void Init() = 0;
 
         virtual void Run() = 0;
-        virtual bool ReachedTarget() = 0;
+        virtual bool AtTarget() = 0;
 };

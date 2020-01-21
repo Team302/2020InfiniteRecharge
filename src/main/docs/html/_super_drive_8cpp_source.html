@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('_super_drive_8cpp_source.html','');});
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;frc/SmartDashboard/SmartDashboard.h&gt;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_super_drive.html#ab57095c722e3cd8396c04297b5463900">   44</a></span>&#160;<a class="code" href="class_super_drive.html#ab57095c722e3cd8396c04297b5463900">SuperDrive::SuperDrive</a>() : m_chassis( <a class="code" href="class_chassis_factory.html">ChassisFactory</a>::GetChassisFactory()-&gt;GetIChassis()),</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                           m_timer( make_unique&lt;Timer&gt;() ),</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                           <a class="code" href="_control_panel_8cpp.html#af1c5cf1835abbbb6de7bf90a03b8dbcd">m_timer</a>( make_unique&lt;Timer&gt;() ),</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                           m_targetSpeed(0),</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                           m_currentSpeed(0),</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                           m_speedOffset(0),</div>
@@ -303,6 +303,7 @@ $(document).ready(function(){initNavTree('_super_drive_8cpp_source.html','');});
 <div class="ttc" id="aclass_primitive_params_html_aef9f99610cc71c25d4844d731cc8c6a2"><div class="ttname"><a href="class_primitive_params.html#aef9f99610cc71c25d4844d731cc8c6a2">PrimitiveParams::GetDriveSpeed</a></div><div class="ttdeci">float GetDriveSpeed() const</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8cpp_source.html#l00069">PrimitiveParams.cpp:69</a></div></div>
 <div class="ttc" id="a_do_nothing_8h_html"><div class="ttname"><a href="_do_nothing_8h.html">DoNothing.h</a></div></div>
 <div class="ttc" id="aclass_i_primitive_html_acd3b9501892b1950113c63ccb699cb37"><div class="ttname"><a href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">IPrimitive::LOOP_LENGTH</a></div><div class="ttdeci">const float LOOP_LENGTH</div><div class="ttdef"><b>Definition:</b> <a href="_i_primitive_8h_source.html#l00016">IPrimitive.h:16</a></div></div>
+<div class="ttc" id="a_control_panel_8cpp_html_af1c5cf1835abbbb6de7bf90a03b8dbcd"><div class="ttname"><a href="_control_panel_8cpp.html#af1c5cf1835abbbb6de7bf90a03b8dbcd">m_timer</a></div><div class="ttdeci">frc::Timer m_timer</div><div class="ttdef"><b>Definition:</b> <a href="_control_panel_8cpp_source.html#l00045">ControlPanel.cpp:45</a></div></div>
 <div class="ttc" id="a_primitive_params_8h_html"><div class="ttname"><a href="_primitive_params_8h.html">PrimitiveParams.h</a></div></div>
 <div class="ttc" id="a_super_drive_8h_html"><div class="ttname"><a href="_super_drive_8h.html">SuperDrive.h</a></div></div>
 <div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>

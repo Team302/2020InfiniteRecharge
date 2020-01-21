@@ -281,223 +281,187 @@ $(document).ready(function(){initNavTree('_dragon_falcon_8cpp_source.html','');}
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    m_talon-&gt;SetNeutralMode(enabled ? ctre::phoenix::motorcontrol::NeutralMode::Brake : ctre::phoenix::motorcontrol::NeutralMode::Coast);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a452f65946161a02c2a72aac8a366dacf">  193</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#a452f65946161a02c2a72aac8a366dacf">DragonFalcon::SetPIDF</a>(<span class="keywordtype">double</span> p, <span class="keywordtype">double</span> i, <span class="keywordtype">double</span> d, <span class="keywordtype">double</span> f, <span class="keywordtype">int</span> slot)</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a01a9cbfe59d25b805ec376d94af0cfdd">  193</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#a01a9cbfe59d25b805ec376d94af0cfdd">DragonFalcon::Invert</a>(<span class="keywordtype">bool</span> inverted)</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;{</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    m_talon-&gt;Config_kP(slot, p);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    m_talon-&gt;Config_kI(slot, i);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    m_talon-&gt;Config_kD(slot, d);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    m_talon-&gt;Config_kF(slot, f);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a01a9cbfe59d25b805ec376d94af0cfdd">  201</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#a01a9cbfe59d25b805ec376d94af0cfdd">DragonFalcon::Invert</a>(<span class="keywordtype">bool</span> inverted)</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    m_talon-&gt;SetInverted(inverted);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a527371ba15b85394c138c0bdacdbee13">  206</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#a527371ba15b85394c138c0bdacdbee13">DragonFalcon::SetSensorInverted</a>(<span class="keywordtype">bool</span> inverted)</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;{</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    m_talon-&gt;SetSensorPhase(inverted);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#aa60b6c26b3624061e239fe256583ed0e">  211</a></span>&#160;<a class="code" href="class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51a">MotorControllerUsage::MOTOR_CONTROLLER_USAGE</a> <a class="code" href="class_dragon_falcon.html#aa60b6c26b3624061e239fe256583ed0e">DragonFalcon::GetType</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">return</span> m_type;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a09c99e5934e299873e65068b1c74fd2b">  216</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dragon_falcon.html#a09c99e5934e299873e65068b1c74fd2b">DragonFalcon::GetID</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">return</span> m_id;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">// Method:      SelectClosedLoopProfile</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">// Description: Selects which profile slot to use for closed-loop control</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">// Returns:     void</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#a801071a9180910e6d5d2cdf120b54bbf">DragonFalcon::SelectClosedLoopProfile</a></div>
-<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a801071a9180910e6d5d2cdf120b54bbf">  227</a></span>&#160;(</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">int</span>    slot,            <span class="comment">// &lt;I&gt; - profile slot to select</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">int</span>    pidIndex         <span class="comment">// &lt;I&gt; - 0 for primary closed loop, 1 for cascaded closed-loop</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;)</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;{</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    m_talon-&gt;SelectProfileSlot( slot, pidIndex );</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">//hopefully this is correct</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#ac2f84302fd4c44f9e93a7580041d47cf">DragonFalcon::ConfigMotionAcceleration</a></div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#ac2f84302fd4c44f9e93a7580041d47cf">  237</a></span>&#160;(</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordtype">float</span> maxMotionAcceleration</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;)</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;{</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordtype">int</span> sensorUnitsPer100msPerSec = static_cast&lt;int&gt;( (maxMotionAcceleration / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio );</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    m_talon-&gt;ConfigMotionAcceleration( sensorUnitsPer100msPerSec, 0);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment">//need to change</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#ab702173842be57027dc7e21c706311fd">DragonFalcon::ConfigMotionCruiseVelocity</a></div>
-<div class="line"><a name="l00247"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#ab702173842be57027dc7e21c706311fd">  247</a></span>&#160;(</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordtype">float</span> maxMotionCruiseVelocity</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;)</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;{</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordtype">int</span> sensorUnitsPer100msPerSec = static_cast&lt;int&gt;( (maxMotionCruiseVelocity / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio );</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    m_talon-&gt;ConfigMotionCruiseVelocity( sensorUnitsPer100msPerSec, 0);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#a89d7400a890942a6aed960c479693e5f">DragonFalcon::ConfigPeakOutput</a></div>
-<div class="line"><a name="l00256"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a89d7400a890942a6aed960c479693e5f">  256</a></span>&#160;(</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordtype">double</span> percentOutput</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;)</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;{</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    m_talon-&gt;ConfigPeakOutputForward(percentOutput);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    m_talon-&gt;ConfigPeakOutputReverse(-percentOutput);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#a820fbe39157a065d5a5c150b48b47671">DragonFalcon::ConfigNominalOutput</a></div>
-<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a820fbe39157a065d5a5c150b48b47671">  265</a></span>&#160;(</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordtype">double</span> nominalOutput</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;)</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;{</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    m_talon-&gt;ConfigNominalOutputForward(nominalOutput);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    m_talon-&gt;ConfigNominalOutputReverse(-nominalOutput);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;}</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dragon_falcon.html#ad5d07e0a8a7ce81204563711cb726f72">DragonFalcon::ConfigSelectedFeedbackSensor</a></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;(</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    FeedbackDevice feedbackDevice,</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordtype">int</span> pidIdx,</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">int</span> timeoutMs</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;)</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordtype">int</span> error = 0;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">if</span> ( m_talon != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        error = m_talon-&gt;ConfigSelectedFeedbackSensor( feedbackDevice, pidIdx, timeoutMs );</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonFalcon::ConfigSelectedFeedbackSensor&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;m_talon is a nullptr&quot;</span>));</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    }</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">return</span> error;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dragon_falcon.html#ad5d07e0a8a7ce81204563711cb726f72">DragonFalcon::ConfigSelectedFeedbackSensor</a></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;(</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    RemoteFeedbackDevice feedbackDevice,</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordtype">int</span> pidIdx,</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordtype">int</span> timeoutMs</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;)</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;{</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordtype">int</span> error = 0;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">if</span> ( m_talon != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        error = m_talon-&gt;ConfigSelectedFeedbackSensor( feedbackDevice, pidIdx, timeoutMs );</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    }</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    {</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonFalcon::ConfigSelectedFeedbackSensor&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;m_talon is a nullptr&quot;</span>));</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">return</span> error;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dragon_falcon.html#acce7f9c24073a91ba7c7c5cc3aaa8d48">DragonFalcon::ConfigPeakCurrentLimit</a></div>
-<div class="line"><a name="l00312"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#acce7f9c24073a91ba7c7c5cc3aaa8d48">  312</a></span>&#160;(</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keywordtype">int</span> amps,</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordtype">int</span> timeoutMs</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;)</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;{</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordtype">int</span> error = 0;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">if</span> ( m_talon != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="comment">// todo need to contruct other objects</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="comment">//error = m_talon-&gt;ConfigStatorCurrentLimit( amps, timeoutMs );</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="comment">//error = m_talon-&gt;ConfigSupplyCurrentLimit( amps, timeoutMs );</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    }</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonFalcon::ConfigPeakCurrentLimit&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;m_talon is a nullptr&quot;</span>));</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    }</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">return</span> error;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dragon_falcon.html#aca634f67ecb792b90a71b983a88f9079">DragonFalcon::ConfigPeakCurrentDuration</a></div>
-<div class="line"><a name="l00332"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#aca634f67ecb792b90a71b983a88f9079">  332</a></span>&#160;(</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordtype">int</span> milliseconds,</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordtype">int</span> timeoutMs</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;)</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;{</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordtype">int</span> error = 0;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">if</span> ( m_talon != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    {</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="comment">//error = m_talon-&gt;ConfigPeakCurrentDuration( milliseconds, timeoutMs );</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    {</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonFalcon::ConfigPeakCurrentDuration&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;m_talon is a nullptr&quot;</span>));</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    }</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">return</span> error;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dragon_falcon.html#ae91eaa1759c354065d1e1b9a15eb7b4e">DragonFalcon::ConfigContinuousCurrentLimit</a></div>
-<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#ae91eaa1759c354065d1e1b9a15eb7b4e">  350</a></span>&#160;(</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordtype">int</span> amps,</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">int</span> timeoutMs</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;)</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;{</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordtype">int</span> error = 0;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordflow">if</span> ( m_talon != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    {</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="comment">//  error = m_talon-&gt;ConfigContinuousCurrentLimit( amps, timeoutMs );</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    }</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    {</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonFalcon::ConfigContinuousCurrentLimit&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;m_talon is a nullptr&quot;</span>));</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    }</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">return</span> error;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;}</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#a54d569a45a527b83505b8e646d99a95b">DragonFalcon::SetAsSlave</a></div>
-<div class="line"><a name="l00368"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a54d569a45a527b83505b8e646d99a95b">  368</a></span>&#160;(</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordtype">int</span>         masterCANID         <span class="comment">// &lt;I&gt; - master motor</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;)</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;{</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    m_talon-&gt;Set( ControlMode::Follower, masterCANID );</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;}</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    m_talon-&gt;SetInverted(inverted);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a4efe5d7355a1d82577a8232fdbc9fe7d">  198</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#a4efe5d7355a1d82577a8232fdbc9fe7d">DragonFalcon::SetSensorInverted</a>(<span class="keywordtype">bool</span> inverted)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;{</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    m_talon-&gt;SetSensorPhase(inverted);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#aa60b6c26b3624061e239fe256583ed0e">  203</a></span>&#160;<a class="code" href="class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51a">MotorControllerUsage::MOTOR_CONTROLLER_USAGE</a> <a class="code" href="class_dragon_falcon.html#aa60b6c26b3624061e239fe256583ed0e">DragonFalcon::GetType</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">return</span> m_type;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a09c99e5934e299873e65068b1c74fd2b">  208</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dragon_falcon.html#a09c99e5934e299873e65068b1c74fd2b">DragonFalcon::GetID</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">return</span> m_id;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">// Method:      SelectClosedLoopProfile</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">// Description: Selects which profile slot to use for closed-loop control</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">// Returns:     void</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#a801071a9180910e6d5d2cdf120b54bbf">DragonFalcon::SelectClosedLoopProfile</a></div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a801071a9180910e6d5d2cdf120b54bbf">  219</a></span>&#160;(</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">int</span>    slot,            <span class="comment">// &lt;I&gt; - profile slot to select</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">int</span>    pidIndex         <span class="comment">// &lt;I&gt; - 0 for primary closed loop, 1 for cascaded closed-loop</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;)</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;{</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    m_talon-&gt;SelectProfileSlot( slot, pidIndex );</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dragon_falcon.html#ad5d07e0a8a7ce81204563711cb726f72">DragonFalcon::ConfigSelectedFeedbackSensor</a></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;(</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    FeedbackDevice feedbackDevice,</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">int</span> pidIdx,</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">int</span> timeoutMs</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;)</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;{</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">int</span> error = 0;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">if</span> ( m_talon != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        error = m_talon-&gt;ConfigSelectedFeedbackSensor( feedbackDevice, pidIdx, timeoutMs );</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonFalcon::ConfigSelectedFeedbackSensor&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;m_talon is a nullptr&quot;</span>));</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">return</span> error;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dragon_falcon.html#ad5d07e0a8a7ce81204563711cb726f72">DragonFalcon::ConfigSelectedFeedbackSensor</a></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;(</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    RemoteFeedbackDevice feedbackDevice,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">int</span> pidIdx,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordtype">int</span> timeoutMs</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;{</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordtype">int</span> error = 0;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">if</span> ( m_talon != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        error = m_talon-&gt;ConfigSelectedFeedbackSensor( feedbackDevice, pidIdx, timeoutMs );</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonFalcon::ConfigSelectedFeedbackSensor&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;m_talon is a nullptr&quot;</span>));</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">return</span> error;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dragon_falcon.html#acce7f9c24073a91ba7c7c5cc3aaa8d48">DragonFalcon::ConfigPeakCurrentLimit</a></div>
+<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#acce7f9c24073a91ba7c7c5cc3aaa8d48">  266</a></span>&#160;(</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordtype">int</span> amps,</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordtype">int</span> timeoutMs</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;)</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;{</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordtype">int</span> error = 0;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">if</span> ( m_talon != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="comment">// todo need to contruct other objects</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="comment">//error = m_talon-&gt;ConfigStatorCurrentLimit( amps, timeoutMs );</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="comment">//error = m_talon-&gt;ConfigSupplyCurrentLimit( amps, timeoutMs );</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonFalcon::ConfigPeakCurrentLimit&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;m_talon is a nullptr&quot;</span>));</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">return</span> error;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dragon_falcon.html#aca634f67ecb792b90a71b983a88f9079">DragonFalcon::ConfigPeakCurrentDuration</a></div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#aca634f67ecb792b90a71b983a88f9079">  286</a></span>&#160;(</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordtype">int</span> milliseconds,</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordtype">int</span> timeoutMs</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;{</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordtype">int</span> error = 0;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">if</span> ( m_talon != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="comment">//error = m_talon-&gt;ConfigPeakCurrentDuration( milliseconds, timeoutMs );</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonFalcon::ConfigPeakCurrentDuration&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;m_talon is a nullptr&quot;</span>));</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">return</span> error;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;}</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_dragon_falcon.html#ae91eaa1759c354065d1e1b9a15eb7b4e">DragonFalcon::ConfigContinuousCurrentLimit</a></div>
+<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#ae91eaa1759c354065d1e1b9a15eb7b4e">  304</a></span>&#160;(</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordtype">int</span> amps,</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordtype">int</span> timeoutMs</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;)</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordtype">int</span> error = 0;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> ( m_talon != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">//  error = m_talon-&gt;ConfigContinuousCurrentLimit( amps, timeoutMs );</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonFalcon::ConfigContinuousCurrentLimit&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;m_talon is a nullptr&quot;</span>));</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">return</span> error;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;}</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#a54d569a45a527b83505b8e646d99a95b">DragonFalcon::SetAsSlave</a></div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a54d569a45a527b83505b8e646d99a95b">  322</a></span>&#160;(</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordtype">int</span>         masterCANID         <span class="comment">// &lt;I&gt; - master motor</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;)</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;{</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    m_talon-&gt;Set( ControlMode::Follower, masterCANID );</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;}</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="class_dragon_falcon.html#a1504585d6a7671449c274adb254d6aa6">  333</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_falcon.html#a1504585d6a7671449c274adb254d6aa6">DragonFalcon::SetControlConstants</a>(<a class="code" href="class_control_data.html">ControlData</a>* controlInfo)</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;{</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    m_talon-&gt;Config_kP(0, controlInfo-&gt;<a class="code" href="class_control_data.html#a905b66966177981526553ca8145f560f">GetP</a>());</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    m_talon-&gt;Config_kI(0, controlInfo-&gt;<a class="code" href="class_control_data.html#ae1e28d9f875136cef18597294645503a">GetI</a>());</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    m_talon-&gt;Config_kD(0, controlInfo-&gt;<a class="code" href="class_control_data.html#acbaf81f6f7dab5edcf4fcc445caf0dcd">GetD</a>());</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    m_talon-&gt;Config_kF(0, controlInfo-&gt;<a class="code" href="class_control_data.html#adbe7269501e2db1374a5f697da0fbe09">GetF</a>());</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;}</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_dragon_falcon_html_ab08e23a1e9f07240e0868e8ecb83987e"><div class="ttname"><a href="class_dragon_falcon.html#ab08e23a1e9f07240e0868e8ecb83987e">DragonFalcon::GetSpeedController</a></div><div class="ttdeci">std::shared_ptr&lt; frc::SpeedController &gt; GetSpeedController() const override</div><div class="ttdoc">Return the speedcontroller.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00115">DragonFalcon.cpp:115</a></div></div>
 <div class="ttc" id="aclass_dragon_falcon_html_aef9e7316a70af58f1dc02a9fae5cfd8a"><div class="ttname"><a href="class_dragon_falcon.html#aef9e7316a70af58f1dc02a9fae5cfd8a">DragonFalcon::GetCurrent</a></div><div class="ttdeci">double GetCurrent() const override</div><div class="ttdoc">Return the current usage.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00120">DragonFalcon.cpp:120</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_a801071a9180910e6d5d2cdf120b54bbf"><div class="ttname"><a href="class_dragon_falcon.html#a801071a9180910e6d5d2cdf120b54bbf">DragonFalcon::SelectClosedLoopProfile</a></div><div class="ttdeci">void SelectClosedLoopProfile(int slot, int pidIndex)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00227">DragonFalcon.cpp:227</a></div></div>
+<div class="ttc" id="aclass_dragon_falcon_html_a801071a9180910e6d5d2cdf120b54bbf"><div class="ttname"><a href="class_dragon_falcon.html#a801071a9180910e6d5d2cdf120b54bbf">DragonFalcon::SelectClosedLoopProfile</a></div><div class="ttdeci">void SelectClosedLoopProfile(int slot, int pidIndex)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00219">DragonFalcon.cpp:219</a></div></div>
 <div class="ttc" id="a_dragon_falcon_8h_html"><div class="ttname"><a href="_dragon_falcon_8h.html">DragonFalcon.h</a></div></div>
 <div class="ttc" id="aclass_dragon_falcon_html_acf967485e409c54f5932732f276cb44d"><div class="ttname"><a href="class_dragon_falcon.html#acf967485e409c54f5932732f276cb44d">DragonFalcon::Set</a></div><div class="ttdeci">void Set(double value) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00127">DragonFalcon.cpp:127</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_a527371ba15b85394c138c0bdacdbee13"><div class="ttname"><a href="class_dragon_falcon.html#a527371ba15b85394c138c0bdacdbee13">DragonFalcon::SetSensorInverted</a></div><div class="ttdeci">void SetSensorInverted(bool inverted)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00206">DragonFalcon.cpp:206</a></div></div>
 <div class="ttc" id="aclass_dragon_falcon_html_af93549d1e2ea03255c46e8aaf6ad6d43"><div class="ttname"><a href="class_dragon_falcon.html#af93549d1e2ea03255c46e8aaf6ad6d43">DragonFalcon::EnableBrakeMode</a></div><div class="ttdeci">void EnableBrakeMode(bool enabled) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00188">DragonFalcon.cpp:188</a></div></div>
+<div class="ttc" id="aclass_control_data_html_acbaf81f6f7dab5edcf4fcc445caf0dcd"><div class="ttname"><a href="class_control_data.html#acbaf81f6f7dab5edcf4fcc445caf0dcd">ControlData::GetD</a></div><div class="ttdeci">double GetD() const</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00056">ControlData.h:56</a></div></div>
+<div class="ttc" id="aclass_dragon_falcon_html_a4efe5d7355a1d82577a8232fdbc9fe7d"><div class="ttname"><a href="class_dragon_falcon.html#a4efe5d7355a1d82577a8232fdbc9fe7d">DragonFalcon::SetSensorInverted</a></div><div class="ttdeci">void SetSensorInverted(bool inverted) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00198">DragonFalcon.cpp:198</a></div></div>
+<div class="ttc" id="aclass_control_data_html_adbe7269501e2db1374a5f697da0fbe09"><div class="ttname"><a href="class_control_data.html#adbe7269501e2db1374a5f697da0fbe09">ControlData::GetF</a></div><div class="ttdeci">double GetF() const</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00057">ControlData.h:57</a></div></div>
+<div class="ttc" id="aclass_control_data_html_a905b66966177981526553ca8145f560f"><div class="ttname"><a href="class_control_data.html#a905b66966177981526553ca8145f560f">ControlData::GetP</a></div><div class="ttdeci">double GetP() const</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00054">ControlData.h:54</a></div></div>
 <div class="ttc" id="aclass_dragon_falcon_html_ad18650415bbad0f68b109ee8a634329d"><div class="ttname"><a href="class_dragon_falcon.html#ad18650415bbad0f68b109ee8a634329d">DragonFalcon::DragonFalcon</a></div><div class="ttdeci">DragonFalcon()=delete</div></div>
 <div class="ttc" id="aclass_dragon_p_d_p_html_a5cd0015d3ee705cb5ecc861c10b08d9e"><div class="ttname"><a href="class_dragon_p_d_p.html#a5cd0015d3ee705cb5ecc861c10b08d9e">DragonPDP::GetInstance</a></div><div class="ttdeci">static DragonPDP * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_p_d_p_8cpp_source.html#l00015">DragonPDP.cpp:15</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_ae91eaa1759c354065d1e1b9a15eb7b4e"><div class="ttname"><a href="class_dragon_falcon.html#ae91eaa1759c354065d1e1b9a15eb7b4e">DragonFalcon::ConfigContinuousCurrentLimit</a></div><div class="ttdeci">int ConfigContinuousCurrentLimit(int amps, int timeoutMs)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00350">DragonFalcon.cpp:350</a></div></div>
+<div class="ttc" id="aclass_dragon_falcon_html_ae91eaa1759c354065d1e1b9a15eb7b4e"><div class="ttname"><a href="class_dragon_falcon.html#ae91eaa1759c354065d1e1b9a15eb7b4e">DragonFalcon::ConfigContinuousCurrentLimit</a></div><div class="ttdeci">int ConfigContinuousCurrentLimit(int amps, int timeoutMs)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00304">DragonFalcon.cpp:304</a></div></div>
 <div class="ttc" id="aclass_dragon_falcon_html_a8a76c720cf50e2bc79fb7c9f1a1cd771"><div class="ttname"><a href="class_dragon_falcon.html#a8a76c720cf50e2bc79fb7c9f1a1cd771">DragonFalcon::EnableCurrentLimiting</a></div><div class="ttdeci">void EnableCurrentLimiting(bool enabled) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00183">DragonFalcon.cpp:183</a></div></div>
 <div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_a89d7400a890942a6aed960c479693e5f"><div class="ttname"><a href="class_dragon_falcon.html#a89d7400a890942a6aed960c479693e5f">DragonFalcon::ConfigPeakOutput</a></div><div class="ttdeci">void ConfigPeakOutput(double percentOutput)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00256">DragonFalcon.cpp:256</a></div></div>
 <div class="ttc" id="aclass_dragon_falcon_html_aee9013f3c3bf7f48d891d650b919253e"><div class="ttname"><a href="class_dragon_falcon.html#aee9013f3c3bf7f48d891d650b919253e">DragonFalcon::GetRotations</a></div><div class="ttdeci">double GetRotations() const override</div><div class="ttdoc">Return the number of revolutions the output shaft has spun.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00063">DragonFalcon.cpp:63</a></div></div>
 <div class="ttc" id="aclass_motor_controller_usage_html_a03b7ee94f8c7e42884d5da8974e3a51a"><div class="ttname"><a href="class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51a">MotorControllerUsage::MOTOR_CONTROLLER_USAGE</a></div><div class="ttdeci">MOTOR_CONTROLLER_USAGE</div><div class="ttdoc">Defines motor usages. This should be modified for each robot.</div><div class="ttdef"><b>Definition:</b> <a href="_motor_controller_usage_8h_source.html#l00040">MotorControllerUsage.h:40</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_ac2f84302fd4c44f9e93a7580041d47cf"><div class="ttname"><a href="class_dragon_falcon.html#ac2f84302fd4c44f9e93a7580041d47cf">DragonFalcon::ConfigMotionAcceleration</a></div><div class="ttdeci">void ConfigMotionAcceleration(float maxMotionAcceleration)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00237">DragonFalcon.cpp:237</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_a09c99e5934e299873e65068b1c74fd2b"><div class="ttname"><a href="class_dragon_falcon.html#a09c99e5934e299873e65068b1c74fd2b">DragonFalcon::GetID</a></div><div class="ttdeci">int GetID() const override</div><div class="ttdoc">Return the CAN ID.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00216">DragonFalcon.cpp:216</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_a820fbe39157a065d5a5c150b48b47671"><div class="ttname"><a href="class_dragon_falcon.html#a820fbe39157a065d5a5c150b48b47671">DragonFalcon::ConfigNominalOutput</a></div><div class="ttdeci">void ConfigNominalOutput(double nominalOutput)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00265">DragonFalcon.cpp:265</a></div></div>
+<div class="ttc" id="aclass_dragon_falcon_html_a09c99e5934e299873e65068b1c74fd2b"><div class="ttname"><a href="class_dragon_falcon.html#a09c99e5934e299873e65068b1c74fd2b">DragonFalcon::GetID</a></div><div class="ttdeci">int GetID() const override</div><div class="ttdoc">Return the CAN ID.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00208">DragonFalcon.cpp:208</a></div></div>
 <div class="ttc" id="aclass_dragon_falcon_html_a596613a088e7d87182377b04ced5b16a"><div class="ttname"><a href="class_dragon_falcon.html#a596613a088e7d87182377b04ced5b16a">DragonFalcon::SetVoltageRamping</a></div><div class="ttdeci">void SetVoltageRamping(double ramping, double rampingClosedLoop=-1) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00172">DragonFalcon.cpp:172</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_a01a9cbfe59d25b805ec376d94af0cfdd"><div class="ttname"><a href="class_dragon_falcon.html#a01a9cbfe59d25b805ec376d94af0cfdd">DragonFalcon::Invert</a></div><div class="ttdeci">void Invert(bool inverted) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00201">DragonFalcon.cpp:201</a></div></div>
+<div class="ttc" id="aclass_dragon_falcon_html_a01a9cbfe59d25b805ec376d94af0cfdd"><div class="ttname"><a href="class_dragon_falcon.html#a01a9cbfe59d25b805ec376d94af0cfdd">DragonFalcon::Invert</a></div><div class="ttdeci">void Invert(bool inverted) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00193">DragonFalcon.cpp:193</a></div></div>
 <div class="ttc" id="aclass_dragon_falcon_html_aa376bdad28a3d55b6bcb221887920a63"><div class="ttname"><a href="class_dragon_falcon.html#aa376bdad28a3d55b6bcb221887920a63">DragonFalcon::GetRPS</a></div><div class="ttdeci">double GetRPS() const override</div><div class="ttdoc">Return the angular velocity in revolutions per second.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00068">DragonFalcon.cpp:68</a></div></div>
 <div class="ttc" id="aclass_dragon_falcon_html_ad5d07e0a8a7ce81204563711cb726f72"><div class="ttname"><a href="class_dragon_falcon.html#ad5d07e0a8a7ce81204563711cb726f72">DragonFalcon::ConfigSelectedFeedbackSensor</a></div><div class="ttdeci">int ConfigSelectedFeedbackSensor(ctre::phoenix::motorcontrol::FeedbackDevice feedbackDevice, int pidIdx, int timeoutMs)</div></div>
 <div class="ttc" id="a_dragon_p_d_p_8h_html"><div class="ttname"><a href="_dragon_p_d_p_8h.html">DragonPDP.h</a></div></div>
 <div class="ttc" id="aclass_logger_html_a98d7aec19dcdfb9d8faa46d83d927883"><div class="ttname"><a href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">Logger::LogError</a></div><div class="ttdeci">void LogError(const std::string &amp;locationIdentifier, const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00071">Logger.cpp:71</a></div></div>
+<div class="ttc" id="aclass_dragon_falcon_html_a1504585d6a7671449c274adb254d6aa6"><div class="ttname"><a href="class_dragon_falcon.html#a1504585d6a7671449c274adb254d6aa6">DragonFalcon::SetControlConstants</a></div><div class="ttdeci">void SetControlConstants(ControlData *controlInfo) override</div><div class="ttdoc">Set the control constants (e.g. PIDF values).</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00333">DragonFalcon.cpp:333</a></div></div>
 <div class="ttc" id="aclass_dragon_falcon_html_a4a582d3070a1623396dbf5120bb4f390"><div class="ttname"><a href="class_dragon_falcon.html#a4a582d3070a1623396dbf5120bb4f390">DragonFalcon::SetControlMode</a></div><div class="ttdeci">void SetControlMode(ControlModes::CONTROL_TYPE mode) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00073">DragonFalcon.cpp:73</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_acce7f9c24073a91ba7c7c5cc3aaa8d48"><div class="ttname"><a href="class_dragon_falcon.html#acce7f9c24073a91ba7c7c5cc3aaa8d48">DragonFalcon::ConfigPeakCurrentLimit</a></div><div class="ttdeci">int ConfigPeakCurrentLimit(int amps, int timeoutMs)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00312">DragonFalcon.cpp:312</a></div></div>
+<div class="ttc" id="aclass_dragon_falcon_html_acce7f9c24073a91ba7c7c5cc3aaa8d48"><div class="ttname"><a href="class_dragon_falcon.html#acce7f9c24073a91ba7c7c5cc3aaa8d48">DragonFalcon::ConfigPeakCurrentLimit</a></div><div class="ttdeci">int ConfigPeakCurrentLimit(int amps, int timeoutMs)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00266">DragonFalcon.cpp:266</a></div></div>
 <div class="ttc" id="aclass_logger_html_ae85cfbef8b7e6940475a5012fa1935c6"><div class="ttname"><a href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a></div><div class="ttdeci">static Logger * GetLogger()</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00052">Logger.cpp:52</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_a452f65946161a02c2a72aac8a366dacf"><div class="ttname"><a href="class_dragon_falcon.html#a452f65946161a02c2a72aac8a366dacf">DragonFalcon::SetPIDF</a></div><div class="ttdeci">void SetPIDF(double p, double i, double d, double f, int slot=0) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00193">DragonFalcon.cpp:193</a></div></div>
+<div class="ttc" id="aclass_control_data_html_ae1e28d9f875136cef18597294645503a"><div class="ttname"><a href="class_control_data.html#ae1e28d9f875136cef18597294645503a">ControlData::GetI</a></div><div class="ttdeci">double GetI() const</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00055">ControlData.h:55</a></div></div>
+<div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00020">ControlData.h:20</a></div></div>
 <div class="ttc" id="aclass_dragon_p_d_p_html_a57a38ebb2857accbe125c40465359b65"><div class="ttname"><a href="class_dragon_p_d_p.html#a57a38ebb2857accbe125c40465359b65">DragonPDP::GetPDP</a></div><div class="ttdeci">frc::PowerDistributionPanel * GetPDP() const</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_p_d_p_8cpp_source.html#l00032">DragonPDP.cpp:32</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_aa60b6c26b3624061e239fe256583ed0e"><div class="ttname"><a href="class_dragon_falcon.html#aa60b6c26b3624061e239fe256583ed0e">DragonFalcon::GetType</a></div><div class="ttdeci">MotorControllerUsage::MOTOR_CONTROLLER_USAGE GetType() const override</div><div class="ttdoc">Return the usage of the motor.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00211">DragonFalcon.cpp:211</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_ab702173842be57027dc7e21c706311fd"><div class="ttname"><a href="class_dragon_falcon.html#ab702173842be57027dc7e21c706311fd">DragonFalcon::ConfigMotionCruiseVelocity</a></div><div class="ttdeci">void ConfigMotionCruiseVelocity(float maxMotionCruiseVelocity)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00247">DragonFalcon.cpp:247</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_a54d569a45a527b83505b8e646d99a95b"><div class="ttname"><a href="class_dragon_falcon.html#a54d569a45a527b83505b8e646d99a95b">DragonFalcon::SetAsSlave</a></div><div class="ttdeci">void SetAsSlave(int masterCANID)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00368">DragonFalcon.cpp:368</a></div></div>
-<div class="ttc" id="aclass_dragon_falcon_html_aca634f67ecb792b90a71b983a88f9079"><div class="ttname"><a href="class_dragon_falcon.html#aca634f67ecb792b90a71b983a88f9079">DragonFalcon::ConfigPeakCurrentDuration</a></div><div class="ttdeci">int ConfigPeakCurrentDuration(int milliseconds, int timeoutMs)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00332">DragonFalcon.cpp:332</a></div></div>
+<div class="ttc" id="aclass_dragon_falcon_html_aa60b6c26b3624061e239fe256583ed0e"><div class="ttname"><a href="class_dragon_falcon.html#aa60b6c26b3624061e239fe256583ed0e">DragonFalcon::GetType</a></div><div class="ttdeci">MotorControllerUsage::MOTOR_CONTROLLER_USAGE GetType() const override</div><div class="ttdoc">Return the usage of the motor.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00203">DragonFalcon.cpp:203</a></div></div>
+<div class="ttc" id="aclass_dragon_falcon_html_a54d569a45a527b83505b8e646d99a95b"><div class="ttname"><a href="class_dragon_falcon.html#a54d569a45a527b83505b8e646d99a95b">DragonFalcon::SetAsSlave</a></div><div class="ttdeci">void SetAsSlave(int masterCANID)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00322">DragonFalcon.cpp:322</a></div></div>
+<div class="ttc" id="aclass_dragon_falcon_html_aca634f67ecb792b90a71b983a88f9079"><div class="ttname"><a href="class_dragon_falcon.html#aca634f67ecb792b90a71b983a88f9079">DragonFalcon::ConfigPeakCurrentDuration</a></div><div class="ttdeci">int ConfigPeakCurrentDuration(int milliseconds, int timeoutMs)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00286">DragonFalcon.cpp:286</a></div></div>
 <div class="ttc" id="a_motor_controller_usage_8h_html"><div class="ttname"><a href="_motor_controller_usage_8h.html">MotorControllerUsage.h</a></div></div>
 <div class="ttc" id="aclass_dragon_falcon_html_ab9080ba4bfbada1afa05f9c532564251"><div class="ttname"><a href="class_dragon_falcon.html#ab9080ba4bfbada1afa05f9c532564251">DragonFalcon::SetRotationOffset</a></div><div class="ttdeci">void SetRotationOffset(double rotations) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_falcon_8cpp_source.html#l00165">DragonFalcon.cpp:165</a></div></div>
 <div class="ttc" id="aclass_control_modes_html_a46c77e409ac22b3b3269f7fee2d3f736"><div class="ttname"><a href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a></div><div class="ttdeci">CONTROL_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_control_modes_8h_source.html#l00024">ControlModes.h:24</a></div></div>

@@ -144,12 +144,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af605cf5a714e65639678e41f00445f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0f4b822780fc624487285aed3f386e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_spark_max.html#ad0f4b822780fc624487285aed3f386e4">EnableBrakeMode</a> (bool enabled) override</td></tr>
 <tr class="separator:ad0f4b822780fc624487285aed3f386e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a692e9a190ad04d6ec8a5f4e166ecd62f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_spark_max.html#a692e9a190ad04d6ec8a5f4e166ecd62f">SetPIDF</a> (double p, double i, double d, double f, int slot=0) override</td></tr>
-<tr class="separator:a692e9a190ad04d6ec8a5f4e166ecd62f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6b2718e28d1b81f040ee8efb9786750"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_spark_max.html#ac6b2718e28d1b81f040ee8efb9786750">Invert</a> (bool inverted) override</td></tr>
 <tr class="separator:ac6b2718e28d1b81f040ee8efb9786750"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05f79e4d56ee0bbb79befd1ce05677b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_spark_max.html#a05f79e4d56ee0bbb79befd1ce05677b2">InvertEncoder</a> (bool inverted)</td></tr>
-<tr class="separator:a05f79e4d56ee0bbb79befd1ce05677b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67be736e73bf22920239944c5a9ebc5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_spark_max.html#a67be736e73bf22920239944c5a9ebc5d">SetSensorInverted</a> (bool inverted) override</td></tr>
+<tr class="separator:a67be736e73bf22920239944c5a9ebc5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5608ab963c80b01dcfbeba3ad71f49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_spark_max.html#a3d5608ab963c80b01dcfbeba3ad71f49">SetControlConstants</a> (<a class="el" href="class_control_data.html">ControlData</a> *controlInfo) override</td></tr>
+<tr class="memdesc:a3d5608ab963c80b01dcfbeba3ad71f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values).  <a href="class_dragon_spark_max.html#a3d5608ab963c80b01dcfbeba3ad71f49">More...</a><br /></td></tr>
+<tr class="separator:a3d5608ab963c80b01dcfbeba3ad71f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4d2ada3b631fae7e56521dc053f20a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_spark_max.html#af4d2ada3b631fae7e56521dc053f20a6">SetSmartCurrentLimiting</a> (int limit)</td></tr>
 <tr class="separator:af4d2ada3b631fae7e56521dc053f20a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3072bc5a5bb632f67731342f6ff17d42"><td class="memItemLeft" align="right" valign="top">rev::CANError&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_spark_max.html#a3072bc5a5bb632f67731342f6ff17d42">Follow</a> (<a class="el" href="class_dragon_spark_max.html">DragonSparkMax</a> *leader, bool invert=false)</td></tr>
@@ -350,7 +351,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00194">194</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00186">186</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
 
 </div>
 </div>
@@ -497,7 +498,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00212">212</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00203">203</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
 
 </div>
 </div>
@@ -591,27 +592,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_dragon_motor_controller.html#aae1077a659ed6c8f89d565f6411e56a3">IDragonMotorController</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00188">188</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a05f79e4d56ee0bbb79befd1ce05677b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05f79e4d56ee0bbb79befd1ce05677b2">&#9670;&nbsp;</a></span>InvertEncoder()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonSparkMax::InvertEncoder </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>inverted</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00206">206</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00180">180</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
 
 </div>
 </div>
@@ -645,6 +626,45 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a3d5608ab963c80b01dcfbeba3ad71f49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d5608ab963c80b01dcfbeba3ad71f49">&#9670;&nbsp;</a></span>SetControlConstants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DragonSparkMax::SetControlConstants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_control_data.html">ControlData</a> *&#160;</td>
+          <td class="paramname"><em>controlInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the control constants (e.g. PIDF values). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ControlData*</td><td>pid - the control constants </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implements <a class="el" href="class_i_dragon_motor_controller.html#abdca297c707d0c1f5e36bc0be37396d5">IDragonMotorController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00217">217</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a47cda85cdba80165e485bb5bf5c41726"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a47cda85cdba80165e485bb5bf5c41726">&#9670;&nbsp;</a></span>SetControlMode()</h2>
 
@@ -672,64 +692,6 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_i_dragon_motor_controller.html#ac1436f0089d933ba4310abca76059e63">IDragonMotorController</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00069">69</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a692e9a190ad04d6ec8a5f4e166ecd62f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a692e9a190ad04d6ec8a5f4e166ecd62f">&#9670;&nbsp;</a></span>SetPIDF()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonSparkMax::SetPIDF </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>d</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>f</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>slot</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="class_i_dragon_motor_controller.html#a721912ad4bfbd1141e49de6a4d7dcb4a">IDragonMotorController</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00180">180</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
 
 </div>
 </div>
@@ -763,6 +725,36 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a67be736e73bf22920239944c5a9ebc5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67be736e73bf22920239944c5a9ebc5d">&#9670;&nbsp;</a></span>SetSensorInverted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DragonSparkMax::SetSensorInverted </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inverted</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_i_dragon_motor_controller.html#a108645163a4c281f5c83b72136fe5cae">IDragonMotorController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00198">198</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
+
+</div>
+</div>
 <a id="af4d2ada3b631fae7e56521dc053f20a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4d2ada3b631fae7e56521dc053f20a6">&#9670;&nbsp;</a></span>SetSmartCurrentLimiting()</h2>
 
@@ -779,7 +771,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00217">217</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_spark_max_8cpp_source.html#l00208">208</a> of file <a class="el" href="_dragon_spark_max_8cpp_source.html">DragonSparkMax.cpp</a>.</p>
 
 </div>
 </div>

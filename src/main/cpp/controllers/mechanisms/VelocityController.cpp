@@ -14,15 +14,9 @@ VelocityController::VelocityController
 {
 }
 
-void VelocityController::Init
-(
-    IMechanism*         mechanism,
-    ControlData*        controlData
-) 
+void VelocityController::Init()
 {
-    m_mech = mechanism;
-    m_control = controlData;
-    if ( m_mech != nullptr )
+    if ( m_mech != nullptr && m_control != nullptr )
     {
         m_mech->SetControlConstants( m_control );
     }
@@ -38,7 +32,7 @@ void VelocityController::Run()
     }
 }
 
-bool VelocityController::ReachedTarget()
+bool VelocityController::AtTarget()
 {
     return false;   // todo check current value vs. target value
 }

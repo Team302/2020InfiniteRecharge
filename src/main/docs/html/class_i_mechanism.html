@@ -103,9 +103,12 @@ Inheritance diagram for IMechanism:</div>
  <div class="center">
   <img src="class_i_mechanism.png" usemap="#IMechanism_map" alt=""/>
   <map id="IMechanism_map" name="IMechanism_map">
-<area href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem." alt="DriveTrainSide" shape="rect" coords="0,56,97,80"/>
-<area href="class_intake.html" alt="Intake" shape="rect" coords="107,56,204,80"/>
-<area href="class_intake.html" alt="Intake" shape="rect" coords="214,56,311,80"/>
+<area href="class_ball_transfer.html" alt="BallTransfer" shape="rect" coords="0,56,113,80"/>
+<area href="class_control_panel.html" alt="ControlPanel" shape="rect" coords="123,56,236,80"/>
+<area href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem." alt="DriveTrainSide" shape="rect" coords="246,56,359,80"/>
+<area href="class_human_player_flap.html" alt="HumanPlayerFlap" shape="rect" coords="369,56,482,80"/>
+<area href="class_impeller.html" alt="Impeller" shape="rect" coords="492,56,605,80"/>
+<area href="class_intake.html" alt="Intake" shape="rect" coords="615,56,728,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -234,7 +237,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>void <br  />
  </dd></dl>
 
-<p>Implemented in <a class="el" href="class_drive_train_side.html#a628a1bb75d5be4a69b63c1e94eb00f49">DriveTrainSide</a>, <a class="el" href="class_intake.html#afa8ec17574756ce583996e060dc497e5">Intake</a>, and <a class="el" href="class_intake.html#a6fea3918ef2fdbf5b0368bdd551707cf">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_drive_train_side.html#a628a1bb75d5be4a69b63c1e94eb00f49">DriveTrainSide</a>, <a class="el" href="class_ball_transfer.html#a6125b233e84bb18b95028291b8a821fa">BallTransfer</a>, <a class="el" href="class_impeller.html#a23b1a612d67bd2c1605ad2ceec867b46">Impeller</a>, <a class="el" href="class_intake.html#a6fea3918ef2fdbf5b0368bdd551707cf">Intake</a>, <a class="el" href="class_human_player_flap.html#a70ab4f91e651499a357178db3363e393">HumanPlayerFlap</a>, and <a class="el" href="class_control_panel.html#afabe6a8e741ed9af5d51d50d82cc4263">ControlPanel</a>.</p>
 
 </div>
 </div>
@@ -264,7 +267,7 @@ Public Member Functions</h2></td></tr>
 <p>Return the current position of the mechanism. The value is in inches or degrees. </p>
 <dl class="section return"><dt>Returns</dt><dd>double position in inches (translating mechanisms) or degrees (rotating mechanisms) </dd></dl>
 
-<p>Implemented in <a class="el" href="class_drive_train_side.html#a557590423b84c081762e79c161d55ee9">DriveTrainSide</a>, <a class="el" href="class_intake.html#a6abaaaed9c70dcefdcdb68097a5f69d6">Intake</a>, and <a class="el" href="class_intake.html#a5af00f3a2ce757f67177b5d59114aded">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_drive_train_side.html#a557590423b84c081762e79c161d55ee9">DriveTrainSide</a>, <a class="el" href="class_ball_transfer.html#a439eba26f6912a85ac05fce629fb6b1c">BallTransfer</a>, <a class="el" href="class_impeller.html#a04b455224bc6145f19b09b5d7ee2f8bc">Impeller</a>, <a class="el" href="class_intake.html#a6abaaaed9c70dcefdcdb68097a5f69d6">Intake</a>, <a class="el" href="class_human_player_flap.html#a08951df8e2ccd925a46a944b249765dd">HumanPlayerFlap</a>, and <a class="el" href="class_control_panel.html#abdff4646934ab23158cfce4261322889">ControlPanel</a>.</p>
 
 </div>
 </div>
@@ -294,7 +297,7 @@ Public Member Functions</h2></td></tr>
 <p>Get the current speed of the mechanism. The value is in inches per second or degrees per second. </p>
 <dl class="section return"><dt>Returns</dt><dd>double speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) </dd></dl>
 
-<p>Implemented in <a class="el" href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">DriveTrainSide</a>, <a class="el" href="class_intake.html#a7e3783508ddf079750a1430d6fb2e6cf">Intake</a>, and <a class="el" href="class_intake.html#acc0514228b6c18ef6c78058e1a486fb8">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">DriveTrainSide</a>, <a class="el" href="class_ball_transfer.html#add75fdc81285150babc0c52cf2b371b3">BallTransfer</a>, <a class="el" href="class_impeller.html#a38948021086ebb2d7f2651a618ece2e5">Impeller</a>, <a class="el" href="class_intake.html#a7e3783508ddf079750a1430d6fb2e6cf">Intake</a>, <a class="el" href="class_human_player_flap.html#a981fd78eb3df7ac72787881dab15b304">HumanPlayerFlap</a>, and <a class="el" href="class_control_panel.html#a99f7157fc32fd4f2f10c2f78ba0e34cd">ControlPanel</a>.</p>
 
 </div>
 </div>
@@ -324,7 +327,7 @@ Public Member Functions</h2></td></tr>
 <p>Return the targget position of the mechanism. The value is in inches or degrees. </p>
 <dl class="section return"><dt>Returns</dt><dd>double position in inches (translating mechanisms) or degrees (rotating mechanisms) </dd></dl>
 
-<p>Implemented in <a class="el" href="class_drive_train_side.html#a0ccf01a971eab34f5a053e6184af1b71">DriveTrainSide</a>, <a class="el" href="class_intake.html#a09dd45bfc0e12d514bb1e1efa675ef06">Intake</a>, and <a class="el" href="class_intake.html#a39611dd4b658d529d555519e0e460442">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_drive_train_side.html#a0ccf01a971eab34f5a053e6184af1b71">DriveTrainSide</a>, <a class="el" href="class_ball_transfer.html#ac419c5d7b1132883ff72b82b02127fec">BallTransfer</a>, <a class="el" href="class_impeller.html#aab43e22efa3957aeaede4eb9eb965e4c">Impeller</a>, <a class="el" href="class_intake.html#a09dd45bfc0e12d514bb1e1efa675ef06">Intake</a>, <a class="el" href="class_human_player_flap.html#ae873ee3ddaef45474d7e1c467e5c1281">HumanPlayerFlap</a>, and <a class="el" href="class_control_panel.html#a4783314507db821a953567cdcfa88853">ControlPanel</a>.</p>
 
 </div>
 </div>
@@ -360,7 +363,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) </dd></dl>
 
-<p>Implemented in <a class="el" href="class_drive_train_side.html#adf2337d61c0dd88d0a2b63032ce1075d">DriveTrainSide</a>, <a class="el" href="class_intake.html#a7d733c16727ac5509d2c42c5b3165103">Intake</a>, and <a class="el" href="class_intake.html#a1cfadd2df4a420974d69730366e374ff">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_drive_train_side.html#adf2337d61c0dd88d0a2b63032ce1075d">DriveTrainSide</a>, <a class="el" href="class_ball_transfer.html#ace28fe4d807a38c80cb60be729f81170">BallTransfer</a>, <a class="el" href="class_impeller.html#a89fb5f4080d2addd03c5102c7393564c">Impeller</a>, <a class="el" href="class_intake.html#a7d733c16727ac5509d2c42c5b3165103">Intake</a>, <a class="el" href="class_human_player_flap.html#ab23aa98663657ec1074fec9a7722d93d">HumanPlayerFlap</a>, and <a class="el" href="class_control_panel.html#ad3f18a8d44d1516e8e5f41fca394fd2d">ControlPanel</a>.</p>
 
 </div>
 </div>
@@ -390,7 +393,7 @@ Public Member Functions</h2></td></tr>
 <p>Indicates the type of mechanism this is. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes::MECHANISM_TYPE</a> </dd></dl>
 
-<p>Implemented in <a class="el" href="class_drive_train_side.html#afb3d28141117ebdf1e00af89e1f90007">DriveTrainSide</a>, <a class="el" href="class_intake.html#a0b68bd630c53d7db98e220b94d76020a">Intake</a>, and <a class="el" href="class_intake.html#ade932c4cc4cab1c3f18184a25e9f641c">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_drive_train_side.html#afb3d28141117ebdf1e00af89e1f90007">DriveTrainSide</a>, <a class="el" href="class_ball_transfer.html#a0e9e704cbc3fcb207b7377c3356487c3">BallTransfer</a>, <a class="el" href="class_impeller.html#acb60389f253ee9eac8b7ae540dd0e173">Impeller</a>, <a class="el" href="class_intake.html#a0b68bd630c53d7db98e220b94d76020a">Intake</a>, <a class="el" href="class_human_player_flap.html#aa7388dc05650ecaf822f3bb6aa119dcf">HumanPlayerFlap</a>, and <a class="el" href="class_control_panel.html#a047cd8db83f38aafa18610af368cdecd">ControlPanel</a>.</p>
 
 </div>
 </div>
@@ -420,7 +423,7 @@ Public Member Functions</h2></td></tr>
 <p>Check if the pneumatic solenoid is activated. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool - true == extended, false == retract </dd></dl>
 
-<p>Implemented in <a class="el" href="class_intake.html#acd4e61cd728e507dbd81e143b9c92649">Intake</a>, <a class="el" href="class_drive_train_side.html#a64ddb62d04bb2896356fcf02f7a47502">DriveTrainSide</a>, and <a class="el" href="class_intake.html#a5bb26ce040e9e83d43c5a6258ba3b033">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_drive_train_side.html#a64ddb62d04bb2896356fcf02f7a47502">DriveTrainSide</a>, <a class="el" href="class_ball_transfer.html#a97153a52dbe2240fe50ac5ff7a3736b7">BallTransfer</a>, <a class="el" href="class_impeller.html#ab4e02f70801e9c4fe3d3fa6668feebcb">Impeller</a>, <a class="el" href="class_intake.html#a5bb26ce040e9e83d43c5a6258ba3b033">Intake</a>, <a class="el" href="class_human_player_flap.html#a297271d4470f97c541535db6357c0738">HumanPlayerFlap</a>, and <a class="el" href="class_control_panel.html#aa963c81fa30b7394ef23bd56d3eeffab">ControlPanel</a>.</p>
 
 </div>
 </div>
@@ -457,7 +460,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p>Implemented in <a class="el" href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">DriveTrainSide</a>, <a class="el" href="class_intake.html#a52547b90c0ec0c4e63bf506859f9479f">Intake</a>, and <a class="el" href="class_intake.html#a7871bee1bb586380dc701ffef44e0c8f">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">DriveTrainSide</a>, <a class="el" href="class_ball_transfer.html#a4c99013d442e948437be3564500a07a1">BallTransfer</a>, <a class="el" href="class_impeller.html#a91a0410e3ad710c193570639f3149956">Impeller</a>, <a class="el" href="class_intake.html#a7871bee1bb586380dc701ffef44e0c8f">Intake</a>, <a class="el" href="class_human_player_flap.html#a4efefb7367ccb49b9d76cae58c752983">HumanPlayerFlap</a>, and <a class="el" href="class_control_panel.html#ac7fc1fccae4a61dea721107f69ab3327">ControlPanel</a>.</p>
 
 </div>
 </div>
@@ -505,7 +508,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p>Implemented in <a class="el" href="class_drive_train_side.html#a780ffb564264716f6d86e6a089bd3dd3">DriveTrainSide</a>, <a class="el" href="class_intake.html#a9b29b6bfefd223fd6ec0a689826841eb">Intake</a>, and <a class="el" href="class_intake.html#a6e1947a3cd657b968e69629792deca69">Intake</a>.</p>
+<p>Implemented in <a class="el" href="class_drive_train_side.html#a780ffb564264716f6d86e6a089bd3dd3">DriveTrainSide</a>, <a class="el" href="class_ball_transfer.html#a8c437223d6e1cd96476294b6f4e9d5bb">BallTransfer</a>, <a class="el" href="class_impeller.html#a103e6a39e063fa96c1d0ddd3f144e8bb">Impeller</a>, <a class="el" href="class_intake.html#a6e1947a3cd657b968e69629792deca69">Intake</a>, <a class="el" href="class_human_player_flap.html#aa8707ca4f7ad9e434ee479cbb36b9bcb">HumanPlayerFlap</a>, and <a class="el" href="class_control_panel.html#a23d9f02873f94d4cc5299212f091c1fe">ControlPanel</a>.</p>
 
 </div>
 </div>

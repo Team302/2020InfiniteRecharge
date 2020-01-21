@@ -142,12 +142,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a11ce6b9a0281ae2dbddf655c2913a133"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc7287b069303565a9b52f84508220d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#acc7287b069303565a9b52f84508220d6">EnableBrakeMode</a> (bool enabled) override</td></tr>
 <tr class="separator:acc7287b069303565a9b52f84508220d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac212c4954f881aeda9cb5808b270f8c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#ac212c4954f881aeda9cb5808b270f8c6">SetPIDF</a> (double p, double i, double d, double f, int slot=0) override</td></tr>
-<tr class="separator:ac212c4954f881aeda9cb5808b270f8c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a916e6d3fa7d6e134e60ee8ad868391b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#a916e6d3fa7d6e134e60ee8ad868391b4">Invert</a> (bool inverted) override</td></tr>
 <tr class="separator:a916e6d3fa7d6e134e60ee8ad868391b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8cbe0dacf648ded3fffd397ab02f433"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#ad8cbe0dacf648ded3fffd397ab02f433">SetSensorInverted</a> (bool inverted)</td></tr>
-<tr class="separator:ad8cbe0dacf648ded3fffd397ab02f433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d056ac6683ceec4a985dff184b42e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#a87d056ac6683ceec4a985dff184b42e5">SetSensorInverted</a> (bool inverted) override</td></tr>
+<tr class="separator:a87d056ac6683ceec4a985dff184b42e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a051e7d9a21b9caf9db65bcb2c613808e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#a051e7d9a21b9caf9db65bcb2c613808e">SetControlConstants</a> (<a class="el" href="class_control_data.html">ControlData</a> *controlInfo) override</td></tr>
+<tr class="memdesc:a051e7d9a21b9caf9db65bcb2c613808e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values).  <a href="class_dragon_talon.html#a051e7d9a21b9caf9db65bcb2c613808e">More...</a><br /></td></tr>
+<tr class="separator:a051e7d9a21b9caf9db65bcb2c613808e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9efb3be1b1474163bd43f4d37ddace8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#ae9efb3be1b1474163bd43f4d37ddace8">SelectClosedLoopProfile</a> (int slot, int pidIndex)</td></tr>
 <tr class="separator:ae9efb3be1b1474163bd43f4d37ddace8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a435a83d26e7172119be05221610cb0ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#a435a83d26e7172119be05221610cb0ed">ConfigSelectedFeedbackSensor</a> (ctre::phoenix::motorcontrol::FeedbackDevice feedbackDevice, int pidIdx, int timeoutMs)</td></tr>
@@ -162,14 +163,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aba6be9a94e78685b4244aef6e7f96d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad17df52ab49a083f925d20bd9802cf6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#ad17df52ab49a083f925d20bd9802cf6c">SetAsSlave</a> (int masterCANID)</td></tr>
 <tr class="separator:ad17df52ab49a083f925d20bd9802cf6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41b0c2ee168a17b3543bb4b83ffba9d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#a41b0c2ee168a17b3543bb4b83ffba9d9">ConfigMotionAcceleration</a> (float maxMotionAcceleration)</td></tr>
-<tr class="separator:a41b0c2ee168a17b3543bb4b83ffba9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21f1a0eab98290650fe91164646aae3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#a21f1a0eab98290650fe91164646aae3d">ConfigMotionCruiseVelocity</a> (float maxMotionCruiseVelocity)</td></tr>
-<tr class="separator:a21f1a0eab98290650fe91164646aae3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab09e0128aa1416cf1e00858d598db7ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#ab09e0128aa1416cf1e00858d598db7ff">ConfigPeakOutput</a> (double percentOutput)</td></tr>
-<tr class="separator:ab09e0128aa1416cf1e00858d598db7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5ebd17e9cc10b7d16378fe777a961ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_talon.html#af5ebd17e9cc10b7d16378fe777a961ed">ConfigNominalOutput</a> (double nominalOutput)</td></tr>
-<tr class="separator:af5ebd17e9cc10b7d16378fe777a961ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -205,27 +198,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<pre class="fragment">enum TALON_SENSOR_TYPE
-{
-    NO_SENSOR = -1,
-    QUAD_ENCODER,
-    UNKNOWN_SENSOR,
-    ANALOG_POT,
-    ANALOG_ENCODER,
-    ENCODER_RISING,
-    ENCODER_FALLING,
-    CTRE_MAG_ENCODER_RELATIVE,
-    CTRE_MAG_ENCODER_ABSOLUTE,
-    PULSE_WIDTH,
-    MAX_SENSOR_TYPES
-};
-
-enum TALON_CONTROL_MODE
-{
-    PERCENT,
-    POSITION,
-    VELOCITY,
-</pre><p> RPS, FOLLOWER, MOTION_MAGIC, MAX_TALON_MODES }; </p>
 
 </div>
 </div>
@@ -329,67 +301,7 @@ enum TALON_CONTROL_MODE
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00321">321</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a41b0c2ee168a17b3543bb4b83ffba9d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41b0c2ee168a17b3543bb4b83ffba9d9">&#9670;&nbsp;</a></span>ConfigMotionAcceleration()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonTalon::ConfigMotionAcceleration </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>maxMotionAcceleration</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00210">210</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a21f1a0eab98290650fe91164646aae3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21f1a0eab98290650fe91164646aae3d">&#9670;&nbsp;</a></span>ConfigMotionCruiseVelocity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonTalon::ConfigMotionCruiseVelocity </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>maxMotionCruiseVelocity</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00220">220</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
-
-</div>
-</div>
-<a id="af5ebd17e9cc10b7d16378fe777a961ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5ebd17e9cc10b7d16378fe777a961ed">&#9670;&nbsp;</a></span>ConfigNominalOutput()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonTalon::ConfigNominalOutput </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>nominalOutput</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00238">238</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00276">276</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
 
 </div>
 </div>
@@ -419,7 +331,7 @@ enum TALON_CONTROL_MODE
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00303">303</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00258">258</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
 
 </div>
 </div>
@@ -449,27 +361,7 @@ enum TALON_CONTROL_MODE
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00285">285</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ab09e0128aa1416cf1e00858d598db7ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab09e0128aa1416cf1e00858d598db7ff">&#9670;&nbsp;</a></span>ConfigPeakOutput()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonTalon::ConfigPeakOutput </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>percentOutput</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00229">229</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00240">240</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
 
 </div>
 </div>
@@ -661,7 +553,7 @@ enum TALON_CONTROL_MODE
 
 <p>Implements <a class="el" href="class_i_dragon_motor_controller.html#ad70e1b0a007c03cc07a6ee531d6701d6">IDragonMotorController</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00189">189</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00181">181</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
 
 </div>
 </div>
@@ -789,7 +681,7 @@ enum TALON_CONTROL_MODE
 
 <p>Implements <a class="el" href="class_i_dragon_motor_controller.html#a0b4ae4352bf46cae7d783c4e8c36aa6e">IDragonMotorController</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00184">184</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00176">176</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
 
 </div>
 </div>
@@ -819,7 +711,7 @@ enum TALON_CONTROL_MODE
 
 <p>Implements <a class="el" href="class_i_dragon_motor_controller.html#aae1077a659ed6c8f89d565f6411e56a3">IDragonMotorController</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00174">174</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00166">166</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
 
 </div>
 </div>
@@ -849,7 +741,7 @@ enum TALON_CONTROL_MODE
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00200">200</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00192">192</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
 
 </div>
 </div>
@@ -899,7 +791,46 @@ enum TALON_CONTROL_MODE
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00339">339</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00294">294</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a051e7d9a21b9caf9db65bcb2c613808e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a051e7d9a21b9caf9db65bcb2c613808e">&#9670;&nbsp;</a></span>SetControlConstants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DragonTalon::SetControlConstants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_control_data.html">ControlData</a> *&#160;</td>
+          <td class="paramname"><em>controlInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the control constants (e.g. PIDF values). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ControlData*</td><td>pid - the control constants </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implements <a class="el" href="class_i_dragon_motor_controller.html#abdca297c707d0c1f5e36bc0be37396d5">IDragonMotorController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00305">305</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
 
 </div>
 </div>
@@ -933,64 +864,6 @@ enum TALON_CONTROL_MODE
 
 </div>
 </div>
-<a id="ac212c4954f881aeda9cb5808b270f8c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac212c4954f881aeda9cb5808b270f8c6">&#9670;&nbsp;</a></span>SetPIDF()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DragonTalon::SetPIDF </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>d</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>f</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>slot</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="class_i_dragon_motor_controller.html#a721912ad4bfbd1141e49de6a4d7dcb4a">IDragonMotorController</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00166">166</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
-
-</div>
-</div>
 <a id="a50cab200ce935067feed69d862f48156"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a50cab200ce935067feed69d862f48156">&#9670;&nbsp;</a></span>SetRotationOffset()</h2>
 
@@ -1021,11 +894,14 @@ enum TALON_CONTROL_MODE
 
 </div>
 </div>
-<a id="ad8cbe0dacf648ded3fffd397ab02f433"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8cbe0dacf648ded3fffd397ab02f433">&#9670;&nbsp;</a></span>SetSensorInverted()</h2>
+<a id="a87d056ac6683ceec4a985dff184b42e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d056ac6683ceec4a985dff184b42e5">&#9670;&nbsp;</a></span>SetSensorInverted()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void DragonTalon::SetSensorInverted </td>
@@ -1035,9 +911,16 @@ enum TALON_CONTROL_MODE
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00179">179</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
+<p>Implements <a class="el" href="class_i_dragon_motor_controller.html#a108645163a4c281f5c83b72136fe5cae">IDragonMotorController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00171">171</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
 
 </div>
 </div>

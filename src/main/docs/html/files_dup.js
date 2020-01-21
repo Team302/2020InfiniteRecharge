@@ -11,5 +11,9 @@ var files_dup =
     [ "Robot.cpp", "_robot_8cpp.html", "_robot_8cpp" ],
     [ "Robot.h", "_robot_8h.html", [
       [ "Robot", "class_robot.html", "class_robot" ]
+    ] ],
+    [ "XboxDisplay.cpp", "_xbox_display_8cpp.html", null ],
+    [ "XboxDisplay.h", "_xbox_display_8h.html", [
+      [ "XboxDisplay", "class_xbox_display.html", "class_xbox_display" ]
     ] ]
 ];

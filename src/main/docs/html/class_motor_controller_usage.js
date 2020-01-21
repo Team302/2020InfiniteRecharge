@@ -2,10 +2,10 @@ var class_motor_controller_usage =
 [
     [ "MOTOR_CONTROLLER_USAGE", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51a", [
       [ "UNKNOWN_MOTOR_CONTROLLER_USAGE", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa88dc96bc07f2a3d51e868dc1d8a35ffe", null ],
-      [ "LEFT_DRIVE_FOLLOWER", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aabdbddfdbb8ef0a47c2b835d435333796", null ],
       [ "LEFT_DRIVE_MASTER", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa2523c0458c7ac62851a3c1c85216b986", null ],
-      [ "RIGHT_DRIVE_FOLLOWER", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa22689698f330a3976e4d5c98c166b7ad", null ],
+      [ "LEFT_DRIVE_FOLLOWER", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aabdbddfdbb8ef0a47c2b835d435333796", null ],
       [ "RIGHT_DRIVE_MASTER", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aaded1a219146bd524085637b4a6a23e10", null ],
+      [ "RIGHT_DRIVE_FOLLOWER", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa22689698f330a3976e4d5c98c166b7ad", null ],
       [ "INTAKE", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa01aee16a773c1cd4513779950e8fb351", null ],
       [ "IMPELLER", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa54f2288e0d271704eb0571144aeab035", null ],
       [ "BALL_TRANSFER", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa78dc128073b235dd2153e5b012137487", null ],

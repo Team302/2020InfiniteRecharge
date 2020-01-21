@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['m_5fdeadband_5fvalue_1717',['M_DEADBAND_VALUE',['../class_i_deadband.html#a45b3ece586ef6217fe85721c3265056a',1,'IDeadband']]],
-  ['magnitude_1718',['magnitude',['../struct_vector2.html#a0a626213b03e7defbef89a2650ec2845',1,'Vector2']]],
-  ['min_5fspeed_5fslowdown_1719',['MIN_SPEED_SLOWDOWN',['../class_super_drive.html#ac415c90fe844cd40e438ec7f05061e32',1,'SuperDrive']]]
+  ['m_5fcolormatcher_1767',['m_colorMatcher',['../_control_panel_8cpp.html#a2ed1e0ececd760a48a28adf11dfc344a',1,'ControlPanel.cpp']]],
+  ['m_5fcolorsensor_1768',['m_colorSensor',['../_control_panel_8cpp.html#a69ef306fa5ad1d98545515feb9121272',1,'ControlPanel.cpp']]],
+  ['m_5fdeadband_5fvalue_1769',['M_DEADBAND_VALUE',['../class_i_deadband.html#a45b3ece586ef6217fe85721c3265056a',1,'IDeadband']]],
+  ['m_5ftimer_1770',['m_timer',['../_control_panel_8cpp.html#af1c5cf1835abbbb6de7bf90a03b8dbcd',1,'ControlPanel.cpp']]],
+  ['magnitude_1771',['magnitude',['../struct_vector2.html#a0a626213b03e7defbef89a2650ec2845',1,'Vector2']]],
+  ['min_5fspeed_5fslowdown_1772',['MIN_SPEED_SLOWDOWN',['../class_super_drive.html#ac415c90fe844cd40e438ec7f05061e32',1,'SuperDrive']]]
 ];

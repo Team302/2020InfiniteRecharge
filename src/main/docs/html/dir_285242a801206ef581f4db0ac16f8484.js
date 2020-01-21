@@ -8,9 +8,6 @@ var dir_285242a801206ef581f4db0ac16f8484 =
     [ "GTADrive.h", "_g_t_a_drive_8h.html", [
       [ "GTADrive", "class_g_t_a_drive.html", "class_g_t_a_drive" ]
     ] ],
-    [ "ITeleopDrive.h", "_i_teleop_drive_8h.html", [
-      [ "ITeleopDrive", "class_i_teleop_drive.html", "class_i_teleop_drive" ]
-    ] ],
     [ "TankDrive.cpp", "_tank_drive_8cpp.html", null ],
     [ "TankDrive.h", "_tank_drive_8h.html", [
       [ "TankDrive", "class_tank_drive.html", "class_tank_drive" ]

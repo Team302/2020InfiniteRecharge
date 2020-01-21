@@ -107,35 +107,31 @@ $(document).ready(function(){initNavTree('_velocity_controller_8h_source.html','
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_velocity_controller.html#a11cfee224ffc9dadb13a7f40965a45cb">~VelocityController</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_velocity_controller.html#ab8f712185f78ce3b4a486bf3c36a1fde">Init</a></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        (</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="class_i_mechanism.html">IMechanism</a>*         mechanism,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="class_control_data.html">ControlData</a>*        controlData</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        ) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_velocity_controller.html#aa6358fc3232691e458f996a8e8f4ce5a">Run</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_velocity_controller.html#a018200b56ed0e9c23dee37eb5f453b82">ReachedTarget</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_velocity_controller.html#afe11f0564aea740b84fdec61d1828aa8">Init</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_velocity_controller.html#aa6358fc3232691e458f996a8e8f4ce5a">Run</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_velocity_controller.html#ac3283afc9090bba5644f929fef209967">AtTarget</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_i_mechanism.html">IMechanism</a>*         m_mech;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_control_data.html">ControlData</a>*        m_control;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="class_i_mechanism.html">IMechanism</a>*         m_mech;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_control_data.html">ControlData</a>*        m_control;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_i_mech_controller_8h_html"><div class="ttname"><a href="_i_mech_controller_8h.html">IMechController.h</a></div></div>
-<div class="ttc" id="aclass_velocity_controller_html_a018200b56ed0e9c23dee37eb5f453b82"><div class="ttname"><a href="class_velocity_controller.html#a018200b56ed0e9c23dee37eb5f453b82">VelocityController::ReachedTarget</a></div><div class="ttdeci">bool ReachedTarget() override</div><div class="ttdef"><b>Definition:</b> <a href="_velocity_controller_8cpp_source.html#l00041">VelocityController.cpp:41</a></div></div>
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
+<div class="ttc" id="aclass_velocity_controller_html_ac3283afc9090bba5644f929fef209967"><div class="ttname"><a href="class_velocity_controller.html#ac3283afc9090bba5644f929fef209967">VelocityController::AtTarget</a></div><div class="ttdeci">bool AtTarget() override</div><div class="ttdef"><b>Definition:</b> <a href="_velocity_controller_8cpp_source.html#l00035">VelocityController.cpp:35</a></div></div>
 <div class="ttc" id="aclass_i_mech_controller_html"><div class="ttname"><a href="class_i_mech_controller.html">IMechController</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_mech_controller_8h_source.html#l00006">IMechController.h:6</a></div></div>
-<div class="ttc" id="aclass_velocity_controller_html_aa6358fc3232691e458f996a8e8f4ce5a"><div class="ttname"><a href="class_velocity_controller.html#aa6358fc3232691e458f996a8e8f4ce5a">VelocityController::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_velocity_controller_8cpp_source.html#l00032">VelocityController.cpp:32</a></div></div>
+<div class="ttc" id="aclass_velocity_controller_html_aa6358fc3232691e458f996a8e8f4ce5a"><div class="ttname"><a href="class_velocity_controller.html#aa6358fc3232691e458f996a8e8f4ce5a">VelocityController::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_velocity_controller_8cpp_source.html#l00026">VelocityController.cpp:26</a></div></div>
 <div class="ttc" id="aclass_velocity_controller_html"><div class="ttname"><a href="class_velocity_controller.html">VelocityController</a></div><div class="ttdef"><b>Definition:</b> <a href="_velocity_controller_8h_source.html#l00007">VelocityController.h:7</a></div></div>
 <div class="ttc" id="aclass_velocity_controller_html_a86c5f295d9a510c2b2fb0c6400812f9f"><div class="ttname"><a href="class_velocity_controller.html#a86c5f295d9a510c2b2fb0c6400812f9f">VelocityController::VelocityController</a></div><div class="ttdeci">VelocityController()=delete</div></div>
-<div class="ttc" id="aclass_velocity_controller_html_a11cfee224ffc9dadb13a7f40965a45cb"><div class="ttname"><a href="class_velocity_controller.html#a11cfee224ffc9dadb13a7f40965a45cb">VelocityController::~VelocityController</a></div><div class="ttdeci">~VelocityController() override</div><div class="ttdef"><b>Definition:</b> <a href="_velocity_controller_8cpp_source.html#l00046">VelocityController.cpp:46</a></div></div>
+<div class="ttc" id="aclass_velocity_controller_html_afe11f0564aea740b84fdec61d1828aa8"><div class="ttname"><a href="class_velocity_controller.html#afe11f0564aea740b84fdec61d1828aa8">VelocityController::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdef"><b>Definition:</b> <a href="_velocity_controller_8cpp_source.html#l00017">VelocityController.cpp:17</a></div></div>
+<div class="ttc" id="aclass_velocity_controller_html_a11cfee224ffc9dadb13a7f40965a45cb"><div class="ttname"><a href="class_velocity_controller.html#a11cfee224ffc9dadb13a7f40965a45cb">VelocityController::~VelocityController</a></div><div class="ttdeci">~VelocityController() override</div><div class="ttdef"><b>Definition:</b> <a href="_velocity_controller_8cpp_source.html#l00040">VelocityController.cpp:40</a></div></div>
 <div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00020">ControlData.h:20</a></div></div>
-<div class="ttc" id="aclass_velocity_controller_html_ab8f712185f78ce3b4a486bf3c36a1fde"><div class="ttname"><a href="class_velocity_controller.html#ab8f712185f78ce3b4a486bf3c36a1fde">VelocityController::Init</a></div><div class="ttdeci">void Init(IMechanism *mechanism, ControlData *controlData) override</div><div class="ttdef"><b>Definition:</b> <a href="_velocity_controller_8cpp_source.html#l00018">VelocityController.cpp:18</a></div></div>
 <div class="ttc" id="aclass_i_mechanism_html"><div class="ttname"><a href="class_i_mechanism.html">IMechanism</a></div><div class="ttdoc">This is the interface for all subsystems.</div><div class="ttdef"><b>Definition:</b> <a href="_i_mechanism_8h_source.html#l00038">IMechanism.h:38</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

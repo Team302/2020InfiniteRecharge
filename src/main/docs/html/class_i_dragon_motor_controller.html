@@ -142,10 +142,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aabc3307852ea64aebdf940f37cade673"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35b6fe6bc4b6a582d99ec223206e4add"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#a35b6fe6bc4b6a582d99ec223206e4add">EnableBrakeMode</a> (bool enabled)=0</td></tr>
 <tr class="separator:a35b6fe6bc4b6a582d99ec223206e4add"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a721912ad4bfbd1141e49de6a4d7dcb4a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#a721912ad4bfbd1141e49de6a4d7dcb4a">SetPIDF</a> (double p, double i, double d, double f, int slot=0)=0</td></tr>
-<tr class="separator:a721912ad4bfbd1141e49de6a4d7dcb4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae1077a659ed6c8f89d565f6411e56a3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#aae1077a659ed6c8f89d565f6411e56a3">Invert</a> (bool inverted)=0</td></tr>
 <tr class="separator:aae1077a659ed6c8f89d565f6411e56a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a108645163a4c281f5c83b72136fe5cae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#a108645163a4c281f5c83b72136fe5cae">SetSensorInverted</a> (bool inverted)=0</td></tr>
+<tr class="separator:a108645163a4c281f5c83b72136fe5cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdca297c707d0c1f5e36bc0be37396d5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#abdca297c707d0c1f5e36bc0be37396d5">SetControlConstants</a> (<a class="el" href="class_control_data.html">ControlData</a> *controlInfo)=0</td></tr>
+<tr class="memdesc:abdca297c707d0c1f5e36bc0be37396d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values).  <a href="class_i_dragon_motor_controller.html#abdca297c707d0c1f5e36bc0be37396d5">More...</a><br /></td></tr>
+<tr class="separator:abdca297c707d0c1f5e36bc0be37396d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -157,7 +160,7 @@ Protected Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The general interface to motor controllers so that the specific mechanisms that use motors, don't need to special case what motor controller is being used. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_dragon_motor_controller_8h_source.html#l00037">37</a> of file <a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_dragon_motor_controller_8h_source.html#l00038">38</a> of file <a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abd89e75a66f4aa8ab989b2196e5d912f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd89e75a66f4aa8ab989b2196e5d912f">&#9670;&nbsp;</a></span>IDragonMotorController()</h2>
@@ -234,7 +237,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#acc7287b069303565a9b52f84508220d6">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#af93549d1e2ea03255c46e8aaf6ad6d43">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#ad0f4b822780fc624487285aed3f386e4">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#af93549d1e2ea03255c46e8aaf6ad6d43">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#ad0f4b822780fc624487285aed3f386e4">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#acc7287b069303565a9b52f84508220d6">DragonTalon</a>.</p>
 
 </div>
 </div>
@@ -262,7 +265,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#a11ce6b9a0281ae2dbddf655c2913a133">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#a8a76c720cf50e2bc79fb7c9f1a1cd771">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#af605cf5a714e65639678e41f00445f0c">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#a8a76c720cf50e2bc79fb7c9f1a1cd771">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#af605cf5a714e65639678e41f00445f0c">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#a11ce6b9a0281ae2dbddf655c2913a133">DragonTalon</a>.</p>
 
 </div>
 </div>
@@ -292,7 +295,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return the current usage. </p>
 <dl class="section return"><dt>Returns</dt><dd>double - amperage usage for the controller </dd></dl>
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#aa5fe4416de572b8c84ee1e063fd1b66e">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#aef9e7316a70af58f1dc02a9fae5cfd8a">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#ab2b22ee7a00b3e6a10125981848944f3">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#aef9e7316a70af58f1dc02a9fae5cfd8a">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#ab2b22ee7a00b3e6a10125981848944f3">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#aa5fe4416de572b8c84ee1e063fd1b66e">DragonTalon</a>.</p>
 
 </div>
 </div>
@@ -322,7 +325,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return the CAN ID. </p>
 <dl class="section return"><dt>Returns</dt><dd>int - CAN ID </dd></dl>
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#a7a7bf5cd79bd0458363892bcdf7f2b46">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#a09c99e5934e299873e65068b1c74fd2b">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#a3390286ef0c87a7a7e7bd62c9acfe297">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#a09c99e5934e299873e65068b1c74fd2b">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#a3390286ef0c87a7a7e7bd62c9acfe297">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#a7a7bf5cd79bd0458363892bcdf7f2b46">DragonTalon</a>.</p>
 
 </div>
 </div>
@@ -352,7 +355,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return the number of revolutions the output shaft has spun. </p>
 <dl class="section return"><dt>Returns</dt><dd>double number of revolutions </dd></dl>
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#ae86a7edc78d019aea370ec7f49eddf6c">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#aee9013f3c3bf7f48d891d650b919253e">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#a73ec6f1d7783143f62b2b1935b292051">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#aee9013f3c3bf7f48d891d650b919253e">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#a73ec6f1d7783143f62b2b1935b292051">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#ae86a7edc78d019aea370ec7f49eddf6c">DragonTalon</a>.</p>
 
 </div>
 </div>
@@ -382,7 +385,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return the angular velocity in revolutions per second. </p>
 <dl class="section return"><dt>Returns</dt><dd>double angular velocity in revolutions per second </dd></dl>
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#a6037fe288a4e4d73e8aefaff347af3eb">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#aa376bdad28a3d55b6bcb221887920a63">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#a112b2519cf850dfbf556118dbf24d350">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#aa376bdad28a3d55b6bcb221887920a63">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#a112b2519cf850dfbf556118dbf24d350">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#a6037fe288a4e4d73e8aefaff347af3eb">DragonTalon</a>.</p>
 
 </div>
 </div>
@@ -412,7 +415,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return the speedcontroller. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;frc::SpeedControll&gt; - pointer to the speed controller object </dd></dl>
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#aa816f5211ea0e05b88047c131e7d8e0e">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#ab08e23a1e9f07240e0868e8ecb83987e">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#aa479cc87e8242ca893f47662518f84d1">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#ab08e23a1e9f07240e0868e8ecb83987e">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#aa479cc87e8242ca893f47662518f84d1">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#aa816f5211ea0e05b88047c131e7d8e0e">DragonTalon</a>.</p>
 
 </div>
 </div>
@@ -442,7 +445,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return the usage of the motor. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51a" title="Defines motor usages. This should be modified for each robot.">MotorControllerUsage::MOTOR_CONTROLLER_USAGE</a> - what the motor is used for </dd></dl>
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#a38bc49d974be18c5bd76c990b8b785c6">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#aa60b6c26b3624061e239fe256583ed0e">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#a0a1ff495bb882e7c5a5ecee6beef728e">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#aa60b6c26b3624061e239fe256583ed0e">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#a0a1ff495bb882e7c5a5ecee6beef728e">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#a38bc49d974be18c5bd76c990b8b785c6">DragonTalon</a>.</p>
 
 </div>
 </div>
@@ -470,7 +473,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#a916e6d3fa7d6e134e60ee8ad868391b4">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#a01a9cbfe59d25b805ec376d94af0cfdd">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#ac6b2718e28d1b81f040ee8efb9786750">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#a01a9cbfe59d25b805ec376d94af0cfdd">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#ac6b2718e28d1b81f040ee8efb9786750">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#a916e6d3fa7d6e134e60ee8ad868391b4">DragonTalon</a>.</p>
 
 </div>
 </div>
@@ -498,7 +501,44 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#a32074257a1082666c5c25fbb9cb90d33">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#acf967485e409c54f5932732f276cb44d">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#a38eb54d110601f8fb7bb2e324f549016">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#acf967485e409c54f5932732f276cb44d">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#a38eb54d110601f8fb7bb2e324f549016">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#a32074257a1082666c5c25fbb9cb90d33">DragonTalon</a>.</p>
+
+</div>
+</div>
+<a id="abdca297c707d0c1f5e36bc0be37396d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdca297c707d0c1f5e36bc0be37396d5">&#9670;&nbsp;</a></span>SetControlConstants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IDragonMotorController::SetControlConstants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_control_data.html">ControlData</a> *&#160;</td>
+          <td class="paramname"><em>controlInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the control constants (e.g. PIDF values). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ControlData*</td><td>pid - the control constants </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#a1504585d6a7671449c274adb254d6aa6">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#a3d5608ab963c80b01dcfbeba3ad71f49">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#a051e7d9a21b9caf9db65bcb2c613808e">DragonTalon</a>.</p>
 
 </div>
 </div>
@@ -526,63 +566,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#a51ae73cebf47695a4c37cc874d7dd0b3">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#a4a582d3070a1623396dbf5120bb4f390">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#a47cda85cdba80165e485bb5bf5c41726">DragonSparkMax</a>.</p>
-
-</div>
-</div>
-<a id="a721912ad4bfbd1141e49de6a4d7dcb4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a721912ad4bfbd1141e49de6a4d7dcb4a">&#9670;&nbsp;</a></span>SetPIDF()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void IDragonMotorController::SetPIDF </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>d</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>f</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>slot</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_dragon_talon.html#ac212c4954f881aeda9cb5808b270f8c6">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#a452f65946161a02c2a72aac8a366dacf">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#a692e9a190ad04d6ec8a5f4e166ecd62f">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#a4a582d3070a1623396dbf5120bb4f390">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#a47cda85cdba80165e485bb5bf5c41726">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#a51ae73cebf47695a4c37cc874d7dd0b3">DragonTalon</a>.</p>
 
 </div>
 </div>
@@ -610,7 +594,35 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#a50cab200ce935067feed69d862f48156">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#ab9080ba4bfbada1afa05f9c532564251">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#a30be4189ed4796945e3de09a5e9131e8">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#ab9080ba4bfbada1afa05f9c532564251">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#a30be4189ed4796945e3de09a5e9131e8">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#a50cab200ce935067feed69d862f48156">DragonTalon</a>.</p>
+
+</div>
+</div>
+<a id="a108645163a4c281f5c83b72136fe5cae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a108645163a4c281f5c83b72136fe5cae">&#9670;&nbsp;</a></span>SetSensorInverted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IDragonMotorController::SetSensorInverted </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inverted</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#a4efe5d7355a1d82577a8232fdbc9fe7d">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#a67be736e73bf22920239944c5a9ebc5d">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#a87d056ac6683ceec4a985dff184b42e5">DragonTalon</a>.</p>
 
 </div>
 </div>
@@ -648,7 +660,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_dragon_talon.html#a1e450e634cd6d34cd0ba8f9bb0aebea1">DragonTalon</a>, <a class="el" href="class_dragon_falcon.html#a596613a088e7d87182377b04ced5b16a">DragonFalcon</a>, and <a class="el" href="class_dragon_spark_max.html#a1105074c2d2d7a2f719c8f5e41f02394">DragonSparkMax</a>.</p>
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#a596613a088e7d87182377b04ced5b16a">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#a1105074c2d2d7a2f719c8f5e41f02394">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#a1e450e634cd6d34cd0ba8f9bb0aebea1">DragonTalon</a>.</p>
 
 </div>
 </div>

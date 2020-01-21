@@ -77,8 +77,11 @@ var hierarchy =
       [ "DragonUltrasonicPWM", "class_dragon_ultrasonic_p_w_m.html", null ]
     ] ],
     [ "IMechanism", "class_i_mechanism.html", [
+      [ "BallTransfer", "class_ball_transfer.html", null ],
+      [ "ControlPanel", "class_control_panel.html", null ],
       [ "DriveTrainSide", "class_drive_train_side.html", null ],
-      [ "Intake", "class_intake.html", null ],
+      [ "HumanPlayerFlap", "class_human_player_flap.html", null ],
+      [ "Impeller", "class_impeller.html", null ],
       [ "Intake", "class_intake.html", null ]
     ] ],
     [ "IMechController", "class_i_mech_controller.html", [
@@ -103,7 +106,9 @@ var hierarchy =
       [ "LinearProfile", "class_linear_profile.html", null ],
       [ "SquaredProfile", "class_squared_profile.html", null ]
     ] ],
-    [ "ITeleopDrive", "class_i_teleop_drive.html", [
+    [ "IState", "class_i_state.html", [
+      [ "IntakeOff", "class_intake_off.html", null ],
+      [ "IntakeOn", "class_intake_on.html", null ],
       [ "TankDrive", "class_tank_drive.html", null ],
       [ "ThrottleSteerDrive", "class_throttle_steer_drive.html", [
         [ "ArcadeDrive", "class_arcade_drive.html", null ],
@@ -151,5 +156,6 @@ var hierarchy =
     ] ],
     [ "UltrasonicFactory", "class_ultrasonic_factory.html", null ],
     [ "UsageValidation", "class_usage_validation.html", null ],
-    [ "Vector2", "struct_vector2.html", null ]
+    [ "Vector2", "struct_vector2.html", null ],
+    [ "XboxDisplay", "class_xbox_display.html", null ]
 ];

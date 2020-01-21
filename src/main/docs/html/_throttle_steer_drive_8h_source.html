@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('_throttle_steer_drive_8h_source.html',
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// FRC includes</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Team 302 include</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_teleop_drive_8h.html">controllers/teleopdrive/ITeleopDrive.h</a>&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_state_8h.html">controllers/IState.h</a>&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_chassis_8h.html">subsys/IChassis.h</a>&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_teleop_control_8h.html">gamepad/TeleopControl.h</a>&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
@@ -121,38 +121,40 @@ $(document).ready(function(){initNavTree('_throttle_steer_drive_8h_source.html',
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_throttle_steer_drive.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_throttle_steer_drive.html">ThrottleSteerDrive</a> : <span class="keyword">public</span> <a class="code" href="class_i_teleop_drive.html">ITeleopDrive</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_throttle_steer_drive.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_throttle_steer_drive.html">ThrottleSteerDrive</a> : <span class="keyword">public</span> <a class="code" href="class_i_state.html">IState</a></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="class_throttle_steer_drive.html#a82dc86ff35705d7fa4d870ce08a8fc23">ThrottleSteerDrive</a>();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_throttle_steer_drive.html#abbc6392cc7751f3b38ee1269c5f155f5">~ThrottleSteerDrive</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_throttle_steer_drive.html#a16a9ff212e192b8ad61a896846d90849">Drive</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;               </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_throttle_steer_drive.html#a9a22e90d6e4520d921fb634637d35b2c">GetSteer</a>() = 0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_throttle_steer_drive.html#aa0833d612a63b0cfd62a922849075df3">GetThrottle</a>() = 0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_throttle_steer_drive.html#a2e58cbb98aa76a5999526a7b4357b128">   47</a></span>&#160;        <span class="keyword">inline</span> <a class="code" href="class_teleop_control.html">TeleopControl</a>* <a class="code" href="class_throttle_steer_drive.html#a2e58cbb98aa76a5999526a7b4357b128">GetController</a>() { <span class="keywordflow">return</span> m_controller; }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        std::shared_ptr&lt;IChassis&gt; m_chassis;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_teleop_control.html">TeleopControl</a>* m_controller;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_throttle_steer_drive.html#ab2a4827f9f2bd02210fc2f573afb4864">Run</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_throttle_steer_drive.html#a1bd42328b6385ec8129497aae745cbb6">AtTarget</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;               </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_throttle_steer_drive.html#a9a22e90d6e4520d921fb634637d35b2c">GetSteer</a>() = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_throttle_steer_drive.html#aa0833d612a63b0cfd62a922849075df3">GetThrottle</a>() = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_throttle_steer_drive.html#a2e58cbb98aa76a5999526a7b4357b128">   48</a></span>&#160;        <span class="keyword">inline</span> <a class="code" href="class_teleop_control.html">TeleopControl</a>* <a class="code" href="class_throttle_steer_drive.html#a2e58cbb98aa76a5999526a7b4357b128">GetController</a>() { <span class="keywordflow">return</span> m_controller; }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        std::shared_ptr&lt;IChassis&gt; m_chassis;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_teleop_control.html">TeleopControl</a>* m_controller;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclass_i_state_html"><div class="ttname"><a href="class_i_state.html">IState</a></div><div class="ttdoc">Interface for state classes.</div><div class="ttdef"><b>Definition:</b> <a href="_i_state_8h_source.html#l00021">IState.h:21</a></div></div>
 <div class="ttc" id="aclass_throttle_steer_drive_html_abbc6392cc7751f3b38ee1269c5f155f5"><div class="ttname"><a href="class_throttle_steer_drive.html#abbc6392cc7751f3b38ee1269c5f155f5">ThrottleSteerDrive::~ThrottleSteerDrive</a></div><div class="ttdeci">~ThrottleSteerDrive()=default</div></div>
 <div class="ttc" id="a_teleop_control_8h_html"><div class="ttname"><a href="_teleop_control_8h.html">TeleopControl.h</a></div></div>
-<div class="ttc" id="aclass_i_teleop_drive_html"><div class="ttname"><a href="class_i_teleop_drive.html">ITeleopDrive</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_teleop_drive_8h_source.html#l00003">ITeleopDrive.h:3</a></div></div>
-<div class="ttc" id="aclass_throttle_steer_drive_html_a16a9ff212e192b8ad61a896846d90849"><div class="ttname"><a href="class_throttle_steer_drive.html#a16a9ff212e192b8ad61a896846d90849">ThrottleSteerDrive::Drive</a></div><div class="ttdeci">void Drive() override</div><div class="ttdef"><b>Definition:</b> <a href="_throttle_steer_drive_8cpp_source.html#l00054">ThrottleSteerDrive.cpp:54</a></div></div>
 <div class="ttc" id="aclass_throttle_steer_drive_html"><div class="ttname"><a href="class_throttle_steer_drive.html">ThrottleSteerDrive</a></div><div class="ttdoc">Drive differential chassis using a throttle input and a sheer (turn) input.</div><div class="ttdef"><b>Definition:</b> <a href="_throttle_steer_drive_8h_source.html#l00035">ThrottleSteerDrive.h:35</a></div></div>
-<div class="ttc" id="aclass_throttle_steer_drive_html_a2e58cbb98aa76a5999526a7b4357b128"><div class="ttname"><a href="class_throttle_steer_drive.html#a2e58cbb98aa76a5999526a7b4357b128">ThrottleSteerDrive::GetController</a></div><div class="ttdeci">TeleopControl * GetController()</div><div class="ttdef"><b>Definition:</b> <a href="_throttle_steer_drive_8h_source.html#l00047">ThrottleSteerDrive.h:47</a></div></div>
+<div class="ttc" id="aclass_throttle_steer_drive_html_a2e58cbb98aa76a5999526a7b4357b128"><div class="ttname"><a href="class_throttle_steer_drive.html#a2e58cbb98aa76a5999526a7b4357b128">ThrottleSteerDrive::GetController</a></div><div class="ttdeci">TeleopControl * GetController()</div><div class="ttdef"><b>Definition:</b> <a href="_throttle_steer_drive_8h_source.html#l00048">ThrottleSteerDrive.h:48</a></div></div>
 <div class="ttc" id="a_i_chassis_8h_html"><div class="ttname"><a href="_i_chassis_8h.html">IChassis.h</a></div></div>
 <div class="ttc" id="aclass_throttle_steer_drive_html_a9a22e90d6e4520d921fb634637d35b2c"><div class="ttname"><a href="class_throttle_steer_drive.html#a9a22e90d6e4520d921fb634637d35b2c">ThrottleSteerDrive::GetSteer</a></div><div class="ttdeci">virtual double GetSteer()=0</div></div>
+<div class="ttc" id="aclass_throttle_steer_drive_html_a1bd42328b6385ec8129497aae745cbb6"><div class="ttname"><a href="class_throttle_steer_drive.html#a1bd42328b6385ec8129497aae745cbb6">ThrottleSteerDrive::AtTarget</a></div><div class="ttdeci">bool AtTarget() const override</div><div class="ttdef"><b>Definition:</b> <a href="_throttle_steer_drive_8cpp_source.html#l00079">ThrottleSteerDrive.cpp:79</a></div></div>
+<div class="ttc" id="a_i_state_8h_html"><div class="ttname"><a href="_i_state_8h.html">IState.h</a></div></div>
 <div class="ttc" id="aclass_teleop_control_html"><div class="ttname"><a href="class_teleop_control.html">TeleopControl</a></div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8h_source.html#l00037">TeleopControl.h:37</a></div></div>
-<div class="ttc" id="aclass_throttle_steer_drive_html_a82dc86ff35705d7fa4d870ce08a8fc23"><div class="ttname"><a href="class_throttle_steer_drive.html#a82dc86ff35705d7fa4d870ce08a8fc23">ThrottleSteerDrive::ThrottleSteerDrive</a></div><div class="ttdeci">ThrottleSteerDrive()</div><div class="ttdoc">initialize the object</div><div class="ttdef"><b>Definition:</b> <a href="_throttle_steer_drive_8cpp_source.html#l00038">ThrottleSteerDrive.cpp:38</a></div></div>
-<div class="ttc" id="a_i_teleop_drive_8h_html"><div class="ttname"><a href="_i_teleop_drive_8h.html">ITeleopDrive.h</a></div></div>
+<div class="ttc" id="aclass_throttle_steer_drive_html_ab2a4827f9f2bd02210fc2f573afb4864"><div class="ttname"><a href="class_throttle_steer_drive.html#ab2a4827f9f2bd02210fc2f573afb4864">ThrottleSteerDrive::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_throttle_steer_drive_8cpp_source.html#l00053">ThrottleSteerDrive.cpp:53</a></div></div>
+<div class="ttc" id="aclass_throttle_steer_drive_html_a82dc86ff35705d7fa4d870ce08a8fc23"><div class="ttname"><a href="class_throttle_steer_drive.html#a82dc86ff35705d7fa4d870ce08a8fc23">ThrottleSteerDrive::ThrottleSteerDrive</a></div><div class="ttdeci">ThrottleSteerDrive()</div><div class="ttdoc">initialize the object</div><div class="ttdef"><b>Definition:</b> <a href="_throttle_steer_drive_8cpp_source.html#l00037">ThrottleSteerDrive.cpp:37</a></div></div>
 <div class="ttc" id="aclass_throttle_steer_drive_html_aa0833d612a63b0cfd62a922849075df3"><div class="ttname"><a href="class_throttle_steer_drive.html#aa0833d612a63b0cfd62a922849075df3">ThrottleSteerDrive::GetThrottle</a></div><div class="ttdeci">virtual double GetThrottle()=0</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
