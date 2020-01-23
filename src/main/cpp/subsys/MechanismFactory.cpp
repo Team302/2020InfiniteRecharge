@@ -48,6 +48,7 @@
 #include <subsys/Impeller.h>
 #include <subsys/BallTransfer.h>
 #include <subsys/HumanPlayerFlap.h>
+#include <subsys/Turret.h>
 
 // Third Party Includes
 
@@ -225,9 +226,18 @@ IMechanism*  MechanismFactory::CreateIMechanism
 			{
 			}
 			break;
-
-        
 			
+			case MechanismTypes::MECHANISM_TYPE::TURRET:
+			{
+				auto motor = GetMotorController(motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::TURRET);
+				if(motor.get() != nullptr)
+				{
+					auto turret = new Turret(motor);
+					subsys = dynamic_cast<IMechanism*>(turret);
+				}
+			}
+			break;
+        
             default:
 			{
 				string msg = "unknown Mechanism type ";
