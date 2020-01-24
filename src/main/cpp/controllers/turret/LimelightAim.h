@@ -11,13 +11,15 @@
 #include <controllers/mechanisms/IMechController.h>
 #include <controllers/ControlData.h>  
 #include <subsys/Turret.h>
+#include <subsys/IMechanism.h>
+#include <hw/DragonLimelight.h>
 
-class HoldTurretPosition : public IState
-{
+class LimelightAim : public IState{
  public:
-  HoldTurretPosition
+  LimelightAim
   (
-    ControlData* controlData
+    ControlData* controlData,
+    DragonLimelight* limelight
   );
   void Init() override;
   void Run() override;
@@ -25,7 +27,7 @@ class HoldTurretPosition : public IState
  private:
   ControlData* m_controlData;
   bool m_atTarget;
-  double m_targetPosition;
   IMechanism* m_turret;
-
+  DragonLimelight* m_limelight;
+  double m_targetPosition;
 };

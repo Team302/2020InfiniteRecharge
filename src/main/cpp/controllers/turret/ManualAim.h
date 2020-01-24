@@ -10,6 +10,7 @@
 #include <controllers/IState.h>
 #include <controllers/mechanisms/IMechController.h>
 #include <controllers/ControlData.h>  
+#include <subsys/IMechanism.h>
 #include <subsys/Turret.h>
 
 class ManualAim : public IState
