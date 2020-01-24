@@ -49,6 +49,7 @@
 #include <subsys/BallTransfer.h>
 #include <subsys/HumanPlayerFlap.h>
 #include <subsys/Turret.h>
+#include <subsys/Shooter.h>
 
 // Third Party Includes
 
@@ -187,7 +188,8 @@ IMechanism*  MechanismFactory::CreateIMechanism
 				auto motor2 = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::SHOOTER_2 );
 				if ( motor1.get() != nullptr && motor2.get() != nullptr )
 				{
-					// todo get create shooter
+					auto shooter = new Shooter(motor1, motor2);
+					subsys = dynamic_cast<IMechanism*>(shooter);
 				}
 			}
 			break;			
