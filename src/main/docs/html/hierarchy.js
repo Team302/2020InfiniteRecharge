@@ -13,6 +13,7 @@ var hierarchy =
     [ "CanifierFactory", "class_canifier_factory.html", null ],
     [ "ChassisDefn", "class_chassis_defn.html", null ],
     [ "ChassisFactory", "class_chassis_factory.html", null ],
+    [ "ChassisStateMgr", "class_chassis_state_mgr.html", null ],
     [ "ControlData", "class_control_data.html", null ],
     [ "ControlDefn", "class_control_defn.html", null ],
     [ "ControlModes", "class_control_modes.html", null ],
@@ -82,7 +83,8 @@ var hierarchy =
       [ "DriveTrainSide", "class_drive_train_side.html", null ],
       [ "HumanPlayerFlap", "class_human_player_flap.html", null ],
       [ "Impeller", "class_impeller.html", null ],
-      [ "Intake", "class_intake.html", null ]
+      [ "Intake", "class_intake.html", null ],
+      [ "Turret", "class_turret.html", null ]
     ] ],
     [ "IMechController", "class_i_mech_controller.html", [
       [ "VelocityController", "class_velocity_controller.html", null ]

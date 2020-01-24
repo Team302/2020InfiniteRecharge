@@ -47,5 +47,9 @@ var dir_c85cb826952b1679a37b077c3741c8c1 =
     [ "MechanismTypes.h", "_mechanism_types_8h.html", [
       [ "MechanismTypes", "class_mechanism_types.html", "class_mechanism_types" ]
     ] ],
-    [ "MechParamData.h", "_mech_param_data_8h.html", "_mech_param_data_8h" ]
+    [ "MechParamData.h", "_mech_param_data_8h.html", "_mech_param_data_8h" ],
+    [ "Turret.cpp", "_turret_8cpp.html", null ],
+    [ "Turret.h", "_turret_8h.html", [
+      [ "Turret", "class_turret.html", "class_turret" ]
+    ] ]
 ];

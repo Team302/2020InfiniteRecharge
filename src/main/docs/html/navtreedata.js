@@ -53,12 +53,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_analog_axis_8cpp.html",
-"_flipped_axis_8cpp.html",
-"_throttle_steer_drive_8cpp.html",
-"class_dragon_falcon.html",
-"class_drive_to_wall.html",
-"class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9a795d5fd6a2cf04238e4ad9f5834f0efe",
-"class_primitive_params.html"
+"_field_measurement_8cpp.html",
+"_teleop_control_8cpp.html",
+"class_dragon_chassis.html#a82ea72da7e49854d8ebdb0ba256d310a",
+"class_drive_distance.html#a5658e8083b0b1cc87580297e173a9a27",
+"class_i_dragon_motor_controller.html#a93f40b43658f5744e50292dbf6fc470b",
+"class_p_d_p_defn.html#a23eb218fabdbb102dc8226eafe2a39f9",
+"functions_func_m.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

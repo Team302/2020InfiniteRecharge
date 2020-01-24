@@ -14,39 +14,41 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once 
-
-// Standard C++ includes
+// C++ Includes
 #include <memory>
 
-// Team 302 include
-#include <controllers/teleopdrive/ThrottleSteerDrive.h>
+// FRC includes
+
+// Team 302 Includes
+#include <controllers/chassis/ArcadeDrive.h>
+#include <gamepad/IDragonGamePad.h>
 #include <subsys/IChassis.h>
-#include <gamepad/DragonXBox.h>
-#include <controllers/IState.h>
+#include <gamepad/TeleopControl.h>
 
-// CTRE includes 
+using namespace std;
 
-
-/*========================================================================================================
- * GTADrive.h
- *========================================================================================================
- *
- * File Description:  This class calculates the drive percents for a tank drive
- *
- *========================================================================================================*/
-class GTADrive : public ThrottleSteerDrive 
+void ArcadeDrive::Init()
 {
-    public:
-    
-        GTADrive() = default;
-        ~GTADrive() = default;
+    auto controller = GetController();
+    if ( controller != nullptr )
+    {
+        controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_THROTTLE, IDragonGamePad::AXIS_PROFILE::CUBED );
+        controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_STEER, IDragonGamePad::AXIS_PROFILE::CUBED );
+    }
+}
 
-        void Init() override;
+//=======================================================================
+double ArcadeDrive::GetThrottle()
+{
+    auto controller = GetController();
+    return ( ( controller != nullptr ) ? controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_THROTTLE) : 0.0 );
+}
 
-    protected:
-        double GetSteer() override;
-        double GetThrottle() override;
-    private:
+//=======================================================================
+double ArcadeDrive::GetSteer()
+{
+    auto controller = GetController();
+    return ( ( controller != nullptr ) ? controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_STEER) : 0.0 );
+}
 
-};
+

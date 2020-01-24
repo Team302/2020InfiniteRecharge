@@ -20,7 +20,7 @@
 // FRC includes
 
 // Team 302 Includes
-#include <controllers/teleopdrive/GTADrive.h>
+#include <controllers/chassis/GTADrive.h>
 #include <gamepad/IDragonGamePad.h>
 #include <subsys/IChassis.h>
 #include <gamepad/TeleopControl.h>

@@ -91,7 +91,19 @@ $(document).ready(function(){initNavTree('_robot_8h_source.html','');});
 <div class="contents">
 <a href="_robot_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span><span class="comment">//====================================================================================================================================================</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright 2020 Lake Orion Robotics FIRST Team 302</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;),</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
@@ -99,68 +111,51 @@ $(document).ready(function(){initNavTree('_robot_8h_source.html','');});
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span><span class="comment">//========================================================================================================</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span><span class="comment">//========================================================================================================</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;frc/TimedRobot.h&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;frc/smartdashboard/SendableChooser.h&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_arcade_drive_8h.html">controllers/teleopdrive/ArcadeDrive.h</a>&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_g_t_a_drive_8h.html">controllers/teleopdrive/GTADrive.h</a>&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_tank_drive_8h.html">controllers/teleopdrive/TankDrive.h</a>&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_state_8h.html">controllers/IState.h</a>&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_cycle_primitives_8h.html">auton/CyclePrimitives.h</a>&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_robot.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_robot.html">Robot</a> : <span class="keyword">public</span> frc::TimedRobot </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <a class="code" href="class_robot.html#a136b20cc34a9cda8da9ef2c85646f747">Robot</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <a class="code" href="class_robot.html#a359bc5b345fc76b9451abfeea4cad6e4">~Robot</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a66f23dae271748d525cf3ab046375f79">RobotInit</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27">RobotPeriodic</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a2136cfc015936285218c8a8db984d6bc">AutonomousInit</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#ac11143dd674e0e02fef5329e2df24830">AutonomousPeriodic</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#aa3e246794bfbbb4406fc87f351762038">TeleopInit</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a324322627c63b3870daf7c7ddc5bea63">TeleopPeriodic</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a9ac222d45d30a6d0c572fd36d18c6ccc">TestInit</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#af0ac44a962e609e9b042285e699d1db8">TestPeriodic</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_cycle_primitives_8h.html">auton/CyclePrimitives.h</a>&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_chassis_state_mgr_8h.html">controllers/chassis/ChassisStateMgr.h</a>&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_robot.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_robot.html">Robot</a> : <span class="keyword">public</span> frc::TimedRobot </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <a class="code" href="class_robot.html#a136b20cc34a9cda8da9ef2c85646f747">Robot</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <a class="code" href="class_robot.html#a359bc5b345fc76b9451abfeea4cad6e4">~Robot</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a66f23dae271748d525cf3ab046375f79">RobotInit</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27">RobotPeriodic</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a2136cfc015936285218c8a8db984d6bc">AutonomousInit</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#ac11143dd674e0e02fef5329e2df24830">AutonomousPeriodic</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#aa3e246794bfbbb4406fc87f351762038">TeleopInit</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a324322627c63b3870daf7c7ddc5bea63">TeleopPeriodic</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a9ac222d45d30a6d0c572fd36d18c6ccc">TestInit</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#af0ac44a962e609e9b042285e699d1db8">TestPeriodic</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <a class="code" href="class_cycle_primitives.html">CyclePrimitives</a>* m_cyclePrims;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <a class="code" href="class_chassis_state_mgr.html">ChassisStateMgr</a>* m_chassisStateMgr;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <a class="code" href="class_cycle_primitives.html">CyclePrimitives</a>* m_cyclePrims;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      std::shared_ptr&lt;ArcadeDrive&gt;    m_arcade;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      std::shared_ptr&lt;TankDrive&gt;      m_tank;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      std::shared_ptr&lt;GTADrive&gt;       m_gta;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      std::shared_ptr&lt;IState&gt;         m_currentDrive;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      frc::SendableChooser&lt;std::string&gt;   m_driveModeChooser;                    </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keyword">const</span> std::string                   m_driveModeArcade = <span class="stringliteral">&quot;Arcade&quot;</span>;      </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keyword">const</span> std::string                   m_driveModeGTA = <span class="stringliteral">&quot;GTA&quot;</span>;       </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keyword">const</span> std::string                   m_driveModeTank = <span class="stringliteral">&quot;Tank&quot;</span>;       </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      std::string                         m_driveModeSelected;       </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_cycle_primitives_html"><div class="ttname"><a href="class_cycle_primitives.html">CyclePrimitives</a></div><div class="ttdef"><b>Definition:</b> <a href="_cycle_primitives_8h_source.html#l00036">CyclePrimitives.h:36</a></div></div>
 <div class="ttc" id="a_cycle_primitives_8h_html"><div class="ttname"><a href="_cycle_primitives_8h.html">CyclePrimitives.h</a></div></div>
-<div class="ttc" id="a_g_t_a_drive_8h_html"><div class="ttname"><a href="_g_t_a_drive_8h.html">GTADrive.h</a></div></div>
 <div class="ttc" id="aclass_robot_html_a359bc5b345fc76b9451abfeea4cad6e4"><div class="ttname"><a href="class_robot.html#a359bc5b345fc76b9451abfeea4cad6e4">Robot::~Robot</a></div><div class="ttdeci">~Robot()=default</div></div>
-<div class="ttc" id="a_tank_drive_8h_html"><div class="ttname"><a href="_tank_drive_8h.html">TankDrive.h</a></div></div>
-<div class="ttc" id="aclass_robot_html_af0ac44a962e609e9b042285e699d1db8"><div class="ttname"><a href="class_robot.html#af0ac44a962e609e9b042285e699d1db8">Robot::TestPeriodic</a></div><div class="ttdeci">void TestPeriodic() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00169">Robot.cpp:169</a></div></div>
-<div class="ttc" id="a_arcade_drive_8h_html"><div class="ttname"><a href="_arcade_drive_8h.html">ArcadeDrive.h</a></div></div>
-<div class="ttc" id="aclass_robot_html_a8fad82c2250bcfb83b743b5c0dd6ed27"><div class="ttname"><a href="class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27">Robot::RobotPeriodic</a></div><div class="ttdeci">void RobotPeriodic() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00086">Robot.cpp:86</a></div></div>
-<div class="ttc" id="aclass_robot_html_a2136cfc015936285218c8a8db984d6bc"><div class="ttname"><a href="class_robot.html#a2136cfc015936285218c8a8db984d6bc">Robot::AutonomousInit</a></div><div class="ttdeci">void AutonomousInit() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00096">Robot.cpp:96</a></div></div>
-<div class="ttc" id="aclass_robot_html_a324322627c63b3870daf7c7ddc5bea63"><div class="ttname"><a href="class_robot.html#a324322627c63b3870daf7c7ddc5bea63">Robot::TeleopPeriodic</a></div><div class="ttdeci">void TeleopPeriodic() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00148">Robot.cpp:148</a></div></div>
+<div class="ttc" id="aclass_robot_html_af0ac44a962e609e9b042285e699d1db8"><div class="ttname"><a href="class_robot.html#af0ac44a962e609e9b042285e699d1db8">Robot::TestPeriodic</a></div><div class="ttdeci">void TestPeriodic() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00137">Robot.cpp:137</a></div></div>
+<div class="ttc" id="aclass_robot_html_a8fad82c2250bcfb83b743b5c0dd6ed27"><div class="ttname"><a href="class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27">Robot::RobotPeriodic</a></div><div class="ttdeci">void RobotPeriodic() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00069">Robot.cpp:69</a></div></div>
+<div class="ttc" id="aclass_robot_html_a2136cfc015936285218c8a8db984d6bc"><div class="ttname"><a href="class_robot.html#a2136cfc015936285218c8a8db984d6bc">Robot::AutonomousInit</a></div><div class="ttdeci">void AutonomousInit() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00079">Robot.cpp:79</a></div></div>
+<div class="ttc" id="a_chassis_state_mgr_8h_html"><div class="ttname"><a href="_chassis_state_mgr_8h.html">ChassisStateMgr.h</a></div></div>
+<div class="ttc" id="aclass_robot_html_a324322627c63b3870daf7c7ddc5bea63"><div class="ttname"><a href="class_robot.html#a324322627c63b3870daf7c7ddc5bea63">Robot::TeleopPeriodic</a></div><div class="ttdeci">void TeleopPeriodic() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00116">Robot.cpp:116</a></div></div>
 <div class="ttc" id="aclass_robot_html_a136b20cc34a9cda8da9ef2c85646f747"><div class="ttname"><a href="class_robot.html#a136b20cc34a9cda8da9ef2c85646f747">Robot::Robot</a></div><div class="ttdeci">Robot()=default</div></div>
-<div class="ttc" id="aclass_robot_html"><div class="ttname"><a href="class_robot.html">Robot</a></div><div class="ttdoc">Robot.h.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8h_source.html#l00041">Robot.h:41</a></div></div>
-<div class="ttc" id="aclass_robot_html_a66f23dae271748d525cf3ab046375f79"><div class="ttname"><a href="class_robot.html#a66f23dae271748d525cf3ab046375f79">Robot::RobotInit</a></div><div class="ttdeci">void RobotInit() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00051">Robot.cpp:51</a></div></div>
-<div class="ttc" id="aclass_robot_html_ac11143dd674e0e02fef5329e2df24830"><div class="ttname"><a href="class_robot.html#ac11143dd674e0e02fef5329e2df24830">Robot::AutonomousPeriodic</a></div><div class="ttdeci">void AutonomousPeriodic() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00108">Robot.cpp:108</a></div></div>
-<div class="ttc" id="a_i_state_8h_html"><div class="ttname"><a href="_i_state_8h.html">IState.h</a></div></div>
-<div class="ttc" id="aclass_robot_html_a9ac222d45d30a6d0c572fd36d18c6ccc"><div class="ttname"><a href="class_robot.html#a9ac222d45d30a6d0c572fd36d18c6ccc">Robot::TestInit</a></div><div class="ttdeci">void TestInit() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00158">Robot.cpp:158</a></div></div>
-<div class="ttc" id="aclass_robot_html_aa3e246794bfbbb4406fc87f351762038"><div class="ttname"><a href="class_robot.html#aa3e246794bfbbb4406fc87f351762038">Robot::TeleopInit</a></div><div class="ttdeci">void TeleopInit() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00119">Robot.cpp:119</a></div></div>
+<div class="ttc" id="aclass_robot_html"><div class="ttname"><a href="class_robot.html">Robot</a></div><div class="ttdoc">Robot.h.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8h_source.html#l00036">Robot.h:36</a></div></div>
+<div class="ttc" id="aclass_robot_html_a66f23dae271748d525cf3ab046375f79"><div class="ttname"><a href="class_robot.html#a66f23dae271748d525cf3ab046375f79">Robot::RobotInit</a></div><div class="ttdeci">void RobotInit() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00048">Robot.cpp:48</a></div></div>
+<div class="ttc" id="aclass_chassis_state_mgr_html"><div class="ttname"><a href="class_chassis_state_mgr.html">ChassisStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8h_source.html#l00031">ChassisStateMgr.h:31</a></div></div>
+<div class="ttc" id="aclass_robot_html_ac11143dd674e0e02fef5329e2df24830"><div class="ttname"><a href="class_robot.html#ac11143dd674e0e02fef5329e2df24830">Robot::AutonomousPeriodic</a></div><div class="ttdeci">void AutonomousPeriodic() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00094">Robot.cpp:94</a></div></div>
+<div class="ttc" id="aclass_robot_html_a9ac222d45d30a6d0c572fd36d18c6ccc"><div class="ttname"><a href="class_robot.html#a9ac222d45d30a6d0c572fd36d18c6ccc">Robot::TestInit</a></div><div class="ttdeci">void TestInit() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00126">Robot.cpp:126</a></div></div>
+<div class="ttc" id="aclass_robot_html_aa3e246794bfbbb4406fc87f351762038"><div class="ttname"><a href="class_robot.html#aa3e246794bfbbb4406fc87f351762038">Robot::TeleopInit</a></div><div class="ttdeci">void TeleopInit() override</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00105">Robot.cpp:105</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

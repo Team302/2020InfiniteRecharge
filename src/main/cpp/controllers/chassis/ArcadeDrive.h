@@ -20,7 +20,7 @@
 #include <memory>
 
 // Team 302 include
-#include <controllers/teleopdrive/ThrottleSteerDrive.h>
+#include <controllers/chassis/ThrottleSteerDrive.h>
 #include <subsys/IChassis.h>
 #include <gamepad/DragonXBox.h>
 #include <controllers/IState.h>
