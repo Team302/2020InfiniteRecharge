@@ -7,5 +7,9 @@ var dir_6a6f18b16a7999443df26d50492d7535 =
     [ "IntakeOn.cpp", "_intake_on_8cpp.html", null ],
     [ "IntakeOn.h", "_intake_on_8h.html", [
       [ "IntakeOn", "class_intake_on.html", "class_intake_on" ]
+    ] ],
+    [ "IntakeStateMgr.cpp", "_intake_state_mgr_8cpp.html", null ],
+    [ "IntakeStateMgr.h", "_intake_state_mgr_8h.html", [
+      [ "IntakeStateMgr", "class_intake_state_mgr.html", "class_intake_state_mgr" ]
     ] ]
 ];

@@ -54,12 +54,12 @@ var NAVTREEINDEX =
 [
 "_analog_axis_8cpp.html",
 "_field_defn_8cpp.html",
-"_state_data_defn_8cpp.html",
-"class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46acc5e07e038b5330a5da8383e6f058f36",
-"class_dragon_ultrasonic_p_w_m.html#ad618781c45fd1f5b85216279828eca10",
-"class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972bac4b73cf2814ada0f668d675161b714c9",
-"class_motor_defn.html#a8d63b22641b61dbe1688ccf37406d28f",
-"functions_eval_f.html"
+"_squared_profile_8cpp.html",
+"class_digital_input_usage.html",
+"class_dragon_ultrasonic_p_w_m.html",
+"class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba8d89ea1ffb066d737dad9ebfcad6a335",
+"class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa78dc128073b235dd2153e5b012137487",
+"files.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

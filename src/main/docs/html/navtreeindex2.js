@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"_squared_profile_8cpp.html":[1,0,2,0,18],
+"_squared_profile_8cpp_source.html":[1,0,2,0,18],
+"_squared_profile_8h.html":[1,0,2,0,19],
+"_squared_profile_8h_source.html":[1,0,2,0,19],
 "_state_data_defn_8cpp.html":[1,0,8,6],
 "_state_data_defn_8cpp_source.html":[1,0,8,6],
 "_state_data_defn_8h.html":[1,0,8,7],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "class_digital_input_defn.html#a6742373274964e8d271b958969fb8396":[0,0,24,2],
 "class_digital_input_factory.html":[0,0,25],
 "class_digital_input_factory.html#a53c277332cda19ccbdfdef7e526b22bc":[0,0,25,1],
-"class_digital_input_factory.html#ac6fffa4ecfb92fb48cc939ad5e2d1eab":[0,0,25,0],
-"class_digital_input_usage.html":[0,0,26],
-"class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46":[0,0,26,0],
-"class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46a46222776748611fa1cf0a23bb2754712":[0,0,26,0,0],
-"class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46a4ce8750a063ee2e0d01a370cf462ab05":[0,0,26,0,1]
+"class_digital_input_factory.html#ac6fffa4ecfb92fb48cc939ad5e2d1eab":[0,0,25,0]
 };

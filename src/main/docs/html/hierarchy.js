@@ -91,6 +91,7 @@ var hierarchy =
       [ "VelocityController", "class_velocity_controller.html", null ]
     ] ],
     [ "ImpellerStateMgr", "class_impeller_state_mgr.html", null ],
+    [ "IntakeStateMgr", "class_intake_state_mgr.html", null ],
     [ "IPrimitive", "class_i_primitive.html", [
       [ "DoNothing", "class_do_nothing.html", null ],
       [ "HoldPosition", "class_hold_position.html", null ],

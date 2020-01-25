@@ -87,16 +87,16 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
 
                     default:
                     {
-                        Logger::GetLogger()->LogError( string(""), string(""));
+                        Logger::GetLogger()->LogError( string("ImpellerStateMgr::ImpellerStateMgr"), string("unknown state"));
                     }
                     break;
                 }
             }
-            Logger::GetLogger()->LogError( string(""), string(""));
+            Logger::GetLogger()->LogError( string("ImpellerStateMgr::ImpellerStateMgr"), string("multiple mechanism state info for state"));
         }
         else
         {
-            Logger::GetLogger()->LogError( string(""), string(""));
+            Logger::GetLogger()->LogError( string("ImpellerStateMgr::ImpellerStateMgr"), string("state not found"));
         }
     }
 }

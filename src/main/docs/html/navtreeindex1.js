@@ -90,6 +90,10 @@ var NAVTREEINDEX1 =
 "_intake_on_8cpp_source.html":[1,0,1,3,2],
 "_intake_on_8h.html":[1,0,1,3,3],
 "_intake_on_8h_source.html":[1,0,1,3,3],
+"_intake_state_mgr_8cpp.html":[1,0,1,3,4],
+"_intake_state_mgr_8cpp_source.html":[1,0,1,3,4],
+"_intake_state_mgr_8h.html":[1,0,1,3,5],
+"_intake_state_mgr_8h_source.html":[1,0,1,3,5],
 "_l_e_d_8cpp.html":[1,0,3,35],
 "_l_e_d_8cpp_source.html":[1,0,3,35],
 "_l_e_d_8h.html":[1,0,3,36],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "_solenoid_usage_8cpp.html":[1,0,3,2,13],
 "_solenoid_usage_8cpp_source.html":[1,0,3,2,13],
 "_solenoid_usage_8h.html":[1,0,3,2,14],
-"_solenoid_usage_8h_source.html":[1,0,3,2,14],
-"_squared_profile_8cpp.html":[1,0,2,0,18],
-"_squared_profile_8cpp_source.html":[1,0,2,0,18],
-"_squared_profile_8h.html":[1,0,2,0,19],
-"_squared_profile_8h_source.html":[1,0,2,0,19]
+"_solenoid_usage_8h_source.html":[1,0,3,2,14]
 };

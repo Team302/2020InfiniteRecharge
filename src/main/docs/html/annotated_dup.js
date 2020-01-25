@@ -83,6 +83,7 @@ var annotated_dup =
     [ "Intake", "class_intake.html", "class_intake" ],
     [ "IntakeOff", "class_intake_off.html", "class_intake_off" ],
     [ "IntakeOn", "class_intake_on.html", "class_intake_on" ],
+    [ "IntakeStateMgr", "class_intake_state_mgr.html", "class_intake_state_mgr" ],
     [ "IPrimitive", "class_i_primitive.html", "class_i_primitive" ],
     [ "IProfile", "class_i_profile.html", "class_i_profile" ],
     [ "IState", "class_i_state.html", "class_i_state" ],
