@@ -32,7 +32,7 @@ void LimelightAim::Run()
 {
     double targetHorizontalOffset = m_limelight->GetTargetHorizontalOffset();
     double m_targetPosition = m_turret->GetCurrentPosition() - targetHorizontalOffset;
-    m_turret->SetOutput(ControlModes::CONTROL_TYPE::TRAPEZOID, m_targetPosition);
+    m_turret->SetOutput(m_controlData->GetMode(), m_targetPosition);
     if(m_targetPosition - 5 < m_turret->GetCurrentPosition() < m_targetPosition + 5) //arbitrary tolerance for now will change later
     {
         m_atTarget = true;

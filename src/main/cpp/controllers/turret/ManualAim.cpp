@@ -26,7 +26,7 @@ void ManualAim::Init()
 
 void ManualAim::Run()
 {
-    m_turret->SetOutput(ControlModes::PERCENT_OUTPUT, TeleopControl::GetInstance()->GetAxisValue(TeleopControl::SHOOTER_MANUAL_AIM));
+    m_turret->SetOutput(m_controlData->GetMode(), TeleopControl::GetInstance()->GetAxisValue(TeleopControl::SHOOTER_MANUAL_AIM));
     m_atTarget = true;
 }
 
