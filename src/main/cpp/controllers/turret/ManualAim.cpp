@@ -11,8 +11,8 @@
 #include "subsys/MechanismParameters.h"
 #include "subsys/Turret.h"
 #include "controllers/ControlData.h"
-ManualAim::ManualAim(ControlData* controlData, double mechData) : m_controlData(controlData),
-    m_mechData(mechData), 
+#include "gamepad/TeleopControl.h"
+ManualAim::ManualAim(ControlData* controlData) : m_controlData(controlData), 
     m_atTarget(false)
 {
     auto factory = MechanismFactory::GetMechanismFactory();
@@ -26,7 +26,7 @@ void ManualAim::Init()
 
 void ManualAim::Run()
 {
-    m_turret->SetOutput(ControlModes::PERCENT_OUTPUT, m_mechData);
+    m_turret->SetOutput(ControlModes::PERCENT_OUTPUT, TeleopControl::GetInstance()->GetAxisValue(TeleopControl::SHOOTER_MANUAL_AIM));
     m_atTarget = true;
 }
 

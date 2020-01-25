@@ -18,8 +18,7 @@ class ManualAim : public IState
  public:
   ManualAim
   (
-    ControlData* controlData,
-    double mechData //to be changed to MechData type
+    ControlData* controlData
   );
   void Init() override;
   void Run() override;
@@ -28,7 +27,6 @@ class ManualAim : public IState
  private:
   
   ControlData* m_controlData;
-  double m_mechData;
   bool m_atTarget;
   IMechanism* m_turret;
 
