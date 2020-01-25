@@ -12,12 +12,20 @@
 // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
+
+// C++ includes
+#include <string>
+
+// Team 302 includes
 #include <controllers/ControlData.h>
 #include <controllers/ControlModes.h>
 
+using namespace std;
+
 ControlData::ControlData
 (
-    ControlModes::CONTROL_TYPE    mode,
+    ControlModes::CONTROL_TYPE                  mode,
+    string                                      identifier,
     double                                      proportional,
     double                                      integral,
     double                                      derivative,
@@ -28,6 +36,7 @@ ControlData::ControlData
     double                                      peakVal,
     double                                      nominalVal
 ) : m_mode( mode ),
+    m_identifier( identifier ),
     m_proportional( proportional ),
     m_integral( integral ),
     m_derivative( derivative ),

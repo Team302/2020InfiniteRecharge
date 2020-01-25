@@ -97,14 +97,17 @@ $(document).ready(function(){initNavTree('class_control_data.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2db028550c1494a7853a8e942431224f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_data.html#a2db028550c1494a7853a8e942431224f">ControlData</a> (<a class="el" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a> mode, double proportional, double integral, double derivative, double feedforward, double integralZone, double maxAcceleration, double cruiseVelocity, double peakValue, double nominalValue)</td></tr>
-<tr class="memdesc:a2db028550c1494a7853a8e942431224f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the <a class="el" href="class_control_data.html">ControlData</a> object that is used to control mechanisms.  <a href="class_control_data.html#a2db028550c1494a7853a8e942431224f">More...</a><br /></td></tr>
-<tr class="separator:a2db028550c1494a7853a8e942431224f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc478d18ee20d9108a1e988e234201ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_data.html#abc478d18ee20d9108a1e988e234201ac">ControlData</a> (<a class="el" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a> mode, std::string indentifier, double proportional, double integral, double derivative, double feedforward, double integralZone, double maxAcceleration, double cruiseVelocity, double peakValue, double nominalValue)</td></tr>
+<tr class="memdesc:abc478d18ee20d9108a1e988e234201ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the <a class="el" href="class_control_data.html">ControlData</a> object that is used to control mechanisms.  <a href="class_control_data.html#abc478d18ee20d9108a1e988e234201ac">More...</a><br /></td></tr>
+<tr class="separator:abc478d18ee20d9108a1e988e234201ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa47e895701543d53f2a14ac533bc9b6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_data.html#aaa47e895701543d53f2a14ac533bc9b6">~ControlData</a> ()=default</td></tr>
 <tr class="separator:aaa47e895701543d53f2a14ac533bc9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e7157f943ecefb04cb30c274bf9a330"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_data.html#a3e7157f943ecefb04cb30c274bf9a330">GetMode</a> () const</td></tr>
 <tr class="memdesc:a3e7157f943ecefb04cb30c274bf9a330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the Control Type.  <a href="class_control_data.html#a3e7157f943ecefb04cb30c274bf9a330">More...</a><br /></td></tr>
 <tr class="separator:a3e7157f943ecefb04cb30c274bf9a330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf5ce6319e2035f19991a4ede226ef6f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_data.html#adf5ce6319e2035f19991a4ede226ef6f">GetIdentifier</a> () const</td></tr>
+<tr class="memdesc:adf5ce6319e2035f19991a4ede226ef6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the identifier.  <a href="class_control_data.html#adf5ce6319e2035f19991a4ede226ef6f">More...</a><br /></td></tr>
+<tr class="separator:adf5ce6319e2035f19991a4ede226ef6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a905b66966177981526553ca8145f560f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_data.html#a905b66966177981526553ca8145f560f">GetP</a> () const</td></tr>
 <tr class="memdesc:a905b66966177981526553ca8145f560f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the P coefficient for a PID-based control mode.  <a href="class_control_data.html#a905b66966177981526553ca8145f560f">More...</a><br /></td></tr>
 <tr class="separator:a905b66966177981526553ca8145f560f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,10 +138,10 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00020">20</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00022">22</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2db028550c1494a7853a8e942431224f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2db028550c1494a7853a8e942431224f">&#9670;&nbsp;</a></span>ControlData()</h2>
+<a id="abc478d18ee20d9108a1e988e234201ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc478d18ee20d9108a1e988e234201ac">&#9670;&nbsp;</a></span>ControlData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,6 +151,12 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a>&#160;</td>
           <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>indentifier</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -215,6 +224,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>- control mode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">indentifier</td><td>- mapping identifier for this controller </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">proportional</td><td>- p coefficient for a PID-based controller </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">integral</td><td>- i coefficient for a PID-based controller </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">derivative</td><td>- d coefficient for a PID-based controller </td></tr>
@@ -228,8 +238,6 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="_control_data_8cpp_source.html#l00019">19</a> of file <a class="el" href="_control_data_8cpp_source.html">ControlData.cpp</a>.</p>
 
 </div>
 </div>
@@ -285,7 +293,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieve the cruise velocity for a trapezoid control mode. </p>
 <dl class="section return"><dt>Returns</dt><dd>double - cruise velocity </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00081">81</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00089">89</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -315,7 +323,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieve the D coefficient for a PID-based control mode. </p>
 <dl class="section return"><dt>Returns</dt><dd>double - D coefficient </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00065">65</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00073">73</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -345,7 +353,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieve the Feed-forwared coefficient for a PID-based control mode. </p>
 <dl class="section return"><dt>Returns</dt><dd>double - F coefficient </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00069">69</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00077">77</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -374,6 +382,36 @@ Public Member Functions</h2></td></tr>
 
 <p>Retrieve the I coefficient for a PID-based control mode. </p>
 <dl class="section return"><dt>Returns</dt><dd>double - I coefficient </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00069">69</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
+
+</div>
+</div>
+<a id="adf5ce6319e2035f19991a4ede226ef6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf5ce6319e2035f19991a4ede226ef6f">&#9670;&nbsp;</a></span>GetIdentifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ControlData::GetIdentifier </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the identifier. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string the identifier </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00061">61</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
 
@@ -405,7 +443,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieve the izone for a PID-based control mode (where the intregal is reset) </p>
 <dl class="section return"><dt>Returns</dt><dd>double - izone value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00073">73</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00081">81</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -435,7 +473,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieve the max acceleration for a trapezoid control mode. </p>
 <dl class="section return"><dt>Returns</dt><dd>double - max acceleration </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00077">77</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00085">85</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -465,7 +503,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieve the Control Type. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00053">53</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00057">57</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -495,7 +533,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieve the nominal value. </p>
 <dl class="section return"><dt>Returns</dt><dd>double - nominal value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00089">89</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00097">97</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -525,7 +563,7 @@ Public Member Functions</h2></td></tr>
 <p>Retrieve the P coefficient for a PID-based control mode. </p>
 <dl class="section return"><dt>Returns</dt><dd>double - P coefficient </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00057">57</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00065">65</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
@@ -555,13 +593,12 @@ Public Member Functions</h2></td></tr>
 <p>Retrieve the peak value. </p>
 <dl class="section return"><dt>Returns</dt><dd>double - peak value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00085">85</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_data_8h_source.html#l00093">93</a> of file <a class="el" href="_control_data_8h_source.html">ControlData.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>controllers/<a class="el" href="_control_data_8h_source.html">ControlData.h</a></li>
-<li>controllers/<a class="el" href="_control_data_8cpp_source.html">ControlData.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,5 +1,5 @@
 //====================================================================================================================================================
-// MechanismDataDefn.h
+// ControlDataDefn.h
 //====================================================================================================================================================
 // Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
@@ -18,24 +18,21 @@
 #pragma once
 
 // C++ Includes
-#include <iostream>
-#include <utility>
 
 // FRC includes
 
 // Team 302 includes
-#include <subsys/IMechanism.h>
-#include <subsys/MechParamData.h>
+#include <controllers/ControlData.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
 
-class MechanismDataDefn
+class ControlDataDefn
 {
     public:
 
-
-
+        ControlDataDefn() = default;
+        ~ControlDataDefn() = default;
 
         //-----------------------------------------------------------------------
         // Method:      ParseXML
@@ -49,9 +46,9 @@ class MechanismDataDefn
         // Returns:     PowerDistributionPanel*        PDP object (or nullptr if XML
         //                                             is ill-formed
         //-----------------------------------------------------------------------
-        static mechParamData  ParseXML
+        ControlData*  ParseXML
         (
-            pugi::xml_node      MechanismDataNode
+            pugi::xml_node      PIDNode
         );
 };
 

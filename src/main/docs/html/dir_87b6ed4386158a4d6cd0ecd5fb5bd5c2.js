@@ -8,17 +8,15 @@ var dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2 =
       [ "ControlData", "class_control_data.html", "class_control_data" ]
     ] ],
     [ "ControlDefn.cpp", "_control_defn_8cpp.html", null ],
-    [ "ControlDefn.h", "_control_defn_8h.html", [
-      [ "ControlDefn", "class_control_defn.html", "class_control_defn" ]
-    ] ],
+    [ "ControlDefn.h", "_control_defn_8h.html", null ],
     [ "ControlModes.h", "_control_modes_8h.html", [
       [ "ControlModes", "class_control_modes.html", "class_control_modes" ]
     ] ],
     [ "IState.h", "_i_state_8h.html", [
       [ "IState", "class_i_state.html", "class_i_state" ]
     ] ],
-    [ "PIDDefn.cpp", "_p_i_d_defn_8cpp.html", null ],
-    [ "PIDDefn.h", "_p_i_d_defn_8h.html", [
-      [ "PIDDefn", "class_p_i_d_defn.html", null ]
+    [ "MechanismTargetData.cpp", "_mechanism_target_data_8cpp.html", null ],
+    [ "MechanismTargetData.h", "_mechanism_target_data_8h.html", [
+      [ "MechanismTargetData", "class_mechanism_target_data.html", "class_mechanism_target_data" ]
     ] ]
 ];

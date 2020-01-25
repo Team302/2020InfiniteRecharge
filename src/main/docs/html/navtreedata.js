@@ -53,13 +53,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_analog_axis_8cpp.html",
-"_field_measurement_8cpp.html",
+"_field_defn_8cpp.html",
 "_teleop_control_8cpp.html",
-"class_dragon_chassis.html#a82ea72da7e49854d8ebdb0ba256d310a",
-"class_drive_distance.html#a5658e8083b0b1cc87580297e173a9a27",
-"class_i_dragon_motor_controller.html#a93f40b43658f5744e50292dbf6fc470b",
-"class_p_d_p_defn.html#a23eb218fabdbb102dc8226eafe2a39f9",
-"functions_func_m.html"
+"class_dragon_chassis.html#a54c251e24c4a4504f1363e17239a4fbc",
+"class_dragon_x_box.html#ae9bf51169ee1993f0dc6d10540b72bda",
+"class_i_dragon_motor_controller.html#a1e513a4bd1623bedb289c203a4b0c3fb",
+"class_robot.html#a2136cfc015936285218c8a8db984d6bc",
+"globals.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

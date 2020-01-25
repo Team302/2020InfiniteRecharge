@@ -13,8 +13,8 @@ var dir_9826d9bbf1c2f77b3209e78b36ef4dba =
     [ "ControlModes.h", "_control_modes_8h.html", [
       [ "ControlModes", "class_control_modes.html", "class_control_modes" ]
     ] ],
-    [ "PIDDefn.cpp", "_p_i_d_defn_8cpp.html", null ],
-    [ "PIDDefn.h", "_p_i_d_defn_8h.html", [
-      [ "PIDDefn", "class_p_i_d_defn.html", null ]
+    [ "ControlDataDefn.cpp", "_p_i_d_defn_8cpp.html", null ],
+    [ "ControlDataDefn.h", "_p_i_d_defn_8h.html", [
+      [ "ControlDataDefn", "class_p_i_d_defn.html", null ]
     ] ]
 ];

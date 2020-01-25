@@ -67,6 +67,10 @@ var NAVTREEINDEX0 =
 "_control_data_8cpp_source.html":[1,0,1,3],
 "_control_data_8h.html":[1,0,1,4],
 "_control_data_8h_source.html":[1,0,1,4],
+"_control_data_defn_8cpp.html":[1,0,8,0],
+"_control_data_defn_8cpp_source.html":[1,0,8,0],
+"_control_data_defn_8h.html":[1,0,8,1],
+"_control_data_defn_8h_source.html":[1,0,8,1],
 "_control_defn_8cpp.html":[1,0,1,5],
 "_control_defn_8cpp_source.html":[1,0,1,5],
 "_control_defn_8h.html":[1,0,1,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX0 =
 "_feedback_defn_8cpp.html":[1,0,7,10],
 "_feedback_defn_8cpp_source.html":[1,0,7,10],
 "_feedback_defn_8h.html":[1,0,7,11],
-"_feedback_defn_8h_source.html":[1,0,7,11],
-"_field_defn_8cpp.html":[1,0,0,5],
-"_field_defn_8cpp_source.html":[1,0,0,5],
-"_field_defn_8h.html":[1,0,0,6],
-"_field_defn_8h_source.html":[1,0,0,6]
+"_feedback_defn_8h_source.html":[1,0,7,11]
 };

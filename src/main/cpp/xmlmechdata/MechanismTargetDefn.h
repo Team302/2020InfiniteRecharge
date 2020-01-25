@@ -1,5 +1,5 @@
 //====================================================================================================================================================
-// PIDDefn.h
+// MechanismTargetDefn.h
 //====================================================================================================================================================
 // Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
@@ -17,42 +17,29 @@
 
 #pragma once
 
-
-
 // C++ Includes
-#include <iostream>
-#include <utility>
+#include <vector>
 
 // FRC includes
 
 // Team 302 includes
-#include <controllers/ControlData.h>
+#include <controllers/MechanismTargetData.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
 
-class PIDDefn
+class MechanismTargetDefn
 {
     public:
+        MechanismTargetDefn() = default;
+        ~MechanismTargetDefn() = default;
 
-
-
-
-        //-----------------------------------------------------------------------
-        // Method:      ParseXML
-        // Description: Parse MechanismData XML element 
-        //  <!ELEMENT mechanismData EMPTY>
-        //  <!ATTLIST mechanismData 
-        //            dataType
-        //            value CDATA "0.0"
-        //  >
-        //
-        // Returns:     PowerDistributionPanel*        PDP object (or nullptr if XML
-        //                                             is ill-formed
-        //-----------------------------------------------------------------------
-        static ControlData*  ParseXML
+        /// @brief      Parse MechanismTargetData XML element 
+        /// @param [in] pugi::xml_node  mechanism data node
+        /// @return     MechanismTargetData*       mechanism data
+        MechanismTargetData*  ParseXML
         (
-            pugi::xml_node      PIDNode
+            pugi::xml_node      MechanismDataNode
         );
 };
 

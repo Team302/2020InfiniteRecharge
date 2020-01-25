@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: xmlmechdata/MechanismDataDefn.cpp Source File</title>
+<title>Team 302 Robot: xmlmechdata/MechanismTargetDefn.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,11 +86,11 @@ $(document).ready(function(){initNavTree('_mechanism_data_defn_8cpp_source.html'
 
 <div class="header">
   <div class="headertitle">
-<div class="title">MechanismDataDefn.cpp</div>  </div>
+<div class="title">MechanismTargetDefn.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="_mechanism_data_defn_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// MechanismDataDefn.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// MechanismTargetDefn.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Copyright 2019 Lake Orion Robotics FIRST Team 302</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//</span></div>
@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('_mechanism_data_defn_8cpp_source.html'
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_parameters_8h.html">subsys/MechanismParameters.h</a>&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mech_param_data_8h.html">subsys/MechParamData.h</a>&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_data_defn_8h.html">xmlmechdata/MechanismDataDefn.h</a>&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_data_defn_8h.html">xmlmechdata/MechanismTargetDefn.h</a>&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Third Party Includes</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;pugixml/pugixml.hpp&gt;</span></div>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('_mechanism_data_defn_8cpp_source.html'
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// Returns:     mechParamData        mechanism data</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//-----------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<a class="code" href="_mech_param_data_8h.html#a68a53913cca03f1937d9e3ce73ffa15c">mechParamData</a>  <a class="code" href="class_mechanism_data_defn.html#afa055a768b985515421469b929c36cf6">MechanismDataDefn::ParseXML</a></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<a class="code" href="_mech_param_data_8h.html#a68a53913cca03f1937d9e3ce73ffa15c">mechParamData</a>  <a class="code" href="class_mechanism_data_defn.html#afa055a768b985515421469b929c36cf6">MechanismTargetDefn::ParseXML</a></div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_mechanism_data_defn.html#afa055a768b985515421469b929c36cf6">   51</a></span>&#160;(</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    pugi::xml_node      MechanismDataNode</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;)</div>
@@ -316,7 +316,7 @@ $(document).ready(function(){initNavTree('_mechanism_data_defn_8cpp_source.html'
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            }</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                printf( <span class="stringliteral">&quot;==&gt;&gt; MechanismDataDefn::ParseXML invalid dataType %s \n&quot;</span>, param );</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                printf( <span class="stringliteral">&quot;==&gt;&gt; MechanismTargetDefn::ParseXML invalid dataType %s \n&quot;</span>, param );</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                hasError = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            }            </div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        }</div>
@@ -326,7 +326,7 @@ $(document).ready(function(){initNavTree('_mechanism_data_defn_8cpp_source.html'
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        }</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            printf( <span class="stringliteral">&quot;==&gt;&gt; MechanismDataDefn::ParseXML invalid attribute %s \n&quot;</span>, attr.name() );</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            printf( <span class="stringliteral">&quot;==&gt;&gt; MechanismTargetDefn::ParseXML invalid attribute %s \n&quot;</span>, attr.name() );</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            hasError = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        }</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    }</div>
@@ -336,8 +336,8 @@ $(document).ready(function(){initNavTree('_mechanism_data_defn_8cpp_source.html'
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_mechanism_data_defn_html_afa055a768b985515421469b929c36cf6"><div class="ttname"><a href="class_mechanism_data_defn.html#afa055a768b985515421469b929c36cf6">MechanismDataDefn::ParseXML</a></div><div class="ttdeci">static mechParamData ParseXML(pugi::xml_node MechanismDataNode)</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_data_defn_8cpp_source.html#l00051">MechanismDataDefn.cpp:51</a></div></div>
-<div class="ttc" id="a_mechanism_data_defn_8h_html"><div class="ttname"><a href="_mechanism_data_defn_8h.html">MechanismDataDefn.h</a></div></div>
+<div class="ttc" id="aclass_mechanism_data_defn_html_afa055a768b985515421469b929c36cf6"><div class="ttname"><a href="class_mechanism_data_defn.html#afa055a768b985515421469b929c36cf6">MechanismTargetDefn::ParseXML</a></div><div class="ttdeci">static mechParamData ParseXML(pugi::xml_node MechanismDataNode)</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_data_defn_8cpp_source.html#l00051">MechanismTargetDefn.cpp:51</a></div></div>
+<div class="ttc" id="a_mechanism_data_defn_8h_html"><div class="ttname"><a href="_mechanism_data_defn_8h.html">MechanismTargetDefn.h</a></div></div>
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
 <div class="ttc" id="a_mech_param_data_8h_html"><div class="ttname"><a href="_mech_param_data_8h.html">MechParamData.h</a></div></div>
 <div class="ttc" id="a_mech_param_data_8h_html_a68a53913cca03f1937d9e3ce73ffa15c"><div class="ttname"><a href="_mech_param_data_8h.html#a68a53913cca03f1937d9e3ce73ffa15c">mechParamData</a></div><div class="ttdeci">std::pair&lt; MechanismParameters::MECHANISM_PARAM_TYPE, double &gt; mechParamData</div><div class="ttdef"><b>Definition:</b> <a href="_mech_param_data_8h_source.html#l00008">MechParamData.h:8</a></div></div>
@@ -345,7 +345,7 @@ $(document).ready(function(){initNavTree('_mechanism_data_defn_8cpp_source.html'
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_6fc7aae96da4e4ab3f0799880dbaa219.html">xmlmechdata</a></li><li class="navelem"><a class="el" href="_mechanism_data_defn_8cpp.html">MechanismDataDefn.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_6fc7aae96da4e4ab3f0799880dbaa219.html">xmlmechdata</a></li><li class="navelem"><a class="el" href="_mechanism_data_defn_8cpp.html">MechanismTargetDefn.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

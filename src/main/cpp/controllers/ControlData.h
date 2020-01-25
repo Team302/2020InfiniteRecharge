@@ -15,6 +15,8 @@
 
 #pragma once
 
+#include <string>
+
 #include <controllers/ControlModes.h>
 
 class ControlData
@@ -22,6 +24,7 @@ class ControlData
     public:
         /// @brief      Create the ControlData object that is used to control mechanisms
         /// @param [in] mode - control mode
+        /// @param [in] indentifier - mapping identifier for this controller
         /// @param [in] proportional - p coefficient for a PID-based controller
         /// @param [in] integral - i coefficient for a PID-based controller
         /// @param [in] derivative - d coefficient for a PID-based controller
@@ -34,6 +37,7 @@ class ControlData
         ControlData
         (
             ControlModes::CONTROL_TYPE                  mode,
+            std::string                                 indentifier,
             double                                      proportional,
             double                                      integral,
             double                                      derivative,
@@ -51,6 +55,10 @@ class ControlData
         /// @brief  Retrieve the Control Type
         /// @return ControlModes::CONTROL_TYPE
         inline ControlModes::CONTROL_TYPE GetMode() const { return m_mode; };
+
+        /// @brief  Retrieve the identifier
+        /// @return std::string the identifier
+        inline std::string GetIdentifier() const { return m_identifier; };
 
         /// @brief  Retrieve the P coefficient for a PID-based control mode
         /// @return double - P coefficient
@@ -92,7 +100,8 @@ class ControlData
     private:
         ControlData() = delete;
 
-        ControlModes::CONTROL_TYPE    m_mode;
+        ControlModes::CONTROL_TYPE                  m_mode;
+        std::string                                 m_identifier;
         double                                      m_proportional;
         double                                      m_integral;
         double                                      m_derivative;

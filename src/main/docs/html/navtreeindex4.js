@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"class_dragon_x_box.html#ae9bf51169ee1993f0dc6d10540b72bda":[0,0,49,8],
+"class_drive_distance.html":[0,0,50],
 "class_drive_distance.html#a5658e8083b0b1cc87580297e173a9a27":[0,0,50,4],
 "class_drive_distance.html#a7a4a90ed63d01052a9bfb8b13b402fc7":[0,0,50,2],
 "class_drive_distance.html#a8a39fae7fc4f3991163613994447e84e":[0,0,50,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "class_i_dragon_motor_controller.html":[0,0,71],
 "class_i_dragon_motor_controller.html#a0b4ae4352bf46cae7d783c4e8c36aa6e":[0,0,71,9],
 "class_i_dragon_motor_controller.html#a108645163a4c281f5c83b72136fe5cae":[0,0,71,15],
-"class_i_dragon_motor_controller.html#a17ff2a8c53eb525c629ea1dbfe617e72":[0,0,71,7],
-"class_i_dragon_motor_controller.html#a1e513a4bd1623bedb289c203a4b0c3fb":[0,0,71,8],
-"class_i_dragon_motor_controller.html#a35b6fe6bc4b6a582d99ec223206e4add":[0,0,71,2]
+"class_i_dragon_motor_controller.html#a17ff2a8c53eb525c629ea1dbfe617e72":[0,0,71,7]
 };

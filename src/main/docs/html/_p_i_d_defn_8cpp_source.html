@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: controllers/PIDDefn.cpp Source File</title>
+<title>Team 302 Robot: controllers/ControlDataDefn.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,11 +86,11 @@ $(document).ready(function(){initNavTree('_p_i_d_defn_8cpp_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">PIDDefn.cpp</div>  </div>
+<div class="title">ControlDataDefn.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="_p_i_d_defn_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// PIDDefn.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// ControlDataDefn.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Copyright 2019 Lake Orion Robotics FIRST Team 302</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//</span></div>
@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('_p_i_d_defn_8cpp_source.html','');});
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Team 302 includes</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_control_data_8h.html">controllers/ControlData.h</a>&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_p_i_d_defn_8h.html">controllers/PIDDefn.h</a>&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_p_i_d_defn_8h.html">controllers/ControlDataDefn.h</a>&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_control_modes_8h.html">controllers/ControlModes.h</a>&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// Third Party Includes</span></div>
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('_p_i_d_defn_8cpp_source.html','');});
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// Returns:     mechParamData        mechanism data</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//-----------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="class_control_data.html">ControlData</a>* <a class="code" href="class_p_i_d_defn.html#a755d800864de890e03a6b11e7ff476e4">PIDDefn::ParseXML</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="class_control_data.html">ControlData</a>* <a class="code" href="class_p_i_d_defn.html#a755d800864de890e03a6b11e7ff476e4">ControlDataDefn::ParseXML</a></div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_p_i_d_defn.html#a755d800864de890e03a6b11e7ff476e4">   50</a></span>&#160;(</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    pugi::xml_node      PIDNode</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;)</div>
@@ -205,7 +205,7 @@ $(document).ready(function(){initNavTree('_p_i_d_defn_8cpp_source.html','');});
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            printf( <span class="stringliteral">&quot;==&gt;&gt; PIDDefn::ParseXML invalid attribute %s \n&quot;</span>, attr.name() );</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            printf( <span class="stringliteral">&quot;==&gt;&gt; ControlDataDefn::ParseXML invalid attribute %s \n&quot;</span>, attr.name() );</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            hasError = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
@@ -220,15 +220,15 @@ $(document).ready(function(){initNavTree('_p_i_d_defn_8cpp_source.html','');});
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
-<div class="ttc" id="a_p_i_d_defn_8h_html"><div class="ttname"><a href="_p_i_d_defn_8h.html">PIDDefn.h</a></div></div>
-<div class="ttc" id="aclass_p_i_d_defn_html_a755d800864de890e03a6b11e7ff476e4"><div class="ttname"><a href="class_p_i_d_defn.html#a755d800864de890e03a6b11e7ff476e4">PIDDefn::ParseXML</a></div><div class="ttdeci">static ControlData * ParseXML(pugi::xml_node PIDNode)</div><div class="ttdef"><b>Definition:</b> <a href="_p_i_d_defn_8cpp_source.html#l00050">PIDDefn.cpp:50</a></div></div>
+<div class="ttc" id="a_p_i_d_defn_8h_html"><div class="ttname"><a href="_p_i_d_defn_8h.html">ControlDataDefn.h</a></div></div>
+<div class="ttc" id="aclass_p_i_d_defn_html_a755d800864de890e03a6b11e7ff476e4"><div class="ttname"><a href="class_p_i_d_defn.html#a755d800864de890e03a6b11e7ff476e4">ControlDataDefn::ParseXML</a></div><div class="ttdeci">static ControlData * ParseXML(pugi::xml_node PIDNode)</div><div class="ttdef"><b>Definition:</b> <a href="_p_i_d_defn_8cpp_source.html#l00050">ControlDataDefn.cpp:50</a></div></div>
 <div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00020">ControlData.h:20</a></div></div>
 <div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>
 <div class="ttc" id="aclass_control_modes_html_a46c77e409ac22b3b3269f7fee2d3f736"><div class="ttname"><a href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a></div><div class="ttdeci">CONTROL_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_control_modes_8h_source.html#l00024">ControlModes.h:24</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="_p_i_d_defn_8cpp.html">PIDDefn.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="_p_i_d_defn_8cpp.html">ControlDataDefn.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

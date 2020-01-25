@@ -1,11 +1,12 @@
 var class_control_data =
 [
-    [ "ControlData", "class_control_data.html#a2db028550c1494a7853a8e942431224f", null ],
+    [ "ControlData", "class_control_data.html#abc478d18ee20d9108a1e988e234201ac", null ],
     [ "~ControlData", "class_control_data.html#aaa47e895701543d53f2a14ac533bc9b6", null ],
     [ "GetCruiseVelocity", "class_control_data.html#aada3659777868036d560a428ea55bcdf", null ],
     [ "GetD", "class_control_data.html#acbaf81f6f7dab5edcf4fcc445caf0dcd", null ],
     [ "GetF", "class_control_data.html#adbe7269501e2db1374a5f697da0fbe09", null ],
     [ "GetI", "class_control_data.html#ae1e28d9f875136cef18597294645503a", null ],
+    [ "GetIdentifier", "class_control_data.html#adf5ce6319e2035f19991a4ede226ef6f", null ],
     [ "GetIZone", "class_control_data.html#a040e2073bdf59bb349088da5d45322ae", null ],
     [ "GetMaxAcceleration", "class_control_data.html#a75861c8f8b2fbe8ba22e134c660cdaf9", null ],
     [ "GetMode", "class_control_data.html#a3e7157f943ecefb04cb30c274bf9a330", null ],

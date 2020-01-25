@@ -97,79 +97,8 @@ $(document).ready(function(){initNavTree('_control_defn_8cpp_source.html','');})
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span><span class="comment">//========================================================================================================</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span><span class="comment">//========================================================================================================</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// C++ Includes</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// FRC includes</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_control_defn_8h.html">controllers/ControlDefn.h</a>&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_control_data_8h.html">controllers/ControlData.h</a>&gt;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_p_i_d_defn_8h.html">controllers/PIDDefn.h</a>&gt;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// Third Party Includes</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;pugixml/pugixml.hpp&gt;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//-----------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// Method:      ParseXML</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// Description: Parse the control data file</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// Returns:     void</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//-----------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_control_defn.html#ab41df6304593cd1ddcf31598629c281f">ControlDefn::ParseXML</a></div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_control_defn.html#ab41df6304593cd1ddcf31598629c281f">   55</a></span>&#160;(</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::string&amp;            leaf,               </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::vector&lt;ControlData*&gt;&amp;  pids                </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    pids.clear();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// set the file to parse</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::string directory = <span class="stringliteral">&quot;/home/lvuser/config/control/&quot;</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::string filename = directory + leaf;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// load the xml file into memory (parse it)</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    pugi::xml_document doc;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    pugi::xml_parse_result result = doc.load_file( filename.c_str() );</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// if it is good</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> ( result )</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">// get the root node &lt;robot&gt;</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        pugi::xml_node parent = doc.root();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">for</span> (pugi::xml_node node = parent.first_child(); node; node = node.next_sibling())</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="comment">// loop through the direct children of &lt;robot&gt; and call the appropriate parser</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">for</span> (pugi::xml_node child = node.first_child(); child; child = child.next_sibling())</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">if</span> ( strcmp( child.name(), <span class="stringliteral">&quot;PID&quot;</span>) == 0 )</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    pids.emplace_back( <a class="code" href="class_p_i_d_defn.html#a755d800864de890e03a6b11e7ff476e4">PIDDefn::ParseXML</a>( child ) );</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;==&gt;&gt;ControlDefn::ParseXML unknown robot child &quot;</span> &lt;&lt; child.name() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;XML [&quot;</span> &lt;&lt; filename.c_str() &lt;&lt; <span class="stringliteral">&quot;] parsed with errors, attr value: [&quot;</span> &lt;&lt; doc.child(<span class="stringliteral">&quot;prototype&quot;</span>).attribute(<span class="stringliteral">&quot;attr&quot;</span>).value() &lt;&lt; <span class="stringliteral">&quot;]&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Error description: &quot;</span> &lt;&lt; result.description() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Error offset: &quot;</span> &lt;&lt; result.offset &lt;&lt; <span class="stringliteral">&quot; (error at [...&quot;</span> &lt;&lt; (filename.c_str() + result.offset) &lt;&lt; <span class="stringliteral">&quot;]&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
-<div class="ttc" id="aclass_control_defn_html_ab41df6304593cd1ddcf31598629c281f"><div class="ttname"><a href="class_control_defn.html#ab41df6304593cd1ddcf31598629c281f">ControlDefn::ParseXML</a></div><div class="ttdeci">static void ParseXML(std::string &amp;filename, std::vector&lt; ControlData * &gt; &amp;pidControlVector)</div><div class="ttdoc">ControlDefn.cpp.</div><div class="ttdef"><b>Definition:</b> <a href="_control_defn_8cpp_source.html#l00055">ControlDefn.cpp:55</a></div></div>
-<div class="ttc" id="a_p_i_d_defn_8h_html"><div class="ttname"><a href="_p_i_d_defn_8h.html">PIDDefn.h</a></div></div>
-<div class="ttc" id="a_control_defn_8h_html"><div class="ttname"><a href="_control_defn_8h.html">ControlDefn.h</a></div></div>
-<div class="ttc" id="aclass_p_i_d_defn_html_a755d800864de890e03a6b11e7ff476e4"><div class="ttname"><a href="class_p_i_d_defn.html#a755d800864de890e03a6b11e7ff476e4">PIDDefn::ParseXML</a></div><div class="ttdeci">static ControlData * ParseXML(pugi::xml_node PIDNode)</div><div class="ttdef"><b>Definition:</b> <a href="_p_i_d_defn_8cpp_source.html#l00050">PIDDefn.cpp:50</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -29,6 +29,7 @@
 ///
 //========================================================================================================
 
+/**
 // C++ Includes
 #include <iostream>
 #include <cstring>
@@ -41,7 +42,7 @@
 // Team 302 includes
 #include <controllers/ControlDefn.h>
 #include <controllers/ControlData.h>
-#include <controllers/PIDDefn.h>
+#include <xmlmechdata/ControlDataDefn.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
@@ -74,17 +75,13 @@ void ControlDefn::ParseXML
         pugi::xml_node parent = doc.root();
         for (pugi::xml_node node = parent.first_child(); node; node = node.next_sibling())
         {
-            // loop through the direct children of <robot> and call the appropriate parser
-            for (pugi::xml_node child = node.first_child(); child; child = child.next_sibling())
+            if ( strcmp( node.name(), "PID") == 0 )
             {
-                if ( strcmp( child.name(), "PID") == 0 )
-                {
-                    pids.emplace_back( PIDDefn::ParseXML( child ) );
-                }
-                else
-                {
-                    std::cout << "==>>ControlDefn::ParseXML unknown robot child " << child.name() << std::endl;
-                }
+                pids.emplace_back( ControlDataDefn::ParseXML( child ) );
+            }
+            else
+            {
+                std::cout << "==>>ControlDefn::ParseXML unknown robot child " << child.name() << std::endl;
             }
         }
     }
@@ -95,3 +92,4 @@ void ControlDefn::ParseXML
         std::cout << "Error offset: " << result.offset << " (error at [..." << (filename.c_str() + result.offset) << "]" << std::endl;
     }
 }
+**/
