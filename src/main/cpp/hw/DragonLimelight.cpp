@@ -42,17 +42,21 @@ DragonLimelight::DragonLimelight
     IDragonSensor::SENSOR_USAGE usage,
     string                      tableName,                  /// <I> - network table name
     double                      mountingHeight,             /// <I> - mounting height of the limelight
-    double                      mountingHorizontalOffset,   /// <I> - mounting horizontal offset from the middle of the robot 
+    double                      mountingHorizontalOffset,   /// <I> - mounting horizontal offset from the middle of the robot,
+    double                      rotation,                   /// <I> - clockwise rotation of limelight
     double                      mountingAngle,              /// <I> - mounting angle of the camera
-    double                      targetHeight                /// <I> - height the target
+    double                      targetHeight,               /// <I> - height the target
+    double                      targetHeight2               /// <I> - height of second target
 ) : IDragonSensor(),
     IDragonDistanceSensor(),
     m_usage( usage ),
     m_networktable( NetworkTableInstance::GetDefault().GetTable( tableName.c_str() ) ),
     m_mountHeight( mountingHeight ),
     m_mountingHorizontalOffset( mountingHorizontalOffset ),
+    m_rotation(rotation),
     m_mountingAngle( mountingAngle ),
-    m_targetHeight( targetHeight )
+    m_targetHeight( targetHeight ),
+    m_targetHeight2( targetHeight2 )
 {}
 
 ///-----------------------------------------------------------------------
@@ -98,12 +102,59 @@ bool DragonLimelight::HasTarget() const
 
 double DragonLimelight::GetTargetHorizontalOffset() const
 {
-    return ( m_networktable->GetNumber("tx", 0.0) - m_mountingHorizontalOffset);
+    double tx = m_networktable->GetNumber("tx", 0.0);
+    double ty = m_networktable->GetNumber("ty", 0.0);
+    if(m_rotation == 0.0)
+    {
+        return tx;
+    }
+    else if(m_rotation == 90.0)
+    {
+        return -ty;
+    }
+    else if(m_rotation == 180.0)
+    {
+        return -tx;
+    }
+    else if(m_rotation == 270.0)
+    {
+        return ty;
+    }
+    else
+    {
+        Logger::GetLogger()->LogError("DragonLimelight::GetTargetVerticalOffset", "Invalid limelight rotation");
+        return -1.0;
+    }
+    
+   
 }
 
 double DragonLimelight::GetTargetVerticalOffset() const
 {
-    return m_networktable->GetNumber("ty", 0.0);
+    double tx = m_networktable->GetNumber("tx", 0.0);
+    double ty = m_networktable->GetNumber("ty", 0.0);
+    if(m_rotation == 0.0)
+    {
+        return ty;
+    }
+    else if(m_rotation == 90.0)
+    {
+        return tx;
+    }
+    else if(m_rotation == 180.0)
+    {
+        return -ty;
+    }
+    else if(m_rotation == 270.0)
+    {
+        return -tx;
+    }
+    else
+    {
+        Logger::GetLogger()->LogError("DragonLimelight::GetTargetVerticalOffset", "Invalid limelight rotation");
+        return -1.0;
+    }
+    
 }
 
 double DragonLimelight::GetTargetArea() const

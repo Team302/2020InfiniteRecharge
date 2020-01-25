@@ -81,8 +81,7 @@ std::shared_ptr<DragonLimelight> LimelightDefn::ParseXML(pugi::xml_node    limel
 
         if(!hasError)
         {
-            limelight = make_shared<DragonLimelight>(usage, tableName, mountingHeight, horizontalOffset, mountingAngle, targetHeight);
-            //need to add rotations and targetHeight2 
+            limelight = make_shared<DragonLimelight>(usage, tableName, mountingHeight, horizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2);
         }
     }
     return limelight;
