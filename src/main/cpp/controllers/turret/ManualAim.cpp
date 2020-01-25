@@ -27,6 +27,7 @@ void ManualAim::Init()
 void ManualAim::Run()
 {
     m_turret->SetOutput(ControlModes::PERCENT_OUTPUT, m_mechData);
+    m_atTarget = true;
 }
 
 bool ManualAim::AtTarget() const

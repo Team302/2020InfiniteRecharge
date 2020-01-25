@@ -18,18 +18,21 @@ HoldTurretPosition::HoldTurretPosition(ControlData* controlData) : m_controlData
 {
     auto factory = MechanismFactory::GetMechanismFactory();
     m_turret = factory->GetIMechanism(MechanismTypes::TURRET);
-    m_turret->SetControlConstants(m_controlData);
-    m_targetPosition = m_turret->GetCurrentPosition();
 }
 
 void HoldTurretPosition::Init()
 {
-
+    m_turret->SetControlConstants(m_controlData);
+    m_targetPosition = m_turret->GetCurrentPosition();
 }
 
 void HoldTurretPosition::Run()
 {   
     m_turret->SetOutput(ControlModes::CONTROL_TYPE::POSITION_DEGREES, m_targetPosition);
+    if(m_targetPosition - 5 < m_turret->GetCurrentPosition() < m_targetPosition + 5) //arbitrary tolerance for now will change later
+    {
+        m_atTarget = true;
+    }
 }
 
 bool HoldTurretPosition::AtTarget() const

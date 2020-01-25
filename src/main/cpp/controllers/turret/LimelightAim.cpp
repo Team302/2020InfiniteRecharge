@@ -21,19 +21,22 @@ LimelightAim::LimelightAim(ControlData* controlData, DragonLimelight* limelight)
 {
     auto factory = MechanismFactory::GetMechanismFactory();
     m_turret = factory->GetIMechanism(MechanismTypes::TURRET);
-    m_turret->SetControlConstants(m_controlData);
 }
 
 void LimelightAim::Init()
 {
-    double targetHorizontalOffset = m_limelight->GetTargetHorizontalOffset();
-    double m_targetPosition = m_turret->GetCurrentPosition() - targetHorizontalOffset;
-    m_turret->SetOutput(ControlModes::CONTROL_TYPE::TRAPEZOID, m_targetPosition);
+    m_turret->SetControlConstants(m_controlData);
 }
 
 void LimelightAim::Run()
 {
-
+    double targetHorizontalOffset = m_limelight->GetTargetHorizontalOffset();
+    double m_targetPosition = m_turret->GetCurrentPosition() - targetHorizontalOffset;
+    m_turret->SetOutput(ControlModes::CONTROL_TYPE::TRAPEZOID, m_targetPosition);
+    if(m_targetPosition - 5 < m_turret->GetCurrentPosition() < m_targetPosition + 5) //arbitrary tolerance for now will change later
+    {
+        m_atTarget = true;
+    }
 }
 
 bool LimelightAim::AtTarget() const
