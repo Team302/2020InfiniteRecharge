@@ -23,8 +23,8 @@ class Agitate : public IState
 
     IMechanism* m_impeller;
 
-    const double addition_delta = 200;
-    const double subtraction_delta = 100; //Used to move the motor either forwards or backwards
+    const double addition_delta = 20;
+    const double subtraction_delta = 10; //Used to move the motor either forwards or backwards
     double m_target;
     bool is_moving_forward;
 };
