@@ -84,6 +84,7 @@ var hierarchy =
       [ "HumanPlayerFlap", "class_human_player_flap.html", null ],
       [ "Impeller", "class_impeller.html", null ],
       [ "Intake", "class_intake.html", null ],
+      [ "Shooter", "class_shooter.html", null ],
       [ "Turret", "class_turret.html", null ]
     ] ],
     [ "IMechController", "class_i_mech_controller.html", [
@@ -109,6 +110,9 @@ var hierarchy =
       [ "SquaredProfile", "class_squared_profile.html", null ]
     ] ],
     [ "IState", "class_i_state.html", [
+      [ "ControlPanelRaise", "class_control_panel_raise.html", null ],
+      [ "ImpellerOff", "class_impeller_off.html", null ],
+      [ "ImpellerOn", "class_impeller_on.html", null ],
       [ "IntakeOff", "class_intake_off.html", null ],
       [ "IntakeOn", "class_intake_on.html", null ],
       [ "TankDrive", "class_tank_drive.html", null ],
