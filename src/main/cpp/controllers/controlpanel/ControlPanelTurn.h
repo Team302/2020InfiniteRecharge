@@ -4,11 +4,11 @@
 #include <subsys/MechanismFactory.h>
 #include <controllers/ControlData.h>
 
-class CPMTurnState : public IState
+class ControlPanelTurn : public IState
 {
     public:
-    CPMTurnState(ControlData* control_data, double target);
-    ~CPMTurnState();
+    ControlPanelTurn(ControlData* control_data, double target);
+    ~ControlPanelTurn();
 
     void Init() override;
     void Run() override;
