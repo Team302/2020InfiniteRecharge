@@ -79,6 +79,7 @@ var annotated_dup =
     [ "Impeller", "class_impeller.html", "class_impeller" ],
     [ "ImpellerOff", "class_impeller_off.html", "class_impeller_off" ],
     [ "ImpellerOn", "class_impeller_on.html", "class_impeller_on" ],
+    [ "ImpellerStateMgr", "class_impeller_state_mgr.html", "class_impeller_state_mgr" ],
     [ "Intake", "class_intake.html", "class_intake" ],
     [ "IntakeOff", "class_intake_off.html", "class_intake_off" ],
     [ "IntakeOn", "class_intake_on.html", "class_intake_on" ],

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['x_5fbutton_2095',['X_BUTTON',['../class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29af58d60f9898f740cad672ce5eb91a12c',1,'IDragonGamePad']]]
+  ['velocity_5fdegrees_2111',['VELOCITY_DEGREES',['../class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736a0a4f52b48448a86178597e491191a181',1,'ControlModes']]],
+  ['velocity_5finch_2112',['VELOCITY_INCH',['../class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736a0e742a9c9bc5bf2e5c35baf3c8b1e815',1,'ControlModes']]],
+  ['voltage_2113',['VOLTAGE',['../class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736ad63dbf6883501118f0d4f9123432f653',1,'ControlModes']]]
 ];

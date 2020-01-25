@@ -9,5 +9,7 @@ var dir_22f51177c548b8bb35146d0382414103 =
       [ "ImpellerOn", "class_impeller_on.html", "class_impeller_on" ]
     ] ],
     [ "ImpellerStateMgr.cpp", "_impeller_state_mgr_8cpp.html", null ],
-    [ "ImpellerStateMgr.h", "_impeller_state_mgr_8h.html", null ]
+    [ "ImpellerStateMgr.h", "_impeller_state_mgr_8h.html", [
+      [ "ImpellerStateMgr", "class_impeller_state_mgr.html", "class_impeller_state_mgr" ]
+    ] ]
 ];

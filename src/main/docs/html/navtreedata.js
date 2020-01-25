@@ -58,8 +58,8 @@ var NAVTREEINDEX =
 "class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46acc5e07e038b5330a5da8383e6f058f36",
 "class_dragon_ultrasonic_p_w_m.html#ad618781c45fd1f5b85216279828eca10",
 "class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972bac4b73cf2814ada0f668d675161b714c9",
-"class_p_d_p_defn.html",
-"functions_eval_t.html"
+"class_motor_defn.html#a8d63b22641b61dbe1688ccf37406d28f",
+"functions_eval_f.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
