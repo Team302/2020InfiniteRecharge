@@ -20,22 +20,20 @@
 class ControlData
 {
     public:
-        /**
-        enum CONTROL_MODE
-        {
-            VELOCITY,
-            POSITION,
-            MOTION_MAGIC,
-            VOLTAGE,
-            CURRENT,
-            MOTION_PROFILE,
-            MOTION_PROFILE_ARC
-        };
-        **/
-
+        /// @brief      Create the ControlData object that is used to control mechanisms
+        /// @param [in] mode - control mode
+        /// @param [in] proportional - p coefficient for a PID-based controller
+        /// @param [in] integral - i coefficient for a PID-based controller
+        /// @param [in] derivative - d coefficient for a PID-based controller
+        /// @param [in] feedforward - f coefficient for a PID-based controller
+        /// @param [in] integralZone - range of the integral for a PID-based controller
+        /// @param [in] maxAcceleration - maximum acceleration 
+        /// @param [in] cruiseVelocity - cruise velocity 
+        /// @param [in] peakValue - peak value 
+        /// @param [in] nominalValue - nominal value 
         ControlData
         (
-            ControlModes::CONTROL_TYPE    mode,
+            ControlModes::CONTROL_TYPE                  mode,
             double                                      proportional,
             double                                      integral,
             double                                      derivative,
@@ -50,15 +48,44 @@ class ControlData
 
         virtual ~ControlData() = default;
 
+        /// @brief  Retrieve the Control Type
+        /// @return ControlModes::CONTROL_TYPE
         inline ControlModes::CONTROL_TYPE GetMode() const { return m_mode; };
+
+        /// @brief  Retrieve the P coefficient for a PID-based control mode
+        /// @return double - P coefficient
         inline double GetP() const { return m_proportional; };
+
+        /// @brief  Retrieve the I coefficient for a PID-based control mode
+        /// @return double - I coefficient
         inline double GetI() const { return m_integral; };
+
+        /// @brief  Retrieve the D coefficient for a PID-based control mode
+        /// @return double - D coefficient
         inline double GetD() const { return m_derivative; };
+
+        /// @brief  Retrieve the Feed-forwared coefficient for a PID-based control mode
+        /// @return double - F coefficient
         inline double GetF() const { return m_feedforward; };
+
+        /// @brief  Retrieve the izone for a PID-based control mode (where the intregal is reset)
+        /// @return double - izone value
         inline double GetIZone() const { return m_iZone; };
+
+        /// @brief  Retrieve the max acceleration for a trapezoid control mode
+        /// @return double - max acceleration
         inline double GetMaxAcceleration() const { return m_maxAcceleration; };
+
+        /// @brief  Retrieve the cruise velocity for a trapezoid control mode
+        /// @return double - cruise velocity
         inline double GetCruiseVelocity() const { return m_cruiseVelocity; };
+
+        /// @brief  Retrieve the peak value 
+        /// @return double - peak value
         inline double GetPeakValue() const { return m_peakValue; };
+
+        /// @brief  Retrieve the nominal value 
+        /// @return double - nominal value
         inline double GetNominalValue() const { return m_nominalValue; };
 
  
