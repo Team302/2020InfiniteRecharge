@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "Agitate", "class_agitate.html", "class_agitate" ],
     [ "AnalogAxis", "class_analog_axis.html", "class_analog_axis" ],
     [ "AnalogButton", "class_analog_button.html", "class_analog_button" ],
     [ "AnalogInputDefn", "class_analog_input_defn.html", "class_analog_input_defn" ],
@@ -8,6 +9,10 @@ var annotated_dup =
     [ "ArcadeDrive", "class_arcade_drive.html", "class_arcade_drive" ],
     [ "AutonSelector", "class_auton_selector.html", "class_auton_selector" ],
     [ "BallTransfer", "class_ball_transfer.html", "class_ball_transfer" ],
+    [ "BallTransferOff", "class_ball_transfer_off.html", "class_ball_transfer_off" ],
+    [ "BallTransferStateMgr", "class_ball_transfer_state_mgr.html", "class_ball_transfer_state_mgr" ],
+    [ "BallTransferToImpeller", "class_ball_transfer_to_impeller.html", "class_ball_transfer_to_impeller" ],
+    [ "BallTransferToShooter", "class_ball_transfer_to_shooter.html", "class_ball_transfer_to_shooter" ],
     [ "ButtonDecorator", "class_button_decorator.html", "class_button_decorator" ],
     [ "CameraDefn", "class_camera_defn.html", "class_camera_defn" ],
     [ "CANifierDefn", "class_c_a_nifier_defn.html", "class_c_a_nifier_defn" ],
@@ -15,6 +20,7 @@ var annotated_dup =
     [ "ChassisDefn", "class_chassis_defn.html", "class_chassis_defn" ],
     [ "ChassisFactory", "class_chassis_factory.html", "class_chassis_factory" ],
     [ "ChassisStateMgr", "class_chassis_state_mgr.html", "class_chassis_state_mgr" ],
+    [ "ColorSensorDefn", "class_color_sensor_defn.html", "class_color_sensor_defn" ],
     [ "ControlData", "class_control_data.html", "class_control_data" ],
     [ "ControlDataDefn", "class_control_data_defn.html", "class_control_data_defn" ],
     [ "ControlModes", "class_control_modes.html", "class_control_modes" ],
@@ -92,6 +98,7 @@ var annotated_dup =
     [ "LEDFactory", "class_l_e_d_factory.html", "class_l_e_d_factory" ],
     [ "LidarDefn", "class_lidar_defn.html", "class_lidar_defn" ],
     [ "LidarFactory", "class_lidar_factory.html", "class_lidar_factory" ],
+    [ "LimelightDefn", "class_limelight_defn.html", "class_limelight_defn" ],
     [ "LimitValue", "class_limit_value.html", "class_limit_value" ],
     [ "LinearProfile", "class_linear_profile.html", "class_linear_profile" ],
     [ "Logger", "class_logger.html", "class_logger" ],

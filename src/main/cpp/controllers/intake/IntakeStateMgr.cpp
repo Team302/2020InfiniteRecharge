@@ -21,13 +21,13 @@
 
 // Team 302 includes
 #include <controllers/IState.h>
-#include <controllers/Intake/IntakeStateMgr.h>
+#include <controllers/intake/IntakeStateMgr.h>
 #include <xmlmechdata/StateDataDefn.h>
 #include <controllers/MechanismTargetData.h>
 #include <utils/Logger.h>
 #include <gamepad/TeleopControl.h>
-#include <controllers/Intake/IntakeOff.h>
-#include <controllers/Intake/IntakeOn.h>
+#include <controllers/intake/IntakeOff.h>
+#include <controllers/intake/IntakeOn.h>
 
 
 // Third Party Includes
@@ -58,10 +58,12 @@ IntakeStateMgr::IntakeStateMgr() : m_stateMap(),
             auto stateIt = m_stateMap.find( stateEnum );
             if ( stateIt == m_stateMap.end() )
             {
+                auto controlData = td->GetController();
+                auto target = td->GetTarget();
                 switch ( stateEnum )
                 {
                     case INTAKE_STATE::ON:
-                    {   // todo update the constructor
+                    {   // todo update the constructor to take controlData and target
                         auto thisState = new IntakeOn();
                         m_stateMap[INTAKE_STATE::ON] = thisState;
                         m_currentState = thisState;
@@ -71,7 +73,7 @@ IntakeStateMgr::IntakeStateMgr() : m_stateMap(),
                     break;
 
                     case INTAKE_STATE::OFF:
-                    {   // todo update the constructor
+                    {   // todo update the constructor to take controlData and target
                         auto thisState = new IntakeOff();
                         m_stateMap[INTAKE_STATE::OFF] = thisState;
                     }

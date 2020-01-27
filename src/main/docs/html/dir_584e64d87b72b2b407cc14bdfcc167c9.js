@@ -16,6 +16,10 @@ var dir_584e64d87b72b2b407cc14bdfcc167c9 =
     [ "ChassisDefn.h", "_chassis_defn_8h.html", [
       [ "ChassisDefn", "class_chassis_defn.html", "class_chassis_defn" ]
     ] ],
+    [ "ColorSensorDefn.cpp", "_color_sensor_defn_8cpp.html", "_color_sensor_defn_8cpp" ],
+    [ "ColorSensorDefn.h", "_color_sensor_defn_8h.html", [
+      [ "ColorSensorDefn", "class_color_sensor_defn.html", "class_color_sensor_defn" ]
+    ] ],
     [ "DigitalInputDefn.cpp", "_digital_input_defn_8cpp.html", null ],
     [ "DigitalInputDefn.h", "_digital_input_defn_8h.html", [
       [ "DigitalInputDefn", "class_digital_input_defn.html", "class_digital_input_defn" ]
@@ -31,6 +35,10 @@ var dir_584e64d87b72b2b407cc14bdfcc167c9 =
     [ "LidarDefn.cpp", "_lidar_defn_8cpp.html", null ],
     [ "LidarDefn.h", "_lidar_defn_8h.html", [
       [ "LidarDefn", "class_lidar_defn.html", "class_lidar_defn" ]
+    ] ],
+    [ "LimelightDefn.cpp", "_limelight_defn_8cpp.html", null ],
+    [ "LimelightDefn.h", "_limelight_defn_8h.html", [
+      [ "LimelightDefn", "class_limelight_defn.html", "class_limelight_defn" ]
     ] ],
     [ "MechanismDefn.cpp", "_mechanism_defn_8cpp.html", null ],
     [ "MechanismDefn.h", "_mechanism_defn_8h.html", [

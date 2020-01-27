@@ -139,8 +139,8 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a003d6b9c140e33c5d4291075b16c868a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a003d6b9c140e33c5d4291075b16c868a">DragonLimelight</a> ()=delete</td></tr>
 <tr class="separator:a003d6b9c140e33c5d4291075b16c868a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c3c58797e74f7eaad7a1d8fb8b7cebd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a2c3c58797e74f7eaad7a1d8fb8b7cebd">DragonLimelight</a> (<a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> usage, std::string tableName, double mountingHeight, double mountingHorizontalOffset, double mountingAngle, double targetHeight)</td></tr>
-<tr class="separator:a2c3c58797e74f7eaad7a1d8fb8b7cebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e786728aa7dfcfae40f57c55d238fbc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a5e786728aa7dfcfae40f57c55d238fbc">DragonLimelight</a> (<a class="el" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> usage, std::string tableName, double mountingHeight, double mountingHorizontalOffset, double rotation, double mountingAngle, double targetHeight, double targetHeight2)</td></tr>
+<tr class="separator:a5e786728aa7dfcfae40f57c55d238fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad524ba4ce87697fa883882f5c41e9b60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#ad524ba4ce87697fa883882f5c41e9b60">~DragonLimelight</a> ()=default</td></tr>
 <tr class="separator:ad524ba4ce87697fa883882f5c41e9b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0db4976887ba1e7dda441b7053ca0f67"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_limelight.html#a0db4976887ba1e7dda441b7053ca0f67">GetDistance</a> () const override</td></tr>
@@ -305,8 +305,8 @@ Description:    Create the object</h2>
 
 </div>
 </div>
-<a id="a2c3c58797e74f7eaad7a1d8fb8b7cebd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c3c58797e74f7eaad7a1d8fb8b7cebd">&#9670;&nbsp;</a></span>DragonLimelight() <span class="overload">[2/2]</span></h2>
+<a id="a5e786728aa7dfcfae40f57c55d238fbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e786728aa7dfcfae40f57c55d238fbc">&#9670;&nbsp;</a></span>DragonLimelight() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -339,13 +339,25 @@ Description:    Create the object</h2>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rotation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>mountingAngle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>targetHeight</em>&#160;</td>
+          <td class="paramname"><em>targetHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>targetHeight2</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -358,8 +370,10 @@ Description:    Create the object</h2>
   <table class="params">
     <tr><td class="paramname">mountingHeight</td><td><em> - network table name </em></td></tr>
     <tr><td class="paramname">mountingHorizontalOffset</td><td><em><em> - mounting height of the limelight </em></em></td></tr>
-    <tr><td class="paramname">mountingAngle</td><td><em><em><em> - mounting horizontal offset from the middle of the robot </em></em></em></td></tr>
-    <tr><td class="paramname">targetHeight</td><td><em><em><em><em> - mounting angle of the camera <em> - height the target </em></em></em></em></em></td></tr>
+    <tr><td class="paramname">rotation</td><td><em><em><em> - mounting horizontal offset from the middle of the robot </em></em></em></td></tr>
+    <tr><td class="paramname">mountingAngle</td><td><em><em><em><em> - clockwise rotation of limelight </em></em></em></em></td></tr>
+    <tr><td class="paramname">targetHeight</td><td><em><em><em><em><em> - mounting angle of the camera </em></em></em></em></em></td></tr>
+    <tr><td class="paramname">targetHeight2</td><td><em><em><em><em><em><em> - height the target <em> - height of second target </em></em></em></em></em></em></em></td></tr>
   </table>
   </dd>
 </dl>
@@ -411,7 +425,7 @@ Description:    Delete the object</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00089">89</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00093">93</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -448,7 +462,7 @@ Description:    Delete the object</h2>
 
 <p>Implements <a class="el" href="class_i_dragon_sensor.html#a26335856e226fcaca3ce3954ba846cb7">IDragonSensor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00079">79</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00083">83</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -485,7 +499,7 @@ Returns:     double     Measured Distance</h2>
 
 <p>Implements <a class="el" href="class_i_dragon_distance_sensor.html#a6bd5ec99c747c52a25aaddc874232703">IDragonDistanceSensor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00063">63</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00067">67</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -504,7 +518,7 @@ Returns:     double     Measured Distance</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00119">119</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00170">170</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -523,7 +537,7 @@ Returns:     double     Measured Distance</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00109">109</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00160">160</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -542,7 +556,7 @@ Returns:     double     Measured Distance</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00099">99</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00103">103</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -561,7 +575,7 @@ Returns:     double     Measured Distance</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00114">114</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00165">165</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -580,7 +594,7 @@ Returns:     double     Measured Distance</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00104">104</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00132">132</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -617,7 +631,7 @@ Returns:     SENSOR_USAGE    sensor usage</h2>
 
 <p>Implements <a class="el" href="class_i_dragon_sensor.html#a3040df89bae5da661a21d71c1df4ccb4">IDragonSensor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00129">129</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00180">180</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -636,7 +650,7 @@ Returns:     SENSOR_USAGE    sensor usage</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00094">94</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00098">98</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -655,7 +669,7 @@ Returns:     SENSOR_USAGE    sensor usage</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00168">168</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00219">219</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -675,7 +689,7 @@ Returns:     SENSOR_USAGE    sensor usage</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00147">147</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00198">198</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -695,7 +709,7 @@ Returns:     SENSOR_USAGE    sensor usage</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00142">142</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00193">193</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -715,7 +729,7 @@ Returns:     SENSOR_USAGE    sensor usage</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00152">152</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00203">203</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -735,7 +749,7 @@ Returns:     SENSOR_USAGE    sensor usage</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00157">157</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00208">208</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -755,7 +769,7 @@ Returns:     SENSOR_USAGE    sensor usage</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00135">135</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00186">186</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>
@@ -775,7 +789,7 @@ Returns:     SENSOR_USAGE    sensor usage</h2>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00163">163</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_limelight_8cpp_source.html#l00214">214</a> of file <a class="el" href="_dragon_limelight_8cpp_source.html">DragonLimelight.cpp</a>.</p>
 
 </div>
 </div>

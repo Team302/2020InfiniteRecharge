@@ -20,7 +20,7 @@ var class_dragon_limelight =
       [ "STREAM_SECOND_AND_MAIN", "class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91adb9229484e3c6f059ab6eed5fcc7e184", null ]
     ] ],
     [ "DragonLimelight", "class_dragon_limelight.html#a003d6b9c140e33c5d4291075b16c868a", null ],
-    [ "DragonLimelight", "class_dragon_limelight.html#a2c3c58797e74f7eaad7a1d8fb8b7cebd", null ],
+    [ "DragonLimelight", "class_dragon_limelight.html#a5e786728aa7dfcfae40f57c55d238fbc", null ],
     [ "~DragonLimelight", "class_dragon_limelight.html#ad524ba4ce87697fa883882f5c41e9b60", null ],
     [ "Get3DSolve", "class_dragon_limelight.html#a381f0a9dc0d7318e84f29942513845cb", null ],
     [ "GetConfidence", "class_dragon_limelight.html#aac8b4e5ba88a7e0539c5b6cbc6974471", null ],
