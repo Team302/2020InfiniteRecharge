@@ -35,6 +35,7 @@
 #include <Robot.h>
 #include <xmlhw/RobotDefn.h>
 #include <auton/CyclePrimitives.h>
+#include <controllers/chassis/ChassisStateMgr.h>
 
 using namespace std;
 using namespace frc;
@@ -56,6 +57,8 @@ void Robot::RobotInit()
     // Display the autonomous choices on the dashboard for selection.
     // comment out for now since auton hasn't been implemented
     // m_cyclePrims = new CyclePrimitives();
+
+    m_chassisStateMgr = new ChassisStateMgr();
 }
 
 ///-----------------------------------------------------------------------
