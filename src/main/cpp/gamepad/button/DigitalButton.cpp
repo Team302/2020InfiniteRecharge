@@ -28,6 +28,10 @@
 #include <gamepad/button/DigitalButton.h>
 #include <gamepad/IDragonGamePad.h>
 
+#include <utils/Logger.h>
+#include <string>
+using namespace std;
+
 //==================================================================================
 /// <summary>
 /// Class:          DigitalButton
@@ -38,7 +42,7 @@ DigitalButton::DigitalButton
 (
     frc::GenericHID*                    gamepad,        // <I> - gamepad to query
     int                                 buttonID        // <I> - button ID this maps to           
-) : m_gamepad( gamepad ),                               //       false axis in the expected direction
+) : m_gamepad( gamepad ),                               
     m_button( buttonID )
 {
 }
@@ -56,7 +60,14 @@ bool DigitalButton::IsButtonPressed() const
     if ( m_gamepad != nullptr )
     {
         pressed = m_gamepad->GetRawButton( m_button );
+        Logger::GetLogger()->LogError( string("button "), to_string( m_button ));
+        Logger::GetLogger()->LogError( string("is button pressed"), to_string( pressed ));
     }
+    else
+    {
+        Logger::GetLogger()->LogError( string("IsButtonPressed nullptr"), to_string( m_button ));
+    }
+    
     return pressed;
 }
 

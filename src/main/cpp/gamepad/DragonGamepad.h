@@ -120,60 +120,96 @@ class DragonGamepad : public IDragonGamePad
         std::vector<AnalogButton*> m_analogButtons;
 
 
-        int LEFT_BUTTON_AXIS_ID = 0;
-        int RIGHT_BUTTON_AXIS_ID = 1;
+        const int LEFT_BUTTON_AXIS_ID = 0;
+        const int RIGHT_BUTTON_AXIS_ID = 1;
+        const int DIAL_BUTTON_AXIS_ID = 2;
+        const int LEFT_JOYSTICK = 3;
+        const int RIGHT_JOYSTICK = 4;
 
-        const double			BUTTON_1_LOWERBAND = 0.118;
-        const double			BUTTON_1_UPPERBAND = 0.1182;
-        const int               BUTTON_1_AXIS      = 0;
+        // order by axis and in ranges for ease of getting the ranges right
 
-        const double			BUTTON_2_LOWERBAND = 0.10;
-        const double			BUTTON_2_UPPERBAND = 0.1182;
-        const int               BUTTON_2_AXIS      = 1;
+        // Axis 0
 
-        const double			BUTTON_3_LOWERBAND = 0.102;
-        const double			BUTTON_3_UPPERBAND = 0.10236221;
-        const int               BUTTON_3_AXIS      = 0;
-
-        const double			BUTTON_4_LOWERBAND = 0.077;
-        const double			BUTTON_4_UPPERBAND = 0.08;
-        const int               BUTTON_4_AXIS      = 1;
-
-        const double			BUTTON_5_LOWERBAND = 0.1023;
-        const double			BUTTON_5_UPPERBAND = 0.1026223;
-        const int               BUTTON_5_AXIS      = 1;
-
-        const double			BUTTON_6_LOWERBAND = 0.077;
-        const double			BUTTON_6_UPPERBAND = 0.079;
-        const int               BUTTON_6_AXIS      = 0; 
-
-        const double			BUTTON_7_LOWERBAND = 0.054;
-        const double			BUTTON_7_UPPERBAND = 0.056;
-        const int               BUTTON_7_AXIS      = 1;
-
-        const double			BUTTON_8_LOWERBAND = 0.054;
-        const double			BUTTON_8_UPPERBAND = 0.056;
-        const int               BUTTON_8_AXIS      = 0;
-
-        const double			BUTTON_9_LOWERBAND = 0.03;
-        const double			BUTTON_9_UPPERBAND = 0.032;
-        const int               BUTTON_9_AXIS      = 1;
-
-        const double			BUTTON_10_LOWERBAND = 0.030;
-        const double			BUTTON_10_UPPERBAND = 0.032;
-        const int               BUTTON_10_AXIS      = 0;
-
-        const double			BUTTON_11_LOWERBAND = 0.014;
-        const double			BUTTON_11_UPPERBAND = 0.016;
-        const int               BUTTON_11_AXIS      = 1;
-
-        const double			BUTTON_12_LOWERBAND = 0.014;
-        const double			BUTTON_12_UPPERBAND = 0.016;
+        const double			BUTTON_12_LOWERBOUND = 0.014;
+        const double			BUTTON_12_UPPERBOUND = 0.016;
         const int               BUTTON_12_AXIS      = 0;
 
-        const double			BUTTON_13_LOWERBAND = 0.10;
-        const double			BUTTON_13_UPPERBAND = 0.1182;
+        const double			BUTTON_10_LOWERBOUND = 0.030;
+        const double			BUTTON_10_UPPERBOUND = 0.032;
+        const int               BUTTON_10_AXIS      = 0;
+
+        const double			BUTTON_8_LOWERBOUND = 0.054;
+        const double			BUTTON_8_UPPERBOUND = 0.056;
+        const int               BUTTON_8_AXIS      = 0;
+
+        const double			BUTTON_6_LOWERBOUND = 0.077;
+        const double			BUTTON_6_UPPERBOUND = 0.079;
+        const int               BUTTON_6_AXIS      = 0; 
+
+        const double			BUTTON_3_LOWERBOUND = 0.102;
+        const double			BUTTON_3_UPPERBOUND = 0.103;
+        const int               BUTTON_3_AXIS      = 0;
+        
+        const double			BUTTON_1_LOWERBOUND = 0.118;
+        const double			BUTTON_1_UPPERBOUND = 0.119;
+        const int               BUTTON_1_AXIS      = 0;
+
+
+        // Axis 1
+
+        const double			BUTTON_11_LOWERBOUND = 0.014;
+        const double			BUTTON_11_UPPERBOUND = 0.016;
+        const int               BUTTON_11_AXIS      = 1;
+
+        const double			BUTTON_9_LOWERBOUND = 0.030;
+        const double			BUTTON_9_UPPERBOUND = 0.032;
+        const int               BUTTON_9_AXIS      = 1;
+
+        const double			BUTTON_7_LOWERBOUND = 0.054;
+        const double			BUTTON_7_UPPERBOUND = 0.056;
+        const int               BUTTON_7_AXIS      = 1;
+
+        const double			BUTTON_4_LOWERBOUND = 0.077;
+        const double			BUTTON_4_UPPERBOUND = 0.079;
+        const int               BUTTON_4_AXIS      = 1;
+
+        const double			BUTTON_5_LOWERBOUND = 0.102; 
+        const double			BUTTON_5_UPPERBOUND = 0.103; 
+        const int               BUTTON_5_AXIS      = 1;
+
+        const double			BUTTON_13_LOWERBOUND = 0.104; 
+        const double			BUTTON_13_UPPERBOUND = 0.117; 
         const int               BUTTON_13_AXIS      = 1;
+
+        const double			BUTTON_2_LOWERBOUND = 0.118; 
+        const double			BUTTON_2_UPPERBOUND = 0.119;
+        const int               BUTTON_2_AXIS      = 1;
+
+        // Axis 3
+
+        const double			BUTTON_22_LOWERBOUND = 0.117;
+        const double			BUTTON_22_UPPERBOUND = 0.119;
+        const int               BUTTON_22_AXIS      = 3;
+
+        const double			BUTTON_23_LOWERBOUND = 0.101;
+        const double			BUTTON_23_UPPERBOUND = 0.103;
+        const int               BUTTON_23_AXIS      = 3;
+
+        const double			BUTTON_24_LOWERBOUND = 0.078;
+        const double			BUTTON_24_UPPERBOUND = 0.080;
+        const int               BUTTON_24_AXIS      = 3;
+
+        const double			BUTTON_25_LOWERBOUND = 0.054;
+        const double			BUTTON_25_UPPERBOUND = 0.056;
+        const int               BUTTON_25_AXIS      = 3;
+
+        const double			BUTTON_26_LOWERBOUND = 0.030;
+        const double			BUTTON_26_UPPERBOUND = 0.032;
+        const int               BUTTON_26_AXIS      = 3;
+
+        const double			BUTTON_27_LOWERBOUND = 0.014;
+        const double			BUTTON_27_UPPERBOUND = 0.017;
+        const int               BUTTON_27_AXIS      = 3;
 
         DragonGamepad() = delete;
 };

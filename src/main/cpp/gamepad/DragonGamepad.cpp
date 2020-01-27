@@ -16,11 +16,15 @@
 
 #include <frc/GenericHID.h>
 #include <frc/Joystick.h>
+#include <utils/Logger.h>
+#include <string>
+using namespace std;
+using namespace frc;
 
 DragonGamepad::DragonGamepad
 (
     int port
-)  : m_gamepad( new frc::Joystick(port)),
+)  : m_gamepad( new Joystick(port)),
 m_axis(),
 m_axisScale(),
 m_axisInversionFactor(),
@@ -28,12 +32,15 @@ m_axisProfile(),
 m_button(),
 m_analogButtons()
 {
-    m_axis.resize( AXIS_IDENTIFIER::MAX_AXIS );
-    m_axisScale.resize( AXIS_IDENTIFIER::MAX_AXIS );
-    m_axisInversionFactor.resize( AXIS_IDENTIFIER::MAX_AXIS );
-    m_axisProfile.resize( AXIS_IDENTIFIER::MAX_AXIS );
+// device type is 24
+// 8 axis
+// 11 buttons
+    m_axis.resize( AXIS_IDENTIFIER::MAX_GAMEPAD_AXIS );
+    m_axisScale.resize( AXIS_IDENTIFIER::MAX_GAMEPAD_AXIS );
+    m_axisInversionFactor.resize( AXIS_IDENTIFIER::MAX_GAMEPAD_AXIS );
+    m_axisProfile.resize( AXIS_IDENTIFIER::MAX_GAMEPAD_AXIS );
 
-    for ( auto inx=0; inx<AXIS_IDENTIFIER::MAX_AXIS; ++inx )
+    for ( auto inx=0; inx<AXIS_IDENTIFIER::MAX_GAMEPAD_AXIS; ++inx )
     {
         m_axisScale[inx] = 1.0;
         m_axisInversionFactor[inx] = 1.0;
@@ -41,16 +48,23 @@ m_analogButtons()
         m_axis[inx] = nullptr;
     }
     //Create Axis objects
-    m_axis[GAMEPAD_AXIS_16] = new AnalogAxis(m_gamepad, 0,false);
-    m_axis[GAMEPAD_AXIS_17] = new AnalogAxis(m_gamepad, 0,false);
-    m_axis[GAMEPAD_DIAL_22] = new AnalogAxis(m_gamepad, GAMEPAD_DIAL_22,false);
-    m_axis[GAMEPAD_DIAL_23] = new AnalogAxis(m_gamepad, GAMEPAD_DIAL_23,false);
-    m_axis[GAMEPAD_DIAL_24] = new AnalogAxis(m_gamepad, GAMEPAD_DIAL_24,false);
-    m_axis[GAMEPAD_DIAL_25] = new AnalogAxis(m_gamepad, GAMEPAD_DIAL_25,false);
-    m_axis[GAMEPAD_DIAL_26] = new AnalogAxis(m_gamepad, GAMEPAD_DIAL_26,false);
-    m_axis[GAMEPAD_DIAL_27] = new AnalogAxis(m_gamepad, GAMEPAD_DIAL_27,false);
+    m_axis[GAMEPAD_AXIS_16] = new AnalogAxis(m_gamepad, LEFT_JOYSTICK,false);
+    m_axis[GAMEPAD_AXIS_16]->SetDeadBand( AXIS_DEADBAND::NONE);
+    m_axis[GAMEPAD_AXIS_16]->SetAxisScaleFactor(8.47);
+
+    m_axis[GAMEPAD_AXIS_17] = new AnalogAxis(m_gamepad, RIGHT_JOYSTICK,false);
+    m_axis[GAMEPAD_AXIS_17]->SetDeadBand( AXIS_DEADBAND::NONE);
+    m_axis[GAMEPAD_AXIS_17]->SetAxisScaleFactor(8.47);
+
+
     m_axis[LEFT_ANALOG_BUTTON_AXIS] = new AnalogAxis(m_gamepad, LEFT_BUTTON_AXIS_ID,false );
+    m_axis[LEFT_ANALOG_BUTTON_AXIS]->SetDeadBand( AXIS_DEADBAND::NONE);
+
     m_axis[RIGHT_ANALOG_BUTTON_AXIS] = new AnalogAxis(m_gamepad, RIGHT_BUTTON_AXIS_ID,false);
+    m_axis[RIGHT_ANALOG_BUTTON_AXIS]->SetDeadBand( AXIS_DEADBAND::NONE);
+
+    m_axis[DIAL_ANALOG_BUTTON_AXIS] = new AnalogAxis(m_gamepad, DIAL_BUTTON_AXIS_ID,false);
+    m_axis[DIAL_ANALOG_BUTTON_AXIS]->SetDeadBand( AXIS_DEADBAND::NONE);
 
     //Create Button objects
     m_analogButtons.resize( BUTTON_IDENTIFIER::MAX_BUTTONS );
@@ -58,34 +72,42 @@ m_analogButtons()
     {
         m_analogButtons[inx] = nullptr;
     }
-    m_analogButtons[GAMEPAD_BUTTON_1] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_1_LOWERBAND,BUTTON_1_UPPERBAND);
-    m_analogButtons[GAMEPAD_BUTTON_2] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_2_LOWERBAND,BUTTON_2_UPPERBAND);
-    m_analogButtons[GAMEPAD_BUTTON_3] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_3_LOWERBAND,BUTTON_3_UPPERBAND);
-    m_analogButtons[GAMEPAD_BUTTON_4] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_4_LOWERBAND,BUTTON_4_UPPERBAND);
-    m_analogButtons[GAMEPAD_BUTTON_5] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_5_LOWERBAND,BUTTON_5_UPPERBAND);
-    m_analogButtons[GAMEPAD_BUTTON_6] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_6_LOWERBAND,BUTTON_6_UPPERBAND);
-    m_analogButtons[GAMEPAD_BUTTON_7] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_7_LOWERBAND,BUTTON_7_UPPERBAND);
-    m_analogButtons[GAMEPAD_BUTTON_8] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_8_LOWERBAND,BUTTON_8_UPPERBAND);
-    m_analogButtons[GAMEPAD_BUTTON_9] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_9_LOWERBAND,BUTTON_9_UPPERBAND);
-    m_analogButtons[GAMEPAD_BUTTON_10] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_10_LOWERBAND,BUTTON_10_UPPERBAND);
-    m_analogButtons[GAMEPAD_BUTTON_11] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_11_LOWERBAND,BUTTON_11_UPPERBAND);
-    m_analogButtons[GAMEPAD_BUTTON_12] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_12_LOWERBAND,BUTTON_12_UPPERBAND);
-    m_analogButtons[GAMEPAD_BUTTON_13] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_13_LOWERBAND,BUTTON_13_UPPERBAND);
+    m_analogButtons[GAMEPAD_BUTTON_1] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_1_LOWERBOUND,BUTTON_1_UPPERBOUND);
+    m_analogButtons[GAMEPAD_BUTTON_2] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_2_LOWERBOUND,BUTTON_2_UPPERBOUND);
+    m_analogButtons[GAMEPAD_BUTTON_3] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_3_LOWERBOUND,BUTTON_3_UPPERBOUND);
+    m_analogButtons[GAMEPAD_BUTTON_4] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_4_LOWERBOUND,BUTTON_4_UPPERBOUND);
+    m_analogButtons[GAMEPAD_BUTTON_5] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_5_LOWERBOUND,BUTTON_5_UPPERBOUND);
+    m_analogButtons[GAMEPAD_BUTTON_6] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_6_LOWERBOUND,BUTTON_6_UPPERBOUND);
+    m_analogButtons[GAMEPAD_BUTTON_7] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_7_LOWERBOUND,BUTTON_7_UPPERBOUND);
+    m_analogButtons[GAMEPAD_BUTTON_8] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_8_LOWERBOUND,BUTTON_8_UPPERBOUND);
+    m_analogButtons[GAMEPAD_BUTTON_9] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_9_LOWERBOUND,BUTTON_9_UPPERBOUND);
+    m_analogButtons[GAMEPAD_BUTTON_10] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_10_LOWERBOUND,BUTTON_10_UPPERBOUND);
+    m_analogButtons[GAMEPAD_BUTTON_11] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_11_LOWERBOUND,BUTTON_11_UPPERBOUND);
+    m_analogButtons[GAMEPAD_BUTTON_12] = new AnalogButton(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_12_LOWERBOUND,BUTTON_12_UPPERBOUND);
+    m_analogButtons[GAMEPAD_BUTTON_13] = new AnalogButton( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_13_LOWERBOUND,BUTTON_13_UPPERBOUND);
     //m_analogButtons[GAMEPAD_BIG_RED_BUTTON] = new AnalogButton(m_gamepad, GAMEPAD_BIG_RED_BUTTON,);
+
+
+    m_analogButtons[GAMEPAD_DIAL_22] = new AnalogButton(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_22_LOWERBOUND, BUTTON_22_UPPERBOUND );
+    m_analogButtons[GAMEPAD_DIAL_23] = new AnalogButton(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_23_LOWERBOUND, BUTTON_23_UPPERBOUND );
+    m_analogButtons[GAMEPAD_DIAL_24] = new AnalogButton(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_24_LOWERBOUND, BUTTON_24_UPPERBOUND );
+    m_analogButtons[GAMEPAD_DIAL_25] = new AnalogButton(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_25_LOWERBOUND, BUTTON_25_UPPERBOUND );
+    m_analogButtons[GAMEPAD_DIAL_26] = new AnalogButton(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_26_LOWERBOUND, BUTTON_26_UPPERBOUND );
+    m_analogButtons[GAMEPAD_DIAL_27] = new AnalogButton(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_27_LOWERBOUND, BUTTON_27_UPPERBOUND );
 
     m_button.resize( BUTTON_IDENTIFIER::MAX_BUTTONS );
     for ( auto inx=0; inx<BUTTON_IDENTIFIER::MAX_BUTTONS; ++inx )
     {
         m_button[inx] = nullptr;
     }
-    m_button[GAMEPAD_SWITCH_18] = new DigitalButton(m_gamepad, 1);
-    m_button[GAMEPAD_SWITCH_19] = new DigitalButton(m_gamepad, 2);
-    m_button[GAMEPAD_SWITCH_20] = new DigitalButton(m_gamepad, 3);
-    m_button[GAMEPAD_SWITCH_21] = new DigitalButton(m_gamepad, 4);
-    m_button[GAMEPAD_BUTTON_14_UP] = new DigitalButton(m_gamepad, 7);
-    m_button[GAMEPAD_BUTTON_14_DOWN] = new DigitalButton(m_gamepad, 6);
-    m_button[GAMEPAD_BUTTON_15_UP] = new DigitalButton(m_gamepad, 9);
-    m_button[GAMEPAD_BUTTON_15_DOWN] = new DigitalButton(m_gamepad, 8);
+    m_button[GAMEPAD_SWITCH_18] = new DigitalButton(m_gamepad, 0);
+    m_button[GAMEPAD_SWITCH_19] = new DigitalButton(m_gamepad, 1);
+    m_button[GAMEPAD_SWITCH_20] = new DigitalButton(m_gamepad, 2);
+    m_button[GAMEPAD_SWITCH_21] = new DigitalButton(m_gamepad, 3);
+    m_button[GAMEPAD_BUTTON_14_UP] = new DigitalButton(m_gamepad, 6);
+    m_button[GAMEPAD_BUTTON_14_DOWN] = new DigitalButton(m_gamepad, 5);
+    m_button[GAMEPAD_BUTTON_15_UP] = new DigitalButton(m_gamepad, 8);
+    m_button[GAMEPAD_BUTTON_15_DOWN] = new DigitalButton(m_gamepad, 7);
 }
 
 DragonGamepad::~DragonGamepad()
@@ -99,6 +121,17 @@ double DragonGamepad::GetAxisValue
     AXIS_IDENTIFIER axis
 ) const
 {
+    double value = 0.0;
+    if ( m_axis[axis] != nullptr )
+    {
+        value = m_axis[axis]->GetAxisValue();
+    }
+    else
+    {
+        printf( "==>> no axis %d \n", axis );
+    }
+    return value;
+    /**
     double output = 0.0;
 	if ( axis < MAX_GAMEPAD_AXIS )
 	{
@@ -112,7 +145,6 @@ double DragonGamepad::GetAxisValue
 			output = m_gamepad->GetY( frc::GenericHID::kRightHand ) * m_axisInversionFactor[ axis ];
 			break;
 
-		// jw - changed 2 to axis
 		case GAMEPAD_DIAL_22: //Dial has six settings, 22-27.
 			output = m_gamepad->GetY( frc::GenericHID::kLeftHand ) * m_axisInversionFactor[ axis ];
 			break;
@@ -155,6 +187,7 @@ double DragonGamepad::GetAxisValue
 		}
 	}
 	return output;
+        **/
 }
 
 bool DragonGamepad::IsButtonPressed

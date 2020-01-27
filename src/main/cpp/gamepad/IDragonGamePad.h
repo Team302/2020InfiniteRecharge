@@ -92,14 +92,9 @@ class IDragonGamePad
             MAX_AXIS,
             GAMEPAD_AXIS_16,
             GAMEPAD_AXIS_17,
-            GAMEPAD_DIAL_22,//Dial has 6 settings for axis. Dial setting 22 = highest, 27 = lowest.
-            GAMEPAD_DIAL_23,
-            GAMEPAD_DIAL_24,
-            GAMEPAD_DIAL_25,
-            GAMEPAD_DIAL_26,
-            GAMEPAD_DIAL_27,
             LEFT_ANALOG_BUTTON_AXIS,
             RIGHT_ANALOG_BUTTON_AXIS,
+            DIAL_ANALOG_BUTTON_AXIS,
             MAX_GAMEPAD_AXIS
         };
 
@@ -120,6 +115,12 @@ class IDragonGamePad
             GAMEPAD_BUTTON_11,
             GAMEPAD_BUTTON_12,
             GAMEPAD_BUTTON_13,
+            GAMEPAD_DIAL_22,
+            GAMEPAD_DIAL_23,
+            GAMEPAD_DIAL_24,
+            GAMEPAD_DIAL_25,
+            GAMEPAD_DIAL_26,
+            GAMEPAD_DIAL_27,
             GAMEPAD_BIG_RED_BUTTON,
             MAX_ANALOG_BUTTONS
         };
