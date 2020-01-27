@@ -35,6 +35,13 @@
 #include <Robot.h>
 #include <xmlhw/RobotDefn.h>
 #include <auton/CyclePrimitives.h>
+#include <hw/DragonFalcon.h>
+#include <hw/usages/MotorControllerUsage.h>
+#include <ctre/Phoenix.h>
+#include <gamepad/DragonXBox.h>
+#include <frc/SmartDashboard/SmartDashboard.h>
+#include <controllers/ControlData.h>
+
 
 using namespace std;
 using namespace frc;
@@ -50,12 +57,35 @@ void Robot::RobotInit()
     // Read the robot definition from the xml configuration files and
     // create the hardware (chassis + mechanisms along with their talons,
     // solenoids, digital inputs, analog inputs, etc.
-    unique_ptr<RobotDefn>  robotXml = make_unique<RobotDefn>();
-    robotXml->ParseXML();
+    //unique_ptr<RobotDefn>  robotXml = make_unique<RobotDefn>();
+    //robotXml->ParseXML();
 
     // Display the autonomous choices on the dashboard for selection.
     // comment out for now since auton hasn't been implemented
     // m_cyclePrims = new CyclePrimitives();
+    m_falcon1 = new DragonFalcon(MotorControllerUsage::SHOOTER_1, 1, 1, 2048, 1.0);
+    m_falcon2 = new DragonFalcon(MotorControllerUsage::SHOOTER_2, 3, 2, 2048, 1.0);
+    m_xbox = new DragonXBox(0);
+
+    m_falcon1->ConfigSelectedFeedbackSensor(FeedbackDevice::IntegratedSensor,0,50);
+    m_falcon1->EnableBrakeMode(false );
+    m_falcon1->Invert(false );
+    m_falcon1->SetSensorInverted(false);
+
+    m_falcon2->ConfigSelectedFeedbackSensor(FeedbackDevice::IntegratedSensor,0,50);
+    m_falcon2->EnableBrakeMode(false );
+    m_falcon2->Invert(true);
+    m_falcon2->SetSensorInverted(false);
+
+    //m_falcon2->SetAsSlave(1);
+
+    //m_falcon1->SetControlMode(ControlModes::CONTROL_TYPE::VELOCITY_DEGREES);
+    //m_falcon2->SetControlMode(ControlModes::CONTROL_TYPE::VELOCITY_DEGREES);
+
+    m_initialSpeed = 3000;
+    ControlData* controlData = new ControlData(ControlModes::VELOCITY_DEGREES,"  ",10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,1.0,0.0);
+    m_falcon1->SetControlConstants(controlData);
+    m_falcon1->SetControlMode(ControlModes::PERCENT_OUTPUT);
 }
 
 ///-----------------------------------------------------------------------
@@ -78,7 +108,7 @@ void Robot::RobotPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::AutonomousInit() 
 {
-    m_chassisStateMgr->Init();
+    //m_chassisStateMgr->Init();
 
     // run selected auton option
     //m_cyclePrims->Init();
@@ -104,7 +134,7 @@ void Robot::AutonomousPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::TeleopInit() 
 {
-    m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
+    //m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
 }
 
 
@@ -115,7 +145,35 @@ void Robot::TeleopInit()
 ///-----------------------------------------------------------------------
 void Robot::TeleopPeriodic() 
 {
-    m_chassisStateMgr->RunCurrentState();
+    m_falcon1->Set(.60); //bottom
+    m_falcon2->Set(.40); //top
+    double speed1 = m_falcon1->GetRPS();
+    double speed2 = m_falcon2->GetRPS();
+    SmartDashboard::PutNumber("speed1", speed1);
+    SmartDashboard::PutNumber("speed2", speed2);
+    /*double speed = m_initialSpeed;
+    //m_chassisStateMgr->RunCurrentState();
+    m_falcon1->SetControlMode(ControlModes::CONTROL_TYPE::VELOCITY_DEGREES);
+    m_falcon2->SetControlMode(ControlModes::CONTROL_TYPE::VELOCITY_DEGREES);
+
+    if(m_xbox->IsButtonPressed(IDragonGamePad::A_BUTTON))
+    {
+        speed += 500;
+        m_falcon1->Set(speed * 6);
+    } vf                        
+    else if(m_xbox->IsButtonPressed(IDragonGamePad::B_BUTTON))
+    {
+        speed -= 500;
+        m_falcon1->Set(speed * 6);
+    }
+    else
+    {
+        m_falcon1->Set(speed * 6);
+    }
+
+    SmartDashboard::PutNumber("Speed", speed);
+    */
+    
 }
 
 

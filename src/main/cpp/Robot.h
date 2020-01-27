@@ -32,6 +32,8 @@
 
 #include <auton/CyclePrimitives.h>
 #include <controllers/chassis/ChassisStateMgr.h>
+#include <hw/DragonFalcon.h>
+#include <gamepad/DragonXBox.h>
 
 class Robot : public frc::TimedRobot 
 {
@@ -51,6 +53,11 @@ class Robot : public frc::TimedRobot
   private:
       CyclePrimitives* m_cyclePrims;
       ChassisStateMgr* m_chassisStateMgr;
+      DragonFalcon* m_falcon1;
+      DragonFalcon* m_falcon2;
+      DragonXBox* m_xbox;
+      double m_initialSpeed;
+
 
 
 };
