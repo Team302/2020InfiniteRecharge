@@ -1,5 +1,3 @@
-#pragma once
-
 #include <pugixml/pugixml.hpp>
 #include <xmlhw/ColorSensorDefn.h>
 #include <subsys/ControlPanel.h>
