@@ -1,4 +1,4 @@
-
+#pragma once
 
 #include <pugixml/pugixml.hpp>
 #include <xmlhw/ColorSensorDefn.h>
