@@ -8,12 +8,12 @@
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
 
-class Agitate : public IState
+class ImpellerAgitate : public IState
 {
     public:
 
-    Agitate();
-    ~Agitate() = default;
+    ImpellerAgitate();
+    ~ImpellerAgitate() = default;
 
     void Init() override;
     void Run() override;

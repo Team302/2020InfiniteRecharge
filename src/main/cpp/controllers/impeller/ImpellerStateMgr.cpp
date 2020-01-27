@@ -28,7 +28,7 @@
 #include <gamepad/TeleopControl.h>
 #include <controllers/impeller/ImpellerOff.h>
 #include <controllers/impeller/ImpellerOn.h>
-//#include <controllers/impeller/ImpellerAgitate.h>
+#include <controllers/impeller/ImpellerAgitate.h>
 
 
 // Third Party Includes
@@ -60,10 +60,13 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
             auto stateIt = m_stateMap.find( stateEnum );
             if ( stateIt == m_stateMap.end() )
             {
+                auto controlData = td->GetController();
+                auto target = td->GetTarget();
+
                 switch ( stateEnum )
                 {
                     case IMPELLER_STATE::ON:
-                    {   // todo update the constructor
+                    {   // todo update the constructor take in controlData and target
                         auto thisState = new ImpellerOn();
                         m_stateMap[IMPELLER_STATE::ON] = thisState;
                         m_currentState = thisState;
@@ -73,15 +76,16 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
                     break;
 
                     case IMPELLER_STATE::OFF:
-                    {   // todo update the constructor
+                    {   // todo update the constructor take in controlData and target
                         auto thisState = new ImpellerOff();
                         m_stateMap[IMPELLER_STATE::OFF] = thisState;
                     }
                     break;
 
                     case IMPELLER_STATE::AGITATE:
-                    {
-
+                    {   // todo update the constructor take in controlData and target
+                        auto thisState = new ImpellerAgitate();
+                        m_stateMap[IMPELLER_STATE::AGITATE] = thisState;
                     }
                     break;
 

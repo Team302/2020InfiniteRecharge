@@ -4,11 +4,11 @@
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
-#include <controllers/impeller/Agitate.h>
+#include <controllers/impeller/ImpellerAgitate.h>
 
 
 ///This is used to contruct any elements I am going to use
-Agitate::Agitate()
+ImpellerAgitate::ImpellerAgitate()
 {
     auto factory = MechanismFactory::GetMechanismFactory();
 
@@ -17,7 +17,7 @@ Agitate::Agitate()
 
 
 ///This initializes any elements of the code I am going to use in Run
-void Agitate::Init()
+void ImpellerAgitate::Init()
 {
     is_moving_forward = true;
     m_target = m_impeller -> GetCurrentPosition() + addition_delta;
@@ -25,7 +25,7 @@ void Agitate::Init()
 
 
 ///This runs the code elements every 20ms on repeat
-void Agitate::Run()
+void ImpellerAgitate::Run()
 {
     double current_Position = m_impeller -> GetCurrentPosition();
 
@@ -60,9 +60,9 @@ void Agitate::Run()
 }
 
 ///This ends all the processes once a condition is reached
-bool Agitate::AtTarget() const
+bool ImpellerAgitate::AtTarget() const
 {
-
+    return true;
 }
 
 
