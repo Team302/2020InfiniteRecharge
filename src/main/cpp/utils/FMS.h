@@ -31,18 +31,18 @@
 class FMS
 {
 public:
-	enum POS
+	enum COLOR
 	{
 		UNKNOWN = -1,
-		LEFT,
-		RIGHT
+		RED,
+		YELLOW,
+		BLUE,
+		GREEN
 	};
 
 	static FMS* GetFMS();
 
-	POS GetSwitchPos();
-	POS GetScalePos();
-	POS GetOppSwitchPos();
+	COLOR GetColor();
 
 	FMS();
 	virtual ~FMS() = default;
@@ -51,9 +51,7 @@ private:
 	// used for checking LR from FMS
 	std::string gameData;
 	// Pos vars
-	POS switchPos;
-	POS oppSwitchPos;
-	POS scalePos;
+	COLOR currentColor;
 
 	static FMS*	m_instance;
 };
