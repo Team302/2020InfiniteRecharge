@@ -35,28 +35,47 @@ class Climber : public IMechanism
         ///@return IMechanism::MECHANISM_TYPE::CLIMBER
         MechanismTypes::MECHANISM_TYPE GetType() const override;
 
-        ///@brief 
+        ///@brief Run the Climber as defined
+        ///@param [in] ControlModes::CONTROL_TYPE   controlType
+        ///@param [in] double   value
+        ///@return void
         void SetOutput
         (
             ControlModes::CONTROL_TYPE controlType,
             double                                  value
         ) override;
 
+        ///@brief Activate/deactivate the extender solenoid
+        ///@param [in] bool - true == extended, false == retracted
+        ///@return void
         void ActivateSolenoid
         (
             bool    activate
         ) override;
 
+        ///@brief Check to see if the solenoid is activated
+        ///@return bool - true == extended, false == retracted
         bool IsSolenoidActivated() override;
 
+        ///@brief Return the current position of the climber in inches (positive is forward, negative is backward)
+        ///@return  double position in inches
         double GetCurrentPosition() const override;
 
+        ///@brief Return the target position of the climber in inches (positive is forward, negative is backward)
+        ///@return double position in inches
         double GetTargetPosition() const override;
 
+        ///@brief Return the current position of the climber in inches (positive is forward, negative is backward)
+        ///@return double speed in inches
         double GetCurrentSpeed() const override;
 
+        ///@brief Return the target speed of the climber in inches (positive is forward, negative is backward)
+        ///@return double speed in inches
         double GetTargetSpeed() const override;
 
+        ///@brief Set the control constants (e.g. PIDF values)
+        ///@param [in] ControlData*    pid - the control constants
+        ///@return void
         void SetControlConstants
         (
             ControlData*
