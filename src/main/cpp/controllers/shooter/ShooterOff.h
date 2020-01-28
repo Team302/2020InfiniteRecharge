@@ -5,24 +5,24 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#pragma 
+#pragma once
 
-#include <controllers/ControlData.h>
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
+#include <controllers/ControlData.h>
 
-class PrepareToShoot : public IState{
+class ShooterOff : IState{
  public:
-  PrepareToShoot
-  (
-    ControlData* controlData
+  ShooterOff(
+    ControlData* controlData,
+    double target
   );
   void Init() override;
   void Run() override;
   bool AtTarget() const override;
  private:
-  ControlData* m_controlData;
-  double m_targetSpeed;
-  bool m_atTarget;
+  double m_target;
   IMechanism* m_shooter;
+  ControlData* m_controlData;
+  bool m_atTarget;
 };

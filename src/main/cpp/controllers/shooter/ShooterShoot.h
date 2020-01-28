@@ -5,6 +5,25 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "controllers/shooter/PrepareToShoot.h"
+#pragma once
 
-PrepareToShoot::PrepareToShoot() {}
+#include <controllers/IState.h>
+#include <subsys/IMechanism.h>
+#include <controllers/ControlData.h>
+
+class ShooterShoot : IState{
+ public:
+  ShooterShoot
+  (
+    ControlData* controlData,
+    double target
+  );
+  void Init() override;
+  void Run() override;
+  bool AtTarget() const override;
+ private:
+  IMechanism* m_shooter;
+  ControlData* m_controlData;
+  bool m_atTarget;
+  double m_target;
+};
