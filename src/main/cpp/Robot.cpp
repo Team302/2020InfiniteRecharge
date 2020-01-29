@@ -30,6 +30,7 @@
 
 // FRC includes
 #include <frc/smartdashboard/SmartDashboard.h>
+#include <frc/smartdashboard/SendableChooser.h>
 
 // Team 302 Includes
 #include <Robot.h>
@@ -59,6 +60,16 @@ void Robot::RobotInit()
     // m_cyclePrims = new CyclePrimitives();
 
     m_chassisStateMgr = new ChassisStateMgr();
+
+        // pick test mode
+    m_testChooser.SetDefaultOption( m_noTest, m_noTest);
+    m_testChooser.AddOption( m_buttonBox, m_buttonBox );
+    m_testChooser.AddOption( m_dragonXBox, m_dragonXBox );
+    SmartDashboard::PutData("Test", &m_testChooser);
+
+    m_buttonBoxDisplay = nullptr;
+    m_xBoxDisplay = nullptr;
+
 }
 
 ///-----------------------------------------------------------------------
@@ -128,7 +139,25 @@ void Robot::TeleopPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::TestInit() 
 {
-
+    m_testSelected = m_testChooser.GetSelected();
+    if(m_testSelected == m_noTest) 
+    {
+        m_currentTest == NONE;
+    }
+    else if ( m_testSelected == m_buttonBox )
+    {
+        m_currentTest = BUTTON_BOX;
+        m_buttonBoxDisplay = new ButtonBoxDisplay();
+    }
+    else if ( m_testSelected == m_buttonBox )
+    {
+        m_currentTest = XBOX;
+        m_xBoxDisplay = new XboxDisplay();
+    }
+    else
+    {
+        m_currentTest = NONE;
+    }
 }
 
 
@@ -139,7 +168,19 @@ void Robot::TestInit()
 ///-----------------------------------------------------------------------
 void Robot::TestPeriodic() 
 {
+    switch ( m_currentTest )
+    {
+        case BUTTON_BOX:
+            m_buttonBoxDisplay->periodic();
+            break;
 
+        case XBOX:
+            m_xBoxDisplay->periodic();
+            break;
+
+        default:
+            break;
+    }
 }
 
 #ifndef RUNNING_FRC_TESTS

@@ -28,10 +28,16 @@
 
 #pragma once
 
+#include <string>
+
 #include <frc/TimedRobot.h>
 
 #include <auton/CyclePrimitives.h>
 #include <controllers/chassis/ChassisStateMgr.h>
+#include <test/ButtonBoxDisplay.h>
+#include <test/XboxDisplay.h>
+
+#include <frc/smartdashboard/SendableChooser.h>
 
 class Robot : public frc::TimedRobot 
 {
@@ -51,6 +57,23 @@ class Robot : public frc::TimedRobot
   private:
       CyclePrimitives* m_cyclePrims;
       ChassisStateMgr* m_chassisStateMgr;
+
+      ButtonBoxDisplay* m_buttonBoxDisplay;
+      XboxDisplay* m_xBoxDisplay;
+
+      frc::SendableChooser<std::string>   m_testChooser;                    
+      const std::string                   m_noTest = "No Test";      
+      const std::string                   m_buttonBox = "Button Box";      
+      const std::string                   m_dragonXBox = "Dragon XBox";       
+      std::string                         m_testSelected; 
+
+      enum TEST_TO_RUN
+      {
+          NONE,
+          BUTTON_BOX,
+          XBOX
+      };
+      TEST_TO_RUN   m_currentTest;      
 
 
 };
