@@ -54,40 +54,25 @@ class DragonGamepad : public IDragonGamePad
         (
             AXIS_IDENTIFIER axis,
             AXIS_DEADBAND type
-        );
+        ) override;
 
         void SetAxisProfile
         (
             AXIS_IDENTIFIER axis,
             AXIS_PROFILE curve
-        );
+        ) override;
 
         void SetAxisScale
         (
             AXIS_IDENTIFIER axis,
             float scaleFactor
-        );
+        ) override;
 
         void SetButtonMode
         (
             BUTTON_IDENTIFIER button,
             BUTTON_MODE mode
-        );
-
-        double GetRawAxis
-        (
-            AXIS_IDENTIFIER axis
-        );
-
-        bool IsRawButtonPressed
-        (
-            BUTTON_IDENTIFIER button
-        );
-
-        bool IsRawButtonPressed
-        (
-            ANALOG_BUTTON_IDENTIFIER button
-        );
+        ) override;
 
         double GetAxisValue
         (
@@ -104,10 +89,7 @@ class DragonGamepad : public IDragonGamePad
             BUTTON_IDENTIFIER button
         ) const override;
 
-        int GetPOVValue
-        (
 
-        );
     private:
         frc::Joystick* m_gamepad;
         
@@ -117,7 +99,7 @@ class DragonGamepad : public IDragonGamePad
         std::vector<AXIS_PROFILE> m_axisProfile;
 
         std::vector<IButton*> m_button;
-        std::vector<AnalogButton*> m_analogButtons;
+        //std::vector<AnalogButton*> m_analogButtons;
 
 
         const int LEFT_BUTTON_AXIS_ID = 0;
@@ -125,6 +107,23 @@ class DragonGamepad : public IDragonGamePad
         const int DIAL_BUTTON_AXIS_ID = 2;
         const int LEFT_JOYSTICK = 3;
         const int RIGHT_JOYSTICK = 4;
+//        const int dummy1 = 5;
+//        const int dummy2 = 6;
+//        const int dummy3 = 7;
+		
+		const double JOYSTICK_SCALE = 16.94;
+		const double JOYSTICK_OFFSET = 1.0;
+		
+		const int SWITCH_18_DIGITAL_ID = 1;
+		const int SWITCH_19_DIGITAL_ID = 2;
+		const int SWITCH_20_DIGITAL_ID = 3;
+		const int SWITCH_21_DIGITAL_ID = 4;
+		
+		const int LEVER_14_DOWN_DIGITAL_ID = 6;
+		const int LEVER_14_UP_DIGITAL_ID = 7;
+		const int LEVER_15_DOWN_DIGITAL_ID = 8;
+		const int LEVER_15_UP_DIGITAL_ID = 9;
+		
 
         // order by axis and in ranges for ease of getting the ranges right
 

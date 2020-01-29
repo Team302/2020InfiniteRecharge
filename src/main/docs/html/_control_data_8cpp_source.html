@@ -113,37 +113,39 @@ $(document).ready(function(){initNavTree('_control_data_8cpp_source.html','');})
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<a class="code" href="class_control_data.html#abc478d18ee20d9108a1e988e234201ac">ControlData::ControlData</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<a class="code" href="class_control_data.html#ad623b082611e817d34bc721b5eb197af">ControlData::ControlData</a></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;(</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a>                  mode,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">string</span>                                      identifier,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">double</span>                                      proportional,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">double</span>                                      integral,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">double</span>                                      derivative,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">double</span>                                      feedforward,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">double</span>                                      integralZone,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">double</span>                                      maxAcceleration,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">double</span>                                      cruiseVelocity,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">double</span>                                      peakVal,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">double</span>                                      nominalVal</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;) : m_mode( mode ),</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    m_identifier( identifier ),</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    m_proportional( proportional ),</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    m_integral( integral ),</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    m_derivative( derivative ),</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    m_feedforward( feedforward ),</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_iZone( integralZone ),</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    m_maxAcceleration( maxAcceleration ),</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    m_cruiseVelocity( cruiseVelocity ),</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    m_peakValue( peakVal ),</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    m_nominalValue( nominalVal )</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_control_modes.html#a6d6123ab559a2a754b1a8d46fc078487">ControlModes::CONTROL_RUN_LOCS</a>              server,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">string</span>                                      identifier,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">double</span>                                      proportional,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">double</span>                                      integral,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">double</span>                                      derivative,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">double</span>                                      feedforward,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">double</span>                                      integralZone,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">double</span>                                      maxAcceleration,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">double</span>                                      cruiseVelocity,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">double</span>                                      peakVal,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">double</span>                                      nominalVal</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;) : m_mode( mode ),</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    m_identifier( identifier ),</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    m_proportional( proportional ),</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    m_integral( integral ),</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    m_derivative( derivative ),</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_feedforward( feedforward ),</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    m_iZone( integralZone ),</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    m_maxAcceleration( maxAcceleration ),</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    m_cruiseVelocity( cruiseVelocity ),</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    m_peakValue( peakVal ),</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    m_nominalValue( nominalVal )</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclass_control_modes_html_a6d6123ab559a2a754b1a8d46fc078487"><div class="ttname"><a href="class_control_modes.html#a6d6123ab559a2a754b1a8d46fc078487">ControlModes::CONTROL_RUN_LOCS</a></div><div class="ttdeci">CONTROL_RUN_LOCS</div><div class="ttdef"><b>Definition:</b> <a href="_control_modes_8h_source.html#l00039">ControlModes.h:39</a></div></div>
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
-<div class="ttc" id="aclass_control_data_html_abc478d18ee20d9108a1e988e234201ac"><div class="ttname"><a href="class_control_data.html#abc478d18ee20d9108a1e988e234201ac">ControlData::ControlData</a></div><div class="ttdeci">ControlData(ControlModes::CONTROL_TYPE mode, std::string indentifier, double proportional, double integral, double derivative, double feedforward, double integralZone, double maxAcceleration, double cruiseVelocity, double peakValue, double nominalValue)</div><div class="ttdoc">Create the ControlData object that is used to control mechanisms.</div></div>
+<div class="ttc" id="aclass_control_data_html_ad623b082611e817d34bc721b5eb197af"><div class="ttname"><a href="class_control_data.html#ad623b082611e817d34bc721b5eb197af">ControlData::ControlData</a></div><div class="ttdeci">ControlData(ControlModes::CONTROL_TYPE mode, ControlModes::CONTROL_RUN_LOCS server, std::string indentifier, double proportional, double integral, double derivative, double feedforward, double integralZone, double maxAcceleration, double cruiseVelocity, double peakValue, double nominalValue)</div><div class="ttdoc">Create the ControlData object that is used to control mechanisms.</div></div>
 <div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>
 <div class="ttc" id="aclass_control_modes_html_a46c77e409ac22b3b3269f7fee2d3f736"><div class="ttname"><a href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a></div><div class="ttdeci">CONTROL_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_control_modes_8h_source.html#l00024">ControlModes.h:24</a></div></div>
 <!-- start footer part -->

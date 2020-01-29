@@ -141,160 +141,191 @@ $(document).ready(function(){initNavTree('_dragon_gamepad_8h_source.html','');})
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        ) <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#a251a764a70469d27678cb57164ea0b1d">SetAxisDeadband</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#af03d2edf95e4fd043059134e05ae807c">SetAxisDeadband</a></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        (</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis,</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#afde07811ccdd7565bc40c381adecee4d">AXIS_DEADBAND</a> type</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        ) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#a410835ded5868960379903608212a43e">SetAxisProfile</a></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#aa206d96358046a54318db0ff82db648d">SetAxisProfile</a></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        (</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis,</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676">AXIS_PROFILE</a> curve</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        ) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#a3b16ad00840e0ad8dbc4860282047d0d">SetAxisScale</a></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#a4c621d8b78609c4b52cefbc09b881975">SetAxisScale</a></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        (</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis,</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordtype">float</span> scaleFactor</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        ) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#a6650433fd83ccb7f2ac55d920929e75b">SetButtonMode</a></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#aedddee103b3f859b9d94944eb89c9011">SetButtonMode</a></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        (</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button,</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#af3915fb49841ce1fc53b35c9e24d3417">BUTTON_MODE</a> mode</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        ) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_dragon_gamepad.html#a4c8908588fbf89a6f77afc62a6ea7c5f">GetRawAxis</a></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_dragon_gamepad.html#a8942fb6acb85fff749481a6e998c9204">GetAxisValue</a></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        (</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        ) <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_dragon_gamepad.html#af29276936537bbe02fd113d2f89379f9">IsRawButtonPressed</a></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_dragon_gamepad.html#a954798e159dab694fbd6c48a96c36657">WasButtonPressed</a></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        (</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        );</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        ) <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_dragon_gamepad.html#af29276936537bbe02fd113d2f89379f9">IsRawButtonPressed</a></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_dragon_gamepad.html#afb3895ef1ce1f46c7fd9b1070ca30e64">WasButtonReleased</a></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        (</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a0397960782662f2d55df39297128a33c">ANALOG_BUTTON_IDENTIFIER</a> button</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        );</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        ) <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_dragon_gamepad.html#a8942fb6acb85fff749481a6e998c9204">GetAxisValue</a></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        (</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        ) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_dragon_gamepad.html#a954798e159dab694fbd6c48a96c36657">WasButtonPressed</a></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        (</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        ) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_dragon_gamepad.html#afb3895ef1ce1f46c7fd9b1070ca30e64">WasButtonReleased</a></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        (</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        ) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_dragon_gamepad.html#a9cfa574f9025d4b2475ee9c2dfb592f8">GetPOVValue</a></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        (</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        );</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        frc::Joystick* m_gamepad;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        frc::Joystick* m_gamepad;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        std::vector&lt;AnalogAxis*&gt; m_axis;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::vector&lt;float&gt; m_axisScale;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        std::vector&lt;float&gt; m_axisInversionFactor;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        std::vector&lt;AXIS_PROFILE&gt; m_axisProfile;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        std::vector&lt;IButton*&gt; m_button;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">//std::vector&lt;AnalogButton*&gt; m_analogButtons;</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> LEFT_BUTTON_AXIS_ID = 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> RIGHT_BUTTON_AXIS_ID = 1;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> DIAL_BUTTON_AXIS_ID = 2;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> LEFT_JOYSTICK = 3;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> RIGHT_JOYSTICK = 4;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">//        const int dummy1 = 5;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">//        const int dummy2 = 6;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">//        const int dummy3 = 7;</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        std::vector&lt;AnalogAxis*&gt; m_axis;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        std::vector&lt;float&gt; m_axisScale;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        std::vector&lt;float&gt; m_axisInversionFactor;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        std::vector&lt;AXIS_PROFILE&gt; m_axisProfile;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        std::vector&lt;IButton*&gt; m_button;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        std::vector&lt;AnalogButton*&gt; m_analogButtons;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordtype">int</span> LEFT_BUTTON_AXIS_ID = 0;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordtype">int</span> RIGHT_BUTTON_AXIS_ID = 1;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_1_LOWERBOUND = 0.118;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_1_UPPERBOUND = 0.1182;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_1_AXIS      = 0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> JOYSTICK_SCALE = 16.94;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> JOYSTICK_OFFSET = 1.0;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> SWITCH_18_DIGITAL_ID = 1;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> SWITCH_19_DIGITAL_ID = 2;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> SWITCH_20_DIGITAL_ID = 3;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> SWITCH_21_DIGITAL_ID = 4;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> LEVER_14_DOWN_DIGITAL_ID = 6;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> LEVER_14_UP_DIGITAL_ID = 7;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> LEVER_15_DOWN_DIGITAL_ID = 8;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> LEVER_15_UP_DIGITAL_ID = 9;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="comment">// order by axis and in ranges for ease of getting the ranges right</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_2_LOWERBOUND = 0.10;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_2_UPPERBOUND = 0.1182;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_2_AXIS      = 1;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_3_LOWERBOUND = 0.102;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_3_UPPERBOUND = 0.10236221;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_3_AXIS      = 0;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_4_LOWERBOUND = 0.077;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_4_UPPERBOUND = 0.08;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_4_AXIS      = 1;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_5_LOWERBOUND = 0.1023;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_5_UPPERBOUND = 0.1026223;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_5_AXIS      = 1;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_6_LOWERBOUND = 0.077;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_6_UPPERBOUND = 0.079;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_6_AXIS      = 0; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_7_LOWERBOUND = 0.054;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_7_UPPERBOUND = 0.056;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_7_AXIS      = 1;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_8_LOWERBOUND = 0.054;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_8_UPPERBOUND = 0.056;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_8_AXIS      = 0;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_9_LOWERBOUND = 0.03;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_9_UPPERBOUND = 0.032;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_9_AXIS      = 1;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_10_LOWERBOUND = 0.030;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_10_UPPERBOUND = 0.032;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_10_AXIS      = 0;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_11_LOWERBOUND = 0.014;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_11_UPPERBOUND = 0.016;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_11_AXIS      = 1;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_12_LOWERBOUND = 0.014;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_12_UPPERBOUND = 0.016;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_12_AXIS      = 0;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_13_LOWERBOUND = 0.10;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_13_UPPERBOUND = 0.1182;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_13_AXIS      = 1;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <a class="code" href="class_dragon_gamepad.html">DragonGamepad</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;};</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment">// Axis 0</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_12_LOWERBOUND = 0.014;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_12_UPPERBOUND = 0.016;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_12_AXIS      = 0;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_10_LOWERBOUND = 0.030;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_10_UPPERBOUND = 0.032;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_10_AXIS      = 0;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_8_LOWERBOUND = 0.054;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_8_UPPERBOUND = 0.056;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_8_AXIS      = 0;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_6_LOWERBOUND = 0.077;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_6_UPPERBOUND = 0.079;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_6_AXIS      = 0; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_3_LOWERBOUND = 0.102;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_3_UPPERBOUND = 0.103;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_3_AXIS      = 0;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_1_LOWERBOUND = 0.118;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_1_UPPERBOUND = 0.119;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_1_AXIS      = 0;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="comment">// Axis 1</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_11_LOWERBOUND = 0.014;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_11_UPPERBOUND = 0.016;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_11_AXIS      = 1;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_9_LOWERBOUND = 0.030;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_9_UPPERBOUND = 0.032;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_9_AXIS      = 1;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_7_LOWERBOUND = 0.054;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_7_UPPERBOUND = 0.056;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_7_AXIS      = 1;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_4_LOWERBOUND = 0.077;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_4_UPPERBOUND = 0.079;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_4_AXIS      = 1;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_5_LOWERBOUND = 0.102; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_5_UPPERBOUND = 0.103; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_5_AXIS      = 1;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_13_LOWERBOUND = 0.104; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_13_UPPERBOUND = 0.117; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_13_AXIS      = 1;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_2_LOWERBOUND = 0.118; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_2_UPPERBOUND = 0.119;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_2_AXIS      = 1;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">// Axis 3</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_22_LOWERBOUND = 0.117;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_22_UPPERBOUND = 0.119;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_22_AXIS      = 3;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_23_LOWERBOUND = 0.101;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_23_UPPERBOUND = 0.103;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_23_AXIS      = 3;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_24_LOWERBOUND = 0.078;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_24_UPPERBOUND = 0.080;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_24_AXIS      = 3;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_25_LOWERBOUND = 0.054;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_25_UPPERBOUND = 0.056;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_25_AXIS      = 3;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_26_LOWERBOUND = 0.030;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_26_UPPERBOUND = 0.032;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_26_AXIS      = 3;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_27_LOWERBOUND = 0.014;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span>            BUTTON_27_UPPERBOUND = 0.017;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>               BUTTON_27_AXIS      = 3;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <a class="code" href="class_dragon_gamepad.html">DragonGamepad</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;};</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_dragon_gamepad_html"><div class="ttname"><a href="class_dragon_gamepad.html">DragonGamepad</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8h_source.html#l00037">DragonGamepad.h:37</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a484749bfa72081dfcf87fd4c5ec61212"><div class="ttname"><a href="class_dragon_gamepad.html#a484749bfa72081dfcf87fd4c5ec61212">DragonGamepad::~DragonGamepad</a></div><div class="ttdeci">~DragonGamepad()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00091">DragonGamepad.cpp:91</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_af29276936537bbe02fd113d2f89379f9"><div class="ttname"><a href="class_dragon_gamepad.html#af29276936537bbe02fd113d2f89379f9">DragonGamepad::IsRawButtonPressed</a></div><div class="ttdeci">bool IsRawButtonPressed(BUTTON_IDENTIFIER button)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00232">DragonGamepad.cpp:232</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a9cfa574f9025d4b2475ee9c2dfb592f8"><div class="ttname"><a href="class_dragon_gamepad.html#a9cfa574f9025d4b2475ee9c2dfb592f8">DragonGamepad::GetPOVValue</a></div><div class="ttdeci">int GetPOVValue()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00257">DragonGamepad.cpp:257</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_a484749bfa72081dfcf87fd4c5ec61212"><div class="ttname"><a href="class_dragon_gamepad.html#a484749bfa72081dfcf87fd4c5ec61212">DragonGamepad::~DragonGamepad</a></div><div class="ttdeci">~DragonGamepad()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00132">DragonGamepad.cpp:132</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_af03d2edf95e4fd043059134e05ae807c"><div class="ttname"><a href="class_dragon_gamepad.html#af03d2edf95e4fd043059134e05ae807c">DragonGamepad::SetAxisDeadband</a></div><div class="ttdeci">void SetAxisDeadband(AXIS_IDENTIFIER axis, AXIS_DEADBAND type) override</div><div class="ttdoc">Method: SetAxisDeadband Description: Specify what deadband behavior is desired such as none,...</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00177">DragonGamepad.cpp:177</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_aedddee103b3f859b9d94944eb89c9011"><div class="ttname"><a href="class_dragon_gamepad.html#aedddee103b3f859b9d94944eb89c9011">DragonGamepad::SetButtonMode</a></div><div class="ttdeci">void SetButtonMode(BUTTON_IDENTIFIER button, BUTTON_MODE mode) override</div><div class="ttdoc">Method: SetButtonMode Description: Specify how the button should behave. Examples include (but not li...</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00225">DragonGamepad.cpp:225</a></div></div>
 <div class="ttc" id="a_analog_button_8h_html"><div class="ttname"><a href="_analog_button_8h.html">AnalogButton.h</a></div></div>
-<div class="ttc" id="aclass_i_dragon_game_pad_html_a0397960782662f2d55df39297128a33c"><div class="ttname"><a href="class_i_dragon_game_pad.html#a0397960782662f2d55df39297128a33c">IDragonGamePad::ANALOG_BUTTON_IDENTIFIER</a></div><div class="ttdeci">ANALOG_BUTTON_IDENTIFIER</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00108">IDragonGamePad.h:108</a></div></div>
 <div class="ttc" id="aclass_i_dragon_game_pad_html_a07a7fc32b5cb69f2019006c0eb0f7d29"><div class="ttname"><a href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">IDragonGamePad::BUTTON_IDENTIFIER</a></div><div class="ttdeci">BUTTON_IDENTIFIER</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00039">IDragonGamePad.h:39</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_afb3895ef1ce1f46c7fd9b1070ca30e64"><div class="ttname"><a href="class_dragon_gamepad.html#afb3895ef1ce1f46c7fd9b1070ca30e64">DragonGamepad::WasButtonReleased</a></div><div class="ttdeci">bool WasButtonReleased(BUTTON_IDENTIFIER button) const override</div><div class="ttdoc">Method: WasButtonReleased Description: Read whether the button was released since the last query....</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00272">DragonGamepad.cpp:272</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a4c8908588fbf89a6f77afc62a6ea7c5f"><div class="ttname"><a href="class_dragon_gamepad.html#a4c8908588fbf89a6f77afc62a6ea7c5f">DragonGamepad::GetRawAxis</a></div><div class="ttdeci">double GetRawAxis(AXIS_IDENTIFIER axis)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00215">DragonGamepad.cpp:215</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a3b16ad00840e0ad8dbc4860282047d0d"><div class="ttname"><a href="class_dragon_gamepad.html#a3b16ad00840e0ad8dbc4860282047d0d">DragonGamepad::SetAxisScale</a></div><div class="ttdeci">void SetAxisScale(AXIS_IDENTIFIER axis, float scaleFactor)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00194">DragonGamepad.cpp:194</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a251a764a70469d27678cb57164ea0b1d"><div class="ttname"><a href="class_dragon_gamepad.html#a251a764a70469d27678cb57164ea0b1d">DragonGamepad::SetAxisDeadband</a></div><div class="ttdeci">void SetAxisDeadband(AXIS_IDENTIFIER axis, AXIS_DEADBAND type)</div><div class="ttdoc">Method: SetAxisDeadband Description: Specify what deadband behavior is desired such as none,...</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00170">DragonGamepad.cpp:170</a></div></div>
-<div class="ttc" id="aclass_i_dragon_game_pad_html_a3b3c3165d9fc69500bd69ba575216676"><div class="ttname"><a href="class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676">IDragonGamePad::AXIS_PROFILE</a></div><div class="ttdeci">AXIS_PROFILE</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00137">IDragonGamePad.h:137</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_afb3895ef1ce1f46c7fd9b1070ca30e64"><div class="ttname"><a href="class_dragon_gamepad.html#afb3895ef1ce1f46c7fd9b1070ca30e64">DragonGamepad::WasButtonReleased</a></div><div class="ttdeci">bool WasButtonReleased(BUTTON_IDENTIFIER button) const override</div><div class="ttdoc">Method: WasButtonReleased Description: Read whether the button was released since the last query....</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00265">DragonGamepad.cpp:265</a></div></div>
+<div class="ttc" id="aclass_i_dragon_game_pad_html_a3b3c3165d9fc69500bd69ba575216676"><div class="ttname"><a href="class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676">IDragonGamePad::AXIS_PROFILE</a></div><div class="ttdeci">AXIS_PROFILE</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00132">IDragonGamePad.h:132</a></div></div>
 <div class="ttc" id="a_analog_axis_8h_html"><div class="ttname"><a href="_analog_axis_8h.html">AnalogAxis.h</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a736e3af20879da0b6c9ab71608968be7"><div class="ttname"><a href="class_dragon_gamepad.html#a736e3af20879da0b6c9ab71608968be7">DragonGamepad::IsButtonPressed</a></div><div class="ttdeci">bool IsButtonPressed(BUTTON_IDENTIFIER button) const override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00161">DragonGamepad.cpp:161</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_a4c621d8b78609c4b52cefbc09b881975"><div class="ttname"><a href="class_dragon_gamepad.html#a4c621d8b78609c4b52cefbc09b881975">DragonGamepad::SetAxisScale</a></div><div class="ttdeci">void SetAxisScale(AXIS_IDENTIFIER axis, float scaleFactor) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00209">DragonGamepad.cpp:209</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_a736e3af20879da0b6c9ab71608968be7"><div class="ttname"><a href="class_dragon_gamepad.html#a736e3af20879da0b6c9ab71608968be7">DragonGamepad::IsButtonPressed</a></div><div class="ttdeci">bool IsButtonPressed(BUTTON_IDENTIFIER button) const override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00160">DragonGamepad.cpp:160</a></div></div>
 <div class="ttc" id="aclass_i_dragon_game_pad_html"><div class="ttname"><a href="class_i_dragon_game_pad.html">IDragonGamePad</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00036">IDragonGamePad.h:36</a></div></div>
 <div class="ttc" id="a_i_dragon_game_pad_8h_html"><div class="ttname"><a href="_i_dragon_game_pad_8h.html">IDragonGamePad.h</a></div></div>
-<div class="ttc" id="aclass_i_dragon_game_pad_html_af3915fb49841ce1fc53b35c9e24d3417"><div class="ttname"><a href="class_i_dragon_game_pad.html#af3915fb49841ce1fc53b35c9e24d3417">IDragonGamePad::BUTTON_MODE</a></div><div class="ttdeci">BUTTON_MODE</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00076">IDragonGamePad.h:76</a></div></div>
+<div class="ttc" id="aclass_i_dragon_game_pad_html_af3915fb49841ce1fc53b35c9e24d3417"><div class="ttname"><a href="class_i_dragon_game_pad.html#af3915fb49841ce1fc53b35c9e24d3417">IDragonGamePad::BUTTON_MODE</a></div><div class="ttdeci">BUTTON_MODE</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00096">IDragonGamePad.h:96</a></div></div>
 <div class="ttc" id="a_i_button_8h_html"><div class="ttname"><a href="_i_button_8h.html">IButton.h</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a954798e159dab694fbd6c48a96c36657"><div class="ttname"><a href="class_dragon_gamepad.html#a954798e159dab694fbd6c48a96c36657">DragonGamepad::WasButtonPressed</a></div><div class="ttdeci">bool WasButtonPressed(BUTTON_IDENTIFIER button) const override</div><div class="ttdoc">Method: WasButtonPressed Description: Read whether the button was pressed since the last query....</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00264">DragonGamepad.cpp:264</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a6650433fd83ccb7f2ac55d920929e75b"><div class="ttname"><a href="class_dragon_gamepad.html#a6650433fd83ccb7f2ac55d920929e75b">DragonGamepad::SetButtonMode</a></div><div class="ttdeci">void SetButtonMode(BUTTON_IDENTIFIER button, BUTTON_MODE mode)</div><div class="ttdoc">Method: SetButtonMode Description: Specify how the button should behave. Examples include (but not li...</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00206">DragonGamepad.cpp:206</a></div></div>
-<div class="ttc" id="aclass_i_dragon_game_pad_html_a6ba0408b15301dd149474ebad9b4972b"><div class="ttname"><a href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">IDragonGamePad::AXIS_IDENTIFIER</a></div><div class="ttdeci">AXIS_IDENTIFIER</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00083">IDragonGamePad.h:83</a></div></div>
-<div class="ttc" id="aclass_i_dragon_game_pad_html_afde07811ccdd7565bc40c381adecee4d"><div class="ttname"><a href="class_i_dragon_game_pad.html#afde07811ccdd7565bc40c381adecee4d">IDragonGamePad::AXIS_DEADBAND</a></div><div class="ttdeci">AXIS_DEADBAND</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00129">IDragonGamePad.h:129</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a410835ded5868960379903608212a43e"><div class="ttname"><a href="class_dragon_gamepad.html#a410835ded5868960379903608212a43e">DragonGamepad::SetAxisProfile</a></div><div class="ttdeci">void SetAxisProfile(AXIS_IDENTIFIER axis, AXIS_PROFILE curve)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00182">DragonGamepad.cpp:182</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a8942fb6acb85fff749481a6e998c9204"><div class="ttname"><a href="class_dragon_gamepad.html#a8942fb6acb85fff749481a6e998c9204">DragonGamepad::GetAxisValue</a></div><div class="ttdeci">double GetAxisValue(AXIS_IDENTIFIER axis) const override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00098">DragonGamepad.cpp:98</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_aa206d96358046a54318db0ff82db648d"><div class="ttname"><a href="class_dragon_gamepad.html#aa206d96358046a54318db0ff82db648d">DragonGamepad::SetAxisProfile</a></div><div class="ttdeci">void SetAxisProfile(AXIS_IDENTIFIER axis, AXIS_PROFILE curve) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00193">DragonGamepad.cpp:193</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_a954798e159dab694fbd6c48a96c36657"><div class="ttname"><a href="class_dragon_gamepad.html#a954798e159dab694fbd6c48a96c36657">DragonGamepad::WasButtonPressed</a></div><div class="ttdeci">bool WasButtonPressed(BUTTON_IDENTIFIER button) const override</div><div class="ttdoc">Method: WasButtonPressed Description: Read whether the button was pressed since the last query....</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00248">DragonGamepad.cpp:248</a></div></div>
+<div class="ttc" id="aclass_i_dragon_game_pad_html_a6ba0408b15301dd149474ebad9b4972b"><div class="ttname"><a href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">IDragonGamePad::AXIS_IDENTIFIER</a></div><div class="ttdeci">AXIS_IDENTIFIER</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00103">IDragonGamePad.h:103</a></div></div>
+<div class="ttc" id="aclass_i_dragon_game_pad_html_afde07811ccdd7565bc40c381adecee4d"><div class="ttname"><a href="class_i_dragon_game_pad.html#afde07811ccdd7565bc40c381adecee4d">IDragonGamePad::AXIS_DEADBAND</a></div><div class="ttdeci">AXIS_DEADBAND</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00124">IDragonGamePad.h:124</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_a8942fb6acb85fff749481a6e998c9204"><div class="ttname"><a href="class_dragon_gamepad.html#a8942fb6acb85fff749481a6e998c9204">DragonGamepad::GetAxisValue</a></div><div class="ttdeci">double GetAxisValue(AXIS_IDENTIFIER axis) const override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00139">DragonGamepad.cpp:139</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

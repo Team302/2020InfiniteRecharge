@@ -25,6 +25,7 @@ using namespace std;
 ControlData::ControlData
 (
     ControlModes::CONTROL_TYPE                  mode,
+	ControlModes::CONTROL_RUN_LOCS				server,
     string                                      identifier,
     double                                      proportional,
     double                                      integral,

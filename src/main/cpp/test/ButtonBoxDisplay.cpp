@@ -15,19 +15,19 @@ ButtonBoxDisplay::ButtonBoxDisplay()
 
 void ButtonBoxDisplay::periodic()
 {
-    bool ButtonOne = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_1);
-    bool ButtonTwo = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_2);
-    bool ButtonThree = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_3);
-    bool ButtonFour = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_4);
-    bool ButtonFive = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_5);
-    bool ButtonSix = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_6);
-    bool ButtonSeven = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_7);
-    bool ButtonEight = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_8);
-    bool ButtonNine = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_9);
-    bool ButtonTen = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10);
-    bool ButtonEleven = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_11);
-    bool ButtonTwelve = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_12);
-//    bool ButtonThirteen = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BUTTON_13);
+    bool ButtonOne = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_1);
+    bool ButtonTwo = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_2);
+    bool ButtonThree = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_3);
+    bool ButtonFour = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_4);
+    bool ButtonFive = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_5);
+    bool ButtonSix = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_6);
+    bool ButtonSeven = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_7);
+    bool ButtonEight = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_8);
+    bool ButtonNine = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_9);
+    bool ButtonTen = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10);
+    bool ButtonEleven = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_11);
+    bool ButtonTwelve = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_12);
+    bool ButtonThirteen = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_13);
 
     bool ButtonFourteenUp = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_14_UP);
     bool ButtonFourteenDown = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_14_DOWN);
@@ -42,14 +42,21 @@ void ButtonBoxDisplay::periodic()
     bool SwitchTwenty = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_SWITCH_20);
     bool SwitchTwentyOne = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_SWITCH_21);
 
-    bool DialTwentyTwo = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_DIAL_22);
-    bool DialTwentyThree = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_DIAL_23);
-    bool DialTwentyFour = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_DIAL_24);
-    bool DialTwentyFive = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_DIAL_25);
-    bool DialTwentySix = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_DIAL_26);
-    bool DialTwentySeven = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_DIAL_27);
+    bool DialTwentyTwo = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_DIAL_22);
+    bool DialTwentyThree = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_DIAL_23);
+    bool DialTwentyFour = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_DIAL_24);
+    bool DialTwentyFive = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_DIAL_25);
+    bool DialTwentySix = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_DIAL_26);
+    bool DialTwentySeven = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_DIAL_27);
     
-//    bool RedButton = m_GamePad -> IsRawButtonPressed( IDragonGamePad::ANALOG_BUTTON_IDENTIFIER::GAMEPAD_BIG_RED_BUTTON);*/
+    double AxisOne = m_GamePad -> GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::LEFT_ANALOG_BUTTON_AXIS);
+    double AxisTwo = m_GamePad -> GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::RIGHT_ANALOG_BUTTON_AXIS);
+    double AxisThree = m_GamePad -> GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::DIAL_ANALOG_BUTTON_AXIS);
+   // double AxisDummy1 = m_GamePad -> GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::DUMMY1);
+   // double AxisDummy2 = m_GamePad -> GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::DUMMY2);
+   // double AxisDummy3 = m_GamePad -> GetAxisValue( IDragonGamePad::AXIS_IDENTIFIER::DUMMY3);
+
+//    bool RedButton = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BIG_RED_BUTTON);*/
 
 
     frc::SmartDashboard::PutBoolean("Button 1",ButtonOne);
@@ -64,7 +71,7 @@ void ButtonBoxDisplay::periodic()
     frc::SmartDashboard::PutBoolean("Button 10",ButtonTen);
     frc::SmartDashboard::PutBoolean("Button 11",ButtonEleven);
     frc::SmartDashboard::PutBoolean("Button 12",ButtonTwelve);
-    //frc::SmartDashboard::PutBoolean("Button 13",ButtonThirteen);
+//    frc::SmartDashboard::PutBoolean("Button 13",ButtonThirteen);
     
     
     frc::SmartDashboard::PutBoolean("Switch 14 Up",ButtonFourteenUp);
@@ -74,7 +81,17 @@ void ButtonBoxDisplay::periodic()
     
     frc::SmartDashboard::PutNumber("Axis 16",AxisSixteen);
     frc::SmartDashboard::PutNumber("Axis 17",AxisSeventeen);
+
+    frc::SmartDashboard::PutNumber("Axis Left Buttons",AxisOne);
+    frc::SmartDashboard::PutNumber("Axis Right Buttons",AxisTwo);
+    frc::SmartDashboard::PutNumber("Axis Dial Buttons",AxisThree);
+    /**
+    frc::SmartDashboard::PutNumber("Axis dummy1",AxisDummy1);
+    frc::SmartDashboard::PutNumber("Axis dummy2",AxisDummy2);
+    frc::SmartDashboard::PutNumber("Axis dummy3",AxisDummy3);
+    **/
     
+
     frc::SmartDashboard::PutBoolean("Switch 18",SwitchEighteen);
     frc::SmartDashboard::PutBoolean("Switch 19",SwitchNineteen);
     frc::SmartDashboard::PutBoolean("Switch 20",SwitchTwenty);

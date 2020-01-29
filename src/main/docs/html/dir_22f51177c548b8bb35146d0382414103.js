@@ -1,8 +1,8 @@
 var dir_22f51177c548b8bb35146d0382414103 =
 [
-    [ "Agitate.cpp", "_agitate_8cpp.html", null ],
-    [ "Agitate.h", "_agitate_8h.html", [
-      [ "Agitate", "class_agitate.html", "class_agitate" ]
+    [ "ImpellerAgitate.cpp", "_impeller_agitate_8cpp.html", null ],
+    [ "ImpellerAgitate.h", "_impeller_agitate_8h.html", [
+      [ "ImpellerAgitate", "class_impeller_agitate.html", "class_impeller_agitate" ]
     ] ],
     [ "ImpellerOff.cpp", "_impeller_off_8cpp.html", null ],
     [ "ImpellerOff.h", "_impeller_off_8h.html", [

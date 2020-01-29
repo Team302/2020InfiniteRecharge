@@ -35,5 +35,12 @@ class ControlModes
             MOTION_PROFILE_ARC,         /// Closed Loop Control - motion profile arc
             MAX_CONTROL_TYPES
         };
+		
+		enum CONTROL_RUN_LOCS
+		{
+			MOTOR_CONTROLLER,
+			ROBORIO,
+			MAX_CONTROL_RUN_LOCS
+		};
 
 };

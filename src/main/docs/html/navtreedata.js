@@ -52,14 +52,14 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_agitate_8cpp.html",
+"_analog_axis_8cpp.html",
 "_drive_time_8cpp.html",
-"_scaled_axis_8cpp.html",
-"class_control_data_defn.html#ac2b5103565cfea91b4aa352c443aed98",
-"class_dragon_spark_max.html#a3072bc5a5bb632f67731342f6ff17d42",
-"class_i_dragon_game_pad.html#a0397960782662f2d55df39297128a33ca44cf8456f7b9ba857469e7b8ea80a7de",
-"class_limelight_defn.html#a542e214a063d178c46fe6ae2689f43e3",
-"class_throttle_steer_drive.html#abbc6392cc7751f3b38ee1269c5f155f5"
+"_robot_defn_8cpp.html",
+"class_color_sensor_defn.html#a7200aad177f24e92292e0eea20a5a459",
+"class_dragon_servo_factory.html#a1b73aabd706139b9004071299f46ee78",
+"class_i_dragon_angle_position_sensor.html#a810d0103e3a97a455d02eae479aa1ad8",
+"class_l_e_d.html#ae47fb1c1cbe847bee7fb8b6c19486f70a7b591e96536105815688278cc3ab5b67",
+"class_tank_drive.html#a44a489fce4ca4fa40c9e0c4b8ae8ffd3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

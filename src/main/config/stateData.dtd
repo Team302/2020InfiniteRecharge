@@ -1,11 +1,11 @@
 <!ELEMENT> statedata ( controlData*, mechanismTarget* )>
 
-<!ELEMENT ControlData EMPTY>
-<!ATTLIST ControlData #REQUIRED
-          identifier CDATA 
+<!ELEMENT controlData EMPTY>
+<!ATTLIST controlData
+          identifier CDATA  #REQUIRED
           mode ( PERCENT_OUTPUT | VELOCITY_INCH | VELOCITY_DEGREES  | 
                  VOLTAGE | CURRENT | TRAPEZOID | MOTION_PROFILE | MOTION_PROFILE_ARC ) "PERCENT_OUTPUT"
-          pidtarget ( ARM | EXTENDER | GENERAL ) "GENERAL"
+		  constrolServer ( MOTORCONTROLLER | ROBORIO ) "MOTORCONTROLLER"
           proportional CDATA "0.0"
           integral CDATA "0.0"
           derivative CDATA "0.0"

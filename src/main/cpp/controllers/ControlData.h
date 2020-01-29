@@ -24,6 +24,7 @@ class ControlData
     public:
         /// @brief      Create the ControlData object that is used to control mechanisms
         /// @param [in] mode - control mode
+        /// @param [in] server - where to run the controller on
         /// @param [in] indentifier - mapping identifier for this controller
         /// @param [in] proportional - p coefficient for a PID-based controller
         /// @param [in] integral - i coefficient for a PID-based controller
@@ -37,6 +38,7 @@ class ControlData
         ControlData
         (
             ControlModes::CONTROL_TYPE                  mode,
+			ControlModes::CONTROL_RUN_LOCS				server,
             std::string                                 indentifier,
             double                                      proportional,
             double                                      integral,

@@ -9,6 +9,7 @@ var hierarchy =
     [ "AnalogInputUsage", "class_analog_input_usage.html", null ],
     [ "AutonSelector", "class_auton_selector.html", null ],
     [ "BallTransferStateMgr", "class_ball_transfer_state_mgr.html", null ],
+    [ "ButtonBoxDisplay", "class_button_box_display.html", null ],
     [ "CameraDefn", "class_camera_defn.html", null ],
     [ "CANifierDefn", "class_c_a_nifier_defn.html", null ],
     [ "CanifierFactory", "class_canifier_factory.html", null ],
@@ -114,8 +115,8 @@ var hierarchy =
       [ "SquaredProfile", "class_squared_profile.html", null ]
     ] ],
     [ "IState", "class_i_state.html", [
-      [ "Agitate", "class_agitate.html", null ],
       [ "ControlPanelRaise", "class_control_panel_raise.html", null ],
+      [ "ImpellerAgitate", "class_impeller_agitate.html", null ],
       [ "ImpellerOff", "class_impeller_off.html", null ],
       [ "ImpellerOn", "class_impeller_on.html", null ],
       [ "IntakeOff", "class_intake_off.html", null ],
@@ -125,6 +126,9 @@ var hierarchy =
         [ "BallTransferToImpeller", "class_ball_transfer_to_impeller.html", null ],
         [ "BallTransferToShooter", "class_ball_transfer_to_shooter.html", null ]
       ] ],
+      [ "ShooterGetReady", "class_shooter_get_ready.html", null ],
+      [ "ShooterOff", "class_shooter_off.html", null ],
+      [ "ShooterShoot", "class_shooter_shoot.html", null ],
       [ "TankDrive", "class_tank_drive.html", null ],
       [ "ThrottleSteerDrive", "class_throttle_steer_drive.html", [
         [ "ArcadeDrive", "class_arcade_drive.html", null ],
@@ -161,6 +165,7 @@ var hierarchy =
     ] ],
     [ "ServoDefn", "class_servo_defn.html", null ],
     [ "ServoUsage", "class_servo_usage.html", null ],
+    [ "ShooterStateMgr", "class_shooter_state_mgr.html", null ],
     [ "SolenoidDefn", "class_solenoid_defn.html", null ],
     [ "SolenoidUsage", "class_solenoid_usage.html", null ],
     [ "StateDataDefn", "class_state_data_defn.html", null ],

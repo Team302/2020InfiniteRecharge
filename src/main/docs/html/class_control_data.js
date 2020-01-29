@@ -1,6 +1,6 @@
 var class_control_data =
 [
-    [ "ControlData", "class_control_data.html#abc478d18ee20d9108a1e988e234201ac", null ],
+    [ "ControlData", "class_control_data.html#ad623b082611e817d34bc721b5eb197af", null ],
     [ "~ControlData", "class_control_data.html#aaa47e895701543d53f2a14ac533bc9b6", null ],
     [ "GetCruiseVelocity", "class_control_data.html#aada3659777868036d560a428ea55bcdf", null ],
     [ "GetD", "class_control_data.html#acbaf81f6f7dab5edcf4fcc445caf0dcd", null ],

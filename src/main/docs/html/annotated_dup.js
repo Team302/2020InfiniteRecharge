@@ -1,6 +1,5 @@
 var annotated_dup =
 [
-    [ "Agitate", "class_agitate.html", "class_agitate" ],
     [ "AnalogAxis", "class_analog_axis.html", "class_analog_axis" ],
     [ "AnalogButton", "class_analog_button.html", "class_analog_button" ],
     [ "AnalogInputDefn", "class_analog_input_defn.html", "class_analog_input_defn" ],
@@ -13,6 +12,7 @@ var annotated_dup =
     [ "BallTransferStateMgr", "class_ball_transfer_state_mgr.html", "class_ball_transfer_state_mgr" ],
     [ "BallTransferToImpeller", "class_ball_transfer_to_impeller.html", "class_ball_transfer_to_impeller" ],
     [ "BallTransferToShooter", "class_ball_transfer_to_shooter.html", "class_ball_transfer_to_shooter" ],
+    [ "ButtonBoxDisplay", "class_button_box_display.html", "class_button_box_display" ],
     [ "ButtonDecorator", "class_button_decorator.html", "class_button_decorator" ],
     [ "CameraDefn", "class_camera_defn.html", "class_camera_defn" ],
     [ "CANifierDefn", "class_c_a_nifier_defn.html", "class_c_a_nifier_defn" ],
@@ -83,6 +83,7 @@ var annotated_dup =
     [ "IMechanism", "class_i_mechanism.html", "class_i_mechanism" ],
     [ "IMechController", "class_i_mech_controller.html", "class_i_mech_controller" ],
     [ "Impeller", "class_impeller.html", "class_impeller" ],
+    [ "ImpellerAgitate", "class_impeller_agitate.html", "class_impeller_agitate" ],
     [ "ImpellerOff", "class_impeller_off.html", "class_impeller_off" ],
     [ "ImpellerOn", "class_impeller_on.html", "class_impeller_on" ],
     [ "ImpellerStateMgr", "class_impeller_state_mgr.html", "class_impeller_state_mgr" ],
@@ -128,6 +129,10 @@ var annotated_dup =
     [ "ServoDefn", "class_servo_defn.html", "class_servo_defn" ],
     [ "ServoUsage", "class_servo_usage.html", "class_servo_usage" ],
     [ "Shooter", "class_shooter.html", "class_shooter" ],
+    [ "ShooterGetReady", "class_shooter_get_ready.html", "class_shooter_get_ready" ],
+    [ "ShooterOff", "class_shooter_off.html", "class_shooter_off" ],
+    [ "ShooterShoot", "class_shooter_shoot.html", "class_shooter_shoot" ],
+    [ "ShooterStateMgr", "class_shooter_state_mgr.html", "class_shooter_state_mgr" ],
     [ "SolenoidDefn", "class_solenoid_defn.html", "class_solenoid_defn" ],
     [ "SolenoidUsage", "class_solenoid_usage.html", "class_solenoid_usage" ],
     [ "SquaredProfile", "class_squared_profile.html", "class_squared_profile" ],

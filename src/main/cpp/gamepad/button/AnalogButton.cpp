@@ -18,6 +18,11 @@
 #include <gamepad/button/AnalogButton.h>
 #include <gamepad/IDragonGamePad.h>
 
+#include <utils/Logger.h>
+#include <string>
+
+using namespace std;
+
 //==================================================================================
 /// <summary>
 /// Class:          AnalogButton
@@ -33,7 +38,9 @@ AnalogButton::AnalogButton
     m_minValue( minValue ),
     m_maxValue( maxValue )                                  
 {
-}AnalogButton::AnalogButton
+}
+
+AnalogButton::AnalogButton
 (
     AnalogAxis*                         axis            // <I> - axis to turn into a button
 ) : m_axis( axis ), 
@@ -55,6 +62,7 @@ bool AnalogButton::IsButtonPressed() const
     if ( m_axis != nullptr )
     {
         auto axisValue = m_axis->GetAxisValue();
+        Logger::GetLogger()->LogError( string("analog button axis value "),to_string(axisValue));
         pressed = (axisValue > m_minValue && axisValue < m_maxValue );
     }
     return pressed;

@@ -68,6 +68,26 @@ class IDragonGamePad
             GAMEPAD_BUTTON_14_DOWN,
             GAMEPAD_BUTTON_15_UP,
             GAMEPAD_BUTTON_15_DOWN,
+            GAMEPAD_BUTTON_1,
+            GAMEPAD_BUTTON_2,
+            GAMEPAD_BUTTON_3,
+            GAMEPAD_BUTTON_4,
+            GAMEPAD_BUTTON_5,
+            GAMEPAD_BUTTON_6,
+            GAMEPAD_BUTTON_7,
+            GAMEPAD_BUTTON_8,
+            GAMEPAD_BUTTON_9,
+            GAMEPAD_BUTTON_10,
+            GAMEPAD_BUTTON_11,
+            GAMEPAD_BUTTON_12,
+            GAMEPAD_BUTTON_13,
+            GAMEPAD_DIAL_22,
+            GAMEPAD_DIAL_23,
+            GAMEPAD_DIAL_24,
+            GAMEPAD_DIAL_25,
+            GAMEPAD_DIAL_26,
+            GAMEPAD_DIAL_27,
+            GAMEPAD_BIG_RED_BUTTON,
             MAX_BUTTONS
         };
 
@@ -89,42 +109,16 @@ class IDragonGamePad
             RIGHT_JOYSTICK_Y,
             LEFT_TRIGGER,
             RIGHT_TRIGGER,
-            MAX_AXIS,
             GAMEPAD_AXIS_16,
             GAMEPAD_AXIS_17,
             LEFT_ANALOG_BUTTON_AXIS,
             RIGHT_ANALOG_BUTTON_AXIS,
             DIAL_ANALOG_BUTTON_AXIS,
-            MAX_GAMEPAD_AXIS
+//            DUMMY1,
+//            DUMMY2,
+//            DUMMY3,
+            MAX_AXIS
         };
-
-        
-
-        enum ANALOG_BUTTON_IDENTIFIER
-        {
-            GAMEPAD_BUTTON_1,
-            GAMEPAD_BUTTON_2,
-            GAMEPAD_BUTTON_3,
-            GAMEPAD_BUTTON_4,
-            GAMEPAD_BUTTON_5,
-            GAMEPAD_BUTTON_6,
-            GAMEPAD_BUTTON_7,
-            GAMEPAD_BUTTON_8,
-            GAMEPAD_BUTTON_9,
-            GAMEPAD_BUTTON_10,
-            GAMEPAD_BUTTON_11,
-            GAMEPAD_BUTTON_12,
-            GAMEPAD_BUTTON_13,
-            GAMEPAD_DIAL_22,
-            GAMEPAD_DIAL_23,
-            GAMEPAD_DIAL_24,
-            GAMEPAD_DIAL_25,
-            GAMEPAD_DIAL_26,
-            GAMEPAD_DIAL_27,
-            GAMEPAD_BIG_RED_BUTTON,
-            MAX_ANALOG_BUTTONS
-        };
-
 
 
         enum AXIS_DEADBAND

@@ -18,6 +18,7 @@
 // C++ Includes
 #include <string>
 #include <cstring>
+#include <map>
 
 // FRC includes
 
@@ -46,6 +47,7 @@ ControlData* ControlDataDefn::ParseXML
     // initialize attributes to default values
     string identifier;
     ControlModes::CONTROL_TYPE mode = ControlModes::CONTROL_TYPE::PERCENT_OUTPUT;
+	ControlModes::CONTROL_RUN_LOCS server = ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER;
 
     double p = 0.0;
     double i = 0.0;
@@ -56,20 +58,47 @@ ControlData* ControlDataDefn::ParseXML
     double cruiseVel = 0.0;
     double peak = 1.0;
     double nominal = 1.0;
-
-    bool hasError = false;
+	
+	map<string, ControlModes::CONTROL_TYPE> modeMap;
+	modeMap[string("PERCENT_OUTPUT")] = ControlModes::CONTROL_TYPE::PERCENT_OUTPUT;
+	modeMap[string("VELOCITY_INCH")]  = ControlModes::CONTROL_TYPE::VELOCITY_INCH;
+	modeMap[string("VELOCITY_DEGREES")] = ControlModes::CONTROL_TYPE::VELOCITY_DEGREES;
+	modeMap[string("VOLTAGE")] = ControlModes::CONTROL_TYPE::VOLTAGE;
+    modeMap[string("CURRENT")] = ControlModes::CONTROL_TYPE::CURRENT;
+	modeMap[string("TRAPEZOID")] = ControlModes::CONTROL_TYPE::TRAPEZOID;
+	modeMap[string("MOTION_PROFILE")] = ControlModes::CONTROL_TYPE::MOTION_PROFILE;
+    modeMap[string("MOTION_PROFILE_ARC")] = ControlModes::CONTROL_TYPE::MOTION_PROFILE_ARC;
+	modeMap[string("PERCENT_OUTPUT")] = ControlModes::CONTROL_TYPE::PERCENT_OUTPUT;
+	
+	map<string, ControlModes::CONTROL_RUN_LOCS> serverMap;
+	serverMap[string("MOTORCONTROLLER")] = ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER;
+	serverMap[string("ROBORIO")] = ControlModes::CONTROL_RUN_LOCS::ROBORIO;
+    
+	bool hasError = false;
 
     // parse/validate xml
     for (pugi::xml_attribute attr = PIDNode.first_attribute(); attr; attr = attr.next_attribute())
     {
-        if ( strcmp( attr.name(), "mode" ) == 0 )
-        {
-            mode = (ControlModes::CONTROL_TYPE)attr.as_int();
-        }
-        else if ( strcmp( attr.name(), "identifier") == 0 )
+        if ( strcmp( attr.name(), "identifier") == 0 )
         {
             identifier = string( attr.value() );
         }
+        else if ( strcmp( attr.name(), "mode" ) == 0 )
+        {
+			auto it = modeMap.find( string(attr.value() ) );
+			if ( it != modeMap.end() )
+			{
+				mode = it->second;
+			}
+        }
+		else if (( attr.name(), "constrolServer" ) == 0 )
+		{
+			auto itr = serverMap.find( string( attr.value() ) );
+			if ( itr != serverMap.end() )
+			{
+				server = itr->second;
+			}
+		}				
         else if ( strcmp( attr.name(), "proportional") == 0 )
         {
             p = attr.as_double();
@@ -114,7 +143,7 @@ ControlData* ControlDataDefn::ParseXML
     }
     if ( !hasError )
     {
-        data = new ControlData( mode, identifier, p, i, d, f, izone, maxAccel, cruiseVel, peak, nominal );
+        data = new ControlData( mode, server, identifier, p, i, d, f, izone, maxAccel, cruiseVel, peak, nominal );
     }
     return data;
 }
