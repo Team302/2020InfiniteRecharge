@@ -42,7 +42,7 @@ std::shared_ptr<DragonServo>         shservo
 /// @return         MechanismTypes::MECHANISM_TYPE 
 MechanismTypes::MECHANISM_TYPE ShooterHood :: GetType() const  
 { 
-return MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD; 
+   return MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD; 
 } 
 /// @brief      Run mechanism as defined  
 /// @param [in] ControlModes::CONTROL_TYPE   controlType:  How are the item(s) being controlled 
