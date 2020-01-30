@@ -1,12 +1,9 @@
 #pragma once
 #include <subsys/Impeller.h>
-#include <controllers/impeller/ImpellerAgitate.h>
-#include <controllers/impeller/ImpellerOff.h>
-#include <controllers/impeller/ImpellerOn.h>
 #include <controllers/impeller/ImpellerStateMgr.h>
 #include <frc/Timer.h>
 
-class TPImpeller : ImpellerStateMgr
+class TPImpeller 
 {
     public:
     TPImpeller();
@@ -15,6 +12,7 @@ class TPImpeller : ImpellerStateMgr
 
     private:
     Timer* m_timer;
+    ImpellerStateMgr* m_impellerStateMgr;
 
 
 
