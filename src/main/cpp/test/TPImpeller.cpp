@@ -1,3 +1,5 @@
+///Created by the one, the only, Big Chief, AJ Gdowski
+///Nobody will ever be brave enough to steal my code, so don't even think about it
 #include <test/TPImpeller.h>
 #include <controllers/impeller/ImpellerStateMgr.h>
 using namespace frc;
