@@ -38,7 +38,7 @@ class ShooterHood : public IMechanism
         /// @return         MechanismTypes::MECHANISM_TYPE 
          MechanismTypes::MECHANISM_TYPE GetType() const override; 
  
-        /// @brief      Run mechanism as defined  
+        /// @brief     d Run mechanism as defined  
         /// @param [in] ControlModes::CONTROL_TYPE   controlType:  How are the item(s) being controlled 
         /// @param [in] double  value:        Target (units are based on the controlType) 
         /// @return     void 
