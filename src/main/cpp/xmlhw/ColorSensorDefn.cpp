@@ -3,6 +3,7 @@
 #include <subsys/ControlPanel.h>
 #include <rev/ColorSensorV3.h>
 #include <utils/Logger.h>
+
  //standard libarys
 
 using namespace std;
@@ -28,10 +29,6 @@ rev::ColorSensorV3* ParseXML
             {
                 port = frc::I2C::Port::kMXP;
             }
-            /*else if ();
-            {
-                other attributes.
-            } */
             else
             {
                 Logger::GetLogger()->LogError( "ColorSensorDefn", "unknown child" );
