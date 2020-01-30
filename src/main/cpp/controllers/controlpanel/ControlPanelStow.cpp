@@ -34,5 +34,5 @@ void ControlPanelStow::Run()
 
 bool ControlPanelStow::AtTarget() const
 {
-    return false;
+    return true;
 } 
