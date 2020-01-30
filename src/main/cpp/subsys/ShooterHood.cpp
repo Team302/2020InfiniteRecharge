@@ -48,7 +48,7 @@ MechanismTypes::MECHANISM_TYPE ShooterHood :: GetType() const
 /// @param [in] ControlModes::CONTROL_TYPE   controlType:  How are the item(s) being controlled 
 /// @param [in] double                                     value:        Target (units are based on the controlType) 
 /// @return     void 
-void SetOutput 
+void ShooterHood::SetOutput 
 ( 
 ControlModes::CONTROL_TYPE controlType, 
 double                                   value        
