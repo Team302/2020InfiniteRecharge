@@ -19,8 +19,7 @@
 ///
 /// File Description:
 /// When intake is "off", sets motors to off and brings solenoid/intake into the robot.
-///
-
+//========================================================================================================
 
 // C++ Includes
 #include <memory>
@@ -32,6 +31,7 @@
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
+
 // Third Party Includes
 
 using namespace std;
@@ -41,7 +41,7 @@ void IntakeOff::Init()
 
 }
 
-IntakeOff::IntakeOff()
+IntakeOff::IntakeOn()
 {
     auto factory = MechanismFactory::GetMechanismFactory();
 
@@ -51,10 +51,10 @@ IntakeOff::IntakeOff()
 void IntakeOff::Run()           
 {
     m_intake -> SetOutput(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT,0.0);      //turns off motors
-    m_intake -> ActivateSolenoid( false );                                      //raises air cylinder
+    m_intake -> ActivateSolenoid( true );                                      //raises air cylinder
 }
 
-bool IntakeOff::AtTarget() const                                                     //confirms that it worked
+bool IntakeOff::AtTarget() const                                         //confirms that it worked
 {
     return true;
 }

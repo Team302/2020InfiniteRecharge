@@ -50,7 +50,7 @@ IntakeOn::IntakeOn()
 
 void IntakeOn::Run()           
 {
-    m_intake -> SetOutput(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT,0.0);      //turns off motors
+    m_intake -> SetOutput(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT,1.0);      //turns on motors
     m_intake -> ActivateSolenoid( false );                                      //raises air cylinder
 }
 
