@@ -12,10 +12,10 @@
 #include <controllers/ControlData.h>  
 #include <subsys/Turret.h>
 
-class HoldTurretPosition : public IState
+class TurretHold : public IState
 {
  public:
-  HoldTurretPosition
+  TurretHold
   (
     ControlData* controlData
   );

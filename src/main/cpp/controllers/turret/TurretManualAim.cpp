@@ -5,32 +5,31 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "controllers/turret/ManualAim.h"
+#include "controllers/turret/TurretManualAim.h"
 #include "subsys/MechanismFactory.h"
 #include "subsys/IMechanism.h"
-#include "subsys/MechanismParameters.h"
 #include "subsys/Turret.h"
 #include "controllers/ControlData.h"
 #include "gamepad/TeleopControl.h"
-ManualAim::ManualAim(ControlData* controlData) : m_controlData(controlData), 
+TurretManualAim::TurretManualAim(ControlData* controlData) : m_controlData(controlData), 
     m_atTarget(false)
 {
     auto factory = MechanismFactory::GetMechanismFactory();
     m_turret = factory->GetIMechanism(MechanismTypes::TURRET);
 }
 
-void ManualAim::Init()
+void TurretManualAim::Init()
 {
 
 }
 
-void ManualAim::Run()
+void TurretManualAim::Run()
 {
     m_turret->SetOutput(m_controlData->GetMode(), TeleopControl::GetInstance()->GetAxisValue(TeleopControl::SHOOTER_MANUAL_AIM) * 45.0); //scaled to a percentage of a 45 degree turn
     m_atTarget = true;
 }
 
-bool ManualAim::AtTarget() const
+bool TurretManualAim::AtTarget() const
 {
     return m_atTarget;
 }

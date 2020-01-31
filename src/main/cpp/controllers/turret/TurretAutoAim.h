@@ -14,9 +14,9 @@
 #include <subsys/IMechanism.h>
 #include <hw/DragonLimelight.h>
 
-class LimelightAim : public IState{
+class TurretAutoAim : public IState{
  public:
-  LimelightAim
+  TurretAutoAim
   (
     ControlData* controlData,
     DragonLimelight* limelight

@@ -13,10 +13,10 @@
 #include <subsys/IMechanism.h>
 #include <subsys/Turret.h>
 
-class ManualAim : public IState
+class TurretManualAim : public IState
 {
  public:
-  ManualAim
+  TurretManualAim
   (
     ControlData* controlData
   );
