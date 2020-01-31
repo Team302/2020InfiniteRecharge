@@ -1,14 +1,14 @@
 <!-- temporary leave pigeon here until odometry is plugged in -->
-<!ELEMENT> robot (pdp?, pcm?, odometry?, feedback?, chassis?, mechanism*, pigeon? )>
+<!ELEMENT robot (pdp?, pcm?, odometry?, feedback?, chassis?, mechanism*, pigeon? )>
 
-<!-- odometry -->
-<!-- Pigeon IMU -->
-<!-- lidar -->
-<!ELEMENT odometry (pigeon?, lidar*, ultrasonic*, limelight* )>
+<!-- ========================================================================================================================================== -->
+<!--	odometry 																																-->
+<!-- ========================================================================================================================================== -->
+<!ELEMENT odometry (pigeon?, lidar*, pwmultrasonic*, analogultrasonic*, limelight* )>
 <!ATTLIST odometry 
-          xloc CDATA 0.0
-          yloc CDATA 0.0 
-          heading CDATA 0.0
+          xloc CDATA "0.0"
+          yloc CDATA "0.0" 
+          heading CDATA "0.0"
 >
 
 <!ELEMENT pigeon EMPTY>
@@ -22,17 +22,50 @@
                               60 | 61 | 62 ) "0"
 >
 
+<!ELEMENT pwmultrasonic EMPTY>
+<!ATTLIST pwmultrasonic 
+		  usage				( front | back ) "front"
+          pwmId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
+                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 ) "0"
+>
+
+<!ELEMENT analogultrasonic EMPTY>
+<!ATTLIST analogultrasonic 
+		  usage				( front | back ) "front"
+          analogId          (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 ) "0"
+>
 <!ELEMENT lidar EMPTY>
 <!ATTLIST lidar 
-          usage              ( front | back  ) "0"
+          usage              ( front | back  ) "front"
           inputpin			 CDATA "0"
           triggerpin		 CDATA "0"
 >
 
-<!-- feedback -->
-<!-- LEDs -->
-<!-- camera -->
-<!ELEMENT feedback (camera*, led*)>
+<!ELEMENT limelight EMPTY>
+<!ATTLIST limelight 
+		  usage 			( MAINLIMELIGHT | SECONDARYLIMELIGHT ) "MAINLIMELIGHT"
+		  tablename         ( limelight | limelight2 ) "limelight"
+		  mountingheight    CDATA #REQUIRED
+		  horizontaloffset  CDATA "0.0"
+		  mountingangle     CDATA #REQUIRED
+		  rotation          ( 0.0 | 90.0 | 180.0 | 270.0 ) "0.0"
+		  targetheight      CDATA #REQUIRED
+		  targetheight2     CDATA #REQUIRED
+		  defaultledmode	( currentpipeline | off | blink | on ) " currentpipeline" 
+		  defaultcammode    ( vision | drivercamera ) "vision"
+		  streammode        ( sidebyside | pipmain | pipsecondary ) "sidebyside"
+		  snapshots         ( off | twopersec ) "off"
+		  crosshairx        CDATA #IMPLIED
+		  crosshairy        CDATA #IMPLIED
+		  secondcrosshairx  CDATA #IMPLIED
+		  secondcrosshairy  CDATA #IMPLIED
+>
+
+
+<!-- ========================================================================================================================================== -->
+<!--	driver feedback  				   																										-->
+<!-- ========================================================================================================================================== -->
+<!ELEMENT feedback (camera*, led*, blinkin*)>
 
 <!ELEMENT camera EMPTY>
 <!ATTLIST camera 
@@ -41,9 +74,11 @@
           width			 	CDATA "640"
           height		 	CDATA "480"
           fps			 	CDATA "30"
+		  thread            ( true | false ) "false"
 >
 <!ELEMENT led EMPTY>
 <!ATTLIST led 
+		  usage				( front | back | top | bottom) "front"
           canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
                               10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 
                               20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 
@@ -51,13 +86,20 @@
                               40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 
                               50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 
                               60 | 61 | 62 ) "0"
-	  usage( front | back | top ) "front"
+>
+
+<!ELEMENT blinkin EMPTY>
+<!ATTLIST blinkin 
+		  usage				( front | back | top | bottom ) "front"
+          pwmId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
+                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 ) "0"
 >
 
 
 
-
-<!-- PDP (power distribution panel)  -->
+<!-- ========================================================================================================================================== -->
+<!--	PDP (power distribution panel) 		 																									-->
+<!-- ========================================================================================================================================== -->
 <!ELEMENT pdp EMPTY>
 <!ATTLIST pdp 
           canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
@@ -69,7 +111,9 @@
                               60 | 61 | 62 ) "0"
 >
 
-<!-- pcm -->
+<!-- ========================================================================================================================================== -->
+<!--	PCM (pneumatic control module) 		 																									-->
+<!-- ========================================================================================================================================== -->
 <!ELEMENT pcm (analogInput?) >
 <!ATTLIST pcm 
           canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
@@ -83,14 +127,10 @@
 
 
 
-
-<!-- ====================================================
-     chassis  
-     ====================================================
-
-    Wheel Base is front-back distance between wheel centers 
-    Track is the distance between wheels on an "axle"       
-	==================================================== -->
+<!-- ========================================================================================================================================== -->
+<!--	chassis  																																-->
+<!--    Wheel Base is front-back distance between wheel centers  Track is the distance between wheels on an "axle"     							-->   
+<!-- ========================================================================================================================================== -->
 <!ELEMENT chassis (motor*) >
 <!ATTLIST chassis 
           type              ( TANK | MECANUM ) "TANK"
@@ -100,16 +140,18 @@
 >
 
 
-<!-- mechanism -->
-<!-- solenoid -->
-<!-- servo  -->
-<!ELEMENT mechanism (motor*, solenoid*, servo*, analogInput*, digitalInput*)>
+<!-- ========================================================================================================================================== -->
+<!--	mechanism  																																-->
+<!-- ========================================================================================================================================== -->
+<!ELEMENT mechanism (motor*, solenoid*, servo*, analogInput*, digitalInput*, canCoder*)>
 <!ATTLIST mechanism
-          type              ( 0 | 1 | 2 | 3 ) "0"
+          type              ( INTAKE | HUMAN_PLAYER_FLAP | IMPELLER | BALL_TRANSFER | SHOOTER | SHOOTER_HOOD | TURRET |
+							  CONTROL_TABLE_MANIPULATOR | CLIMBER | CRAWLER ) "INTAKE"
 >
 
 <!ELEMENT solenoid EMPTY >
 <!ATTLIST solenoid 
+		  usage 			( INTAKE | HUMAN_PLAYER_FLAP | BALL_TRANSFER | SHOOTER_HOOD | CONTROL_TABLE_MANIPULATOR | CLIMBER ) "INTAKE"
           canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
                               10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 
                               20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 
@@ -117,7 +159,8 @@
                               40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 
                               50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 
                               60 | 61 | 62 ) "0"
-          channel             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 ) "0"
+          channel           (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 ) "0"
+          reversed          (true | false ) "false"
 >
 <!ELEMENT servo EMPTY>
 <!ATTLIST servo 
@@ -130,7 +173,10 @@
 
 
 
-<!-- shared items -->
+
+<!-- ========================================================================================================================================== -->
+<!-- 	shared items				 																											-->
+<!-- ========================================================================================================================================== -->
 
 <!-- motor  -->
 <!ELEMENT motor (digitalInput*)>
@@ -140,7 +186,7 @@
                                       INTAKE | IMPELLER | BALL_TRANSFER | TURRET | 
                                       SHOOTER_1 | SHOOTER_2 | SHOOTER_HOOD |
                                       CONTROL_TABLE_MANIPULATOR | 
-                                      CLIMBER | CRAWLER ) "LEFT_DRIVE_MOTOR"
+                                      CLIMBER | CRAWLER ) "LEFT_DRIVE_MASTER"
           canId             		(  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
                               		  10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 
                               		  20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 
@@ -188,6 +234,17 @@
           reversed          (true | false ) "false"
 >
 
+<!ELEMENT canCoder EMPTY >
+<!ATTLIST canCoder
+	      usage 			( HOODANGLE | IMPELLERPOSITION ) "IMPELLERPOSITION"
+          canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
+                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 
+                              20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 
+                              30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 
+                              40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 
+                              50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 
+                              60 | 61 | 62 ) "0"
+>
 
 
 <!-- TalonTach  -->

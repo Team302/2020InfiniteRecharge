@@ -111,6 +111,10 @@ IMechanism* MechanismDefn::ParseXML
             {
                 type = MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD;
             }
+            else if ( typeStr.compare( "TURRET") == 0 )
+            {
+                type = MechanismTypes::MECHANISM_TYPE::TURRET;
+            }
             else if ( typeStr.compare( "CONTROL_TABLE_MANIPULATOR") == 0 )
             {
                 type = MechanismTypes::MECHANISM_TYPE::CONTROL_TABLE_MANIPULATOR;
