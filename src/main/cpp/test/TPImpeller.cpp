@@ -7,7 +7,7 @@ using namespace frc;
 TPImpeller::TPImpeller()
 {
     m_timer = new Timer;
-
+    m_impellerStateMgr = new ImpellerStateMgr();
 }
 
 void TPImpeller::periodic()
