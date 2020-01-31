@@ -19,7 +19,8 @@
 // FRC includes
 
 // Team 302 includes
-#include <controllers/IState.h>
+#include <controllers/ControlData.h>
+#include <controllers/MechanismState.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
 #include <controllers/impeller/ImpellerOff.h>
@@ -27,24 +28,11 @@
 // Third Party Includes
 
 
-ImpellerOff::ImpellerOff()
+ImpellerOff::ImpellerOff
+( 
+    ControlData* control,
+    double target
+) : MechanismState(MechanismFactory::GetMechanismFactory() -> GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER), control, target)
 {
-    auto factory = MechanismFactory::GetMechanismFactory();
-
-    m_impeller = factory -> GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER);
-}
-
-void ImpellerOff::Init()
-{
-
-}
-
-void ImpellerOff::Run()           
-{
-    m_impeller -> SetOutput(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT,0.0);      //turns off motors
-}
-
-bool ImpellerOff::AtTarget() const                                         //confirms that it worked
-{
-    return true;
+   
 }

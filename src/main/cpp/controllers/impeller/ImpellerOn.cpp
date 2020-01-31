@@ -27,25 +27,12 @@
 // Third Party Includes
 
 
-ImpellerOn::ImpellerOn()
+ImpellerOn::ImpellerOn
+(
+    ControlData* control,
+    double target
+) : MechanismState(MechanismFactory::GetMechanismFactory() -> GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER), control, target)
 {
-    auto factory = MechanismFactory::GetMechanismFactory();
-
-    m_impeller = factory -> GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER);
-}
-
-void ImpellerOn::Init()
-{
-
-}
-
-void ImpellerOn::Run()           
-{
-    m_impeller -> SetOutput(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT,1.0);      //turns on motors
-}
-
-bool ImpellerOn::AtTarget() const                                         //confirms that it worked
-{
-    return true;
+    
 }
 

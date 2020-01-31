@@ -21,26 +21,23 @@
 // FRC includes
 
 // Team 302 includes
-#include <controllers/IState.h>
 #include <subsys/IMechanism.h>
-#include <subsys/MechanismFactory.h>
-
+#include <controllers/MechanismState.h>
+#include <controllers/ControlData.h>
 // Third Party Includes
 
 
-class ImpellerOff : public IState
+class ImpellerOff : public MechanismState
 {
     public:
 
-    ImpellerOff();
+    ImpellerOff() = delete;
+    ImpellerOff
+    (
+        ControlData* control,
+        double target
+    );
     ~ImpellerOff() = default;
 
-    void Init() override;
-    void Run() override;
-    bool AtTarget() const override;
-
     private:
-
-    IMechanism* m_impeller;
-
 };
