@@ -275,6 +275,7 @@
     		      canId="50"
     		      channel="1"
     		      reversed="false" />
+		<colorSensor port="kOnboard" />
 	</mechanism>
     
 	<mechanism type="CLIMBER">

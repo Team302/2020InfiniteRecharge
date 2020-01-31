@@ -143,7 +143,7 @@
 <!-- ========================================================================================================================================== -->
 <!--	mechanism  																																-->
 <!-- ========================================================================================================================================== -->
-<!ELEMENT mechanism (motor*, solenoid*, servo*, analogInput*, digitalInput*, canCoder*)>
+<!ELEMENT mechanism (motor*, solenoid*, servo*, analogInput*, digitalInput*, canCoder*, colorSensor?)>
 <!ATTLIST mechanism
           type              ( INTAKE | HUMAN_PLAYER_FLAP | IMPELLER | BALL_TRANSFER | SHOOTER | SHOOTER_HOOD | TURRET |
 							  CONTROL_TABLE_MANIPULATOR | CLIMBER | CRAWLER ) "INTAKE"
@@ -171,7 +171,10 @@
           maxAngle          CDATA "360.0"
 >
 
-
+<!ELEMENT colorSensor EMPTY>
+<!ATTLIST colorSensor 
+          port ( kOnboard | kMXP ) "kOnboard" 
+>
 
 
 <!-- ========================================================================================================================================== -->
