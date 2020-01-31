@@ -15,3 +15,15 @@
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
+
+using namespace std;
+
+
+
+ClimberHold::ClimberHold()
+{
+    auto factory = MechanismFactory::GetMechanismFactory();
+
+    
+}
+

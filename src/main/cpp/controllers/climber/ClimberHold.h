@@ -8,21 +8,18 @@
 //========================================================================================================
 
 #include <subsys/IMechanism.h>
+#include <controllers/MechanismState.h>
 #include <controllers/IState.h>
 
-class ClimberHold : public IState
+class ClimberHold : public MechanismState
 {
     public:
 
-    ClimberHold();
-    ~ClimberHold() = default;
-
-    void Init() override;
-    void Run()  override;
-    bool AtTarget() const override;
-
-    private:
-
-    IMechanism* m_climber;
-
+        ClimberHold() = delete;
+        ClimberHold
+        (
+            ControlData*    control,
+            double          target
+        );
+        ~ClimberHold() =default;
 };
