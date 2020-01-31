@@ -18,7 +18,6 @@
 #include <memory>
 #include <string>
 
-#include <frc/Timer.h>
 #include <controllers/ControlModes.h>
 #include <controllers/ControlData.h>
 #include <subsys/ControlPanel.h>
@@ -30,27 +29,22 @@
 #include <hw/interfaces/IDragonMotorController.h>
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <utils/logger.h>
+#include <rev/ColorSensorV3.h>
 
 using namespace std;
-
-static constexpr frc::Color kBlueTarget = frc::Color(0.143, 0.427, 0.429);
-static constexpr frc::Color kGreenTarget = frc::Color(0.197, 0.561, 0.240);
-static constexpr frc::Color kRedTarget = frc::Color(0.561, 0.232, 0.114);
-static constexpr frc::Color kYellowTarget = frc::Color(0.361, 0.524, 0.113);
-
-//todo: this needs to come in as a parameter to the constructor not a static item
-static constexpr auto i2cPort = frc::I2C::Port::kOnboard;
-rev::ColorSensorV3 m_colorSensor{i2cPort};
-rev::ColorMatch m_colorMatcher;
-frc::Timer m_timer = frc::Timer();
+using namespace frc;
+using namespace rev;
 
 ControlPanel::ControlPanel
 (
     std::shared_ptr<IDragonMotorController>     motorController,
-    std::shared_ptr<DragonSolenoid>             solenoid
-) : m_spinner ( motorController ),
-    m_manipulatorExtender (solenoid)
-
+    std::shared_ptr<DragonSolenoid>             solenoid,
+    ColorSensorV3*                              colorSensor
+) : IMechanism(), 
+    m_spinner ( motorController ),
+    m_manipulatorExtender (solenoid),
+    m_color( colorSensor ),
+    m_colorMatcher( new ColorMatch())
 {
     if (m_spinner.get() == nullptr )
     {
@@ -61,10 +55,10 @@ ControlPanel::ControlPanel
     {
         Logger::GetLogger()->LogError( string( "Intake constructor" ), string( "solenoid is nullptr" ) );
     }
-    m_colorMatcher.AddColorMatch(kBlueTarget);
-    m_colorMatcher.AddColorMatch(kGreenTarget);
-    m_colorMatcher.AddColorMatch(kRedTarget);
-    m_colorMatcher.AddColorMatch(kYellowTarget);
+    m_colorMatcher->AddColorMatch(kBlueTarget);
+    m_colorMatcher->AddColorMatch(kGreenTarget);
+    m_colorMatcher->AddColorMatch(kRedTarget);
+    m_colorMatcher->AddColorMatch(kYellowTarget);
 }
 
 //ControlPanel::~ControlPanel)()
@@ -78,8 +72,10 @@ MechanismTypes::MECHANISM_TYPE ControlPanel::GetType() const
 }
 
 void ControlPanel::SetOutput
-(ControlModes::CONTROL_TYPE controlType,
-   double                   value       )
+(
+    ControlModes::CONTROL_TYPE controlType,
+    double                     value       
+)
 {
     if ( m_spinner != nullptr )
     {
@@ -181,11 +177,11 @@ void ControlPanel::SetControlConstants
 
 ControlPanel::Colors ControlPanel::GetColorSeen()
 {
-    frc::Color detectedColor = m_colorSensor.GetColor();
-    uint32_t detectedProximity = m_colorSensor.GetProximity();
+    frc::Color detectedColor = m_color->GetColor();
+    uint32_t detectedProximity = m_color->GetProximity();
     std::string colorString;
     double confidence = 0.0;
-    frc::Color matchedColor = m_colorMatcher.MatchClosestColor(detectedColor, confidence);
+    frc::Color matchedColor = m_colorMatcher->MatchClosestColor(detectedColor, confidence);
     if(matchedColor == kGreenTarget && confidence >= 0.94 )
         return Colors::BLUE;
     else if(matchedColor == kBlueTarget && confidence >= 0.94 )

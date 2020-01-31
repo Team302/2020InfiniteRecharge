@@ -1,17 +1,22 @@
 #pragma once
 
-#include <pugixml/pugixml.hpp>
+namespace rev
+{
+    class ColorSensorV3;
+}
 
+namespace pugi
+{
+    class xml_node;
+}
 
 class ColorSensorDefn
 {
     public:
-    ColorSensorDefn() = default;
-    virtual ~ColorSensorDefn() = default;
-    ColorSensorDefn* ParseXML
-    (
-    
-    pugi::xml_node  ColorSensorNode
-
-    );
+        ColorSensorDefn() = default;
+        virtual ~ColorSensorDefn() = default;
+        rev::ColorSensorV3* ParseXML
+        (
+            pugi::xml_node  ColorSensorNode
+        );
 };

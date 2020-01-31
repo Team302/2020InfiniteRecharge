@@ -50,10 +50,13 @@
 #include <utils/Logger.h>
 
 #include <xmlhw/MechanismDefn.h>
+#include <xmlhw/ColorSensorDefn.h>
 #include <hw/interfaces/IDragonMotorController.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
+#include <rev/ColorSensorV3.h>
+
 
 using namespace frc;
 using namespace pugi;
@@ -143,12 +146,14 @@ IMechanism* MechanismDefn::ParseXML
     unique_ptr<DigitalInputDefn> digitalXML = make_unique<DigitalInputDefn>();
     unique_ptr<ServoDefn> servoXML = make_unique<ServoDefn>();
     unique_ptr<SolenoidDefn> solenoidXML = make_unique<SolenoidDefn>();
+    unique_ptr<ColorSensorDefn> colorXML = make_unique<ColorSensorDefn>();
 
     IDragonMotorControllerMap motors;
     ServoMap servos;
     DragonSolenoidMap solenoids;
     AnalogInputMap analogInputs;
     DigitalInputMap digitalInputs;
+    rev::ColorSensorV3* colorSensor = nullptr;
 
     for (xml_node child = mechanismNode.first_child(); child  && !hasError; child = child.next_sibling())
     {
@@ -192,6 +197,10 @@ IMechanism* MechanismDefn::ParseXML
                 solenoids[sol.get()->GetType()] = sol;
             }
         }
+        else if ( strcmp( child.name(), "colorsensor" ) == 0 )
+        {
+            colorSensor = colorXML.get()->ParseXML(child);
+        }
         else
         {
             Logger::GetLogger()->LogError( "MechanismDefn", "unknown child" );
@@ -203,7 +212,7 @@ IMechanism* MechanismDefn::ParseXML
     if ( !hasError )
     {
         MechanismFactory* factory =  MechanismFactory::GetMechanismFactory();
-        mech = factory->CreateIMechanism( type, motors, solenoids, servos, digitalInputs, analogInputs );
+        mech = factory->CreateIMechanism( type, motors, solenoids, servos, digitalInputs, analogInputs, colorSensor );
     }
 
     return mech;

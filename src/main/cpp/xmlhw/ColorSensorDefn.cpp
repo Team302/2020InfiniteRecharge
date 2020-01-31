@@ -9,25 +9,27 @@
 using namespace std;
 using namespace rev;
 using namespace frc;
-rev::ColorSensorV3* ParseXML
+using namespace pugi;
+
+ColorSensorV3* ColorSensorDefn::ParseXML
 (
-    pugi::xml_node ColorSensorNode
+    xml_node ColorSensorNode
 )
 {
-    rev::ColorSensorV3* sensor = nullptr;
-    frc::I2C::Port port = frc::I2C::Port::kOnboard; //ColorSensorV3 takes an I2C port and has kOnboard or kMXP
+    ColorSensorV3* sensor = nullptr;
+    I2C::Port port = I2C::Port::kOnboard; //ColorSensorV3 takes an I2C port and has kOnboard or kMXP
 
     bool hasError = false;
     
-        for(pugi::xml_attribute attr = ColorSensorNode.first_attribute(); attr && !hasError; attr = attr.next_attribute() )
+        for(xml_attribute attr = ColorSensorNode.first_attribute(); attr && !hasError; attr = attr.next_attribute() )
         {
             if ( strcmp ( attr.name(), "kOnboard" ) == 0) //strcmp string compare. It will compare the value of the string
             {
-                port = frc::I2C::Port::kOnboard;
+                port = I2C::Port::kOnboard;
             }
             else if (strcmp (attr.name(), "kMXP" ) == 0 )
             {
-                port = frc::I2C::Port::kMXP;
+                port = I2C::Port::kMXP;
             }
             else
             {

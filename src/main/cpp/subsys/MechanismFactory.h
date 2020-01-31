@@ -48,6 +48,8 @@
 #include <subsys/HumanPlayerFlap.h>
 #include <subsys/BallTransfer.h>
 #include <subsys/ControlPanel.h>
+#include <rev/ColorSensorV3.h>
+
 
 
 // Third Party Includes
@@ -84,7 +86,8 @@ class MechanismFactory
 			const DragonSolenoidMap&                solenoids,
 			const ServoMap&						    servos,
 			const DigitalInputMap&					digitalInputs,
-			const AnalogInputMap&                   analogInputs
+			const AnalogInputMap&                   analogInputs,
+			rev::ColorSensorV3*                     colorSensor
 		);
 
 	private:

@@ -52,9 +52,11 @@
 #include <subsys/Shooter.h>
 
 // Third Party Includes
+#include <rev/ColorSensorV3.h>
 
 
 using namespace std;
+using namespace rev;
 
 
 //=====================================================================================
@@ -115,7 +117,8 @@ IMechanism*  MechanismFactory::CreateIMechanism
 	const DragonSolenoidMap&                solenoids,
 	const ServoMap&						    servos,
 	const DigitalInputMap&					digitalInputs,
-	const AnalogInputMap&                   analogInputs
+	const AnalogInputMap&                   analogInputs,
+	ColorSensorV3*					        colorSensor
 )
 {
 	IMechanism* subsys = nullptr;
@@ -207,13 +210,12 @@ IMechanism*  MechanismFactory::CreateIMechanism
 					auto solenoid = GetSolenoid( solenoids, SolenoidUsage::SOLENOID_USAGE::CONTROL_TABLE_MANIPULATOR );
 					if ( solenoid.get() != nullptr )
 					{
-						//color sensor = GetColorSensor(colorsensor, colorsensorusage::COLOR_SENSOR_USAGE::CONTROL_TABLE_MANIPULATOR );
-						//if ( colorsensor.get() !=nullptr )
-						//{
+						if ( colorSensor !=nullptr )
+						{
 							//todo color sensor pointer needs to be added to the constructor
-							auto controlPanel = new ControlPanel( motor, solenoid);
+							auto controlPanel = new ControlPanel( motor, solenoid, colorSensor );
 							subsys = dynamic_cast<IMechanism*>(controlPanel);
-						//}
+						}
 					}
 				}
 			}
