@@ -3,14 +3,14 @@
 <statedata>
 	<controlData identifier="openloop" 
 	             mode="PERCENT_OUTPUT"/>
-	<mechanismTarget stateIdentifier="IMPELLEROFF"
+	<mechanismTarget stateIdentifier="SHOOTEROFF"
 	                 controlDataIdentifier="openloop"
 					 value="0.0"/>
-	<mechanismTarget stateIdentifier="IMPELLERON"
+	<mechanismTarget stateIdentifier="SHOOTERGETREADY"
 	                 controlDataIdentifier="openloop"
 					 value="0.5"/>
-	<mechanismTarget stateIdentifier="IMPELLERAGITATE"
+	<mechanismTarget stateIdentifier="SHOOTERSHOOT"
 	                 controlDataIdentifier="openloop"
-					 value="-0.25"/>
+					 value="1.0"/>
 
-</statedata>                                      
+</statedata>
