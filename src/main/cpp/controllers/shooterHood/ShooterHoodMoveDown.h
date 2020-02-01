@@ -4,15 +4,15 @@
 #include <controllers/MechanismState.h>
 #include <controllers/IState.h>
 
-class ImpellerAgitate : public MechanismState
+class ShooterHoodMoveDown : public MechanismState
 {
     public:
 
-        ImpellerAgitate
+        ShooterHoodMoveDown() = delete;
+        ShooterHoodMoveDown
         (
             ControlData*    control,
             double          target
         );
-        ImpellerAgitate() = delete;
-        ~ImpellerAgitate() = default;
+        ~ShooterHoodMoveDown() =default;
 };
