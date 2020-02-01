@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<!DOCTYPE stateData SYSTEM "stateData.dtd">
+<!DOCTYPE statedata SYSTEM "stateData.dtd">
 <statedata>
-	<ControlData identifier="openloop" 
+	<controlData identifier="openloop" 
 	             mode="PERCENT_OUTPUT"/>
 	<mechanismTarget stateIdentifier="IMPELLEROFF"
 	                 controlDataIdentifier="openloop"

@@ -28,17 +28,28 @@
 
 #pragma once
 
+// c++ includes
 #include <string>
 
+// wpilib includes
 #include <frc/TimedRobot.h>
+#include <frc/smartdashboard/SendableChooser.h>
 
+// team 302 includes
 #include <auton/CyclePrimitives.h>
 #include <controllers/chassis/ChassisStateMgr.h>
+#include <controllers/BallManipulator.h>
+//#include <controllers/controlPanel/ControlPanelStateMgr.h>
+//#include <controllers/climber/ClimberStateMgr.h>
+
 #include <test/ButtonBoxDisplay.h>
 #include <test/XboxDisplay.h>
 
-#include <frc/smartdashboard/SendableChooser.h>
+// third party includes
 
+/// @class Robot
+/// @brief Top-level robot code that controls the various states of the robot.  It is our specific 
+///        implementation of the frc::TimedRobot.
 class Robot : public frc::TimedRobot 
 {
   public:
@@ -57,6 +68,10 @@ class Robot : public frc::TimedRobot
   private:
       CyclePrimitives* m_cyclePrims;
       ChassisStateMgr* m_chassisStateMgr;
+      BallManipulator* m_powerCells;
+      // ControlPanelStateMgr* m_control;
+      // ClimberStateMgr* m_climer;
+
 
       ButtonBoxDisplay* m_buttonBoxDisplay;
       XboxDisplay* m_xBoxDisplay;

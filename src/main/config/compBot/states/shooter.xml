@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE statedata SYSTEM "stateData.dtd">
+<statedata>
+	<controlData identifier="openloop" 
+	             mode="PERCENT_OUTPUT"/>
+	<mechanismTarget stateIdentifier="SHOOTEROFF"
+	                 controlDataIdentifier="openloop"
+					 value="0.0"/>
+	<mechanismTarget stateIdentifier="SHOOTERGETREADY"
+	                 controlDataIdentifier="openloop"
+					 value="0.5"/>
+	<mechanismTarget stateIdentifier="SHOOTERSHOOT"
+	                 controlDataIdentifier="openloop"
+					 value="1.0"/>
+
+</statedata>

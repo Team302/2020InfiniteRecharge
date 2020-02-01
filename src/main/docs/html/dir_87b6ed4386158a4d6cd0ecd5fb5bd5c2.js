@@ -8,6 +8,10 @@ var dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2 =
     [ "mechanisms", "dir_ad9163eccb036a47942ba3f16d790d30.html", "dir_ad9163eccb036a47942ba3f16d790d30" ],
     [ "shooter", "dir_626fd4837932c6e1976e5d20482af4c8.html", "dir_626fd4837932c6e1976e5d20482af4c8" ],
     [ "turret", "dir_32bedeabb3d89829b4a91f9bdf77e700.html", "dir_32bedeabb3d89829b4a91f9bdf77e700" ],
+    [ "BallManipulator.h", "_ball_manipulator_8h.html", [
+      [ "BallManipulator", "class_ball_manipulator.html", "class_ball_manipulator" ]
+    ] ],
+    [ "ButtonManipulator.cpp", "_button_manipulator_8cpp.html", null ],
     [ "ControlData.cpp", "_control_data_8cpp.html", null ],
     [ "ControlData.h", "_control_data_8h.html", [
       [ "ControlData", "class_control_data.html", "class_control_data" ]

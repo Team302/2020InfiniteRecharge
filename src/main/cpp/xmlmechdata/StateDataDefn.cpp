@@ -140,7 +140,7 @@ vector<MechanismTargetData*> StateDataDefn::ParseXML
                 // loop through the direct children of <robot> and call the appropriate parser
                 for (xml_node child = node.first_child(); child; child = child.next_sibling())
                 {
-                    if (strcmp(child.name(), "controldata") == 0)
+                    if (strcmp(child.name(), "controlData") == 0)
                     {
                         controlDataVector.push_back( controlDataXML->ParseXML( child ) );
                     }
