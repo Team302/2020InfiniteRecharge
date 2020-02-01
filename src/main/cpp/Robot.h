@@ -44,6 +44,9 @@
 
 #include <test/ButtonBoxDisplay.h>
 #include <test/XboxDisplay.h>
+#include <hw/DragonTalon.h>
+#include <ctre/Phoenix.h>
+#include <gamepad/TeleopControl.h>
 
 // third party includes
 
@@ -66,29 +69,14 @@ class Robot : public frc::TimedRobot
       void TestPeriodic() override;
 
   private:
-      CyclePrimitives* m_cyclePrims;
-      ChassisStateMgr* m_chassisStateMgr;
-      BallManipulator* m_powerCells;
-      // ControlPanelStateMgr* m_control;
-      // ClimberStateMgr* m_climer;
+      TalonSRX* m_intake;
+      TalonSRX* m_ballTransfer;
+      TalonSRX* m_impeller;
+      TalonSRX* m_shooter1;
+      TalonSRX* m_shooter2;
+      TeleopControl* m_teleop;
 
 
-      ButtonBoxDisplay* m_buttonBoxDisplay;
-      XboxDisplay* m_xBoxDisplay;
-
-      frc::SendableChooser<std::string>   m_testChooser;                    
-      const std::string                   m_noTest = "No Test";      
-      const std::string                   m_buttonBox = "Button Box";      
-      const std::string                   m_dragonXBox = "Dragon XBox";       
-      std::string                         m_testSelected; 
-
-      enum TEST_TO_RUN
-      {
-          NONE,
-          BUTTON_BOX,
-          XBOX
-      };
-      TEST_TO_RUN   m_currentTest;      
 
 
 };

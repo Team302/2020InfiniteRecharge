@@ -40,6 +40,10 @@
 #include <controllers/BallManipulator.h>
 //#include <controllers/controlPanel/ControlPanelStateMgr.h>
 //#include <controllers/climber/ClimberStateMgr.h>
+#include <hw/DragonTalon.h>
+#include <gamepad/TeleopControl.h>
+#include <controllers/ControlModes.h>
+#include <ctre/Phoenix.h>
 
 using namespace std;
 using namespace frc;
@@ -52,18 +56,19 @@ using namespace frc;
 ///-----------------------------------------------------------------------
 void Robot::RobotInit() 
 {
+    /*
     // Read the robot definition from the xml configuration files and
     // create the hardware (chassis + mechanisms along with their talons,
     // solenoids, digital inputs, analog inputs, etc.
-    unique_ptr<RobotDefn>  robotXml = make_unique<RobotDefn>();
-    robotXml->ParseXML();
+    //unique_ptr<RobotDefn>  robotXml = make_unique<RobotDefn>();
+    //robotXml->ParseXML();
 
     // Display the autonomous choices on the dashboard for selection.
     // comment out for now since auton hasn't been implemented
     // m_cyclePrims = new CyclePrimitives();
 
-    m_chassisStateMgr = new ChassisStateMgr();
-    m_powerCells = new BallManipulator();
+    //m_chassisStateMgr = new ChassisStateMgr();
+    //m_powerCells = new BallManipulator();
     // m_control = new ControlPanelStateMgr();
     // m_climber = new ClimberStateMgr();
 
@@ -75,7 +80,13 @@ void Robot::RobotInit()
 
     m_buttonBoxDisplay = nullptr;
     m_xBoxDisplay = nullptr;
-
+    */
+   m_teleop = TeleopControl::GetInstance();
+   m_intake = new TalonSRX(11);
+   m_ballTransfer = new TalonSRX(3);
+   m_impeller = new TalonSRX(7);
+   m_shooter1 = new TalonSRX(16);
+   m_shooter2 = new TalonSRX(1);
 }
 
 ///-----------------------------------------------------------------------
@@ -98,7 +109,7 @@ void Robot::RobotPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::AutonomousInit() 
 {
-    m_chassisStateMgr->Init();
+   // m_chassisStateMgr->Init();
 
     // run selected auton option
     //m_cyclePrims->Init();
@@ -124,8 +135,8 @@ void Robot::AutonomousPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::TeleopInit() 
 {
-    m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
-    m_powerCells->RunCurrentState();
+    //m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
+    //m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
 }
@@ -138,8 +149,71 @@ void Robot::TeleopInit()
 ///-----------------------------------------------------------------------
 void Robot::TeleopPeriodic() 
 {
-    m_chassisStateMgr->RunCurrentState();
-    m_powerCells->RunCurrentState();
+    
+    if(m_teleop->GetAxisValue(TeleopControl::INTAKE_ON))
+    {
+        frc::SmartDashboard::PutBoolean("Intake On", true);
+        //m_intake->Set(ControlMode::PercentOutput, 1.0);
+    }
+    if(m_teleop->GetAxisValue(TeleopControl::INTAKE_OFF))
+    {
+        frc::SmartDashboard::PutBoolean("Intake Off", true);
+        //m_intake->Set(ControlMode::PercentOutput, 0.0);
+    }
+    if(m_teleop->GetAxisValue(TeleopControl::BALL_TRANSFER_TO_SHOOTER))
+    {
+        frc::SmartDashboard::PutBoolean("Ball Transfer Shooter", true);
+        //m_ballTransfer->Set(ControlMode::PercentOutput, 1.0);
+    }
+    if(m_teleop->GetAxisValue(TeleopControl::BALL_TRANSFER_OFF))
+    {
+        frc::SmartDashboard::PutBoolean("Ball Transfer Off", true);
+        //m_ballTransfer->Set(ControlMode::PercentOutput, 0.0);
+    }
+    
+    if(m_teleop->GetAxisValue(TeleopControl::BALL_TRANSFER_TO_IMPELLER))
+    {
+        frc::SmartDashboard::PutBoolean("Ball Transfer Impeller", true);
+        //m_ballTransfer->Set(ControlMode::PercentOutput, -.5);
+    }
+    if(m_teleop->GetAxisValue(TeleopControl::IMPELLER_AGITATE))
+    {
+        frc::SmartDashboard::PutBoolean("Impeller Agitate", true);
+        //m_impeller->Set(ControlMode::PercentOutput, .25);
+    }
+    if(m_teleop->GetAxisValue(TeleopControl::IMPELLER_SPIN))
+    {
+        frc::SmartDashboard::PutBoolean("Impeller Spin", true);
+        //m_impeller->Set(ControlMode::PercentOutput, .5);
+    }
+    if(m_teleop->GetAxisValue(TeleopControl::IMPELLER_STOP))
+    {
+        frc::SmartDashboard::PutBoolean("Ball Transfer Impeller", true);
+        //m_impeller->Set(ControlMode::PercentOutput, 0.0);
+    }
+    if(m_teleop->GetAxisValue(TeleopControl::SHOOTER_MANUAL_AIM))
+    {
+        frc::SmartDashboard::PutBoolean("Shooter Manual Aim", true);
+        //m_shooter1->Set(ControlMode::PercentOutput, .6);
+        //m_shooter2->Set(ControlMode::PercentOutput, -.4);
+    }
+    if(m_teleop->GetAxisValue(TeleopControl::SHOOTER_PREPARE_TO_SHOOT))
+    {
+        frc::SmartDashboard::PutBoolean("Shooter Off", true);
+        
+    }
+    m_intake->Set(ControlMode::PercentOutput, .5);
+    //m_intake->Set(ControlMode::PercentOutput, 0.0);
+    //m_ballTransfer->Set(ControlMode::PercentOutput, 1.0);
+    //m_ballTransfer->Set(ControlMode::PercentOutput, 0.0);
+    m_ballTransfer->Set(ControlMode::PercentOutput, -.5);
+    //m_impeller->Set(ControlMode::PercentOutput, .25);
+    m_impeller->Set(ControlMode::PercentOutput, -.75);
+    //m_impeller->Set(ControlMode::PercentOutput, 0.0);
+    m_shooter1->Set(ControlMode::PercentOutput, 0.4);
+    m_shooter2->Set(ControlMode::PercentOutput, -0.4);
+    //m_chassisStateMgr->RunCurrentState();
+    //m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
 }
@@ -151,6 +225,7 @@ void Robot::TeleopPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::TestInit() 
 {
+    /*
     m_testSelected = m_testChooser.GetSelected();
     if ( m_testSelected == m_buttonBox )
     {
@@ -166,6 +241,7 @@ void Robot::TestInit()
     {
         m_currentTest = NONE;
     }
+    */
 }
 
 
@@ -176,6 +252,7 @@ void Robot::TestInit()
 ///-----------------------------------------------------------------------
 void Robot::TestPeriodic() 
 {
+    /*
     switch ( m_currentTest )
     {
         case BUTTON_BOX:
@@ -189,6 +266,7 @@ void Robot::TestPeriodic()
         default:
             break;
     }
+    */
 }
 
 #ifndef RUNNING_FRC_TESTS
