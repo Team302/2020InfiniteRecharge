@@ -172,5 +172,12 @@ void ControlPanelColorTurn::Run()
 
 bool ControlPanelColorTurn::AtTarget() const                                 //confirms that it worked
 {
-    return true;
+    if (m_controlPanel -> GetCurrentPosition() >= (rotations - 5) &&  m_controlPanel -> GetCurrentPosition() <= (rotations + 5) )
+    { 
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
