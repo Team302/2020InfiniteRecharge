@@ -175,7 +175,7 @@ void ControlPanel::SetControlConstants
     Logger::GetLogger()->LogError(string("ControlPanel::SetControlConstants"), string("Called"));
 }
 
-ControlPanel::Colors ControlPanel::GetColorSeen()
+ControlPanel::COLORS ControlPanel::GetColorSeen()
 {
     frc::Color detectedColor = m_color->GetColor();
     uint32_t detectedProximity = m_color->GetProximity();
@@ -183,13 +183,13 @@ ControlPanel::Colors ControlPanel::GetColorSeen()
     double confidence = 0.0;
     frc::Color matchedColor = m_colorMatcher->MatchClosestColor(detectedColor, confidence);
     if(matchedColor == kGreenTarget && confidence >= 0.94 )
-        return Colors::BLUE;
+        return COLORS::BLUE;
     else if(matchedColor == kBlueTarget && confidence >= 0.94 )
-        return Colors::GREEN;
+        return COLORS::GREEN;
     else if(matchedColor == kYellowTarget && confidence >= 0.9 )
-        return Colors::YELLOW;
+        return COLORS::YELLOW;
     else if(matchedColor == kBlueTarget && confidence >= 0.9 )
-        return Colors::RED;
+        return COLORS::RED;
     else 
-        return Colors::UNKNOWN;
+        return COLORS::UNKNOWN;
 }

@@ -90,7 +90,7 @@ class ControlPanel : public IMechanism
             ControlData*                                pid                 
         ) override;
         
-        enum Colors
+        enum COLORS
         {
            GREEN  = 0 ,
            BLUE   = 1 ,
@@ -98,7 +98,7 @@ class ControlPanel : public IMechanism
            RED    = 3 ,
            UNKNOWN = 4
         }; 
-        Colors GetColorSeen();
+        COLORS GetColorSeen();
     private:
         std::shared_ptr<IDragonMotorController>     m_spinner;
         std::shared_ptr<DragonSolenoid>             m_manipulatorExtender;
