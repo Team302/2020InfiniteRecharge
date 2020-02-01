@@ -20,10 +20,12 @@ using namespace std;
 
 
 
-ClimberHold::ClimberHold()
+ClimberHold::ClimberHold
+(
+    ControlData* control,
+    double target
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::CLIMBER), control, target)
 {
-    auto factory = MechanismFactory::GetMechanismFactory();
 
-    
 }
 
