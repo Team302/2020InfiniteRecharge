@@ -1,4 +1,4 @@
-<!ELEMENT> statedata ( controlData*, mechanismTarget* )>
+<!ELEMENT statedata ( controlData*, mechanismTarget* )>
 
 <!ELEMENT controlData EMPTY>
 <!ATTLIST controlData
@@ -21,7 +21,7 @@
                                       HUMANPLAYERFLAPCLOSED | HUMANPLAYERFLAPOPEN |
                                       IMPELLEROFF | IMPELLERON | IMPELLERAGITATE |
                                       BALLTRANSFEROFF | BALLTRANSPORTTOIMPELLER | BALLTRANSFERTOSHOOTER |
-                                      SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN 
+                                      SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN |
                                       TURRENTHOLD | TURRENTAUTOAIM | TURRETMANUALAIM |
                                       SHOOTEROFF | SHOOTERGETREADY | SHOOTERSHOOT |
                                       UNKNOWN ) "UNKNOWN"
