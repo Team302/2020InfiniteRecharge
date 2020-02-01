@@ -69,7 +69,8 @@ TeleopControl::TeleopControl() : m_axisIDs(),
             auto xbox = new DragonXBox( inx );
 			m_controllers[inx] = xbox;
 		}
-		else if ( ds->GetJoystickType( inx ) == GenericHID::kHIDJoystick )
+//		else if ( ds->GetJoystickType( inx ) == GenericHID::kHIDJoystick )
+		else if ( ds->GetJoystickType( inx ) == GenericHID::kHID1stPerson )
 		{
             auto gamepad = new DragonGamepad( inx );
 			m_controllers[inx] = gamepad;
