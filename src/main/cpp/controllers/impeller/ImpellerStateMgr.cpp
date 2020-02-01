@@ -67,7 +67,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
                 {
                     case IMPELLER_STATE::ON:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ImpellerOn();
+                        auto thisState = new ImpellerOn(controlData, target);
                         m_stateMap[IMPELLER_STATE::ON] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -77,14 +77,14 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
 
                     case IMPELLER_STATE::OFF:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ImpellerOff();
+                        auto thisState = new ImpellerOff(controlData, target);
                         m_stateMap[IMPELLER_STATE::OFF] = thisState;
                     }
                     break;
 
                     case IMPELLER_STATE::AGITATE:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ImpellerAgitate();
+                        auto thisState = new ImpellerAgitate(controlData, target);
                         m_stateMap[IMPELLER_STATE::AGITATE] = thisState;
                     }
                     break;

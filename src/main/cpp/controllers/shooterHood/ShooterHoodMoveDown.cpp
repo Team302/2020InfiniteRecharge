@@ -4,7 +4,7 @@
 #include <memory>
 
 //Team 302 Includes
-#include <controllers/impeller/ImpellerAgitate.h>
+#include <controllers/shooterHood/ShooterHoodMoveDown.h>
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
@@ -13,11 +13,11 @@ using namespace std;
 
 
 
-ImpellerAgitate::ImpellerAgitate
+ShooterHoodMoveDown::ShooterHoodMoveDown
 (
     ControlData* control,
     double target
-) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER), control, target)
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD), control, target)
 {
 
 }
