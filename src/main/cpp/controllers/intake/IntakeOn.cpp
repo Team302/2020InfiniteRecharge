@@ -51,7 +51,7 @@ IntakeOn::IntakeOn()
 void IntakeOn::Run()           
 {
     m_intake -> SetOutput(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT,1.0);      //turns on motors
-    m_intake -> ActivateSolenoid( false );                                      //raises air cylinder
+    m_intake -> ActivateSolenoid( true );                                      //raises air cylinder
 }
 
 bool IntakeOn::AtTarget() const                                         //confirms that it worked

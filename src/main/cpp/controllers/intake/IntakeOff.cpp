@@ -41,7 +41,7 @@ void IntakeOff::Init()
 
 }
 
-IntakeOff::IntakeOn()
+IntakeOff::IntakeOff()
 {
     auto factory = MechanismFactory::GetMechanismFactory();
 
@@ -51,7 +51,7 @@ IntakeOff::IntakeOn()
 void IntakeOff::Run()           
 {
     m_intake -> SetOutput(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT,0.0);      //turns off motors
-    m_intake -> ActivateSolenoid( true );                                      //raises air cylinder
+    m_intake -> ActivateSolenoid( false );                                      //raises air cylinder
 }
 
 bool IntakeOff::AtTarget() const                                         //confirms that it worked
