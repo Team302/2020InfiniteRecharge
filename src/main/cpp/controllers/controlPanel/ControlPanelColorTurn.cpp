@@ -18,6 +18,7 @@
 #include  <subsys/ControlPanel.h>
 #include <utils/logger.h>
 #include <utils/ControlPanelColors.h>
+#include <utils/FMS.h>
 
 // Third Party Includes
 
@@ -43,7 +44,7 @@ ControlPanelColorTurn::ControlPanelColorTurn
 void ControlPanelColorTurn::Init()
 {
     auto currentColor = m_controlPanel -> GetColorSeen();
-    auto targetColor = m_controlPanel -> GetColorSeen();
+    auto targetColor = FMS::GetFMS() -> GetColor();
 
     // Figure out the number of colors the wheel has to spin by.
     // In the event of something that isnt possible then move over by one and rescan.
