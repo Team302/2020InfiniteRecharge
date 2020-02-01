@@ -43,6 +43,5 @@ class ControlPanelColorTurn : public IState
 
     ControlPanel* m_controlPanel;
     ControlData* m_control;
-    FMS* m_instance;
     double       m_target;
 };
