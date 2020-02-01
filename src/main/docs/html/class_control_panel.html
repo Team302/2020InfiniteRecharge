@@ -120,8 +120,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0342e08b50cd72ac2c721d7ba7a58cc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_panel.html#a0342e08b50cd72ac2c721d7ba7a58cc3">ControlPanel</a> (std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; motorcontroller, std::shared_ptr&lt; <a class="el" href="class_dragon_solenoid.html">DragonSolenoid</a> &gt; solenoid)</td></tr>
-<tr class="separator:a0342e08b50cd72ac2c721d7ba7a58cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f838fe1c465c905c4ac9ac8d01037f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_panel.html#a6f838fe1c465c905c4ac9ac8d01037f2">ControlPanel</a> (std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt; motorcontroller, std::shared_ptr&lt; <a class="el" href="class_dragon_solenoid.html">DragonSolenoid</a> &gt; solenoid, rev::ColorSensorV3 *colorSensor)</td></tr>
+<tr class="separator:a6f838fe1c465c905c4ac9ac8d01037f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b58eff4ae438b7847c52035957200eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_panel.html#a8b58eff4ae438b7847c52035957200eb">ControlPanel</a> ()=delete</td></tr>
 <tr class="separator:a8b58eff4ae438b7847c52035957200eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae26ca57e23827693cc8bc60304cc603a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_panel.html#ae26ca57e23827693cc8bc60304cc603a">~ControlPanel</a> ()=default</td></tr>
@@ -163,7 +163,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_control_panel_8h_source.html#l00022">22</a> of file <a class="el" href="_control_panel_8h_source.html">ControlPanel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8h_source.html#l00024">24</a> of file <a class="el" href="_control_panel_8h_source.html">ControlPanel.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a648e34cc33e0de0b19ce186a2603a513"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a648e34cc33e0de0b19ce186a2603a513">&#9670;&nbsp;</a></span>Colors</h2>
@@ -184,13 +184,13 @@ Public Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a648e34cc33e0de0b19ce186a2603a513af09422c033b5bf2a56cdcc6e7acd7aca"></a>UNKNOWN&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8h_source.html#l00090">90</a> of file <a class="el" href="_control_panel_8h_source.html">ControlPanel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8h_source.html#l00093">93</a> of file <a class="el" href="_control_panel_8h_source.html">ControlPanel.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0342e08b50cd72ac2c721d7ba7a58cc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0342e08b50cd72ac2c721d7ba7a58cc3">&#9670;&nbsp;</a></span>ControlPanel() <span class="overload">[1/2]</span></h2>
+<a id="a6f838fe1c465c905c4ac9ac8d01037f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f838fe1c465c905c4ac9ac8d01037f2">&#9670;&nbsp;</a></span>ControlPanel() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,7 +205,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_dragon_solenoid.html">DragonSolenoid</a> &gt;&#160;</td>
-          <td class="paramname"><em>solenoid</em>&#160;</td>
+          <td class="paramname"><em>solenoid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rev::ColorSensorV3 *&#160;</td>
+          <td class="paramname"><em>colorSensor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -214,8 +220,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00048">48</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>
@@ -305,7 +309,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#abef1fbd73a24f4f6f3104e255539e0d9">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00096">96</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00092">92</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>
@@ -324,7 +328,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00182">182</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00178">178</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>
@@ -356,7 +360,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00132">132</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00128">128</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>
@@ -388,7 +392,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00152">152</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00148">148</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>
@@ -420,7 +424,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#afd97d8b3f072b45a88c83490dd18e8d2">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00142">142</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00138">138</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>
@@ -458,7 +462,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00162">162</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00158">158</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>
@@ -490,7 +494,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#a62096808201ffc31609e99dc2fa92d44">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00075">75</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00069">69</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>
@@ -522,7 +526,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#a4c0bedb71316054749a276a67d278558">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00112">112</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00108">108</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>
@@ -561,7 +565,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00175">175</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00171">171</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>
@@ -611,7 +615,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#abc72a6d0306a828de6f43418e75c04c0">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00081">81</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00075">75</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>

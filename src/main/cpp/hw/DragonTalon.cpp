@@ -4,6 +4,8 @@
 #include <frc/PowerDistributionPanel.h>
 #include <frc/SpeedController.h>
 #include <memory>
+#include <ctre/phoenix/motorcontrol/LimitSwitchType.h>
+
 
 using namespace frc;
 using namespace std;
@@ -30,6 +32,7 @@ DragonTalon::DragonTalon
 	// m_tickOffset
 	// m_talon->GetSelectedSensorPo
 	m_tickOffset = m_talon->GetSelectedSensorPosition();
+
 }
 
 double DragonTalon::GetRotations() const
@@ -325,5 +328,22 @@ void DragonTalon::SetControlConstants(ControlData* controlInfo)
 
 }
 
+void DragonTalon::SetForwardLimitSwitch
+( 
+	bool normallyOpen
+)
+{
+	LimitSwitchNormal type = normallyOpen ? LimitSwitchNormal::LimitSwitchNormal_NormallyOpen : LimitSwitchNormal::LimitSwitchNormal_NormallyClosed;
+	m_talon->ConfigForwardLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );
+}
+
+void DragonTalon::SetReverseLimitSwitch
+(
+	bool normallyOpen
+)
+{
+	LimitSwitchNormal type = normallyOpen ? LimitSwitchNormal::LimitSwitchNormal_NormallyOpen : LimitSwitchNormal::LimitSwitchNormal_NormallyClosed;
+	m_talon->ConfigReverseLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );
+}
 
 

@@ -92,7 +92,11 @@ class DragonMotorControllerFactory
 			int 											peakCurrentDuration,	/// peak current limit
 			int 											continuousCurrentLimit,	/// continuous current limit
 			int 											peakCurrentLimit,		/// amount of time the peak current can be achieved before limiting to the continuous current limit
-			bool 											enableCurrentLimit		/// enable current limiting or not
+			bool 											enableCurrentLimit, 	/// enable current limiting or not
+			bool											forwardLimitSwitch,
+			bool											forwardLimitSwitchNormallyOpen,
+			bool											reverseLimitSwitch,
+			bool											reverseLimitSwitchNormallyOpen
 		);
 
 	private:

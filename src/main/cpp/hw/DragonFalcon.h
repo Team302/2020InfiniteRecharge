@@ -100,6 +100,15 @@ class DragonFalcon : public IDragonMotorController
         int ConfigPeakCurrentDuration(int milliseconds, int timeoutMs); 
         int ConfigContinuousCurrentLimit(int amps, int timeoutMs); 
 
+        void SetForwardLimitSwitch
+        ( 
+            bool normallyOpen
+        );
+
+        void SetReverseLimitSwitch
+        (
+            bool normallyOpen
+        );
         void SetAsSlave(int masterCANID); 
 
     private:

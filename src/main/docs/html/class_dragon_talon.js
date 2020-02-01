@@ -22,6 +22,8 @@ var class_dragon_talon =
     [ "SetAsSlave", "class_dragon_talon.html#ad17df52ab49a083f925d20bd9802cf6c", null ],
     [ "SetControlConstants", "class_dragon_talon.html#a051e7d9a21b9caf9db65bcb2c613808e", null ],
     [ "SetControlMode", "class_dragon_talon.html#a51ae73cebf47695a4c37cc874d7dd0b3", null ],
+    [ "SetForwardLimitSwitch", "class_dragon_talon.html#a443cf82313c085b34dd35dedd86f21a9", null ],
+    [ "SetReverseLimitSwitch", "class_dragon_talon.html#ada032141404f5abda96dcb08ea6d7eba", null ],
     [ "SetRotationOffset", "class_dragon_talon.html#a50cab200ce935067feed69d862f48156", null ],
     [ "SetSensorInverted", "class_dragon_talon.html#a87d056ac6683ceec4a985dff184b42e5", null ],
     [ "SetVoltageRamping", "class_dragon_talon.html#a1e450e634cd6d34cd0ba8f9bb0aebea1", null ]

@@ -16,7 +16,7 @@ var dir_584e64d87b72b2b407cc14bdfcc167c9 =
     [ "ChassisDefn.h", "_chassis_defn_8h.html", [
       [ "ChassisDefn", "class_chassis_defn.html", "class_chassis_defn" ]
     ] ],
-    [ "ColorSensorDefn.cpp", "_color_sensor_defn_8cpp.html", "_color_sensor_defn_8cpp" ],
+    [ "ColorSensorDefn.cpp", "_color_sensor_defn_8cpp.html", null ],
     [ "ColorSensorDefn.h", "_color_sensor_defn_8h.html", [
       [ "ColorSensorDefn", "class_color_sensor_defn.html", "class_color_sensor_defn" ]
     ] ],

@@ -82,6 +82,16 @@ class DragonTalon : public IDragonMotorController
 
         void SetAsSlave(int masterCANID); 
 
+        void SetForwardLimitSwitch
+        ( 
+            bool normallyOpen
+        );
+
+        void SetReverseLimitSwitch
+        (
+            bool normallyOpen
+        );
+
 
     private:
         std::shared_ptr<ctre::phoenix::motorcontrol::can::WPI_TalonSRX>  m_talon;

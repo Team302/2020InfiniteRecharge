@@ -23,6 +23,9 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "Team 302 Robot", "index.html", [
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -40,7 +43,6 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", null ],
@@ -53,13 +55,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_analog_axis_8cpp.html",
-"_drive_time_8cpp.html",
-"_robot_defn_8cpp.html",
-"class_color_sensor_defn.html#a7200aad177f24e92292e0eea20a5a459",
-"class_dragon_servo_factory.html#a1b73aabd706139b9004071299f46ee78",
-"class_i_dragon_angle_position_sensor.html#a810d0103e3a97a455d02eae479aa1ad8",
-"class_l_e_d.html#ae47fb1c1cbe847bee7fb8b6c19486f70a7b591e96536105815688278cc3ab5b67",
-"class_tank_drive.html#a44a489fce4ca4fa40c9e0c4b8ae8ffd3"
+"_dragon_vision_8h_source.html",
+"_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca7021af1a324c0f7122d43ac5e7b5f03e",
+"class_camera_defn.html#ae29ffe10b5b70b63317bbb86366d7be4afaf34eb85e7d84088421a1df36137b1b",
+"class_dragon_limelight.html#a8f80d91a71106af3592ec0975f474aaf",
+"class_function_map.html#ae3ec9af0d21dda3e4eb1ed1844b0acf7",
+"class_impeller_on.html#a27613f3d2b16087d9e3fca6ba8d56720",
+"class_servo_usage.html#a77ece7abcaf45a9b3b4d717f9503b5aaac9ebb567ff36eb3756660303089825d6",
+"functions_func_o.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

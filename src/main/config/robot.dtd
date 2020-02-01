@@ -212,7 +212,11 @@
           peakCurrentDuration 		CDATA #IMPLIED
           continuousCurrentLimit 	CDATA #IMPLIED
           peakCurrentLimit			CDATA #IMPLIED
-          currentLimiting   		( true | false ) "false"          
+          currentLimiting   		( true | false ) "false"  
+          forwardlimitswitch        ( true | false ) "false" 
+          forwardlimitswitchopen    ( true | false ) "true"        
+          reverselimitswitch        ( true | false ) "false" 
+          reverselimitswitchopen    ( true | false ) "true"        
 >
 
 

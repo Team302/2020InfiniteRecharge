@@ -21,6 +21,7 @@
 #include <rev/CANSparkMax.h>
 
 using namespace std;
+using namespace ctre::phoenix::motorcontrol;
 
 DragonMotorControllerFactory* DragonMotorControllerFactory::m_instance = nullptr;
 
@@ -57,7 +58,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
     string                                          usage,
     bool 											inverted, 
     bool 											sensorInverted,
-    ctre::phoenix::motorcontrol::FeedbackDevice  	feedbackDevice,
+    FeedbackDevice  	                            feedbackDevice,
     int 											countsPerRev,
     float 											gearRatio,
     bool 											brakeMode,
@@ -65,7 +66,11 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
     int 											peakCurrentDuration,
     int 											continuousCurrentLimit,
     int 											peakCurrentLimit,
-    bool 											enableCurrentLimit
+    bool 											enableCurrentLimit,
+    bool											forwardLimitSwitch,
+    bool											forwardLimitSwitchNormallyOpen,
+    bool											reverseLimitSwitch,
+    bool											reverseLimitSwitchNormallyOpen
 )
 {
     shared_ptr<IDragonMotorController> controller;
@@ -86,6 +91,14 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
         talon->ConfigPeakCurrentDuration( peakCurrentDuration, 50 );
         talon->ConfigContinuousCurrentLimit( continuousCurrentLimit, 50 );
         talon->EnableCurrentLimiting( enableCurrentLimit );
+        if ( forwardLimitSwitch )
+        {
+            talon->SetForwardLimitSwitch(forwardLimitSwitchNormallyOpen);
+        }        
+        if ( reverseLimitSwitch )
+        {
+            talon->SetForwardLimitSwitch(reverseLimitSwitchNormallyOpen);
+        }
 
         if ( slaveTo > -1 )
         {
@@ -106,7 +119,15 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
         talon->ConfigPeakCurrentDuration( peakCurrentDuration, 50 );
         talon->ConfigContinuousCurrentLimit( continuousCurrentLimit, 50 );
         talon->EnableCurrentLimiting( enableCurrentLimit );
-
+        if ( forwardLimitSwitch )
+        {
+            talon->SetForwardLimitSwitch(forwardLimitSwitchNormallyOpen);
+        }        
+        if ( reverseLimitSwitch )
+        {
+            talon->SetForwardLimitSwitch(reverseLimitSwitchNormallyOpen);
+        }
+        
         if ( slaveTo > -1 )
         {
             talon->SetAsSlave( slaveTo );

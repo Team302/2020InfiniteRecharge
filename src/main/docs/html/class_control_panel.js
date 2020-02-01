@@ -7,7 +7,7 @@ var class_control_panel =
       [ "RED", "class_control_panel.html#a648e34cc33e0de0b19ce186a2603a513ad7f858b254a2047034519ec983d36c30", null ],
       [ "UNKNOWN", "class_control_panel.html#a648e34cc33e0de0b19ce186a2603a513af09422c033b5bf2a56cdcc6e7acd7aca", null ]
     ] ],
-    [ "ControlPanel", "class_control_panel.html#a0342e08b50cd72ac2c721d7ba7a58cc3", null ],
+    [ "ControlPanel", "class_control_panel.html#a6f838fe1c465c905c4ac9ac8d01037f2", null ],
     [ "ControlPanel", "class_control_panel.html#a8b58eff4ae438b7847c52035957200eb", null ],
     [ "~ControlPanel", "class_control_panel.html#ae26ca57e23827693cc8bc60304cc603a", null ],
     [ "ActivateSolenoid", "class_control_panel.html#afabe6a8e741ed9af5d51d50d82cc4263", null ],

@@ -82,12 +82,14 @@ var hierarchy =
     ] ],
     [ "IMechanism", "class_i_mechanism.html", [
       [ "BallTransfer", "class_ball_transfer.html", null ],
+      [ "Climber", "class_climber.html", null ],
       [ "ControlPanel", "class_control_panel.html", null ],
       [ "DriveTrainSide", "class_drive_train_side.html", null ],
       [ "HumanPlayerFlap", "class_human_player_flap.html", null ],
       [ "Impeller", "class_impeller.html", null ],
       [ "Intake", "class_intake.html", null ],
       [ "Shooter", "class_shooter.html", null ],
+      [ "ShooterHood", "class_shooter_hood.html", null ],
       [ "Turret", "class_turret.html", null ]
     ] ],
     [ "IMechController", "class_i_mech_controller.html", [
@@ -116,11 +118,16 @@ var hierarchy =
     ] ],
     [ "IState", "class_i_state.html", [
       [ "ControlPanelRaise", "class_control_panel_raise.html", null ],
+      [ "ControlPanelStow", "class_control_panel_stow.html", null ],
+      [ "ControlPanelTurn", "class_control_panel_turn.html", null ],
+      [ "HoldTurretPosition", "class_hold_turret_position.html", null ],
       [ "ImpellerAgitate", "class_impeller_agitate.html", null ],
       [ "ImpellerOff", "class_impeller_off.html", null ],
       [ "ImpellerOn", "class_impeller_on.html", null ],
       [ "IntakeOff", "class_intake_off.html", null ],
       [ "IntakeOn", "class_intake_on.html", null ],
+      [ "LimelightAim", "class_limelight_aim.html", null ],
+      [ "ManualAim", "class_manual_aim.html", null ],
       [ "MechanismState", "class_mechanism_state.html", [
         [ "BallTransferOff", "class_ball_transfer_off.html", null ],
         [ "BallTransferToImpeller", "class_ball_transfer_to_impeller.html", null ],
@@ -141,6 +148,7 @@ var hierarchy =
     [ "LidarDefn", "class_lidar_defn.html", null ],
     [ "LidarFactory", "class_lidar_factory.html", null ],
     [ "LimelightDefn", "class_limelight_defn.html", null ],
+    [ "LimelightFactory", "class_limelight_factory.html", null ],
     [ "LimitValue", "class_limit_value.html", null ],
     [ "Logger", "class_logger.html", null ],
     [ "MechanismDefn", "class_mechanism_defn.html", null ],
