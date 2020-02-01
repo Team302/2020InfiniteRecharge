@@ -47,8 +47,8 @@
              track="18.0">
 			 
 		<motor usage="LEFT_DRIVE_MASTER"
-				canId="1"
-				pdpID="1"
+				canId="12"
+				pdpID="12"
 				type="FALCON"
 				inverted="false"
 				sensorInverted="false"
@@ -66,8 +66,8 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
 		<motor  usage="LEFT_DRIVE_FOLLOWER"
-				canId="2"
-				pdpID="2"
+				canId="13"
+				pdpID="13"
 				type="FALCON"
 				inverted="false"
 				sensorInverted="false"
@@ -87,8 +87,8 @@
 				
 			 
 		<motor usage="RIGHT_DRIVE_MASTER"
-				canId="3"
-				pdpID="3"
+				canId="15"
+				pdpID="15"
 				type="FALCON"
 				inverted="false"
 				sensorInverted="false"
@@ -106,8 +106,8 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
 		<motor  usage="RIGHT_DRIVE_FOLLOWER"
-				canId="4"
-				pdpID="4"
+				canId="14"
+				pdpID="14"
 				type="FALCON"
 				inverted="false"
 				sensorInverted="false"
@@ -165,8 +165,8 @@
 	
 	<mechanism type="IMPELLER">
 		<motor usage="IMPELLER"
-				canId="8"
-				pdpID="8"
+				canId="7"
+				pdpID="7"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
@@ -193,8 +193,8 @@
     		      channel="3"
     		      reversed="false" / -->
 		<motor usage="BALL_TRANSFER"
-				canId="9"
-				pdpID="9"
+				canId="3"
+				pdpID="3"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
@@ -214,8 +214,8 @@
     
 	<mechanism type="SHOOTER">
 		<motor usage="SHOOTER_1"
-				canId="5"
-				pdpID="5"
+				canId="16"
+				pdpID="0"
 				type="FALCON"
 				inverted="false"
 				sensorInverted="false"
@@ -233,8 +233,8 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
 		<motor usage="SHOOTER_2"
-				canId="6"
-				pdpID="6"
+				canId="1"
+				pdpID="1"
 				type="FALCON"
 				inverted="false"
 				sensorInverted="false"
@@ -259,8 +259,8 @@
     		      channel="7"
     		      reversed="false" / -->
 		<motor usage="SHOOTER_HOOD"
-				canId="10"
-				pdpID="10"
+				canId="4"
+				pdpID="4"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
@@ -281,9 +281,9 @@
 	</mechanism>
     
 	<mechanism type="TURRET">
-		<motor usage="SHOOTER_HOOD"
-				canId="11"
-				pdpID="11"
+		<motor usage="TURRET"
+				canId="5"
+				pdpID="5"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
@@ -304,8 +304,8 @@
     
 	<mechanism type="CONTROL_TABLE_MANIPULATOR">
 		<motor usage="CONTROL_TABLE_MANIPULATOR"
-				canId="12"
-				pdpID="12"
+				canId="6"
+				pdpID="6"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
@@ -330,8 +330,8 @@
     
 	<mechanism type="CLIMBER">
 		<motor usage="CONTROL_TABLE_MANIPULATOR"
-				canId="13"
-				pdpID="13"
+				canId="2"
+				pdpID="2"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
@@ -353,10 +353,10 @@
     		      reversed="false" />
 	</mechanism>
     
-	<mechanism type="CRAWLER">
+	<!--mechanism type="CRAWLER">
 		<motor usage="CONTROL_TABLE_MANIPULATOR"
-				canId="14"
-				pdpID="14"
+				canId="63"
+				pdpID="63"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
@@ -372,5 +372,5 @@
 				forwardlimitswitchopen="true"
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
-	</mechanism>
+	</mechanism -->
 </robot>
