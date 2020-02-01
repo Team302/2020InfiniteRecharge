@@ -69,6 +69,9 @@ class TeleopControl
             CONTROL_PANNEL_RAISE,
             CONTROL_PANNEL_SPIN_WHEEL,
             CONTROL_PANNEL_TURN_TO_COLOR,
+            SHOOTER_HOOD_MOVE_UP,
+            SHOOTER_HOOD_MOVE_DOWN,
+            SHOOTER_HOOD_HOLD_POSITION,
             MAX_FUNCTIONS
         };
 
