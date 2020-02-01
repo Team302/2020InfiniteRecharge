@@ -43,6 +43,10 @@ void ControlPanelColorTurn::Init()
 {
     auto currentColor = m_controlPanel -> GetColorSeen();
     auto targetColor = m_controlPanel -> GetColorSeen();
+
+    // Figure out the number of colors the wheel has to spin by.
+    // In the event of something that isnt possible then move over by one and rescan.
+
     if (currentColor == ControlPanel::COLORS::BLUE)
     {
         if (targetColor == ControlPanel::COLORS::BLUE)
@@ -161,11 +165,17 @@ void ControlPanelColorTurn::Init()
         rescan = true;
     }
 
-rotations = (colorUnits / 358.0986);
+// convert colorunits into degrees
+// the number is (the arc length of one color / our wheels circumfrence) * 360
+
+rotations = (colorUnits * 358.0986);
 
 }
 
 void ControlPanelColorTurn::Run()           
+
+//makes the motor turn the number of required degrees
+
 {
     m_controlPanel -> SetOutput(m_control -> GetMode(), rotations);
 }
