@@ -37,6 +37,13 @@
 #include <xmlhw/RobotDefn.h>
 #include <auton/CyclePrimitives.h>
 #include <controllers/chassis/ChassisStateMgr.h>
+#include <hw/DragonTalon.h>
+#include <hw/usages/MotorControllerUsage.h>
+#include <hw/factories/DragonMotorControllerFactory.h>
+#include <controllers/ControlData.h>
+#include <controllers/ControlModes.h>
+
+#include <ctre/Phoenix.h>
 
 using namespace std;
 using namespace frc;
@@ -52,24 +59,20 @@ void Robot::RobotInit()
     // Read the robot definition from the xml configuration files and
     // create the hardware (chassis + mechanisms along with their talons,
     // solenoids, digital inputs, analog inputs, etc.
-    unique_ptr<RobotDefn>  robotXml = make_unique<RobotDefn>();
-    robotXml->ParseXML();
 
     // Display the autonomous choices on the dashboard for selection.
     // comment out for now since auton hasn't been implemented
     // m_cyclePrims = new CyclePrimitives();
+    auto factory = DragonMotorControllerFactory::GetInstance();
+    m_motor1 = factory->CreateMotorController("TALONSRX",1,0,"SHOOTER_1",false, false, ctre::phoenix::motorcontrol::FeedbackDevice::QuadEncoder,1024, 1.0, false, -1, 10, 20, 40, false);
+    m_motor2 = factory->CreateMotorController("TALONSRX",3,1,"SHOOTER_2",true, false, ctre::phoenix::motorcontrol::FeedbackDevice::QuadEncoder,1024, 1.0, false, -1, 10, 20, 40, false);
 
-    m_chassisStateMgr = new ChassisStateMgr();
+    ControlData* controlConstants = new ControlData(ControlModes::CONTROL_TYPE::VELOCITY_DEGREES,ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER, IDENTIFIER, K_P, K_I, K_D, K_F, INTEGRAL_ZONE, MAX_ACCEL, CRUISE_VELOC, PEAK, NOMINAL);
+    m_motor1->SetControlConstants(controlConstants);
+    m_motor2->SetControlConstants(controlConstants);
 
-        // pick test mode
-    m_testChooser.SetDefaultOption( m_noTest, m_noTest);
-    m_testChooser.AddOption( m_buttonBox, m_buttonBox );
-    m_testChooser.AddOption( m_dragonXBox, m_dragonXBox );
-    SmartDashboard::PutData("Test", &m_testChooser);
-
-    m_buttonBoxDisplay = nullptr;
-    m_xBoxDisplay = nullptr;
-
+    m_motor1->SetControlMode(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT);
+    m_motor2->SetControlMode(ControlModes::CONTROL_TYPE::VELOCITY_DEGREES);
 }
 
 ///-----------------------------------------------------------------------
@@ -92,7 +95,6 @@ void Robot::RobotPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::AutonomousInit() 
 {
-    m_chassisStateMgr->Init();
 
     // run selected auton option
     //m_cyclePrims->Init();
@@ -118,7 +120,7 @@ void Robot::AutonomousPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::TeleopInit() 
 {
-    m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
+    
 }
 
 
@@ -129,7 +131,10 @@ void Robot::TeleopInit()
 ///-----------------------------------------------------------------------
 void Robot::TeleopPeriodic() 
 {
-    m_chassisStateMgr->RunCurrentState();
+    m_motor1->Set(1.0);
+    m_motor2->Set(3000.0*6.0);
+
+    frc::SmartDashboard::PutNumber("Position", m_motor1->GetRotations());
 }
 
 
@@ -139,25 +144,7 @@ void Robot::TeleopPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::TestInit() 
 {
-    m_testSelected = m_testChooser.GetSelected();
-    if(m_testSelected == m_noTest) 
-    {
-        m_currentTest == NONE;
-    }
-    else if ( m_testSelected == m_buttonBox )
-    {
-        m_currentTest = BUTTON_BOX;
-        m_buttonBoxDisplay = new ButtonBoxDisplay();
-    }
-    else if ( m_testSelected == m_buttonBox )
-    {
-        m_currentTest = XBOX;
-        m_xBoxDisplay = new XboxDisplay();
-    }
-    else
-    {
-        m_currentTest = NONE;
-    }
+   
 }
 
 
@@ -168,19 +155,7 @@ void Robot::TestInit()
 ///-----------------------------------------------------------------------
 void Robot::TestPeriodic() 
 {
-    switch ( m_currentTest )
-    {
-        case BUTTON_BOX:
-            m_buttonBoxDisplay->periodic();
-            break;
-
-        case XBOX:
-            m_xBoxDisplay->periodic();
-            break;
-
-        default:
-            break;
-    }
+    
 }
 
 #ifndef RUNNING_FRC_TESTS

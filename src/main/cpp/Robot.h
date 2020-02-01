@@ -36,6 +36,7 @@
 #include <controllers/chassis/ChassisStateMgr.h>
 #include <test/ButtonBoxDisplay.h>
 #include <test/XboxDisplay.h>
+#include <hw/DragonTalon.h>
 
 #include <frc/smartdashboard/SendableChooser.h>
 
@@ -54,26 +55,17 @@ class Robot : public frc::TimedRobot
       void TestInit() override;
       void TestPeriodic() override;
 
-  private:
-      CyclePrimitives* m_cyclePrims;
-      ChassisStateMgr* m_chassisStateMgr;
-
-      ButtonBoxDisplay* m_buttonBoxDisplay;
-      XboxDisplay* m_xBoxDisplay;
-
-      frc::SendableChooser<std::string>   m_testChooser;                    
-      const std::string                   m_noTest = "No Test";      
-      const std::string                   m_buttonBox = "Button Box";      
-      const std::string                   m_dragonXBox = "Dragon XBox";       
-      std::string                         m_testSelected; 
-
-      enum TEST_TO_RUN
-      {
-          NONE,
-          BUTTON_BOX,
-          XBOX
-      };
-      TEST_TO_RUN   m_currentTest;      
-
-
+  private:  
+      std::shared_ptr<IDragonMotorController> m_motor1;
+      std::shared_ptr<IDragonMotorController> m_motor2;
+      std::string IDENTIFIER = "";
+      double K_P = 10.0;
+      double K_I = 0.0;
+      double K_D = 0.0;
+      double K_F = 0.0;
+      double INTEGRAL_ZONE = 0.0;
+      double MAX_ACCEL = 0.0; 
+      double CRUISE_VELOC = 0.0; 
+      double PEAK = 1.0; 
+      double NOMINAL = 0.0;
 };
