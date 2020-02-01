@@ -142,12 +142,12 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[IMPELLER_AGITATE] = 0;
 		m_buttonIDs[IMPELLER_AGITATE] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_SWITCH_19;
 
-		m_controllerIndex[CLIMBER_EXTEND] = 0;
-		m_buttonIDs[CLIMBER_EXTEND] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_14_UP;
-		m_controllerIndex[CLIMBER_LIFT] = 0;
-		m_buttonIDs[CLIMBER_LIFT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_14_DOWN;
-		m_controllerIndex[CLIMBER_CRAWL] = 0;
-		m_buttonIDs[CLIMBER_CRAWL] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_DIAL_23;
+		//m_controllerIndex[CLIMBER_EXTEND] = 0;
+		//m_buttonIDs[CLIMBER_EXTEND] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_14_UP;
+		//m_controllerIndex[CLIMBER_LIFT] = 0;
+		//m_buttonIDs[CLIMBER_LIFT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_14_DOWN;
+		//m_controllerIndex[CLIMBER_CRAWL] = 0;
+		//m_buttonIDs[CLIMBER_CRAWL] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_DIAL_23;
 
 		m_controllerIndex[BALL_TRANSFER_OFF] = 0;
 		m_buttonIDs[BALL_TRANSFER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_4;
