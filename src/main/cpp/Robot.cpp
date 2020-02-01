@@ -37,6 +37,9 @@
 #include <xmlhw/RobotDefn.h>
 #include <auton/CyclePrimitives.h>
 #include <controllers/chassis/ChassisStateMgr.h>
+#include <controllers/BallManipulator.h>
+//#include <controllers/controlPanel/ControlPanelStateMgr.h>
+//#include <controllers/climber/ClimberStateMgr.h>
 
 using namespace std;
 using namespace frc;
@@ -60,6 +63,9 @@ void Robot::RobotInit()
     // m_cyclePrims = new CyclePrimitives();
 
     m_chassisStateMgr = new ChassisStateMgr();
+    m_powerCells = new BallManipulator();
+    // m_control = new ControlPanelStateMgr();
+    // m_climber = new ClimberStateMgr();
 
         // pick test mode
     m_testChooser.SetDefaultOption( m_noTest, m_noTest);
@@ -119,6 +125,9 @@ void Robot::AutonomousPeriodic()
 void Robot::TeleopInit() 
 {
     m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
+    m_powerCells->RunCurrentState();
+    // m_control->RunCurrentState();
+    // m_climber->RunCurrentState();
 }
 
 
@@ -130,6 +139,9 @@ void Robot::TeleopInit()
 void Robot::TeleopPeriodic() 
 {
     m_chassisStateMgr->RunCurrentState();
+    m_powerCells->RunCurrentState();
+    // m_control->RunCurrentState();
+    // m_climber->RunCurrentState();
 }
 
 
@@ -140,11 +152,7 @@ void Robot::TeleopPeriodic()
 void Robot::TestInit() 
 {
     m_testSelected = m_testChooser.GetSelected();
-    if(m_testSelected == m_noTest) 
-    {
-        m_currentTest == NONE;
-    }
-    else if ( m_testSelected == m_buttonBox )
+    if ( m_testSelected == m_buttonBox )
     {
         m_currentTest = BUTTON_BOX;
         m_buttonBoxDisplay = new ButtonBoxDisplay();
