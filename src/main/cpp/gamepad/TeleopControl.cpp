@@ -115,6 +115,7 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 
     if ( m_controllers[1] != nullptr && ds->GetJoystickIsXbox(1) )
     {
+
 	}
     else if ( m_controllers[1] != nullptr )
     {
@@ -129,6 +130,51 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 	}
     else if ( m_controllers[2] != nullptr )
     {
+		m_controllerIndex[INTAKE_ON] = 0;
+		m_buttonIDs[INTAKE_ON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_1;
+		m_controllerIndex[INTAKE_OFF] = 0;
+		m_buttonIDs[INTAKE_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_2;
+
+		m_controllerIndex[IMPELLER_SPIN] = 0;
+		m_buttonIDs[IMPELLER_SPIN] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_SWITCH_18;
+		m_controllerIndex[IMPELLER_STOP] = 0;
+		m_buttonIDs[IMPELLER_STOP] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_3;
+		m_controllerIndex[IMPELLER_AGITATE] = 0;
+		m_buttonIDs[IMPELLER_AGITATE] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_SWITCH_19;
+
+		m_controllerIndex[CLIMBER_EXTEND] = 0;
+		m_buttonIDs[CLIMBER_EXTEND] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_14_UP;
+		m_controllerIndex[CLIMBER_LIFT] = 0;
+		m_buttonIDs[CLIMBER_LIFT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_14_DOWN;
+		m_controllerIndex[CLIMBER_CRAWL] = 0;
+		m_buttonIDs[CLIMBER_CRAWL] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_DIAL_23;
+
+		m_controllerIndex[BALL_TRANSFER_OFF] = 0;
+		m_buttonIDs[BALL_TRANSFER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_4;
+		m_controllerIndex[BALL_TRANSFER_TO_IMPELLER] = 0;
+		m_buttonIDs[BALL_TRANSFER_TO_IMPELLER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_SWITCH_20;
+		m_controllerIndex[BALL_TRANSFER_TO_SHOOTER] = 0;
+		m_buttonIDs[BALL_TRANSFER_TO_SHOOTER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_SWITCH_21;
+
+		m_controllerIndex[CONTROL_PANNEL_STOW] = 0;
+		m_buttonIDs[CONTROL_PANNEL_STOW] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_15_DOWN;
+		m_controllerIndex[CONTROL_PANNEL_RAISE] = 0;
+		m_buttonIDs[CONTROL_PANNEL_RAISE] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_15_UP;
+		m_controllerIndex[CONTROL_PANNEL_SPIN_WHEEL] = 0;
+		m_buttonIDs[CONTROL_PANNEL_SPIN_WHEEL] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_5;
+		m_controllerIndex[CONTROL_PANNEL_TURN_TO_COLOR] = 0;
+		m_buttonIDs[CONTROL_PANNEL_TURN_TO_COLOR] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_6;
+
+		m_controllerIndex[SHOOTER_PREPARE_TO_SHOOT] = 0;
+		m_buttonIDs[SHOOTER_PREPARE_TO_SHOOT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_7;
+		m_controllerIndex[SHOOTER_AUTO_SHOOT] = 0;
+		m_buttonIDs[SHOOTER_AUTO_SHOOT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_8;
+		m_controllerIndex[SHOOTER_MANUAL_AIM] = 0;
+		m_buttonIDs[SHOOTER_MANUAL_AIM] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_9;
+		m_controllerIndex[SHOOTER_MANUAL_ADJUST_DISTANCE] = 0;
+		m_buttonIDs[SHOOTER_MANUAL_ADJUST_DISTANCE] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10;
+		m_controllerIndex[SHOOTER_MANUAL_SHOOT] = 0;
+		m_buttonIDs[SHOOTER_MANUAL_SHOOT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_11;
 	}
 	else
 	{
