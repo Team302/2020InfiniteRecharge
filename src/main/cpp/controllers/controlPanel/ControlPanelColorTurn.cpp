@@ -165,7 +165,8 @@ void ControlPanelColorTurn::Init()
         rescan = true;
     }
 
-//convert colorunits into degrees
+// convert colorunits into degrees
+// the number is (the arc length of one color / our wheels circumfrence) * 360
 
 rotations = (colorUnits * 358.0986);
 
