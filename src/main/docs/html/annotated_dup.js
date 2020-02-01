@@ -7,6 +7,7 @@ var annotated_dup =
     [ "AnalogInputUsage", "class_analog_input_usage.html", "class_analog_input_usage" ],
     [ "ArcadeDrive", "class_arcade_drive.html", "class_arcade_drive" ],
     [ "AutonSelector", "class_auton_selector.html", "class_auton_selector" ],
+    [ "BallManipulator", "class_ball_manipulator.html", "class_ball_manipulator" ],
     [ "BallTransfer", "class_ball_transfer.html", "class_ball_transfer" ],
     [ "BallTransferOff", "class_ball_transfer_off.html", "class_ball_transfer_off" ],
     [ "BallTransferStateMgr", "class_ball_transfer_state_mgr.html", "class_ball_transfer_state_mgr" ],

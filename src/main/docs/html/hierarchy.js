@@ -8,6 +8,7 @@ var hierarchy =
     [ "AnalogInputFactory", "class_analog_input_factory.html", null ],
     [ "AnalogInputUsage", "class_analog_input_usage.html", null ],
     [ "AutonSelector", "class_auton_selector.html", null ],
+    [ "BallManipulator", "class_ball_manipulator.html", null ],
     [ "BallTransferStateMgr", "class_ball_transfer_state_mgr.html", null ],
     [ "ButtonBoxDisplay", "class_button_box_display.html", null ],
     [ "CameraDefn", "class_camera_defn.html", null ],
