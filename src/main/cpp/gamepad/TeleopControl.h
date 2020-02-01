@@ -57,9 +57,12 @@ class TeleopControl
             IMPELLER_AGITATE,
             INTAKE_ON,
             INTAKE_OFF,
+<<<<<<< Updated upstream
             BALL_TRANSFER_OFF,
             BALL_TRANSFER_TO_IMPELLER,
             BALL_TRANSFER_TO_SHOOTER,
+=======
+>>>>>>> Stashed changes
             SHOOTER_PREPARE_TO_SHOOT,
             SHOOTER_AUTO_SHOOT,
             SHOOTER_MANUAL_AIM,
