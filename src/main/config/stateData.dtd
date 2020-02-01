@@ -22,7 +22,7 @@
                                       IMPELLEROFF | IMPELLERON | IMPELLERAGITATE |
                                       BALLTRANSFEROFF | BALLTRANSPORTTOIMPELLER | BALLTRANSFERTOSHOOTER |
                                       SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN |
-                                      TURRENTHOLD | TURRENTAUTOAIM | TURRETMANUALAIM |
+                                      TURRETHOLD | TURRETAUTOAIM | TURRETMANUALAIM |
                                       SHOOTEROFF | SHOOTERGETREADY | SHOOTERSHOOT |
                                       UNKNOWN ) "UNKNOWN"
           controlDataIdentifier     CDATA #REQUIRED
