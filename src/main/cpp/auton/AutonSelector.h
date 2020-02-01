@@ -29,7 +29,6 @@
 #include <string>
 #include <vector>
 #include <frc/SmartDashboard/SendableChooser.h>
-#include <auton/FMS.h>
 
 class AutonSelector
 {
@@ -45,16 +44,7 @@ class AutonSelector
 
 		enum AUTON_OPTION
 		{
-			CROSS_LINE,
-			SWITCH,
-			SCALE_PLACE_FAR,
-			SCALE_HALFWAY,
-			END_SCALE_PLACE_FAR,
-			END_SCALE_HALFWAY,
-			SCALE_BACKUP_PLACE_FAR,
-			SCALE_BACKUP_HALFWAY,
-			SWITCH_SCALE,
-			SMART
+			CROSS_LINE
 		};
 		//---------------------------------------------------------------------
 		// Method: 		<<constructor>>
@@ -80,111 +70,13 @@ class AutonSelector
 
 	private:
 
-		enum FIELD_STATE
-		{
-            LEFTSWITCH_LEFTSCALE_LEFT = 0,
-            RIGHTSWITCH_LEFTSCALE_LEFT = 1,
-            LEFTSWITCH_RIGHTSCALE_LEFT = 10,
-            RIGHTSWITCH_RIGHTSCALE_LEFT = 11,
-            LEFTSWITCH_LEFTSCALE_CENTER = 100,
-            RIGHTSWITCH_LEFTSCALE_CENTER = 101,
-            LEFTSWITCH_RIGHTSCALE_CENTER = 110,
-            RIGHTSWITCH_RIGHTSCALE_CENTER = 111,
-            LEFTSWITCH_LEFTSCALE_RIGHT = 200,
-            RIGHTSWITCH_LEFTSCALE_RIGHT = 201,
-            LEFTSWITCH_RIGHTSCALE_RIGHT = 210,
-            RIGHTSWITCH_RIGHTSCALE_RIGHT =211,
-		};
-
 		//---------------------------------------------------------------------
 		// Method: 		GetCrossLineFile
 		// Description: This determines which Cross line file to run based on starting
-		//				position and FMS feedback
+		//				position 
 		// Returns:		std::string		filename to run
 		//---------------------------------------------------------------------
-        std::string GetCrossLineFile
-        (
-            int state		// <I> - FIELD_STATE enum value
-        );
-
-        //---------------------------------------------------------------------
-        // Method: 		GetSwitchFile
-        // Description: This determines which Switch file to run based on starting
-        //				position and FMS feedback
-        // Returns:		std::string		filename to run
-        //---------------------------------------------------------------------
-        std::string GetSwitchFile
-        (
-            int state		// <I> - FIELD_STATE enum value
-        );
-
-        //---------------------------------------------------------------------
-        // Method: 		GetScaleFile
-        // Description: This determines which Scale file to run based on starting
-        //				position and FMS feedback
-        // Returns:		std::string		filename to run
-        //---------------------------------------------------------------------
-        std::string GetScalePlaceFarFile
-        (
-            int state		// <I> - FIELD_STATE enum value
-        );
-
-        //---------------------------------------------------------------------
-        // Method: 		GetScaleFile
-        // Description: This determines which Scale file to run based on starting
-        //				position and FMS feedback
-        // Returns:		std::string		filename to run
-        //---------------------------------------------------------------------
-        std::string GetScaleHalfwayFile
-        (
-            int state		// <I> - FIELD_STATE enum value
-        );
-
-        //---------------------------------------------------------------------
-        // Method: 		GetEndScalePlaceFarFile
-        // Description: This determines which End Scale/Scale file to run based on starting
-        // 				position and FMS feedback
-        // Returns:		std::string		filename to run
-        //---------------------------------------------------------------------
-        std::string GetEndScalePlaceFarFile
-		(
-			int state		// <I> - FIELD_STATE enum value
-		);
-
-        //---------------------------------------------------------------------
-        // Method: 		GetEndScaleHalfwayFile
-        // Description: This determines which End Scale/Halfway file to run based on starting
-        // 				position and FMS feedback
-        // Returns:		std::string		filename to run
-        //---------------------------------------------------------------------
-        std::string GetEndScaleHalfwayFile
-		(
-			int state		// <I> - FIELD_STATE enum value
-		);
-
-        //---------------------------------------------------------------------
-        // Method: 		GetSwitchScaleFile
-        // Description: This determines which Switch/Scale file to run based on starting
-        //				position and FMS feedback
-        // Returns:		std::string		filename to run
-        //---------------------------------------------------------------------
-        std::string GetSwitchScaleFile
-        (
-            int state		// <I> - FIELD_STATE enum value
-        );
-
-
-        //does what the other ones do :)
-        std::string GetScaleBackUpPlaceFarFile
-		(
-			int state		// <I> - FIELD_STATE enum value
-		);
-
-        //does what the other ones do :)
-        std::string GetScaleBackUpHalfwayFile
-		(
-			int state		// <I> - FIELD_STATE enum value
-		);
+        std::string GetCrossLineFile();
 
 		//---------------------------------------------------------------------
 		// Method: 		FindXMLFileNames
@@ -216,14 +108,6 @@ class AutonSelector
 		//---------------------------------------------------------------------
 		AUTON_OPTION GetDesiredOption();
 
-
-		bool ProcessSmartOptions
-		(
-			AUTON_POSITION		startPosition,				// <I> - robot starting position
-			FMS::POS			fmsSwitch,					// <I> - FMS setting for our switch
-			FMS::POS			fmsScale					// <I> - FMS setting for the scale
-		);
-
 		// Attributes
 		std::vector<std::string> m_leftXMLFiles;
 		std::vector<std::string> m_centerXMLFiles;
@@ -233,21 +117,6 @@ class AutonSelector
 		// 16 character limits to avoid some smartdashboard issues
 		// AUTOLINE Option
 		const std::string CROSS_AUTON_LINE_STR = "Auto Line";
-		// SWITCH Option
-		const std::string PLACE_IN_SWITCH_STR = "Switch";
-		// CORNER SCALE Option
-		const std::string PLACE_ON_CORNER_SCALE_FAR_STR = "Corner SC Far";
-		const std::string PLACE_ON_CORNER_SCALE_HALFWAY_STR = "Corner SC Half";
-		// SAFE SCALE Option
-		const std::string PLACE_ON_END_SCALE_FAR_STR = "End SC Far";
-		const std::string PLACE_ON_END_SCALE_HALFWAY_STR = "End SC Half";
-		// BACKUP SCALE Option
-		const std::string PLACE_ON_CORNER_SCALE_BACKUP_FAR_STR = "Bkup SC Far";
-		const std::string PLACE_ON_CORNER_SCALE_BACKUP_HALFWAY_STR = "Bkup SC Half";
-		// SWITCH SCALE Option
-		const std::string PLACE_ON_SWITCH_SCALE_STR = "Switch Scale";
-		// SMART Option
-		const std::string SMART_AUTON_STR = "Smart Auto";
 		frc::SendableChooser<std::string> m_chooserOptions;
 
 		// STARTING Positions
@@ -255,13 +124,6 @@ class AutonSelector
 		const std::string CENTER_STR = "Center";
 		const std::string RIGHT_CORNER_STR = "RightCorner";
 		frc::SendableChooser<std::string> m_chooserPosition;
-
-		const std::string PARTNER_IN_MIDDLE_STR = "Partner in Middle can get switch";
-		const std::string PARTNER_GET_THEIR_SIDE_SWITCH_STR = "Partner can get switch on their side";
-		const std::string PARTNER_GET_THEIR_SIDE_SCALE_STR = "Partner can get scale on their side";
-		const std::string PARTNERS_ONLY_MOVE = "Partners only cross auton line";
-		const std::string PARTNERS_DO_NOT_MOVE = "Partners do not move";
-		frc::SendableChooser<std::string> m_chooserPartners;
 
 		frc::SendableChooser<std::string> m_chooser;
 		frc::SendableChooser<std::string> m_chooserLeft;

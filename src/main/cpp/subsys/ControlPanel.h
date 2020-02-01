@@ -20,6 +20,7 @@
 #include <hw/interfaces/IDragonMotorController.h>
 #include <rev/ColorSensorV3.h>
 #include <rev/ColorMatch.h>
+#include <utils/ControlPanelColors.h>
 
 class ControlPanel : public IMechanism
 {
@@ -89,16 +90,7 @@ class ControlPanel : public IMechanism
         (
             ControlData*                                pid                 
         ) override;
-        
-        enum COLORS
-        {
-           GREEN  = 0 ,
-           BLUE   = 1 ,
-           YELLOW = 2 ,
-           RED    = 3 ,
-           UNKNOWN = 4
-        }; 
-        COLORS GetColorSeen();
+        ControlPanelColors::COLOR GetColorSeen();
     private:
         std::shared_ptr<IDragonMotorController>     m_spinner;
         std::shared_ptr<DragonSolenoid>             m_manipulatorExtender;

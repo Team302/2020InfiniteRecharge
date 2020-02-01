@@ -17,6 +17,7 @@
 #include <controllers/controlPanel/ControlPanelColorTurn.h>
 #include  <subsys/ControlPanel.h>
 #include <utils/logger.h>
+#include <utils/ControlPanelColors.h>
 
 // Third Party Includes
 
@@ -47,119 +48,119 @@ void ControlPanelColorTurn::Init()
     // Figure out the number of colors the wheel has to spin by.
     // In the event of something that isnt possible then move over by one and rescan.
 
-    if (currentColor == ControlPanel::COLORS::BLUE)
+    if (currentColor == ControlPanelColors::COLOR::BLUE)
     {
-        if (targetColor == ControlPanel::COLORS::BLUE)
+        if (targetColor == ControlPanelColors::COLOR::BLUE)
         {
             colorUnits = 2;
             rescan = false;
         }
-        else if (targetColor == ControlPanel::COLORS::GREEN)
+        else if (targetColor == ControlPanelColors::COLOR::GREEN)
         {
             colorUnits = -1;
             rescan = false;
         }
-        else if (targetColor == ControlPanel::COLORS::RED)
+        else if (targetColor == ControlPanelColors::COLOR::RED)
         {
             colorUnits = 1;
             rescan = true;
         }
-        else if (targetColor == ControlPanel::COLORS::YELLOW)
+        else if (targetColor == ControlPanelColors::COLOR::YELLOW)
         {
             colorUnits = 1;
             rescan = false;
         }
-        else if (targetColor == ControlPanel::COLORS::UNKNOWN)
+        else if (targetColor == ControlPanelColors::COLOR::UNKNOWN)
         {
             Logger::GetLogger()->LogError( string("ControlPanelColorTurn::Init"), string("No return from FMS") );
             rescan = false;
         }
     }
-    else if (currentColor == ControlPanel::COLORS::GREEN)
+    else if (currentColor == ControlPanelColors::COLOR::GREEN)
     {
-        if (targetColor == ControlPanel::COLORS::BLUE)
+        if (targetColor == ControlPanelColors::COLOR::BLUE)
         {
             colorUnits = 1;
             rescan = false;
         }
-        else if (targetColor == ControlPanel::COLORS::GREEN)
+        else if (targetColor == ControlPanelColors::COLOR::GREEN)
         {
             colorUnits = 2;
             rescan = false;
         }
-        else if (targetColor == ControlPanel::COLORS::RED)
+        else if (targetColor == ControlPanelColors::COLOR::RED)
         {
             colorUnits = -1;
             rescan = false;
         }
-        else if (targetColor == ControlPanel::COLORS::YELLOW)
+        else if (targetColor == ControlPanelColors::COLOR::YELLOW)
         {
             colorUnits = 1;
             rescan = true;
         }
-        else if (targetColor == ControlPanel::COLORS::UNKNOWN)
+        else if (targetColor == ControlPanelColors::COLOR::UNKNOWN)
         {
             Logger::GetLogger()->LogError( string("ControlPanelColorTurn::Init"), string("No return from FMS") );
             rescan = false;
         }
     }
-    else if (currentColor == ControlPanel::COLORS::RED)
+    else if (currentColor == ControlPanelColors::COLOR::RED)
     {
-    if (targetColor == ControlPanel::COLORS::BLUE)
+    if (targetColor == ControlPanelColors::COLOR::BLUE)
         {
             colorUnits = 1;
             rescan = true;
         }
-        else if (targetColor == ControlPanel::COLORS::GREEN)
+        else if (targetColor == ControlPanelColors::COLOR::GREEN)
         {
             colorUnits = 1;
             rescan = false;
         }
-        else if (targetColor == ControlPanel::COLORS::RED)
+        else if (targetColor == ControlPanelColors::COLOR::RED)
         {
             colorUnits = 2;
             rescan = false;
         }
-        else if (targetColor == ControlPanel::COLORS::YELLOW)
+        else if (targetColor == ControlPanelColors::COLOR::YELLOW)
         {
             colorUnits = -1;
             rescan = false;
         }
-        else if (targetColor == ControlPanel::COLORS::UNKNOWN)
+        else if (targetColor == ControlPanelColors::COLOR::UNKNOWN)
         {
             Logger::GetLogger()->LogError( string("ControlPanelColorTurn::Init"), string("No return from FMS") );
             rescan = false;
         }
     }
-    else if (currentColor == ControlPanel::COLORS::YELLOW)
+    else if (currentColor == ControlPanelColors::COLOR::YELLOW)
     {
-        if (targetColor == ControlPanel::COLORS::BLUE)
+        if (targetColor == ControlPanelColors::COLOR::BLUE)
         {
             colorUnits = -1;
             rescan = false;
         }
-        else if (targetColor == ControlPanel::COLORS::GREEN)
+        else if (targetColor == ControlPanelColors::COLOR::GREEN)
         {
             colorUnits = 1;
             rescan = true;
         }
-        else if (targetColor == ControlPanel::COLORS::RED)
+        else if (targetColor == ControlPanelColors::COLOR::RED)
         {
             colorUnits = -1;
             rescan = false;
         }
-        else if (targetColor == ControlPanel::COLORS::YELLOW)
+        else if (targetColor == ControlPanelColors::COLOR::YELLOW)
         {
             colorUnits = 1;
             rescan = false;
         }
-        else if (targetColor == ControlPanel::COLORS::UNKNOWN)
+        else if (targetColor == ControlPanelColors::COLOR::UNKNOWN)
         {
             Logger::GetLogger()->LogError( string("ControlPanelColorTurn::Init"), string("No return from FMS") );
             rescan = false;
         }
     }
-    else if (currentColor == ControlPanel::COLORS::UNKNOWN)
+    else if (currentColor == ControlPanelColors::COLOR::UNKNOWN)
     {
         colorUnits = 1;
         rescan = true;
