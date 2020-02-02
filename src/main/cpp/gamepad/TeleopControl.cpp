@@ -75,6 +75,11 @@ TeleopControl::TeleopControl() : m_axisIDs(),
             auto gamepad = new DragonGamepad( inx );
 			m_controllers[inx] = gamepad;
 		}
+
+		/*
+		auto gamepad = new DragonGamepad(2);
+		m_controllers[2] = gamepad;
+		*/
 	}
 
 

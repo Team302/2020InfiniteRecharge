@@ -32,26 +32,30 @@
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
+#include <controllers/ControlData.h>
+#include <utils/Logger.h>
 // Third Party Includes
 
 using namespace std;
 
-void IntakeOff::Init()
-{
-
-}
-
-IntakeOff::IntakeOff()
+IntakeOff::IntakeOff(ControlData* controlData, double target): m_controlData(controlData),
+m_target(target)
 {
     auto factory = MechanismFactory::GetMechanismFactory();
 
     m_intake = factory -> GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE);
 }
 
+void IntakeOff::Init()
+{
+    m_intake->SetControlConstants(m_controlData);
+}
+
 void IntakeOff::Run()           
 {
-    m_intake -> SetOutput(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT,0.0);      //turns off motors
+    m_intake -> SetOutput(m_controlData->GetMode(), m_target);      //turns off motors
     m_intake -> ActivateSolenoid( false );                                      //raises air cylinder
+    Logger::GetLogger()->LogError("IntakeOff::Run", "Intake off state run");
 }
 
 bool IntakeOff::AtTarget() const                                                     //confirms that it worked

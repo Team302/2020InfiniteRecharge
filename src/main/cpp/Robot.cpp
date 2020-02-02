@@ -40,6 +40,8 @@
 #include <controllers/BallManipulator.h>
 //#include <controllers/controlPanel/ControlPanelStateMgr.h>
 //#include <controllers/climber/ClimberStateMgr.h>
+#include <gamepad/TeleopControl.h>
+#include <frc/smartdashboard/SmartDashboard.h>
 
 using namespace std;
 using namespace frc;
@@ -62,8 +64,9 @@ void Robot::RobotInit()
     // comment out for now since auton hasn't been implemented
     // m_cyclePrims = new CyclePrimitives();
 
-    m_chassisStateMgr = new ChassisStateMgr();
+    //m_chassisStateMgr = new ChassisStateMgr();
     m_powerCells = new BallManipulator();
+    m_teleopControl = TeleopControl::GetInstance();
     // m_control = new ControlPanelStateMgr();
     // m_climber = new ClimberStateMgr();
 
@@ -98,7 +101,7 @@ void Robot::RobotPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::AutonomousInit() 
 {
-    m_chassisStateMgr->Init();
+    //m_chassisStateMgr->Init();
 
     // run selected auton option
     //m_cyclePrims->Init();
@@ -124,7 +127,7 @@ void Robot::AutonomousPeriodic()
 ///-----------------------------------------------------------------------
 void Robot::TeleopInit() 
 {
-    m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
+    //m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
     m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
@@ -138,10 +141,11 @@ void Robot::TeleopInit()
 ///-----------------------------------------------------------------------
 void Robot::TeleopPeriodic() 
 {
-    m_chassisStateMgr->RunCurrentState();
+    //m_chassisStateMgr->RunCurrentState();
     m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
+    SmartDashboard::PutBoolean("Intake on button", m_teleopControl->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_ON));
 }
 
 

@@ -41,6 +41,7 @@
 #include <controllers/BallManipulator.h>
 //#include <controllers/controlPanel/ControlPanelStateMgr.h>
 //#include <controllers/climber/ClimberStateMgr.h>
+#include <gamepad/TeleopControl.h>
 
 #include <test/ButtonBoxDisplay.h>
 #include <test/XboxDisplay.h>
@@ -67,7 +68,7 @@ class Robot : public frc::TimedRobot
 
   private:
       CyclePrimitives* m_cyclePrims;
-      ChassisStateMgr* m_chassisStateMgr;
+      //ChassisStateMgr* m_chassisStateMgr;
       BallManipulator* m_powerCells;
       // ControlPanelStateMgr* m_control;
       // ClimberStateMgr* m_climer;
@@ -75,6 +76,7 @@ class Robot : public frc::TimedRobot
 
       ButtonBoxDisplay* m_buttonBoxDisplay;
       XboxDisplay* m_xBoxDisplay;
+      TeleopControl* m_teleopControl;
 
       frc::SendableChooser<std::string>   m_testChooser;                    
       const std::string                   m_noTest = "No Test";      

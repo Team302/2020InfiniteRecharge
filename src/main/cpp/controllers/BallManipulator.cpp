@@ -63,6 +63,7 @@ void BallManipulator::RunCurrentState()
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
+        
     }
 
     // run the current state

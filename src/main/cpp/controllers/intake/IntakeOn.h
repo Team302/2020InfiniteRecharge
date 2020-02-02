@@ -30,13 +30,18 @@
 // Team 302 includes
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
+#include <controllers/ControlData.h>
 // Third Party Includes
 
 class IntakeOn : public IState
 {
     public:
 
-    IntakeOn();
+    IntakeOn
+    (
+        ControlData* controlData,
+        double       target
+    );
     ~IntakeOn() = default;
 
     void Init() override;
@@ -46,5 +51,7 @@ class IntakeOn : public IState
     private:
 
     IMechanism* m_intake;
+    ControlData* m_controlData;
+    double m_target;
 
 };
