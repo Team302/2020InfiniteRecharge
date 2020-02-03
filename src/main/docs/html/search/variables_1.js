@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gyro_5fcorrection_5fconstant_2020',['GYRO_CORRECTION_CONSTANT',['../class_super_drive.html#a97309413dd3b3f1d68324476d57daba0',1,'SuperDrive']]]
+  ['direction_2081',['direction',['../struct_vector2.html#a2d403cce090895f6fd3c02489fb96903',1,'Vector2']]],
+  ['distances_2082',['distances',['../class_field_measurement.html#a36fc6125b8dce9f3062683b460b35e9f',1,'FieldMeasurement']]]
 ];

@@ -98,7 +98,7 @@ void BallManipulator::SetCurrentState
             m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::ON, false );
             if ( m_impeller->GetCurrentState() == ImpellerStateMgr::IMPELLER_STATE::OFF )
             {
-                m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::ON, false );
+                m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );
             }
             if ( m_transfer->GetCurrentState() == BallTransferStateMgr::BALL_TRANSFER_STATE::OFF )
             {
@@ -110,7 +110,7 @@ void BallManipulator::SetCurrentState
             m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::ON, false );  // todo: react to change
             if ( m_impeller->GetCurrentState() == ImpellerStateMgr::IMPELLER_STATE::OFF )
             {
-                m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::ON, false );
+                m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );
             }
             if ( m_transfer->GetCurrentState() == BallTransferStateMgr::BALL_TRANSFER_STATE::OFF )
             {
@@ -120,24 +120,15 @@ void BallManipulator::SetCurrentState
 
         case BALL_MANIPULATOR_STATE::HOLD:
             m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
-            if ( m_impeller->GetCurrentState() == ImpellerStateMgr::IMPELLER_STATE::OFF )
-            {
-                m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::ON, false );
-            }
-            if ( m_transfer->GetCurrentState() == BallTransferStateMgr::BALL_TRANSFER_STATE::OFF )
-            {
-                m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER , false );
-            }
+            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );
+            m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER , false );
             //m_turret->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
             m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, false );
             //m_hood->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
             break;
 
         case BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT:
-            if ( m_impeller->GetCurrentState() == ImpellerStateMgr::IMPELLER_STATE::OFF )
-            {
-                m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::ON, false );
-            }
+            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER, false );
             //m_turret->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
             m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, false );
@@ -145,10 +136,7 @@ void BallManipulator::SetCurrentState
             break;
 
         case BALL_MANIPULATOR_STATE::SHOOT:
-            if ( m_impeller->GetCurrentState() == ImpellerStateMgr::IMPELLER_STATE::OFF )
-            {
-                m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::ON, false );
-            }
+            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false );
             //m_turret->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
             m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );

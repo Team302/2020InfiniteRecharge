@@ -17,10 +17,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3b5ed3-aebb-4836-af4e-69827e754a15" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/2020InfiniteRecharge.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/config/compBot/states/impeller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/config/compBot/states/impeller.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/config/practiceBot/states/impeller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/config/practiceBot/states/impeller.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/config/stateData.dtd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/config/stateData.dtd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/controllers/ButtonManipulator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/controllers/ButtonManipulator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/controllers/impeller/ImpellerOn.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/controllers/impeller/ImpellerOn.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/controllers/impeller/ImpellerStateMgr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/controllers/impeller/ImpellerStateMgr.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/controllers/impeller/ImpellerStateMgr.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/controllers/impeller/ImpellerStateMgr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_agitate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_agitate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_analog_button.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_analog_button.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_arcade_drive.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_arcade_drive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_ball_transfer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_ball_transfer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_ball_transfer_off.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_ball_transfer_off.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_ball_transfer_to_impeller.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_ball_transfer_to_impeller.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_ball_transfer_to_shooter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_ball_transfer_to_shooter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_button_decorator.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_button_decorator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_climber.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_climber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_control_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_control_panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_control_panel_raise.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_control_panel_raise.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_control_panel_stow.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_control_panel_stow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_control_panel_turn.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_control_panel_turn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_deadband_value.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_deadband_value.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_digital_button.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_digital_button.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_do_nothing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_do_nothing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_dragon_chassis.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_dragon_chassis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_dragon_falcon.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_dragon_falcon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_dragon_gamepad.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_dragon_gamepad.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_dragon_lidar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_dragon_lidar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_dragon_limelight.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_dragon_limelight.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_dragon_spark_max.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_dragon_spark_max.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_dragon_talon.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_dragon_talon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_dragon_ultrasonic.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_dragon_ultrasonic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_dragon_ultrasonic_p_w_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_dragon_ultrasonic_p_w_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_dragon_x_box.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_dragon_x_box.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_drive_distance.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_drive_distance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_drive_time.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_drive_time.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_drive_to_target.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_drive_to_target.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_drive_to_wall.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_drive_to_wall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_drive_train_side.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_drive_train_side.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_flipped_axis.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_flipped_axis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_g_t_a_drive.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_g_t_a_drive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_grabber.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_grabber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_hold_position.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_hold_position.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_hold_turret_position.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_hold_turret_position.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_human_player_flap.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_human_player_flap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_impeller.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_impeller.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_impeller_agitate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_impeller_agitate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_impeller_off.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_impeller_off.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_impeller_on.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_impeller_on.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_intake.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_intake.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_intake_off.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_intake_off.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_intake_on.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_intake_on.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_limelight_aim.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_limelight_aim.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_manual_aim.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_manual_aim.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_mechanism_state.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_mechanism_state.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_no_deadband_value.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_no_deadband_value.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_p_o_v_button.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_p_o_v_button.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_scaled_deadband_value.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_scaled_deadband_value.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_shooter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_shooter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_shooter_get_ready.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_shooter_get_ready.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_shooter_hood.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_shooter_hood.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_super_drive.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_super_drive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_tank_drive.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_tank_drive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_throttle_steer_drive.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_throttle_steer_drive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_toggle_button.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_toggle_button.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_turn_angle.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_turn_angle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_turn_to_cube.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_turn_to_cube.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_turret.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_turret.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_velocity_controller.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_velocity_controller.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/files.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/files.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/hierarchy.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/hierarchy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/menudata.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/menudata.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/navtree.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/navtree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/docs/html/search/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/search/search.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,6 +104,9 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FavoritesManager">
+    <favorites_list name="2020InfiniteRecharge" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
@@ -62,20 +136,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/cpp/hw/factories/LEDFactory.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/cpp/hw/factories/AnalogInputFactory.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+            <state relative-caret-position="100">
+              <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -214,19 +279,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580703046091</updated>
-      <workItem from="1580703059119" duration="2230000" />
+      <workItem from="1580703059119" duration="3837000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2230000" />
+    <option name="totallyTimeSpent" value="3837000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" sideWeight="0.50108933" side_tool="true" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49891067" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" sideWeight="0.50108933" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info active="true" anchor="bottom" id="Inspection Results" visible="true" weight="0.32894737" />
@@ -272,17 +337,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/cpp/hw/factories/LEDFactory.h">
+    <entry file="file://$PROJECT_DIR$/src/main/cpp/hw/factories/AnalogInputFactory.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+        <state relative-caret-position="56">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/cpp/hw/factories/AnalogInputFactory.cpp">
+    <entry file="file://$PROJECT_DIR$/src/main/cpp/hw/factories/LEDFactory.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+        <state relative-caret-position="100">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
         </state>
       </provider>
     </entry>

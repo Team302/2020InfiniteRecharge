@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loop_5flength_2022',['LOOP_LENGTH',['../class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37',1,'IPrimitive']]]
+  ['inches_5fper_5fsecond_5fsecond_2084',['INCHES_PER_SECOND_SECOND',['../class_super_drive.html#aa7ab753722262aae87138667bb0bac2f',1,'SuperDrive']]]
 ];

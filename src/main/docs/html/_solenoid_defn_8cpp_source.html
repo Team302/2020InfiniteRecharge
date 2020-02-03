@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('_solenoid_defn_8cpp_source.html','');}
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;             usage = <a class="code" href="class_solenoid_usage.html#a1e8ae2fb28a6a229b1953994229bc7d5">SolenoidUsage::GetInstance</a>()-&gt;<a class="code" href="class_solenoid_usage.html#a041ae5300c727d2dc6a06153d0f767df">GetUsage</a>( <span class="keywordtype">string</span>(attr.value()));</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;pcmID&quot;</span> ) == 0 )</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( strcmp( attr.name(), <span class="stringliteral">&quot;canId&quot;</span> ) == 0 )</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            pcmID = attr.as_int();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            hasError = <a class="code" href="class_hardware_i_d_validation.html#ab6c13f88201571587dc8de99b4937e65">HardwareIDValidation::ValidateCANID</a>( pcmID, <span class="keywordtype">string</span>( <span class="stringliteral">&quot;SolenoidDefn::ParseXML&quot;</span> ) );</div>
