@@ -152,15 +152,15 @@ class TeleopControl
         // Attributes
         //----------------------------------------------------------------------------------
         static TeleopControl*               m_instance; // Singleton instance of this class
-        const int                           m_maxFunctions = 35;
 
         std::map<FUNCTION_IDENTIFIER, IDragonGamePad::AXIS_IDENTIFIER> m_axisMap;
         std::map<FUNCTION_IDENTIFIER, IDragonGamePad::BUTTON_IDENTIFIER> m_buttonMap;
         std::map<FUNCTION_IDENTIFIER, int> m_controllerMap;
 
-        IDragonGamePad::AXIS_IDENTIFIER     m_axisIDs[35];
-        IDragonGamePad::BUTTON_IDENTIFIER   m_buttonIDs[35];
-        int							        m_controllerIndex[35];
+        std::vector<IDragonGamePad::AXIS_IDENTIFIER>     m_axisIDs;
+        std::vector<IDragonGamePad::BUTTON_IDENTIFIER>   m_buttonIDs;
+        std::vector<int>							     m_controllerIndex;
+
         IDragonGamePad*			            m_controllers[DriverStation::kJoystickPorts];
 
         mutable int                         m_count;
