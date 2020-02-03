@@ -16,6 +16,25 @@ LEDFactory::LEDFactory() :
 {
 }
 
+LEDFactory::~LEDFactory()
+{
+    if ( m_ledUnderFront != nullptr )
+    {
+        delete m_ledUnderFront;
+        m_ledUnderFront = nullptr;
+    }
+    if ( m_ledUnderBack != nullptr )
+    {
+        delete m_ledUnderBack;
+        m_ledUnderBack = nullptr;
+    }
+    if ( m_ledTop != nullptr )
+    {
+        delete m_ledTop;
+        m_ledTop = nullptr;
+    }
+}
+
 LEDFactory* LEDFactory::GetInstance
 (
 )

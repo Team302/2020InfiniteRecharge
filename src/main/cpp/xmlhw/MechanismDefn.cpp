@@ -201,13 +201,19 @@ IMechanism* MechanismDefn::ParseXML
                 solenoids[sol.get()->GetType()] = sol;
             }
         }
+        else if ( strcmp( child.name(), "canCoder" ) )
+        {
+            // todo add hong bing's code here
+        }
         else if ( strcmp( child.name(), "colorsensor" ) == 0 )
         {
             colorSensor = colorXML.get()->ParseXML(child);
         }
         else
         {
-            Logger::GetLogger()->LogError( "MechanismDefn", "unknown child" );
+            string msg = "unknown child ";
+            msg += child.name();
+            Logger::GetLogger()->LogError( string("MechanismDefn"), msg );
         }
     }
 

@@ -6,9 +6,12 @@
 	<mechanismTarget stateIdentifier="IMPELLEROFF"
 	                 controlDataIdentifier="openloop"
 					 value="0.0"/>
-	<mechanismTarget stateIdentifier="IMPELLERON"
+	<mechanismTarget stateIdentifier="IMPELLERTOSHOOTER"
 	                 controlDataIdentifier="openloop"
 					 value="0.5"/>
+	<mechanismTarget stateIdentifier="IMPELLERHOLD"
+	                 controlDataIdentifier="openloop"
+					 value="-0.5"/>
 	<mechanismTarget stateIdentifier="IMPELLERAGITATE"
 	                 controlDataIdentifier="openloop"
 					 value="-0.25"/>

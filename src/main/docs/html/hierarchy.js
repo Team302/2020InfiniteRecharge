@@ -21,6 +21,7 @@ var hierarchy =
     [ "ControlData", "class_control_data.html", null ],
     [ "ControlDataDefn", "class_control_data_defn.html", null ],
     [ "ControlModes", "class_control_modes.html", null ],
+    [ "ControlPanelColors", "class_control_panel_colors.html", null ],
     [ "CyclePrimitives", "class_cycle_primitives.html", null ],
     [ "DigitalInputDefn", "class_digital_input_defn.html", null ],
     [ "DigitalInputFactory", "class_digital_input_factory.html", null ],
@@ -118,13 +119,11 @@ var hierarchy =
       [ "SquaredProfile", "class_squared_profile.html", null ]
     ] ],
     [ "IState", "class_i_state.html", [
+      [ "ControlPanelColorTurn", "class_control_panel_color_turn.html", null ],
       [ "ControlPanelRaise", "class_control_panel_raise.html", null ],
       [ "ControlPanelStow", "class_control_panel_stow.html", null ],
       [ "ControlPanelTurn", "class_control_panel_turn.html", null ],
       [ "HoldTurretPosition", "class_hold_turret_position.html", null ],
-      [ "ImpellerAgitate", "class_impeller_agitate.html", null ],
-      [ "ImpellerOff", "class_impeller_off.html", null ],
-      [ "ImpellerOn", "class_impeller_on.html", null ],
       [ "IntakeOff", "class_intake_off.html", null ],
       [ "IntakeOn", "class_intake_on.html", null ],
       [ "LimelightAim", "class_limelight_aim.html", null ],
@@ -132,7 +131,15 @@ var hierarchy =
       [ "MechanismState", "class_mechanism_state.html", [
         [ "BallTransferOff", "class_ball_transfer_off.html", null ],
         [ "BallTransferToImpeller", "class_ball_transfer_to_impeller.html", null ],
-        [ "BallTransferToShooter", "class_ball_transfer_to_shooter.html", null ]
+        [ "BallTransferToShooter", "class_ball_transfer_to_shooter.html", null ],
+        [ "ClimberHold", "class_climber_hold.html", null ],
+        [ "ImpellerAgitate", "class_impeller_agitate.html", null ],
+        [ "ImpellerHold", "class_impeller_hold.html", null ],
+        [ "ImpellerOff", "class_impeller_off.html", null ],
+        [ "ImpellerToShooter", "class_impeller_to_shooter.html", null ],
+        [ "ShooterHoodHoldPosition", "class_shooter_hood_hold_position.html", null ],
+        [ "ShooterHoodMoveDown", "class_shooter_hood_move_down.html", null ],
+        [ "ShooterHoodMoveUp", "class_shooter_hood_move_up.html", null ]
       ] ],
       [ "ShooterGetReady", "class_shooter_get_ready.html", null ],
       [ "ShooterOff", "class_shooter_off.html", null ],
@@ -174,6 +181,7 @@ var hierarchy =
     ] ],
     [ "ServoDefn", "class_servo_defn.html", null ],
     [ "ServoUsage", "class_servo_usage.html", null ],
+    [ "ShooterHoodStateMgr", "class_shooter_hood_state_mgr.html", null ],
     [ "ShooterStateMgr", "class_shooter_state_mgr.html", null ],
     [ "SolenoidDefn", "class_solenoid_defn.html", null ],
     [ "SolenoidUsage", "class_solenoid_usage.html", null ],

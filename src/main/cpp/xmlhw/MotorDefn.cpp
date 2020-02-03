@@ -159,9 +159,15 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
             {
                 feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::CTRE_MagEncoder_Relative;
             }
+            else if ( val.compare( "INTERNAL") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::IntegratedSensor;
+            }
             else 
             {
-                Logger::GetLogger()->LogError( string("MotorDefn::ParseXML "), string("Invalid feedback device"));
+                string msg = "Invalid feedback device ";
+                msg += val;
+                Logger::GetLogger()->LogError( string("MotorDefn::ParseXML "), msg );
             }
         }
 		// counts per revolution

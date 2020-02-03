@@ -27,8 +27,9 @@
 #include <utils/Logger.h>
 #include <gamepad/TeleopControl.h>
 #include <controllers/impeller/ImpellerOff.h>
-#include <controllers/impeller/ImpellerOn.h>
+#include <controllers/impeller/ImpellerHold.h>
 #include <controllers/impeller/ImpellerAgitate.h>
+#include <controllers/impeller/ImpellerToShooter.h>
 
 
 // Third Party Includes
@@ -46,8 +47,9 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
     // initialize the xml string to state map
     map<string, IMPELLER_STATE> stateMap;
     stateMap["IMPELLEROFF"] = IMPELLER_STATE::OFF;
-    stateMap["IMPELLERON"]  = IMPELLER_STATE::ON;
+    stateMap["IMPELLERHOLD"] = IMPELLER_STATE::HOLD;
     stateMap["IMPELLERAGITATE"] = IMPELLER_STATE::AGITATE;
+    stateMap["IMPELLERTOSHOOTER"]  = IMPELLER_STATE::TO_SHOOTER;
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -65,26 +67,33 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
 
                 switch ( stateEnum )
                 {
-                    case IMPELLER_STATE::ON:
+                    case IMPELLER_STATE::HOLD:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ImpellerOn();
-                        m_stateMap[IMPELLER_STATE::ON] = thisState;
+                        auto thisState = new ImpellerHold(controlData, target);
+                        m_stateMap[IMPELLER_STATE::HOLD] = thisState;
+                    }
+                    break;
+
+                    case IMPELLER_STATE::TO_SHOOTER:
+                    {   // todo update the constructor take in controlData and target
+                        auto thisState = new ImpellerToShooter(controlData, target);
+                        m_stateMap[IMPELLER_STATE::OFF] = thisState;
+                    }
+                    break;
+
+                    case IMPELLER_STATE::OFF:
+                    {   // todo update the constructor take in controlData and target
+                        auto thisState = new ImpellerOff(controlData, target);
+                        m_stateMap[IMPELLER_STATE::OFF] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
                     }
                     break;
 
-                    case IMPELLER_STATE::OFF:
-                    {   // todo update the constructor take in controlData and target
-                        auto thisState = new ImpellerOff();
-                        m_stateMap[IMPELLER_STATE::OFF] = thisState;
-                    }
-                    break;
-
                     case IMPELLER_STATE::AGITATE:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ImpellerAgitate();
+                        auto thisState = new ImpellerAgitate(controlData, target);
                         m_stateMap[IMPELLER_STATE::AGITATE] = thisState;
                     }
                     break;
@@ -114,9 +123,9 @@ void ImpellerStateMgr::RunCurrentState()
     if ( controller != nullptr )
     {
         if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_SPIN ) && 
-             m_currentStateEnum != IMPELLER_STATE::ON )
+             m_currentStateEnum != IMPELLER_STATE::HOLD )
         {
-            SetCurrentState( IMPELLER_STATE::ON, false );
+            SetCurrentState( IMPELLER_STATE::HOLD, false );
         }
         else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_STOP ) &&
                   m_currentStateEnum != IMPELLER_STATE::OFF )
@@ -127,6 +136,16 @@ void ImpellerStateMgr::RunCurrentState()
                   m_currentStateEnum != IMPELLER_STATE::AGITATE )
         {
             SetCurrentState( IMPELLER_STATE::AGITATE, false );
+        }
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_AUTO_SHOOT ) &&
+                  m_currentStateEnum != IMPELLER_STATE::TO_SHOOTER )
+        {
+            SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
+        }
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_SHOOT ) &&
+                  m_currentStateEnum != IMPELLER_STATE::TO_SHOOTER )
+        {
+            SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
         }
     }
 

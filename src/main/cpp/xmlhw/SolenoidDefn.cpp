@@ -64,7 +64,7 @@ shared_ptr<DragonSolenoid> SolenoidDefn::ParseXML
         {
              usage = SolenoidUsage::GetInstance()->GetUsage( string(attr.value()));
         }
-        else if ( strcmp( attr.name(), "pcmID" ) == 0 )
+        else if ( strcmp( attr.name(), "canId" ) == 0 )
         {
             pcmID = attr.as_int();
             hasError = HardwareIDValidation::ValidateCANID( pcmID, string( "SolenoidDefn::ParseXML" ) );

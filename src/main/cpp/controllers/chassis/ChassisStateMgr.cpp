@@ -26,6 +26,7 @@
 #include <controllers/chassis/ArcadeDrive.h>
 #include <controllers/chassis/GTADrive.h>
 #include <controllers/chassis/TankDrive.h>
+#include <utils/Logger.h>
 
 using namespace std;
 
@@ -77,10 +78,22 @@ void ChassisStateMgr::Init()
 
 void ChassisStateMgr::RunCurrentState()
 {
-    if ( m_currentState == CHASSIS_STATE::TELEOP )
+    if ( m_currentDrive != nullptr )
     {
-        m_currentDrive->Run();
+        if ( m_currentState == CHASSIS_STATE::TELEOP )
+        {
+            m_currentDrive->Run();
+        }
+        else
+        {
+            Logger::GetLogger()->LogError( string("ChassisStateMgr::RunCurrentState"), string("unsupported state"));
+        }
     }
+    else
+    {
+        Logger::GetLogger()->LogError( string("ChassisStateMgr::RunCurrentState"), string("current drive mode is not selected"));
+    }
+    
 }
 
 void ChassisStateMgr::SetState( ChassisStateMgr::CHASSIS_STATE state )
@@ -90,5 +103,8 @@ void ChassisStateMgr::SetState( ChassisStateMgr::CHASSIS_STATE state )
     {
         m_currentDrive->Run();
     }
-
+    else
+    {
+        Logger::GetLogger()->LogError( string("ChassisStateMgr::SetState"), string("unsupported state"));
+    }
 }

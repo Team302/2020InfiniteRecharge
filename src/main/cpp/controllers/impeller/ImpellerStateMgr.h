@@ -32,8 +32,9 @@ class ImpellerStateMgr
         enum IMPELLER_STATE
         {
             OFF,
-            ON,
+            HOLD,
             AGITATE,
+            TO_SHOOTER,
             MAX_IMPELLER_STATES
         };
 

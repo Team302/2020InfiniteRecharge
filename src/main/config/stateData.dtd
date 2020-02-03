@@ -19,7 +19,7 @@
 <!ATTLIST mechanismTarget 
           stateIdentifier           ( INTAKEOFF | INTAKEON | 
                                       HUMANPLAYERFLAPCLOSED | HUMANPLAYERFLAPOPEN |
-                                      IMPELLEROFF | IMPELLERON | IMPELLERAGITATE |
+                                      IMPELLEROFF | IMPELLERHOLD | IMPELLERAGITATE | IMPELLERTOSHOOTER |
                                       BALLTRANSFEROFF | BALLTRANSPORTTOIMPELLER | BALLTRANSFERTOSHOOTER |
                                       SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN |
                                       TURRETHOLD | TURRETAUTOAIM | TURRETMANUALAIM |

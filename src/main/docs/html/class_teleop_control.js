@@ -30,6 +30,9 @@ var class_teleop_control =
       [ "CONTROL_PANNEL_RAISE", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ad2d54503ff3ea656ccc0ba241dcd51b0", null ],
       [ "CONTROL_PANNEL_SPIN_WHEEL", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a143cdbae151eeb8cceddfe2db66134c6", null ],
       [ "CONTROL_PANNEL_TURN_TO_COLOR", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a92a407beeced4d52f8980eff2eb5771b", null ],
+      [ "SHOOTER_HOOD_MOVE_UP", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9d764d78d67e2f9c8b90e83800cc8004", null ],
+      [ "SHOOTER_HOOD_MOVE_DOWN", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a7ce4b53770adeeec0a93291fe5ba3ca0", null ],
+      [ "SHOOTER_HOOD_HOLD_POSITION", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15add49360d0a6d3a94231826b1512d44d1", null ],
       [ "MAX_FUNCTIONS", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af0a71fc177d1cdf5d455aa154441aafb", null ]
     ] ],
     [ "GetAxisValue", "class_teleop_control.html#a9c6affa7d87ae898c531e567fce73b15", null ],

@@ -14,47 +14,52 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once
+#include <utils/FMS.h>
+#include <utils/ControlPanelColors.h>
 
-// C++ Includes
-
-// FRC includes
-
-// Team 302 includes
-
-// Third Party Includes
+FMS* FMS::m_instance = nullptr;
 
 
-
-#include <frc/DriverStation.h>
-
-class FMS
+FMS* FMS::GetFMS()
 {
-public:
-	enum POS
+	if ( FMS::m_instance == nullptr )
 	{
-		UNKNOWN = -1,
-		LEFT,
-		RIGHT
-	};
+		FMS::m_instance = new FMS();
+	}
+	return FMS::m_instance;
+}
 
-	static FMS* GetFMS();
 
-	POS GetSwitchPos();
-	POS GetScalePos();
-	POS GetOppSwitchPos();
+FMS::FMS() :
+	gameData ( frc::DriverStation::GetInstance().GetGameSpecificMessage() ),
+	currentColor(ControlPanelColors::COLOR::UNKNOWN)
+{
+}
 
-	FMS();
-	virtual ~FMS() = default;
+ControlPanelColors::COLOR FMS::GetColor()
+{
+	gameData = frc::DriverStation::GetInstance().GetGameSpecificMessage(); //update when method is called
+	switch ( gameData[0] )
+	{
+		case 'B' :
+			return ControlPanelColors::COLOR::BLUE;
+		break;
 
-private:
-	// used for checking LR from FMS
-	std::string gameData;
-	// Pos vars
-	POS switchPos;
-	POS oppSwitchPos;
-	POS scalePos;
+		case 'G' :
+			return ControlPanelColors::COLOR::GREEN;
+		break;
 
-	static FMS*	m_instance;
-};
+		case 'Y' :
+			return ControlPanelColors::COLOR::YELLOW;
+		break;
+
+		case 'R' :
+			return ControlPanelColors::COLOR::RED;
+		break;
+
+		default:
+			return ControlPanelColors::COLOR::UNKNOWN;
+			break;
+	}
+}
 
