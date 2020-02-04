@@ -68,9 +68,6 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
                     {   // todo update the constructor take in controlData and target
                         auto thisState = new ShooterHoodMoveUp(controlData, target);
                         m_stateMap[SHOOTER_HOOD_STATE::MOVE_UP] = thisState;
-                        m_currentState = thisState;
-                        m_currentStateEnum = stateEnum;
-                        m_currentState->Init();
                     }
                     break;
 
@@ -85,6 +82,9 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
                     {   // todo update the constructor take in controlData and target
                         auto thisState = new ShooterHoodHoldPosition(controlData, target);
                         m_stateMap[SHOOTER_HOOD_STATE::HOLD_POSITION] = thisState;
+                        m_currentState = thisState;
+                        m_currentStateEnum = stateEnum;
+                        m_currentState->Init();
                     }
                     break;
 

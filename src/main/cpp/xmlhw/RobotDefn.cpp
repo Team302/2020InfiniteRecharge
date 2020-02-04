@@ -84,37 +84,15 @@ void RobotDefn::ParseXML()
             {
                 if (strcmp(child.name(), "chassis") == 0)
                 {
-                    if ( chassisXML != nullptr )
-                    {
-                        chassisXML->ParseXML(child);
-                    }
-                    else
-                    {
-                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create ChassisDefn" );
-                    }
-
+                    chassisXML.get()->ParseXML(child);
                 }
                 else if (strcmp(child.name(), "mechanism") == 0)
                 {
-                    if ( mechanismXML != nullptr )
-                    {
-                        mechanismXML->ParseXML(child);
-                    }
-                    else
-                    {
-                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create MechanismDefn" );
-                    }
+                    mechanismXML.get()->ParseXML(child);
                 }
                 else if (strcmp(child.name(), "pdp") == 0)
                 {
-                    if ( pdpXML != nullptr )
-                    {
-                        pdpXML->ParseXML(child);
-                    }
-                    else
-                    {
-                        Logger::GetLogger()->LogError( "RobotDefn::ParseXML", "Unable to create PDPDefn" );
-                    }
+                    pdpXML.get()->ParseXML(child);
                 }
                 else if ( strcmp(child.name(), "odometry") == 0 )
                 {

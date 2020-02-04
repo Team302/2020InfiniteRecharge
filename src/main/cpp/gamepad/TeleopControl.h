@@ -49,6 +49,7 @@ class TeleopControl
             GTA_DRIVE_BACKWARD,
             GTA_DRIVE_STEER,
             SWITCH_DRIVE_MODE,
+			CURVATURE_DRIVE_QUICK_TURN,
             CLIMBER_EXTEND,
             CLIMBER_LIFT,
             CLIMBER_CRAWL,

@@ -39,7 +39,9 @@ ChassisStateMgr::ChassisStateMgr() : m_arcade(),
     
     // pick drive mode
     m_driveModeChooser.SetDefaultOption( m_driveModeArcade, m_driveModeArcade);
+    m_driveModeChooser.AddOption( m_driveModeArcadeCurve, m_driveModeArcadeCurve );
     m_driveModeChooser.AddOption( m_driveModeGTA, m_driveModeGTA );
+    m_driveModeChooser.AddOption( m_driveModeGTACurve, m_driveModeGTACurve );
     m_driveModeChooser.AddOption( m_driveModeTank, m_driveModeTank );
 
 
@@ -56,22 +58,30 @@ ChassisStateMgr::ChassisStateMgr() : m_arcade(),
 void ChassisStateMgr::Init()
 {
     m_driveModeSelected = m_driveModeChooser.GetSelected();
-    if(m_driveModeSelected == m_driveModeArcade) 
+    Logger::GetLogger()->LogError( string("ChassisStateMgr"), m_driveModeSelected );
+    if( m_driveModeSelected == m_driveModeArcade || m_driveModeSelected == m_driveModeArcadeCurve ) 
     {
-        m_currentDrive == m_arcade;
+        m_currentDrive = m_arcade;
+        m_arcade->SetCurvatureBased( ( m_driveModeSelected == m_driveModeArcadeCurve ) );
+        Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("arcade"));
     }
-    else if ( m_driveModeSelected == m_driveModeGTA )
+    else if ( m_driveModeSelected == m_driveModeGTA || m_driveModeSelected == m_driveModeGTACurve )
     {
         m_currentDrive = m_gta;
-    }
+        m_gta->SetCurvatureBased( ( m_driveModeSelected == m_driveModeGTACurve ) );
+        Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("gta"));
+   }
     else if ( m_driveModeSelected == m_driveModeTank )
     {
         m_currentDrive = m_tank;
+        Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("tank"));
     }
     else
     {
         m_currentDrive = m_arcade;
+        Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("arcade2"));
     }
+
     m_currentDrive->Init();
     m_currentDrive->Run();
 }

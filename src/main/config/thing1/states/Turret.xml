@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE statedata SYSTEM "stateData.dtd">
+<statedata>
+	<controlData identifier="openloop" 
+	             mode="PERCENT_OUTPUT"/>
+	<mechanismTarget stateIdentifier="TURRETHOLD"
+	                 controlDataIdentifier="openloop"
+					 value="0.0"/>
+	<mechanismTarget stateIdentifier="TURRETAUTOAIM"
+	                 controlDataIdentifier="openloop"
+					 value="0.5"/>
+	<mechanismTarget stateIdentifier="TURRETMANUALAIM"
+	                 controlDataIdentifier="openloop"
+					 value="1.0"/>
+
+</statedata>

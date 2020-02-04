@@ -831,6 +831,11 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<p>m_talon-&gt;Config_kP(0, controlInfo-&gt;GetP()); m_talon-&gt;Config_kI(0, controlInfo-&gt;GetI()); m_talon-&gt;Config_kD(0, controlInfo-&gt;GetD()); m_talon-&gt;Config_kF(0, controlInfo-&gt;GetF());</p>
+<p>int sensorUnitsPer100msPerSec = static_cast&lt;int&gt;( (controlInfo-&gt;GetMaxAcceleration() / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio ) ; m_talon-&gt;ConfigMotionAcceleration( sensorUnitsPer100msPerSec );</p>
+<p>sensorUnitsPer100msPerSec = static_cast&lt;int&gt;( (controlInfo-&gt;GetCruiseVelocity() / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio ); m_talon-&gt;ConfigMotionCruiseVelocity( sensorUnitsPer100msPerSec, 0);</p>
+<p>auto peak = controlInfo-&gt;GetPeakValue(); m_talon-&gt;ConfigPeakOutputForward(peak); m_talon-&gt;ConfigPeakOutputReverse(-1.0*peak);</p>
+<p>auto nom = controlInfo-&gt;GetNominalValue(); m_talon-&gt;ConfigPeakOutputForward(nom); m_talon-&gt;ConfigPeakOutputReverse(-1.0*nom);</p>
 
 <p>Implements <a class="el" href="class_i_dragon_motor_controller.html#abdca297c707d0c1f5e36bc0be37396d5">IDragonMotorController</a>.</p>
 
@@ -884,7 +889,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00332">332</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00333">333</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
 
 </div>
 </div>
@@ -904,7 +909,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00341">341</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_talon_8cpp_source.html#l00342">342</a> of file <a class="el" href="_dragon_talon_8cpp_source.html">DragonTalon.cpp</a>.</p>
 
 </div>
 </div>

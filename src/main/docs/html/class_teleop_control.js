@@ -10,6 +10,7 @@ var class_teleop_control =
       [ "GTA_DRIVE_BACKWARD", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3ff7fa29fbe3d18bf36e8762b83c40a3", null ],
       [ "GTA_DRIVE_STEER", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3473c611d1d16a64546e1cff0d8693fc", null ],
       [ "SWITCH_DRIVE_MODE", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aed8935f1b493bab6a7bceef70e08c29c", null ],
+      [ "CURVATURE_DRIVE_QUICK_TURN", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9b7150ec3d3dcc42432a77b3b9e062a8", null ],
       [ "CLIMBER_EXTEND", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a28572b334fad1f837f9c010c6b1f9e46", null ],
       [ "CLIMBER_LIFT", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aaad6666ff47670ed1b6d5d21023c82ce", null ],
       [ "CLIMBER_CRAWL", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a99ec8c8b04aa477537e9f23ca91fb544", null ],

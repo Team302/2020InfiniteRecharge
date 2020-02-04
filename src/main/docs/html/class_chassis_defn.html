@@ -106,15 +106,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad72f136e779bafb4d0e2054e61e61505"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chassis_defn.html#ad72f136e779bafb4d0e2054e61e61505">~ChassisDefn</a> ()=default</td></tr>
 <tr class="memdesc:ad72f136e779bafb4d0e2054e61e61505"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy a <a class="el" href="class_chassis_defn.html" title="Create a chassis from an XML definition. CHASSIS_TYPE (ChassisFactory.h) determines the type of chass...">ChassisDefn</a> object and free the memory  <a href="class_chassis_defn.html#ad72f136e779bafb4d0e2054e61e61505">More...</a><br /></td></tr>
 <tr class="separator:ad72f136e779bafb4d0e2054e61e61505"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c421aa40a339610408776a202c026da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chassis_defn.html#a4c421aa40a339610408776a202c026da">ParseXML</a> (pugi::xml_node chassisNode)</td></tr>
-<tr class="memdesc:a4c421aa40a339610408776a202c026da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the chassie element (and it children). When this is done a <a class="el" href="class_i_chassis.html" title="Interface for differential drives.">IChassis</a> object exists. It can be retrieved from the factory.  <a href="class_chassis_defn.html#a4c421aa40a339610408776a202c026da">More...</a><br /></td></tr>
-<tr class="separator:a4c421aa40a339610408776a202c026da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b7cac2bbf28be285999f1960cba3e85"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_i_chassis.html">IChassis</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chassis_defn.html#a6b7cac2bbf28be285999f1960cba3e85">ParseXML</a> (pugi::xml_node chassisNode)</td></tr>
+<tr class="memdesc:a6b7cac2bbf28be285999f1960cba3e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the chassie element (and it children). When this is done a <a class="el" href="class_i_chassis.html" title="Interface for differential drives.">IChassis</a> object exists. It can be retrieved from the factory.  <a href="class_chassis_defn.html#a6b7cac2bbf28be285999f1960cba3e85">More...</a><br /></td></tr>
+<tr class="separator:a6b7cac2bbf28be285999f1960cba3e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Create a chassis from an XML definition. CHASSIS_TYPE (<a class="el" href="_chassis_factory_8h.html">ChassisFactory.h</a>) determines the type of chassis to create. WheelBase is the front to back distance between the wheel centers. Track is the left to right distance between the wheels. </p>
 <p>Create a chassis from an XML definition that includes the chassis type, wheel diameter, wheel based (front to back distance) and track (side to side distance on axle). </p>
 
-<p class="definition">Definition at line <a class="el" href="_chassis_defn_8h_source.html#l00032">32</a> of file <a class="el" href="_chassis_defn_8h_source.html">ChassisDefn.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_chassis_defn_8h_source.html#l00034">34</a> of file <a class="el" href="_chassis_defn_8h_source.html">ChassisDefn.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5d2ef022e7e1abdca7905afa220178da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d2ef022e7e1abdca7905afa220178da">&#9670;&nbsp;</a></span>ChassisDefn()</h2>
@@ -171,14 +171,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4c421aa40a339610408776a202c026da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c421aa40a339610408776a202c026da">&#9670;&nbsp;</a></span>ParseXML()</h2>
+<a id="a6b7cac2bbf28be285999f1960cba3e85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b7cac2bbf28be285999f1960cba3e85">&#9670;&nbsp;</a></span>ParseXML()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ChassisDefn::ParseXML </td>
+          <td class="memname">shared_ptr&lt; <a class="el" href="class_i_chassis.html">IChassis</a> &gt; ChassisDefn::ParseXML </td>
           <td>(</td>
           <td class="paramtype">pugi::xml_node&#160;</td>
           <td class="paramname"><em>chassisNode</em></td><td>)</td>
@@ -188,6 +188,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Parse the chassie element (and it children). When this is done a <a class="el" href="class_i_chassis.html" title="Interface for differential drives.">IChassis</a> object exists. It can be retrieved from the factory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pugi::xml_node</td><td>the chassis element in the XML document </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;IChassis&gt; <br  />
+</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pugi::xml_node</td><td>the chassis element in the XML document </td></tr>

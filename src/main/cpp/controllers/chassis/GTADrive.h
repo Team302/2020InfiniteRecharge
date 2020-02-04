@@ -1,6 +1,6 @@
 
 //====================================================================================================================================================
-// Copyright 2019 Lake Orion Robotics FIRST Team 302
+// Copyright 2020 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -17,36 +17,29 @@
 #pragma once 
 
 // Standard C++ includes
-#include <memory>
 
 // Team 302 include
-#include <controllers/chassis/ThrottleSteerDrive.h>
-#include <subsys/IChassis.h>
-#include <gamepad/DragonXBox.h>
-#include <controllers/IState.h>
+#include <controllers/chassis/ArcadeDrive.h>
 
 // CTRE includes 
 
-
-/*========================================================================================================
- * GTADrive.h
- *========================================================================================================
- *
- * File Description:  This class calculates the drive percents for a tank drive
- *
- *========================================================================================================*/
-class GTADrive : public ThrottleSteerDrive 
+class GTADrive : public ArcadeDrive 
 {
     public:
     
         GTADrive() = default;
         ~GTADrive() = default;
 
+		/// @brief initialize the profiles for the various gamepad inputs
+		/// @return void
         void Init() override;
 
     protected:
-        double GetSteer() override;
+		/// @brief get the throttle component from the game controller
+		/// @return double - throttle value between -1.0 and 1.0
         double GetThrottle() override;
-    private:
-
+		
+		/// @brief get the steer component from the game controller
+		/// @return double - steer value between -1.0 and 1.0
+        double GetSteer() override;
 };
