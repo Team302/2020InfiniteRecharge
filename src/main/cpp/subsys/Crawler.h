@@ -20,3 +20,51 @@
 //Team 302 Includes
 #include <hw/interfaces/IDragonMotorController.h>
 #include <subsys/IMechanism.h>
+#include <controllers/ControlModes.h>
+#include <controllers/ControlData.h>
+#include <subsys/MechanismTypes.h>
+
+class Crawler : public IMechanism
+{
+    public:
+
+        Crawler
+        (
+            std::shared_ptr<IDragonMotorController>     crawlerMotor
+        );
+        Crawler() = delete;
+
+        virtual ~Crawler() = default;
+
+        MechanismTypes::MECHANISM_TYPE GetType() const override;
+
+        void SetOutput
+        (
+            ControlModes::CONTROL_TYPE controlType,
+            double                      value
+        ) override;
+
+        void ActivateSolenoid
+        (
+            bool activate
+        ) override;
+
+        bool IsSolenoidActivated() override;
+
+        double GetCurrentPosition() const override;
+
+        double GetTargetPosition() const override;
+
+        double GetCurrentSpeed() const override;
+
+        double GetTargetSpeed() const override;
+
+        void SetControlConstants
+        (
+            ControlData*    pid
+        ) override;
+
+        private:
+            std::shared_ptr<IDragonMotorController>  m_crawlerMotor;
+            double                                   m_target;
+};

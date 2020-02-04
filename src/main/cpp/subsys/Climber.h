@@ -78,7 +78,7 @@ class Climber : public IMechanism
         ///@return void
         void SetControlConstants
         (
-            ControlData*
+            ControlData*    pid
         ) override;
 
     private:
