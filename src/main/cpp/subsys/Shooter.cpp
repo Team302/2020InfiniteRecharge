@@ -9,8 +9,8 @@
 #include "hw/interfaces/IDragonMotorController.h"
 #include "subsys/MechanismTypes.h"
 #include "controllers/ControlModes.h"
-Shooter::Shooter(std::shared_ptr<IDragonMotorController> motor1,
-std::shared_ptr<IDragonMotorController> motor2
+Shooter::Shooter(IDragonMotorController* motor1,
+IDragonMotorController* motor2
 ): m_masterMotor(motor1),
 m_slaveMotor(motor2),
 m_targetSpeed(0.0)

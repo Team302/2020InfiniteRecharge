@@ -91,7 +91,7 @@ class MechanismFactory
 		);
 
 	private:
-		std::shared_ptr<IDragonMotorController> GetMotorController
+		IDragonMotorController* GetMotorController
 		(
 			const IDragonMotorControllerMap&				motorControllers,
 			MotorControllerUsage::MOTOR_CONTROLLER_USAGE	usage

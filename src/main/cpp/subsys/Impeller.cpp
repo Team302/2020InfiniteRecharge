@@ -41,7 +41,7 @@ using namespace std;
 
 Impeller::Impeller
 (
-    shared_ptr<IDragonMotorController> motor
+    IDragonMotorController* motor
 ) : m_motor (motor)
 {
     

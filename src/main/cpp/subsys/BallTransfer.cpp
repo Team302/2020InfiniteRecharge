@@ -31,11 +31,11 @@ using namespace std;
 BallTransfer::BallTransfer
 
 (
-    std::shared_ptr<IDragonMotorController>     motorController
+    IDragonMotorController*     motorController
 ) : m_master ( motorController )
 
 {
-    if (m_master.get() == nullptr )
+    if (m_master == nullptr )
     {
         Logger::GetLogger()->LogError( string("BallTransfer conductor"), string("motorController is nullptr"));
     }

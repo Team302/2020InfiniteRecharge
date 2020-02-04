@@ -20,12 +20,12 @@
 using namespace std;
 
 ///@brief Create and initialize the Climber sub-mechanism
-///@param [in] std::shared_ptr<IDragonMotorController>  masterMotor - motor for Climber
+///@param [in] std::IDragonMotorController*  masterMotor - motor for Climber
 ///@param [in] std::shared_ptr<DragonSolenoid>  masterSolenoid - solenoid for Climber
 ///@param [in] double   winchDiameter - The diameter of winch in inches.
 Climber::Climber
 (
-    shared_ptr<IDragonMotorController>             masterMotor,
+    IDragonMotorController*             masterMotor,
     shared_ptr<DragonSolenoid>                     masterSolenoid,
     double                                         winchDiameter
 ) : m_motorMaster( masterMotor ),
@@ -33,7 +33,7 @@ Climber::Climber
     m_winchDiameter( winchDiameter),
     m_target( 0.0 )
 {
-    if ( m_motorMaster.get() == nullptr )
+    if ( m_motorMaster == nullptr )
     {
         Logger::GetLogger()->LogError( string( "Climber constructor" ), string( "motorMaster is nullptr" ) );
     }

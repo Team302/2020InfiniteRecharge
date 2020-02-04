@@ -36,7 +36,7 @@ class Intake : public IMechanism
 
         Intake
         (
-            std::shared_ptr<IDragonMotorController>         motorController,
+            IDragonMotorController*         motorController,
             std::shared_ptr<DragonSolenoid>                 solenoid
         );
 
@@ -101,6 +101,6 @@ class Intake : public IMechanism
 
     private:
 
-    std::shared_ptr<IDragonMotorController>     m_master;
+    IDragonMotorController*     m_master;
     std::shared_ptr<DragonSolenoid>             m_crawlingLifter;
 };

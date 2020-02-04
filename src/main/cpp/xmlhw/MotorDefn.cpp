@@ -44,14 +44,14 @@ using namespace std;
 
 /// @brief: Parse a motor XML element and create a motor controller from its definition.
 /// @param [in] xml_node motor node in the xml file
-/// @return shared_ptr<IDragonMotorController> motor controller or nullptr if there is an error in the definition
-shared_ptr<IDragonMotorController> MotorDefn::ParseXML
+/// @return IDragonMotorController* motor controller or nullptr if there is an error in the definition
+IDragonMotorController* MotorDefn::ParseXML
 (
     xml_node      motorNode
 )
 {
     // initialize the output
-    shared_ptr<IDragonMotorController> controller;
+    IDragonMotorController* controller;
 
     // initialize attributes to default values
     int canID = 0;
@@ -162,6 +162,10 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
             else if ( val.compare( "INTERNAL") == 0 )
             {
                 feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::IntegratedSensor;
+            }
+            else if ( val.compare( "NONE" ) == 0)
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::None;
             }
             else 
             {

@@ -32,12 +32,12 @@ using namespace std;
 Intake::Intake
 
 (
-    std::shared_ptr<IDragonMotorController>     motorController,
+    IDragonMotorController*     motorController,
     std::shared_ptr<DragonSolenoid>             solenoid
 ) : m_master( motorController ),
     m_crawlingLifter( solenoid )
 {
-    if (m_master.get() == nullptr )
+    if (m_master == nullptr )
     {
         Logger::GetLogger()->LogError( string( "Intake constructor" ), string( "motorController is nullptr" ) );
     }
@@ -62,6 +62,7 @@ void Intake::SetOutput
     {
         m_master->SetControlMode(controlType);
         m_master->Set( value );
+        Logger::GetLogger()->LogError("Intake::SetOutput", to_string(value));
     }
     else 
     {

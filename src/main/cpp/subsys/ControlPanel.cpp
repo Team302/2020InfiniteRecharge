@@ -37,7 +37,7 @@ using namespace rev;
 
 ControlPanel::ControlPanel
 (
-    std::shared_ptr<IDragonMotorController>     motorController,
+    IDragonMotorController*     motorController,
     std::shared_ptr<DragonSolenoid>             solenoid,
     ColorSensorV3*                              colorSensor
 ) : IMechanism(), 
@@ -46,7 +46,7 @@ ControlPanel::ControlPanel
     m_color( colorSensor ),
     m_colorMatcher( new ColorMatch())
 {
-    if (m_spinner.get() == nullptr )
+    if (m_spinner == nullptr )
     {
         Logger::GetLogger()->LogError( string( "Intake constructor" ), string( "motorController is nullptr" ) );
     }

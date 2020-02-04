@@ -28,6 +28,7 @@
 #include <gamepad/TeleopControl.h>
 #include <controllers/intake/IntakeOff.h>
 #include <controllers/intake/IntakeOn.h>
+#include <frc/smartdashboard/SmartDashboard.h>
 
 
 // Third Party Includes
@@ -64,7 +65,7 @@ IntakeStateMgr::IntakeStateMgr() : m_stateMap(),
                 {
                     case INTAKE_STATE::ON:
                     {   // todo update the constructor to take controlData and target
-                        auto thisState = new IntakeOn();
+                        auto thisState = new IntakeOn(controlData, target);
                         m_stateMap[INTAKE_STATE::ON] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -74,7 +75,7 @@ IntakeStateMgr::IntakeStateMgr() : m_stateMap(),
 
                     case INTAKE_STATE::OFF:
                     {   // todo update the constructor to take controlData and target
-                        auto thisState = new IntakeOff();
+                        auto thisState = new IntakeOff(controlData, target);
                         m_stateMap[INTAKE_STATE::OFF] = thisState;
                     }
                     break;
@@ -99,14 +100,17 @@ IntakeStateMgr::IntakeStateMgr() : m_stateMap(),
 /// @return void
 void IntakeStateMgr::RunCurrentState()
 {
+    Logger::GetLogger()->LogError("IntakeStateMgr::RunCurrentState", "Running current state");
     // process teleop/manual interrupts
     auto controller = TeleopControl::GetInstance();
+    SmartDashboard::PutBoolean("Intake on button", controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_ON));
     if ( controller != nullptr )
     {
         if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_ON ) && 
              m_currentStateEnum != INTAKE_STATE::ON )
         {
             SetCurrentState( INTAKE_STATE::ON, false );
+            Logger::GetLogger()->LogError("IntakeStateMgr::RunCurrentState", "Intake state switched to on");
         }
         else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_OFF ) &&
                   m_currentStateEnum != INTAKE_STATE::OFF )
@@ -120,6 +124,8 @@ void IntakeStateMgr::RunCurrentState()
     {
         m_currentState->Run();
     }
+
+
 
 }
 

@@ -15,8 +15,8 @@ class Shooter : public IMechanism {
  public:
   Shooter
   (
-    std::shared_ptr<IDragonMotorController> motor1,
-    std::shared_ptr<IDragonMotorController> motor2
+    IDragonMotorController* motor1,
+    IDragonMotorController* motor2
   );
   /// @brief          Indicates the type of mechanism this is
   /// @return         MechanismTypes::MECHANISM_TYPE
@@ -74,7 +74,7 @@ class Shooter : public IMechanism {
   ) override;
 
  private:
-  std::shared_ptr<IDragonMotorController> m_masterMotor;
-  std::shared_ptr<IDragonMotorController> m_slaveMotor;
+  IDragonMotorController* m_masterMotor;
+  IDragonMotorController* m_slaveMotor;
   double m_targetSpeed;
 };

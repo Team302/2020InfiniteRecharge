@@ -67,7 +67,7 @@ class Robot : public frc::TimedRobot
 
   private:
       CyclePrimitives* m_cyclePrims;
-      ChassisStateMgr* m_chassisStateMgr;
+      //ChassisStateMgr* m_chassisStateMgr;
       BallManipulator* m_powerCells;
       // ControlPanelStateMgr* m_control;
       // ClimberStateMgr* m_climer;

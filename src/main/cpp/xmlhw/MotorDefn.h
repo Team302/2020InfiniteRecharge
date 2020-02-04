@@ -55,7 +55,7 @@ class MotorDefn
         /// Returns:     DragonTalon*        motor controller (or nullptr if XML
         ///                                  is ill-formed)
         ///-----------------------------------------------------------------------
-        std::shared_ptr<IDragonMotorController> ParseXML
+        IDragonMotorController* ParseXML
         (
             pugi::xml_node      motorNode   /// <I> - xml motor node
         );

@@ -45,7 +45,7 @@ class BallTransfer : public IMechanism
 
         BallTransfer
         (
-            std::shared_ptr<IDragonMotorController>   motorController
+            IDragonMotorController*   motorController
         );
         /// @brief          Indicates the type of mechanism this is
         /// @return         MechanismTypes::MECHANISM_TYPE
@@ -105,7 +105,7 @@ class BallTransfer : public IMechanism
 
     private:
 
-    std::shared_ptr<IDragonMotorController>     m_master;
+    IDragonMotorController*     m_master;
 
 };
 

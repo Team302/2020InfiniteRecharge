@@ -16,7 +16,7 @@ class Turret : public IMechanism{
  public:
   Turret
   (
-    std::shared_ptr<IDragonMotorController> motorController
+    IDragonMotorController* motorController
   );
 
   /// @brief          Indicates the type of mechanism this is
@@ -70,7 +70,7 @@ class Turret : public IMechanism{
     ControlData*                                pid                 
   ) override;
  private:
-  std::shared_ptr<IDragonMotorController> m_turretMotor;
+  IDragonMotorController* m_turretMotor;
   double m_targetSpeed;
   double m_targetPosition;
   double m_initialPosition;

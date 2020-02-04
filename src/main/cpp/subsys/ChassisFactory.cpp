@@ -47,11 +47,11 @@ shared_ptr<IChassis> ChassisFactory::CreateChassis
     {
         case ChassisFactory::CHASSIS_TYPE::TANK_CHASSIS:
         {
-            shared_ptr<IDragonMotorController>  leftMaster;
-            shared_ptr<IDragonMotorController>  rightMaster;
+            IDragonMotorController*  leftMaster;
+            IDragonMotorController*  rightMaster;
             
-            shared_ptr<IDragonMotorController> leftSlave;
-            shared_ptr<IDragonMotorController> rightSlave;
+            IDragonMotorController* leftSlave;
+            IDragonMotorController* rightSlave;
 
             leftMaster = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::LEFT_DRIVE_MASTER);
             leftSlave = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::LEFT_DRIVE_FOLLOWER);
@@ -76,13 +76,13 @@ shared_ptr<IChassis> ChassisFactory::CreateChassis
 
     return chassis;
 }
-shared_ptr<IDragonMotorController> ChassisFactory::GetMotorController
+IDragonMotorController* ChassisFactory::GetMotorController
 (
 	const IDragonMotorControllerMap&				motorControllers,
 	MotorControllerUsage::MOTOR_CONTROLLER_USAGE	usage
 )
 {
-	shared_ptr<IDragonMotorController> motor;
+	IDragonMotorController* motor;
 	auto it = motorControllers.find( usage );
 	if ( it != motorControllers.end() )  // found it
 	{
@@ -95,7 +95,7 @@ shared_ptr<IDragonMotorController> ChassisFactory::GetMotorController
 		Logger::GetLogger()->LogError( string( "ChassisFactory::GetMotorController" ), msg );
 	}
 	
-	if ( motor.get() == nullptr )
+	if ( motor == nullptr )
 	{
 		string msg = "motor is nullptr; usage = ";
 		msg += to_string( usage );

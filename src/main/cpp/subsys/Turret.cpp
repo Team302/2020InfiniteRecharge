@@ -11,7 +11,7 @@
 #include <controllers/ControlModes.h>
 #include <controllers/ControlData.h>
 
-Turret::Turret(std::shared_ptr<IDragonMotorController> motorController): m_targetPosition(0.0),
+Turret::Turret(IDragonMotorController* motorController): m_targetPosition(0.0),
 m_targetSpeed(0.0)
 {
     m_turretMotor = motorController;

@@ -28,7 +28,7 @@ class ControlPanel : public IMechanism
         
         ControlPanel
         (
-            std::shared_ptr<IDragonMotorController>             motorcontroller,
+            IDragonMotorController*             motorcontroller,
             std::shared_ptr<DragonSolenoid>                     solenoid,
             rev::ColorSensorV3*                                 colorSensor
         );
@@ -92,7 +92,7 @@ class ControlPanel : public IMechanism
         ) override;
         ControlPanelColors::COLOR GetColorSeen();
     private:
-        std::shared_ptr<IDragonMotorController>     m_spinner;
+        IDragonMotorController*     m_spinner;
         std::shared_ptr<DragonSolenoid>             m_manipulatorExtender;
         rev::ColorSensorV3*                         m_color;
         rev::ColorMatch*                            m_colorMatcher;

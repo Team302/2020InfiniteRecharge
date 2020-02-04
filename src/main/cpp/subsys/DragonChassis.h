@@ -45,10 +45,10 @@ class DragonChassis : public IChassis
             double 						                            wheelDiameter,		
             double 					    	                        wheelBase,			
             double 						                            track,				
-            std::shared_ptr<IDragonMotorController>                 leftMaster,
-            std::shared_ptr<IDragonMotorController>                 rightMaster,
-            std::shared_ptr<IDragonMotorController>                 leftFollower,
-            std::shared_ptr<IDragonMotorController>                 rightFollower
+            IDragonMotorController*                 leftMaster,
+            IDragonMotorController*                 rightMaster,
+            IDragonMotorController*                 leftFollower,
+            IDragonMotorController*                 rightFollower
         );
         DragonChassis() = delete;
 

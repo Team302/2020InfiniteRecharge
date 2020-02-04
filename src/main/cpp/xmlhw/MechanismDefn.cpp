@@ -164,10 +164,15 @@ IMechanism* MechanismDefn::ParseXML
         if ( strcmp( child.name(), "motor") == 0 )
         {
             auto motor = motorXML.get()->ParseXML(child);
-            if ( motor.get() != nullptr )
+            if ( motor != nullptr )
             {
-                motors[ motor.get()->GetType() ] =  motor ;
+                motors[ motor->GetType() ] =  motor ;
             }
+            else
+            {
+                Logger::GetLogger()->LogError("MechanismDefn::ParseXML", "Motor xml data doesnt exist for mechanism");
+            }
+            
         }
         else if ( strcmp( child.name(), "analogInput") == 0 )
         {

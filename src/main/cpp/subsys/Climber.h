@@ -18,12 +18,12 @@ class Climber : public IMechanism
     public:
 
         ///@brief   Create and initialize the Climber sub-mechanism
-        ///@param [in] std::shared_ptr<IDragonMotorController>   masterMotor - master motor for the Climber
+        ///@param [in] IDragonMotorController*   masterMotor - master motor for the Climber
         ///@param [in] std::shared_ptr<DragonSolenoid>  masterSolenoid - master solenoid for the Climber
         ///@param [in] double   **
         Climber
         (
-            std::shared_ptr<IDragonMotorController>          masterMotor,
+            IDragonMotorController*          masterMotor,
             std::shared_ptr<DragonSolenoid>                  masterSolenoid,
             double                                           winchDiameter
         );
@@ -82,7 +82,7 @@ class Climber : public IMechanism
         ) override;
 
     private:
-        std::shared_ptr<IDragonMotorController>             m_motorMaster;
+        IDragonMotorController*             m_motorMaster;
         std::shared_ptr<DragonSolenoid>                     m_solenoidMaster;
         double                                              m_winchDiameter;
         double                                              m_target;

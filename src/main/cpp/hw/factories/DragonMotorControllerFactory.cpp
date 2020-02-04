@@ -50,7 +50,7 @@ DragonMotorControllerFactory::DragonMotorControllerFactory()
 // Description:     Create a motor controller from the inputs
 // Returns:         Void
 //=======================================================================================
-shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorController
+IDragonMotorController* DragonMotorControllerFactory::CreateMotorController
 (
 	string		                                    mtype,
     int 											canID,
@@ -73,7 +73,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
     bool											reverseLimitSwitchNormallyOpen
 )
 {
-    shared_ptr<IDragonMotorController> controller;
+    IDragonMotorController* controller;
 
     auto hasError = false;
 
@@ -104,7 +104,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
         {
             talon->SetAsSlave( slaveTo );
         }
-        controller.reset( talon );
+        controller = talon;
     }
     else if ( type == MOTOR_TYPE::FALCON )
     {
@@ -132,7 +132,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
         {
             talon->SetAsSlave( slaveTo );
         }
-        controller.reset( talon );
+        controller = talon;
     }
     else if ( type == MOTOR_TYPE::BRUSHED_SPARK_MAX || type == MOTOR_TYPE::BRUSHLESS_SPARK_MAX )
     {
@@ -148,7 +148,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
             DragonSparkMax* master = nullptr;
             if ( GetController( slaveTo ) != nullptr )
             {
-                master = dynamic_cast<DragonSparkMax*>( GetController( slaveTo ).get() );
+                master = dynamic_cast<DragonSparkMax*>( GetController( slaveTo ) );
             }
             if ( master != nullptr )
             {
@@ -161,7 +161,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
                 Logger::GetLogger()->LogError( "DragonMotorControllerFactory::CreateMotorController", msg );
             }
         }
-        controller.reset( smax );
+        controller = smax;
     }
     else
     {
@@ -183,12 +183,12 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
 // Returns:         IDragonMotorController* 	may be nullptr if there isn't a controller
 //												with this CAN ID.
 //=======================================================================================
-shared_ptr<IDragonMotorController> DragonMotorControllerFactory::GetController
+IDragonMotorController* DragonMotorControllerFactory::GetController
 (
 	int							canID		/// Motor controller CAN ID
 ) const
 {
-	shared_ptr<IDragonMotorController> controller;
+	IDragonMotorController* controller;
 	if ( canID > -1 && canID < 63 )
 	{
 		controller = m_canControllers[ canID ];

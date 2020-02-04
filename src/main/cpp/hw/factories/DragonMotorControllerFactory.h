@@ -76,7 +76,7 @@ class DragonMotorControllerFactory
 		/// Description:     Create a motor controller from the inputs
 		/// Returns:         Void
 		//=======================================================================================
-		std::shared_ptr<IDragonMotorController> CreateMotorController
+		IDragonMotorController* CreateMotorController
 		(
 			std::string                             		mtype,					/// Controller Type
 			int 											canID,					/// CAN ID for the controller
@@ -107,7 +107,7 @@ class DragonMotorControllerFactory
 		/// Returns:         IDragonMotorController* 	may be nullptr if there isn't a controller
 		///												with this usage.
 		//=======================================================================================
-		std::shared_ptr<IDragonMotorController> GetController
+		IDragonMotorController* GetController
 		(
 			int													canID		/// Motor Controller CAN ID
 		) const;
@@ -119,7 +119,7 @@ class DragonMotorControllerFactory
 
         static DragonMotorControllerFactory*                                    m_instance;
 
-		std::array<std::shared_ptr<IDragonMotorController>,63>				    m_canControllers;
+		std::array<IDragonMotorController*,63>				    m_canControllers;
         std::map<std::string, DragonMotorControllerFactory::MOTOR_TYPE>         m_typeMap;
 
 

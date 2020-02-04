@@ -140,7 +140,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
             case MechanismTypes::MECHANISM_TYPE::INTAKE:
             {
 				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::INTAKE );
-				if ( motor.get() != nullptr )
+				if ( motor != nullptr )
 				{
 					auto solenoid = GetSolenoid( solenoids, SolenoidUsage::SOLENOID_USAGE::INTAKE );
 					if ( solenoid.get() != nullptr )
@@ -166,7 +166,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 			case MechanismTypes::MECHANISM_TYPE::IMPELLER:
 			{
 				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::IMPELLER );
-				if ( motor.get() != nullptr )
+				if ( motor != nullptr )
 				{
 					auto impeller = new Impeller(motor);
 					subsys = dynamic_cast<IMechanism*>(impeller);
@@ -177,7 +177,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 			case MechanismTypes::MECHANISM_TYPE::BALL_TRANSFER:
 			{
 				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::BALL_TRANSFER );
-				if ( motor.get() != nullptr )
+				if ( motor != nullptr )
 				{
 					auto ballTrans = new BallTransfer( motor );
 					subsys = dynamic_cast<IMechanism*>( ballTrans );
@@ -189,7 +189,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 			{
 				auto motor1 = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::SHOOTER_1 );
 				auto motor2 = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::SHOOTER_2 );
-				if ( motor1.get() != nullptr && motor2.get() != nullptr )
+				if ( motor1 != nullptr && motor2 != nullptr )
 				{
 					auto shooter = new Shooter(motor1, motor2);
 					subsys = dynamic_cast<IMechanism*>(shooter);
@@ -205,7 +205,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 			case MechanismTypes::MECHANISM_TYPE::CONTROL_TABLE_MANIPULATOR:
 			{
 				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::CONTROL_TABLE_MANIPULATOR );
-				if ( motor.get() != nullptr )
+				if ( motor != nullptr )
 				{
 					auto solenoid = GetSolenoid( solenoids, SolenoidUsage::SOLENOID_USAGE::CONTROL_TABLE_MANIPULATOR );
 					if ( solenoid.get() != nullptr )
@@ -234,7 +234,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 			case MechanismTypes::MECHANISM_TYPE::TURRET:
 			{
 				auto motor = GetMotorController(motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::TURRET);
-				if(motor.get() != nullptr)
+				if(motor != nullptr)
 				{
 					auto turret = new Turret(motor);
 					subsys = dynamic_cast<IMechanism*>(turret);
@@ -256,13 +256,13 @@ IMechanism*  MechanismFactory::CreateIMechanism
 	return subsys;
 }
 
-shared_ptr<IDragonMotorController> MechanismFactory::GetMotorController
+IDragonMotorController* MechanismFactory::GetMotorController
 (
 	const IDragonMotorControllerMap&				motorControllers,
 	MotorControllerUsage::MOTOR_CONTROLLER_USAGE	usage
 )
 {
-	shared_ptr<IDragonMotorController> motor;
+	IDragonMotorController* motor;
 	auto it = motorControllers.find( usage );
 	if ( it != motorControllers.end() )  // found it
 	{
@@ -275,7 +275,7 @@ shared_ptr<IDragonMotorController> MechanismFactory::GetMotorController
 		Logger::GetLogger()->LogError( string( "MechanismFactory::GetMotorController" ), msg );
 	}
 	
-	if ( motor.get() == nullptr )
+	if ( motor == nullptr )
 	{
 		string msg = "motor is nullptr; usage = ";
 		msg += to_string( usage );

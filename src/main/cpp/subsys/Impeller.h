@@ -99,10 +99,10 @@ class Impeller : public IMechanism
         ) override;
 
         Impeller() = delete;
-        Impeller(std::shared_ptr<IDragonMotorController> motor);
+        Impeller(IDragonMotorController* motor);
 
         private:
-        std::shared_ptr<IDragonMotorController> m_motor;
+        IDragonMotorController* m_motor;
         double m_target;
         
 	

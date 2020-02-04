@@ -60,8 +60,8 @@ bool DigitalButton::IsButtonPressed() const
     if ( m_gamepad != nullptr )
     {
         pressed = m_gamepad->GetRawButton( m_button );
-        Logger::GetLogger()->LogError( string("button "), to_string( m_button ));
-        Logger::GetLogger()->LogError( string("is button pressed"), to_string( pressed ));
+        //Logger::GetLogger()->LogError( string("button "), to_string( m_button ));
+        //Logger::GetLogger()->LogError( string("is button pressed"), to_string( pressed ));
     }
     else
     {

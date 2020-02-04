@@ -44,10 +44,10 @@ DragonChassis::DragonChassis
     double 						                            wheelDiameter,		
     double 					    	                        wheelBase,			
     double 						                            track,				
-    std::shared_ptr<IDragonMotorController>                 leftMaster,
-    std::shared_ptr<IDragonMotorController>                 rightMaster,
-    std::shared_ptr<IDragonMotorController>                 leftFollower,
-    std::shared_ptr<IDragonMotorController>                 rightFollower
+    IDragonMotorController*                 leftMaster,
+    IDragonMotorController*                 rightMaster,
+    IDragonMotorController*                 leftFollower,
+    IDragonMotorController*                 rightFollower
 ) : m_leftSide( new DriveTrainSide( leftMaster, leftFollower, wheelDiameter ) ),
     m_rightSide( new DriveTrainSide( rightMaster, rightFollower, wheelDiameter ) ),
     m_wheelBase( wheelBase ),
