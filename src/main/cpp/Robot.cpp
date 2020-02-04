@@ -14,16 +14,6 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-//========================================================================================================
-/// Robot.cpp
-//========================================================================================================
-///
-/// File Description:
-///     The main robot code.  The Init methods get called when that state gets entered and then the 
-///     Periodic methods get called every 20 milliseconds.
-///
-//========================================================================================================
-
 // C++ Includes
 #include <iostream>
 #include <memory>
@@ -44,12 +34,11 @@
 using namespace std;
 using namespace frc;
 
+/// @brief  The main robot code.  The Init methods get called when that state gets entered and then the 
+///     Periodic methods get called every 20 milliseconds.
 
-///-----------------------------------------------------------------------
-/// Method:      RobotInit
-/// Description: When the robot gets created this gets called.  It initializes
-///              the robot subsystems (hardware).
-///-----------------------------------------------------------------------
+/// @brief When the robot gets created this gets called.  It initializes the robot subsystems (hardware).
+/// @return void
 void Robot::RobotInit() 
 {
     // Read the robot definition from the xml configuration files and
@@ -64,6 +53,7 @@ void Robot::RobotInit()
 
     m_chassisStateMgr = new ChassisStateMgr();
     m_powerCells = new BallManipulator();
+
     // m_control = new ControlPanelStateMgr();
     // m_climber = new ClimberStateMgr();
 
@@ -78,24 +68,18 @@ void Robot::RobotInit()
 
 }
 
-///-----------------------------------------------------------------------
-/// Method:      RobotPeriodic
-/// Description: This function is called every robot packet, no matter the 
-///              mode. This is used for items like diagnostics that run 
-///              during disabled, autonomous, teleoperated and test modes
-///              (states).  THis runs after the specific state periodic 
-///              methods and before the LiveWindow and SmartDashboard updating.
-///-----------------------------------------------------------------------
+/// @brief This function is called every robot packet, no matter the  mode. This is used for items like diagnostics that run 
+///        during disabled, autonomous, teleoperated and test modes (states).  THis runs after the specific state periodic 
+///        methods and before the LiveWindow and SmartDashboard updating.
+/// @return void
 void Robot::RobotPeriodic() 
 {
 
 }
 
 
-///-----------------------------------------------------------------------
-/// Method:      AutonomousInit
-/// Description: This initializes the autonomous state
-///-----------------------------------------------------------------------
+/// @brief This initializes the autonomous state
+/// @return void
 void Robot::AutonomousInit() 
 {
     m_chassisStateMgr->Init();
@@ -106,11 +90,8 @@ void Robot::AutonomousInit()
 }
 
 
-///-----------------------------------------------------------------------
-/// Method:      AutonomousPeriodic
-/// Description: Runs every 20 milliseconds when the autonomous state is 
-///              active.
-///-----------------------------------------------------------------------
+/// @brief Runs every 20 milliseconds when the autonomous state is active.
+/// @return void
 void Robot::AutonomousPeriodic() 
 {
     //Real auton magic right here:
@@ -118,12 +99,11 @@ void Robot::AutonomousPeriodic()
 }
 
 
-///-----------------------------------------------------------------------
-/// Method:      TeleopInit
-/// Description: This initializes the teleoperated state
-///-----------------------------------------------------------------------
+/// @brief This initializes the teleoperated state
+/// @return void
 void Robot::TeleopInit() 
 {
+    m_chassisStateMgr->Init();
     m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
     m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
@@ -131,11 +111,8 @@ void Robot::TeleopInit()
 }
 
 
-///-----------------------------------------------------------------------
-/// Method:      TeleopPeriodic
-/// Description: Runs every 20 milliseconds when the teleoperated state is 
-///              active.
-///-----------------------------------------------------------------------
+/// @brief Runs every 20 milliseconds when the teleoperated state is active.
+/// @return void
 void Robot::TeleopPeriodic() 
 {
     m_chassisStateMgr->RunCurrentState();
@@ -145,10 +122,9 @@ void Robot::TeleopPeriodic()
 }
 
 
-///-----------------------------------------------------------------------
-/// Method:      TestInit
-/// Description: This initializes the test state
-///-----------------------------------------------------------------------
+
+/// @brief This initializes the test state
+/// @return void
 void Robot::TestInit() 
 {
     m_testSelected = m_testChooser.GetSelected();
@@ -169,11 +145,8 @@ void Robot::TestInit()
 }
 
 
-///-----------------------------------------------------------------------
-/// Method:      TestPeriodic
-/// Description: Runs every 20 milliseconds when the test state is 
-///              active.
-///-----------------------------------------------------------------------
+/// @brief Runs every 20 milliseconds when the test state is active.
+/// @return void
 void Robot::TestPeriodic() 
 {
     switch ( m_currentTest )
@@ -194,6 +167,6 @@ void Robot::TestPeriodic()
 #ifndef RUNNING_FRC_TESTS
 int main() 
 {
-    return frc::StartRobot<Robot>(); 
+    return StartRobot<Robot>(); 
 }
 #endif

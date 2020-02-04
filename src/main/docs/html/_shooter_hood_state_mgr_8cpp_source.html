@@ -146,23 +146,23 @@ $(document).ready(function(){initNavTree('_shooter_hood_state_mgr_8cpp_source.ht
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    {   <span class="comment">// todo update the constructor take in controlData and target</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        <span class="keyword">auto</span> thisState = <span class="keyword">new</span> <a class="code" href="class_shooter_hood_move_up.html">ShooterHoodMoveUp</a>(controlData, target);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        m_stateMap[SHOOTER_HOOD_STATE::MOVE_UP] = thisState;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        m_currentState = thisState;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        m_currentStateEnum = stateEnum;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        m_currentState-&gt;<a class="code" href="class_i_state.html#ac1400e68fde2f088873f5ec283309977">Init</a>();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    <span class="keywordflow">case</span> SHOOTER_HOOD_STATE::MOVE_DOWN:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    {   <span class="comment">// todo update the constructor take in controlData and target</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        <span class="keyword">auto</span> thisState = <span class="keyword">new</span> <a class="code" href="class_shooter_hood_move_down.html">ShooterHoodMoveDown</a>(controlData, target);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        m_stateMap[SHOOTER_HOOD_STATE::MOVE_DOWN] = thisState;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">SHOOTER_HOOD_STATE::HOLD_POSITION</a>:</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    {   <span class="comment">// todo update the constructor take in controlData and target</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        <span class="keyword">auto</span> thisState = <span class="keyword">new</span> <a class="code" href="class_shooter_hood_hold_position.html">ShooterHoodHoldPosition</a>(controlData, target);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        m_stateMap[<a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">SHOOTER_HOOD_STATE::HOLD_POSITION</a>] = thisState;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <span class="keywordflow">case</span> SHOOTER_HOOD_STATE::MOVE_DOWN:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    {   <span class="comment">// todo update the constructor take in controlData and target</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        <span class="keyword">auto</span> thisState = <span class="keyword">new</span> <a class="code" href="class_shooter_hood_move_down.html">ShooterHoodMoveDown</a>(controlData, target);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        m_stateMap[SHOOTER_HOOD_STATE::MOVE_DOWN] = thisState;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">SHOOTER_HOOD_STATE::HOLD_POSITION</a>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    {   <span class="comment">// todo update the constructor take in controlData and target</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        <span class="keyword">auto</span> thisState = <span class="keyword">new</span> <a class="code" href="class_shooter_hood_hold_position.html">ShooterHoodHoldPosition</a>(controlData, target);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        m_stateMap[<a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">SHOOTER_HOOD_STATE::HOLD_POSITION</a>] = thisState;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        m_currentState = thisState;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        m_currentStateEnum = stateEnum;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        m_currentState-&gt;<a class="code" href="class_i_state.html#ac1400e68fde2f088873f5ec283309977">Init</a>();</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    }</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>

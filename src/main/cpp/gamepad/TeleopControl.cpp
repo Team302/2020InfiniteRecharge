@@ -69,7 +69,6 @@ TeleopControl::TeleopControl() : m_axisIDs(),
             auto xbox = new DragonXBox( inx );
 			m_controllers[inx] = xbox;
 		}
-//		else if ( ds->GetJoystickType( inx ) == GenericHID::kHIDJoystick )
 		else if ( ds->GetJoystickType( inx ) == GenericHID::kHID1stPerson )
 		{
             auto gamepad = new DragonGamepad( inx );
@@ -108,6 +107,9 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_axisIDs[ GTA_DRIVE_BACKWARD ]         		= IDragonGamePad::LEFT_TRIGGER;
 		m_controllerIndex[ GTA_DRIVE_STEER ] 		    = ctrlNo;
 		m_axisIDs[ GTA_DRIVE_STEER ]         		    = IDragonGamePad::LEFT_JOYSTICK_X;
+
+		m_controllerIndex[ CURVATURE_DRIVE_QUICK_TURN ]	= ctrlNo;
+		m_buttonIDs[ CURVATURE_DRIVE_QUICK_TURN ]		= IDragonGamePad::RIGHT_BUMPER;
 
 		m_controllerIndex[ SWITCH_DRIVE_MODE ]          = ctrlNo;
 		m_buttonIDs[ SWITCH_DRIVE_MODE ]                = IDragonGamePad::A_BUTTON;

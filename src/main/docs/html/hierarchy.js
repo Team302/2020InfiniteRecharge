@@ -119,6 +119,9 @@ var hierarchy =
       [ "SquaredProfile", "class_squared_profile.html", null ]
     ] ],
     [ "IState", "class_i_state.html", [
+      [ "ArcadeDrive", "class_arcade_drive.html", [
+        [ "GTADrive", "class_g_t_a_drive.html", null ]
+      ] ],
       [ "ControlPanelColorTurn", "class_control_panel_color_turn.html", null ],
       [ "ControlPanelRaise", "class_control_panel_raise.html", null ],
       [ "ControlPanelStow", "class_control_panel_stow.html", null ],
@@ -144,11 +147,7 @@ var hierarchy =
       [ "ShooterGetReady", "class_shooter_get_ready.html", null ],
       [ "ShooterOff", "class_shooter_off.html", null ],
       [ "ShooterShoot", "class_shooter_shoot.html", null ],
-      [ "TankDrive", "class_tank_drive.html", null ],
-      [ "ThrottleSteerDrive", "class_throttle_steer_drive.html", [
-        [ "ArcadeDrive", "class_arcade_drive.html", null ],
-        [ "GTADrive", "class_g_t_a_drive.html", null ]
-      ] ]
+      [ "TankDrive", "class_tank_drive.html", null ]
     ] ],
     [ "LED", "class_l_e_d.html", null ],
     [ "LEDDefn", "class_l_e_d_defn.html", null ],

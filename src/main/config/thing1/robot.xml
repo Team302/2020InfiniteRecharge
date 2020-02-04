@@ -1,97 +1,376 @@
 <?xml version="1.0"?>
 <!DOCTYPE robot SYSTEM "robot.dtd">
 <robot>
-   
-    
-<!-- ====================================================
-	 Pigeon
-	 ==================================================== -->    
-    <pigeon canId="30" />
-       
-
-<!-- ====================================================
-	 PDP
-	 ==================================================== -->    
-	<pdp canId="31" />
-    
-<!-- ====================================================
-	 Lidars
-	 ==================================================== -->    
-
-	 
-	 
-<!-- ====================================================
-	 camera
-	==================================================== -->
-
+	<!--pdp canId="51" />
 	
-       
+	<odometry xloc="0.0"
+	          yloc="0.0"
+			  heading="0.0">
+		<pigeon canId="60" />
+		<limelight usage="MAINLIMELIGHT"
+				   tablename="limelight"
+				   mountingheight="20.0"
+				   horizontaloffset="-10.0"
+				   mountingangle="15.0"
+				   rotation="90.0"
+				   targetheight="120.0"
+				   targetheight2="30.0"
+				   defaultledmode="currentpipeline"
+				   defaultcammode="vision"
+				   streammode="sidebyside"
+				   snapshots="off"
+				   crosshairx="0.5"
+				   crosshairy="0.5"
+				   secondcrosshairx="0.25"
+				   secondcrosshairy="0.25" />
+
+	</odometry -->
+	
+	<!-- feedback>
+		<camera id="0"
+				format="KMJPEG"
+				width="640"
+				height="480"
+				fps="30"
+				thread="true" />
+		<blinkin usage="front"
+		         pwmId="0" />
+	</feedback -->
+
+
 <!-- ====================================================
-	 Chassis
-	 ====================================================  -->
+     Chassis
+     ====================================================  -->
     <chassis type="TANK"
-    		 wheelDiameter="6.285"
+			 wheelDiameter="6.0"
              wheelBase="25.0"  
              track="18.0">
-             
-         <motor usage="RIGHT_DRIVE_MASTER"
-               canId="0"
-			   type="TALONSRX"
-               inverted="true"
-        	   feedbackDevice="QUADENCODER"
-          	   countsPerRev="1"
-		   	   brakeMode="false"
-        	   gearRatio="6.0" 
-        	   peakCurrentDuration="50"
-        	   continuousCurrentLimit="30"
-        	   peakCurrentLimit="40" 
-        	   currentLimiting="true"  />
+			 
+		<motor usage="LEFT_DRIVE_MASTER"
+				canId="1"
+				pdpID="12"
+				type="TALONSRX"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="INTERNAL"
+				countsPerRev="2048"
+				gearRatio="1.0"
+				brakeMode="true"
+				slaveTo="-1"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+		<motor  usage="LEFT_DRIVE_FOLLOWER"
+				canId="3"
+				pdpID="13"
+				type="TALONSRX"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="INTERNAL"
+				countsPerRev="2048"
+				gearRatio="1.0"
+				brakeMode="true"
+				slaveTo="1"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+				
+			 
+		<motor usage="RIGHT_DRIVE_MASTER"
+				canId="10"
+				pdpID="15"
+				type="TALONSRX"
+				inverted="true"
+				sensorInverted="false"
+				feedbackDevice="INTERNAL"
+				countsPerRev="2048"
+				gearRatio="1.0"
+				brakeMode="true"
+				slaveTo="-1"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true"
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+		<motor  usage="RIGHT_DRIVE_FOLLOWER"
+				canId="2"
+				pdpID="14"
+				type="TALONSRX"
+				inverted="true"
+				sensorInverted="false"
+				feedbackDevice="INTERNAL"
+				countsPerRev="2048"
+				gearRatio="1.0"
+				brakeMode="true"
+				slaveTo="10"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
 
-         <motor usage="RIGHT_DRIVE_FOLLOWER"
-               canId="1"
-			   type="TALONSRX"
-               inverted="true"
-        	   feedbackDevice="QUADENCODER"
-          	   countsPerRev="1"
-		   	   brakeMode="false"
-        	   gearRatio="6.0" 
-        	   peakCurrentDuration="50"
-        	   continuousCurrentLimit="30"
-        	   peakCurrentLimit="40" 
-        	   currentLimiting="true"  />		
-			   
- 		<!-- Left (middle, front, back) -->
-        <motor usage="LEFT_DRIVE_MASTER"
-               canId="3"
-			   type="TALONSRX"
-               inverted="true"
-         	   feedbackDevice="QUADENCODER"
-          	   countsPerRev="1"
-		   	   brakeMode="false"
-        	   gearRatio="6.0" 
-        	   peakCurrentDuration="50"
-        	   continuousCurrentLimit="30"
-        	   peakCurrentLimit="40" 
-        	   currentLimiting="true"  />
-        <motor usage="LEFT_DRIVE_FOLLOWER"
-               canId="2"
-			   type="TALONSRX"
-               inverted="true"
-         	   feedbackDevice="QUADENCODER"
-          	   countsPerRev="1"
-		   	   brakeMode="false"
-        	   gearRatio="6.0" 
-        	   peakCurrentDuration="50"
-        	   continuousCurrentLimit="30"
-        	   peakCurrentLimit="40" 
-        	   currentLimiting="true"  />
-
-               
     </chassis>  
  
 <!-- ====================================================
-	 Mechanisms
-	 ==================================================== -->    
+     Mechanisms
+     ==================================================== -->    
     
- 
+	<!--  mechanism type="INTAKE">
+		<motor usage="INTAKE"
+				canId="7"
+				pdpID="7"
+				type="TALONSRX"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="NONE"
+				countsPerRev="0"
+				gearRatio="1.0"
+				brakeMode="false"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+    	<solenoid usage="INTAKE"
+    		      canId="50"
+    		      channel="0"
+    		      reversed="false" />
+	</mechanism -->
+
+	<!-- mechanism type="HUMAN_PLAYER_FLAP">
+    	<solenoid usage="HUMAN_PLAYER_FLAP"
+    		      canId="50"
+    		      channel="2"
+    		      reversed="false" />
+	</mechanism -->    
+	
+	<!-- mechanism type="IMPELLER">
+		<motor usage="IMPELLER"
+				canId="7"
+				pdpID="7"
+				type="TALONSRX"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="NONE"
+				countsPerRev="0"
+				gearRatio="1.0"
+				brakeMode="false"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+
+		<canCoder usage="IMPELLERPOSITION"
+				  canId="30"/>
+	</mechanism>
+    
+	<mechanism type="BALL_TRANSFER" -->
+    	<!-- solenoid usage="BALL_TRANSFER"
+    		      canId="50"
+    		      channel="3"
+    		      reversed="false" / -->
+		<!-- motor usage="BALL_TRANSFER"
+				canId="3"
+				pdpID="3"
+				type="TALONSRX"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="QUADENCODER"
+				countsPerRev="4096"
+				gearRatio="1.0"
+				brakeMode="false"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+	</mechanism>
+    
+	<mechanism type="SHOOTER">
+		<motor usage="SHOOTER_1"
+				canId="16"
+				pdpID="0"
+				type="FALCON"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="INTERNAL"
+				countsPerRev="2048"
+				gearRatio="1.0"
+				brakeMode="true"
+				slaveTo="-1"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+		<motor usage="SHOOTER_2"
+				canId="1"
+				pdpID="1"
+				type="FALCON"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="INTERNAL"
+				countsPerRev="2048"
+				gearRatio="1.0"
+				brakeMode="true"
+				slaveTo="5"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+	</mechanism>
+    
+	<mechanism type="SHOOTER_HOOD" -->
+    	<!-- solenoid usage="SHOOTER_HOOD"
+    		      canId="50"
+    		      channel="7"
+    		      reversed="false" / -->
+		<!-- motor usage="SHOOTER_HOOD"
+				canId="4"
+				pdpID="4"
+				type="TALONSRX"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="NONE"
+				countsPerRev="0"
+				gearRatio="1.0"
+				brakeMode="false"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+		<canCoder usage="HOODANGLE"
+				  canId="31"/>
+	</mechanism>
+    
+	<mechanism type="TURRET">
+		<motor usage="TURRET"
+				canId="5"
+				pdpID="5"
+				type="TALONSRX"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="NONE"
+				countsPerRev="0"
+				gearRatio="1.0"
+				brakeMode="false"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/ -->
+		<!-- todo need to add limit switches -->
+	<!-- /mechanism>
+    
+	<mechanism type="CONTROL_TABLE_MANIPULATOR">
+		<motor usage="CONTROL_TABLE_MANIPULATOR"
+				canId="6"
+				pdpID="6"
+				type="TALONSRX"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="NONE"
+				countsPerRev="0"
+				gearRatio="1.0"
+				brakeMode="false"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+    	<solenoid usage="CONTROL_TABLE_MANIPULATOR"
+    		      canId="50"
+    		      channel="1"
+    		      reversed="false" />
+		<colorSensor port="kOnboard" />
+	</mechanism>
+    
+	<mechanism type="CLIMBER">
+		<motor usage="CONTROL_TABLE_MANIPULATOR"
+				canId="2"
+				pdpID="2"
+				type="TALONSRX"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="NONE"
+				countsPerRev="0"
+				gearRatio="1.0"
+				brakeMode="false"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+    	<solenoid usage="CLIMBER"
+    		      canId="50"
+    		      channel="2"
+    		      reversed="false" />
+	</mechanism -->
+    
+	<!--mechanism type="CRAWLER">
+		<motor usage="CONTROL_TABLE_MANIPULATOR"
+				canId="63"
+				pdpID="63"
+				type="TALONSRX"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="NONE"
+				countsPerRev="0"
+				gearRatio="1.0"
+				brakeMode="false"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+	</mechanism -->
 </robot>
