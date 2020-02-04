@@ -32,7 +32,7 @@ ShooterHoodHold::ShooterHoodHold()
 (
     ControlData* control,
     double target
-):  MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::CLIMBER), control, target)
+):  MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::SHOOTER), control, target)
 
 )
 

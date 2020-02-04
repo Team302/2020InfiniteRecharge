@@ -40,7 +40,7 @@ class TeleopControl
 
         enum FUNCTION_IDENTIFIER
         {
-            UNKNOW_FUNCTION,
+           UNKNOW_FUNCTION,
             TANK_DRIVE_LEFT_CONTROL,
             TANK_DRIVE_RIGHT_CONTROL,
             ARCADE_DRIVE_THROTTLE,
@@ -57,12 +57,9 @@ class TeleopControl
             IMPELLER_AGITATE,
             INTAKE_ON,
             INTAKE_OFF,
-<<<<<<< Updated upstream
             BALL_TRANSFER_OFF,
             BALL_TRANSFER_TO_IMPELLER,
             BALL_TRANSFER_TO_SHOOTER,
-=======
->>>>>>> Stashed changes
             SHOOTER_PREPARE_TO_SHOOT,
             SHOOTER_AUTO_SHOOT,
             SHOOTER_MANUAL_AIM,
