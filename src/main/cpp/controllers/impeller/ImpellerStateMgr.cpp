@@ -148,8 +148,14 @@ void ImpellerStateMgr::RunCurrentState()
             SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
         }
     }
-    
-    Logger::GetLogger()->OnDash(string("Intake State"), to_string(m_currentStateEnum));
+
+
+    Logger::GetLogger()->OnDash(string("Impeller spin button"), (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_SPIN )));
+    Logger::GetLogger()->OnDash(string("Impeller stop button"), (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_STOP )));
+    Logger::GetLogger()->OnDash(string("Impeller aggitate button"), (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_AGITATE )));
+    Logger::GetLogger()->OnDash(string("Impeller auto button"), (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_AUTO_SHOOT )));
+    Logger::GetLogger()->OnDash(string("Impeller manual button"), (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_SHOOT )));
+    Logger::GetLogger()->OnDash(string("Impeller State"), to_string(m_currentStateEnum));
 
     // run the current state
     if ( m_currentState != nullptr )

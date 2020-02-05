@@ -99,6 +99,14 @@ void Logger::OnDash
     SmartDashboard::PutString( locationIdentifier.c_str(), message.c_str());
 }
 
+void Logger::OnDash
+(
+    const string&   locationIdentifier,     // <I> - classname or object identifier
+    bool            val                 // <I> - error message
+)
+{
+    SmartDashboard::PutBoolean( locationIdentifier.c_str(), val );
+}
 Logger::Logger() : m_level( LOGGER_OPTION::CONSOLE )
 {
 }

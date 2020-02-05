@@ -71,6 +71,11 @@ class Logger
             const std::string&   locationIdentifier,     // <I> - classname or object identifier
             const std::string&   message                 // <I> - error message
        );
+       void OnDash
+       (
+            const std::string&   locationIdentifier,     // <I> - classname or object identifier
+            bool                 value                 // <I> - error message
+       );
 
     protected:
 
