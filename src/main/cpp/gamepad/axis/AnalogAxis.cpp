@@ -181,12 +181,6 @@ double AnalogAxis::GetRawValue()
     if ( m_gamepad != nullptr )
     {
         value = m_gamepad->GetRawAxis( m_axis );
-        if ( abs(value) > 0.0 )
-        {
-            string tag = string("AnalogAxis::GetRawValue ");
-            tag += to_string( m_axis );
-            Logger::GetLogger()->LogError( tag, to_string(value) );
-        }
     }
     else
     {

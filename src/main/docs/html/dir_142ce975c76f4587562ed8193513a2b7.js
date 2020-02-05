@@ -15,9 +15,5 @@ var dir_142ce975c76f4587562ed8193513a2b7 =
     [ "TankDrive.cpp", "_tank_drive_8cpp.html", null ],
     [ "TankDrive.h", "_tank_drive_8h.html", [
       [ "TankDrive", "class_tank_drive.html", "class_tank_drive" ]
-    ] ],
-    [ "ThrottleSteerDrive.cpp", "_throttle_steer_drive_8cpp.html", null ],
-    [ "ThrottleSteerDrive.h", "_throttle_steer_drive_8h.html", [
-      [ "ThrottleSteerDrive", "class_throttle_steer_drive.html", "class_throttle_steer_drive" ]
     ] ]
 ];

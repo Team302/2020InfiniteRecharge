@@ -95,7 +95,9 @@ var searchData=
   ['cubedprofile_2ecpp_180',['CubedProfile.cpp',['../_cubed_profile_8cpp.html',1,'']]],
   ['cubedprofile_2eh_181',['CubedProfile.h',['../_cubed_profile_8h.html',1,'']]],
   ['current_182',['CURRENT',['../class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736a79380ba0bcd66b4d3dac683800ef179e',1,'ControlModes']]],
-  ['cycleprimitives_183',['CyclePrimitives',['../class_cycle_primitives.html',1,'CyclePrimitives'],['../class_cycle_primitives.html#a56b8e26d491bf62929b3ff2a8bf88df1',1,'CyclePrimitives::CyclePrimitives()']]],
-  ['cycleprimitives_2ecpp_184',['CyclePrimitives.cpp',['../_cycle_primitives_8cpp.html',1,'']]],
-  ['cycleprimitives_2eh_185',['CyclePrimitives.h',['../_cycle_primitives_8h.html',1,'']]]
+  ['curvature_5fdrive_5fquick_5fturn_183',['CURVATURE_DRIVE_QUICK_TURN',['../class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9b7150ec3d3dcc42432a77b3b9e062a8',1,'TeleopControl']]],
+  ['curvaturedrive_184',['CurvatureDrive',['../class_arcade_drive.html#af97807eb188bc6c561d80469a364bf83',1,'ArcadeDrive']]],
+  ['cycleprimitives_185',['CyclePrimitives',['../class_cycle_primitives.html',1,'CyclePrimitives'],['../class_cycle_primitives.html#a56b8e26d491bf62929b3ff2a8bf88df1',1,'CyclePrimitives::CyclePrimitives()']]],
+  ['cycleprimitives_2ecpp_186',['CyclePrimitives.cpp',['../_cycle_primitives_8cpp.html',1,'']]],
+  ['cycleprimitives_2eh_187',['CyclePrimitives.h',['../_cycle_primitives_8h.html',1,'']]]
 ];

@@ -163,6 +163,10 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
             {
                 feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::IntegratedSensor;
             }
+            else if ( val.compare( "NONE") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::None;
+            }
             else 
             {
                 string msg = "Invalid feedback device ";

@@ -153,19 +153,19 @@ $(document).ready(function(){initNavTree('_intake_state_mgr_8cpp_source.html',''
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">switch</span> ( stateEnum )</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <span class="keywordflow">case</span> INTAKE_STATE::ON:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    {   <span class="comment">// todo update the constructor to take controlData and target</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <span class="keyword">auto</span> thisState = <span class="keyword">new</span> <a class="code" href="class_intake_on.html">IntakeOn</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    {   </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <span class="keyword">auto</span> thisState = <span class="keyword">new</span> <a class="code" href="class_intake_on.html">IntakeOn</a>( controlData, target );</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        m_stateMap[INTAKE_STATE::ON] = thisState;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        m_currentState = thisState;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        m_currentStateEnum = stateEnum;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        m_currentState-&gt;<a class="code" href="class_i_state.html#ac1400e68fde2f088873f5ec283309977">Init</a>();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    <span class="keywordflow">case</span> INTAKE_STATE::OFF:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    {   <span class="comment">// todo update the constructor to take controlData and target</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        <span class="keyword">auto</span> thisState = <span class="keyword">new</span> <a class="code" href="class_intake_off.html">IntakeOff</a>();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        m_stateMap[INTAKE_STATE::OFF] = thisState;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <span class="keywordflow">case</span> INTAKE_STATE::OFF:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    {   </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        <span class="keyword">auto</span> thisState = <span class="keyword">new</span> <a class="code" href="class_intake_off.html">IntakeOff</a>( controlData, target );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        m_stateMap[INTAKE_STATE::OFF] = thisState;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        m_currentState = thisState;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        m_currentStateEnum = stateEnum;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        m_currentState-&gt;<a class="code" href="class_i_state.html#ac1400e68fde2f088873f5ec283309977">Init</a>();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
@@ -238,7 +238,7 @@ $(document).ready(function(){initNavTree('_intake_state_mgr_8cpp_source.html',''
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_teleop_control_8h_html"><div class="ttname"><a href="_teleop_control_8h.html">TeleopControl.h</a></div></div>
-<div class="ttc" id="aclass_intake_off_html"><div class="ttname"><a href="class_intake_off.html">IntakeOff</a></div><div class="ttdoc">IntakeOff.h.</div><div class="ttdef"><b>Definition:</b> <a href="_intake_off_8h_source.html#l00028">IntakeOff.h:28</a></div></div>
+<div class="ttc" id="aclass_intake_off_html"><div class="ttname"><a href="class_intake_off.html">IntakeOff</a></div><div class="ttdoc">IntakeOff.h.</div><div class="ttdef"><b>Definition:</b> <a href="_intake_off_8h_source.html#l00031">IntakeOff.h:31</a></div></div>
 <div class="ttc" id="aclass_i_state_html_ac1400e68fde2f088873f5ec283309977"><div class="ttname"><a href="class_i_state.html#ac1400e68fde2f088873f5ec283309977">IState::Init</a></div><div class="ttdeci">virtual void Init()=0</div></div>
 <div class="ttc" id="a_mechanism_target_data_8h_html"><div class="ttname"><a href="_mechanism_target_data_8h.html">MechanismTargetData.h</a></div></div>
 <div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
@@ -254,7 +254,7 @@ $(document).ready(function(){initNavTree('_intake_state_mgr_8cpp_source.html',''
 <div class="ttc" id="aclass_intake_state_mgr_html_a67087cabbb04c3f8145ec41a1bbf5cea"><div class="ttname"><a href="class_intake_state_mgr.html#a67087cabbb04c3f8145ec41a1bbf5cea">IntakeStateMgr::IntakeStateMgr</a></div><div class="ttdeci">IntakeStateMgr()</div><div class="ttdoc">initialize the state manager, parse the configuration file and create the states.</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8cpp_source.html#l00038">IntakeStateMgr.cpp:38</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_html_aaa5d73e08f73a95dca5c6aaa1de6b56c"><div class="ttname"><a href="class_intake_state_mgr.html#aaa5d73e08f73a95dca5c6aaa1de6b56c">IntakeStateMgr::INTAKE_STATE</a></div><div class="ttdeci">INTAKE_STATE</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8h_source.html#l00032">IntakeStateMgr.h:32</a></div></div>
 <div class="ttc" id="aclass_teleop_control_html_abcca1fa489e538a5f42c920747a4f598"><div class="ttname"><a href="class_teleop_control.html#abcca1fa489e538a5f42c920747a4f598">TeleopControl::GetInstance</a></div><div class="ttdeci">static TeleopControl * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8cpp_source.html#l00044">TeleopControl.cpp:44</a></div></div>
-<div class="ttc" id="aclass_intake_on_html"><div class="ttname"><a href="class_intake_on.html">IntakeOn</a></div><div class="ttdoc">File name: IntakeOff.</div><div class="ttdef"><b>Definition:</b> <a href="_intake_on_8h_source.html#l00035">IntakeOn.h:35</a></div></div>
+<div class="ttc" id="aclass_intake_on_html"><div class="ttname"><a href="class_intake_on.html">IntakeOn</a></div><div class="ttdoc">File name: IntakeOff.</div><div class="ttdef"><b>Definition:</b> <a href="_intake_on_8h_source.html#l00037">IntakeOn.h:37</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_html_ac27ccde795f471c38f5ae0c123e1ada3"><div class="ttname"><a href="class_intake_state_mgr.html#ac27ccde795f471c38f5ae0c123e1ada3">IntakeStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8cpp_source.html#l00100">IntakeStateMgr.cpp:100</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

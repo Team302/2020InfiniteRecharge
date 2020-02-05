@@ -158,7 +158,6 @@ var annotated_dup =
     [ "TalonTachDefn", "class_talon_tach_defn.html", "class_talon_tach_defn" ],
     [ "TankDrive", "class_tank_drive.html", "class_tank_drive" ],
     [ "TeleopControl", "class_teleop_control.html", "class_teleop_control" ],
-    [ "ThrottleSteerDrive", "class_throttle_steer_drive.html", "class_throttle_steer_drive" ],
     [ "ToggleButton", "class_toggle_button.html", "class_toggle_button" ],
     [ "TurnAngle", "class_turn_angle.html", "class_turn_angle" ],
     [ "TurnToCube", "class_turn_to_cube.html", "class_turn_to_cube" ],

@@ -36,22 +36,27 @@
 
 using namespace std;
 
+
+IntakeOff::IntakeOff
+(
+    ControlData* control,
+    double target
+) : IState(),
+    m_intake( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE)),
+    m_control( control ),
+    m_target( target )
+{
+}
+
 void IntakeOff::Init()
 {
+    m_intake->SetControlConstants( m_control );
 
 }
-
-IntakeOff::IntakeOff()
-{
-    auto factory = MechanismFactory::GetMechanismFactory();
-
-    m_intake = factory -> GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE);
-}
-
 void IntakeOff::Run()           
 {
-    m_intake -> SetOutput(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT,0.0);      //turns off motors
-    m_intake -> ActivateSolenoid( false );                                      //raises air cylinder
+    m_intake -> SetOutput( m_control->GetMode(), m_target);                     
+    m_intake -> ActivateSolenoid( false );                                      
 }
 
 bool IntakeOff::AtTarget() const                                                     //confirms that it worked

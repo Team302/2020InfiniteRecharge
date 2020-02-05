@@ -90,6 +90,15 @@ void Logger::LogError
 }
 
 
+void Logger::OnDash
+(
+    const string&   locationIdentifier,     // <I> - classname or object identifier
+    const string&   message                 // <I> - error message
+)
+{
+    SmartDashboard::PutString( locationIdentifier.c_str(), message.c_str());
+}
+
 Logger::Logger() : m_level( LOGGER_OPTION::CONSOLE )
 {
 }

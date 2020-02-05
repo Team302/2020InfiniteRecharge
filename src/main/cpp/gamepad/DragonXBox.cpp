@@ -1,13 +1,4 @@
 
-/*========================================================================================================
- * DragonXBox.cpp
- *========================================================================================================
- *
- * File Description:  Wrapper for an XBOX controller used to control the robot in teleop mode.
- *
- *========================================================================================================*/
-
-
 //====================================================================================================================================================
 // Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
@@ -34,30 +25,23 @@
 #include <gamepad/button/POVButton.h>
 #include <gamepad/button/ToggleButton.h>
 
-
 #include <frc/GenericHID.h>
 #include <frc/XboxController.h>
  
+ /// @brief Wrapper for an XBOX controller used to control the robot in teleop mode.
+
 DragonXBox::DragonXBox
 ( 
     int port
 ) : m_xbox( new frc::XboxController( port ) )
 {
     // Create Axis Objects
-    m_axis[ LEFT_JOYSTICK_X ]  = new AnalogAxis( m_xbox, 0, false );
+    m_axis[ LEFT_JOYSTICK_X ] = new AnalogAxis( m_xbox, 0, false );
     m_axis[ LEFT_JOYSTICK_Y]  = new AnalogAxis( m_xbox, 1, true  );
     m_axis[ LEFT_TRIGGER]     = new AnalogAxis( m_xbox, 2, false );
     m_axis[ RIGHT_TRIGGER]    = new AnalogAxis( m_xbox, 3, false );
     m_axis[ RIGHT_JOYSTICK_X] = new AnalogAxis( m_xbox, 4, false );
     m_axis[ RIGHT_JOYSTICK_Y] = new AnalogAxis( m_xbox, 5, true  );
-
-    /*
-    m_axis[ LEFT_JOYSTICK_Y ] =  nullptr;
-    m_axis[ RIGHT_JOYSTICK_X ] =  nullptr;
-    m_axis[ RIGHT_JOYSTICK_Y ] =  nullptr;
-    m_axis[ LEFT_TRIGGER ] =  nullptr;
-    m_axis[ RIGHT_TRIGGER ] =  nullptr;    
-    */
 
     // Create DigitalButton Objects for the physical buttons
     m_button[A_BUTTON]            = new DigitalButton( m_xbox, 1  );

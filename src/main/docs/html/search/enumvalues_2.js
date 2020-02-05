@@ -17,5 +17,6 @@ var searchData=
   ['crawler_5flevel_2178',['CRAWLER_LEVEL',['../class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eabaef60a8f685327d5ca24c8b533de985',1,'AnalogInputUsage']]],
   ['cross_5fline_2179',['CROSS_LINE',['../class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aafc9d0c61cfed3637d581874948959240',1,'AutonSelector']]],
   ['cubed_2180',['CUBED',['../class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676a356559cd793745311f007aa46a127033',1,'IDragonGamePad']]],
-  ['current_2181',['CURRENT',['../class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736a79380ba0bcd66b4d3dac683800ef179e',1,'ControlModes']]]
+  ['current_2181',['CURRENT',['../class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736a79380ba0bcd66b4d3dac683800ef179e',1,'ControlModes']]],
+  ['curvature_5fdrive_5fquick_5fturn_2182',['CURVATURE_DRIVE_QUICK_TURN',['../class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9b7150ec3d3dcc42432a77b3b9e062a8',1,'TeleopControl']]]
 ];

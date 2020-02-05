@@ -1,6 +1,6 @@
 
 //====================================================================================================================================================
-// Copyright 2019 Lake Orion Robotics FIRST Team 302
+// Copyright 2020 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -25,9 +25,14 @@
 #include <subsys/IChassis.h>
 #include <gamepad/TeleopControl.h>
 
+#include <utils/Logger.h>
+
 using namespace std;
 
 
+
+/// @brief initialize the profiles for the various gamepad inputs
+/// @return void
 void GTADrive::Init()
 {
     auto controller = GetController();
@@ -39,7 +44,9 @@ void GTADrive::Init()
     }
 }
 
-//=======================================================================
+
+/// @brief get the throttle component from the game controller
+/// @return double - throttle value between -1.0 and 1.0
 double GTADrive::GetThrottle()
 {
     auto controller = GetController();
@@ -53,7 +60,9 @@ double GTADrive::GetThrottle()
     return throttle;
 }
 
-//=======================================================================
+
+/// @brief get the steer component from the game controller
+/// @return double - steer value between -1.0 and 1.0
 double GTADrive::GetSteer()
 {
     auto controller = GetController();

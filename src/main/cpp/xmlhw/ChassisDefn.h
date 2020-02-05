@@ -17,10 +17,12 @@
 #pragma once
 
 // C++ Includes
+#include <memory>
 
 // FRC includes
 
 // Team 302 includes
+#include <subsys/IChassis.h>
 
 // Third Party includes
 #include <pugixml/pugixml.hpp>
@@ -41,8 +43,8 @@ class ChassisDefn
     	/// @brief  Parse the chassie element (and it children).  When this is done a IChassis object exists.
 		///		   It can be retrieved from the factory.
 		/// @param [in]  pugi::xml_node the chassis element in the XML document
-    	/// @return void
-		void ParseXML
+    	/// @return std::shared_ptr<IChassis> 
+		std::shared_ptr<IChassis>  ParseXML
 		(
 			pugi::xml_node      chassisNode
 		);

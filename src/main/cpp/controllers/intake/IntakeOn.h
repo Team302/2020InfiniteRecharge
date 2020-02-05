@@ -21,30 +21,39 @@
 /// When intake is "off", sets motors to off and brings solenoid/intake into the robot.
 ///
 
+#pragma once
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
-//========================================================================================================
+
 // Team 302 includes
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
+#include <controllers/ControlData.h>
+
 // Third Party Includes
 
 class IntakeOn : public IState
 {
     public:
+        IntakeOn
+        (
+            ControlData* control,
+            double target
+        );
 
-    IntakeOn();
-    ~IntakeOn() = default;
+        IntakeOn() = delete;
+        ~IntakeOn() = default;
 
-    void Init() override;
-    void Run() override;
-    bool AtTarget() const override;
+        void Init() override;
+        void Run() override;
+        bool AtTarget() const override;
 
     private:
 
-    IMechanism* m_intake;
+        IMechanism* m_intake;
+        ControlData* m_control;
+        double m_target;
 
 };
