@@ -16,14 +16,20 @@
 #include <memory>
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
+#include <controllers/MechanismState.h>
 
 #pragma once
 
-class ShooterHoodHold : public IState
+class ShooterHoodHold : public MechanismState
 {
     public:
+    ShooterHoodHold
+    (
+        ControlData* control,
+        double target
+    );
 
-    ShooterHoodHold();
+    ShooterHoodHold() = delete;
     ~ShooterHoodHold() = default;
 
     void Init() override;

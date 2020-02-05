@@ -23,18 +23,21 @@
 #include <controllers/shooter/ShooterHoodHold.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
+#include <controllers/MechanismState.h>
 
 // Third Party Includes
 
 using namespace std;
 
-ShooterHoodHold::ShooterHoodHold()
+ShooterHoodHold::ShooterHoodHold
 (
     ControlData* control,
     double target
 ):  MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::SHOOTER), control, target)
+{
 
-)
+}
+
 
 void ShooterHoodHold::Init()
 {

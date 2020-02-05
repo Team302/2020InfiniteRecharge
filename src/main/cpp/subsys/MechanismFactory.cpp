@@ -49,6 +49,7 @@
 #include <subsys/BallTransfer.h>
 #include <subsys/HumanPlayerFlap.h>
 #include <subsys/Turret.h>
+#include <subsys/Shooter.h>
 
 // Third Party Includes
 #include <rev/ColorSensorV3.h>
