@@ -22,6 +22,9 @@
 // Team 302 includes
 #include <controllers/IState.h>
 #include <controllers/shooter/ShooterStateMgr.h>
+#include <controllers/shooter/ShooterOff.h>
+#include <controllers/shooter/ShooterGetReady.h>
+#include <controllers/shooter/ShooterShoot.h>
 #include <xmlmechdata/StateDataDefn.h>
 #include <controllers/MechanismTargetData.h>
 #include <utils/Logger.h>
@@ -64,28 +67,25 @@ ShooterStateMgr::ShooterStateMgr() : m_stateMap(),
                 {
                     case SHOOTER_STATE::OFF:
                     {   
-                        /** auto thisState = new ShooterOff( controlData, target );
+                        auto thisState = new ShooterOff( controlData, target );
                         m_stateMap[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
-                        **/
                     }
                     break;
 
                     case SHOOTER_STATE::GET_READY:
                     {   
-                        /** auto thisState = new ShooterGetReady( controlData, target );
+                        auto thisState = new ShooterGetReady( controlData, target );
                         m_stateMap[stateEnum] = thisState;
-                        **/
                     }
                     break;
 
                     case SHOOTER_STATE::SHOOT:
                     {   
-                        /** auto thisState = new ShooterShoot( controlData, target );
+                        auto thisState = new ShooterShoot( controlData, target );
                         m_stateMap[stateEnum] = thisState;
-                        **/
                     }
                     break;
 
@@ -125,6 +125,8 @@ void ShooterStateMgr::RunCurrentState()
         }
         // todo add all states/conditions here
     }
+
+    Logger::GetLogger()->OnDash(string("Shooter State"), to_string(m_currentStateEnum));
 
     // run the current state
     if ( m_currentState != nullptr )

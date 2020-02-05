@@ -11,7 +11,8 @@
 #include <subsys/IMechanism.h>
 #include <controllers/ControlData.h>
 
-class ShooterShoot : IState{
+class ShooterShoot : public IState
+{
  public:
   ShooterShoot
   (

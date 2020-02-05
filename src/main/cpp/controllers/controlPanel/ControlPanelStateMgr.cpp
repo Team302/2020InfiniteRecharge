@@ -106,22 +106,22 @@ void ControlPanelStateMgr::RunCurrentState()
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANNEL_RAISE ) && 
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_RAISE ) && 
              m_currentStateEnum != CONTROL_PANEL_STATE::RAISE )
         {
             SetCurrentState( CONTROL_PANEL_STATE::RAISE, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANNEL_STOW ) &&
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_STOW ) &&
                   m_currentStateEnum != CONTROL_PANEL_STATE::STOW )
         {
             SetCurrentState( CONTROL_PANEL_STATE::STOW, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANNEL_SPIN_WHEEL ) &&
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_SPIN_WHEEL ) &&
                   m_currentStateEnum != CONTROL_PANEL_STATE::TURN )
         {
             SetCurrentState( CONTROL_PANEL_STATE::TURN, false );
         }
-        else if ( controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANNEL_TURN_TO_COLOR)  &&
+        else if ( controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_TURN_TO_COLOR)  &&
                   m_currentStateEnum != CONTROL_PANEL_STATE::COLOR_TURN)
         {
             SetCurrentState(CONTROL_PANEL_STATE::COLOR_TURN, false);

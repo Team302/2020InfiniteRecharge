@@ -184,7 +184,7 @@ void ArcadeDrive::CurvatureDrive
 		{
 			m_quickStopAccumulator -= 1.0;
 		} 
-		else if (m_quickStopAccumulator < -1,0) 
+		else if (m_quickStopAccumulator < -1.0) 
 		{
 			m_quickStopAccumulator += 1.0;
 		} 
