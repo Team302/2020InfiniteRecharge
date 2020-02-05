@@ -33,10 +33,10 @@ using namespace std;
 
 ShooterHood::ShooterHood 
 ( 
-std::shared_ptr<DragonServo>         shservo
+std::shared_ptr<IDragonMotorController>         shmotor
 ) 
 { 
-   m_shservo = shservo; 
+   m_shmotor = shmotor; 
 } 
 /// @brief          Indicates the type of mechanism this is 
 /// @return         MechanismTypes::MECHANISM_TYPE 
