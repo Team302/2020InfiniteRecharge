@@ -37,5 +37,5 @@ class ControlPanelManual : public IState
     ControlData* m_control_data;
     TeleopControl* m_controller;
     double m_current_position;
-
+    std::shared_ptr<ControlPanel> m_control;
 };

@@ -33,7 +33,7 @@ ControlPanelManual::ControlPanelManual(ControlData* control_data, double target)
 
     if ( m_controller == nullptr )
     {
-        Logger::GetLogger()->LogError( string( "TankDrive::Init"), string("teleopControl is a nullptr"));
+        Logger::GetLogger()->LogError( string( "ControlPanelManual::ControlPanelManual"), string("teleopControl is a nullptr"));
     }
 
     m_control_data = control_data;
@@ -52,14 +52,16 @@ void ControlPanelManual::Init()
 
 }
 
-// Spins the wheel to the target
 
 void ControlPanelManual::Run()
 {
-//    m_control_panel_manipulator -> SetOutput(m_control_data -> GetMode(), m_target);
+
+auto manipulator = m_controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_MANUAL );
+
+m_control.get()->SetOutput( ControlModes::PERCENT_OUTPUT, manipulator );
+
 }
 
-// Performs a check to see if the panel has been spun to the target point yet
 
 bool ControlPanelManual::AtTarget() const
 {
