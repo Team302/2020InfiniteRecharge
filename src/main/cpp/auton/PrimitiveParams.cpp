@@ -7,7 +7,6 @@
 
 #include <auton/PrimitiveEnums.h>
 #include <auton/PrimitiveParams.h>
-#include <utils/DragonMath.h>
 
 PrimitiveParams::PrimitiveParams
 (

@@ -39,7 +39,6 @@ using namespace frc;
 #include <auton/primitives/SuperDrive.h>
 #include <subsys/ChassisFactory.h>
 #include <cmath>
-#include <frc/SmartDashboard/SmartDashboard.h>
 
 SuperDrive::SuperDrive() : m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis()),
 						   m_timer( make_unique<Timer>() ),

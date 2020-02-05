@@ -15,6 +15,7 @@
 //====================================================================================================================================================
 
 // C++ Includes
+#include <algorithm>
 #include <cmath>
 #include <memory>
 #include <string>
@@ -29,7 +30,6 @@
 #include <subsys/ChassisFactory.h>
 #include <controllers/ControlModes.h>
 #include <subsys/IChassis.h>
-#include <utils/LimitValue.h>
 #include <utils/Logger.h>
 
 // Third Party Includes
@@ -78,7 +78,7 @@ void TurnAngle::Run() //best method ever. Does nothing, and should do nothing...
 	float deltaAngle = m_targetAngle - m_chassis->GetHeading();
 	float velocity = deltaAngle * ANGLE_DIFFERENCE_VELOCITY_MULTIPLIER;
 	bool sign = velocity > 0;	//Store sign of velocity as positive = true
-	velocity = LimitValue::ForceInRange(std::abs(velocity), MIN_VELOCITY, MAX_VELOCITY);
+	velocity = clamp(abs(velocity), MIN_VELOCITY, MAX_VELOCITY);
 	if (!sign)  				//If the sign was negative...
 	{
 		velocity = -velocity; 	//... make it negative again :)
