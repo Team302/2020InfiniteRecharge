@@ -36,7 +36,6 @@ ControlPanelManual::ControlPanelManual(ControlData* control_data, double target)
         Logger::GetLogger()->LogError( string( "ControlPanelManual::ControlPanelManual"), string("teleopControl is a nullptr"));
     }
 
-    m_control_data = control_data;
 }
 
 // Creates the desired target location for the spin to end at
@@ -47,8 +46,6 @@ void ControlPanelManual::Init()
     {
         m_controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_MANUAL, IDragonGamePad::AXIS_PROFILE::CUBED );
     }
-
-    m_control_panel_manipulator -> SetControlConstants(m_control_data);
 
 }
 
