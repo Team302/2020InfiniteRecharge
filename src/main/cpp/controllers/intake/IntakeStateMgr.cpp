@@ -115,6 +115,8 @@ void IntakeStateMgr::RunCurrentState()
         }
     }
 
+    Logger::GetLogger()->OnDash(string("Intake State"), to_string(m_currentStateEnum));
+
     // run the current state
     if ( m_currentState != nullptr )
     {
