@@ -92,11 +92,11 @@ class ShooterHood : public IMechanism
         ) override; 
 
  
-        ShooterHood(std::shared_ptr<DragonServo>        shservo); 
+        ShooterHood(std::shared_ptr<IDragonMotorController>        shmotor); 
         ~ShooterHood() = default; 
          
         private:  
-        std::shared_ptr<DragonServo>              m_shservo;      
+        std::shared_ptr<IDragonMotorController>              m_shmotor;    
         protected: 
 
 }; 
