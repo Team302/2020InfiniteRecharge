@@ -96,7 +96,7 @@ class ShooterHood : public IMechanism
         ~ShooterHood() = default; 
          
         private:  
-        std::shared_ptr<IDragonMotorController>              m_shmotor;      
+        std::shared_ptr<IDragonMotorController>              m_shmotor;    
         protected: 
 
 }; 
