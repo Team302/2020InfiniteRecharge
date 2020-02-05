@@ -46,7 +46,7 @@ shared_ptr<DragonLidar> LidarFactory::CreateLidar
 )
 {
     shared_ptr<DragonLidar> lidar = nullptr;
-    auto isValid = false;
+    auto isValid = true;
     // todo: plug in validation
 
     if ( isValid )

@@ -50,7 +50,7 @@ ServoUsage::~ServoUsage()
 
 ServoUsage::SERVO_USAGE ServoUsage::GetUsage
 (
-    string              usageString
+    const string              usageString
 )
 {
     return m_usageMap.find(usageString)->second;

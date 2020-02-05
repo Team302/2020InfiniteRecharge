@@ -57,7 +57,7 @@ SolenoidUsage::~SolenoidUsage()
 
 SolenoidUsage::SOLENOID_USAGE SolenoidUsage::GetUsage
 (
-    string              usageString
+    const string              usageString
 )
 {
     return m_usageMap.find(usageString)->second;

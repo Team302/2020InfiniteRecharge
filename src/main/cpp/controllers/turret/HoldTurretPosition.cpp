@@ -28,7 +28,8 @@ void HoldTurretPosition::Init()
 void HoldTurretPosition::Run()
 {   
     m_turret->SetOutput(m_controlData->GetMode(), m_targetPosition);
-    if(m_targetPosition - 5 < m_turret->GetCurrentPosition() < m_targetPosition + 5) //arbitrary tolerance for now will change later
+    const double tolerance = 5.0;
+    if ( abs(m_targetPosition - m_turret->GetCurrentPosition()) < tolerance) //arbitrary tolerance for now will change later
     {
         m_atTarget = true;
     }
