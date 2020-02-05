@@ -66,8 +66,10 @@ class ChassisStateMgr
       CHASSIS_STATE                   m_currentState;
 
       frc::SendableChooser<std::string>   m_driveModeChooser;                    
-      const std::string                   m_driveModeArcade = "Arcade";      
+      const std::string                   m_driveModeArcade = "Arcade";     
+	  const std::string					  m_driveModeArcadeCurve = "Arcade Curvature";
       const std::string                   m_driveModeGTA = "GTA";       
+      const std::string                   m_driveModeGTACurve = "GTA Curvature";       
       const std::string                   m_driveModeTank = "Tank";       
       std::string                         m_driveModeSelected;       
 

@@ -22,6 +22,8 @@ var class_dragon_falcon =
     [ "SetAsSlave", "class_dragon_falcon.html#a54d569a45a527b83505b8e646d99a95b", null ],
     [ "SetControlConstants", "class_dragon_falcon.html#a1504585d6a7671449c274adb254d6aa6", null ],
     [ "SetControlMode", "class_dragon_falcon.html#a4a582d3070a1623396dbf5120bb4f390", null ],
+    [ "SetForwardLimitSwitch", "class_dragon_falcon.html#ac27bea9fdfe7ba6134244d51f5369fa4", null ],
+    [ "SetReverseLimitSwitch", "class_dragon_falcon.html#af55d7051e52f7b65dedbff53d9e81c0f", null ],
     [ "SetRotationOffset", "class_dragon_falcon.html#ab9080ba4bfbada1afa05f9c532564251", null ],
     [ "SetSensorInverted", "class_dragon_falcon.html#a4efe5d7355a1d82577a8232fdbc9fe7d", null ],
     [ "SetVoltageRamping", "class_dragon_falcon.html#a596613a088e7d87182377b04ced5b16a", null ]

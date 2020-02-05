@@ -101,12 +101,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2ab1da5e737be4334ccbd32420ba5ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57776057b523e8518181be8fdbdbd2a3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_sensor_defn.html#a57776057b523e8518181be8fdbdbd2a3">~ColorSensorDefn</a> ()=default</td></tr>
 <tr class="separator:a57776057b523e8518181be8fdbdbd2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7200aad177f24e92292e0eea20a5a459"><td class="memItemLeft" align="right" valign="top">rev::ColorSensorV3 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_sensor_defn.html#a7200aad177f24e92292e0eea20a5a459">ParseXML</a> (pugi::xml_node ColorSensorNode)</td></tr>
-<tr class="separator:a7200aad177f24e92292e0eea20a5a459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e863a616eca19d9ecdde5ddc47677b"><td class="memItemLeft" align="right" valign="top">rev::ColorSensorV3 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_sensor_defn.html#af6e863a616eca19d9ecdde5ddc47677b">ParseXML</a> (pugi::xml_node ColorSensorNode)</td></tr>
+<tr class="memdesc:af6e863a616eca19d9ecdde5ddc47677b"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse the color sensor xml node and create a rev color sensor  <a href="class_color_sensor_defn.html#af6e863a616eca19d9ecdde5ddc47677b">More...</a><br /></td></tr>
+<tr class="separator:af6e863a616eca19d9ecdde5ddc47677b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_color_sensor_defn_8h_source.html#l00009">9</a> of file <a class="el" href="_color_sensor_defn_8h_source.html">ColorSensorDefn.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_sensor_defn_8h_source.html#l00013">13</a> of file <a class="el" href="_color_sensor_defn_8h_source.html">ColorSensorDefn.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2ab1da5e737be4334ccbd32420ba5ab3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ab1da5e737be4334ccbd32420ba5ab3">&#9670;&nbsp;</a></span>ColorSensorDefn()</h2>
@@ -159,14 +160,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7200aad177f24e92292e0eea20a5a459"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7200aad177f24e92292e0eea20a5a459">&#9670;&nbsp;</a></span>ParseXML()</h2>
+<a id="af6e863a616eca19d9ecdde5ddc47677b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e863a616eca19d9ecdde5ddc47677b">&#9670;&nbsp;</a></span>ParseXML()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">rev::ColorSensorV3* ColorSensorDefn::ParseXML </td>
+          <td class="memname">ColorSensorV3 * ColorSensorDefn::ParseXML </td>
           <td>(</td>
           <td class="paramtype">pugi::xml_node&#160;</td>
           <td class="paramname"><em>ColorSensorNode</em></td><td>)</td>
@@ -175,10 +176,22 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>parse the color sensor xml node and create a rev color sensor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xml_node</td><td>- the colorSensor node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ColorSensorV3* the rev color sensor or nullptr if the node is invalid </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_color_sensor_defn_8cpp_source.html#l00039">39</a> of file <a class="el" href="_color_sensor_defn_8cpp_source.html">ColorSensorDefn.cpp</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>xmlhw/<a class="el" href="_color_sensor_defn_8h_source.html">ColorSensorDefn.h</a></li>
+<li>xmlhw/<a class="el" href="_color_sensor_defn_8cpp_source.html">ColorSensorDefn.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

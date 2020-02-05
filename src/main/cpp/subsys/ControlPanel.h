@@ -18,6 +18,9 @@
 #include <subsys/IMechanism.h>
 #include <hw/DragonSolenoid.h>
 #include <hw/interfaces/IDragonMotorController.h>
+#include <rev/ColorSensorV3.h>
+#include <rev/ColorMatch.h>
+#include <utils/ControlPanelColors.h>
 
 class ControlPanel : public IMechanism
 {
@@ -26,7 +29,8 @@ class ControlPanel : public IMechanism
         ControlPanel
         (
             std::shared_ptr<IDragonMotorController>             motorcontroller,
-            std::shared_ptr<DragonSolenoid>                     solenoid
+            std::shared_ptr<DragonSolenoid>                     solenoid,
+            rev::ColorSensorV3*                                 colorSensor
         );
         ControlPanel() = delete;
 
@@ -86,20 +90,18 @@ class ControlPanel : public IMechanism
         (
             ControlData*                                pid                 
         ) override;
-        
-        enum Colors
-        {
-           GREEN  = 0 ,
-           BLUE   = 1 ,
-           YELLOW = 2 ,
-           RED    = 3 ,
-           UNKNOWN = 4
-        }; 
-        Colors GetColorSeen();
+        ControlPanelColors::COLOR GetColorSeen();
     private:
         std::shared_ptr<IDragonMotorController>     m_spinner;
         std::shared_ptr<DragonSolenoid>             m_manipulatorExtender;
-        
+        rev::ColorSensorV3*                         m_color;
+        rev::ColorMatch*                            m_colorMatcher;
+
+        static constexpr frc::Color kBlueTarget = frc::Color(0.143, 0.427, 0.429);
+        static constexpr frc::Color kGreenTarget = frc::Color(0.197, 0.561, 0.240);
+        static constexpr frc::Color kRedTarget = frc::Color(0.561, 0.232, 0.114);
+        static constexpr frc::Color kYellowTarget = frc::Color(0.361, 0.524, 0.113);
+
         
 
 

@@ -49,6 +49,7 @@ class TeleopControl
             GTA_DRIVE_BACKWARD,
             GTA_DRIVE_STEER,
             SWITCH_DRIVE_MODE,
+			CURVATURE_DRIVE_QUICK_TURN,
             CLIMBER_EXTEND,
             CLIMBER_LIFT,
             CLIMBER_CRAWL,
@@ -65,10 +66,14 @@ class TeleopControl
             SHOOTER_MANUAL_AIM,
             SHOOTER_MANUAL_ADJUST_DISTANCE,
             SHOOTER_MANUAL_SHOOT,
-            CONTROL_PANNEL_STOW,
-            CONTROL_PANNEL_RAISE,
-            CONTROL_PANNEL_SPIN_WHEEL,
-            CONTROL_PANNEL_TURN_TO_COLOR,
+            CONTROL_PANEL_STOW,
+            CONTROL_PANEL_RAISE,
+            CONTROL_PANEL_SPIN_WHEEL,
+            CONTROL_PANEL_MANUAL,
+            CONTROL_PANEL_TURN_TO_COLOR,
+            SHOOTER_HOOD_MOVE_UP,
+            SHOOTER_HOOD_MOVE_DOWN,
+            SHOOTER_HOOD_HOLD_POSITION,
             MAX_FUNCTIONS
         };
 
@@ -149,15 +154,15 @@ class TeleopControl
         // Attributes
         //----------------------------------------------------------------------------------
         static TeleopControl*               m_instance; // Singleton instance of this class
-        const int                           m_maxFunctions = 35;
 
         std::map<FUNCTION_IDENTIFIER, IDragonGamePad::AXIS_IDENTIFIER> m_axisMap;
         std::map<FUNCTION_IDENTIFIER, IDragonGamePad::BUTTON_IDENTIFIER> m_buttonMap;
         std::map<FUNCTION_IDENTIFIER, int> m_controllerMap;
 
-        IDragonGamePad::AXIS_IDENTIFIER     m_axisIDs[35];
-        IDragonGamePad::BUTTON_IDENTIFIER   m_buttonIDs[35];
-        int							        m_controllerIndex[35];
+        std::vector<IDragonGamePad::AXIS_IDENTIFIER>     m_axisIDs;
+        std::vector<IDragonGamePad::BUTTON_IDENTIFIER>   m_buttonIDs;
+        std::vector<int>							     m_controllerIndex;
+
         IDragonGamePad*			            m_controllers[DriverStation::kJoystickPorts];
 
         mutable int                         m_count;

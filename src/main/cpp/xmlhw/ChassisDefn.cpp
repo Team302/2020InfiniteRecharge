@@ -31,9 +31,8 @@
 // Team302 includes
 #include <hw/interfaces/IDragonMotorController.h>
 #include <subsys/ChassisFactory.h>
+#include <subsys/IChassis.h>
 
-//#include <subsys/chassis/DragonChassis.h>
-//#include <hw/DragonTalon.h>
 #include <xmlhw/ChassisDefn.h>
 #include <xmlhw/MotorDefn.h>
 #include <utils/Logger.h>
@@ -52,11 +51,13 @@ using namespace std;
 ///		   It can be retrieved from the factory.
 /// @param [in]  pugi::xml_node the chassis element in the XML document
 /// @return void
-void ChassisDefn::ParseXML
+
+shared_ptr<IChassis> ChassisDefn::ParseXML
 (
 	xml_node      chassisNode
 )
 {
+    shared_ptr<IChassis> chassis;
     // initialize the attributes to the default values
     ChassisFactory::CHASSIS_TYPE type = ChassisFactory::CHASSIS_TYPE::TANK_CHASSIS;
     double wheelDiameter	= 0.0;
@@ -136,12 +137,13 @@ void ChassisDefn::ParseXML
         auto factory = ChassisFactory::GetChassisFactory();
         if ( factory != nullptr )
         {
-            factory->CreateChassis( type, wheelDiameter, wheelBase, track, motors );
+            chassis = factory->CreateChassis( type, wheelDiameter, wheelBase, track, motors );
         }
         else  // log errors
         {
             Logger::GetLogger()->LogError( string("ChassisDefn::ParseXML"), string("unable to create chassis") );
         }
     }
+    return chassis;
 }
 

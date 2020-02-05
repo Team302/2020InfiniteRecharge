@@ -63,19 +63,19 @@ IntakeStateMgr::IntakeStateMgr() : m_stateMap(),
                 switch ( stateEnum )
                 {
                     case INTAKE_STATE::ON:
-                    {   // todo update the constructor to take controlData and target
-                        auto thisState = new IntakeOn();
+                    {   
+                        auto thisState = new IntakeOn( controlData, target );
                         m_stateMap[INTAKE_STATE::ON] = thisState;
-                        m_currentState = thisState;
-                        m_currentStateEnum = stateEnum;
-                        m_currentState->Init();
                     }
                     break;
 
                     case INTAKE_STATE::OFF:
-                    {   // todo update the constructor to take controlData and target
-                        auto thisState = new IntakeOff();
+                    {   
+                        auto thisState = new IntakeOff( controlData, target );
                         m_stateMap[INTAKE_STATE::OFF] = thisState;
+                        m_currentState = thisState;
+                        m_currentStateEnum = stateEnum;
+                        m_currentState->Init();
                     }
                     break;
 
@@ -114,6 +114,8 @@ void IntakeStateMgr::RunCurrentState()
             SetCurrentState( INTAKE_STATE::OFF, false );
         }
     }
+
+    Logger::GetLogger()->OnDash(string("Intake State"), to_string(m_currentStateEnum));
 
     // run the current state
     if ( m_currentState != nullptr )

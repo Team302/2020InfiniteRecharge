@@ -111,8 +111,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a81d291d64c27cfd376bceada8f2d5b6f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_motor_controller_factory.html#a81d291d64c27cfd376bceada8f2d5b6f">CreateMotorController</a> (std::string mtype, int canID, int pdpID, std::string usage, bool inverted, bool sensorInverted, ctre::phoenix::motorcontrol::FeedbackDevice feedbackDevice, int countsPerRev, float gearRatio, bool brakeMode, int slaveTo, int peakCurrentDuration, int continuousCurrentLimit, int peakCurrentLimit, bool enableCurrentLimit)</td></tr>
-<tr class="separator:a81d291d64c27cfd376bceada8f2d5b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c39fef079a101d48a518a577ff72b70"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_i_dragon_motor_controller.html">IDragonMotorController</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_motor_controller_factory.html#a9c39fef079a101d48a518a577ff72b70">CreateMotorController</a> (std::string mtype, int canID, int pdpID, std::string usage, bool inverted, bool sensorInverted, ctre::phoenix::motorcontrol::FeedbackDevice feedbackDevice, int countsPerRev, float gearRatio, bool brakeMode, int slaveTo, int peakCurrentDuration, int continuousCurrentLimit, int peakCurrentLimit, bool enableCurrentLimit, bool forwardLimitSwitch, bool forwardLimitSwitchNormallyOpen, bool reverseLimitSwitch, bool reverseLimitSwitchNormallyOpen)</td></tr>
+<tr class="separator:a9c39fef079a101d48a518a577ff72b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -158,8 +158,8 @@ factory, it is needed when constructing the object.</h2>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a81d291d64c27cfd376bceada8f2d5b6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81d291d64c27cfd376bceada8f2d5b6f">&#9670;&nbsp;</a></span>CreateMotorController()</h2>
+<a id="a9c39fef079a101d48a518a577ff72b70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c39fef079a101d48a518a577ff72b70">&#9670;&nbsp;</a></span>CreateMotorController()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,7 +252,31 @@ factory, it is needed when constructing the object.</h2>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enableCurrentLimit</em>&#160;</td>
+          <td class="paramname"><em>enableCurrentLimit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>forwardLimitSwitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>forwardLimitSwitchNormallyOpen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>reverseLimitSwitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>reverseLimitSwitchNormallyOpen</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -277,12 +301,13 @@ factory, it is needed when constructing the object.</h2>
     <tr><td class="paramname">peakCurrentDuration</td><td>CAN ID of the "master" motor controller if this is a follower motor controller (-1 indicates it is a master) </td></tr>
     <tr><td class="paramname">continuousCurrentLimit</td><td>peak current limit </td></tr>
     <tr><td class="paramname">peakCurrentLimit</td><td>continuous current limit </td></tr>
-    <tr><td class="paramname">enableCurrentLimit</td><td>amount of time the peak current can be achieved before limiting to the continuous current limit enable current limiting or not </td></tr>
+    <tr><td class="paramname">enableCurrentLimit</td><td>amount of time the peak current can be achieved before limiting to the continuous current limit </td></tr>
+    <tr><td class="paramname">forwardLimitSwitch</td><td>enable current limiting or not </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_dragon_motor_controller_factory_8cpp_source.html#l00053">53</a> of file <a class="el" href="_dragon_motor_controller_factory_8cpp_source.html">DragonMotorControllerFactory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_motor_controller_factory_8cpp_source.html#l00054">54</a> of file <a class="el" href="_dragon_motor_controller_factory_8cpp_source.html">DragonMotorControllerFactory.cpp</a>.</p>
 
 </div>
 </div>
@@ -309,7 +334,7 @@ factory, it is needed when constructing the object.</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dragon_motor_controller_factory_8cpp_source.html#l00028">28</a> of file <a class="el" href="_dragon_motor_controller_factory_8cpp_source.html">DragonMotorControllerFactory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_motor_controller_factory_8cpp_source.html#l00029">29</a> of file <a class="el" href="_dragon_motor_controller_factory_8cpp_source.html">DragonMotorControllerFactory.cpp</a>.</p>
 
 </div>
 </div>

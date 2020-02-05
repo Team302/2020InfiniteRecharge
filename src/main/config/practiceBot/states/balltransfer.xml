@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE statedata SYSTEM "stateData.dtd">
+<statedata>
+	<controlData identifier="openloop" 
+	             mode="PERCENT_OUTPUT"/>
+	<mechanismTarget stateIdentifier="BALLTRANSFEROFF"
+	                 controlDataIdentifier="openloop"
+					 value="0.0"/>
+	<mechanismTarget stateIdentifier="BALLTRANSPORTTOIMPELLER"
+	                 controlDataIdentifier="openloop"
+					 value="-0.5"/>
+	<mechanismTarget stateIdentifier="BALLTRANSFERTOSHOOTER"
+	                 controlDataIdentifier="openloop"
+					 value="1.0"/>
+
+</statedata>

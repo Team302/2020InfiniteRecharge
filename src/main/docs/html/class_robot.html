@@ -111,27 +111,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a359bc5b345fc76b9451abfeea4cad6e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#a359bc5b345fc76b9451abfeea4cad6e4">~Robot</a> ()=default</td></tr>
 <tr class="separator:a359bc5b345fc76b9451abfeea4cad6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66f23dae271748d525cf3ab046375f79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#a66f23dae271748d525cf3ab046375f79">RobotInit</a> () override</td></tr>
+<tr class="memdesc:a66f23dae271748d525cf3ab046375f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main robot code. The Init methods get called when that state gets entered and then the Periodic methods get called every 20 milliseconds.  <a href="class_robot.html#a66f23dae271748d525cf3ab046375f79">More...</a><br /></td></tr>
 <tr class="separator:a66f23dae271748d525cf3ab046375f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fad82c2250bcfb83b743b5c0dd6ed27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27">RobotPeriodic</a> () override</td></tr>
+<tr class="memdesc:a8fad82c2250bcfb83b743b5c0dd6ed27"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called every robot packet, no matter the mode. This is used for items like diagnostics that run during disabled, autonomous, teleoperated and test modes (states). THis runs after the specific state periodic methods and before the LiveWindow and SmartDashboard updating.  <a href="class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27">More...</a><br /></td></tr>
 <tr class="separator:a8fad82c2250bcfb83b743b5c0dd6ed27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2136cfc015936285218c8a8db984d6bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#a2136cfc015936285218c8a8db984d6bc">AutonomousInit</a> () override</td></tr>
+<tr class="memdesc:a2136cfc015936285218c8a8db984d6bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This initializes the autonomous state.  <a href="class_robot.html#a2136cfc015936285218c8a8db984d6bc">More...</a><br /></td></tr>
 <tr class="separator:a2136cfc015936285218c8a8db984d6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac11143dd674e0e02fef5329e2df24830"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#ac11143dd674e0e02fef5329e2df24830">AutonomousPeriodic</a> () override</td></tr>
+<tr class="memdesc:ac11143dd674e0e02fef5329e2df24830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs every 20 milliseconds when the autonomous state is active.  <a href="class_robot.html#ac11143dd674e0e02fef5329e2df24830">More...</a><br /></td></tr>
 <tr class="separator:ac11143dd674e0e02fef5329e2df24830"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3e246794bfbbb4406fc87f351762038"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#aa3e246794bfbbb4406fc87f351762038">TeleopInit</a> () override</td></tr>
+<tr class="memdesc:aa3e246794bfbbb4406fc87f351762038"><td class="mdescLeft">&#160;</td><td class="mdescRight">This initializes the teleoperated state.  <a href="class_robot.html#aa3e246794bfbbb4406fc87f351762038">More...</a><br /></td></tr>
 <tr class="separator:aa3e246794bfbbb4406fc87f351762038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a324322627c63b3870daf7c7ddc5bea63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#a324322627c63b3870daf7c7ddc5bea63">TeleopPeriodic</a> () override</td></tr>
+<tr class="memdesc:a324322627c63b3870daf7c7ddc5bea63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs every 20 milliseconds when the teleoperated state is active.  <a href="class_robot.html#a324322627c63b3870daf7c7ddc5bea63">More...</a><br /></td></tr>
 <tr class="separator:a324322627c63b3870daf7c7ddc5bea63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ac222d45d30a6d0c572fd36d18c6ccc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#a9ac222d45d30a6d0c572fd36d18c6ccc">TestInit</a> () override</td></tr>
+<tr class="memdesc:a9ac222d45d30a6d0c572fd36d18c6ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This initializes the test state.  <a href="class_robot.html#a9ac222d45d30a6d0c572fd36d18c6ccc">More...</a><br /></td></tr>
 <tr class="separator:a9ac222d45d30a6d0c572fd36d18c6ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0ac44a962e609e9b042285e699d1db8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot.html#af0ac44a962e609e9b042285e699d1db8">TestPeriodic</a> () override</td></tr>
+<tr class="memdesc:af0ac44a962e609e9b042285e699d1db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs every 20 milliseconds when the test state is active.  <a href="class_robot.html#af0ac44a962e609e9b042285e699d1db8">More...</a><br /></td></tr>
 <tr class="separator:af0ac44a962e609e9b042285e699d1db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="_robot_8h.html">Robot.h</a>. </p>
-<p>File Description: Top-level robot code that controls the various states of the robot. It is our specific implementation of the frc::TimedRobot. </p>
+<p>File Description: Top-level robot code that controls the various states of the robot. It is our specific implementation of the frc::TimedRobot.</p>
+<p>Top-level robot code that controls the various states of the robot. It is our specific implementation of the frc::TimedRobot. </p>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8h_source.html#l00037">37</a> of file <a class="el" href="_robot_8h_source.html">Robot.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_robot_8h_source.html#l00053">53</a> of file <a class="el" href="_robot_8h_source.html">Robot.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a136b20cc34a9cda8da9ef2c85646f747"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a136b20cc34a9cda8da9ef2c85646f747">&#9670;&nbsp;</a></span>Robot()</h2>
@@ -206,12 +215,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: AutonomousInit </p>
-<h2><a class="anchor" id="autotoc_md66"></a>
-Description: This initializes the autonomous state</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00082">82</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>This initializes the autonomous state. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00083">83</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -237,12 +245,11 @@ Description: This initializes the autonomous state</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: AutonomousPeriodic Description: Runs every 20 milliseconds when the autonomous state is </p>
-<h2><a class="anchor" id="autotoc_md67"></a>
-active.</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00097">97</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Runs every 20 milliseconds when the autonomous state is active. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00095">95</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -268,12 +275,11 @@ active.</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: RobotInit Description: When the robot gets created this gets called. It initializes </p>
-<h2><a class="anchor" id="autotoc_md64"></a>
-the robot subsystems (hardware).</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00049">49</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>The main robot code. The Init methods get called when that state gets entered and then the Periodic methods get called every 20 milliseconds. </p>
+<p>When the robot gets created this gets called. It initializes the robot subsystems (hardware). </p><dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00042">42</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -299,12 +305,11 @@ the robot subsystems (hardware).</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: RobotPeriodic Description: This function is called every robot packet, no matter the mode. This is used for items like diagnostics that run during disabled, autonomous, teleoperated and test modes (states). THis runs after the specific state periodic </p>
-<h2><a class="anchor" id="autotoc_md65"></a>
-methods and before the LiveWindow and SmartDashboard updating.</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00072">72</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>This function is called every robot packet, no matter the mode. This is used for items like diagnostics that run during disabled, autonomous, teleoperated and test modes (states). THis runs after the specific state periodic methods and before the LiveWindow and SmartDashboard updating. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00075">75</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -330,12 +335,11 @@ methods and before the LiveWindow and SmartDashboard updating.</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: TeleopInit </p>
-<h2><a class="anchor" id="autotoc_md68"></a>
-Description: This initializes the teleoperated state</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00108">108</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>This initializes the teleoperated state. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00104">104</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -361,12 +365,11 @@ Description: This initializes the teleoperated state</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: TeleopPeriodic Description: Runs every 20 milliseconds when the teleoperated state is </p>
-<h2><a class="anchor" id="autotoc_md69"></a>
-active.</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00119">119</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Runs every 20 milliseconds when the teleoperated state is active. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00116">116</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -392,12 +395,11 @@ active.</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: TestInit </p>
-<h2><a class="anchor" id="autotoc_md70"></a>
-Description: This initializes the test state</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00129">129</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>This initializes the test state. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00128">128</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -423,12 +425,11 @@ Description: This initializes the test state</h2>
   </tr>
 </table>
 </div><div class="memdoc">
-<hr  />
-<p> Method: TestPeriodic Description: Runs every 20 milliseconds when the test state is </p>
-<h2><a class="anchor" id="autotoc_md71"></a>
-active.</h2>
 
-<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00141">141</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Runs every 20 milliseconds when the test state is active. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_robot_8cpp_source.html#l00150">150</a> of file <a class="el" href="_robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>

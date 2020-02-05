@@ -1,4 +1,4 @@
-<!ELEMENT> statedata ( controlData*, mechanismTarget* )>
+<!ELEMENT statedata ( controlData*, mechanismTarget* )>
 
 <!ELEMENT controlData EMPTY>
 <!ATTLIST controlData
@@ -19,10 +19,10 @@
 <!ATTLIST mechanismTarget 
           stateIdentifier           ( INTAKEOFF | INTAKEON | 
                                       HUMANPLAYERFLAPCLOSED | HUMANPLAYERFLAPOPEN |
-                                      IMPELLEROFF | IMPELLERON | IMPELLERAGITATE |
+                                      IMPELLEROFF | IMPELLERHOLD | IMPELLERAGITATE | IMPELLERTOSHOOTER |
                                       BALLTRANSFEROFF | BALLTRANSPORTTOIMPELLER | BALLTRANSFERTOSHOOTER |
-                                      SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN 
-                                      TURRENTHOLD | TURRENTAUTOAIM | TURRETMANUALAIM |
+                                      SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN |
+                                      TURRETHOLD | TURRETAUTOAIM | TURRETMANUALAIM |
                                       SHOOTEROFF | SHOOTERGETREADY | SHOOTERSHOOT |
                                       UNKNOWN ) "UNKNOWN"
           controlDataIdentifier     CDATA #REQUIRED

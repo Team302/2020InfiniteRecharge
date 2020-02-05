@@ -8,7 +8,11 @@ var dir_c85cb826952b1679a37b077c3741c8c1 =
     [ "ChassisFactory.h", "_chassis_factory_8h.html", [
       [ "ChassisFactory", "class_chassis_factory.html", "class_chassis_factory" ]
     ] ],
-    [ "ControlPanel.cpp", "_control_panel_8cpp.html", "_control_panel_8cpp" ],
+    [ "Climber.cpp", "_climber_8cpp.html", "_climber_8cpp" ],
+    [ "Climber.h", "_climber_8h.html", [
+      [ "Climber", "class_climber.html", "class_climber" ]
+    ] ],
+    [ "ControlPanel.cpp", "_control_panel_8cpp.html", null ],
     [ "ControlPanel.h", "_control_panel_8h.html", [
       [ "ControlPanel", "class_control_panel.html", "class_control_panel" ]
     ] ],
@@ -46,6 +50,10 @@ var dir_c85cb826952b1679a37b077c3741c8c1 =
     [ "Shooter.cpp", "_shooter_8cpp.html", null ],
     [ "Shooter.h", "_shooter_8h.html", [
       [ "Shooter", "class_shooter.html", "class_shooter" ]
+    ] ],
+    [ "ShooterHood.cpp", "_shooter_hood_8cpp.html", null ],
+    [ "ShooterHood.h", "_shooter_hood_8h.html", [
+      [ "ShooterHood", "class_shooter_hood.html", "class_shooter_hood" ]
     ] ],
     [ "Turret.cpp", "_turret_8cpp.html", null ],
     [ "Turret.h", "_turret_8h.html", [

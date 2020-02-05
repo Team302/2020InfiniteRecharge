@@ -22,14 +22,22 @@
 ///
 //========================================================================================================
 
+#pragma once
+
 #include <subsys/IMechanism.h>
 #include <controllers/IState.h>
+#include <controllers/ControlData.h>
 
 class IntakeOff : public IState
 {
     public:
 
-    IntakeOff();
+    IntakeOff
+    (
+        ControlData* control,
+        double target
+    );
+    IntakeOff() = delete;
     ~IntakeOff() = default;
 
     void Init() override;
@@ -39,6 +47,9 @@ class IntakeOff : public IState
     private:
 
     IMechanism* m_intake;
+    ControlData* m_control;
+    double m_target;
+
 };
 
 

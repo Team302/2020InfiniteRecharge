@@ -23,6 +23,9 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "Team 302 Robot", "index.html", [
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -40,7 +43,6 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", null ],
@@ -53,13 +55,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_analog_axis_8cpp.html",
-"_drive_time_8cpp.html",
-"_robot_defn_8cpp.html",
-"class_color_sensor_defn.html#a7200aad177f24e92292e0eea20a5a459",
-"class_dragon_servo_factory.html#a1b73aabd706139b9004071299f46ee78",
-"class_i_dragon_angle_position_sensor.html#a810d0103e3a97a455d02eae479aa1ad8",
-"class_l_e_d.html#ae47fb1c1cbe847bee7fb8b6c19486f70a7b591e96536105815688278cc3ab5b67",
-"class_tank_drive.html#a44a489fce4ca4fa40c9e0c4b8ae8ffd3"
+"_dragon_talon_tach_8cpp_source.html",
+"_p_d_p_defn_8h.html",
+"class_ball_transfer_state_mgr.html#a3428e4026de58f17feb5ec05b7566c88",
+"class_dragon_falcon.html#a801071a9180910e6d5d2cdf120b54bbf",
+"class_drive_train_side.html#a0ccf01a971eab34f5a053e6184af1b71",
+"class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2",
+"class_pigeon_defn.html#a5944df09a0fa42bc51556b42c883fb2f",
+"class_xbox_display.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

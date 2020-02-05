@@ -338,3 +338,22 @@ void DragonFalcon::SetControlConstants(ControlData* controlInfo)
     m_talon->Config_kF(0, controlInfo->GetF());
 }
 
+void DragonFalcon::SetForwardLimitSwitch
+( 
+	bool normallyOpen
+)
+{
+	LimitSwitchNormal type = normallyOpen ? LimitSwitchNormal::LimitSwitchNormal_NormallyOpen : LimitSwitchNormal::LimitSwitchNormal_NormallyClosed;
+	m_talon->ConfigForwardLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );
+}
+
+void DragonFalcon::SetReverseLimitSwitch
+(
+	bool normallyOpen
+)
+{
+	LimitSwitchNormal type = normallyOpen ? LimitSwitchNormal::LimitSwitchNormal_NormallyOpen : LimitSwitchNormal::LimitSwitchNormal_NormallyClosed;
+	m_talon->ConfigReverseLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );
+}
+
+

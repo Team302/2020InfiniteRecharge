@@ -42,79 +42,9 @@ using namespace frc;
 using namespace pugi;
 using namespace std;
 
-//-----------------------------------------------------------------------
-// Method:      ParseXML
-// Description: Parse a motor XML element and create a DragonTalon from
-//              its definition.
-//
-//        <!-- ====================================================
-//             motor usage options
-//             ====================================================
-//
-//		enum MOTOR_CONTROLLER_USAGE
-//		{
-//			UNKNOWN_MOTOR_CONTROLLER_USAGE = -1,
-//			LEFT_DRIVE_FOLLOWER,
-//			MIDDLE_LEFT_DRIVE,
-//			LEFT_DRIVE_MASTER,
-//			RIGHT_DRIVE_FOLLOWER,
-//			MIDDLE_RIGHT_DRIVE,
-//			RIGHT_DRIVE_MASTER,
-//			ARM_MASTER,
-//			ARM_SLAVE,
-//			ARM_EXTENSION,
-//			WRIST,
-//			INTAKE,
-//			ELEVATOR_WINCH,
-//			ELEVATOR_DRIVE,
-//			MAX_MOTOR_CONTROLLER_USAGES
-//		};
-//
-//
-//
-//    ====================================================
-//    motor sensor types
-//    ====================================================
-//        enum TALON_SENSOR_TYPE
-//        {
-//            NO_SENSOR = -1,
-//            QUAD_ENCODER,
-//            UNKNOWN_SENSOR,
-//            ANALOG_POT,
-//            ANALOG_ENCODER,
-//            ENCODER_RISING,
-//            ENCODER_FALLING,
-//            CTRE_MAG_ENCODER_RELATIVE,
-//            CTRE_MAG_ENCODER_ABSOLUTE,
-//            PULSE_WIDTH,
-//            MAX_SENSOR_TYPES
-//        };
-//    ==================================================== -->
-//<!ELEMENT motor EMPTY>
-//<!ATTLIST motor
-//          usage             CDATA #REQUIRED
-//          canId             (  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 |
-//                              10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 |
-//                              20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 |
-//                              30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 |
-//                              40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 |
-//                              50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 |
-//                              60 | 61 | 62 ) "0"
-//          pdpID			  CDATA #IMPLIED
-//          type              CDATA #REQUIRED
-//          inverted          ( true | false ) "false"
-//          sensorInverted    ( true | false ) "false"
-//          feedbackDevice    ( -1 | 0  |  2 |  3 |  4 |  5 |  6 |  7 |  8 ) "-1"
-//          countsPerRev      CDATA "0"
-//          gearRatio         CDATA "1"
-//          brakeMode         ( true | false ) "false"
-//          slaveTo           CDATA "-1"
-//          currentLimiting   CDATA "0"
-//>
-//
-// Returns:     DragonTalon*        motor controller (or nullptr if XML
-//                                  is ill-formed
-//-----------------------------------------------------------------------
+/// @brief: Parse a motor XML element and create a motor controller from its definition.
+/// @param [in] xml_node motor node in the xml file
+/// @return shared_ptr<IDragonMotorController> motor controller or nullptr if there is an error in the definition
 shared_ptr<IDragonMotorController> MotorDefn::ParseXML
 (
     xml_node      motorNode
@@ -130,7 +60,6 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
     bool inverted = false;
     bool sensorInverted = false;
     ctre::phoenix::motorcontrol::FeedbackDevice  feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::QuadEncoder;
-    //TODO:: make sure enum matches defines in dtd
     int countsPerRev = 0;
     float gearRatio = 1;
     bool brakeMode = false;
@@ -139,6 +68,11 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
     int continuousCurrentLimit = 0;
     int peakCurrentLimit = 0;
     bool enableCurrentLimit = false;
+    bool forwardLimitSwitch = false;
+    bool forwardLimitSwitchNormallyOpen = false;
+    bool reverseLimitSwitch = false;
+    bool reverseLimitSwitchNormallyOpen = false;
+    
 
     string mtype;
 
@@ -225,9 +159,19 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
             {
                 feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::CTRE_MagEncoder_Relative;
             }
+            else if ( val.compare( "INTERNAL") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::IntegratedSensor;
+            }
+            else if ( val.compare( "NONE") == 0 )
+            {
+                feedbackDevice = ctre::phoenix::motorcontrol::FeedbackDevice::None;
+            }
             else 
             {
-                Logger::GetLogger()->LogError( string("MotorDefn::ParseXML "), string("Invalid feedback device"));
+                string msg = "Invalid feedback device ";
+                msg += val;
+                Logger::GetLogger()->LogError( string("MotorDefn::ParseXML "), msg );
             }
         }
 		// counts per revolution
@@ -271,6 +215,22 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
         {
             enableCurrentLimit = attr.as_bool();
         }
+        else if ( strcmp( attr.name(), "forwardlimitswitch") == 0 )
+        {
+            forwardLimitSwitch = attr.as_bool();
+        }
+        else if ( strcmp( attr.name(), "forwardlimitswitchopen") == 0 )
+        {
+            forwardLimitSwitchNormallyOpen = attr.as_bool();
+        }        
+        else if ( strcmp( attr.name(), "reverselimitswitch") == 0 )
+        {
+            reverseLimitSwitch = attr.as_bool();
+        }
+        else if ( strcmp( attr.name(), "reverselimitswitchopen") == 0 )
+        {
+            reverseLimitSwitchNormallyOpen = attr.as_bool();
+        }
         else
         {
             printf( "==>>MotorDefn::ParseXML invalid attribute %s \n", attr.name() );
@@ -295,7 +255,11 @@ shared_ptr<IDragonMotorController> MotorDefn::ParseXML
                                                                                          peakCurrentLimit,
                                                                                          peakCurrentDuration,
                                                                                          peakCurrentLimit,
-                                                                                         enableCurrentLimit );
+                                                                                         enableCurrentLimit,
+                                                                                         forwardLimitSwitch,
+                                                                                         forwardLimitSwitchNormallyOpen,
+                                                                                         reverseLimitSwitch,
+                                                                                         reverseLimitSwitchNormallyOpen );
     }
     return controller;
 }

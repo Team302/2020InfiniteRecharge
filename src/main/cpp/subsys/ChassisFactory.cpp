@@ -23,8 +23,7 @@ ChassisFactory* ChassisFactory::GetChassisFactory()
 
 shared_ptr<IChassis> ChassisFactory::GetIChassis()
 {
-    shared_ptr<IChassis> chassis = nullptr;
-    return chassis;
+    return m_chassis;
 }
 
 //=======================================================================================
@@ -41,7 +40,7 @@ shared_ptr<IChassis> ChassisFactory::CreateChassis
  	const IDragonMotorControllerMap&    motors 		        // <I> - Motor Controllers
 )
 {
-    shared_ptr<IChassis> chassis = nullptr;
+    Logger::GetLogger()->GetLogger()->LogError( string("creating chassis"), to_string(type));
 
     switch ( type )
     {
@@ -59,7 +58,7 @@ shared_ptr<IChassis> ChassisFactory::CreateChassis
             rightMaster = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::RIGHT_DRIVE_MASTER);
             rightSlave = GetMotorController( motors, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::RIGHT_DRIVE_FOLLOWER);
             
-            chassis = make_shared<DragonChassis>(  wheelDiameter, wheelBase, track, leftMaster, rightMaster, leftSlave, rightSlave );
+            m_chassis = make_shared<DragonChassis>(  wheelDiameter, wheelBase, track, leftMaster, rightMaster, leftSlave, rightSlave );
         }
         break;
 
@@ -74,7 +73,7 @@ shared_ptr<IChassis> ChassisFactory::CreateChassis
 
     }
 
-    return chassis;
+    return m_chassis;
 }
 shared_ptr<IDragonMotorController> ChassisFactory::GetMotorController
 (

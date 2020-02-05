@@ -8,7 +8,6 @@
 #include "controllers/turret/LimelightAim.h"
 #include "subsys/MechanismFactory.h"
 #include "subsys/IMechanism.h"
-#include "subsys/MechanismParameters.h"
 #include "subsys/Turret.h"
 #include "controllers/ControlData.h"
 #include "subsys/MechanismTypes.h"

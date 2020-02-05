@@ -29,6 +29,7 @@
 #include <subsys/MechanismTypes.h>
 #include <controllers/ControlData.h>
 #include <subsys/DriveTrainSide.h>
+#include <utils/Logger.h>
 
 // Third Party Includes
 

@@ -65,7 +65,6 @@ void TankDrive::Run()
     {
         auto left = m_controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL );
         auto right = m_controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL );
-
         m_chassis.get()->SetOutput( ControlModes::PERCENT_OUTPUT, left, right );
     }
 }

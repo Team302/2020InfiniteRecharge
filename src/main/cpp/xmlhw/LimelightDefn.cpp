@@ -51,11 +51,11 @@ std::shared_ptr<DragonLimelight> LimelightDefn::ParseXML(pugi::xml_node    limel
         {
             mountingHeight = attr.as_double();
         }
-        else if ( strcmp( attr.name(), "horizontal offset" ) == 0 )
+        else if ( strcmp( attr.name(), "horizontaloffset" ) == 0 )
         {
             horizontalOffset = attr.as_double();
         }
-        else if ( strcmp( attr.name(), "mounting angle" ) == 0 )
+        else if ( strcmp( attr.name(), "mountingangle" ) == 0 )
         {
             mountingAngle = attr.as_double();
         }
@@ -63,14 +63,16 @@ std::shared_ptr<DragonLimelight> LimelightDefn::ParseXML(pugi::xml_node    limel
         {
             rotation = attr.as_double();
         }
-        else if ( strcmp( attr.name(), "target height" ) == 0 )
+		//todo: should this come from state XMLs
+        else if ( strcmp( attr.name(), "targetheight" ) == 0 )
         {
             targetHeight = attr.as_double();
         }
-        else if ( strcmp( attr.name(), "target height 2" ) == 0 )
+        else if ( strcmp( attr.name(), "targetheight 2" ) == 0 )
         {
             targetHeight2 = attr.as_double();
         }
+		//todo:  add cross hair stuff/streaming options -- everything after target heights
         else
         {
             string msg = "unknown attribute ";
