@@ -31,6 +31,7 @@
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
+#include <controllers/MechanismState.h>
 
 // Third Party Includes
 
@@ -40,14 +41,10 @@ IntakeOn::IntakeOn
 (
     ControlData* control,
     double target
-) : IState(),
-    m_intake( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE)),
-    m_control( control ),
-    m_target( target )
-{
-}
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE), control, target)
+{}
 
-void IntakeOn::Init()
+/*void IntakeOn::Init()
 {
     m_intake->SetControlConstants( m_control );
 }
@@ -63,3 +60,4 @@ bool IntakeOn::AtTarget() const                                         //confir
     return true;
 }
 
+*/

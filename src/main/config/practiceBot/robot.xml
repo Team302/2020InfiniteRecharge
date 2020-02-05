@@ -133,7 +133,7 @@
     
 	<mechanism type="INTAKE">
 		<motor usage="INTAKE"
-				canId="7"
+				canId="11"
 				pdpID="7"
 				type="TALONSRX"
 				inverted="false"
