@@ -41,14 +41,11 @@ IntakeOff::IntakeOff
 (
     ControlData* control,
     double target
-) : IState(),
-    m_intake( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE)),
-    m_control( control ),
-    m_target( target )
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE), control, target)
 {
 }
 
-void IntakeOff::Init()
+/*void IntakeOff::Init()
 {
     m_intake->SetControlConstants( m_control );
 
@@ -63,4 +60,4 @@ bool IntakeOff::AtTarget() const                                                
 {
     return true;
 }
-
+*/

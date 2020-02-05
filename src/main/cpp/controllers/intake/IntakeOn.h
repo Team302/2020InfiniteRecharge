@@ -31,10 +31,11 @@
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
 #include <controllers/ControlData.h>
+#include <controllers/MechanismState.h>
 
 // Third Party Includes
 
-class IntakeOn : public IState
+class IntakeOn : public MechanismState
 {
     public:
         IntakeOn
@@ -46,14 +47,16 @@ class IntakeOn : public IState
         IntakeOn() = delete;
         ~IntakeOn() = default;
 
-        void Init() override;
+        /*void Init() override;
         void Run() override;
         bool AtTarget() const override;
+        */
 
     private:
 
-        IMechanism* m_intake;
+        /*IMechanism* m_intake;
         ControlData* m_control;
         double m_target;
+        */
 
 };

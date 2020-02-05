@@ -71,6 +71,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
                     {   // todo update the constructor take in controlData and target
                         auto thisState = new ImpellerHold(controlData, target);
                         m_stateMap[IMPELLER_STATE::HOLD] = thisState;
+                        Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller Hold State added to Map");
                     }
                     break;
 
@@ -78,6 +79,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
                     {   // todo update the constructor take in controlData and target
                         auto thisState = new ImpellerToShooter(controlData, target);
                         m_stateMap[IMPELLER_STATE::OFF] = thisState;
+                        Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller To Shooter State added to Map");
                     }
                     break;
 
@@ -88,6 +90,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
+                        Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller Off State added to Map");
                     }
                     break;
 
@@ -95,6 +98,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
                     {   // todo update the constructor take in controlData and target
                         auto thisState = new ImpellerAgitate(controlData, target);
                         m_stateMap[IMPELLER_STATE::AGITATE] = thisState;
+                        Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller Agitate State added to Map");
                     }
                     break;
 
@@ -122,28 +126,23 @@ void ImpellerStateMgr::RunCurrentState()
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_SPIN ) && 
-             m_currentStateEnum != IMPELLER_STATE::HOLD )
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_SPIN ) )
         {
             SetCurrentState( IMPELLER_STATE::HOLD, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_STOP ) &&
-                  m_currentStateEnum != IMPELLER_STATE::OFF )
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_STOP ) )
         {
             SetCurrentState( IMPELLER_STATE::OFF, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_AGITATE ) &&
-                  m_currentStateEnum != IMPELLER_STATE::AGITATE )
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_AGITATE ) )
         {
             SetCurrentState( IMPELLER_STATE::AGITATE, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_AUTO_SHOOT ) &&
-                  m_currentStateEnum != IMPELLER_STATE::TO_SHOOTER )
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_AUTO_SHOOT ) )
         {
             SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_SHOOT ) &&
-                  m_currentStateEnum != IMPELLER_STATE::TO_SHOOTER )
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_SHOOT ) )
         {
             SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
         }
@@ -161,6 +160,7 @@ void ImpellerStateMgr::RunCurrentState()
     if ( m_currentState != nullptr )
     {
         m_currentState->Run();
+        Logger::GetLogger()->LogError("Logger::SetCurrentState", "Running Current State");
     }
 
 }
@@ -177,15 +177,15 @@ void ImpellerStateMgr::SetCurrentState
     if ( itr != m_stateMap.end() )
     {
         auto state = itr->second;
-        if ( state != m_currentState )
+        
+        m_currentState = state;
+        m_currentStateEnum = stateEnum;
+        Logger::GetLogger()->LogError("ImpellerStateMgr::SetCurrentState", "Setting current state");
+        m_currentState->Init();
+        if ( run )
         {
-            m_currentState = state;
-            m_currentStateEnum = stateEnum;
-            m_currentState->Init();
-            if ( run )
-            {
-                m_currentState->Run();
-            }
+            m_currentState->Run();
+            
         }
     }
 }

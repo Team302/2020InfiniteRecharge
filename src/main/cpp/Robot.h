@@ -41,6 +41,7 @@
 #include <controllers/BallManipulator.h>
 //#include <controllers/controlPanel/ControlPanelStateMgr.h>
 //#include <controllers/climber/ClimberStateMgr.h>
+#include <controllers/intake/IntakeStateMgr.h>
 
 #include <test/ButtonBoxDisplay.h>
 #include <test/XboxDisplay.h>
@@ -68,6 +69,7 @@ class Robot : public frc::TimedRobot
   private:
       CyclePrimitives* m_cyclePrims;
       ChassisStateMgr* m_chassisStateMgr;
+      //IntakeStateMgr* m_intake;
       BallManipulator* m_powerCells;
       // ControlPanelStateMgr* m_control;
       // ClimberStateMgr* m_climer;
