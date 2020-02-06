@@ -4,7 +4,7 @@
 #include <pugixml/pugixml.hpp>
 #include <utils/Logger.h>
 #include <ctre/Phoenix.h>
-
+#include <ctre/phoenix/sensors/CANCoder.h>
 
 using namespace std;
 using namespace frc;
@@ -50,7 +50,7 @@ std::shared_ptr<ctre::phoenix::sensors::CANCoder> CanCoderDefn::ParseXML
     }   
     if(!hasError)
     {
-        cancoder = new CanCoder(usage, canID);
+        cancoder = make_shared<CANCoder>(canID); //need to add usage also can't use new CANCoder... because i am using a shared pointer when defining CANCoder
     }
     return cancoder;
 }
