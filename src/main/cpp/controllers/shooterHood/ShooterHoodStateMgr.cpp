@@ -29,6 +29,7 @@
 #include <controllers/shooterHood/ShooterHoodHoldPosition.h>
 #include <controllers/shooterHood/ShooterHoodMoveDown.h>
 #include <controllers/shooterHood/ShooterHoodMoveUp.h>
+#include <controllers/shooterHood/ShooterHoodManual.h>
 
 // Third Party Includes
 
@@ -47,6 +48,7 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
     stateMap["MOVEUP"] = SHOOTER_HOOD_STATE::MOVE_UP;
     stateMap["MOVEDOWN"]  = SHOOTER_HOOD_STATE::MOVE_DOWN;
     stateMap["HOLDPOSITION"] = SHOOTER_HOOD_STATE::HOLD_POSITION;
+    stateMap["MANUAL"] = SHOOTER_HOOD_STATE::MANUAL;
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -85,6 +87,13 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
+                    }
+                    break;
+
+                    case SHOOTER_HOOD_STATE::MANUAL:
+                    {
+                        auto thisState = new ShooterHoodManual(controlData, target);
+                        m_stateMap[SHOOTER_HOOD_STATE::MANUAL] = thisState;
                     }
                     break;
 
