@@ -22,3 +22,44 @@
 #include <hw/interfaces/IDragonMotorController.h>
 #include <subsys/IMechanism.h>
 #include <subsys/Crawler.h>
+#include <controllers/ControlModes.h>
+#include <subsys/MechanismTypes.h>
+#include <utils/Logger.h>
+
+using namespace std;
+
+Crawler::Crawler
+(
+    shared_ptr<IDragonMotorController>      crawlerMotor
+) : m_crawlerMotor( crawlerMotor ),
+    m_target( 0.0 )
+{
+    if( m_crawlerMotor.get() == nullptr )
+    {
+        Logger::GetLogger()->LogError( string( "Crawler constructor" ), string( "motorMaster is nullptr" ) );
+    }
+}
+
+MechanismTypes::MECHANISM_TYPE Crawler::GetType() const
+{
+    return MechanismTypes::MECHANISM_TYPE::CRAWLER;
+}
+
+void Crawler::SetOutput
+(
+    ControlModes::CONTROL_TYPE controlType,
+    double  value
+)
+{
+    m_target = value;
+    if( m_crawlerMotor != nullptr)
+    {
+        m_crawlerMotor->SetControlMode( controlType );
+        m_crawlerMotor->Set( value );
+        m_target = value;
+    }
+    else
+    {
+        Logger::GetLogger()->LogError("Crawler::SetOutput", "No motorMaster" );
+    }
+};
