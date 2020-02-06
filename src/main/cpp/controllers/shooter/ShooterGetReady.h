@@ -5,13 +5,14 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#pragma 
+#pragma once
 
 #include <controllers/ControlData.h>
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
 
-class ShooterGetReady : public IState{
+class ShooterGetReady : public IState
+{
  public:
   ShooterGetReady
   (

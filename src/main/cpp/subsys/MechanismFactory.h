@@ -49,6 +49,7 @@
 #include <subsys/BallTransfer.h>
 #include <subsys/ControlPanel.h>
 #include <rev/ColorSensorV3.h>
+#include <subsys/ShooterHood.h>
 
 
 

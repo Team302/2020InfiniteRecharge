@@ -28,6 +28,7 @@
 #include <gamepad/TeleopControl.h>
 #include <controllers/intake/IntakeOff.h>
 #include <controllers/intake/IntakeOn.h>
+#include <frc/smartdashboard/SmartDashboard.h>
 
 
 // Third Party Includes
@@ -103,17 +104,19 @@ void IntakeStateMgr::RunCurrentState()
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_ON ) && 
-             m_currentStateEnum != INTAKE_STATE::ON )
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_ON ) )
         {
             SetCurrentState( INTAKE_STATE::ON, false );
+            SmartDashboard::PutBoolean("Intake On", true);
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_OFF ) &&
-                  m_currentStateEnum != INTAKE_STATE::OFF )
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_OFF ) )
         {
             SetCurrentState( INTAKE_STATE::OFF, false );
+            SmartDashboard::PutBoolean("Intake Off", true);
         }
     }
+
+    Logger::GetLogger()->OnDash(string("Intake State"), to_string(m_currentStateEnum));
 
     // run the current state
     if ( m_currentState != nullptr )
@@ -135,16 +138,16 @@ void IntakeStateMgr::SetCurrentState
     if ( itr != m_stateMap.end() )
     {
         auto state = itr->second;
-        if ( state != m_currentState )
+        
+        
+        m_currentState = state;
+        m_currentStateEnum = stateEnum;
+        m_currentState->Init();
+        if ( run )
         {
-            m_currentState = state;
-            m_currentStateEnum = stateEnum;
-            m_currentState->Init();
-            if ( run )
-            {
-                m_currentState->Run();
-            }
+            m_currentState->Run();
         }
+        
     }
 }
 

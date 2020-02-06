@@ -11,7 +11,8 @@
 #include <subsys/IMechanism.h>
 #include <controllers/ControlData.h>
 
-class ShooterOff : IState{
+class ShooterOff : public IState
+{
  public:
   ShooterOff(
     ControlData* controlData,

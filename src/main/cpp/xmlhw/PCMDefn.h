@@ -18,13 +18,11 @@
 
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
 
 // Team 302 includes
 #include <frc/Compressor.h>
-#include <frc/Solenoid.h>
 
 // Third Party Includes
 #include <pugixml/pugixml.hpp>

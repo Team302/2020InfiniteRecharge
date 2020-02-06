@@ -12,12 +12,12 @@
 /// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
 /// OR OTHER DEALINGS IN THE SOFTWARE. 
 //==================================================================================================================================================== 
-
-
+ 
+ 
 // C++ Includes 
-
+ 
 #include <memory> 
-
+  
 // FRC includes 
 #include <subsys/ShooterHood.h> 
 #include <utils/logger.h> 
@@ -25,18 +25,18 @@
 #include <hw/interfaces/IDragonMotorController.h> 
 #include <hw/DragonServo.h> 
 #include <subsys/MechanismTypes.h> 
-
+            
  
 // Team 302 includes 
-
+ 
 using namespace std; 
-
+ 
 ShooterHood::ShooterHood 
 ( 
-std::shared_ptr<DragonServo>         shservo
+std::shared_ptr<IDragonMotorController>         shmotor     
 ) 
 { 
-   m_shservo = shservo; 
+   m_shmotor = shmotor;
 } 
 /// @brief          Indicates the type of mechanism this is 
 /// @return         MechanismTypes::MECHANISM_TYPE 
@@ -48,12 +48,13 @@ MechanismTypes::MECHANISM_TYPE ShooterHood :: GetType() const
 /// @param [in] ControlModes::CONTROL_TYPE   controlType:  How are the item(s) being controlled 
 /// @param [in] double                                     value:        Target (units are based on the controlType) 
 /// @return     void 
-void ShooterHood::SetOutput 
+void ShooterHood::SetOutput
 ( 
 ControlModes::CONTROL_TYPE controlType, 
 double                                   value        
 )  
 { 
+  m_shmotor->Set( value );
 } 
 /// @brief      Activate/deactivate pneumatic solenoid 
 /// @param [in] bool - true == extend, false == retract 
@@ -74,7 +75,7 @@ return false;
 /// @return double  position in inches (translating mechanisms) or degrees (rotating mechanisms) 
 double ShooterHood :: GetCurrentPosition() const  
 { 
-return 0.0; 
+return m_shmotor->GetRotations() * 360.0; 
 } 
 /// @brief  Return the targget position of the mechanism.  The value is in inches or degrees. 
 /// @return double  position in inches (translating mechanisms) or degrees (rotating mechanisms) 
@@ -86,7 +87,7 @@ return 0.0;
 /// @return double  speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) 
 double ShooterHood ::GetCurrentSpeed() const  
 { 
-return 0.0; 
+ return m_shmotor->GetRPS() * 360.0;
 } 
 /// @brief  Get the target speed of the mechanism.  The value is in inches per second or degrees per second. 
 /// @param [in] ControlModes::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested 

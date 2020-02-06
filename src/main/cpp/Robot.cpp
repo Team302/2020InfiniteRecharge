@@ -28,6 +28,7 @@
 #include <auton/CyclePrimitives.h>
 #include <controllers/chassis/ChassisStateMgr.h>
 #include <controllers/BallManipulator.h>
+#include <controllers/intake/IntakeStateMgr.h>
 //#include <controllers/controlPanel/ControlPanelStateMgr.h>
 //#include <controllers/climber/ClimberStateMgr.h>
 
@@ -52,6 +53,7 @@ void Robot::RobotInit()
     // m_cyclePrims = new CyclePrimitives();
 
     m_chassisStateMgr = new ChassisStateMgr();
+    //m_intake = new IntakeStateMgr();
     m_powerCells = new BallManipulator();
 
     // m_control = new ControlPanelStateMgr();
@@ -116,6 +118,7 @@ void Robot::TeleopInit()
 void Robot::TeleopPeriodic() 
 {
     m_chassisStateMgr->RunCurrentState();
+    //m_intake->RunCurrentState();
     m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();

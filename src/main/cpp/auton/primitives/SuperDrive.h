@@ -24,7 +24,6 @@
 // Team 302 includes
 #include <subsys/IChassis.h>
 #include <auton/primitives/IPrimitive.h>
-#include <utils/DragonMath.h>
 
 // Third Party Includes
 

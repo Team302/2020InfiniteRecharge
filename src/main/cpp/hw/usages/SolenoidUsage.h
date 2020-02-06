@@ -54,7 +54,7 @@ class SolenoidUsage
 
         SOLENOID_USAGE GetUsage
         ( 
-            std::string         usageString
+            const std::string         usageString
         );
 
     private:

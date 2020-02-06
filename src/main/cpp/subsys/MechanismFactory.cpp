@@ -50,6 +50,7 @@
 #include <subsys/HumanPlayerFlap.h>
 #include <subsys/Turret.h>
 #include <subsys/Shooter.h>
+#include <subsys/ShooterHood.h>
 
 // Third Party Includes
 #include <rev/ColorSensorV3.h>
@@ -199,6 +200,12 @@ IMechanism*  MechanismFactory::CreateIMechanism
 			
 			case MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD:
 			{
+				auto shooterHoodMotor = GetMotorController ( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::SHOOTER_HOOD );
+				if ( shooterHoodMotor.get() != nullptr )
+				{
+					auto shooterHood = new ShooterHood( shooterHoodMotor);
+					subsys = dynamic_cast<IMechanism*>(shooterHood);
+				}
 			}
 			break;		
 			

@@ -47,7 +47,7 @@ class AnalogInputUsage
 
         ANALOG_SENSOR_USAGE GetUsage
         ( 
-            std::string         usageString
+            const std::string       usageString
         );
 
     private:

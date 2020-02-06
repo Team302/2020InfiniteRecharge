@@ -12,12 +12,15 @@
 #include "subsys/IMechanism.h"
 #include "subsys/MechanismTypes.h"
 
-ShooterShoot::ShooterShoot(ControlData* controlData, double target) : m_atTarget(false),
-m_controlData(controlData),
-m_target(target)
+ShooterShoot::ShooterShoot
+(
+    ControlData* controlData, 
+    double target
+) : m_shooter( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER)),
+    m_controlData(controlData),
+    m_atTarget(false),
+    m_target(target)
 {
-    auto factory = MechanismFactory::GetMechanismFactory();
-    m_shooter = factory->GetIMechanism(MechanismTypes::SHOOTER);
 }
 
 void ShooterShoot::Init()
