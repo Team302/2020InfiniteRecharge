@@ -22,6 +22,12 @@
 class MechanismTargetData
 {
     public:
+        enum SOLENOID
+        {
+            NONE,
+            ON,
+            OFF
+        };
         /// @brief      Create the ControlData object that is used to control mechanisms
         /// @param [in] state - State indentifier
         /// @param [in] controller - controller indentifer
@@ -30,7 +36,8 @@ class MechanismTargetData
         (
             std::string                                 state,
             std::string                                 controller,
-            double                                      target
+            double                                      target,
+            SOLENOID                                 solenoid
         );
         MechanismTargetData() = delete;
 
@@ -65,6 +72,7 @@ class MechanismTargetData
         std::string                                 m_controller;
         double                                      m_target;
         ControlData*                                m_controlData;
+        SOLENOID                                    m_solenoid;
 };
 
 
