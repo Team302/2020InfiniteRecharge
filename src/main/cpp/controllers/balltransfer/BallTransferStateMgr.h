@@ -63,7 +63,7 @@ class BallTransferStateMgr
     private:
 
         IState* m_currentState;
-        std::map<BALL_TRANSFER_STATE,IState*> m_stateMap;
+        std::map<BALL_TRANSFER_STATE,IState*> m_stateEnumToObjectMap;
         BALL_TRANSFER_STATE m_currentStateEnum;
 
 };

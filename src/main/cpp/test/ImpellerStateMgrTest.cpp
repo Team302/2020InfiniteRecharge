@@ -36,13 +36,13 @@ using namespace frc;
 ///  @brief	Tests for ImpellerStateMgr.  There are the following states: OFF, HOLD and AGITATE, TO_SHOOTER.  Each will run for 15 seconds in the following order:
 ///         HOLD, OFF, AGITATE, TO_SHOOTER.
 ImpellerStateMgrTest::ImpellerStateMgrTest() : IStateTest(),
-													   m_timer( make_unique<Timer>() ),
 													   m_stateMgr( make_unique<ImpellerStateMgr>() ),
 													   m_ranOff( false ),
 													   m_ranHold( false ),
 													   m_ranShoot( false ),
 													   m_ranAgitate( false ),
-													   m_isDone( false )
+													   m_isDone( false ),
+													   m_loopCnt( 0 )
 {
 }
 		
@@ -50,9 +50,8 @@ ImpellerStateMgrTest::ImpellerStateMgrTest() : IStateTest(),
 /// @return void
 void ImpellerStateMgrTest::Init()
 {
-	m_timer->Reset();
-	m_timer->Start();
-	m_stateMgr->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, true );
+	m_loopCnt = 0;
+	m_stateMgr.get()->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, true );
 	m_ranHold = true;
 }
 
@@ -60,37 +59,37 @@ void ImpellerStateMgrTest::Init()
 /// @return void		
 void ImpellerStateMgrTest::Periodic()
 {
-	if ( m_timer->HasPeriodPassed( m_stateTestPeriod ) )
+	m_loopCnt++;
+	if ( m_loopCnt > m_nloops )	
 	{
 		if ( !m_ranHold )
 		{
-			m_stateMgr->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );
-			m_ranOff = true;
+			m_stateMgr.get()->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );
+			m_ranHold = true;
+		}
+		else if ( !m_ranShoot )
+		{
+			m_stateMgr.get()->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
+			m_ranShoot = true;
 		}
 		else if ( !m_ranOff )
 		{
-			m_stateMgr->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
+			m_stateMgr.get()->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
 			m_ranOff = true;
 		}
 		else if ( !m_ranAgitate )
 		{
-			m_stateMgr->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::AGITATE, false );
+			m_stateMgr.get()->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::AGITATE, false );
 			m_ranAgitate = true;
-		}
-		else if ( !m_ranShoot )
-		{
-			m_stateMgr->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
-			m_ranShoot = true;
 		}
 		else
 		{
-			m_stateMgr->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
+			m_stateMgr.get()->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
 			m_isDone = true;
 		}
-		m_timer->Reset();
-		m_timer->Start();
+		m_loopCnt = 0;
 	}
-	m_stateMgr->RunCurrentState();
+	m_stateMgr.get()->RunCurrentState();
 }
 
 /// @brief Indicate whether the test has completed or not.

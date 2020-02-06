@@ -54,7 +54,7 @@ ControlModes::CONTROL_TYPE controlType,
 double                                   value        
 )  
 { 
-  m_shmotor->Set( value );
+  m_shmotor.get()->Set( value );
 } 
 /// @brief      Activate/deactivate pneumatic solenoid 
 /// @param [in] bool - true == extend, false == retract 
@@ -75,7 +75,7 @@ return false;
 /// @return double  position in inches (translating mechanisms) or degrees (rotating mechanisms) 
 double ShooterHood :: GetCurrentPosition() const  
 { 
-return m_shmotor->GetRotations() * 360.0; 
+return m_shmotor.get()->GetRotations() * 360.0; 
 } 
 /// @brief  Return the targget position of the mechanism.  The value is in inches or degrees. 
 /// @return double  position in inches (translating mechanisms) or degrees (rotating mechanisms) 
@@ -87,7 +87,7 @@ return 0.0;
 /// @return double  speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) 
 double ShooterHood ::GetCurrentSpeed() const  
 { 
- return m_shmotor->GetRPS() * 360.0;
+ return m_shmotor.get()->GetRPS() * 360.0;
 } 
 /// @brief  Get the target speed of the mechanism.  The value is in inches per second or degrees per second. 
 /// @param [in] ControlModes::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested 

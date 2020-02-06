@@ -93,7 +93,7 @@ class Robot : public frc::TimedRobot
 	  const std::string                   m_intakeTest = "Intake";
 	  const std::string                   m_impellerTest = "Impeller";
 	  const std::string                   m_ballTransferTest = "Ball Transfer";
-	  const std::string                   m_shooterTest = "Shooter";
+//	  const std::string                   m_shooterTest = "Shooter";
       std::string                         m_testSelected; 
 
       enum TEST_TO_RUN

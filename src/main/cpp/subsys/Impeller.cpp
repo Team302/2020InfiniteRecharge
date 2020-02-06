@@ -68,8 +68,8 @@ void Impeller::SetOutput
     double value       
 )
 {
-    m_motor->SetControlMode(controlType);
-    m_motor->Set(value);
+    m_motor.get()->SetControlMode(controlType);
+    m_motor.get()->Set(value);
     m_target = value;
 }
 
@@ -96,7 +96,7 @@ bool Impeller::IsSolenoidActivated()
 /// @return double	position in inches (translating mechanisms) or degrees (rotating mechanisms)
 double Impeller::GetCurrentPosition() const
 {
-    double current_rotations = m_motor -> GetRotations();
+    double current_rotations = m_motor.get() -> GetRotations();
     double current_angle = current_rotations / 360;
     return current_angle;
 }
@@ -112,7 +112,7 @@ double Impeller::GetTargetPosition() const
 /// @return double	speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms)
 double Impeller::GetCurrentSpeed() const
 {
-    double current_RPS = m_motor -> GetRPS();
+    double current_RPS = m_motor.get() -> GetRPS();
     return current_RPS;
 }
 

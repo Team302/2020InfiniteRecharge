@@ -52,10 +52,10 @@ void BallTransfer::SetOutput
     double        value 
 )
 {        
-    if ( m_master != nullptr )
+    if ( m_master.get() != nullptr )
     {
-        m_master->SetControlMode(controlType);
-        m_master->Set( value );
+        m_master.get()->SetControlMode(controlType);
+        m_master.get()->Set( value );
     }
     else 
     {

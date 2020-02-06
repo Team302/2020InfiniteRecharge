@@ -36,7 +36,7 @@
 using namespace std;
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
-IntakeStateMgr::IntakeStateMgr() : m_stateMap(),
+IntakeStateMgr::IntakeStateMgr() : m_stateEnumToObjectMap(),
                                    m_currentState()
 {
     // Parse the configuration file 
@@ -44,36 +44,41 @@ IntakeStateMgr::IntakeStateMgr() : m_stateMap(),
     vector<MechanismTargetData*> targetData = stateXML.get()->ParseXML( MechanismTypes::MECHANISM_TYPE::INTAKE );
 
     // initialize the xml string to state map
-    map<string, INTAKE_STATE> stateMap;
-    stateMap["INTAKEOFF"] = INTAKE_STATE::OFF;
-    stateMap["INTAKEON"]  = INTAKE_STATE::ON;
+    map<string, INTAKE_STATE> stateStringToEnumMap;
+    stateStringToEnumMap["INTAKEOFF"] = INTAKE_STATE::OFF;
+    stateStringToEnumMap["INTAKEON"]  = INTAKE_STATE::ON;
 
     // create the states passing the configuration data
     for ( auto td: targetData )
     {
         auto stateString = td->GetStateString();
-        auto stateItr = stateMap.find( stateString );
-        if ( stateItr != stateMap.end() )
+        Logger::GetLogger()->LogError(string("intake state string "), stateString );
+        auto stateStringToEnumItr = stateStringToEnumMap.find( stateString );
+        if ( stateStringToEnumItr != stateStringToEnumMap.end() )
         {
-            auto stateEnum = stateItr->second;
-            auto stateIt = m_stateMap.find( stateEnum );
-            if ( stateIt == m_stateMap.end() )
+            auto stateEnum = stateStringToEnumItr->second;
+            Logger::GetLogger()->LogError(string("got enum"), to_string(stateEnum));
+            auto stateEnumToObjectMapItr = m_stateEnumToObjectMap.find( stateEnum );
+            if ( stateEnumToObjectMapItr == m_stateEnumToObjectMap.end() )
             {
+                Logger::GetLogger()->LogError(string("did not find state"), to_string(stateEnum));
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
                 switch ( stateEnum )
                 {
                     case INTAKE_STATE::ON:
                     {   
+                        Logger::GetLogger()->LogError(string("creating intake on"), string(""));
                         auto thisState = new IntakeOn( controlData, target );
-                        m_stateMap[INTAKE_STATE::ON] = thisState;
+                        m_stateEnumToObjectMap[INTAKE_STATE::ON] = thisState;
                     }
                     break;
 
                     case INTAKE_STATE::OFF:
                     {   
+                        Logger::GetLogger()->LogError(string("creating intake off"), string(""));
                         auto thisState = new IntakeOff( controlData, target );
-                        m_stateMap[INTAKE_STATE::OFF] = thisState;
+                        m_stateEnumToObjectMap[INTAKE_STATE::OFF] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
@@ -87,7 +92,10 @@ IntakeStateMgr::IntakeStateMgr() : m_stateMap(),
                     break;
                 }
             }
-            Logger::GetLogger()->LogError( string("IntakeStateMgr::IntakeStateMgr"), string("multiple mechanism state info for state"));
+            else
+            {
+                Logger::GetLogger()->LogError( string("IntakeStateMgr::IntakeStateMgr"), string("multiple mechanism state info for state"));                
+            }
         }
         else
         {
@@ -134,8 +142,8 @@ void IntakeStateMgr::SetCurrentState
     bool            run
 )
 {
-    auto itr = m_stateMap.find( stateEnum );
-    if ( itr != m_stateMap.end() )
+    auto itr = m_stateEnumToObjectMap.find( stateEnum );
+    if ( itr != m_stateEnumToObjectMap.end() )
     {
         auto state = itr->second;
         

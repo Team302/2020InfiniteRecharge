@@ -78,11 +78,11 @@ void DriveTrainSide::SetOutput
 ) 
 {
     m_target = value;
-    if ( m_master != nullptr )
+    if ( m_master.get() != nullptr )
     {
         // todo map mechanism control mode to motor control mode (create method)
-        m_master->SetControlMode( controlType );
-        m_master->Set( value );
+        m_master.get()->SetControlMode( controlType );
+        m_master.get()->Set( value );
     }
     else
     {
@@ -114,10 +114,10 @@ bool DriveTrainSide::IsSolenoidActivated()
 double DriveTrainSide::GetCurrentPosition() const
 {
     double distance = 0.0;
-    if ( m_master != nullptr )
+    if ( m_master.get() != nullptr )
     {
         distance = ( m_wheelSize * M_PI );          // distance the wheel travels per revolution
-        auto nRotations = m_master->GetRotations(); // number of rotations
+        auto nRotations = m_master.get()->GetRotations(); // number of rotations
         distance *= nRotations;                     // distance per revolution * number of revolutions is the distance
     }
     else
@@ -141,10 +141,10 @@ double DriveTrainSide::GetTargetPosition() const
 double DriveTrainSide::GetCurrentSpeed() const
 {
     double speed = 0.0;
-    if ( m_master != nullptr )
+    if ( m_master.get() != nullptr )
     {
         speed = ( m_wheelSize * M_PI ); // distance the wheel travels per revolution (inches)
-        auto rps = m_master->GetRPS();  // number of rotations per second
+        auto rps = m_master.get()->GetRPS();  // number of rotations per second
         speed *= rps;                   // distance per revolution * revolutions per second is inches per second
     }
     else

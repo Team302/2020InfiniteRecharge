@@ -62,7 +62,7 @@ void Robot::RobotInit()
 
     m_chassisStateMgr = new ChassisStateMgr();
     //m_intake = new IntakeStateMgr();
-    m_powerCells = new BallManipulator();
+//    m_powerCells = new BallManipulator();
 
     // m_control = new ControlPanelStateMgr();
     // m_climber = new ClimberStateMgr();
@@ -74,7 +74,7 @@ void Robot::RobotInit()
     m_testChooser.AddOption( m_intakeTest, m_intakeTest );
     m_testChooser.AddOption( m_impellerTest, m_impellerTest );
     m_testChooser.AddOption( m_ballTransferTest, m_ballTransferTest );
-    m_testChooser.AddOption( m_shooterTest, m_shooterTest );
+//    m_testChooser.AddOption( m_shooterTest, m_shooterTest );
 
     SmartDashboard::PutData("Test", &m_testChooser);
 
@@ -120,7 +120,7 @@ void Robot::TeleopInit()
 {
     m_chassisStateMgr->Init();
     m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
-    m_powerCells->RunCurrentState();
+//    m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
 }
@@ -132,7 +132,7 @@ void Robot::TeleopPeriodic()
 {
     m_chassisStateMgr->RunCurrentState();
     //m_intake->RunCurrentState();
-    m_powerCells->RunCurrentState();
+//    m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
 }
@@ -169,11 +169,13 @@ void Robot::TestInit()
         m_currentTest = TRANSFER;
 		m_ballTransferStateMgrTest = new BallTransferStateMgrTest();
 	}
+    /**
 	else if ( m_testSelected == m_shooterTest )
 	{
         m_currentTest = SHOOTER;
 		m_shooterStateMgrTest = new ShooterStateMgrTest();
 	}
+    **/
     else
     {
         m_currentTest = NONE;
@@ -203,9 +205,9 @@ void Robot::TestPeriodic()
 			break;
 			
 		case IMPELLER: 
-			if ( !m_intakeStateMgrTest->IsDone() )
+			if ( !m_impellerStateMgrTest->IsDone() )
 			{
-				m_intakeStateMgrTest->Periodic();
+				m_impellerStateMgrTest->Periodic();
 			}
 			break;
 			
@@ -215,14 +217,14 @@ void Robot::TestPeriodic()
 				m_ballTransferStateMgrTest->Periodic();
 			}
 			break;
-			
+		/**
 		case SHOOTER: 
 			if ( !m_shooterStateMgrTest->IsDone() )
 			{
 				m_shooterStateMgrTest->Periodic();
 			}
 			break;
-
+        **/
         default:
             break;
     }

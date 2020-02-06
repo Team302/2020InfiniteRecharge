@@ -37,7 +37,7 @@ using namespace std;
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
-                                               m_stateMap(),
+                                               m_stateEnumToObjectMap(),
                                                m_currentStateEnum(BALL_TRANSFER_STATE::OFF)
 {
     // Parse the configuration file 
@@ -54,21 +54,22 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
     for ( auto td: targetData )
     {
         auto stateString = td->GetStateString();
-        auto stateItr = stateMap.find( stateString );
-        if ( stateItr != stateMap.end() )
+        auto stateStringToEnumItr = stateMap.find( stateString );
+        if ( stateStringToEnumItr != stateMap.end() )
         {
-            auto stateEnum = stateItr->second;
-            auto stateIt = m_stateMap.find( stateEnum );
-            if ( stateIt == m_stateMap.end() )
+            auto stateEnum = stateStringToEnumItr->second;
+            auto stateEnumToObjectItr = m_stateEnumToObjectMap.find( stateEnum );
+            if ( stateEnumToObjectItr == m_stateEnumToObjectMap.end() )
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
                 switch ( stateEnum )
                 {
                     case BALL_TRANSFER_STATE::OFF:
-                    {   // todo update the constructor
+                    {   
+                        Logger::GetLogger()->LogError(string("creating ball transfer off"), string(""));
                         auto thisState = new BallTransferOff( controlData, target );
-                        m_stateMap[stateEnum] = thisState;
+                        m_stateEnumToObjectMap[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
@@ -76,16 +77,18 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                     break;
 
                     case BALL_TRANSFER_STATE::TO_IMPELLER:
-                    {   // todo update the constructor
+                    {   
+                        Logger::GetLogger()->LogError(string("creating ball transfer to impeller"), string(""));
                         auto thisState = new BallTransferToImpeller( controlData, target );
-                        m_stateMap[stateEnum] = thisState;
+                        m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;
 
                     case BALL_TRANSFER_STATE::TO_SHOOTER:
-                    {   // todo update the constructor
+                    {   
+                        Logger::GetLogger()->LogError(string("creating ball transfer to shooter"), string(""));
                         auto thisState = new BallTransferToShooter( controlData, target );
-                        m_stateMap[stateEnum] = thisState;
+                        m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;
 
@@ -96,7 +99,10 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                     break;
                 }
             }
-            Logger::GetLogger()->LogError( string("BallTransferStateMgr::BallTransferStateMgr"), string("multiple mechanism state info for state"));
+            else
+            {
+                Logger::GetLogger()->LogError( string("BallTransferStateMgr::BallTransferStateMgr"), string("multiple mechanism state info for state"));
+            }
         }
         else
         {
@@ -110,6 +116,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
 void BallTransferStateMgr::RunCurrentState()
 {
     // process teleop/manual interrupts
+    /**
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
@@ -129,8 +136,9 @@ void BallTransferStateMgr::RunCurrentState()
             SetCurrentState( BALL_TRANSFER_STATE::TO_SHOOTER, false );
         }
     }
+    **/
 
-    Logger::GetLogger()->OnDash(string("Intake State"), to_string(m_currentStateEnum));
+    Logger::GetLogger()->OnDash(string("Ball Transfer State"), to_string(m_currentStateEnum));
 
     // run the current state
     if ( m_currentState != nullptr )
@@ -148,12 +156,15 @@ void BallTransferStateMgr::SetCurrentState
     bool                    run
 )
 {
-    auto itr = m_stateMap.find( stateEnum );
-    if ( itr != m_stateMap.end() )
+    auto stateEnumToObjectMapItr = m_stateEnumToObjectMap.find( stateEnum );
+    Logger::GetLogger()->LogError( string("about to set state current "), to_string(stateEnum));
+    if ( stateEnumToObjectMapItr != m_stateEnumToObjectMap.end() )
     {
-        auto state = itr->second;
+        Logger::GetLogger()->LogError( string("found state"), string(""));
+        auto state = stateEnumToObjectMapItr->second;
         if ( state != m_currentState )
         {
+            Logger::GetLogger()->LogError( string("prev state"), to_string(m_currentStateEnum));
             m_currentState = state;
             m_currentStateEnum = stateEnum;
             m_currentState->Init();

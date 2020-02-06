@@ -30,18 +30,17 @@
 
 
 using namespace std;
-using namespace frc;
 
 ///	 @class ShooterStateMgrTest
 ///  @brief Tests for ShooterStateMgr.  There are three states: OFF, GET_READY, and SHOOT.  This will run each for 15 seconds each;
 ///  		running GET_READY, then SHOOT and finally OFF.
 ShooterStateMgrTest::ShooterStateMgrTest() : IStateTest(),
-											 m_timer( make_unique<Timer>() ),
 											 m_stateMgr( make_unique<ShooterStateMgr>() ),
 											 m_ranReady( false ),
 											 m_ranShoot( false ),
 											 m_ranOff( false ),
-											 m_isDone( false )
+											 m_isDone( false ),
+											 m_loopCnt( 0 )
 {
 }
 		
@@ -49,9 +48,8 @@ ShooterStateMgrTest::ShooterStateMgrTest() : IStateTest(),
 /// @return void
 void ShooterStateMgrTest::Init()
 {
-	m_timer->Reset();
-	m_timer->Start();
-	m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, true );
+	m_loopCnt = 0;
+	m_stateMgr.get()->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, true );
 	m_ranReady = true;
 }
 
@@ -59,32 +57,32 @@ void ShooterStateMgrTest::Init()
 /// @return void		
 void ShooterStateMgrTest::Periodic()
 {
-	if ( m_timer->HasPeriodPassed( m_stateTestPeriod ) )
+	m_loopCnt++;
+	if ( m_loopCnt > m_nloops )	
 	{
 		if ( !m_ranReady )
 		{
-			m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, false );
+			m_stateMgr.get()->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, false );
 			m_ranReady = true;
 		}
 		else if ( !m_ranShoot )
 		{
-			m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
+			m_stateMgr.get()->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
 			m_ranShoot = true;
 		}
 		else if ( !m_ranOff )
 		{
-			m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
+			m_stateMgr.get()->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
 			m_ranOff = true;
 		}
 		else
 		{
-			m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
+			m_stateMgr.get()->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
 			m_isDone = true;
 		}
-		m_timer->Reset();
-		m_timer->Start();
+		m_loopCnt = 0;
 	}
-	m_stateMgr->RunCurrentState();
+	m_stateMgr.get()->RunCurrentState();
 }
 
 /// @brief Indicate whether the test has completed or not.

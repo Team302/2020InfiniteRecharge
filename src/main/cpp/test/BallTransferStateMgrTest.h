@@ -20,7 +20,6 @@
 #include <memory>
 
 // FRC includes
-#include <frc/Timer.h>
 
 // Team 302 includes
 #include <test/IStateTest.h>
@@ -51,13 +50,13 @@ class BallTransferStateMgrTest : public IStateTest
 		bool IsDone() override;
 		
 	private:
-		std::unique_ptr<frc::Timer>				m_timer;
 		std::unique_ptr<BallTransferStateMgr>	m_stateMgr;
 		bool                                    m_ranImpeller;
 		bool                                    m_ranOff;
 		bool                                    m_ranShooter;
 		bool 									m_isDone;
-		const double m_stateTestPeriod = 15.0;
+		int										m_loopCnt;
+		const int	m_nloops = 100;
 };
 
 		

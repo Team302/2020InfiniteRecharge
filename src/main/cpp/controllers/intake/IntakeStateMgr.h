@@ -60,7 +60,7 @@ class IntakeStateMgr
 
     private:
 
-        std::map<INTAKE_STATE,IState*> m_stateMap;
+        std::map<INTAKE_STATE,IState*> m_stateEnumToObjectMap;
         IState* m_currentState;
         INTAKE_STATE m_currentStateEnum;
 

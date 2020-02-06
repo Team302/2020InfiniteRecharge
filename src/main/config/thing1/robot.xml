@@ -131,9 +131,9 @@
      Mechanisms
      ==================================================== -->    
     
-	<!--  mechanism type="INTAKE">
+	<!-- mechanism type="INTAKE">
 		<motor usage="INTAKE"
-				canId="7"
+				canId="1"
 				pdpID="7"
 				type="TALONSRX"
 				inverted="false"
@@ -149,12 +149,12 @@
 				forwardlimitswitch="false"
 				forwardlimitswitchopen="true"
 				reverselimitswitch="false"
-				reverselimitswitchopen="true"/>
-    	<solenoid usage="INTAKE"
+				reverselimitswitchopen="true"/ -->
+    	<!--solenoid usage="INTAKE"
     		      canId="50"
     		      channel="0"
-    		      reversed="false" />
-	</mechanism -->
+    		      reversed="false" / -->
+	<!-- /mechanism -->
 
 	<!-- mechanism type="HUMAN_PLAYER_FLAP">
     	<solenoid usage="HUMAN_PLAYER_FLAP"
@@ -163,9 +163,9 @@
     		      reversed="false" />
 	</mechanism -->    
 	
-	<!-- mechanism type="IMPELLER">
+	<mechanism type="IMPELLER">
 		<motor usage="IMPELLER"
-				canId="7"
+				canId="2"
 				pdpID="7"
 				type="TALONSRX"
 				inverted="false"
@@ -183,16 +183,16 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
 
-		<canCoder usage="IMPELLERPOSITION"
-				  canId="30"/>
+		<!-- canCoder usage="IMPELLERPOSITION"
+				  canId="30"/ -->
 	</mechanism>
     
-	<mechanism type="BALL_TRANSFER" -->
+	<mechanism type="BALL_TRANSFER">
     	<!-- solenoid usage="BALL_TRANSFER"
     		      canId="50"
     		      channel="3"
     		      reversed="false" / -->
-		<!-- motor usage="BALL_TRANSFER"
+		<motor usage="BALL_TRANSFER"
 				canId="3"
 				pdpID="3"
 				type="TALONSRX"
@@ -212,11 +212,11 @@
 				reverselimitswitchopen="true"/>
 	</mechanism>
     
-	<mechanism type="SHOOTER">
+	<!-- mechanism type="SHOOTER">
 		<motor usage="SHOOTER_1"
-				canId="16"
+				canId="10"
 				pdpID="0"
-				type="FALCON"
+				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
@@ -251,9 +251,9 @@
 				forwardlimitswitchopen="true"
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
-	</mechanism>
+	</mechanism -->
     
-	<mechanism type="SHOOTER_HOOD" -->
+	<!-- mechanism type="SHOOTER_HOOD" -->
     	<!-- solenoid usage="SHOOTER_HOOD"
     		      canId="50"
     		      channel="7"
