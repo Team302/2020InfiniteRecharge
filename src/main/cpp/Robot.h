@@ -45,6 +45,10 @@
 
 #include <test/ButtonBoxDisplay.h>
 #include <test/XboxDisplay.h>
+#include <test/IntakeStateMgrTest.h>
+#include <test/ImpellerStateMgrTest.h>
+#include <test/BallTransferStateMgrTest.h>
+#include <test/ShooterStateMgrTest.h>
 
 // third party includes
 
@@ -77,18 +81,30 @@ class Robot : public frc::TimedRobot
 
       ButtonBoxDisplay* m_buttonBoxDisplay;
       XboxDisplay* m_xBoxDisplay;
+	  IntakeStateMgrTest* m_intakeStateMgrTest;
+	  ImpellerStateMgrTest* m_impellerStateMgrTest;
+	  BallTransferStateMgrTest* m_ballTransferStateMgrTest;
+	  ShooterStateMgrTest* m_shooterStateMgrTest;
 
       frc::SendableChooser<std::string>   m_testChooser;                    
       const std::string                   m_noTest = "No Test";      
-      const std::string                   m_buttonBox = "Button Box";      
-      const std::string                   m_dragonXBox = "Dragon XBox";       
+      const std::string                   m_buttonBoxTest = "Button Box";      
+      const std::string                   m_dragonXBoxTest = "Dragon XBox";      
+	  const std::string                   m_intakeTest = "Intake";
+	  const std::string                   m_impellerTest = "Impeller";
+	  const std::string                   m_ballTransferTest = "Ball Transfer";
+	  const std::string                   m_shooterTest = "Shooter";
       std::string                         m_testSelected; 
 
       enum TEST_TO_RUN
       {
           NONE,
           BUTTON_BOX,
-          XBOX
+          XBOX,
+		  INTAKE,
+		  IMPELLER,
+		  TRANSFER,
+		  SHOOTER
       };
       TEST_TO_RUN   m_currentTest;      
 

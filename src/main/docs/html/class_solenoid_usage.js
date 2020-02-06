@@ -10,5 +10,5 @@ var class_solenoid_usage =
       [ "CLIMBER", "class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7a62addc6631c99fb7931f9a0f4ca0dbf1", null ],
       [ "MAX_SOLENOID_USAGES", "class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7aac4966e119f9efd286132cec8bdf97cd", null ]
     ] ],
-    [ "GetUsage", "class_solenoid_usage.html#a041ae5300c727d2dc6a06153d0f767df", null ]
+    [ "GetUsage", "class_solenoid_usage.html#a6b9c948a50254b2e8fa3da95ba515ec5", null ]
 ];

@@ -5,5 +5,5 @@ var class_servo_usage =
       [ "SHOOTER_HOOD", "class_servo_usage.html#a77ece7abcaf45a9b3b4d717f9503b5aaa24eab91d6dc3515af025086a4aa2855a", null ],
       [ "MAX_SERVO_USAGES", "class_servo_usage.html#a77ece7abcaf45a9b3b4d717f9503b5aaac9ebb567ff36eb3756660303089825d6", null ]
     ] ],
-    [ "GetUsage", "class_servo_usage.html#a771e321c61ce6cc567ce7a45612b5ecf", null ]
+    [ "GetUsage", "class_servo_usage.html#a93b051c007f23891222f48f2818ff426", null ]
 ];

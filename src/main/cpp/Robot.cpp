@@ -32,6 +32,14 @@
 //#include <controllers/controlPanel/ControlPanelStateMgr.h>
 //#include <controllers/climber/ClimberStateMgr.h>
 
+
+#include <test/ButtonBoxDisplay.h>
+#include <test/XboxDisplay.h>
+#include <test/IntakeStateMgrTest.h>
+#include <test/ImpellerStateMgrTest.h>
+#include <test/BallTransferStateMgrTest.h>
+#include <test/ShooterStateMgrTest.h>
+
 using namespace std;
 using namespace frc;
 
@@ -61,8 +69,13 @@ void Robot::RobotInit()
 
         // pick test mode
     m_testChooser.SetDefaultOption( m_noTest, m_noTest);
-    m_testChooser.AddOption( m_buttonBox, m_buttonBox );
-    m_testChooser.AddOption( m_dragonXBox, m_dragonXBox );
+    m_testChooser.AddOption( m_buttonBoxTest, m_buttonBoxTest );
+    m_testChooser.AddOption( m_dragonXBoxTest, m_dragonXBoxTest );    
+    m_testChooser.AddOption( m_intakeTest, m_intakeTest );
+    m_testChooser.AddOption( m_impellerTest, m_impellerTest );
+    m_testChooser.AddOption( m_ballTransferTest, m_ballTransferTest );
+    m_testChooser.AddOption( m_shooterTest, m_shooterTest );
+
     SmartDashboard::PutData("Test", &m_testChooser);
 
     m_buttonBoxDisplay = nullptr;
@@ -131,16 +144,36 @@ void Robot::TeleopPeriodic()
 void Robot::TestInit() 
 {
     m_testSelected = m_testChooser.GetSelected();
-    if ( m_testSelected == m_buttonBox )
+    if ( m_testSelected == m_buttonBoxTest )
     {
         m_currentTest = BUTTON_BOX;
         m_buttonBoxDisplay = new ButtonBoxDisplay();
     }
-    else if ( m_testSelected == m_buttonBox )
+    else if ( m_testSelected == m_dragonXBoxTest )
     {
         m_currentTest = XBOX;
         m_xBoxDisplay = new XboxDisplay();
     }
+	else if ( m_testSelected == m_intakeTest )
+	{
+        m_currentTest = INTAKE;
+		m_intakeStateMgrTest = new IntakeStateMgrTest();
+	}
+	else if ( m_testSelected == m_impellerTest )
+	{
+        m_currentTest = IMPELLER;
+		m_impellerStateMgrTest = new ImpellerStateMgrTest();
+	}
+	else if ( m_testSelected == m_ballTransferTest )
+	{
+        m_currentTest = TRANSFER;
+		m_ballTransferStateMgrTest = new BallTransferStateMgrTest();
+	}
+	else if ( m_testSelected == m_shooterTest )
+	{
+        m_currentTest = SHOOTER;
+		m_shooterStateMgrTest = new ShooterStateMgrTest();
+	}
     else
     {
         m_currentTest = NONE;
@@ -161,6 +194,34 @@ void Robot::TestPeriodic()
         case XBOX:
             m_xBoxDisplay->periodic();
             break;
+			
+		case INTAKE: 
+			if ( !m_intakeStateMgrTest->IsDone() )
+			{
+				m_intakeStateMgrTest->Periodic();
+			}
+			break;
+			
+		case IMPELLER: 
+			if ( !m_intakeStateMgrTest->IsDone() )
+			{
+				m_intakeStateMgrTest->Periodic();
+			}
+			break;
+			
+		case TRANSFER: 
+			if ( !m_ballTransferStateMgrTest->IsDone() )
+			{
+				m_ballTransferStateMgrTest->Periodic();
+			}
+			break;
+			
+		case SHOOTER: 
+			if ( !m_shooterStateMgrTest->IsDone() )
+			{
+				m_shooterStateMgrTest->Periodic();
+			}
+			break;
 
         default:
             break;
