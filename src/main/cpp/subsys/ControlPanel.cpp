@@ -77,10 +77,10 @@ void ControlPanel::SetOutput
     double                     value       
 )
 {
-    if ( m_spinner != nullptr )
+    if ( m_spinner.get() != nullptr )
     {
-        m_spinner->SetControlMode(controlType);
-        m_spinner->Set( value );
+        m_spinner.get()->SetControlMode(controlType);
+        m_spinner.get()->Set( value );
     }
     else 
     {
@@ -93,9 +93,9 @@ void ControlPanel::ActivateSolenoid
     bool activate
 )
 {
-    if ( m_manipulatorExtender != nullptr )
+    if ( m_manipulatorExtender.get() != nullptr )
     {
-        m_manipulatorExtender->Set( activate );
+        m_manipulatorExtender.get()->Set( activate );
     }
     else
     {
@@ -111,9 +111,9 @@ bool ControlPanel::IsSolenoidActivated
 {
     bool on = false;
 
-    if ( m_manipulatorExtender != nullptr )
+    if ( m_manipulatorExtender.get() != nullptr )
     {
-       on = m_manipulatorExtender -> Get();
+       on = m_manipulatorExtender.get() -> Get();
     }
     else
     {

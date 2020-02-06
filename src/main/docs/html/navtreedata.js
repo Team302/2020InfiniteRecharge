@@ -55,14 +55,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_analog_axis_8cpp.html",
-"_dragon_talon_tach_8cpp_source.html",
-"_p_d_p_defn_8h.html",
-"class_ball_transfer_state_mgr.html#a3428e4026de58f17feb5ec05b7566c88",
-"class_dragon_falcon.html#a801071a9180910e6d5d2cdf120b54bbf",
-"class_drive_train_side.html#a0ccf01a971eab34f5a053e6184af1b71",
-"class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2",
-"class_pigeon_defn.html#a5944df09a0fa42bc51556b42c883fb2f",
-"class_xbox_display.html"
+"_dragon_spark_max_8h.html",
+"_no_deadband_value_8cpp.html",
+"class_ball_manipulator.html#ac6b06504ca8077c1b533895b2793e5a1",
+"class_do_nothing.html#aa05ad0a633ed8380cc8725b9b7747660",
+"class_dragon_vision.html#af25b1d3c63f9ee206441e6d660a22fd2",
+"class_i_dragon_game_pad.html#afde07811ccdd7565bc40c381adecee4d",
+"class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba71099bf20bbaf6649b120aaf51f32293",
+"class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aaad6666ff47670ed1b6d5d21023c82ce"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

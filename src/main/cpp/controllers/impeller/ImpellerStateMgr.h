@@ -62,7 +62,7 @@ class ImpellerStateMgr
 
     private:
 
-        std::map<IMPELLER_STATE,IState*> m_stateMap;
+        std::map<IMPELLER_STATE,IState*> m_stateEnumToObjectMap;
         IState* m_currentState;
         IMPELLER_STATE m_currentStateEnum;
 

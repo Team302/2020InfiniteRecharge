@@ -106,21 +106,21 @@ $(document).ready(function(){initNavTree('_turn_angle_8cpp_source.html','');});
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// C++ Includes</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// FRC includes</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;frc/Timer.h&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_turn_angle_8h.html">auton/primitives/TurnAngle.h</a>&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_primitive_params_8h.html">auton/PrimitiveParams.h</a>&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_primitive_8h.html">auton/primitives/IPrimitive.h</a>&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_chassis_factory_8h.html">subsys/ChassisFactory.h</a>&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_control_modes_8h.html">controllers/ControlModes.h</a>&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_chassis_8h.html">subsys/IChassis.h</a>&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_limit_value_8h.html">utils/LimitValue.h</a>&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// FRC includes</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;frc/Timer.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Team 302 includes</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_turn_angle_8h.html">auton/primitives/TurnAngle.h</a>&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_primitive_params_8h.html">auton/PrimitiveParams.h</a>&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_primitive_8h.html">auton/primitives/IPrimitive.h</a>&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_chassis_factory_8h.html">subsys/ChassisFactory.h</a>&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_control_modes_8h.html">controllers/ControlModes.h</a>&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_chassis_8h.html">subsys/IChassis.h</a>&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_logger_8h.html">utils/Logger.h</a>&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Third Party Includes</span></div>
@@ -169,7 +169,7 @@ $(document).ready(function(){initNavTree('_turn_angle_8cpp_source.html','');});
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">    float deltaAngle = m_targetAngle - m_chassis-&gt;GetHeading();</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">    float velocity = deltaAngle * ANGLE_DIFFERENCE_VELOCITY_MULTIPLIER;</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">    bool sign = velocity &gt; 0;   //Store sign of velocity as positive = true</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">    velocity = LimitValue::ForceInRange(std::abs(velocity), MIN_VELOCITY, MAX_VELOCITY);</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">    velocity = clamp(abs(velocity), MIN_VELOCITY, MAX_VELOCITY);</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">    if (!sign)                  //If the sign was negative...</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">    {</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">        velocity = -velocity;   //... make it negative again :)</span></div>
@@ -209,9 +209,8 @@ $(document).ready(function(){initNavTree('_turn_angle_8cpp_source.html','');});
 <div class="ttc" id="aclass_turn_angle_html_a80a892d30883e9b570227eece66bf36c"><div class="ttname"><a href="class_turn_angle.html#a80a892d30883e9b570227eece66bf36c">TurnAngle::Init</a></div><div class="ttdeci">void Init(PrimitiveParams *params) override</div><div class="ttdef"><b>Definition:</b> <a href="_turn_angle_8cpp_source.html#l00053">TurnAngle.cpp:53</a></div></div>
 <div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
 <div class="ttc" id="aclass_chassis_factory_html"><div class="ttname"><a href="class_chassis_factory.html">ChassisFactory</a></div><div class="ttdef"><b>Definition:</b> <a href="_chassis_factory_8h_source.html#l00010">ChassisFactory.h:10</a></div></div>
-<div class="ttc" id="a_limit_value_8h_html"><div class="ttname"><a href="_limit_value_8h.html">LimitValue.h</a></div></div>
 <div class="ttc" id="a_turn_angle_8h_html"><div class="ttname"><a href="_turn_angle_8h.html">TurnAngle.h</a></div></div>
-<div class="ttc" id="aclass_primitive_params_html_a478d763e9de6526e13de4d23d1dca71c"><div class="ttname"><a href="class_primitive_params.html#a478d763e9de6526e13de4d23d1dca71c">PrimitiveParams::GetTime</a></div><div class="ttdeci">float GetTime() const</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8cpp_source.html#l00044">PrimitiveParams.cpp:44</a></div></div>
+<div class="ttc" id="aclass_primitive_params_html_a478d763e9de6526e13de4d23d1dca71c"><div class="ttname"><a href="class_primitive_params.html#a478d763e9de6526e13de4d23d1dca71c">PrimitiveParams::GetTime</a></div><div class="ttdeci">float GetTime() const</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8cpp_source.html#l00043">PrimitiveParams.cpp:43</a></div></div>
 <div class="ttc" id="a_primitive_params_8h_html"><div class="ttname"><a href="_primitive_params_8h.html">PrimitiveParams.h</a></div></div>
 <div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>
 <div class="ttc" id="aclass_turn_angle_html_a8cff17364be35148e04ac801c091b31b"><div class="ttname"><a href="class_turn_angle.html#a8cff17364be35148e04ac801c091b31b">TurnAngle::TurnAngle</a></div><div class="ttdeci">TurnAngle()</div><div class="ttdef"><b>Definition:</b> <a href="_turn_angle_8cpp_source.html#l00043">TurnAngle.cpp:43</a></div></div>

@@ -37,7 +37,7 @@
 using namespace std;
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
-ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
+ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
                                        m_currentState()
 {
     // Parse the configuration file 
@@ -45,22 +45,22 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
     vector<MechanismTargetData*> targetData = stateXML.get()->ParseXML( MechanismTypes::MECHANISM_TYPE::IMPELLER );
 
     // initialize the xml string to state map
-    map<string, IMPELLER_STATE> stateMap;
-    stateMap["IMPELLEROFF"] = IMPELLER_STATE::OFF;
-    stateMap["IMPELLERHOLD"] = IMPELLER_STATE::HOLD;
-    stateMap["IMPELLERAGITATE"] = IMPELLER_STATE::AGITATE;
-    stateMap["IMPELLERTOSHOOTER"]  = IMPELLER_STATE::TO_SHOOTER;
+    map<string, IMPELLER_STATE> stateStringToEnumMap;
+    stateStringToEnumMap["IMPELLEROFF"] = IMPELLER_STATE::OFF;
+    stateStringToEnumMap["IMPELLERHOLD"] = IMPELLER_STATE::HOLD;
+    stateStringToEnumMap["IMPELLERAGITATE"] = IMPELLER_STATE::AGITATE;
+    stateStringToEnumMap["IMPELLERTOSHOOTER"]  = IMPELLER_STATE::TO_SHOOTER;
 
     // create the states passing the configuration data
     for ( auto td: targetData )
     {
         auto stateString = td->GetStateString();
-        auto stateItr = stateMap.find( stateString );
-        if ( stateItr != stateMap.end() )
+        auto stateStringToEnumMapItr = stateStringToEnumMap.find( stateString );
+        if ( stateStringToEnumMapItr != stateStringToEnumMap.end() )
         {
-            auto stateEnum = stateItr->second;
-            auto stateIt = m_stateMap.find( stateEnum );
-            if ( stateIt == m_stateMap.end() )
+            auto stateEnum = stateStringToEnumMapItr->second;
+            auto stateEnumToObjectMapItr = m_stateEnumToObjectMap.find( stateEnum );
+            if ( stateEnumToObjectMapItr == m_stateEnumToObjectMap.end() )
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
@@ -68,25 +68,25 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
                 switch ( stateEnum )
                 {
                     case IMPELLER_STATE::HOLD:
-                    {   // todo update the constructor take in controlData and target
+                    {   
                         auto thisState = new ImpellerHold(controlData, target);
-                        m_stateMap[IMPELLER_STATE::HOLD] = thisState;
+                        m_stateEnumToObjectMap[IMPELLER_STATE::HOLD] = thisState;
                         Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller Hold State added to Map");
                     }
                     break;
 
                     case IMPELLER_STATE::TO_SHOOTER:
-                    {   // todo update the constructor take in controlData and target
+                    {   
                         auto thisState = new ImpellerToShooter(controlData, target);
-                        m_stateMap[IMPELLER_STATE::OFF] = thisState;
+                        m_stateEnumToObjectMap[IMPELLER_STATE::OFF] = thisState;
                         Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller To Shooter State added to Map");
                     }
                     break;
 
                     case IMPELLER_STATE::OFF:
-                    {   // todo update the constructor take in controlData and target
+                    {   
                         auto thisState = new ImpellerOff(controlData, target);
-                        m_stateMap[IMPELLER_STATE::OFF] = thisState;
+                        m_stateEnumToObjectMap[IMPELLER_STATE::OFF] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
@@ -95,9 +95,9 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
                     break;
 
                     case IMPELLER_STATE::AGITATE:
-                    {   // todo update the constructor take in controlData and target
+                    {   
                         auto thisState = new ImpellerAgitate(controlData, target);
-                        m_stateMap[IMPELLER_STATE::AGITATE] = thisState;
+                        m_stateEnumToObjectMap[IMPELLER_STATE::AGITATE] = thisState;
                         Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller Agitate State added to Map");
                     }
                     break;
@@ -109,7 +109,10 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateMap(),
                     break;
                 }
             }
-            Logger::GetLogger()->LogError( string("ImpellerStateMgr::ImpellerStateMgr"), string("multiple mechanism state info for state"));
+            else
+            {
+                Logger::GetLogger()->LogError( string("ImpellerStateMgr::ImpellerStateMgr"), string("multiple mechanism state info for state"));
+            }
         }
         else
         {
@@ -173,8 +176,8 @@ void ImpellerStateMgr::SetCurrentState
     bool            run
 )
 {
-    auto itr = m_stateMap.find( stateEnum );
-    if ( itr != m_stateMap.end() )
+    auto itr = m_stateEnumToObjectMap.find( stateEnum );
+    if ( itr != m_stateEnumToObjectMap.end() )
     {
         auto state = itr->second;
         

@@ -63,11 +63,11 @@ void Climber::SetOutput
 )
 {
     m_target = value;
-    if ( m_motorMaster != nullptr )
+    if ( m_motorMaster.get() != nullptr )
     {
 
-        m_motorMaster->SetControlMode( controlType );
-        m_motorMaster->Set( value );
+        m_motorMaster.get()->SetControlMode( controlType );
+        m_motorMaster.get()->Set( value );
         m_target = value;
     }
     else
@@ -85,9 +85,9 @@ void Climber::ActivateSolenoid
     bool activate
 )
 {
-    if (m_solenoidMaster != nullptr )
+    if (m_solenoidMaster.get() != nullptr )
     {
-        m_solenoidMaster->Set(activate);
+        m_solenoidMaster.get()->Set(activate);
     }
     else
     {
@@ -101,9 +101,9 @@ void Climber::ActivateSolenoid
 bool Climber::IsSolenoidActivated()
 {
     bool solenoidStatus;
-    if ( m_solenoidMaster != nullptr )
+    if ( m_solenoidMaster.get() != nullptr )
     {
-       solenoidStatus = m_solenoidMaster->Get();
+       solenoidStatus = m_solenoidMaster.get()->Get();
     }
     else
     {
@@ -118,10 +118,10 @@ bool Climber::IsSolenoidActivated()
 double Climber::GetCurrentPosition() const
 {
     double distance = 0.0;
-    if (m_motorMaster != nullptr )
+    if (m_motorMaster.get() != nullptr )
     {
         distance = ( m_winchDiameter * M_PI);
-        auto nRotations = m_motorMaster->GetRotations();
+        auto nRotations = m_motorMaster.get()->GetRotations();
         distance *= nRotations;
     }
     else
@@ -142,10 +142,10 @@ double Climber::GetTargetPosition() const
 double Climber::GetCurrentSpeed() const
 {
     double speed = 0.0;
-    if ( m_motorMaster != nullptr )
+    if ( m_motorMaster.get() != nullptr )
     {
         speed = ( m_winchDiameter * M_PI ); // distance the wheel travels per revolution (inches)
-        auto rps = m_motorMaster->GetRPS(); // number of rotations per second
+        auto rps = m_motorMaster.get()->GetRPS(); // number of rotations per second
         speed *= rps;                       // distance per revolution * revolutions per second is inches per second
     }
     else
@@ -172,5 +172,5 @@ void Climber::SetControlConstants
 )
 {
     // todo:  need to account for voltage mode
-    m_motorMaster->SetControlConstants(pid);
+    m_motorMaster.get()->SetControlConstants(pid);
 }

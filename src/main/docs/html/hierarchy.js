@@ -22,13 +22,13 @@ var hierarchy =
     [ "ControlDataDefn", "class_control_data_defn.html", null ],
     [ "ControlModes", "class_control_modes.html", null ],
     [ "ControlPanelColors", "class_control_panel_colors.html", null ],
+    [ "ControlPanelStateMgr", "class_control_panel_state_mgr.html", null ],
     [ "CyclePrimitives", "class_cycle_primitives.html", null ],
     [ "DigitalInputDefn", "class_digital_input_defn.html", null ],
     [ "DigitalInputFactory", "class_digital_input_factory.html", null ],
     [ "DigitalInputUsage", "class_digital_input_usage.html", null ],
     [ "DistanceSensorFactory", "class_distance_sensor_factory.html", null ],
     [ "DragonDigitalInput", "class_dragon_digital_input.html", null ],
-    [ "DragonMath", "class_dragon_math.html", null ],
     [ "DragonMotorControllerFactory", "class_dragon_motor_controller_factory.html", null ],
     [ "DragonPDP", "class_dragon_p_d_p.html", null ],
     [ "DragonPigeon", "class_dragon_pigeon.html", null ],
@@ -123,12 +123,11 @@ var hierarchy =
         [ "GTADrive", "class_g_t_a_drive.html", null ]
       ] ],
       [ "ControlPanelColorTurn", "class_control_panel_color_turn.html", null ],
+      [ "ControlPanelManual", "class_control_panel_manual.html", null ],
       [ "ControlPanelRaise", "class_control_panel_raise.html", null ],
       [ "ControlPanelStow", "class_control_panel_stow.html", null ],
       [ "ControlPanelTurn", "class_control_panel_turn.html", null ],
       [ "HoldTurretPosition", "class_hold_turret_position.html", null ],
-      [ "IntakeOff", "class_intake_off.html", null ],
-      [ "IntakeOn", "class_intake_on.html", null ],
       [ "LimelightAim", "class_limelight_aim.html", null ],
       [ "ManualAim", "class_manual_aim.html", null ],
       [ "MechanismState", "class_mechanism_state.html", [
@@ -140,6 +139,8 @@ var hierarchy =
         [ "ImpellerHold", "class_impeller_hold.html", null ],
         [ "ImpellerOff", "class_impeller_off.html", null ],
         [ "ImpellerToShooter", "class_impeller_to_shooter.html", null ],
+        [ "IntakeOff", "class_intake_off.html", null ],
+        [ "IntakeOn", "class_intake_on.html", null ],
         [ "ShooterHoodHoldPosition", "class_shooter_hood_hold_position.html", null ],
         [ "ShooterHoodMoveDown", "class_shooter_hood_move_down.html", null ],
         [ "ShooterHoodMoveUp", "class_shooter_hood_move_up.html", null ]
@@ -149,6 +150,12 @@ var hierarchy =
       [ "ShooterShoot", "class_shooter_shoot.html", null ],
       [ "TankDrive", "class_tank_drive.html", null ]
     ] ],
+    [ "IStateTest", "class_i_state_test.html", [
+      [ "BallTransferStateMgrTest", "class_ball_transfer_state_mgr_test.html", null ],
+      [ "ImpellerStateMgrTest", "class_impeller_state_mgr_test.html", null ],
+      [ "IntakeStateMgrTest", "class_intake_state_mgr_test.html", null ],
+      [ "ShooterStateMgrTest", "class_shooter_state_mgr_test.html", null ]
+    ] ],
     [ "LED", "class_l_e_d.html", null ],
     [ "LEDDefn", "class_l_e_d_defn.html", null ],
     [ "LEDFactory", "class_l_e_d_factory.html", null ],
@@ -156,7 +163,6 @@ var hierarchy =
     [ "LidarFactory", "class_lidar_factory.html", null ],
     [ "LimelightDefn", "class_limelight_defn.html", null ],
     [ "LimelightFactory", "class_limelight_factory.html", null ],
-    [ "LimitValue", "class_limit_value.html", null ],
     [ "Logger", "class_logger.html", null ],
     [ "MechanismDefn", "class_mechanism_defn.html", null ],
     [ "MechanismFactory", "class_mechanism_factory.html", null ],
@@ -170,7 +176,6 @@ var hierarchy =
     [ "PCMDefn", "class_p_c_m_defn.html", null ],
     [ "PDPDefn", "class_p_d_p_defn.html", null ],
     [ "PigeonDefn", "class_pigeon_defn.html", null ],
-    [ "Point2D", "struct_point2_d.html", null ],
     [ "PrimitiveFactory", "class_primitive_factory.html", null ],
     [ "PrimitiveParams", "class_primitive_params.html", null ],
     [ "PrimitiveParser", "class_primitive_parser.html", null ],
@@ -192,6 +197,5 @@ var hierarchy =
     ] ],
     [ "UltrasonicFactory", "class_ultrasonic_factory.html", null ],
     [ "UsageValidation", "class_usage_validation.html", null ],
-    [ "Vector2", "struct_vector2.html", null ],
     [ "XboxDisplay", "class_xbox_display.html", null ]
 ];

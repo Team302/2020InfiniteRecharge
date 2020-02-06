@@ -98,79 +98,72 @@ $(document).ready(function(){initNavTree('_dragon_pigeon_8cpp_source.html','');}
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;ctre/phoenix/Sensors/PigeonIMU.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_pigeon_8h.html">hw/DragonPigeon.h</a>&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;frc/SmartDashboard/SmartDashboard.h&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using namespace </span>frc;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span>ctre;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span>phoenix;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span>motorcontrol;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using namespace </span>can;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<a class="code" href="class_dragon_pigeon.html#ada197ad628667904b0d3968d303aaa1c">DragonPigeon::DragonPigeon</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_dragon_pigeon.html#a05a336e9318cbe447d7e9dd83b998057">   24</a></span>&#160;(</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span>  canID</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    m_pigeon = make_unique&lt;ctre::phoenix::sensors::PigeonIMU&gt;( canID );</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    m_initialRoll  = GetRawRoll( );</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    m_initialPitch = GetRawPitch( );</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    m_initialYaw   = GetRawYaw( );</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_dragon_pigeon.html#aaee9c3491f04ca6aecfea032b1e9c6d7">   35</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_pigeon.html#aaee9c3491f04ca6aecfea032b1e9c6d7">DragonPigeon::GetPitch</a>()</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> -(GetRawPitch() - m_initialPitch); <span class="comment">//TODO: add inversions into code</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_dragon_pigeon.html#a21279deb66d0ca5b329c26f393bedb21">   40</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_pigeon.html#a21279deb66d0ca5b329c26f393bedb21">DragonPigeon::GetRoll</a>()</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> GetRawRoll() - m_initialRoll;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_dragon_pigeon.html#aa1c8742bde5893d9b653bd26f083baaa">   45</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_pigeon.html#aa1c8742bde5893d9b653bd26f083baaa">DragonPigeon::GetYaw</a>()</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> GetRawYaw() - m_initialYaw;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">double</span> DragonPigeon::GetRawPitch()</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">double</span> ypr[3];</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_pigeon-&gt;GetYawPitchRoll(ypr);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// return ypr[1]; // yaw = 0 pitch = 1 roll = 2 </span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> ypr[2];</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">double</span> DragonPigeon::GetRawRoll()</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">double</span> ypr[3];</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    m_pigeon-&gt;GetYawPitchRoll(ypr);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// return ypr[2]; // yaw = 0 pitch = 1 roll = 2 </span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> ypr[1];</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">double</span> DragonPigeon::GetRawYaw()</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">double</span> ypr[3];</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    m_pigeon-&gt;GetYawPitchRoll(ypr);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> ypr[0]; <span class="comment">// yaw = 0 pitch = 1 roll = 2 </span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>ctre::phoenix::sensors;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<a class="code" href="class_dragon_pigeon.html#ada197ad628667904b0d3968d303aaa1c">DragonPigeon::DragonPigeon</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_dragon_pigeon.html#a05a336e9318cbe447d7e9dd83b998057">   17</a></span>&#160;(</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span>  canID</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    m_pigeon = make_unique&lt;PigeonIMU&gt;( canID );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    m_initialRoll  = GetRawRoll( );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    m_initialPitch = GetRawPitch( );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    m_initialYaw   = GetRawYaw( );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_dragon_pigeon.html#aaee9c3491f04ca6aecfea032b1e9c6d7">   28</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_pigeon.html#aaee9c3491f04ca6aecfea032b1e9c6d7">DragonPigeon::GetPitch</a>()</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> -(GetRawPitch() - m_initialPitch); <span class="comment">//TODO: add inversions into code</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_dragon_pigeon.html#a21279deb66d0ca5b329c26f393bedb21">   33</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_pigeon.html#a21279deb66d0ca5b329c26f393bedb21">DragonPigeon::GetRoll</a>()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> GetRawRoll() - m_initialRoll;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_dragon_pigeon.html#aa1c8742bde5893d9b653bd26f083baaa">   38</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_pigeon.html#aa1c8742bde5893d9b653bd26f083baaa">DragonPigeon::GetYaw</a>()</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> GetRawYaw() - m_initialYaw;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">double</span> DragonPigeon::GetRawPitch()</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">double</span> ypr[3];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    m_pigeon-&gt;GetYawPitchRoll(ypr);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// return ypr[1]; // yaw = 0 pitch = 1 roll = 2 </span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> ypr[2];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">double</span> DragonPigeon::GetRawRoll()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">double</span> ypr[3];</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_pigeon-&gt;GetYawPitchRoll(ypr);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// return ypr[2]; // yaw = 0 pitch = 1 roll = 2 </span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> ypr[1];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">double</span> DragonPigeon::GetRawYaw()</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">double</span> ypr[3];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    m_pigeon-&gt;GetYawPitchRoll(ypr);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> ypr[0]; <span class="comment">// yaw = 0 pitch = 1 roll = 2 </span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_dragon_pigeon_8h_html"><div class="ttname"><a href="_dragon_pigeon_8h.html">DragonPigeon.h</a></div></div>
-<div class="ttc" id="aclass_dragon_pigeon_html_aaee9c3491f04ca6aecfea032b1e9c6d7"><div class="ttname"><a href="class_dragon_pigeon.html#aaee9c3491f04ca6aecfea032b1e9c6d7">DragonPigeon::GetPitch</a></div><div class="ttdeci">double GetPitch()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_pigeon_8cpp_source.html#l00035">DragonPigeon.cpp:35</a></div></div>
-<div class="ttc" id="aclass_dragon_pigeon_html_a21279deb66d0ca5b329c26f393bedb21"><div class="ttname"><a href="class_dragon_pigeon.html#a21279deb66d0ca5b329c26f393bedb21">DragonPigeon::GetRoll</a></div><div class="ttdeci">double GetRoll()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_pigeon_8cpp_source.html#l00040">DragonPigeon.cpp:40</a></div></div>
+<div class="ttc" id="aclass_dragon_pigeon_html_aaee9c3491f04ca6aecfea032b1e9c6d7"><div class="ttname"><a href="class_dragon_pigeon.html#aaee9c3491f04ca6aecfea032b1e9c6d7">DragonPigeon::GetPitch</a></div><div class="ttdeci">double GetPitch()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_pigeon_8cpp_source.html#l00028">DragonPigeon.cpp:28</a></div></div>
+<div class="ttc" id="aclass_dragon_pigeon_html_a21279deb66d0ca5b329c26f393bedb21"><div class="ttname"><a href="class_dragon_pigeon.html#a21279deb66d0ca5b329c26f393bedb21">DragonPigeon::GetRoll</a></div><div class="ttdeci">double GetRoll()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_pigeon_8cpp_source.html#l00033">DragonPigeon.cpp:33</a></div></div>
 <div class="ttc" id="aclass_dragon_pigeon_html_ada197ad628667904b0d3968d303aaa1c"><div class="ttname"><a href="class_dragon_pigeon.html#ada197ad628667904b0d3968d303aaa1c">DragonPigeon::DragonPigeon</a></div><div class="ttdeci">DragonPigeon()=delete</div></div>
-<div class="ttc" id="aclass_dragon_pigeon_html_aa1c8742bde5893d9b653bd26f083baaa"><div class="ttname"><a href="class_dragon_pigeon.html#aa1c8742bde5893d9b653bd26f083baaa">DragonPigeon::GetYaw</a></div><div class="ttdeci">double GetYaw()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_pigeon_8cpp_source.html#l00045">DragonPigeon.cpp:45</a></div></div>
+<div class="ttc" id="aclass_dragon_pigeon_html_aa1c8742bde5893d9b653bd26f083baaa"><div class="ttname"><a href="class_dragon_pigeon.html#aa1c8742bde5893d9b653bd26f083baaa">DragonPigeon::GetYaw</a></div><div class="ttdeci">double GetYaw()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_pigeon_8cpp_source.html#l00038">DragonPigeon.cpp:38</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

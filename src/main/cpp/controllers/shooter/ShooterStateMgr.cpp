@@ -36,7 +36,7 @@
 using namespace std;
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
-ShooterStateMgr::ShooterStateMgr() : m_stateMap(),
+ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
                                      m_currentState()
 {
     // Parse the configuration file 
@@ -44,21 +44,21 @@ ShooterStateMgr::ShooterStateMgr() : m_stateMap(),
     vector<MechanismTargetData*> targetData = stateXML.get()->ParseXML( MechanismTypes::MECHANISM_TYPE::SHOOTER );
 
     // initialize the xml string to state map
-    map<string, SHOOTER_STATE> stateMap;
-    stateMap["SHOOTEROFF"] = SHOOTER_STATE::OFF;
-    stateMap["SHOOTERGETREADY"]  = SHOOTER_STATE::GET_READY;
-    stateMap["SHOOTERSHOOT"] = SHOOTER_STATE::SHOOT;
+    map<string, SHOOTER_STATE> stateStringToEnumMap;
+    stateStringToEnumMap["SHOOTEROFF"] = SHOOTER_STATE::OFF;
+    stateStringToEnumMap["SHOOTERGETREADY"]  = SHOOTER_STATE::GET_READY;
+    stateStringToEnumMap["SHOOTERSHOOT"] = SHOOTER_STATE::SHOOT;
 
     // create the states passing the configuration data
     for ( auto td: targetData )
     {
         auto stateString = td->GetStateString();
-        auto stateItr = stateMap.find( stateString );
-        if ( stateItr != stateMap.end() )
+        auto stateStringToEnumMapItr = stateStringToEnumMap.find( stateString );
+        if ( stateStringToEnumMapItr != stateStringToEnumMap.end() )
         {
-            auto stateEnum = stateItr->second;
-            auto stateIt = m_stateMap.find( stateEnum );
-            if ( stateIt == m_stateMap.end() )
+            auto stateEnum = stateStringToEnumMapItr->second;
+            auto stateEnumToObjectMapItr = m_stateEnumToObjectMap.find( stateEnum );
+            if ( stateEnumToObjectMapItr == m_stateEnumToObjectMap.end() )
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
@@ -68,7 +68,7 @@ ShooterStateMgr::ShooterStateMgr() : m_stateMap(),
                     case SHOOTER_STATE::OFF:
                     {   
                         auto thisState = new ShooterOff( controlData, target );
-                        m_stateMap[stateEnum] = thisState;
+                        m_stateEnumToObjectMap[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
@@ -78,14 +78,14 @@ ShooterStateMgr::ShooterStateMgr() : m_stateMap(),
                     case SHOOTER_STATE::GET_READY:
                     {   
                         auto thisState = new ShooterGetReady( controlData, target );
-                        m_stateMap[stateEnum] = thisState;
+                        m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;
 
                     case SHOOTER_STATE::SHOOT:
                     {   
                         auto thisState = new ShooterShoot( controlData, target );
-                        m_stateMap[stateEnum] = thisState;
+                        m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;
 
@@ -96,7 +96,10 @@ ShooterStateMgr::ShooterStateMgr() : m_stateMap(),
                     break;
                 }
             }
-            Logger::GetLogger()->LogError( string("ShooterStateMgr::ShooterStateMgr"), string("multiple mechanism state info for state"));
+            else
+            {
+                Logger::GetLogger()->LogError( string("ShooterStateMgr::ShooterStateMgr"), string("multiple mechanism state info for state"));
+            }
         }
         else
         {
@@ -144,10 +147,10 @@ void ShooterStateMgr::SetCurrentState
     bool            run
 )
 {
-    auto itr = m_stateMap.find( stateEnum );
-    if ( itr != m_stateMap.end() )
+    auto stateEnumToObjectMapItr = m_stateEnumToObjectMap.find( stateEnum );
+    if ( stateEnumToObjectMapItr != m_stateEnumToObjectMap.end() )
     {
-        auto state = itr->second;
+        auto state = stateEnumToObjectMapItr->second;
         if ( state != m_currentState )
         {
             m_currentState = state;

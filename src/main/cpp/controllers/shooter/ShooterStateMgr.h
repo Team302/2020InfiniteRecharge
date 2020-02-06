@@ -61,7 +61,7 @@ class ShooterStateMgr
 
     private:
 
-        std::map<SHOOTER_STATE,IState*> m_stateMap;
+        std::map<SHOOTER_STATE,IState*> m_stateEnumToObjectMap;
         IState* m_currentState;
         SHOOTER_STATE m_currentStateEnum;
 

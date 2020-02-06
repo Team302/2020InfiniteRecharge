@@ -32,8 +32,8 @@ void Shooter::SetOutput(ControlModes::CONTROL_TYPE controlType, double value)
             break;
         
     }
-    m_masterMotor->SetControlMode(controlType);
-    m_masterMotor->Set(value);
+    m_masterMotor.get()->SetControlMode(controlType);
+    m_masterMotor.get()->Set(value);
 }
 
 void Shooter::ActivateSolenoid(bool activate)
@@ -46,12 +46,12 @@ bool Shooter::IsSolenoidActivated()
 
 double Shooter::GetCurrentPosition() const
 {
-    return m_masterMotor->GetRotations() * 360.0;
+    return m_masterMotor.get()->GetRotations() * 360.0;
 }
 
 double Shooter::GetCurrentSpeed() const 
 {
-    m_masterMotor->GetRPS();
+    m_masterMotor.get()->GetRPS();
 }
 
 double Shooter::GetTargetPosition() const
@@ -66,5 +66,5 @@ double Shooter::GetTargetSpeed() const
 
 void Shooter::SetControlConstants(ControlData* pid)
 {
-    m_masterMotor->SetControlConstants(pid);
+    m_masterMotor.get()->SetControlConstants(pid);
 }

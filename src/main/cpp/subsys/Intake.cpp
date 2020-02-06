@@ -58,10 +58,10 @@ void Intake::SetOutput
 (ControlModes::CONTROL_TYPE controlType,
    double                   value       )
 {
-    if ( m_master != nullptr )
+    if ( m_master.get() != nullptr )
     {
-        m_master->SetControlMode(controlType);
-        m_master->Set( value );
+        m_master.get()->SetControlMode(controlType);
+        m_master.get()->Set( value );
     }
     else 
     {
@@ -74,9 +74,9 @@ void Intake::ActivateSolenoid
     bool activate
 )
 {
-    if ( m_crawlingLifter != nullptr )
+    if ( m_crawlingLifter.get() != nullptr )
     {
-        m_crawlingLifter->Set( activate );
+        m_crawlingLifter.get()->Set( activate );
     }
     else
     {
@@ -92,9 +92,9 @@ bool Intake::IsSolenoidActivated
 {
     bool on = false;
 
-    if ( m_crawlingLifter != nullptr )
+    if ( m_crawlingLifter.get() != nullptr )
     {
-       on = m_crawlingLifter -> Get();
+       on = m_crawlingLifter.get() -> Get();
     }
     else
     {

@@ -115,42 +115,36 @@ $(document).ready(function(){initNavTree('_intake_off_8cpp_source.html','');});
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_intake_off.html#a2459b6dd83157f06b9ff9d2f14d36494">   41</a></span>&#160;(</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>* control,</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">double</span> target</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;) : <a class="code" href="class_i_state.html">IState</a>(),</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    m_intake( <a class="code" href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a>()-&gt;GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE)),</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    m_control( control ),</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    m_target( target )</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_intake_off.html#a314c49ce69688d426008f6efe2a00911">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_intake_off.html#a314c49ce69688d426008f6efe2a00911">IntakeOff::Init</a>()</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_intake-&gt;SetControlConstants( m_control );</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_intake_off.html#a4cfc307de46ff178e757881ab294bdfa">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_intake_off.html#a4cfc307de46ff178e757881ab294bdfa">IntakeOff::Run</a>()           </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    m_intake -&gt; SetOutput( m_control-&gt;GetMode(), m_target);                     </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    m_intake -&gt; ActivateSolenoid( <span class="keyword">false</span> );                                      </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_intake_off.html#ae050b78fdeb74c9fb768a0787a25e4cb">   62</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_intake_off.html#ae050b78fdeb74c9fb768a0787a25e4cb">IntakeOff::AtTarget</a>() const                                                     <span class="comment">//confirms that it worked</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;) : <a class="code" href="class_mechanism_state.html">MechanismState</a>( <a class="code" href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a>()-&gt;GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE), control, target)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/*void IntakeOff::Init()</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    m_intake-&gt;SetControlConstants( m_control );</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">void IntakeOff::Run()           </span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">    m_intake -&gt; SetOutput( m_control-&gt;GetMode(), m_target);                     </span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">    m_intake -&gt; ActivateSolenoid( false );                                      </span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">bool IntakeOff::AtTarget() const                                                     //confirms that it worked</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">    return true;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">*/</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_intake_off_html_a314c49ce69688d426008f6efe2a00911"><div class="ttname"><a href="class_intake_off.html#a314c49ce69688d426008f6efe2a00911">IntakeOff::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdef"><b>Definition:</b> <a href="_intake_off_8cpp_source.html#l00051">IntakeOff.cpp:51</a></div></div>
-<div class="ttc" id="aclass_i_state_html"><div class="ttname"><a href="class_i_state.html">IState</a></div><div class="ttdoc">Interface for state classes.</div><div class="ttdef"><b>Definition:</b> <a href="_i_state_8h_source.html#l00021">IState.h:21</a></div></div>
-<div class="ttc" id="aclass_intake_off_html_ae050b78fdeb74c9fb768a0787a25e4cb"><div class="ttname"><a href="class_intake_off.html#ae050b78fdeb74c9fb768a0787a25e4cb">IntakeOff::AtTarget</a></div><div class="ttdeci">bool AtTarget() const override</div><div class="ttdef"><b>Definition:</b> <a href="_intake_off_8cpp_source.html#l00062">IntakeOff.cpp:62</a></div></div>
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
 <div class="ttc" id="a_mechanism_factory_8h_html"><div class="ttname"><a href="_mechanism_factory_8h.html">MechanismFactory.h</a></div></div>
-<div class="ttc" id="aclass_intake_off_html_a4cfc307de46ff178e757881ab294bdfa"><div class="ttname"><a href="class_intake_off.html#a4cfc307de46ff178e757881ab294bdfa">IntakeOff::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_intake_off_8cpp_source.html#l00056">IntakeOff.cpp:56</a></div></div>
 <div class="ttc" id="a_intake_off_8h_html"><div class="ttname"><a href="_intake_off_8h.html">IntakeOff.h</a></div></div>
 <div class="ttc" id="a_i_state_8h_html"><div class="ttname"><a href="_i_state_8h.html">IState.h</a></div></div>
 <div class="ttc" id="aclass_intake_off_html_ac428ac686f1f48c8b6b918042f2016cf"><div class="ttname"><a href="class_intake_off.html#ac428ac686f1f48c8b6b918042f2016cf">IntakeOff::IntakeOff</a></div><div class="ttdeci">IntakeOff()=delete</div></div>
 <div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00022">ControlData.h:22</a></div></div>
-<div class="ttc" id="aclass_mechanism_factory_html_a11b20a573ca93c56cb5da66ac5cbd2c0"><div class="ttname"><a href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a></div><div class="ttdeci">static MechanismFactory * GetMechanismFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_factory_8cpp_source.html#l00068">MechanismFactory.cpp:68</a></div></div>
+<div class="ttc" id="aclass_mechanism_state_html"><div class="ttname"><a href="class_mechanism_state.html">MechanismState</a></div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_state_8h_source.html#l00023">MechanismState.h:23</a></div></div>
+<div class="ttc" id="aclass_mechanism_factory_html_a11b20a573ca93c56cb5da66ac5cbd2c0"><div class="ttname"><a href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a></div><div class="ttdeci">static MechanismFactory * GetMechanismFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_factory_8cpp_source.html#l00069">MechanismFactory.cpp:69</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
