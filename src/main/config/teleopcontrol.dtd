@@ -1,0 +1,24 @@
+<!-- temporary leave pigeon here until odometry is plugged in -->
+<!ELEMENT robot (controller*)>
+
+
+<!-- ========================================================================================================================================== -->
+<!--	chassis  																																-->
+<!--    Wheel Base is front-back distance between wheel centers  Track is the distance between wheels on an "axle"     							-->   
+<!-- ========================================================================================================================================== -->
+<!ELEMENT controller  >
+<!ATTLIST  controller
+          type              ( TANKDRIVELEFTCONTROL | TANKDRIVERIGHTCONTROL |
+                              ARCADEDRIVETHROTTLE | ARCADEDRIVESTEER |
+                              GTADRIVEFORWARD | GTADRIVEBACKWARD | GTADRIVESTEER |
+                              SWITCHDRIVEMODE | CURVATUREDRIVEQUICKTURN |
+                              CLIMBEREXTEND | CLIMBERLIFT | CLIMBERCRAWL | 
+                              IMPELLERSPIN | IMPELLERSTOP | IMPELLERAGITATE | 
+                              INTAKEON | INTAKEOFF | 
+                              BALLTRANSFEROFF | BALLTRANSFERTOIMPELLER | BALLTRANSFERTOSHOOTER | 
+                              SHOOTERPREPARETOSHOOT | SHOOTERAUTOSHOOT | SHOOTERMANUALAIM | SHOOTERMANUALADJUSTDISTANCE | SHOOTERMANUALSHOOT |
+                              CONTROLPANELSTOW | CONTROLPANELRAISE | CONTROLPANELSPINWHEEL | CONTROLPANELMANUAL | CONTROLPANELTURNTOCOLOR | 
+                              SHOOTERHOODMOVEUP | SHOOTERHOODMOVEDOWN | SHOOTERHOODHOLDPOSITION
+                              UNKNOWNFUNCTION | MAXFUNCTIONS) "UNKNOWNFUNCTION"
+>
+

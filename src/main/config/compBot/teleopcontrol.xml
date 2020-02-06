@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE teleopcontrol SYSTEM "teleopcontrol.dtd">
+<teleopcontrol>
+<!-- ====================================================
+     Chassis
+     ====================================================  -->
+    <controller type="UNKNOWNFUNCTION"
+
+    >
+			 
+		<function usage="TANKDRIVELEFTCONTROL"
+        axisID = "LEFT_JOYSTICK_Y"
+        />
+
+        <function usage = "TANKDRIVERIGHTCONTROL"
+        axisID = "RIGHT_JOYSTICK_Y"
+        />
+
+        <function usage = "ARCADEDRIVETHROTTLE"
+        axisID = "LEFT_JOYSTICK_Y"
+        />
+
+        <function usage = "ARCADEDRIVESTEER"
+        axisID = "LEFT_JOYSTICK_X"
+        />
+
+        <function usage = "GTADRIVEFORWARD"
+        axisID = "LEFT_JOYSTICK_Y"
+        />
+
+        <function usage = "GTADRIVEBACKWARD"
+        axisID = "LEFT_JOYSTICK_Y"
+        />
+
+        <function usage = "GTADRIVESTEER"
+        axisID = "LEFT_JOYSTICK_X"
+        />
+
+        <function usage = "CLIMBEREXTEND"
+        axisID = ""
+    </controller>  
+</teleopcontrol>
