@@ -9,6 +9,7 @@ var hierarchy =
     [ "AnalogInputUsage", "class_analog_input_usage.html", null ],
     [ "AutonSelector", "class_auton_selector.html", null ],
     [ "CameraDefn", "class_camera_defn.html", null ],
+    [ "CanCoderDefn", "class_can_coder_defn.html", null ],
     [ "CANifierDefn", "class_c_a_nifier_defn.html", null ],
     [ "CanifierFactory", "class_canifier_factory.html", null ],
     [ "ChassisDefn", "class_chassis_defn.html", null ],
@@ -112,6 +113,7 @@ var hierarchy =
       [ "SquaredProfile", "class_squared_profile.html", null ]
     ] ],
     [ "IState", "class_i_state.html", [
+      [ "Agitate", "class_agitate.html", null ],
       [ "ControlPanelRaise", "class_control_panel_raise.html", null ],
       [ "ImpellerOff", "class_impeller_off.html", null ],
       [ "ImpellerOn", "class_impeller_on.html", null ],
@@ -128,6 +130,7 @@ var hierarchy =
     [ "LEDFactory", "class_l_e_d_factory.html", null ],
     [ "LidarDefn", "class_lidar_defn.html", null ],
     [ "LidarFactory", "class_lidar_factory.html", null ],
+    [ "LimelightDefn", "class_limelight_defn.html", null ],
     [ "LimitValue", "class_limit_value.html", null ],
     [ "Logger", "class_logger.html", null ],
     [ "MechanismDefn", "class_mechanism_defn.html", null ],

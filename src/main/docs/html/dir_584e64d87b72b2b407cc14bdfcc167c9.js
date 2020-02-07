@@ -8,6 +8,10 @@ var dir_584e64d87b72b2b407cc14bdfcc167c9 =
     [ "CameraDefn.h", "_camera_defn_8h.html", [
       [ "CameraDefn", "class_camera_defn.html", "class_camera_defn" ]
     ] ],
+    [ "CanCoderDefn.cpp", "_can_coder_defn_8cpp.html", null ],
+    [ "CanCoderDefn.h", "_can_coder_defn_8h.html", [
+      [ "CanCoderDefn", "class_can_coder_defn.html", "class_can_coder_defn" ]
+    ] ],
     [ "CANifierDefn.cpp", "_c_a_nifier_defn_8cpp.html", null ],
     [ "CANifierDefn.h", "_c_a_nifier_defn_8h.html", [
       [ "CANifierDefn", "class_c_a_nifier_defn.html", "class_c_a_nifier_defn" ]
@@ -31,6 +35,10 @@ var dir_584e64d87b72b2b407cc14bdfcc167c9 =
     [ "LidarDefn.cpp", "_lidar_defn_8cpp.html", null ],
     [ "LidarDefn.h", "_lidar_defn_8h.html", [
       [ "LidarDefn", "class_lidar_defn.html", "class_lidar_defn" ]
+    ] ],
+    [ "LimelightDefn.cpp", "_limelight_defn_8cpp.html", null ],
+    [ "LimelightDefn.h", "_limelight_defn_8h.html", [
+      [ "LimelightDefn", "class_limelight_defn.html", "class_limelight_defn" ]
     ] ],
     [ "MechanismDefn.cpp", "_mechanism_defn_8cpp.html", null ],
     [ "MechanismDefn.h", "_mechanism_defn_8h.html", [

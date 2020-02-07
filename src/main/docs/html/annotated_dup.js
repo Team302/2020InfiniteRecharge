@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "Agitate", "class_agitate.html", "class_agitate" ],
     [ "AnalogAxis", "class_analog_axis.html", "class_analog_axis" ],
     [ "AnalogButton", "class_analog_button.html", "class_analog_button" ],
     [ "AnalogInputDefn", "class_analog_input_defn.html", "class_analog_input_defn" ],
@@ -10,6 +11,7 @@ var annotated_dup =
     [ "BallTransfer", "class_ball_transfer.html", "class_ball_transfer" ],
     [ "ButtonDecorator", "class_button_decorator.html", "class_button_decorator" ],
     [ "CameraDefn", "class_camera_defn.html", "class_camera_defn" ],
+    [ "CanCoderDefn", "class_can_coder_defn.html", "class_can_coder_defn" ],
     [ "CANifierDefn", "class_c_a_nifier_defn.html", "class_c_a_nifier_defn" ],
     [ "CanifierFactory", "class_canifier_factory.html", "class_canifier_factory" ],
     [ "ChassisDefn", "class_chassis_defn.html", "class_chassis_defn" ],
@@ -92,6 +94,7 @@ var annotated_dup =
     [ "LEDFactory", "class_l_e_d_factory.html", "class_l_e_d_factory" ],
     [ "LidarDefn", "class_lidar_defn.html", "class_lidar_defn" ],
     [ "LidarFactory", "class_lidar_factory.html", "class_lidar_factory" ],
+    [ "LimelightDefn", "class_limelight_defn.html", "class_limelight_defn" ],
     [ "LimitValue", "class_limit_value.html", "class_limit_value" ],
     [ "LinearProfile", "class_linear_profile.html", "class_linear_profile" ],
     [ "Logger", "class_logger.html", "class_logger" ],
