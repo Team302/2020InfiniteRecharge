@@ -129,19 +129,25 @@ void ImpellerStateMgr::RunCurrentState()
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_SPIN ) )
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_TO_SHOOTER ) && m_currentStateEnum != IMPELLER_STATE::TO_SHOOTER)
         {
-            SetCurrentState( IMPELLER_STATE::HOLD, false );
+            SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_STOP ) )
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_OFF ) && m_currentStateEnum != IMPELLER_STATE::OFF)
         {
             SetCurrentState( IMPELLER_STATE::OFF, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_AGITATE ) )
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_AGITATE  ) && m_currentStateEnum != IMPELLER_STATE::AGITATE)
         {
             SetCurrentState( IMPELLER_STATE::AGITATE, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_AUTO_SHOOT ) )
+        
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_HOLD ) && m_currentStateEnum != IMPELLER_STATE::HOLD )
+        {
+            SetCurrentState( IMPELLER_STATE::HOLD, false );
+        }
+        
+        /*else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_AUTO_SHOOT ) )
         {
             SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
         }
@@ -149,14 +155,11 @@ void ImpellerStateMgr::RunCurrentState()
         {
             SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
         }
+        */
     }
 
 
-    Logger::GetLogger()->OnDash(string("Impeller spin button"), (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_SPIN )));
-    Logger::GetLogger()->OnDash(string("Impeller stop button"), (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_STOP )));
-    Logger::GetLogger()->OnDash(string("Impeller aggitate button"), (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_AGITATE )));
-    Logger::GetLogger()->OnDash(string("Impeller auto button"), (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_AUTO_SHOOT )));
-    Logger::GetLogger()->OnDash(string("Impeller manual button"), (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_SHOOT )));
+    
     Logger::GetLogger()->OnDash(string("Impeller State"), to_string(m_currentStateEnum));
 
     // run the current state

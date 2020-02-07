@@ -116,7 +116,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
 void BallTransferStateMgr::RunCurrentState()
 {
     // process teleop/manual interrupts
-    /**
+    
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
@@ -136,7 +136,7 @@ void BallTransferStateMgr::RunCurrentState()
             SetCurrentState( BALL_TRANSFER_STATE::TO_SHOOTER, false );
         }
     }
-    **/
+    
 
     Logger::GetLogger()->OnDash(string("Ball Transfer State"), to_string(m_currentStateEnum));
 
