@@ -25,6 +25,9 @@ void Shooter::SetOutput(ControlModes::CONTROL_TYPE controlType, double value)
 {
     switch(controlType)
     {
+        case ControlModes::CONTROL_TYPE::PERCENT_OUTPUT:
+            m_targetSpeed = value;
+            break;
         case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
             m_targetSpeed = value;
             break;

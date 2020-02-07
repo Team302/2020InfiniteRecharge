@@ -46,12 +46,13 @@ BallManipulator::BallManipulator() : m_currentState( BALL_MANIPULATOR_STATE::OFF
                                      m_shooter( new ShooterStateMgr() ) //,
                                      //m_hood( new ShooterHoodStateMgr() )
 {
-    m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
+    /*m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
     m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
     m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, false );
     //m_turret->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
     m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
     //m_hood->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
+    */
 }
 
 /// @brief  run the current state
@@ -82,7 +83,7 @@ void BallManipulator::SetCurrentState
     BALL_MANIPULATOR_STATE  state
 )
 {
-    m_currentState = state;
+    /*m_currentState = state;
     switch ( state )
     {
         case BALL_MANIPULATOR_STATE::OFF:
@@ -147,6 +148,7 @@ void BallManipulator::SetCurrentState
             break;
     }
     RunCurrentState();
+    */
 
 }
 

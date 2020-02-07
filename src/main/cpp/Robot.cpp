@@ -62,7 +62,7 @@ void Robot::RobotInit()
 
     m_chassisStateMgr = new ChassisStateMgr();
     //m_intake = new IntakeStateMgr();
-//    m_powerCells = new BallManipulator();
+    m_powerCells = new BallManipulator();
 
     // m_control = new ControlPanelStateMgr();
     // m_climber = new ClimberStateMgr();
@@ -120,7 +120,7 @@ void Robot::TeleopInit()
 {
     m_chassisStateMgr->Init();
     m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
-//    m_powerCells->RunCurrentState();
+    m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
 }
@@ -132,7 +132,7 @@ void Robot::TeleopPeriodic()
 {
     m_chassisStateMgr->RunCurrentState();
     //m_intake->RunCurrentState();
-//    m_powerCells->RunCurrentState();
+   m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
 }
