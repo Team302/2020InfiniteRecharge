@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE teleopcontrol SYSTEM "teleopcontrol.dtd">
 <teleopcontrol>
-<!-- ====================================================
-     Chassis
-     ====================================================  -->
-    <controller type = "XBOX"> 
-        <function="UNKNOWNFUNCTION"/>
+    <controller type = "XBOX"
+                port = "0"
+                > 
+        
 			 
 		<function name="TANKDRIVELEFTCONTROL"
         axisID = "LEFT_JOYSTICK_Y"
@@ -105,6 +104,30 @@
 
         <function name = "CONTROLPANELRAISE"
         buttonID = "RIGHT_BUMPER"
+        />
+
+        <function name = "CONTROLPANELSPINWHEEL"
+        buttonID = "A_BUTTON"
+        />
+
+        <function name = "CONTROLPANELTURNTOCOLOR"
+        buttonID = "B_BUTTON"
+        />
+
+        <function name = "CONTROLPANELMANUAL"
+        axisID = "RIGHT_TRIGGER"
+        />
+
+        <function name = "SHOOTERHOODMOVEUP"
+        buttonID = "POV_90"
+        />
+
+        <function name = "SHOOTERHOODMOVEDOWN"
+        buttonID = "POV_270"
+        />
+
+        <function name = "SHOOTERHOODHOLDPOSITION"
+        buttonID = "POV_0"
         />
 
 
