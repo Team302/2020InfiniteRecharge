@@ -4,39 +4,109 @@
 <!-- ====================================================
      Chassis
      ====================================================  -->
-    <controller type="UNKNOWNFUNCTION"
-
-    >
+    <controller type = "XBOX"> 
+        <function="UNKNOWNFUNCTION"/>
 			 
-		<function usage="TANKDRIVELEFTCONTROL"
+		<function name="TANKDRIVELEFTCONTROL"
         axisID = "LEFT_JOYSTICK_Y"
         />
 
-        <function usage = "TANKDRIVERIGHTCONTROL"
+        <function name = "TANKDRIVERIGHTCONTROL"
         axisID = "RIGHT_JOYSTICK_Y"
         />
 
-        <function usage = "ARCADEDRIVETHROTTLE"
+        <function name = "ARCADEDRIVETHROTTLE"
         axisID = "LEFT_JOYSTICK_Y"
         />
 
-        <function usage = "ARCADEDRIVESTEER"
+        <function name = "ARCADEDRIVESTEER"
         axisID = "LEFT_JOYSTICK_X"
         />
 
-        <function usage = "GTADRIVEFORWARD"
-        axisID = "LEFT_JOYSTICK_Y"
+        <function name = "GTADRIVEFORWARD"
+        axisID = "LEFT_TRIGGER"
         />
 
-        <function usage = "GTADRIVEBACKWARD"
-        axisID = "LEFT_JOYSTICK_Y"
+        <function name = "GTADRIVEBACKWARD"
+        axisID = "RIGHT_TRIGGER"
         />
 
-        <function usage = "GTADRIVESTEER"
+        <function name = "GTADRIVESTEER"
         axisID = "LEFT_JOYSTICK_X"
         />
 
-        <function usage = "CLIMBEREXTEND"
-        axisID = ""
+        <function name = "CLIMBEREXTEND"
+        buttonID = "Y_BUTTON"
+        />
+
+        <function name = "CLIMBERLIFT"
+        buttonID = "X_BUTTON"
+        />
+
+        <function name = "CLIMBERCRAWL"
+        axisID = "RIGHT_JOYSTICK_X"
+        />
+
+        <function name = "IMPELLERSPIN"
+        buttonID = "A_BUTTON"
+        />
+
+        <function name = "IMPELLERSTOP"
+        buttonID = "B_BUTTON"
+        />
+
+        <function name = "IMPELLERAGITATE"
+        buttonID = "Y_BUTTON"
+        />
+
+        <function name = "INTAKEON"
+        buttonID = "LEFT_BUMPER"
+        />
+
+        <function name = "INTAKEOFF"
+        buttonID = "RIGHT_BUMPER"
+        />
+
+        <function name = "BALLTRANSFEROFF"
+        buttonID = "POV_270"
+        />
+
+        <function name = "BALLTRANSFERTOIMPELLER"
+        buttonID = "POV_180"
+        />
+
+        <function name = "BALLTRANSFERTOSHOOTER"
+        buttonID = "POV_0"
+        />
+
+        <function name = "SHOOTERPREPARETOSHOOT"
+        buttonID = "A_BUTTON"
+        />
+
+        <function name = "SHOOTERAUTOSHOOT"
+        buttonID = "B_BUTTON"
+        />
+
+        <function name = "SHOOTERMANUALAIM"
+        axisID = "LEFT_JOYSTICK_X"
+        />
+
+        <function name = "SHOOTERMANUALADJUSTDISTANCE"
+        axisID = "RIGHT_JOYSTICK_Y"
+        />
+
+        <function name = "SHOOTERMANUALSHOOT"
+        buttonID = "LEFT_TRIGGER_PRESSED"
+        />
+
+        <function name = "CONTROLPANELSTOW"
+        buttonID = "LEFT_BUMPER"
+        />
+
+        <function name = "CONTROLPANELRAISE"
+        buttonID = "RIGHT_BUMPER"
+        />
+
+
     </controller>  
 </teleopcontrol>
