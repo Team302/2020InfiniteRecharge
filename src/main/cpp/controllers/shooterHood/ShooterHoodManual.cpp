@@ -34,5 +34,5 @@ void ShooterHoodManual::Run()
 
 bool ShooterHoodManual::AtTarget() const
 {
-
+    return true;
 }
