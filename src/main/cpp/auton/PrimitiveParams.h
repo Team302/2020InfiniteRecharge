@@ -60,6 +60,8 @@ class PrimitiveParams
         float GetHeading() const;
         float GetDriveSpeed() const;
         float GetEndDriveSpeed() const;
+        bool  IsIntakeOn() const;
+        bool  IsShooterOn() const;
 
         //Setters
         void SetDistance(float distance);
@@ -74,6 +76,8 @@ class PrimitiveParams
         float                       m_heading;
         float                       m_startDriveSpeed;
         float                       m_endDriveSpeed;
+        bool                        m_intakeOn;
+        bool                        m_shooterOn;
 };
 
 typedef std::vector<PrimitiveParams*> PrimitiveParamsVector;
