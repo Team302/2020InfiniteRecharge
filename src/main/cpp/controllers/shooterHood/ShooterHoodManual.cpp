@@ -24,12 +24,12 @@ ShooterHoodManual::ShooterHoodManual
 
 void ShooterHoodManual::Init()
 {
-    m_gamepad ->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL, IDragonGamePad::AXIS_PROFILE::CUBED );
+    m_gamepad ->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_AXIS, IDragonGamePad::AXIS_PROFILE::CUBED );
 }
 
 void ShooterHoodManual::Run()
 {
-    m_shooterHood ->SetOutput(m_control -> GetMode(), m_gamepad -> GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL));
+    m_shooterHood ->SetOutput(m_control -> GetMode(), m_gamepad -> GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_AXIS) * .2);
 }
 
 bool ShooterHoodManual::AtTarget() const

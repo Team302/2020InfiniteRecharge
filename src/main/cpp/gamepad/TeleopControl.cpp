@@ -123,7 +123,8 @@ TeleopControl::TeleopControl() : m_axisIDs(),
     ctrlNo = 1;
     if ( m_controllers[ctrlNo] != nullptr && ds->GetJoystickIsXbox(ctrlNo) )
     {
-
+		m_controllerIndex[ SHOOTER_HOOD_MANUAL_AXIS] = ctrlNo;
+		m_axisIDs[ SHOOTER_HOOD_MANUAL_AXIS ] = IDragonGamePad::LEFT_JOYSTICK_Y;
 	}
     else if ( m_controllers[ctrlNo] != nullptr )
     {
@@ -185,6 +186,9 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[SHOOTER_AUTO_SHOOT] = ctrlNo;
 		m_buttonIDs[SHOOTER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_11;
 		m_controllerIndex[SHOOTER_OFF] = ctrlNo;
+
+		m_controllerIndex[ SHOOTER_HOOD_MANUAL_BUTTON] = ctrlNo;
+		m_buttonIDs[ SHOOTER_HOOD_MANUAL_BUTTON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_12;
 		/*m_buttonIDs[SHOOTER_MANUAL_AIM] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_9;
 		m_controllerIndex[SHOOTER_MANUAL_ADJUST_DISTANCE] = ctrlNo;
 		m_buttonIDs[SHOOTER_MANUAL_ADJUST_DISTANCE] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10;
