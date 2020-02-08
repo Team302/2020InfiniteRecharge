@@ -34,6 +34,7 @@ class ShooterHoodStateMgr
             MOVE_UP,
             MOVE_DOWN,
             HOLD_POSITION,
+            MANUAL,
             MAX_SHOOTER_HOOD_STATES
         };
 

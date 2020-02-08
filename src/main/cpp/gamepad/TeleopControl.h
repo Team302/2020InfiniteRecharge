@@ -75,6 +75,7 @@ class TeleopControl
             SHOOTER_HOOD_MOVE_UP,
             SHOOTER_HOOD_MOVE_DOWN,
             SHOOTER_HOOD_HOLD_POSITION,
+            SHOOTER_HOOD_MANUAL,
             MAX_FUNCTIONS
         };
 
