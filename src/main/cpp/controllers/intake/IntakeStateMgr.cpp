@@ -126,10 +126,11 @@ void IntakeStateMgr::RunCurrentState()
         {
             SetCurrentState( INTAKE_STATE::OFF, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_HUMAN_PLAYER))
+        /*else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_HUMAN_PLAYER))
         {
             SetCurrentState( INTAKE_STATE::HUMANPLAYER, false );
         }
+        */
     }
 
     Logger::GetLogger()->OnDash(string("Intake State"), to_string(m_currentStateEnum));

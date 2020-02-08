@@ -54,6 +54,7 @@ ControlModes::CONTROL_TYPE controlType,
 double                                   value        
 )  
 { 
+  m_shmotor.get()->SetControlMode(controlType);
   m_shmotor.get()->Set( value );
 } 
 /// @brief      Activate/deactivate pneumatic solenoid 
