@@ -10,8 +10,9 @@
 #include <controllers/ControlData.h>
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
+#include <controllers/MechanismState.h>
 
-class ShooterGetReady : public IState
+class ShooterGetReady : public MechanismState
 {
  public:
   ShooterGetReady
@@ -19,7 +20,9 @@ class ShooterGetReady : public IState
     ControlData* controlData,
     double target
   );
-  void Init() override;
+  ShooterGetReady() = delete;
+  ~ShooterGetReady() = default;
+  /*void Init() override;
   void Run() override;
   bool AtTarget() const override;
  private:
@@ -27,4 +30,5 @@ class ShooterGetReady : public IState
   double m_target;
   bool m_atTarget;
   IMechanism* m_shooter;
+  */
 };

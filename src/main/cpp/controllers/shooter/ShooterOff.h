@@ -10,15 +10,18 @@
 #include <controllers/IState.h>
 #include <subsys/IMechanism.h>
 #include <controllers/ControlData.h>
+#include <controllers/MechanismState.h>
 
-class ShooterOff : public IState
+class ShooterOff : public MechanismState
 {
  public:
   ShooterOff(
     ControlData* controlData,
     double target
   );
-  void Init() override;
+  ShooterOff() = delete;
+  ~ShooterOff() = default;
+  /*void Init() override;
   void Run() override;
   bool AtTarget() const override;
  private:
@@ -26,4 +29,5 @@ class ShooterOff : public IState
   IMechanism* m_shooter;
   ControlData* m_controlData;
   bool m_atTarget;
+  */
 };
