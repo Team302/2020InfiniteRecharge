@@ -54,10 +54,12 @@
 
 // Third Party Includes
 #include <rev/ColorSensorV3.h>
+#include <ctre/phoenix/sensors/CANCoder.h>
 
 
 using namespace std;
 using namespace rev;
+using namespace ctre::phoenix::sensors;
 
 
 //=====================================================================================
@@ -119,7 +121,8 @@ IMechanism*  MechanismFactory::CreateIMechanism
 	const ServoMap&						    servos,
 	const DigitalInputMap&					digitalInputs,
 	const AnalogInputMap&                   analogInputs,
-	ColorSensorV3*					        colorSensor
+	ColorSensorV3*					        colorSensor,
+	shared_ptr<CANCoder>					canCoder
 )
 {
 	IMechanism* subsys = nullptr;
