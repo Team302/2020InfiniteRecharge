@@ -33,11 +33,17 @@
         <function name = "GTADRIVESTEER"
         axisID = "LEFT_JOYSTICK_X"
         />
+    </controller>
 
+    <controller type = "XBOX"
+                port = "1"
+                >
+                
         <function name = "CLIMBEREXTEND"
         buttonID = "Y_BUTTON"
         />
-
+   
+        
         <function name = "CLIMBERLIFT"
         buttonID = "X_BUTTON"
         />
