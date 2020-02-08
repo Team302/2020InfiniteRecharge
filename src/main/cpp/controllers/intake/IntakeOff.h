@@ -26,6 +26,7 @@
 
 #include <controllers/ControlData.h>
 #include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
 
 class IntakeOff : public MechanismState
 {
@@ -34,7 +35,8 @@ class IntakeOff : public MechanismState
     IntakeOff
     (
         ControlData* control,
-        double target
+        double target,
+        MechanismTargetData::SOLENOID solState
     );
     IntakeOff() = delete;
     ~IntakeOff() = default;

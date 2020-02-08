@@ -1,5 +1,5 @@
 //====================================================================================================================================================
-// Copyright 2019 Lake Orion Robotics FIRST Team 302
+// Copyright 2020 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
@@ -59,6 +59,10 @@ class MechanismTargetData
         /// @return double - target value
         inline double GetTarget() const { return m_target; };
 
+        /// @brief get the solenoid state
+        /// @return SOLENOID state of the solenoid
+        SOLENOID GetSolenoidState() const { return m_solenoid; }
+
         /// @brief update to include ControlData
         /// @param [in] std::vector<ControlData*> - vector of ControlData Objects
         /// @return void
@@ -71,8 +75,8 @@ class MechanismTargetData
         std::string                                 m_state;
         std::string                                 m_controller;
         double                                      m_target;
-        ControlData*                                m_controlData;
         SOLENOID                                    m_solenoid;
+        ControlData*                                m_controlData;
 };
 
 

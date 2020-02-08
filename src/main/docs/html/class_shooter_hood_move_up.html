@@ -109,13 +109,13 @@ Inheritance diagram for ShooterHoodMoveUp:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a58ff145645b3a24857eecd0b9cc4031f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_hood_move_up.html#a58ff145645b3a24857eecd0b9cc4031f">ShooterHoodMoveUp</a> ()=delete</td></tr>
 <tr class="separator:a58ff145645b3a24857eecd0b9cc4031f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10bd5925609ebdce1f8c0389c25f086b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_hood_move_up.html#a10bd5925609ebdce1f8c0389c25f086b">ShooterHoodMoveUp</a> (<a class="el" href="class_control_data.html">ControlData</a> *control, double target)</td></tr>
-<tr class="separator:a10bd5925609ebdce1f8c0389c25f086b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa379c5eea21bf9d255d6302dc75b65dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_hood_move_up.html#aa379c5eea21bf9d255d6302dc75b65dc">ShooterHoodMoveUp</a> (<a class="el" href="class_control_data.html">ControlData</a> *control, double target, <a class="el" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a> solState)</td></tr>
+<tr class="separator:aa379c5eea21bf9d255d6302dc75b65dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0be02cfd4b79aa82dbdd1335f801287"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_hood_move_up.html#ac0be02cfd4b79aa82dbdd1335f801287">~ShooterHoodMoveUp</a> ()=default</td></tr>
 <tr class="separator:ac0be02cfd4b79aa82dbdd1335f801287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_mechanism_state"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_mechanism_state')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_mechanism_state.html">MechanismState</a></td></tr>
-<tr class="memitem:aa1b3c1a85d07002986a54407f76c7a68 inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#aa1b3c1a85d07002986a54407f76c7a68">MechanismState</a> (<a class="el" href="class_i_mechanism.html">IMechanism</a> *mechanism, <a class="el" href="class_control_data.html">ControlData</a> *control, double target)</td></tr>
-<tr class="separator:aa1b3c1a85d07002986a54407f76c7a68 inherit pub_methods_class_mechanism_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa341740dad3529424f29c5d863e8dfc2 inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#aa341740dad3529424f29c5d863e8dfc2">MechanismState</a> (<a class="el" href="class_i_mechanism.html">IMechanism</a> *mechanism, <a class="el" href="class_control_data.html">ControlData</a> *control, double target, <a class="el" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a> solState)</td></tr>
+<tr class="separator:aa341740dad3529424f29c5d863e8dfc2 inherit pub_methods_class_mechanism_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afef2ac5c394d3bc012ccd2f6040fd4cd inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#afef2ac5c394d3bc012ccd2f6040fd4cd">MechanismState</a> ()=delete</td></tr>
 <tr class="separator:afef2ac5c394d3bc012ccd2f6040fd4cd inherit pub_methods_class_mechanism_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93d86a4d0951c1a9b3d8671abb47f293 inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#a93d86a4d0951c1a9b3d8671abb47f293">~MechanismState</a> ()=default</td></tr>
@@ -133,12 +133,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a28a7b15d44be7a1d40ccf5d0790f7ec8 inherit pub_methods_class_i_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Copyright 2019 Lake Orion Robotics FIRST Team 302</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. Created by the one, the only, Big Chief, AJ Gdowski Nobody will ever be brave enough to steal my code, so don't even think about it </p>
-
-<p class="definition">Definition at line <a class="el" href="_shooter_hood_move_up_8h_source.html#l00022">22</a> of file <a class="el" href="_shooter_hood_move_up_8h_source.html">ShooterHoodMoveUp.h</a>.</p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_shooter_hood_move_up_8h_source.html#l00023">23</a> of file <a class="el" href="_shooter_hood_move_up_8h_source.html">ShooterHoodMoveUp.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a58ff145645b3a24857eecd0b9cc4031f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58ff145645b3a24857eecd0b9cc4031f">&#9670;&nbsp;</a></span>ShooterHoodMoveUp() <span class="overload">[1/2]</span></h2>
@@ -165,8 +161,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a10bd5925609ebdce1f8c0389c25f086b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10bd5925609ebdce1f8c0389c25f086b">&#9670;&nbsp;</a></span>ShooterHoodMoveUp() <span class="overload">[2/2]</span></h2>
+<a id="aa379c5eea21bf9d255d6302dc75b65dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa379c5eea21bf9d255d6302dc75b65dc">&#9670;&nbsp;</a></span>ShooterHoodMoveUp() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,7 +177,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>target</em>&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a>&#160;</td>
+          <td class="paramname"><em>solState</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -191,7 +193,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shooter_hood_move_up_8cpp_source.html#l00032">32</a> of file <a class="el" href="_shooter_hood_move_up_8cpp_source.html">ShooterHoodMoveUp.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shooter_hood_move_up_8cpp_source.html#l00026">26</a> of file <a class="el" href="_shooter_hood_move_up_8cpp_source.html">ShooterHoodMoveUp.cpp</a>.</p>
 
 </div>
 </div>

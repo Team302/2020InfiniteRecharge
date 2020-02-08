@@ -62,12 +62,13 @@ ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
+                auto solState = td->GetSolenoidState();
 
                 switch ( stateEnum )
                 {
                     case SHOOTER_STATE::OFF:
                     {   
-                        auto thisState = new ShooterOff( controlData, target );
+                        auto thisState = new ShooterOff( controlData, target, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -77,14 +78,14 @@ ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
 
                     case SHOOTER_STATE::GET_READY:
                     {   
-                        auto thisState = new ShooterGetReady( controlData, target );
+                        auto thisState = new ShooterGetReady( controlData, target, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;
 
                     case SHOOTER_STATE::SHOOT:
                     {   
-                        auto thisState = new ShooterShoot( controlData, target );
+                        auto thisState = new ShooterShoot( controlData, target, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;

@@ -98,10 +98,14 @@ $(document).ready(function(){initNavTree('class_shooter_hood_state_mgr.html','')
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ae13e856863447b4380950e00d27d0516"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516">SHOOTER_HOOD_STATE</a> { <a class="el" href="class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516a01bebf593e19b29854f0fe0bff2bcf5e">MOVE_UP</a>, 
+<tr class="memitem:ae13e856863447b4380950e00d27d0516"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516">SHOOTER_HOOD_STATE</a> { <br />
+&#160;&#160;<a class="el" href="class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516a01bebf593e19b29854f0fe0bff2bcf5e">MOVE_UP</a>, 
 <a class="el" href="class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516a239ef37cb61aa71f275e87c7f129e24a">MOVE_DOWN</a>, 
 <a class="el" href="class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516a713ffce0174ca5424b6cbbf9cacf6ccd">HOLD_POSITION</a>, 
-<a class="el" href="class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516a77f499c0daa3398c4872a9613b9d3f25">MAX_SHOOTER_HOOD_STATES</a>
+<a class="el" href="class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516af202be2be3a8149075a13aa6757dff00">MANUAL</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516a77f499c0daa3398c4872a9613b9d3f25">MAX_SHOOTER_HOOD_STATES</a>
+<br />
  }</td></tr>
 <tr class="separator:ae13e856863447b4380950e00d27d0516"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -145,6 +149,7 @@ Public Member Functions</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae13e856863447b4380950e00d27d0516a01bebf593e19b29854f0fe0bff2bcf5e"></a>MOVE_UP&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ae13e856863447b4380950e00d27d0516a239ef37cb61aa71f275e87c7f129e24a"></a>MOVE_DOWN&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ae13e856863447b4380950e00d27d0516a713ffce0174ca5424b6cbbf9cacf6ccd"></a>HOLD_POSITION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae13e856863447b4380950e00d27d0516af202be2be3a8149075a13aa6757dff00"></a>MANUAL&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ae13e856863447b4380950e00d27d0516a77f499c0daa3398c4872a9613b9d3f25"></a>MAX_SHOOTER_HOOD_STATES&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
@@ -170,7 +175,7 @@ Public Member Functions</h2></td></tr>
 
 <p>initialize the state manager, parse the configuration file and create the states. </p>
 
-<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html#l00038">38</a> of file <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html">ShooterHoodStateMgr.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html#l00039">39</a> of file <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html">ShooterHoodStateMgr.cpp</a>.</p>
 
 </div>
 </div>
@@ -226,7 +231,7 @@ Public Member Functions</h2></td></tr>
 <p>return the current state </p>
 <dl class="section return"><dt>Returns</dt><dd>SHOOTER_HOOD_STATE - the current state </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8h_source.html#l00060">60</a> of file <a class="el" href="_shooter_hood_state_mgr_8h_source.html">ShooterHoodStateMgr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8h_source.html#l00061">61</a> of file <a class="el" href="_shooter_hood_state_mgr_8h_source.html">ShooterHoodStateMgr.h</a>.</p>
 
 </div>
 </div>
@@ -248,7 +253,7 @@ Public Member Functions</h2></td></tr>
 <p>run the current state </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html#l00109">109</a> of file <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html">ShooterHoodStateMgr.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html#l00119">119</a> of file <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html">ShooterHoodStateMgr.cpp</a>.</p>
 
 </div>
 </div>
@@ -290,7 +295,7 @@ Public Member Functions</h2></td></tr>
 <dd>
 void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html#l00143">143</a> of file <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html">ShooterHoodStateMgr.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html#l00153">153</a> of file <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html">ShooterHoodStateMgr.cpp</a>.</p>
 
 </div>
 </div>

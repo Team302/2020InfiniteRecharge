@@ -19,6 +19,7 @@
 //Team 302 Includes
 #include <controllers/impeller/ImpellerHold.h>
 #include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
 
@@ -28,9 +29,10 @@ using namespace std;
 
 ImpellerHold::ImpellerHold
 (
-    ControlData* control,
-    double target
-) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER), control, target)
+    ControlData*                    control,
+    double                          target,
+    MechanismTargetData::SOLENOID   solState
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER), control, target, solState )
 {
 
 }

@@ -25,6 +25,7 @@
 #include <subsys/IMechanism.h>
 #include <controllers/MechanismState.h>
 #include <controllers/IState.h>
+#include <controllers/MechanismTargetData.h>
 
 class ClimberHold : public MechanismState
 {
@@ -33,8 +34,9 @@ class ClimberHold : public MechanismState
         ClimberHold() = delete;
         ClimberHold
         (
-            ControlData*    control,
-            double          target
+            ControlData*                    control,
+            double                          target,
+            MechanismTargetData::SOLENOID   solState
         );
         ~ClimberHold() =default;
 };

@@ -20,6 +20,7 @@ var class_teleop_control =
       [ "IMPELLER_TO_SHOOTER", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a78656a40b5017b43fcc4742e6aafc5f9", null ],
       [ "INTAKE_ON", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a60923c0845183221f8fde7da02f923e1", null ],
       [ "INTAKE_OFF", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a0cad4007d5102d00d8813cf219bbe7b3", null ],
+      [ "INTAKE_HUMAN_PLAYER", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af5303db7970701632c3e8e57591718d0", null ],
       [ "BALL_TRANSFER_OFF", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ad063756c98ae194e4e99c62e5b448ccf", null ],
       [ "BALL_TRANSFER_TO_IMPELLER", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a515a84aad58b3d799487bed79c9e38eb", null ],
       [ "BALL_TRANSFER_TO_SHOOTER", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a478186ef0eeda3702bdf2af97cb529f1", null ],
@@ -28,6 +29,7 @@ var class_teleop_control =
       [ "SHOOTER_MANUAL_AIM", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a8319f92bd29070421b1b7b0e052417fc", null ],
       [ "SHOOTER_MANUAL_ADJUST_DISTANCE", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ae5b7b1e64b8bcd9676566127684436ba", null ],
       [ "SHOOTER_MANUAL_SHOOT", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af687189b25bc1743e40aa06da67d79ea", null ],
+      [ "SHOOTER_OFF", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a0615864c245df31bc3fd5f15fb12bbff", null ],
       [ "CONTROL_PANEL_STOW", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a7f77110f4ea2eb0f0f4ec822071eff16", null ],
       [ "CONTROL_PANEL_RAISE", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a819590d46ab8d92fc5facd86cb7860e3", null ],
       [ "CONTROL_PANEL_SPIN_WHEEL", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aec5ac581259bea31dbdfcf11f44ee5c5", null ],
@@ -36,6 +38,7 @@ var class_teleop_control =
       [ "SHOOTER_HOOD_MOVE_UP", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9d764d78d67e2f9c8b90e83800cc8004", null ],
       [ "SHOOTER_HOOD_MOVE_DOWN", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a7ce4b53770adeeec0a93291fe5ba3ca0", null ],
       [ "SHOOTER_HOOD_HOLD_POSITION", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15add49360d0a6d3a94231826b1512d44d1", null ],
+      [ "SHOOTER_HOOD_MANUAL", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ad62686d63e7d42dd6778952bb4a3350e", null ],
       [ "MAX_FUNCTIONS", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af0a71fc177d1cdf5d455aa154441aafb", null ]
     ] ],
     [ "GetAxisValue", "class_teleop_control.html#a9c6affa7d87ae898c531e567fce73b15", null ],

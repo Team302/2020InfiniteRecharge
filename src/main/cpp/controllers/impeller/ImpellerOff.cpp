@@ -13,27 +13,19 @@
 /// OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-///Created by the one, the only, Big Chief, AJ Gdowski
-///Nobody will ever be brave enough to steal my code, so don't even think about it
 //C++ Includes
-#include <memory>
 
 //Team 302 Includes
 #include <controllers/impeller/ImpellerOff.h>
-#include <controllers/IState.h>
+#include <controllers/MechanismTargetData.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
-#include <utils/Logger.h>
-
-using namespace std;
-
-
 
 ImpellerOff::ImpellerOff
 (
-    ControlData* control,
-    double target
-) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER), control, target)
+    ControlData*                    control,
+    double                          target,
+    MechanismTargetData::SOLENOID   solState
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER), control, target, solState)
 {
-    Logger::GetLogger()->LogError("ImpellerOff:ImpellerOff state running", "Impeller Off State Running");
 }

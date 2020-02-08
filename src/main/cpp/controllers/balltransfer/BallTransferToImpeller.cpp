@@ -22,14 +22,16 @@
 #include <controllers/MechanismState.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
+#include <controllers/MechanismTargetData.h>
 
 // Third Party Includes
 
 BallTransferToImpeller::BallTransferToImpeller
 (
-    ControlData*    control,
-    double          target
-) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::BALL_TRANSFER), control, target )
+    ControlData*                    control,
+    double                          target,
+    MechanismTargetData::SOLENOID   solState
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::BALL_TRANSFER), control, target, solState )
 {
 }
 

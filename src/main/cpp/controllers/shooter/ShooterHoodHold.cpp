@@ -1,5 +1,5 @@
 //====================================================================================================================================================
-// Copyright 2019 Lake Orion Robotics FIRST Team 302
+// Copyright 2020 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
@@ -14,42 +14,24 @@
 //====================================================================================================================================================
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
 
 // Team 302 includes
-#include <controllers/IState.h>
 #include <controllers/shooter/ShooterHoodHold.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
 #include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
 
 // Third Party Includes
 
-using namespace std;
-
 ShooterHoodHold::ShooterHoodHold
 (
-    ControlData* control,
-    double target
-):  MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::SHOOTER), control, target)
+    ControlData*                    control,
+    double                          target,
+    MechanismTargetData::SOLENOID   solState
+):  MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::SHOOTER), control, target, solState)
 {
 
-}
-
-
-void ShooterHoodHold::Init()
-{
-
-}
-
-void ShooterHoodHold::Run()
-{
-
-}
-
-bool ShooterHoodHold::AtTarget() const
-{
-    return true;
 }

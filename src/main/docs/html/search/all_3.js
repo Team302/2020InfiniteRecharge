@@ -33,7 +33,7 @@ var searchData=
   ['climber_5fcrawl_121',['CLIMBER_CRAWL',['../class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a99ec8c8b04aa477537e9f23ca91fb544',1,'TeleopControl']]],
   ['climber_5fextend_122',['CLIMBER_EXTEND',['../class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a28572b334fad1f837f9c010c6b1f9e46',1,'TeleopControl']]],
   ['climber_5flift_123',['CLIMBER_LIFT',['../class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aaad6666ff47670ed1b6d5d21023c82ce',1,'TeleopControl']]],
-  ['climberhold_124',['ClimberHold',['../class_climber_hold.html',1,'ClimberHold'],['../class_climber_hold.html#a0fe8dbd507bc0426e1688603f0bffafa',1,'ClimberHold::ClimberHold()=delete'],['../class_climber_hold.html#a4f2310f53a9ef31291c6f7ee929a6f63',1,'ClimberHold::ClimberHold(ControlData *control, double target)']]],
+  ['climberhold_124',['ClimberHold',['../class_climber_hold.html',1,'ClimberHold'],['../class_climber_hold.html#a0fe8dbd507bc0426e1688603f0bffafa',1,'ClimberHold::ClimberHold()=delete'],['../class_climber_hold.html#af14ca777053f92d16c06024dfffec696',1,'ClimberHold::ClimberHold(ControlData *control, double target, MechanismTargetData::SOLENOID solState)']]],
   ['climberhold_2ecpp_125',['ClimberHold.cpp',['../_climber_hold_8cpp.html',1,'']]],
   ['climberhold_2eh_126',['ClimberHold.h',['../_climber_hold_8h.html',1,'']]],
   ['color_127',['COLOR',['../class_control_panel_colors.html#a4137011ea714732b2ba0c01b9c3f70eb',1,'ControlPanelColors']]],

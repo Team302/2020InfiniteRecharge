@@ -31,6 +31,8 @@
 #include <controllers/MechanismState.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
+#include <controllers/MechanismTargetData.h>
+
 // Third Party Includes
 
 using namespace std;
@@ -39,8 +41,9 @@ using namespace std;
 IntakeOff::IntakeOff
 (
     ControlData* control,
-    double target
-) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE), control, target)
+    double target,
+    MechanismTargetData::SOLENOID solState
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE), control, target, solState )
 {
 }
 

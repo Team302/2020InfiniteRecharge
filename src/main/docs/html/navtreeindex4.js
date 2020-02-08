@@ -1,5 +1,17 @@
 var NAVTREEINDEX4 =
 {
+"class_digital_button.html#afe7a772eda4fe4a25d39cac80afeef6e":[1,0,40,0],
+"class_digital_input_defn.html":[1,0,41],
+"class_digital_input_defn.html#a0c7629ad380d24cec9a7561bd4645dff":[1,0,41,0],
+"class_digital_input_defn.html#a3be7725bd7529caab44cf9449ab7de90":[1,0,41,1],
+"class_digital_input_defn.html#a6742373274964e8d271b958969fb8396":[1,0,41,2],
+"class_digital_input_factory.html":[1,0,42],
+"class_digital_input_factory.html#a53c277332cda19ccbdfdef7e526b22bc":[1,0,42,1],
+"class_digital_input_factory.html#ac6fffa4ecfb92fb48cc939ad5e2d1eab":[1,0,42,0],
+"class_digital_input_usage.html":[1,0,43],
+"class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46":[1,0,43,0],
+"class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46a46222776748611fa1cf0a23bb2754712":[1,0,43,0,0],
+"class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46a4ce8750a063ee2e0d01a370cf462ab05":[1,0,43,0,1],
 "class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46acc5e07e038b5330a5da8383e6f058f36":[1,0,43,0,3],
 "class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46af156ef0d7bf497ddce8c288cf7e4ea30":[1,0,43,0,2],
 "class_digital_input_usage.html#acb414552a92cca2e59d7d88929a6342f":[1,0,43,1],
@@ -237,17 +249,5 @@ var NAVTREEINDEX4 =
 "class_dragon_talon_tach.html#a7b73df3604a85825e59645be8f8e19faa7d4b1afeff98c64d47d60a4332e839c5":[1,0,62,0,4],
 "class_dragon_talon_tach.html#a7b73df3604a85825e59645be8f8e19faa87d3eaa32c0f0171c118f5fc31bbf915":[1,0,62,0,5],
 "class_dragon_talon_tach.html#a7b73df3604a85825e59645be8f8e19faab3e47194d8faaf2cb7b8a2c7d98ed21c":[1,0,62,0,0],
-"class_dragon_talon_tach.html#aa29027571fd02858fd41a7057510fdec":[1,0,62,4],
-"class_dragon_ultrasonic.html":[1,0,63],
-"class_dragon_ultrasonic.html#a3c2820cf4af3d050c57e896224582197":[1,0,63,4],
-"class_dragon_ultrasonic.html#a8fe7feb3c650938d4ff7e70771752792":[1,0,63,1],
-"class_dragon_ultrasonic.html#a917536d6949803565bbc330bdcc3a795":[1,0,63,3],
-"class_dragon_ultrasonic.html#ab5271484e95aebeee21ee441e4b325ce":[1,0,63,0],
-"class_dragon_ultrasonic.html#adeaf9ce4af7270c5b3e54a9919cc50a1":[1,0,63,5],
-"class_dragon_ultrasonic.html#ae9f25470c506d1a5f770d4f580523e61":[1,0,63,2],
-"class_dragon_ultrasonic_p_w_m.html":[1,0,64],
-"class_dragon_ultrasonic_p_w_m.html#a228e4919a512ad1adf151d90e1e427ed":[1,0,64,2],
-"class_dragon_ultrasonic_p_w_m.html#a403cf728e7d6426edb94a4b64776eba0":[1,0,64,4],
-"class_dragon_ultrasonic_p_w_m.html#a5454884e3a3a2468c73f395db955985f":[1,0,64,3],
-"class_dragon_ultrasonic_p_w_m.html#ad618781c45fd1f5b85216279828eca10":[1,0,64,5]
+"class_dragon_talon_tach.html#aa29027571fd02858fd41a7057510fdec":[1,0,62,4]
 };

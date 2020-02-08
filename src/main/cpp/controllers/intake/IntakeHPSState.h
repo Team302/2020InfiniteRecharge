@@ -22,6 +22,7 @@
 // Team 302 includes
 #include <controllers/MechanismState.h>
 #include <controllers/ControlData.h>
+#include <controllers/MechanismTargetData.h>
 
 // Third Party Includes
 
@@ -31,7 +32,8 @@ class IntakeHPSState : public MechanismState
         IntakeHPSState
         (
             ControlData* control,
-            double target
+            double target,
+            MechanismTargetData::SOLENOID solState
         );
 
         IntakeHPSState() = delete;

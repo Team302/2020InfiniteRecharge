@@ -1,5 +1,5 @@
 //====================================================================================================================================================
-/// Copyright 2019 Lake Orion Robotics FIRST Team 302
+/// Copyright 2020 Lake Orion Robotics FIRST Team 302
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 /// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -18,14 +18,16 @@
 //Team 302 Includes
 #include <controllers/shooterHood/ShooterHoodHoldPosition.h>
 #include <subsys/IMechanism.h>
-#include <subsys/MechanismFactory.h>
+#include <subsys/MechanismFactory.h>#include <controllers/MechanismTargetData.h>
+#include <controllers/ControlData.h>
 
 
 ShooterHoodHoldPosition::ShooterHoodHoldPosition
 (
-    ControlData* control,
-    double target
-) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD), control, target)
+    ControlData*                    control,
+    double                          target,
+    MechanismTargetData::SOLENOID   solState
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD), control, target, solState )
 {
 
 }

@@ -30,6 +30,7 @@
 // Team 302 includes
 #include <controllers/ControlData.h>
 #include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
 
 // Third Party Includes
 
@@ -39,7 +40,8 @@ class IntakeOn : public MechanismState
         IntakeOn
         (
             ControlData* control,
-            double target
+            double target,
+            MechanismTargetData::SOLENOID solState
         );
 
         IntakeOn() = delete;

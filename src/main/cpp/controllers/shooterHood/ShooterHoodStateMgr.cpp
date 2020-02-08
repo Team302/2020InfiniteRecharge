@@ -63,26 +63,27 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
+                auto solState = td->GetSolenoidState();
 
                 switch ( stateEnum )
                 {
                     case SHOOTER_HOOD_STATE::MOVE_UP:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodMoveUp(controlData, target);
+                        auto thisState = new ShooterHoodMoveUp(controlData, target, solState);
                         m_stateMap[SHOOTER_HOOD_STATE::MOVE_UP] = thisState;
                     }
                     break;
 
                     case SHOOTER_HOOD_STATE::MOVE_DOWN:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodMoveDown(controlData, target);
+                        auto thisState = new ShooterHoodMoveDown(controlData, target, solState);
                         m_stateMap[SHOOTER_HOOD_STATE::MOVE_DOWN] = thisState;
                     }
                     break;
 
                     case SHOOTER_HOOD_STATE::HOLD_POSITION:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodHoldPosition(controlData, target);
+                        auto thisState = new ShooterHoodHoldPosition(controlData, target, solState);
                         m_stateMap[SHOOTER_HOOD_STATE::HOLD_POSITION] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;

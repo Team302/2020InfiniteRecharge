@@ -64,12 +64,13 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
+                auto solState = td->GetSolenoidState();
 
                 switch ( stateEnum )
                 {
                     case IMPELLER_STATE::HOLD:
                     {   
-                        auto thisState = new ImpellerHold(controlData, target);
+                        auto thisState = new ImpellerHold(controlData, target, solState );
                         m_stateEnumToObjectMap[IMPELLER_STATE::HOLD] = thisState;
                         Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller Hold State added to Map");
                     }
@@ -77,7 +78,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
 
                     case IMPELLER_STATE::TO_SHOOTER:
                     {   
-                        auto thisState = new ImpellerToShooter(controlData, target);
+                        auto thisState = new ImpellerToShooter(controlData, target, solState );
                         m_stateEnumToObjectMap[IMPELLER_STATE::OFF] = thisState;
                         Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller To Shooter State added to Map");
                     }
@@ -85,7 +86,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
 
                     case IMPELLER_STATE::OFF:
                     {   
-                        auto thisState = new ImpellerOff(controlData, target);
+                        auto thisState = new ImpellerOff(controlData, target, solState );
                         m_stateEnumToObjectMap[IMPELLER_STATE::OFF] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -96,7 +97,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
 
                     case IMPELLER_STATE::AGITATE:
                     {   
-                        auto thisState = new ImpellerAgitate(controlData, target);
+                        auto thisState = new ImpellerAgitate(controlData, target, solState );
                         m_stateEnumToObjectMap[IMPELLER_STATE::AGITATE] = thisState;
                         Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller Agitate State added to Map");
                     }

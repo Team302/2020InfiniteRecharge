@@ -140,15 +140,18 @@ var hierarchy =
         [ "ImpellerHold", "class_impeller_hold.html", null ],
         [ "ImpellerOff", "class_impeller_off.html", null ],
         [ "ImpellerToShooter", "class_impeller_to_shooter.html", null ],
+        [ "IntakeHPSState", "class_intake_h_p_s_state.html", null ],
         [ "IntakeOff", "class_intake_off.html", null ],
         [ "IntakeOn", "class_intake_on.html", null ],
+        [ "ShooterGetReady", "class_shooter_get_ready.html", null ],
+        [ "ShooterHoodHold", "class_shooter_hood_hold.html", null ],
         [ "ShooterHoodHoldPosition", "class_shooter_hood_hold_position.html", null ],
         [ "ShooterHoodMoveDown", "class_shooter_hood_move_down.html", null ],
-        [ "ShooterHoodMoveUp", "class_shooter_hood_move_up.html", null ]
+        [ "ShooterHoodMoveUp", "class_shooter_hood_move_up.html", null ],
+        [ "ShooterOff", "class_shooter_off.html", null ],
+        [ "ShooterShoot", "class_shooter_shoot.html", null ]
       ] ],
-      [ "ShooterGetReady", "class_shooter_get_ready.html", null ],
-      [ "ShooterOff", "class_shooter_off.html", null ],
-      [ "ShooterShoot", "class_shooter_shoot.html", null ],
+      [ "ShooterHoodManual", "class_shooter_hood_manual.html", null ],
       [ "TankDrive", "class_tank_drive.html", null ]
     ] ],
     [ "IStateTest", "class_i_state_test.html", [

@@ -56,13 +56,13 @@ var NAVTREEINDEX =
 [
 "_analog_axis_8cpp.html",
 "_dragon_solenoid_map_8h.html#af0918686cbe7511dabcb63ce0e3cca84",
-"_motor_defn_8cpp.html",
-"class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4ad9c30dc49f618d7d4e44f902f9829ddb",
-"class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46acc5e07e038b5330a5da8383e6f058f36",
-"class_dragon_ultrasonic_p_w_m.html#ae5baaa76cdd9e98847e662564bbb2f41",
-"class_i_dragon_game_pad.html#aa707bbbb824aeca55d260a9efc95f23e",
-"class_mechanism_types.html",
-"class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a78656a40b5017b43fcc4742e6aafc5f9"
+"_motor_controller_usage_8cpp.html",
+"class_auton_selector.html#a321c5fb8d66485cf1b1c32af57d819b8a3f26d28268b2d438a4739c0046b24208",
+"class_digital_button.html#afe7a772eda4fe4a25d39cac80afeef6e",
+"class_dragon_ultrasonic.html",
+"class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972ba4ee872f30dd02e43ae2b63502b224f23",
+"class_mechanism_state.html#a759f0868b42408ec677b84a34084bf54",
+"class_super_drive.html#aa8baae85dbb3bcfb38f22c25b820562a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
