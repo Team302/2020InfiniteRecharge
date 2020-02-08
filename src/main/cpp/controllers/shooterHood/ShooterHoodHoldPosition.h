@@ -13,11 +13,9 @@
 /// OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-///Created by the one, the only, Big Chief, AJ Gdowski
-///Nobody will ever be brave enough to steal my code, so don't even think about it
-#include <subsys/IMechanism.h>
+#pragma once
+
 #include <controllers/MechanismState.h>
-#include <controllers/IState.h>
 
 class ShooterHoodHoldPosition : public MechanismState
 {
