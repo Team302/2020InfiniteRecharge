@@ -25,10 +25,12 @@ MechanismTargetData::MechanismTargetData
 (
     string                                      state,
     string                                      controller,
-    double                                      target
+    double                                      target,
+    SOLENOID                                    solenoid
 ) : m_state( state ),
     m_controller( controller ),
     m_target( target ),
+    m_solenoid( solenoid ),
     m_controlData()
 {
 
