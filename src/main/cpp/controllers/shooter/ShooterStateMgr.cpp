@@ -62,12 +62,13 @@ ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
+                auto solState = td->GetSolenoidState();
 
                 switch ( stateEnum )
                 {
                     case SHOOTER_STATE::OFF:
                     {   
-                        auto thisState = new ShooterOff( controlData, target );
+                        auto thisState = new ShooterOff( controlData, target, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -77,14 +78,14 @@ ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
 
                     case SHOOTER_STATE::GET_READY:
                     {   
-                        auto thisState = new ShooterGetReady( controlData, target );
+                        auto thisState = new ShooterGetReady( controlData, target, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;
 
                     case SHOOTER_STATE::SHOOT:
                     {   
-                        auto thisState = new ShooterShoot( controlData, target );
+                        auto thisState = new ShooterShoot( controlData, target, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;
@@ -116,15 +117,17 @@ void ShooterStateMgr::RunCurrentState()
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_PREPARE_TO_SHOOT ) && 
-             m_currentStateEnum != SHOOTER_STATE::GET_READY )
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_PREPARE_TO_SHOOT ))
         {
             SetCurrentState( SHOOTER_STATE::GET_READY, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_SHOOT ) &&
-                  m_currentStateEnum != SHOOTER_STATE::SHOOT )
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_SHOOT ))
         {
             SetCurrentState( SHOOTER_STATE::SHOOT, false );
+        }
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_OFF ))
+        {
+            SetCurrentState( SHOOTER_STATE::OFF, false );
         }
         // todo add all states/conditions here
     }

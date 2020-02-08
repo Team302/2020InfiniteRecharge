@@ -63,12 +63,13 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
+                auto solState = td->GetSolenoidState();
                 switch ( stateEnum )
                 {
                     case BALL_TRANSFER_STATE::OFF:
                     {   
                         Logger::GetLogger()->LogError(string("creating ball transfer off"), string(""));
-                        auto thisState = new BallTransferOff( controlData, target );
+                        auto thisState = new BallTransferOff( controlData, target, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -79,7 +80,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                     case BALL_TRANSFER_STATE::TO_IMPELLER:
                     {   
                         Logger::GetLogger()->LogError(string("creating ball transfer to impeller"), string(""));
-                        auto thisState = new BallTransferToImpeller( controlData, target );
+                        auto thisState = new BallTransferToImpeller( controlData, target, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;
@@ -87,7 +88,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                     case BALL_TRANSFER_STATE::TO_SHOOTER:
                     {   
                         Logger::GetLogger()->LogError(string("creating ball transfer to shooter"), string(""));
-                        auto thisState = new BallTransferToShooter( controlData, target );
+                        auto thisState = new BallTransferToShooter( controlData, target, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;
@@ -116,7 +117,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
 void BallTransferStateMgr::RunCurrentState()
 {
     // process teleop/manual interrupts
-    /**
+    
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
@@ -136,7 +137,7 @@ void BallTransferStateMgr::RunCurrentState()
             SetCurrentState( BALL_TRANSFER_STATE::TO_SHOOTER, false );
         }
     }
-    **/
+    
 
     Logger::GetLogger()->OnDash(string("Ball Transfer State"), to_string(m_currentStateEnum));
 

@@ -48,7 +48,7 @@ ControlPanelStateMgr::ControlPanelStateMgr() : m_stateMap(),
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
-
+                auto solState = td->GetSolenoidState();
                 switch ( stateEnum )
                 {
                     case CONTROL_PANEL_STATE::RAISE:

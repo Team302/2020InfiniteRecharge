@@ -29,6 +29,7 @@
 #include <controllers/chassis/ChassisStateMgr.h>
 #include <controllers/BallManipulator.h>
 #include <controllers/intake/IntakeStateMgr.h>
+#include <gamepad/TeleopControl.h>
 //#include <controllers/controlPanel/ControlPanelStateMgr.h>
 //#include <controllers/climber/ClimberStateMgr.h>
 
@@ -39,6 +40,7 @@
 #include <test/ImpellerStateMgrTest.h>
 #include <test/BallTransferStateMgrTest.h>
 #include <test/ShooterStateMgrTest.h>
+#include <ctre/Phoenix.h>
 
 using namespace std;
 using namespace frc;
@@ -62,7 +64,12 @@ void Robot::RobotInit()
 
     m_chassisStateMgr = new ChassisStateMgr();
     //m_intake = new IntakeStateMgr();
-//    m_powerCells = new BallManipulator();
+    m_powerCells = new BallManipulator();
+    m_shooterHood = new TalonSRX(4);
+    m_turret = new TalonSRX(5);
+
+    m_controller = TeleopControl::GetInstance();
+
 
     // m_control = new ControlPanelStateMgr();
     // m_climber = new ClimberStateMgr();
@@ -120,7 +127,7 @@ void Robot::TeleopInit()
 {
     m_chassisStateMgr->Init();
     m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
-//    m_powerCells->RunCurrentState();
+    m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
 }
@@ -131,10 +138,13 @@ void Robot::TeleopInit()
 void Robot::TeleopPeriodic() 
 {
     m_chassisStateMgr->RunCurrentState();
+    m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
+    m_shooterHood->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_AXIS) * .5);
     //m_intake->RunCurrentState();
-//    m_powerCells->RunCurrentState();
+   m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
+    
 }
 
 

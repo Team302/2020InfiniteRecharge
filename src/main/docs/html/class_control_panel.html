@@ -127,15 +127,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abdff4646934ab23158cfce4261322889"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_panel.html#abdff4646934ab23158cfce4261322889">GetCurrentPosition</a> () const override</td></tr>
 <tr class="memdesc:abdff4646934ab23158cfce4261322889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current position of the mechanism. The value is in inches or degrees.  <a href="class_control_panel.html#abdff4646934ab23158cfce4261322889">More...</a><br /></td></tr>
 <tr class="separator:abdff4646934ab23158cfce4261322889"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4783314507db821a953567cdcfa88853"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_panel.html#a4783314507db821a953567cdcfa88853">GetTargetPosition</a> () const override</td></tr>
-<tr class="memdesc:a4783314507db821a953567cdcfa88853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the targget position of the mechanism. The value is in inches or degrees.  <a href="class_control_panel.html#a4783314507db821a953567cdcfa88853">More...</a><br /></td></tr>
-<tr class="separator:a4783314507db821a953567cdcfa88853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99f7157fc32fd4f2f10c2f78ba0e34cd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_panel.html#a99f7157fc32fd4f2f10c2f78ba0e34cd">GetCurrentSpeed</a> () const override</td></tr>
 <tr class="memdesc:a99f7157fc32fd4f2f10c2f78ba0e34cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current speed of the mechanism. The value is in inches per second or degrees per second.  <a href="class_control_panel.html#a99f7157fc32fd4f2f10c2f78ba0e34cd">More...</a><br /></td></tr>
 <tr class="separator:a99f7157fc32fd4f2f10c2f78ba0e34cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3f18a8d44d1516e8e5f41fca394fd2d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_panel.html#ad3f18a8d44d1516e8e5f41fca394fd2d">GetTargetSpeed</a> () const override</td></tr>
-<tr class="memdesc:ad3f18a8d44d1516e8e5f41fca394fd2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the target speed of the mechanism. The value is in inches per second or degrees per second.  <a href="class_control_panel.html#ad3f18a8d44d1516e8e5f41fca394fd2d">More...</a><br /></td></tr>
-<tr class="separator:ad3f18a8d44d1516e8e5f41fca394fd2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7fc1fccae4a61dea721107f69ab3327"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_panel.html#ac7fc1fccae4a61dea721107f69ab3327">SetControlConstants</a> (<a class="el" href="class_control_data.html">ControlData</a> *pid) override</td></tr>
 <tr class="memdesc:ac7fc1fccae4a61dea721107f69ab3327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values).  <a href="class_control_panel.html#ac7fc1fccae4a61dea721107f69ab3327">More...</a><br /></td></tr>
 <tr class="separator:ac7fc1fccae4a61dea721107f69ab3327"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -290,7 +284,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00178">178</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00161">161</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>
@@ -354,77 +348,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00148">148</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a4783314507db821a953567cdcfa88853"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4783314507db821a953567cdcfa88853">&#9670;&nbsp;</a></span>GetTargetPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double ControlPanel::GetTargetPosition </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return the targget position of the mechanism. The value is in inches or degrees. </p>
-<dl class="section return"><dt>Returns</dt><dd>double position in inches (translating mechanisms) or degrees (rotating mechanisms) </dd></dl>
-
-<p>Implements <a class="el" href="class_i_mechanism.html#afd97d8b3f072b45a88c83490dd18e8d2">IMechanism</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00138">138</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ad3f18a8d44d1516e8e5f41fca394fd2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3f18a8d44d1516e8e5f41fca394fd2d">&#9670;&nbsp;</a></span>GetTargetSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double ControlPanel::GetTargetSpeed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the target speed of the mechanism. The value is in inches per second or degrees per second. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ControlModes::MECHANISM_CONTROL_ID</td><td>controlItems: What item(s) are being requested </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>double speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) </dd></dl>
-
-<p>Implements <a class="el" href="class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2">IMechanism</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00158">158</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00140">140</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>
@@ -527,7 +451,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00171">171</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_control_panel_8cpp_source.html#l00154">154</a> of file <a class="el" href="_control_panel_8cpp_source.html">ControlPanel.cpp</a>.</p>
 
 </div>
 </div>

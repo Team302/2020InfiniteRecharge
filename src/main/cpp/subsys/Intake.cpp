@@ -116,15 +116,6 @@ double Intake::GetCurrentPosition
 }
 
 
-double Intake::GetTargetPosition 
-(
-
-)const
-{
-    Logger::GetLogger()->LogError(string("Intake::GetTargetPosition"),string ("Called"));
-    return 0.0;     //subj. to change
-}
-
 
 double Intake::GetCurrentSpeed
 (
@@ -135,15 +126,6 @@ double Intake::GetCurrentSpeed
     return 0.0;     //subj. to change
 }
 
-
-double Intake::GetTargetSpeed
-(
-
-)const
-{
-    Logger::GetLogger()->LogError(string("Intake::GetTargetSpeed"), string("Called"));
-    return 0.0;     //subj. to change
-}
 
 /// @brief  Set the control constants (e.g. PIDF values).
 /// @param [in] ControlData*                                   pid:  the control constants

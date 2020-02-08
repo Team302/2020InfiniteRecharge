@@ -39,6 +39,7 @@
 #include <hw/usages/ServoMap.h>
 
 #include <xmlhw/AnalogInputDefn.h>
+#include <xmlhw/CanCoderDefn.h>
 #include <xmlhw/DigitalInputDefn.h>
 #include <xmlhw/MotorDefn.h>
 #include <xmlhw/ServoDefn.h> 
@@ -151,6 +152,7 @@ IMechanism* MechanismDefn::ParseXML
     unique_ptr<ServoDefn> servoXML = make_unique<ServoDefn>();
     unique_ptr<SolenoidDefn> solenoidXML = make_unique<SolenoidDefn>();
     unique_ptr<ColorSensorDefn> colorXML = make_unique<ColorSensorDefn>();
+    unique_ptr<CanCoderDefn> cancoderXML = make_unique<CanCoderDefn>();
 
     IDragonMotorControllerMap motors;
     ServoMap servos;
@@ -158,6 +160,7 @@ IMechanism* MechanismDefn::ParseXML
     AnalogInputMap analogInputs;
     DigitalInputMap digitalInputs;
     rev::ColorSensorV3* colorSensor = nullptr;
+    shared_ptr<ctre::phoenix::sensors::CANCoder> canCoder = nullptr;
 
     for (xml_node child = mechanismNode.first_child(); child  && !hasError; child = child.next_sibling())
     {
@@ -203,7 +206,7 @@ IMechanism* MechanismDefn::ParseXML
         }
         else if ( strcmp( child.name(), "canCoder" ) )
         {
-            // todo add hong bing's code here
+            canCoder = cancoderXML.get()->ParseXML(child);
         }
         else if ( strcmp( child.name(), "colorsensor" ) == 0 )
         {
@@ -222,7 +225,7 @@ IMechanism* MechanismDefn::ParseXML
     if ( !hasError )
     {
         MechanismFactory* factory =  MechanismFactory::GetMechanismFactory();
-        mech = factory->CreateIMechanism( type, motors, solenoids, servos, digitalInputs, analogInputs, colorSensor );
+        mech = factory->CreateIMechanism( type, motors, solenoids, servos, digitalInputs, analogInputs, colorSensor, canCoder );
     }
 
     return mech;

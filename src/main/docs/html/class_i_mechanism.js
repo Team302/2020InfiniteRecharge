@@ -5,8 +5,6 @@ var class_i_mechanism =
     [ "ActivateSolenoid", "class_i_mechanism.html#abef1fbd73a24f4f6f3104e255539e0d9", null ],
     [ "GetCurrentPosition", "class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d", null ],
     [ "GetCurrentSpeed", "class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437", null ],
-    [ "GetTargetPosition", "class_i_mechanism.html#afd97d8b3f072b45a88c83490dd18e8d2", null ],
-    [ "GetTargetSpeed", "class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2", null ],
     [ "GetType", "class_i_mechanism.html#a62096808201ffc31609e99dc2fa92d44", null ],
     [ "IsSolenoidActivated", "class_i_mechanism.html#a4c0bedb71316054749a276a67d278558", null ],
     [ "SetControlConstants", "class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11", null ],

@@ -85,19 +85,9 @@ class DriveTrainSide : public IMechanism
         double GetCurrentPosition() const override;
 
 
-        /// @brief  Return the target position of the DriveTrainSide in inches (positive is forward, negative is backward)
-        /// @return double  position in inches
-        double GetTargetPosition() const override;
-
-
         /// @brief  Return the current speed of the DriveTrainSide in inches / second (positive is forward, negative is backward)
         /// @return double  speed in inches / second
         double GetCurrentSpeed() const override;
-
-
-        /// @brief  Return the target speed of the DriveTrainSide in inches / second (positive is forward, negative is backward)
-        /// @return double  speed in inches / second
-        double GetTargetSpeed() const override;
 
 
         /// @brief  Set the control constants (e.g. PIDF values).

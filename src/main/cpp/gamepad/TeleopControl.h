@@ -40,7 +40,7 @@ class TeleopControl
 
         enum FUNCTION_IDENTIFIER
         {
-            UNKNOW_FUNCTION,
+            UNKNOWN_FUNCTION,
             TANK_DRIVE_LEFT_CONTROL,
             TANK_DRIVE_RIGHT_CONTROL,
             ARCADE_DRIVE_THROTTLE,
@@ -53,9 +53,10 @@ class TeleopControl
             CLIMBER_EXTEND,
             CLIMBER_LIFT,
             CLIMBER_CRAWL,
-            IMPELLER_SPIN,
-            IMPELLER_STOP,
+            IMPELLER_OFF,
+            IMPELLER_HOLD,
             IMPELLER_AGITATE,
+            IMPELLER_TO_SHOOTER,
             INTAKE_ON,
             INTAKE_OFF,
             BALL_TRANSFER_OFF,
@@ -66,6 +67,7 @@ class TeleopControl
             SHOOTER_MANUAL_AIM,
             SHOOTER_MANUAL_ADJUST_DISTANCE,
             SHOOTER_MANUAL_SHOOT,
+            SHOOTER_OFF,
             CONTROL_PANEL_STOW,
             CONTROL_PANEL_RAISE,
             CONTROL_PANEL_SPIN_WHEEL,
@@ -74,6 +76,9 @@ class TeleopControl
             SHOOTER_HOOD_MOVE_UP,
             SHOOTER_HOOD_MOVE_DOWN,
             SHOOTER_HOOD_HOLD_POSITION,
+            SHOOTER_HOOD_MANUAL_BUTTON,
+            SHOOTER_HOOD_MANUAL_AXIS,
+            TURRET_MANUAL_AXIS,
             MAX_FUNCTIONS
         };
 

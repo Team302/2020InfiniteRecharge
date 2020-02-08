@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE robot SYSTEM "robot.dtd">
 <robot>
-	<pdp canId="51" />
+	<pdp canId="0" />
 	
 	<odometry xloc="0.0"
 	          yloc="0.0"
@@ -50,7 +50,7 @@
 				canId="12"
 				pdpID="12"
 				type="FALCON"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
@@ -69,13 +69,13 @@
 				canId="13"
 				pdpID="13"
 				type="FALCON"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
 				gearRatio="1.0"
 				brakeMode="true"
-				slaveTo="1"
+				slaveTo="12"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"
@@ -115,7 +115,7 @@
 				countsPerRev="2048"
 				gearRatio="1.0"
 				brakeMode="true"
-				slaveTo="1"
+				slaveTo="15"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"
@@ -151,7 +151,7 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
     	<solenoid usage="INTAKE"
-    		      canId="50"
+    		      canId="9"
     		      channel="0"
     		      reversed="false" />
 	</mechanism>
@@ -236,13 +236,13 @@
 				canId="1"
 				pdpID="1"
 				type="FALCON"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
 				gearRatio="1.0"
 				brakeMode="true"
-				slaveTo="5"
+				slaveTo="16"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"
@@ -322,7 +322,7 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
     	<solenoid usage="CONTROL_TABLE_MANIPULATOR"
-    		      canId="50"
+    		      canId="9"
     		      channel="1"
     		      reversed="false" />
 		<colorSensor port="kOnboard" />
@@ -348,7 +348,7 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
     	<solenoid usage="CLIMBER"
-    		      canId="50"
+    		      canId="9"
     		      channel="2"
     		      reversed="false" />
 	</mechanism>

@@ -24,10 +24,9 @@
 
 #pragma once
 
-#include <subsys/IMechanism.h>
-#include <controllers/IState.h>
 #include <controllers/ControlData.h>
 #include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
 
 class IntakeOff : public MechanismState
 {
@@ -36,21 +35,12 @@ class IntakeOff : public MechanismState
     IntakeOff
     (
         ControlData* control,
-        double target
+        double target,
+        MechanismTargetData::SOLENOID solState
     );
     IntakeOff() = delete;
     ~IntakeOff() = default;
 
-    /*void Init() override;
-    void Run() override;
-    bool AtTarget() const override;
-    */
-    private:
-
-    /*IMechanism* m_intake;
-    ControlData* m_control;
-    double m_target;
-    */
 };
 
 

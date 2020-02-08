@@ -28,10 +28,9 @@
 // FRC includes
 
 // Team 302 includes
-#include <controllers/IState.h>
-#include <subsys/IMechanism.h>
 #include <controllers/ControlData.h>
 #include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
 
 // Third Party Includes
 
@@ -41,22 +40,11 @@ class IntakeOn : public MechanismState
         IntakeOn
         (
             ControlData* control,
-            double target
+            double target,
+            MechanismTargetData::SOLENOID solState
         );
 
         IntakeOn() = delete;
         ~IntakeOn() = default;
-
-        /*void Init() override;
-        void Run() override;
-        bool AtTarget() const override;
-        */
-
-    private:
-
-        /*IMechanism* m_intake;
-        ControlData* m_control;
-        double m_target;
-        */
 
 };

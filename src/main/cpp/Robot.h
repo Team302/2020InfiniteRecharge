@@ -49,6 +49,8 @@
 #include <test/ImpellerStateMgrTest.h>
 #include <test/BallTransferStateMgrTest.h>
 #include <test/ShooterStateMgrTest.h>
+#include <ctre/Phoenix.h>
+#include <gamepad/TeleopControl.h>
 
 // third party includes
 
@@ -85,6 +87,10 @@ class Robot : public frc::TimedRobot
 	  ImpellerStateMgrTest* m_impellerStateMgrTest;
 	  BallTransferStateMgrTest* m_ballTransferStateMgrTest;
 	  ShooterStateMgrTest* m_shooterStateMgrTest;
+
+      TalonSRX* m_shooterHood;
+      TalonSRX* m_turret;
+      TeleopControl* m_controller;
 
       frc::SendableChooser<std::string>   m_testChooser;                    
       const std::string                   m_noTest = "No Test";      

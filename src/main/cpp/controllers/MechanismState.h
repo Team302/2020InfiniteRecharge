@@ -19,6 +19,7 @@
 #include <subsys/IMechanism.h>
 #include <controllers/IState.h>
 #include <controllers/ControlData.h>
+#include <controllers/MechanismTargetData.h>
 
 class MechanismState : public IState
 {
@@ -26,9 +27,10 @@ class MechanismState : public IState
 
         MechanismState
         (
-            IMechanism*     mechanism,
-            ControlData*    control,
-            double          target
+            IMechanism*                     mechanism,
+            ControlData*                    control,
+            double                          target,
+            MechanismTargetData::SOLENOID   solState
         );
         MechanismState() = delete;
         ~MechanismState() = default;
@@ -39,9 +41,10 @@ class MechanismState : public IState
 
     private:
 
-        IMechanism*  m_mechanism;
-        ControlData* m_control;
-        double       m_target;
-        bool         m_positionBased;
-        bool         m_speedBased;
+        IMechanism*                     m_mechanism;
+        ControlData*                    m_control;
+        double                          m_target;
+        MechanismTargetData::SOLENOID   m_solenoidState;
+        bool                            m_positionBased;
+        bool                            m_speedBased;
 };

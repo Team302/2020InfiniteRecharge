@@ -23,15 +23,16 @@
 
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
 //========================================================================================================
 // Team 302 includes
 #include <controllers/intake/IntakeOff.h>
-#include <controllers/IState.h>
+#include <controllers/MechanismState.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
+#include <controllers/MechanismTargetData.h>
+
 // Third Party Includes
 
 using namespace std;
@@ -40,24 +41,9 @@ using namespace std;
 IntakeOff::IntakeOff
 (
     ControlData* control,
-    double target
-) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE), control, target)
+    double target,
+    MechanismTargetData::SOLENOID solState
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE), control, target, solState )
 {
 }
 
-/*void IntakeOff::Init()
-{
-    m_intake->SetControlConstants( m_control );
-
-}
-void IntakeOff::Run()           
-{
-    m_intake -> SetOutput( m_control->GetMode(), m_target);                     
-    m_intake -> ActivateSolenoid( false );                                      
-}
-
-bool IntakeOff::AtTarget() const                                                     //confirms that it worked
-{
-    return true;
-}
-*/

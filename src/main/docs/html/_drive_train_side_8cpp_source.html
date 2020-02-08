@@ -157,11 +157,11 @@ $(document).ready(function(){initNavTree('_drive_train_side_8cpp_source.html',''
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;) </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    m_target = value;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> ( m_master != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> ( m_master.get() != nullptr )</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// todo map mechanism control mode to motor control mode (create method)</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        m_master-&gt;SetControlMode( controlType );</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        m_master-&gt;Set( value );</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        m_master.get()-&gt;SetControlMode( controlType );</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        m_master.get()-&gt;Set( value );</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
@@ -186,10 +186,10 @@ $(document).ready(function(){initNavTree('_drive_train_side_8cpp_source.html',''
 <div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="class_drive_train_side.html#a557590423b84c081762e79c161d55ee9">  114</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_drive_train_side.html#a557590423b84c081762e79c161d55ee9">DriveTrainSide::GetCurrentPosition</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">double</span> distance = 0.0;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> ( m_master != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> ( m_master.get() != nullptr )</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        distance = ( m_wheelSize * M_PI );          <span class="comment">// distance the wheel travels per revolution</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keyword">auto</span> nRotations = m_master-&gt;GetRotations(); <span class="comment">// number of rotations</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keyword">auto</span> nRotations = m_master.get()-&gt;GetRotations(); <span class="comment">// number of rotations</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        distance *= nRotations;                     <span class="comment">// distance per revolution * number of revolutions is the distance</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">else</span></div>
@@ -200,57 +200,45 @@ $(document).ready(function(){initNavTree('_drive_train_side_8cpp_source.html',''
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="class_drive_train_side.html#a0ccf01a971eab34f5a053e6184af1b71">  132</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_drive_train_side.html#a0ccf01a971eab34f5a053e6184af1b71">DriveTrainSide::GetTargetPosition</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">return</span> m_target;  <span class="comment">// todo either need 2 variables or know the current mode</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">  141</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">DriveTrainSide::GetCurrentSpeed</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">double</span> speed = 0.0;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> ( m_master != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">  135</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">DriveTrainSide::GetCurrentSpeed</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">double</span> speed = 0.0;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">if</span> ( m_master.get() != nullptr )</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        speed = ( m_wheelSize * M_PI ); <span class="comment">// distance the wheel travels per revolution (inches)</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keyword">auto</span> rps = m_master.get()-&gt;GetRPS();  <span class="comment">// number of rotations per second</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        speed *= rps;                   <span class="comment">// distance per revolution * revolutions per second is inches per second</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        speed = ( m_wheelSize * M_PI ); <span class="comment">// distance the wheel travels per revolution (inches)</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">auto</span> rps = m_master-&gt;GetRPS();  <span class="comment">// number of rotations per second</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        speed *= rps;                   <span class="comment">// distance per revolution * revolutions per second is inches per second</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="stringliteral">&quot;DriveTrainSide::SetOutput&quot;</span>, <span class="stringliteral">&quot;No master&quot;</span> );</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">return</span> speed;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="class_drive_train_side.html#adf2337d61c0dd88d0a2b63032ce1075d">  163</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_drive_train_side.html#adf2337d61c0dd88d0a2b63032ce1075d">DriveTrainSide::GetTargetSpeed</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">return</span> m_target;  <span class="comment">// todo either need 2 variables or know the current mode</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="stringliteral">&quot;DriveTrainSide::SetOutput&quot;</span>, <span class="stringliteral">&quot;No master&quot;</span> );</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">return</span> speed;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">DriveTrainSide::SetControlConstants</a></div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">  158</a></span>&#160;(</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>*                                 pid                 </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// todo:  need to account for voltage mode</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">// NO-OP since we can&#39;t run closed loop since we don&#39;t have sensors</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">DriveTrainSide::SetControlConstants</a></div>
-<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">  174</a></span>&#160;(</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>*                                 pid                 </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;)</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// todo:  need to account for voltage mode</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">// NO-OP since we can&#39;t run closed loop since we don&#39;t have sensors</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_drive_train_side_8h_html"><div class="ttname"><a href="_drive_train_side_8h.html">DriveTrainSide.h</a></div></div>
 <div class="ttc" id="aclass_drive_train_side_html_a628a1bb75d5be4a69b63c1e94eb00f49"><div class="ttname"><a href="class_drive_train_side.html#a628a1bb75d5be4a69b63c1e94eb00f49">DriveTrainSide::ActivateSolenoid</a></div><div class="ttdeci">void ActivateSolenoid(bool activate) override</div><div class="ttdoc">Activate/deactivate pneumatic solenoid.</div><div class="ttdef"><b>Definition:</b> <a href="_drive_train_side_8cpp_source.html#l00098">DriveTrainSide.cpp:98</a></div></div>
 <div class="ttc" id="a_dragon_motor_controller_factory_8h_html"><div class="ttname"><a href="_dragon_motor_controller_factory_8h.html">DragonMotorControllerFactory.h</a></div></div>
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
-<div class="ttc" id="aclass_drive_train_side_html_a5a706257d98af9460c245b7f34b61423"><div class="ttname"><a href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">DriveTrainSide::SetControlConstants</a></div><div class="ttdeci">void SetControlConstants(ControlData *pid) override</div><div class="ttdoc">Set the control constants (e.g. PIDF values).</div><div class="ttdef"><b>Definition:</b> <a href="_drive_train_side_8cpp_source.html#l00174">DriveTrainSide.cpp:174</a></div></div>
+<div class="ttc" id="aclass_drive_train_side_html_a5a706257d98af9460c245b7f34b61423"><div class="ttname"><a href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">DriveTrainSide::SetControlConstants</a></div><div class="ttdeci">void SetControlConstants(ControlData *pid) override</div><div class="ttdoc">Set the control constants (e.g. PIDF values).</div><div class="ttdef"><b>Definition:</b> <a href="_drive_train_side_8cpp_source.html#l00158">DriveTrainSide.cpp:158</a></div></div>
 <div class="ttc" id="aclass_drive_train_side_html_a557590423b84c081762e79c161d55ee9"><div class="ttname"><a href="class_drive_train_side.html#a557590423b84c081762e79c161d55ee9">DriveTrainSide::GetCurrentPosition</a></div><div class="ttdeci">double GetCurrentPosition() const override</div><div class="ttdoc">Return the current position of the DriveTrainSide in inches (positive is forward, negative is backwar...</div><div class="ttdef"><b>Definition:</b> <a href="_drive_train_side_8cpp_source.html#l00114">DriveTrainSide.cpp:114</a></div></div>
-<div class="ttc" id="aclass_drive_train_side_html_a0ccf01a971eab34f5a053e6184af1b71"><div class="ttname"><a href="class_drive_train_side.html#a0ccf01a971eab34f5a053e6184af1b71">DriveTrainSide::GetTargetPosition</a></div><div class="ttdeci">double GetTargetPosition() const override</div><div class="ttdoc">Return the target position of the DriveTrainSide in inches (positive is forward, negative is backward...</div><div class="ttdef"><b>Definition:</b> <a href="_drive_train_side_8cpp_source.html#l00132">DriveTrainSide.cpp:132</a></div></div>
 <div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
 <div class="ttc" id="aclass_mechanism_types_html_adad17689ea795c3d65e2062bdc09284b"><div class="ttname"><a href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes::MECHANISM_TYPE</a></div><div class="ttdeci">MECHANISM_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_types_8h_source.html#l00031">MechanismTypes.h:31</a></div></div>
 <div class="ttc" id="aclass_drive_train_side_html_a64ddb62d04bb2896356fcf02f7a47502"><div class="ttname"><a href="class_drive_train_side.html#a64ddb62d04bb2896356fcf02f7a47502">DriveTrainSide::IsSolenoidActivated</a></div><div class="ttdeci">bool IsSolenoidActivated() override</div><div class="ttdoc">Check if the pneumatic solenoid is activated.</div><div class="ttdef"><b>Definition:</b> <a href="_drive_train_side_8cpp_source.html#l00107">DriveTrainSide.cpp:107</a></div></div>
@@ -260,9 +248,8 @@ $(document).ready(function(){initNavTree('_drive_train_side_8cpp_source.html',''
 <div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00022">ControlData.h:22</a></div></div>
 <div class="ttc" id="aclass_drive_train_side_html_afb3d28141117ebdf1e00af89e1f90007"><div class="ttname"><a href="class_drive_train_side.html#afb3d28141117ebdf1e00af89e1f90007">DriveTrainSide::GetType</a></div><div class="ttdeci">MechanismTypes::MECHANISM_TYPE GetType() const override</div><div class="ttdoc">Indicates this is the DriveTrainSide.</div><div class="ttdef"><b>Definition:</b> <a href="_drive_train_side_8cpp_source.html#l00063">DriveTrainSide.cpp:63</a></div></div>
 <div class="ttc" id="aclass_drive_train_side_html_a780ffb564264716f6d86e6a089bd3dd3"><div class="ttname"><a href="class_drive_train_side.html#a780ffb564264716f6d86e6a089bd3dd3">DriveTrainSide::SetOutput</a></div><div class="ttdeci">void SetOutput(ControlModes::CONTROL_TYPE controlType, double value) override</div><div class="ttdoc">Run DriveTrainSide as defined.</div><div class="ttdef"><b>Definition:</b> <a href="_drive_train_side_8cpp_source.html#l00075">DriveTrainSide.cpp:75</a></div></div>
-<div class="ttc" id="aclass_drive_train_side_html_a5b2d55207f0a6244caa19cc5197bac5e"><div class="ttname"><a href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">DriveTrainSide::GetCurrentSpeed</a></div><div class="ttdeci">double GetCurrentSpeed() const override</div><div class="ttdoc">Return the current speed of the DriveTrainSide in inches / second (positive is forward,...</div><div class="ttdef"><b>Definition:</b> <a href="_drive_train_side_8cpp_source.html#l00141">DriveTrainSide.cpp:141</a></div></div>
+<div class="ttc" id="aclass_drive_train_side_html_a5b2d55207f0a6244caa19cc5197bac5e"><div class="ttname"><a href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">DriveTrainSide::GetCurrentSpeed</a></div><div class="ttdeci">double GetCurrentSpeed() const override</div><div class="ttdoc">Return the current speed of the DriveTrainSide in inches / second (positive is forward,...</div><div class="ttdef"><b>Definition:</b> <a href="_drive_train_side_8cpp_source.html#l00135">DriveTrainSide.cpp:135</a></div></div>
 <div class="ttc" id="a_i_dragon_motor_controller_8h_html"><div class="ttname"><a href="_i_dragon_motor_controller_8h.html">IDragonMotorController.h</a></div></div>
-<div class="ttc" id="aclass_drive_train_side_html_adf2337d61c0dd88d0a2b63032ce1075d"><div class="ttname"><a href="class_drive_train_side.html#adf2337d61c0dd88d0a2b63032ce1075d">DriveTrainSide::GetTargetSpeed</a></div><div class="ttdeci">double GetTargetSpeed() const override</div><div class="ttdoc">Return the target speed of the DriveTrainSide in inches / second (positive is forward,...</div><div class="ttdef"><b>Definition:</b> <a href="_drive_train_side_8cpp_source.html#l00163">DriveTrainSide.cpp:163</a></div></div>
 <div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>
 <div class="ttc" id="a_mechanism_types_8h_html"><div class="ttname"><a href="_mechanism_types_8h.html">MechanismTypes.h</a></div></div>
 <div class="ttc" id="aclass_control_modes_html_a46c77e409ac22b3b3269f7fee2d3f736"><div class="ttname"><a href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a></div><div class="ttdeci">CONTROL_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_control_modes_8h_source.html#l00024">ControlModes.h:24</a></div></div>

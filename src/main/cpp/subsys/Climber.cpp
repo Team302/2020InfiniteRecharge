@@ -131,11 +131,6 @@ double Climber::GetCurrentPosition() const
     return distance;
 }
 
-///@brief return the target position of the climber in inches.
-double Climber::GetTargetPosition() const
-{
-    return m_target; //TODO: find actual target positions
-}
 
 ///@brief return the current speed of the climber in degrees per second.
 ///@return double   speed in degrees per second
@@ -156,12 +151,7 @@ double Climber::GetCurrentSpeed() const
 
 }
 
-///@brief   return the target speed of the Climber in speed per second
-///@return  speed in degrees per second
-double Climber::GetTargetSpeed() const
-{
-    return m_target;
-}
+
 
 ///@brief Set the control constants (e.g. PIDF values)
 ///@param [in] ControlData*     pid - the control constants

@@ -20,6 +20,7 @@
 #include <controllers/IState.h>
 #include <controllers/MechanismState.h>
 #include <controllers/ControlData.h>
+#include <controllers/MechanismTargetData.h>
 
 class BallTransferOff : public MechanismState
 {
@@ -28,8 +29,9 @@ class BallTransferOff : public MechanismState
         BallTransferOff() = delete;
         BallTransferOff
         (
-            ControlData*    control,
-            double          target
+            ControlData*                    control,
+            double                          target,
+            MechanismTargetData::SOLENOID   solState
         );
         ~BallTransferOff() = default;
 };

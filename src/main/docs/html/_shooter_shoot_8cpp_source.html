@@ -89,67 +89,52 @@ $(document).ready(function(){initNavTree('_shooter_shoot_8cpp_source.html','');}
 <div class="title">ShooterShoot.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_shooter_shoot_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*----------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/* Open Source Software - may be modified and shared by FRC teams. The code   */</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/* must be accompanied by the FIRST BSD license file in the root directory of */</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* the project.                                                               */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*----------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_shooter_shoot_8h.html">controllers/shooter/ShooterShoot.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_control_data_8h.html">controllers/ControlData.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_control_modes_8h.html">controllers/ControlModes.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mechanism_factory_8h.html">subsys/MechanismFactory.h</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mechanism_types_8h.html">subsys/MechanismTypes.h</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="class_shooter_shoot.html#a6e7baa83c8bd2394b827363421629080">ShooterShoot::ShooterShoot</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_shooter_shoot.html#a6e7baa83c8bd2394b827363421629080">   16</a></span>&#160;(</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>* controlData, </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">double</span> target</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;) : m_shooter( <a class="code" href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a>()-&gt;GetIMechanism(<a class="code" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba5751201c8cf975192a6ad9cf90e793b7">MechanismTypes::SHOOTER</a>)),</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    m_controlData(controlData),</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    m_atTarget(<span class="keyword">false</span>),</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    m_target(target)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<a href="_shooter_shoot_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Copyright 2020 Lake Orion Robotics FIRST Team 302</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;),</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_shooter_shoot_8h.html">controllers/shooter/ShooterShoot.h</a>&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_control_data_8h.html">controllers/ControlData.h</a>&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_factory_8h.html">subsys/MechanismFactory.h</a>&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_types_8h.html">subsys/MechanismTypes.h</a>&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_state_8h.html">controllers/MechanismState.h</a>&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_target_data_8h.html">controllers/MechanismTargetData.h</a>&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_shooter_shoot.html#a5c08dfc5f6ca55aacab5129de4770e05">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_shooter_shoot.html#a5c08dfc5f6ca55aacab5129de4770e05">ShooterShoot::Init</a>()</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    m_shooter-&gt;<a class="code" href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">SetControlConstants</a>(m_controlData);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_shooter_shoot.html#a4c9046ad0346defdafeb6ba12c4161cc">   31</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_shooter_shoot.html#a4c9046ad0346defdafeb6ba12c4161cc">ShooterShoot::Run</a>()</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    m_shooter-&gt;<a class="code" href="class_i_mechanism.html#abc72a6d0306a828de6f43418e75c04c0">SetOutput</a>(m_controlData-&gt;<a class="code" href="class_control_data.html#a3e7157f943ecefb04cb30c274bf9a330">GetMode</a>(), m_target);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span>(m_shooter-&gt;<a class="code" href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">GetCurrentSpeed</a>() &gt;= m_target)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        m_atTarget = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_shooter_shoot.html#a125182c39590a833041cc85807f3c148">   40</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_shooter_shoot.html#a125182c39590a833041cc85807f3c148">ShooterShoot::AtTarget</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> m_atTarget;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<a class="code" href="class_shooter_shoot.html#abdad2970e6e24b2dbf0db8b6bf959317">ShooterShoot::ShooterShoot</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_shooter_shoot.html#a8cab7b9b8b54c6c6239ceb35809ca9e7">   27</a></span>&#160;(</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>*                    controlData, </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">double</span>                          target,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a>   solState</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;) : <a class="code" href="class_mechanism_state.html">MechanismState</a>( <a class="code" href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a>()-&gt;GetIMechanism(<a class="code" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba5751201c8cf975192a6ad9cf90e793b7">MechanismTypes::SHOOTER</a>), controlData, target, solState )</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_shooter_shoot_html_a125182c39590a833041cc85807f3c148"><div class="ttname"><a href="class_shooter_shoot.html#a125182c39590a833041cc85807f3c148">ShooterShoot::AtTarget</a></div><div class="ttdeci">bool AtTarget() const override</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_shoot_8cpp_source.html#l00040">ShooterShoot.cpp:40</a></div></div>
+<div class="ttc" id="aclass_mechanism_target_data_html_a1bd7dca52842f28088b36d001b0ac125"><div class="ttname"><a href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a></div><div class="ttdeci">SOLENOID</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_target_data_8h_source.html#l00025">MechanismTargetData.h:25</a></div></div>
 <div class="ttc" id="a_shooter_shoot_8h_html"><div class="ttname"><a href="_shooter_shoot_8h.html">ShooterShoot.h</a></div></div>
+<div class="ttc" id="a_mechanism_state_8h_html"><div class="ttname"><a href="_mechanism_state_8h.html">MechanismState.h</a></div></div>
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
-<div class="ttc" id="aclass_i_mechanism_html_acd973ca93855c485ed42d405f2fcba11"><div class="ttname"><a href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">IMechanism::SetControlConstants</a></div><div class="ttdeci">virtual void SetControlConstants(ControlData *pid)=0</div><div class="ttdoc">Set the control constants (e.g. PIDF values).</div></div>
 <div class="ttc" id="a_mechanism_factory_8h_html"><div class="ttname"><a href="_mechanism_factory_8h.html">MechanismFactory.h</a></div></div>
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
-<div class="ttc" id="aclass_control_data_html_a3e7157f943ecefb04cb30c274bf9a330"><div class="ttname"><a href="class_control_data.html#a3e7157f943ecefb04cb30c274bf9a330">ControlData::GetMode</a></div><div class="ttdeci">ControlModes::CONTROL_TYPE GetMode() const</div><div class="ttdoc">Retrieve the Control Type.</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00059">ControlData.h:59</a></div></div>
+<div class="ttc" id="a_mechanism_target_data_8h_html"><div class="ttname"><a href="_mechanism_target_data_8h.html">MechanismTargetData.h</a></div></div>
 <div class="ttc" id="aclass_mechanism_types_html_adad17689ea795c3d65e2062bdc09284ba5751201c8cf975192a6ad9cf90e793b7"><div class="ttname"><a href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba5751201c8cf975192a6ad9cf90e793b7">MechanismTypes::SHOOTER</a></div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_types_8h_source.html#l00040">MechanismTypes.h:40</a></div></div>
-<div class="ttc" id="aclass_shooter_shoot_html_a4c9046ad0346defdafeb6ba12c4161cc"><div class="ttname"><a href="class_shooter_shoot.html#a4c9046ad0346defdafeb6ba12c4161cc">ShooterShoot::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_shoot_8cpp_source.html#l00031">ShooterShoot.cpp:31</a></div></div>
-<div class="ttc" id="aclass_i_mechanism_html_abc72a6d0306a828de6f43418e75c04c0"><div class="ttname"><a href="class_i_mechanism.html#abc72a6d0306a828de6f43418e75c04c0">IMechanism::SetOutput</a></div><div class="ttdeci">virtual void SetOutput(ControlModes::CONTROL_TYPE controlType, double value)=0</div><div class="ttdoc">Run mechanism as defined.</div></div>
-<div class="ttc" id="aclass_i_mechanism_html_a9a63d6905de4454d78d7e0d1d1e28437"><div class="ttname"><a href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">IMechanism::GetCurrentSpeed</a></div><div class="ttdeci">virtual double GetCurrentSpeed() const =0</div><div class="ttdoc">Get the current speed of the mechanism. The value is in inches per second or degrees per second.</div></div>
+<div class="ttc" id="aclass_shooter_shoot_html_abdad2970e6e24b2dbf0db8b6bf959317"><div class="ttname"><a href="class_shooter_shoot.html#abdad2970e6e24b2dbf0db8b6bf959317">ShooterShoot::ShooterShoot</a></div><div class="ttdeci">ShooterShoot()=delete</div></div>
 <div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00022">ControlData.h:22</a></div></div>
-<div class="ttc" id="aclass_shooter_shoot_html_a6e7baa83c8bd2394b827363421629080"><div class="ttname"><a href="class_shooter_shoot.html#a6e7baa83c8bd2394b827363421629080">ShooterShoot::ShooterShoot</a></div><div class="ttdeci">ShooterShoot(ControlData *controlData, double target)</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_shoot_8cpp_source.html#l00016">ShooterShoot.cpp:16</a></div></div>
+<div class="ttc" id="aclass_mechanism_state_html"><div class="ttname"><a href="class_mechanism_state.html">MechanismState</a></div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_state_8h_source.html#l00024">MechanismState.h:24</a></div></div>
 <div class="ttc" id="aclass_mechanism_factory_html_a11b20a573ca93c56cb5da66ac5cbd2c0"><div class="ttname"><a href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a></div><div class="ttdeci">static MechanismFactory * GetMechanismFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_factory_8cpp_source.html#l00069">MechanismFactory.cpp:69</a></div></div>
-<div class="ttc" id="aclass_shooter_shoot_html_a5c08dfc5f6ca55aacab5129de4770e05"><div class="ttname"><a href="class_shooter_shoot.html#a5c08dfc5f6ca55aacab5129de4770e05">ShooterShoot::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_shoot_8cpp_source.html#l00026">ShooterShoot.cpp:26</a></div></div>
-<div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>
 <div class="ttc" id="a_mechanism_types_8h_html"><div class="ttname"><a href="_mechanism_types_8h.html">MechanismTypes.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

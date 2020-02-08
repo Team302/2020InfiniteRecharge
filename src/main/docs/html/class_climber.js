@@ -6,8 +6,6 @@ var class_climber =
     [ "ActivateSolenoid", "class_climber.html#ae03ddf335ed70b23d656a623991f575b", null ],
     [ "GetCurrentPosition", "class_climber.html#a6db6ada50bc8ed96d85006917fcce31e", null ],
     [ "GetCurrentSpeed", "class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d", null ],
-    [ "GetTargetPosition", "class_climber.html#a66f3ec00b3ee63603c3dad2ef0a5853a", null ],
-    [ "GetTargetSpeed", "class_climber.html#ae3eeaa36d95127bcb0cfe485d1873a05", null ],
     [ "GetType", "class_climber.html#a05d4b42803a951054d725f2197a51a3d", null ],
     [ "IsSolenoidActivated", "class_climber.html#a2195246b6a7d9d1381da682474cc0a92", null ],
     [ "SetControlConstants", "class_climber.html#a41fe085977e8cb565a44391b0819948c", null ],

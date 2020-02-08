@@ -13,30 +13,23 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#include <memory>
-#include <controllers/IState.h>
-#include <subsys/IMechanism.h>
-#include <controllers/MechanismState.h>
+#pragma once 
 
-#pragma once
+#include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
+
+class ControlData;
 
 class ShooterHoodHold : public MechanismState
 {
     public:
-    ShooterHoodHold
-    (
-        ControlData* control,
-        double target
-    );
+        ShooterHoodHold
+        (
+            ControlData*                    control,
+            double                          target,
+            MechanismTargetData::SOLENOID   solState
+        );
 
-    ShooterHoodHold() = delete;
-    ~ShooterHoodHold() = default;
-
-    void Init() override;
-    void Run() override;
-    bool AtTarget() const override;
-
-    private:
-
-    IMechanism* m_shooter;
+        ShooterHoodHold() = delete;
+        ~ShooterHoodHold() = default;
 };

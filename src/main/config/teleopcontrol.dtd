@@ -1,0 +1,48 @@
+<!-- temporary leave pigeon here until odometry is plugged in -->
+<!ELEMENT teleopcontrol (controller*)>
+
+
+<!-- ========================================================================================================================================== -->
+<!--	chassis  																																-->
+<!--    Wheel Base is front-back distance between wheel centers  Track is the distance between wheels on an "axle"     							-->   
+<!-- ========================================================================================================================================== -->
+<!ELEMENT controller (function*) >
+<!ATTLIST  controller
+            type (XBOX | BUTTONBOX) "XBOX"
+            port ( 0 | 1 | 2 | 3 | 4 | 5 | 6) "0"
+>
+<!ELEMENT function EMPTY >
+<!ATTLIST  function  name            ( TANKDRIVELEFTCONTROL | TANKDRIVERIGHTCONTROL |
+                              ARCADEDRIVETHROTTLE | ARCADEDRIVESTEER |
+                              GTADRIVEFORWARD | GTADRIVEBACKWARD | GTADRIVESTEER |
+                              SWITCHDRIVEMODE | CURVATUREDRIVEQUICKTURN |
+                              CLIMBEREXTEND | CLIMBERLIFT | CLIMBERCRAWL | 
+                              IMPELLERSPIN | IMPELLERSTOP | IMPELLERAGITATE | 
+                              INTAKEON | INTAKEOFF | 
+                              BALLTRANSFEROFF | BALLTRANSFERTOIMPELLER | BALLTRANSFERTOSHOOTER | 
+                              SHOOTERPREPARETOSHOOT | SHOOTERAUTOSHOOT | SHOOTERMANUALAIM | SHOOTERMANUALADJUSTDISTANCE | SHOOTERMANUALSHOOT |
+                              CONTROLPANELSTOW | CONTROLPANELRAISE | CONTROLPANELSPINWHEEL | CONTROLPANELMANUAL | CONTROLPANELTURNTOCOLOR | 
+                              SHOOTERHOODMOVEUP | SHOOTERHOODMOVEDOWN | SHOOTERHOODHOLDPOSITION |
+                              UNKNOWNFUNCTION | MAXFUNCTIONS) "UNKNOWNFUNCTION"
+
+            buttonID                ( A_BUTTON | B_BUTTON | X_BUTTON | Y_BUTTON |
+                              LEFT_BUMPER | RIGHT_BUMPER | 
+                              SELECT_BUTTON | START_BUTTON | 
+                              LEFT_STICK_PRESSED | RIGHT_STICK_PRESSED | 
+                              LEFT_TRIGGER_PRESSED | RIGHT_TRIGGER_PRESSED |
+                              POV_0 | POV_45 | POV_90 | POV_135 | POV_180 | POV_225 | POV_270 | POV_215 | 
+                              GAMEPAD_BUTTON_1 | GAMEPAD_BUTTON_2 | GAMEPAD_BUTTON_3 | GAMEPAD_BUTTON_4 | GAMEPAD_BUTTON_5 | GAMEPAD_BUTTON_6 | 
+                              GAMEPAD_BUTTON_7 | GAMEPAD_BUTTON_8 | GAMEPAD_BUTTON_9 | GAMEPAD_BUTTON_10 | GAMEPAD_BUTTON_11 | GAMEPAD_BUTTON_12 |
+                              GAMEPAD_BUTTON_13 |
+                              GAMEPAD_SWITCH_18 | GAMEPAD_SWITCH_19 | GAMEPAD_SWITCH_20 | GAMEPAD_SWITCH_21 |
+                              GAMEPAD_BUTTON_14_UP | GAMEPAD_BUTTON_14_DOWN | GAMEPAD_BUTTON_15_UP | GAMEPAD_BUTTON_15_DOWN |
+                              GAMEPAD_DIAL_22 | GAMEPAD_DIAL_23 | GAMEPAD_DIAL_24 | GAMEPAD_DIAL_25 | GAMEPAD_DIAL_26 | GAMEPAD_DIAL_27 | GAMEPAD_BIG_RED_BUTTON |
+                              MAX_BUTTONS | UNDEFINED_BUTTON) "UNDEFINED_BUTTON"
+
+            axisID                  (LEFT_JOYSTICK_X | LEFT_JOYSTICK_Y | RIGHT_JOYSTICK_X | RIGHT_JOYSTICK_Y |
+                              LEFT_TRIGGER | RIGHT_TRIGGER | 
+                              GAMEPAD_AXIS_16 | GAMEPAD_AXIS_17 | 
+                              LEFT_ANALOG_BUTTON_AXIS | RIGHT_ANALOG_BUTTON_AXIS | DIAL_ANALOG_BUTTON_AXIS |
+                              MAX_AXIS | UNDEFINED_AXIS) "UNDEFINED_AXIS"
+>
+

@@ -7,8 +7,6 @@ var class_control_panel =
     [ "GetColorSeen", "class_control_panel.html#a38e4c0847f8d0d88f8ec51171b49a4ad", null ],
     [ "GetCurrentPosition", "class_control_panel.html#abdff4646934ab23158cfce4261322889", null ],
     [ "GetCurrentSpeed", "class_control_panel.html#a99f7157fc32fd4f2f10c2f78ba0e34cd", null ],
-    [ "GetTargetPosition", "class_control_panel.html#a4783314507db821a953567cdcfa88853", null ],
-    [ "GetTargetSpeed", "class_control_panel.html#ad3f18a8d44d1516e8e5f41fca394fd2d", null ],
     [ "GetType", "class_control_panel.html#a047cd8db83f38aafa18610af368cdecd", null ],
     [ "IsSolenoidActivated", "class_control_panel.html#aa963c81fa30b7394ef23bd56d3eeffab", null ],
     [ "SetControlConstants", "class_control_panel.html#ac7fc1fccae4a61dea721107f69ab3327", null ],

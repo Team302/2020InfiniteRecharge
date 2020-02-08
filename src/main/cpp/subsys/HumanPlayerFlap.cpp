@@ -100,14 +100,6 @@ double HumanPlayerFlap::GetCurrentPosition
     return 0.0;     //subj. to change
 }
 
-double HumanPlayerFlap::GetTargetPosition
-(
-
-)const
-{
-    Logger::GetLogger()->LogError(string("HumanPlayerFlap::GetCurrentPosition"),string( "Called"));
-    return 0.0;     //subj. to change
-}
 
 double HumanPlayerFlap::GetCurrentSpeed
 (
@@ -118,14 +110,6 @@ double HumanPlayerFlap::GetCurrentSpeed
     return 0.0;     //subj. to change
 }
 
-double HumanPlayerFlap::GetTargetSpeed
-(
-
-)const
-{
-    Logger::GetLogger()->LogError(string("HumanPlayerFlap::GetCurrentPosition"),string( "Called"));
-    return 0.0;     //subj. to change
-}
 
 void HumanPlayerFlap::SetControlConstants
 (

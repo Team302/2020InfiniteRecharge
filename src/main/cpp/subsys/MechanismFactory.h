@@ -48,12 +48,13 @@
 #include <subsys/HumanPlayerFlap.h>
 #include <subsys/BallTransfer.h>
 #include <subsys/ControlPanel.h>
-#include <rev/ColorSensorV3.h>
 #include <subsys/ShooterHood.h>
 
 
 
 // Third Party Includes
+#include <ctre/phoenix/sensors/CANCoder.h>
+#include <rev/ColorSensorV3.h>
 
 
 class MechanismFactory
@@ -82,13 +83,14 @@ class MechanismFactory
 		//=====================================================================================
 		IMechanism*  CreateIMechanism
 		(
-			MechanismTypes::MECHANISM_TYPE			type,
-			const IDragonMotorControllerMap&        motorControllers,   // <I> - Motor Controllers
-			const DragonSolenoidMap&                solenoids,
-			const ServoMap&						    servos,
-			const DigitalInputMap&					digitalInputs,
-			const AnalogInputMap&                   analogInputs,
-			rev::ColorSensorV3*                     colorSensor
+			MechanismTypes::MECHANISM_TYPE							type,
+			const IDragonMotorControllerMap&        				motorControllers,   // <I> - Motor Controllers
+			const DragonSolenoidMap&                				solenoids,
+			const ServoMap&						    				servos,
+			const DigitalInputMap&									digitalInputs,
+			const AnalogInputMap&                   				analogInputs,
+			rev::ColorSensorV3*                     				colorSensor,
+			std::shared_ptr<ctre::phoenix::sensors::CANCoder>		canCoder
 		);
 
 	private:

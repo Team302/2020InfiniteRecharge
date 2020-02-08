@@ -29,6 +29,7 @@
 #include <controllers/shooterHood/ShooterHoodHoldPosition.h>
 #include <controllers/shooterHood/ShooterHoodMoveDown.h>
 #include <controllers/shooterHood/ShooterHoodMoveUp.h>
+#include <controllers/shooterHood/ShooterHoodManual.h>
 
 // Third Party Includes
 
@@ -47,6 +48,7 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
     stateMap["MOVEUP"] = SHOOTER_HOOD_STATE::MOVE_UP;
     stateMap["MOVEDOWN"]  = SHOOTER_HOOD_STATE::MOVE_DOWN;
     stateMap["HOLDPOSITION"] = SHOOTER_HOOD_STATE::HOLD_POSITION;
+    stateMap["MANUAL"] = SHOOTER_HOOD_STATE::MANUAL;
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -66,25 +68,32 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
                 {
                     case SHOOTER_HOOD_STATE::MOVE_UP:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodMoveUp(controlData, target);
+                        auto thisState = new ShooterHoodMoveUp(controlData, target, MechanismTargetData::SOLENOID::NONE);
                         m_stateMap[SHOOTER_HOOD_STATE::MOVE_UP] = thisState;
                     }
                     break;
 
                     case SHOOTER_HOOD_STATE::MOVE_DOWN:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodMoveDown(controlData, target);
+                        auto thisState = new ShooterHoodMoveDown(controlData, target, MechanismTargetData::SOLENOID::NONE);
                         m_stateMap[SHOOTER_HOOD_STATE::MOVE_DOWN] = thisState;
                     }
                     break;
 
                     case SHOOTER_HOOD_STATE::HOLD_POSITION:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodHoldPosition(controlData, target);
+                        auto thisState = new ShooterHoodHoldPosition(controlData, target, MechanismTargetData::SOLENOID::NONE);
                         m_stateMap[SHOOTER_HOOD_STATE::HOLD_POSITION] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
+                    }
+                    break;
+
+                    case SHOOTER_HOOD_STATE::MANUAL:
+                    {
+                        auto thisState = new ShooterHoodManual(controlData, target);
+                        m_stateMap[SHOOTER_HOOD_STATE::MANUAL] = thisState;
                     }
                     break;
 
@@ -112,7 +121,13 @@ void ShooterHoodStateMgr::RunCurrentState()
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MOVE_UP ) && 
+        if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_BUTTON))
+        {
+            SetCurrentState( SHOOTER_HOOD_STATE::MANUAL, false ); 
+            Logger::GetLogger()->LogError("ShootHoodStateMgr::SetCurrentState", "Shooter Hood State Manual Hood");
+        }
+        
+        /*if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MOVE_UP ) && 
              m_currentStateEnum != SHOOTER_HOOD_STATE::MOVE_UP )
         {
             SetCurrentState( SHOOTER_HOOD_STATE::MOVE_UP, false );
@@ -126,7 +141,7 @@ void ShooterHoodStateMgr::RunCurrentState()
                   m_currentStateEnum != SHOOTER_HOOD_STATE::HOLD_POSITION )
         {
             SetCurrentState( SHOOTER_HOOD_STATE::HOLD_POSITION, false );
-        }
+        }*/
     }
 
     // run the current state

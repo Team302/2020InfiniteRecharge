@@ -107,15 +107,15 @@ Inheritance diagram for ImpellerAgitate:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa6c6553aaea38bbade4e9d1799295954"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_impeller_agitate.html#aa6c6553aaea38bbade4e9d1799295954">ImpellerAgitate</a> (<a class="el" href="class_control_data.html">ControlData</a> *control, double target)</td></tr>
-<tr class="separator:aa6c6553aaea38bbade4e9d1799295954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71df9df7556fcd0bdb5588bdefcfb7ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_impeller_agitate.html#a71df9df7556fcd0bdb5588bdefcfb7ed">ImpellerAgitate</a> (<a class="el" href="class_control_data.html">ControlData</a> *control, double target, <a class="el" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a> solState)</td></tr>
+<tr class="separator:a71df9df7556fcd0bdb5588bdefcfb7ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1a0b6ff2e5f54ea9668c094cda15fb3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_impeller_agitate.html#aa1a0b6ff2e5f54ea9668c094cda15fb3">ImpellerAgitate</a> ()=delete</td></tr>
 <tr class="separator:aa1a0b6ff2e5f54ea9668c094cda15fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5723912af8e3cbb18721b75afa8acce6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_impeller_agitate.html#a5723912af8e3cbb18721b75afa8acce6">~ImpellerAgitate</a> ()=default</td></tr>
 <tr class="separator:a5723912af8e3cbb18721b75afa8acce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_mechanism_state"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_mechanism_state')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_mechanism_state.html">MechanismState</a></td></tr>
-<tr class="memitem:aa1b3c1a85d07002986a54407f76c7a68 inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#aa1b3c1a85d07002986a54407f76c7a68">MechanismState</a> (<a class="el" href="class_i_mechanism.html">IMechanism</a> *mechanism, <a class="el" href="class_control_data.html">ControlData</a> *control, double target)</td></tr>
-<tr class="separator:aa1b3c1a85d07002986a54407f76c7a68 inherit pub_methods_class_mechanism_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa341740dad3529424f29c5d863e8dfc2 inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#aa341740dad3529424f29c5d863e8dfc2">MechanismState</a> (<a class="el" href="class_i_mechanism.html">IMechanism</a> *mechanism, <a class="el" href="class_control_data.html">ControlData</a> *control, double target, <a class="el" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a> solState)</td></tr>
+<tr class="separator:aa341740dad3529424f29c5d863e8dfc2 inherit pub_methods_class_mechanism_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afef2ac5c394d3bc012ccd2f6040fd4cd inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#afef2ac5c394d3bc012ccd2f6040fd4cd">MechanismState</a> ()=delete</td></tr>
 <tr class="separator:afef2ac5c394d3bc012ccd2f6040fd4cd inherit pub_methods_class_mechanism_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93d86a4d0951c1a9b3d8671abb47f293 inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#a93d86a4d0951c1a9b3d8671abb47f293">~MechanismState</a> ()=default</td></tr>
@@ -133,15 +133,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a28a7b15d44be7a1d40ccf5d0790f7ec8 inherit pub_methods_class_i_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Copyright 2019 Lake Orion Robotics FIRST Team 302</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. Created by the one, the only, Big Chief, AJ Gdowski Nobody will ever be brave enough to steal my code, so don't even think about it </p>
-
-<p class="definition">Definition at line <a class="el" href="_impeller_agitate_8h_source.html#l00022">22</a> of file <a class="el" href="_impeller_agitate_8h_source.html">ImpellerAgitate.h</a>.</p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_impeller_agitate_8h_source.html#l00023">23</a> of file <a class="el" href="_impeller_agitate_8h_source.html">ImpellerAgitate.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa6c6553aaea38bbade4e9d1799295954"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6c6553aaea38bbade4e9d1799295954">&#9670;&nbsp;</a></span>ImpellerAgitate() <span class="overload">[1/2]</span></h2>
+<a id="a71df9df7556fcd0bdb5588bdefcfb7ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71df9df7556fcd0bdb5588bdefcfb7ed">&#9670;&nbsp;</a></span>ImpellerAgitate() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,7 +152,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>target</em>&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a>&#160;</td>
+          <td class="paramname"><em>solState</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -165,8 +167,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Copyright 2019 Lake Orion Robotics FIRST Team 302</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. </p>
 
-<p class="definition">Definition at line <a class="el" href="_impeller_agitate_8cpp_source.html#l00032">32</a> of file <a class="el" href="_impeller_agitate_8cpp_source.html">ImpellerAgitate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_impeller_agitate_8cpp_source.html#l00025">25</a> of file <a class="el" href="_impeller_agitate_8cpp_source.html">ImpellerAgitate.cpp</a>.</p>
 
 </div>
 </div>

@@ -17,15 +17,16 @@
 
 <!ELEMENT mechanismTarget EMPTY>
 <!ATTLIST mechanismTarget 
-          stateIdentifier           ( INTAKEOFF | INTAKEON | 
+          stateIdentifier           ( INTAKEOFF | INTAKEON | INTAKEHUMANPLAYER |
                                       HUMANPLAYERFLAPCLOSED | HUMANPLAYERFLAPOPEN |
                                       IMPELLEROFF | IMPELLERHOLD | IMPELLERAGITATE | IMPELLERTOSHOOTER |
                                       BALLTRANSFEROFF | BALLTRANSPORTTOIMPELLER | BALLTRANSFERTOSHOOTER |
-                                      SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN |
+                                      SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN | SHOOTERHOODMANUAL |
                                       TURRETHOLD | TURRETAUTOAIM | TURRETMANUALAIM |
                                       SHOOTEROFF | SHOOTERGETREADY | SHOOTERSHOOT |
                                       UNKNOWN ) "UNKNOWN"
           controlDataIdentifier     CDATA #REQUIRED
           value                     CDATA #REQUIRED
+          solenoid                  ( NONE | ON | OFF ) "NONE"
 >
 

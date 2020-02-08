@@ -7,23 +7,20 @@
 
 #pragma once
 
-#include <controllers/IState.h>
-#include <subsys/IMechanism.h>
-#include <controllers/ControlData.h>
+#include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
 
-class ShooterOff : public IState
+class ControlData;
+
+class ShooterOff : public MechanismState
 {
- public:
-  ShooterOff(
-    ControlData* controlData,
-    double target
-  );
-  void Init() override;
-  void Run() override;
-  bool AtTarget() const override;
- private:
-  double m_target;
-  IMechanism* m_shooter;
-  ControlData* m_controlData;
-  bool m_atTarget;
+    public:
+        ShooterOff
+        (
+            ControlData*                  controlData,
+            double                        target,
+            MechanismTargetData::SOLENOID solState
+        );
+        ShooterOff() = delete;
+        ~ShooterOff() = default;
 };

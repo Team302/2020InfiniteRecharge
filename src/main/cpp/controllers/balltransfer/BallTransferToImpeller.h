@@ -18,6 +18,7 @@
 #include <subsys/IMechanism.h>
 #include <controllers/MechanismState.h>
 #include <controllers/ControlData.h>
+#include <controllers/MechanismTargetData.h>
 
 class BallTransferToImpeller : public MechanismState
 {
@@ -26,8 +27,9 @@ class BallTransferToImpeller : public MechanismState
         BallTransferToImpeller() = delete;
         BallTransferToImpeller
         (
-            ControlData*    control,
-            double          target
+            ControlData*                    control,
+            double                          target,
+            MechanismTargetData::SOLENOID   solState
         );
         ~BallTransferToImpeller() = default;
 };

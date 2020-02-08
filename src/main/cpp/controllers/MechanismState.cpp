@@ -23,6 +23,7 @@
 #include <controllers/IState.h>
 #include <controllers/MechanismState.h>
 #include <controllers/ControlData.h>
+#include <controllers/MechanismTargetData.h>
 #include <subsys/IMechanism.h>
 #include <utils/Logger.h>
 
@@ -32,13 +33,15 @@ using namespace std;
 
 MechanismState::MechanismState
 (
-    IMechanism*     mechanism,
-    ControlData*    control,
-    double          target
+    IMechanism*                     mechanism,
+    ControlData*                    control,
+    double                          target,
+    MechanismTargetData::SOLENOID   solState
 ) : IState(),
     m_mechanism( mechanism ),
     m_control( control ),
     m_target( target ),
+    m_solenoidState( solState ),
     m_positionBased( false ),
     m_speedBased( false )
 {
@@ -121,6 +124,19 @@ void MechanismState::Run()
     if ( m_mechanism != nullptr && m_control != nullptr )
     {
         m_mechanism->SetOutput( m_control->GetMode(), m_target );
+        switch ( m_solenoidState )
+        {
+            case MechanismTargetData::SOLENOID::OFF:
+                m_mechanism->ActivateSolenoid( false );
+                break;
+            
+            case MechanismTargetData::SOLENOID::ON:
+                m_mechanism->ActivateSolenoid( true );
+                break;
+
+            default:
+                break;
+        }
     }
 }
 
@@ -131,16 +147,16 @@ bool MechanismState::AtTarget() const
     {
         if ( m_positionBased && !m_speedBased )
         {
-            same = ( abs( m_mechanism->GetTargetPosition() - m_mechanism->GetCurrentPosition())  < 1.0 );
+            same = ( abs( m_target - m_mechanism->GetCurrentPosition())  < 1.0 );
         }
         else if ( !m_positionBased && m_speedBased )
         {
-            same = ( abs( m_mechanism->GetTargetSpeed() - m_mechanism->GetCurrentSpeed()) < 1.0 );
+            same = ( abs( m_target - m_mechanism->GetCurrentSpeed()) < 1.0 );
         }
         else if ( m_positionBased && m_speedBased )
         {
-            same = ( ( abs( m_mechanism->GetTargetPosition() - m_mechanism->GetCurrentPosition())  < 1.0 ) &&
-                     ( abs( m_mechanism->GetTargetSpeed()    - m_mechanism->GetCurrentSpeed())     < 1.0 ) );
+            same = ( ( abs( m_target - m_mechanism->GetCurrentPosition())  < 1.0 ) ||
+                     ( abs( m_target - m_mechanism->GetCurrentSpeed())     < 1.0 ) );
         }
     }
     return same;

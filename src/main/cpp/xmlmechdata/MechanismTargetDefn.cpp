@@ -48,6 +48,7 @@ MechanismTargetData*  MechanismTargetDefn::ParseXML
     string stateName;
     string controllerIdentifier;
     double target = 0.0;
+    MechanismTargetData::SOLENOID solenoid = MechanismTargetData::SOLENOID::NONE; 
 
     // parse/validate xml
     for (xml_attribute attr = MechanismDataNode.first_attribute(); attr; attr = attr.next_attribute())
@@ -64,6 +65,28 @@ MechanismTargetData*  MechanismTargetDefn::ParseXML
         {
             target = attr.as_double();
         }
+        else if( strcmp( attr.name(), "solenoid" ) == 0 )
+        {
+            auto val = attr.value();
+            if(strcmp(val, "ON") == 0)
+            {
+                solenoid = MechanismTargetData::SOLENOID::ON;
+            }
+            else if ( strcmp(val, "OFF") == 0)
+            {
+                solenoid = MechanismTargetData::SOLENOID::OFF;
+            }
+            else if( strcmp(val, "NONE") == 0)
+            {
+                solenoid = MechanismTargetData::SOLENOID::NONE;
+            }
+            else
+            {
+                Logger::GetLogger()->LogError( string("MechanismTargetDefn::ParseXML"), string("solenoid enum"));
+            }
+            
+            
+        }
         else
         {
             string msg = "unknown attribute ";
@@ -75,7 +98,7 @@ MechanismTargetData*  MechanismTargetDefn::ParseXML
 
     if ( !hasError && !stateName.empty() && !controllerIdentifier.empty() )
     {
-        mechData = new MechanismTargetData( stateName, controllerIdentifier, target );
+        mechData = new MechanismTargetData( stateName, controllerIdentifier, target, solenoid );
     }
     else
     {

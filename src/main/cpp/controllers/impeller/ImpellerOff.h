@@ -13,11 +13,12 @@
 /// OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-///Created by the one, the only, Big Chief, AJ Gdowski
-///Nobody will ever be brave enough to steal my code, so don't even think about it
-#include <subsys/IMechanism.h>
+#pragma once
+
 #include <controllers/MechanismState.h>
-#include <controllers/IState.h>
+#include <controllers/MechanismTargetData.h>
+
+class ControlData;
 
 class ImpellerOff : public MechanismState
 {
@@ -25,8 +26,9 @@ class ImpellerOff : public MechanismState
 
         ImpellerOff
         (
-            ControlData*    control,
-            double          target
+            ControlData*                    control,
+            double                          target,
+            MechanismTargetData::SOLENOID   solState
         );
         ImpellerOff() = delete;
         ~ImpellerOff() = default;

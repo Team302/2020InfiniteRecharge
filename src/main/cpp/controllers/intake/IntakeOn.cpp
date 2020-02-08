@@ -22,16 +22,15 @@
 ///
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
 //========================================================================================================
 // Team 302 includes
 #include <controllers/intake/IntakeOn.h>
-#include <controllers/IState.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
 #include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
 
 // Third Party Includes
 
@@ -40,24 +39,7 @@ using namespace std;
 IntakeOn::IntakeOn
 (
     ControlData* control,
-    double target
-) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE), control, target)
+    double target,
+    MechanismTargetData::SOLENOID solState
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE), control, target, solState )
 {}
-
-/*void IntakeOn::Init()
-{
-    m_intake->SetControlConstants( m_control );
-}
-
-void IntakeOn::Run()           
-{
-    m_intake -> SetOutput( m_control->GetMode(), m_target);                     
-    m_intake -> ActivateSolenoid( true );                                      
-}
-
-bool IntakeOn::AtTarget() const                                         //confirms that it worked
-{
-    return true;
-}
-
-*/

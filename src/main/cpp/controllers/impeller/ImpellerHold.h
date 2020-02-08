@@ -13,7 +13,10 @@
 /// OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+#pragma once 
+
 #include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
 
 class ControlData;
 
@@ -23,8 +26,9 @@ class ImpellerHold : public MechanismState
 
         ImpellerHold
         (
-            ControlData*    control,
-            double          target
+            ControlData*                    control,
+            double                          target,
+            MechanismTargetData::SOLENOID   solState
         );
         ImpellerHold() = delete;
         ~ImpellerHold() = default;

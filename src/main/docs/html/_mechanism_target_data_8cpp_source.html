@@ -116,30 +116,32 @@ $(document).ready(function(){initNavTree('_mechanism_target_data_8cpp_source.htm
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;(</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">string</span>                                      state,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">string</span>                                      controller,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">double</span>                                      target</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;) : m_state( state ),</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    m_controller( controller ),</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    m_target( target ),</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_controlData()</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">double</span>                                      target,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    SOLENOID                                    solenoid</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;) : m_state( state ),</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    m_controller( controller ),</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_target( target ),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    m_solenoid( solenoid ),</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    m_controlData()</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_mechanism_target_data.html#aba4da6ec1b211b2f3d788cd6096502e3">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_mechanism_target_data.html#aba4da6ec1b211b2f3d788cd6096502e3">MechanismTargetData::Update</a>( std::vector&lt;ControlData*&gt; data )</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">for</span> ( <span class="keyword">auto</span> cd : data )</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> ( m_controller.compare( <span class="keywordtype">string</span>(cd-&gt;GetIdentifier()))  == 0 )</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            m_controlData = cd;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_mechanism_target_data.html#aba4da6ec1b211b2f3d788cd6096502e3">   43</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_mechanism_target_data.html#aba4da6ec1b211b2f3d788cd6096502e3">MechanismTargetData::Update</a>( std::vector&lt;ControlData*&gt; data )</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">for</span> ( <span class="keyword">auto</span> cd : data )</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> ( m_controller.compare( <span class="keywordtype">string</span>(cd-&gt;GetIdentifier()))  == 0 )</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            m_controlData = cd;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_mechanism_target_data_html_aba4da6ec1b211b2f3d788cd6096502e3"><div class="ttname"><a href="class_mechanism_target_data.html#aba4da6ec1b211b2f3d788cd6096502e3">MechanismTargetData::Update</a></div><div class="ttdeci">void Update(std::vector&lt; ControlData * &gt; data)</div><div class="ttdoc">update to include ControlData</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_target_data_8cpp_source.html#l00041">MechanismTargetData.cpp:41</a></div></div>
+<div class="ttc" id="aclass_mechanism_target_data_html_aba4da6ec1b211b2f3d788cd6096502e3"><div class="ttname"><a href="class_mechanism_target_data.html#aba4da6ec1b211b2f3d788cd6096502e3">MechanismTargetData::Update</a></div><div class="ttdeci">void Update(std::vector&lt; ControlData * &gt; data)</div><div class="ttdoc">update to include ControlData</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_target_data_8cpp_source.html#l00043">MechanismTargetData.cpp:43</a></div></div>
 <div class="ttc" id="a_mechanism_target_data_8h_html"><div class="ttname"><a href="_mechanism_target_data_8h.html">MechanismTargetData.h</a></div></div>
 <div class="ttc" id="aclass_mechanism_target_data_html_a2480a79704a3c9cb3625a90f2ce9de5f"><div class="ttname"><a href="class_mechanism_target_data.html#a2480a79704a3c9cb3625a90f2ce9de5f">MechanismTargetData::MechanismTargetData</a></div><div class="ttdeci">MechanismTargetData()=delete</div></div>
 <div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>
