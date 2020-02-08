@@ -24,8 +24,6 @@
 
 #pragma once
 
-#include <subsys/IMechanism.h>
-#include <controllers/IState.h>
 #include <controllers/ControlData.h>
 #include <controllers/MechanismState.h>
 
@@ -41,16 +39,6 @@ class IntakeOff : public MechanismState
     IntakeOff() = delete;
     ~IntakeOff() = default;
 
-    /*void Init() override;
-    void Run() override;
-    bool AtTarget() const override;
-    */
-    private:
-
-    /*IMechanism* m_intake;
-    ControlData* m_control;
-    double m_target;
-    */
 };
 
 

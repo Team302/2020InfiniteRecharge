@@ -59,6 +59,7 @@ class TeleopControl
             IMPELLER_TO_SHOOTER,
             INTAKE_ON,
             INTAKE_OFF,
+            INTAKE_HUMAN_PLAYER,
             BALL_TRANSFER_OFF,
             BALL_TRANSFER_TO_IMPELLER,
             BALL_TRANSFER_TO_SHOOTER,

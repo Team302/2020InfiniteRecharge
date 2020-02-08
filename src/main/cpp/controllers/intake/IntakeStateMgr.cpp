@@ -28,6 +28,7 @@
 #include <gamepad/TeleopControl.h>
 #include <controllers/intake/IntakeOff.h>
 #include <controllers/intake/IntakeOn.h>
+#include <controllers/intake/IntakeHPSState.h>
 #include <frc/smartdashboard/SmartDashboard.h>
 
 
@@ -47,36 +48,39 @@ IntakeStateMgr::IntakeStateMgr() : m_stateEnumToObjectMap(),
     map<string, INTAKE_STATE> stateStringToEnumMap;
     stateStringToEnumMap["INTAKEOFF"] = INTAKE_STATE::OFF;
     stateStringToEnumMap["INTAKEON"]  = INTAKE_STATE::ON;
+    stateStringToEnumMap["INTAKEHUMANPLAYER"] = INTAKE_STATE::HUMANPLAYER;
 
     // create the states passing the configuration data
     for ( auto td: targetData )
     {
         auto stateString = td->GetStateString();
-        Logger::GetLogger()->LogError(string("intake state string "), stateString );
         auto stateStringToEnumItr = stateStringToEnumMap.find( stateString );
         if ( stateStringToEnumItr != stateStringToEnumMap.end() )
         {
             auto stateEnum = stateStringToEnumItr->second;
-            Logger::GetLogger()->LogError(string("got enum"), to_string(stateEnum));
             auto stateEnumToObjectMapItr = m_stateEnumToObjectMap.find( stateEnum );
             if ( stateEnumToObjectMapItr == m_stateEnumToObjectMap.end() )
             {
-                Logger::GetLogger()->LogError(string("did not find state"), to_string(stateEnum));
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
                 switch ( stateEnum )
                 {
                     case INTAKE_STATE::ON:
                     {   
-                        Logger::GetLogger()->LogError(string("creating intake on"), string(""));
                         auto thisState = new IntakeOn( controlData, target );
                         m_stateEnumToObjectMap[INTAKE_STATE::ON] = thisState;
                     }
                     break;
 
+                    case INTAKE_STATE::HUMANPLAYER:
+                    {   
+                        auto thisState = new IntakeHPSState( controlData, target );
+                        m_stateEnumToObjectMap[INTAKE_STATE::HUMANPLAYER] = thisState;
+                    }
+                    break;
+
                     case INTAKE_STATE::OFF:
                     {   
-                        Logger::GetLogger()->LogError(string("creating intake off"), string(""));
                         auto thisState = new IntakeOff( controlData, target );
                         m_stateEnumToObjectMap[INTAKE_STATE::OFF] = thisState;
                         m_currentState = thisState;
@@ -115,12 +119,14 @@ void IntakeStateMgr::RunCurrentState()
         if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_ON ) )
         {
             SetCurrentState( INTAKE_STATE::ON, false );
-            SmartDashboard::PutBoolean("Intake On", true);
         }
         else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_OFF ) )
         {
             SetCurrentState( INTAKE_STATE::OFF, false );
-            SmartDashboard::PutBoolean("Intake Off", true);
+        }
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_HUMAN_PLAYER))
+        {
+            SetCurrentState( INTAKE_STATE::HUMANPLAYER, false );
         }
     }
 

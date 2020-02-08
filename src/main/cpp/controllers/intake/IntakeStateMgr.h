@@ -33,6 +33,7 @@ class IntakeStateMgr
         {
             OFF,
             ON,
+            HUMANPLAYER,
             MAX_INTAKE_STATES
         };
 

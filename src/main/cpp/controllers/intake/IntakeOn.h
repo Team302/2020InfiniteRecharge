@@ -28,8 +28,6 @@
 // FRC includes
 
 // Team 302 includes
-#include <controllers/IState.h>
-#include <subsys/IMechanism.h>
 #include <controllers/ControlData.h>
 #include <controllers/MechanismState.h>
 
@@ -46,17 +44,5 @@ class IntakeOn : public MechanismState
 
         IntakeOn() = delete;
         ~IntakeOn() = default;
-
-        /*void Init() override;
-        void Run() override;
-        bool AtTarget() const override;
-        */
-
-    private:
-
-        /*IMechanism* m_intake;
-        ControlData* m_control;
-        double m_target;
-        */
 
 };

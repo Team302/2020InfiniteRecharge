@@ -20,13 +20,12 @@
 // FRC includes
 
 // Team 302 includes
-#include <controllers/IState.h>
-#include <subsys/IMechanism.h>
+#include <controllers/MechanismState.h>
 #include <controllers/ControlData.h>
 
 // Third Party Includes
 
-class IntakeHPSState : public IState
+class IntakeHPSState : public MechanismState
 {
     public:
         IntakeHPSState
@@ -37,15 +36,4 @@ class IntakeHPSState : public IState
 
         IntakeHPSState() = delete;
         ~IntakeHPSState() = default;
-
-        void Init() override;
-        void Run() override;
-        bool AtTarget() const override;
-
-    private:
-
-        IMechanism* m_intake;
-        ControlData* m_control;
-        double m_target;
-
 };

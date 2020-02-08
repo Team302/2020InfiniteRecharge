@@ -143,6 +143,8 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_buttonIDs[INTAKE_ON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_1;
 		m_controllerIndex[INTAKE_OFF] = ctrlNo;
 		m_buttonIDs[INTAKE_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_2;
+		m_controllerIndex[INTAKE_HUMAN_PLAYER] = ctrlNo;
+		m_buttonIDs[INTAKE_HUMAN_PLAYER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_12;
 
 		m_controllerIndex[IMPELLER_OFF] = ctrlNo;
 		m_buttonIDs[IMPELLER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_3;

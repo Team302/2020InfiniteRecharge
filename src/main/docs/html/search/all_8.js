@@ -13,7 +13,8 @@ var searchData=
   ['holdturretposition_2ecpp_503',['HoldTurretPosition.cpp',['../_hold_turret_position_8cpp.html',1,'']]],
   ['holdturretposition_2eh_504',['HoldTurretPosition.h',['../_hold_turret_position_8h.html',1,'']]],
   ['human_5fplayer_5fflap_505',['HUMAN_PLAYER_FLAP',['../class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7a82f426c2b1cae6cda35fd9fb5cab305a',1,'SolenoidUsage::HUMAN_PLAYER_FLAP()'],['../class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba887a14265ee42f4fc637dc991fdc81b7',1,'MechanismTypes::HUMAN_PLAYER_FLAP()']]],
-  ['humanplayerflap_506',['HumanPlayerFlap',['../class_human_player_flap.html',1,'HumanPlayerFlap'],['../class_human_player_flap.html#a9c6c621307f3104b00b32126cef5755b',1,'HumanPlayerFlap::HumanPlayerFlap()=delete'],['../class_human_player_flap.html#ac66750420d55a3a9bfeab062dff1863c',1,'HumanPlayerFlap::HumanPlayerFlap(std::shared_ptr&lt; DragonSolenoid &gt; Solenoid)']]],
-  ['humanplayerflap_2ecpp_507',['HumanPlayerFlap.cpp',['../_human_player_flap_8cpp.html',1,'']]],
-  ['humanplayerflap_2eh_508',['HumanPlayerFlap.h',['../_human_player_flap_8h.html',1,'']]]
+  ['humanplayer_506',['HUMANPLAYER',['../class_intake_state_mgr.html#aaa5d73e08f73a95dca5c6aaa1de6b56caf4913ff1c5a47384d35664ab9b2ebcef',1,'IntakeStateMgr']]],
+  ['humanplayerflap_507',['HumanPlayerFlap',['../class_human_player_flap.html',1,'HumanPlayerFlap'],['../class_human_player_flap.html#a9c6c621307f3104b00b32126cef5755b',1,'HumanPlayerFlap::HumanPlayerFlap()=delete'],['../class_human_player_flap.html#ac66750420d55a3a9bfeab062dff1863c',1,'HumanPlayerFlap::HumanPlayerFlap(std::shared_ptr&lt; DragonSolenoid &gt; Solenoid)']]],
+  ['humanplayerflap_2ecpp_508',['HumanPlayerFlap.cpp',['../_human_player_flap_8cpp.html',1,'']]],
+  ['humanplayerflap_2eh_509',['HumanPlayerFlap.h',['../_human_player_flap_8h.html',1,'']]]
 ];

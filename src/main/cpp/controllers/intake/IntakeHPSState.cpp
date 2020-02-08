@@ -40,26 +40,8 @@ IntakeHPSState::IntakeHPSState
 (
     ControlData* control,
     double target
-) : IState(),
-    m_intake( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE)),
-    m_control( control ),
-    m_target( target )
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE), control, target)
 {
 }
 
-void IntakeHPSState::Init()
-{
-    m_intake->SetControlConstants( m_control );
-}
-
-void IntakeHPSState::Run()           
-{
-    m_intake -> SetOutput( ControlModes::PERCENT_OUTPUT, -1.0 );                     
-    m_intake -> ActivateSolenoid( false );                                      
-}
-
-bool IntakeHPSState::AtTarget() const                                         //confirms that it worked
-{
-    return true;
-}
 
