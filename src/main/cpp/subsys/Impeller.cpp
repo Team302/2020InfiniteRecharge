@@ -34,15 +34,21 @@
 #include <memory>
 #include <subsys/Impeller.h>
 #include <hw/interfaces/IDragonMotorController.h>
-using namespace std;
+
 // Third Party Includes
+#include <ctre/phoenix/sensors/CANCoder.h>
+
+using namespace std;
+using namespace ctre::phoenix::sensors;
 
 
 
 Impeller::Impeller
 (
-    shared_ptr<IDragonMotorController> motor
-) : m_motor (motor)
+    shared_ptr<IDragonMotorController> motor,
+    shared_ptr<CANCoder> encoder
+) : m_motor (motor),
+    m_encoder( encoder)
 {
     
 }
@@ -96,9 +102,7 @@ bool Impeller::IsSolenoidActivated()
 /// @return double	position in inches (translating mechanisms) or degrees (rotating mechanisms)
 double Impeller::GetCurrentPosition() const
 {
-    double current_rotations = m_motor.get() -> GetRotations();
-    double current_angle = current_rotations / 360;
-    return current_angle;
+    return m_encoder.get() != nullptr ? m_encoder.get()->GetAbsolutePosition() : 0.0;
 }
 
 
@@ -106,8 +110,7 @@ double Impeller::GetCurrentPosition() const
 /// @return double	speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms)
 double Impeller::GetCurrentSpeed() const
 {
-    double current_RPS = m_motor.get() -> GetRPS();
-    return current_RPS;
+    return m_encoder.get() != nullptr ? m_encoder.get()->GetVelocity()*10.0 : 0.0;
 }
 
 

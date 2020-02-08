@@ -19,24 +19,30 @@
 #include <memory> 
   
 // FRC includes 
+            
+ 
+// Team 302 includes 
 #include <subsys/ShooterHood.h> 
 #include <utils/logger.h> 
 #include <hw/DragonSolenoid.h> 
 #include <hw/interfaces/IDragonMotorController.h> 
 #include <hw/DragonServo.h> 
 #include <subsys/MechanismTypes.h> 
-            
- 
-// Team 302 includes 
- 
+
+// Third Party includes
+#include <ctre/phoenix/sensors/CANCoder.h>
+
 using namespace std; 
+using namespace ctre::phoenix::sensors;
  
 ShooterHood::ShooterHood 
 ( 
-std::shared_ptr<IDragonMotorController>         shmotor     
-) 
+   shared_ptr<IDragonMotorController>        shmotor,
+	shared_ptr<CANCoder>					         canCoder
+
+) : m_shmotor(shmotor),
+    m_encoder( canCoder )
 { 
-   m_shmotor = shmotor;
 } 
 /// @brief          Indicates the type of mechanism this is 
 /// @return         MechanismTypes::MECHANISM_TYPE 
@@ -76,14 +82,14 @@ return false;
 /// @return double  position in inches (translating mechanisms) or degrees (rotating mechanisms) 
 double ShooterHood :: GetCurrentPosition() const  
 { 
-return m_shmotor.get()->GetRotations() * 360.0; 
+    return m_encoder.get() != nullptr ? m_encoder.get()->GetAbsolutePosition() : 0.0;
 } 
 
 /// @brief  Get the current speed of the mechanism.  The value is in inches per second or degrees per second. 
 /// @return double  speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) 
 double ShooterHood ::GetCurrentSpeed() const  
 { 
- return m_shmotor.get()->GetRPS() * 360.0;
+    return m_encoder.get() != nullptr ? m_encoder.get()->GetVelocity()*10.0 : 0.0;
 } 
 
 /// @brief  Set the control constants (e.g. PIDF values). 
