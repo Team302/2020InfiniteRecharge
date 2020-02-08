@@ -17,6 +17,7 @@
 //C++ Includes
 #include <algorithm>
 #include <iostream>
+#include <string>
 
 // Team 302 Includes
 #include <hw/interfaces/IDragonMotorController.h>
@@ -30,7 +31,7 @@ using namespace std;
 
 Crawler::Crawler
 (
-    shared_ptr<IDragonMotorController>      crawlerMotor
+    std::shared_ptr<IDragonMotorController>      crawlerMotor
 ) : m_crawlerMotor( crawlerMotor ),
     m_target( 0.0 )
 {
@@ -40,11 +41,16 @@ Crawler::Crawler
     }
 }
 
+///@brief Gets the type of the mechanism type
+///@return MechanismTypes::MECHANISM_TYPE::CRAWLER
 MechanismTypes::MECHANISM_TYPE Crawler::GetType() const
 {
     return MechanismTypes::MECHANISM_TYPE::CRAWLER;
 }
 
+///@brief Run the mechanism as defined
+///@param [in] ControlModes::CONTROL_TYPE controlType
+///@param [in] double value
 void Crawler::SetOutput
 (
     ControlModes::CONTROL_TYPE controlType,
@@ -60,6 +66,58 @@ void Crawler::SetOutput
     }
     else
     {
-        Logger::GetLogger()->LogError("Crawler::SetOutput", "No motorMaster" );
+        Logger::GetLogger()->LogError( string("Crawler::SetOutput"), string("No motorMaster") );
     }
 };
+
+///@brief extends or retracts the solenoid
+///@param [in] bool activate: true = extend, false = retract
+///@return void
+void Crawler::ActivateSolenoid
+(
+    bool activate
+)
+{
+    //No Solenoid in Crawler; Nothing to do.
+    Logger::GetLogger()->LogError( string("Crawler::ActivateSolenoid"), string( "Called" ) );
+}
+
+///@brief checks to see if the solenoid is extended or retracted
+///@return void
+bool Crawler::IsSolenoidActivated()
+{
+    Logger::GetLogger()->LogError( string( "Crawler::IsSolenoidActivated" ), string( "Called" ) );
+    return false; //No Solenoid on Crawler
+}
+
+double Crawler::GetCurrentPosition() const
+{
+    Logger::GetLogger()->LogError( string( "Crawler::GetCurrentPosition" ), string( "Called" ) );
+    return 0.0;
+}
+
+double Crawler::GetTargetPosition() const
+{
+    Logger::GetLogger()->LogError( string( "Crawler::GetTargetPosition" ), string( "Called" ) );
+    return 0.0;
+}
+
+double Crawler::GetCurrentSpeed() const
+{
+    Logger::GetLogger()->LogError( string( "Crawler::GetCurrentSpeed" ), string( "Called" ) );
+    return 0.0;
+}
+
+double Crawler::GetTargetSpeed() const
+{
+    Logger::GetLogger()->LogError( string( "Crawler::GetTargetSpeed" ), string( "Called" ) );
+    return 0.0;
+}
+
+void Crawler::SetControlConstants
+(
+    ControlData*    pid
+)
+{
+    Logger::GetLogger()->LogError( string( "Crawler::SetControlConstants" ), string("Called") ); 
+}

@@ -32,33 +32,55 @@ class Crawler : public IMechanism
         (
             std::shared_ptr<IDragonMotorController>     crawlerMotor
         );
+
         Crawler() = delete;
 
         virtual ~Crawler() = default;
-
+        ///@brief Indicates what type this mechanism is
+        ///@return MechanismTypes::MECHANISM_TYPE
         MechanismTypes::MECHANISM_TYPE GetType() const override;
 
+        ///@brief Run the mechanism as defined
+        ///@param [in] ControlModes::CONTROL_TYPE controlType: How mechanism is being controlled
+        ///@param [in] double value: target (units based on control type)
+        ///@return void
         void SetOutput
         (
             ControlModes::CONTROL_TYPE controlType,
             double                      value
         ) override;
 
+        ///@brief Activate the solenoid as necessary
+        ///@param [in] bool activate
+        ///@return false
         void ActivateSolenoid
         (
             bool activate
         ) override;
 
+        ///@brief Checks if solenoid is activate or inactive
+        ///@return bool - true = activated, false = retracted
         bool IsSolenoidActivated() override;
 
+        ///@brief get the current position of the mechanism
+        ///@return void
         double GetCurrentPosition() const override;
 
+        ///@brief get the target position of the mechanism
+        ///@return void
         double GetTargetPosition() const override;
 
+        ///@brief Get the current speed of the mechanism.
+        ///@return void
         double GetCurrentSpeed() const override;
 
+        ///@brief Get the target speed of the mechanism
+        ///@return void
         double GetTargetSpeed() const override;
 
+        ///@brief Set the control constants (i.e the PIDF values)
+        ///@param [in] ControlData* pid: The control constants
+        ///@return void
         void SetControlConstants
         (
             ControlData*    pid
