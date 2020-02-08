@@ -63,27 +63,26 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
-                auto solState = td->GetSolenoidState();
 
                 switch ( stateEnum )
                 {
                     case SHOOTER_HOOD_STATE::MOVE_UP:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodMoveUp(controlData, target, solState);
+                        auto thisState = new ShooterHoodMoveUp(controlData, target, MechanismTargetData::SOLENOID::NONE);
                         m_stateMap[SHOOTER_HOOD_STATE::MOVE_UP] = thisState;
                     }
                     break;
 
                     case SHOOTER_HOOD_STATE::MOVE_DOWN:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodMoveDown(controlData, target, solState);
+                        auto thisState = new ShooterHoodMoveDown(controlData, target, MechanismTargetData::SOLENOID::NONE);
                         m_stateMap[SHOOTER_HOOD_STATE::MOVE_DOWN] = thisState;
                     }
                     break;
 
                     case SHOOTER_HOOD_STATE::HOLD_POSITION:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodHoldPosition(controlData, target, solState);
+                        auto thisState = new ShooterHoodHoldPosition(controlData, target, MechanismTargetData::SOLENOID::NONE);
                         m_stateMap[SHOOTER_HOOD_STATE::HOLD_POSITION] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -122,7 +121,13 @@ void ShooterHoodStateMgr::RunCurrentState()
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MOVE_UP ) && 
+        if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_BUTTON))
+        {
+            SetCurrentState( SHOOTER_HOOD_STATE::MANUAL, false ); 
+            Logger::GetLogger()->LogError("ShootHoodStateMgr::SetCurrentState", "Shooter Hood State Manual Hood");
+        }
+        
+        /*if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MOVE_UP ) && 
              m_currentStateEnum != SHOOTER_HOOD_STATE::MOVE_UP )
         {
             SetCurrentState( SHOOTER_HOOD_STATE::MOVE_UP, false );
@@ -136,7 +141,7 @@ void ShooterHoodStateMgr::RunCurrentState()
                   m_currentStateEnum != SHOOTER_HOOD_STATE::HOLD_POSITION )
         {
             SetCurrentState( SHOOTER_HOOD_STATE::HOLD_POSITION, false );
-        }
+        }*/
     }
 
     // run the current state

@@ -59,7 +59,6 @@ class TeleopControl
             IMPELLER_TO_SHOOTER,
             INTAKE_ON,
             INTAKE_OFF,
-            INTAKE_HUMAN_PLAYER,
             BALL_TRANSFER_OFF,
             BALL_TRANSFER_TO_IMPELLER,
             BALL_TRANSFER_TO_SHOOTER,
@@ -77,7 +76,9 @@ class TeleopControl
             SHOOTER_HOOD_MOVE_UP,
             SHOOTER_HOOD_MOVE_DOWN,
             SHOOTER_HOOD_HOLD_POSITION,
-            SHOOTER_HOOD_MANUAL,
+            SHOOTER_HOOD_MANUAL_BUTTON,
+            SHOOTER_HOOD_MANUAL_AXIS,
+            TURRET_MANUAL_AXIS,
             MAX_FUNCTIONS
         };
 
