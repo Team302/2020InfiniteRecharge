@@ -149,10 +149,10 @@ $(document).ready(function(){initNavTree('_intake_8cpp_source.html','');});
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_intake.html#a6e1947a3cd657b968e69629792deca69">   58</a></span>&#160;(<a class="code" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a> controlType,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <span class="keywordtype">double</span>                   value       )</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> ( m_master != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> ( m_master.get() != nullptr )</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        m_master-&gt;SetControlMode(controlType);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        m_master-&gt;Set( value );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        m_master.get()-&gt;SetControlMode(controlType);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        m_master.get()-&gt;Set( value );</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">else</span> </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
@@ -165,9 +165,9 @@ $(document).ready(function(){initNavTree('_intake_8cpp_source.html','');});
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span> activate</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;)</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> ( m_crawlingLifter != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> ( m_crawlingLifter.get() != nullptr )</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        m_crawlingLifter-&gt;Set( activate );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        m_crawlingLifter.get()-&gt;Set( activate );</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
@@ -183,9 +183,9 @@ $(document).ready(function(){initNavTree('_intake_8cpp_source.html','');});
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> on = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> ( m_crawlingLifter != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> ( m_crawlingLifter.get() != nullptr )</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;       on = m_crawlingLifter -&gt; Get();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;       on = m_crawlingLifter.get() -&gt; Get();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>

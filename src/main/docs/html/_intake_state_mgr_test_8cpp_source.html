@@ -123,64 +123,63 @@ $(document).ready(function(){initNavTree('_intake_state_mgr_test_8cpp_source.htm
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">using namespace </span>frc;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_intake_state_mgr_test.html#a503bf1b638b23c0f92ccc5af73dcffb0">   37</a></span>&#160;<a class="code" href="class_intake_state_mgr_test.html#a503bf1b638b23c0f92ccc5af73dcffb0">IntakeStateMgrTest::IntakeStateMgrTest</a>() : <a class="code" href="class_i_state_test.html">IStateTest</a>(),</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                       m_timer( make_unique&lt;Timer&gt;() ),</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                       m_stateMgr( make_unique&lt;<a class="code" href="class_intake_state_mgr.html">IntakeStateMgr</a>&gt;() ),</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                       m_ranOff( false ),</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                       m_ranOn( false ),</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                       m_isDone( false )</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                       m_stateMgr( make_unique&lt;<a class="code" href="class_intake_state_mgr.html">IntakeStateMgr</a>&gt;() ),</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                       m_ranOff( false ),</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                       m_ranOn( false ),</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                       m_isDone( false ),</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                       m_loopCnt( 0 )</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        </div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_intake_state_mgr_test.html#a95ec4b80a7a21f9b115277ad8e9ec9ba">   48</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_intake_state_mgr_test.html#a95ec4b80a7a21f9b115277ad8e9ec9ba">IntakeStateMgrTest::Init</a>()</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    m_timer-&gt;Reset();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    m_timer-&gt;Start();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    m_stateMgr-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, <span class="keyword">true</span> );</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_ranOff = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_intake_state_mgr_test.html#aa94c1857aa9412efc651d54deb8cb58e">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_intake_state_mgr_test.html#aa94c1857aa9412efc651d54deb8cb58e">IntakeStateMgrTest::Periodic</a>()</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> ( m_timer-&gt;HasPeriodPassed( m_stateTestPeriod ) )</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    m_loopCnt = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    m_stateMgr.get()-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, <span class="keyword">true</span> );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    m_ranOff = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_intake_state_mgr_test.html#aa94c1857aa9412efc651d54deb8cb58e">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_intake_state_mgr_test.html#aa94c1857aa9412efc651d54deb8cb58e">IntakeStateMgrTest::Periodic</a>()</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    m_loopCnt++;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> ( m_loopCnt &gt; m_nloops ) </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> ( !m_ranOff )</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            m_stateMgr-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            m_stateMgr.get()-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, <span class="keyword">false</span> );</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            m_ranOff = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( !m_ranOn )</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            m_stateMgr-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::ON, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            m_stateMgr.get()-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::ON, <span class="keyword">false</span> );</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            m_ranOn = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            m_stateMgr-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            m_stateMgr.get()-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, <span class="keyword">false</span> );</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            m_isDone = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        m_timer-&gt;Reset();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        m_timer-&gt;Start();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    m_stateMgr-&gt;RunCurrentState();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_intake_state_mgr_test.html#a9593179e60ea43bfa2ca0a8bda144e47">   85</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_intake_state_mgr_test.html#a9593179e60ea43bfa2ca0a8bda144e47">IntakeStateMgrTest::IsDone</a>()</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> m_isDone;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        m_loopCnt = 0;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    m_stateMgr.get()-&gt;RunCurrentState();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_intake_state_mgr_test.html#a9593179e60ea43bfa2ca0a8bda144e47">   84</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_intake_state_mgr_test.html#a9593179e60ea43bfa2ca0a8bda144e47">IntakeStateMgrTest::IsDone</a>()</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> m_isDone;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_i_state_test_html"><div class="ttname"><a href="class_i_state_test.html">IStateTest</a></div><div class="ttdoc">Interface for testing subsystem states.</div><div class="ttdef"><b>Definition:</b> <a href="_i_state_test_8h_source.html#l00031">IStateTest.h:31</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_test_html_a503bf1b638b23c0f92ccc5af73dcffb0"><div class="ttname"><a href="class_intake_state_mgr_test.html#a503bf1b638b23c0f92ccc5af73dcffb0">IntakeStateMgrTest::IntakeStateMgrTest</a></div><div class="ttdeci">IntakeStateMgrTest()</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_test_8cpp_source.html#l00037">IntakeStateMgrTest.cpp:37</a></div></div>
-<div class="ttc" id="aclass_intake_state_mgr_test_html_a9593179e60ea43bfa2ca0a8bda144e47"><div class="ttname"><a href="class_intake_state_mgr_test.html#a9593179e60ea43bfa2ca0a8bda144e47">IntakeStateMgrTest::IsDone</a></div><div class="ttdeci">bool IsDone() override</div><div class="ttdoc">Indicate whether the test has completed or not.</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_test_8cpp_source.html#l00085">IntakeStateMgrTest.cpp:85</a></div></div>
+<div class="ttc" id="aclass_intake_state_mgr_test_html_a9593179e60ea43bfa2ca0a8bda144e47"><div class="ttname"><a href="class_intake_state_mgr_test.html#a9593179e60ea43bfa2ca0a8bda144e47">IntakeStateMgrTest::IsDone</a></div><div class="ttdeci">bool IsDone() override</div><div class="ttdoc">Indicate whether the test has completed or not.</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_test_8cpp_source.html#l00084">IntakeStateMgrTest.cpp:84</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_html"><div class="ttname"><a href="class_intake_state_mgr.html">IntakeStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8h_source.html#l00028">IntakeStateMgr.h:28</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_test_html_a95ec4b80a7a21f9b115277ad8e9ec9ba"><div class="ttname"><a href="class_intake_state_mgr_test.html#a95ec4b80a7a21f9b115277ad8e9ec9ba">IntakeStateMgrTest::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdoc">Initialize the test setup. This will be called from Robot::TestInit()</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_test_8cpp_source.html#l00048">IntakeStateMgrTest.cpp:48</a></div></div>
 <div class="ttc" id="a_intake_state_mgr_8h_html"><div class="ttname"><a href="_intake_state_mgr_8h.html">IntakeStateMgr.h</a></div></div>
 <div class="ttc" id="a_intake_state_mgr_test_8h_html"><div class="ttname"><a href="_intake_state_mgr_test_8h.html">IntakeStateMgrTest.h</a></div></div>
 <div class="ttc" id="a_i_state_test_8h_html"><div class="ttname"><a href="_i_state_test_8h.html">IStateTest.h</a></div></div>
-<div class="ttc" id="aclass_intake_state_mgr_test_html_aa94c1857aa9412efc651d54deb8cb58e"><div class="ttname"><a href="class_intake_state_mgr_test.html#aa94c1857aa9412efc651d54deb8cb58e">IntakeStateMgrTest::Periodic</a></div><div class="ttdeci">void Periodic() override</div><div class="ttdoc">Run the test. This will be called from Robot::TestPeriodic()</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_test_8cpp_source.html#l00058">IntakeStateMgrTest.cpp:58</a></div></div>
+<div class="ttc" id="aclass_intake_state_mgr_test_html_aa94c1857aa9412efc651d54deb8cb58e"><div class="ttname"><a href="class_intake_state_mgr_test.html#aa94c1857aa9412efc651d54deb8cb58e">IntakeStateMgrTest::Periodic</a></div><div class="ttdeci">void Periodic() override</div><div class="ttdoc">Run the test. This will be called from Robot::TestPeriodic()</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_test_8cpp_source.html#l00057">IntakeStateMgrTest.cpp:57</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -12,6 +12,7 @@ var hierarchy =
     [ "BallTransferStateMgr", "class_ball_transfer_state_mgr.html", null ],
     [ "ButtonBoxDisplay", "class_button_box_display.html", null ],
     [ "CameraDefn", "class_camera_defn.html", null ],
+    [ "CanCoderDefn", "class_can_coder_defn.html", null ],
     [ "CANifierDefn", "class_c_a_nifier_defn.html", null ],
     [ "CanifierFactory", "class_canifier_factory.html", null ],
     [ "ChassisDefn", "class_chassis_defn.html", null ],

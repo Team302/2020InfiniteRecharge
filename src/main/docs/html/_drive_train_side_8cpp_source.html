@@ -157,11 +157,11 @@ $(document).ready(function(){initNavTree('_drive_train_side_8cpp_source.html',''
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;) </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    m_target = value;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> ( m_master != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> ( m_master.get() != nullptr )</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// todo map mechanism control mode to motor control mode (create method)</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        m_master-&gt;SetControlMode( controlType );</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        m_master-&gt;Set( value );</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        m_master.get()-&gt;SetControlMode( controlType );</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        m_master.get()-&gt;Set( value );</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
@@ -186,10 +186,10 @@ $(document).ready(function(){initNavTree('_drive_train_side_8cpp_source.html',''
 <div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="class_drive_train_side.html#a557590423b84c081762e79c161d55ee9">  114</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_drive_train_side.html#a557590423b84c081762e79c161d55ee9">DriveTrainSide::GetCurrentPosition</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">double</span> distance = 0.0;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> ( m_master != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> ( m_master.get() != nullptr )</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        distance = ( m_wheelSize * M_PI );          <span class="comment">// distance the wheel travels per revolution</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keyword">auto</span> nRotations = m_master-&gt;GetRotations(); <span class="comment">// number of rotations</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keyword">auto</span> nRotations = m_master.get()-&gt;GetRotations(); <span class="comment">// number of rotations</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        distance *= nRotations;                     <span class="comment">// distance per revolution * number of revolutions is the distance</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">else</span></div>
@@ -208,10 +208,10 @@ $(document).ready(function(){initNavTree('_drive_train_side_8cpp_source.html',''
 <div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">  141</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">DriveTrainSide::GetCurrentSpeed</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">double</span> speed = 0.0;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> ( m_master != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> ( m_master.get() != nullptr )</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        speed = ( m_wheelSize * M_PI ); <span class="comment">// distance the wheel travels per revolution (inches)</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">auto</span> rps = m_master-&gt;GetRPS();  <span class="comment">// number of rotations per second</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">auto</span> rps = m_master.get()-&gt;GetRPS();  <span class="comment">// number of rotations per second</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        speed *= rps;                   <span class="comment">// distance per revolution * revolutions per second is inches per second</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">else</span></div>

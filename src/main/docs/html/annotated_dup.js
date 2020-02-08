@@ -17,6 +17,7 @@ var annotated_dup =
     [ "ButtonBoxDisplay", "class_button_box_display.html", "class_button_box_display" ],
     [ "ButtonDecorator", "class_button_decorator.html", "class_button_decorator" ],
     [ "CameraDefn", "class_camera_defn.html", "class_camera_defn" ],
+    [ "CanCoderDefn", "class_can_coder_defn.html", "class_can_coder_defn" ],
     [ "CANifierDefn", "class_c_a_nifier_defn.html", "class_c_a_nifier_defn" ],
     [ "CanifierFactory", "class_canifier_factory.html", "class_canifier_factory" ],
     [ "ChassisDefn", "class_chassis_defn.html", "class_chassis_defn" ],
