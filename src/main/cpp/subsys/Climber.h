@@ -61,17 +61,11 @@ class Climber : public IMechanism
         ///@return  double position in inches
         double GetCurrentPosition() const override;
 
-        ///@brief Return the target position of the climber in inches (positive is forward, negative is backward)
-        ///@return double position in inches
-        double GetTargetPosition() const override;
 
         ///@brief Return the current position of the climber in inches (positive is forward, negative is backward)
         ///@return double speed in inches
         double GetCurrentSpeed() const override;
 
-        ///@brief Return the target speed of the climber in inches (positive is forward, negative is backward)
-        ///@return double speed in inches
-        double GetTargetSpeed() const override;
 
         ///@brief Set the control constants (e.g. PIDF values)
         ///@param [in] ControlData*    pid - the control constants

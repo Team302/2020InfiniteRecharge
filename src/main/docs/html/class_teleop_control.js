@@ -1,7 +1,7 @@
 var class_teleop_control =
 [
     [ "FUNCTION_IDENTIFIER", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15", [
-      [ "UNKNOW_FUNCTION", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ae6371c6efda702c24be36bab83e23d89", null ],
+      [ "UNKNOWN_FUNCTION", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a6f54ea506603240492346116d310c09e", null ],
       [ "TANK_DRIVE_LEFT_CONTROL", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ae61617712eb2f2daa93ef0766e679195", null ],
       [ "TANK_DRIVE_RIGHT_CONTROL", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a57127209ca90268d9ec1e585f31fe590", null ],
       [ "ARCADE_DRIVE_THROTTLE", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9917aed04a2cb8d60c6f1afca9dff6b5", null ],

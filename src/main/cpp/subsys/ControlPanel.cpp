@@ -134,14 +134,6 @@ double ControlPanel::GetCurrentPosition
 
 }
 
-double ControlPanel::GetTargetPosition 
-(
-
-)const
-{
-    Logger::GetLogger()->LogError(string("ControlPanel::GetTargetPosition"),string ("Called"));
-    return 0.0;     //subj. to change
-}
 
 
 double ControlPanel::GetCurrentSpeed
@@ -153,15 +145,6 @@ double ControlPanel::GetCurrentSpeed
     return 0.0;     //subj. to change
 }
 
-
-double ControlPanel::GetTargetSpeed
-(
-
-)const
-{
-    Logger::GetLogger()->LogError(string("ControlPanel::GetTargetSpeed"), string("Called"));
-    return 0.0;     //subj. to change
-}
 
 
 /// @brief  Set the control constants (e.g. PIDF values).

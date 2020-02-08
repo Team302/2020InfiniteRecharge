@@ -128,12 +128,6 @@ double DriveTrainSide::GetCurrentPosition() const
 }
 
 
-/// @brief  Return the target position of the DriveTrainSide in inches.  
-double DriveTrainSide::GetTargetPosition() const
-{
-    return m_target;  // todo either need 2 variables or know the current mode
-}
-
 /// @brief  Return the current speed of the DriveTrainSide in degrees per second.  Since we 
 ///         don't have a sensor this will return -360 for clockwise rotations and 360 
 ///         for counter-clockwise rotations.
@@ -153,16 +147,6 @@ double DriveTrainSide::GetCurrentSpeed() const
     }
     return speed;
 
-}
-
-
-/// @brief  Return the target speed of the DriveTrainSide in degrees per second.  Since we 
-///         don't have a sensor this will return -360 for clockwise rotations and 360 
-///         for counter-clockwise rotations.
-/// @return double  speed in degrees per second (rotating mechansim)
-double DriveTrainSide::GetTargetSpeed() const
-{
-    return m_target;  // todo either need 2 variables or know the current mode
 }
 
 

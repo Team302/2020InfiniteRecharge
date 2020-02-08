@@ -57,15 +57,6 @@ double Shooter::GetCurrentSpeed() const
     m_masterMotor.get()->GetRPS();
 }
 
-double Shooter::GetTargetPosition() const
-{
-    return 0.0;
-}
-
-double Shooter::GetTargetSpeed() const 
-{
-    return m_targetSpeed;
-}
 
 void Shooter::SetControlConstants(ControlData* pid)
 {

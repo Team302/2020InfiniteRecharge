@@ -203,58 +203,49 @@ $(document).ready(function(){initNavTree('_climber_8cpp_source.html','');});
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> distance;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_climber.html#a66f3ec00b3ee63603c3dad2ef0a5853a">  135</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_climber.html#a66f3ec00b3ee63603c3dad2ef0a5853a">Climber::GetTargetPosition</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> m_target; <span class="comment">//TODO: find actual target positions</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">  142</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">Climber::GetCurrentSpeed</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">double</span> speed = 0.0;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">if</span> ( m_motorMaster.get() != nullptr )</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        speed = ( m_winchDiameter * M_PI ); <span class="comment">// distance the wheel travels per revolution (inches)</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keyword">auto</span> rps = m_motorMaster.get()-&gt;GetRPS(); <span class="comment">// number of rotations per second</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        speed *= rps;                       <span class="comment">// distance per revolution * revolutions per second is inches per second</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="stringliteral">&quot;Climber::GetCurrentSpeed&quot;</span>, <span class="stringliteral">&quot;No motorMaster&quot;</span> );</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">return</span> speed;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="class_climber.html#ae3eeaa36d95127bcb0cfe485d1873a05">  161</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_climber.html#ae3eeaa36d95127bcb0cfe485d1873a05">Climber::GetTargetSpeed</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span> m_target;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_climber.html#a41fe085977e8cb565a44391b0819948c">Climber::SetControlConstants</a></div>
-<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="class_climber.html#a41fe085977e8cb565a44391b0819948c">  170</a></span>&#160;(</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>*                    pid</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;)</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;{</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">// todo:  need to account for voltage mode</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    m_motorMaster.get()-&gt;SetControlConstants(pid);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">  137</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">Climber::GetCurrentSpeed</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">double</span> speed = 0.0;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">if</span> ( m_motorMaster.get() != nullptr )</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        speed = ( m_winchDiameter * M_PI ); <span class="comment">// distance the wheel travels per revolution (inches)</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keyword">auto</span> rps = m_motorMaster.get()-&gt;GetRPS(); <span class="comment">// number of rotations per second</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        speed *= rps;                       <span class="comment">// distance per revolution * revolutions per second is inches per second</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="stringliteral">&quot;Climber::GetCurrentSpeed&quot;</span>, <span class="stringliteral">&quot;No motorMaster&quot;</span> );</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">return</span> speed;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_climber.html#a41fe085977e8cb565a44391b0819948c">Climber::SetControlConstants</a></div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="class_climber.html#a41fe085977e8cb565a44391b0819948c">  160</a></span>&#160;(</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>*                    pid</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">// todo:  need to account for voltage mode</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    m_motorMaster.get()-&gt;SetControlConstants(pid);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
-<div class="ttc" id="aclass_climber_html_a496efc9ed2d6e09c9c8cc9c57748253d"><div class="ttname"><a href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">Climber::GetCurrentSpeed</a></div><div class="ttdeci">double GetCurrentSpeed() const override</div><div class="ttdoc">Return the current position of the climber in inches (positive is forward, negative is backward)</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00142">Climber.cpp:142</a></div></div>
+<div class="ttc" id="aclass_climber_html_a496efc9ed2d6e09c9c8cc9c57748253d"><div class="ttname"><a href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">Climber::GetCurrentSpeed</a></div><div class="ttdeci">double GetCurrentSpeed() const override</div><div class="ttdoc">Return the current position of the climber in inches (positive is forward, negative is backward)</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00137">Climber.cpp:137</a></div></div>
 <div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
 <div class="ttc" id="aclass_mechanism_types_html_adad17689ea795c3d65e2062bdc09284b"><div class="ttname"><a href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes::MECHANISM_TYPE</a></div><div class="ttdeci">MECHANISM_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_types_8h_source.html#l00031">MechanismTypes.h:31</a></div></div>
 <div class="ttc" id="aclass_climber_html_a05d4b42803a951054d725f2197a51a3d"><div class="ttname"><a href="class_climber.html#a05d4b42803a951054d725f2197a51a3d">Climber::GetType</a></div><div class="ttdeci">MechanismTypes::MECHANISM_TYPE GetType() const override</div><div class="ttdoc">Indicates that this is Climber.</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00050">Climber.cpp:50</a></div></div>
 <div class="ttc" id="aclass_climber_html_a2195246b6a7d9d1381da682474cc0a92"><div class="ttname"><a href="class_climber.html#a2195246b6a7d9d1381da682474cc0a92">Climber::IsSolenoidActivated</a></div><div class="ttdeci">bool IsSolenoidActivated() override</div><div class="ttdoc">Check to see if the solenoid is activated.</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00101">Climber.cpp:101</a></div></div>
-<div class="ttc" id="aclass_climber_html_a66f3ec00b3ee63603c3dad2ef0a5853a"><div class="ttname"><a href="class_climber.html#a66f3ec00b3ee63603c3dad2ef0a5853a">Climber::GetTargetPosition</a></div><div class="ttdeci">double GetTargetPosition() const override</div><div class="ttdoc">Return the target position of the climber in inches (positive is forward, negative is backward)</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00135">Climber.cpp:135</a></div></div>
 <div class="ttc" id="aclass_logger_html_a98d7aec19dcdfb9d8faa46d83d927883"><div class="ttname"><a href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">Logger::LogError</a></div><div class="ttdeci">void LogError(const std::string &amp;locationIdentifier, const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00071">Logger.cpp:71</a></div></div>
-<div class="ttc" id="aclass_climber_html_ae3eeaa36d95127bcb0cfe485d1873a05"><div class="ttname"><a href="class_climber.html#ae3eeaa36d95127bcb0cfe485d1873a05">Climber::GetTargetSpeed</a></div><div class="ttdeci">double GetTargetSpeed() const override</div><div class="ttdoc">Return the target speed of the climber in inches (positive is forward, negative is backward)</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00161">Climber.cpp:161</a></div></div>
 <div class="ttc" id="aclass_logger_html_ae85cfbef8b7e6940475a5012fa1935c6"><div class="ttname"><a href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a></div><div class="ttdeci">static Logger * GetLogger()</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00052">Logger.cpp:52</a></div></div>
 <div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00022">ControlData.h:22</a></div></div>
 <div class="ttc" id="aclass_climber_html_ae03ddf335ed70b23d656a623991f575b"><div class="ttname"><a href="class_climber.html#ae03ddf335ed70b23d656a623991f575b">Climber::ActivateSolenoid</a></div><div class="ttdeci">void ActivateSolenoid(bool activate) override</div><div class="ttdoc">Activate/deactivate the extender solenoid.</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00084">Climber.cpp:84</a></div></div>
 <div class="ttc" id="a_climber_8h_html"><div class="ttname"><a href="_climber_8h.html">Climber.h</a></div></div>
 <div class="ttc" id="a_i_dragon_motor_controller_8h_html"><div class="ttname"><a href="_i_dragon_motor_controller_8h.html">IDragonMotorController.h</a></div></div>
-<div class="ttc" id="aclass_climber_html_a41fe085977e8cb565a44391b0819948c"><div class="ttname"><a href="class_climber.html#a41fe085977e8cb565a44391b0819948c">Climber::SetControlConstants</a></div><div class="ttdeci">void SetControlConstants(ControlData *) override</div><div class="ttdoc">Set the control constants (e.g. PIDF values)</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00170">Climber.cpp:170</a></div></div>
+<div class="ttc" id="aclass_climber_html_a41fe085977e8cb565a44391b0819948c"><div class="ttname"><a href="class_climber.html#a41fe085977e8cb565a44391b0819948c">Climber::SetControlConstants</a></div><div class="ttdeci">void SetControlConstants(ControlData *) override</div><div class="ttdoc">Set the control constants (e.g. PIDF values)</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00160">Climber.cpp:160</a></div></div>
 <div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>
 <div class="ttc" id="aclass_climber_html_a5d98791705b1e9d5626cc31220ab3bb0"><div class="ttname"><a href="class_climber.html#a5d98791705b1e9d5626cc31220ab3bb0">Climber::Climber</a></div><div class="ttdeci">Climber()=delete</div></div>
 <div class="ttc" id="aclass_climber_html_a7bdc1cc3a27ecb23e26bf60c105a4b79"><div class="ttname"><a href="class_climber.html#a7bdc1cc3a27ecb23e26bf60c105a4b79">Climber::SetOutput</a></div><div class="ttdeci">void SetOutput(ControlModes::CONTROL_TYPE controlType, double value) override</div><div class="ttdoc">Run the Climber as defined.</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00060">Climber.cpp:60</a></div></div>

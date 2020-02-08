@@ -62,20 +62,12 @@ double Turret::GetCurrentPosition() const
     return m_turretMotor.get()->GetRotations() * 360.0;
 }
 
-double Turret::GetTargetPosition() const
-{
-    return m_targetPosition;
-}
 
 double Turret::GetCurrentSpeed() const
 {
     return m_turretMotor.get()->GetRPS() * 360.0;
 }
 
-double Turret::GetTargetSpeed() const
-{
-    return m_targetSpeed;
-}
 
 void Turret::SetControlConstants(ControlData* pid)
 {

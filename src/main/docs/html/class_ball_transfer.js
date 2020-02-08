@@ -4,8 +4,6 @@ var class_ball_transfer =
     [ "ActivateSolenoid", "class_ball_transfer.html#a6125b233e84bb18b95028291b8a821fa", null ],
     [ "GetCurrentPosition", "class_ball_transfer.html#a439eba26f6912a85ac05fce629fb6b1c", null ],
     [ "GetCurrentSpeed", "class_ball_transfer.html#add75fdc81285150babc0c52cf2b371b3", null ],
-    [ "GetTargetPosition", "class_ball_transfer.html#ac419c5d7b1132883ff72b82b02127fec", null ],
-    [ "GetTargetSpeed", "class_ball_transfer.html#ace28fe4d807a38c80cb60be729f81170", null ],
     [ "GetType", "class_ball_transfer.html#a0e9e704cbc3fcb207b7377c3356487c3", null ],
     [ "IsSolenoidActivated", "class_ball_transfer.html#a97153a52dbe2240fe50ac5ff7a3736b7", null ],
     [ "SetControlConstants", "class_ball_transfer.html#a4c99013d442e948437be3564500a07a1", null ],

@@ -132,15 +132,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6db6ada50bc8ed96d85006917fcce31e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_climber.html#a6db6ada50bc8ed96d85006917fcce31e">GetCurrentPosition</a> () const override</td></tr>
 <tr class="memdesc:a6db6ada50bc8ed96d85006917fcce31e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current position of the climber in inches (positive is forward, negative is backward)  <a href="class_climber.html#a6db6ada50bc8ed96d85006917fcce31e">More...</a><br /></td></tr>
 <tr class="separator:a6db6ada50bc8ed96d85006917fcce31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66f3ec00b3ee63603c3dad2ef0a5853a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_climber.html#a66f3ec00b3ee63603c3dad2ef0a5853a">GetTargetPosition</a> () const override</td></tr>
-<tr class="memdesc:a66f3ec00b3ee63603c3dad2ef0a5853a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the target position of the climber in inches (positive is forward, negative is backward)  <a href="class_climber.html#a66f3ec00b3ee63603c3dad2ef0a5853a">More...</a><br /></td></tr>
-<tr class="separator:a66f3ec00b3ee63603c3dad2ef0a5853a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a496efc9ed2d6e09c9c8cc9c57748253d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">GetCurrentSpeed</a> () const override</td></tr>
 <tr class="memdesc:a496efc9ed2d6e09c9c8cc9c57748253d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current position of the climber in inches (positive is forward, negative is backward)  <a href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">More...</a><br /></td></tr>
 <tr class="separator:a496efc9ed2d6e09c9c8cc9c57748253d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3eeaa36d95127bcb0cfe485d1873a05"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_climber.html#ae3eeaa36d95127bcb0cfe485d1873a05">GetTargetSpeed</a> () const override</td></tr>
-<tr class="memdesc:ae3eeaa36d95127bcb0cfe485d1873a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the target speed of the climber in inches (positive is forward, negative is backward)  <a href="class_climber.html#ae3eeaa36d95127bcb0cfe485d1873a05">More...</a><br /></td></tr>
-<tr class="separator:ae3eeaa36d95127bcb0cfe485d1873a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41fe085977e8cb565a44391b0819948c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_climber.html#a41fe085977e8cb565a44391b0819948c">SetControlConstants</a> (<a class="el" href="class_control_data.html">ControlData</a> *) override</td></tr>
 <tr class="memdesc:a41fe085977e8cb565a44391b0819948c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values)  <a href="class_climber.html#a41fe085977e8cb565a44391b0819948c">More...</a><br /></td></tr>
 <tr class="separator:a41fe085977e8cb565a44391b0819948c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -366,75 +360,7 @@ double speed in degrees per second </dd></dl>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_climber_8cpp_source.html#l00142">142</a> of file <a class="el" href="_climber_8cpp_source.html">Climber.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a66f3ec00b3ee63603c3dad2ef0a5853a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66f3ec00b3ee63603c3dad2ef0a5853a">&#9670;&nbsp;</a></span>GetTargetPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Climber::GetTargetPosition </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return the target position of the climber in inches (positive is forward, negative is backward) </p>
-<p>return the target position of the climber in inches.</p>
-<dl class="section return"><dt>Returns</dt><dd>double position in inches </dd></dl>
-
-<p>Implements <a class="el" href="class_i_mechanism.html#afd97d8b3f072b45a88c83490dd18e8d2">IMechanism</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_climber_8cpp_source.html#l00135">135</a> of file <a class="el" href="_climber_8cpp_source.html">Climber.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ae3eeaa36d95127bcb0cfe485d1873a05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3eeaa36d95127bcb0cfe485d1873a05">&#9670;&nbsp;</a></span>GetTargetSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Climber::GetTargetSpeed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return the target speed of the climber in inches (positive is forward, negative is backward) </p>
-<p>return the target speed of the <a class="el" href="class_climber.html" title="The Climber subsystem. Includes pneumatic extender and winch.">Climber</a> in speed per second</p>
-<dl class="section return"><dt>Returns</dt><dd>double speed in inches</dd>
-<dd>
-speed in degrees per second </dd></dl>
-
-<p>Implements <a class="el" href="class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2">IMechanism</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_climber_8cpp_source.html#l00161">161</a> of file <a class="el" href="_climber_8cpp_source.html">Climber.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_climber_8cpp_source.html#l00137">137</a> of file <a class="el" href="_climber_8cpp_source.html">Climber.cpp</a>.</p>
 
 </div>
 </div>
@@ -538,7 +464,7 @@ speed in degrees per second </dd></dl>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_climber_8cpp_source.html#l00170">170</a> of file <a class="el" href="_climber_8cpp_source.html">Climber.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_climber_8cpp_source.html#l00160">160</a> of file <a class="el" href="_climber_8cpp_source.html">Climber.cpp</a>.</p>
 
 </div>
 </div>

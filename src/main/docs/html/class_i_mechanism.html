@@ -133,15 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa15197ff101d65447516a8f10bb6867d"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d">GetCurrentPosition</a> () const =0</td></tr>
 <tr class="memdesc:aa15197ff101d65447516a8f10bb6867d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current position of the mechanism. The value is in inches or degrees.  <a href="class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d">More...</a><br /></td></tr>
 <tr class="separator:aa15197ff101d65447516a8f10bb6867d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd97d8b3f072b45a88c83490dd18e8d2"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#afd97d8b3f072b45a88c83490dd18e8d2">GetTargetPosition</a> () const =0</td></tr>
-<tr class="memdesc:afd97d8b3f072b45a88c83490dd18e8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the targget position of the mechanism. The value is in inches or degrees.  <a href="class_i_mechanism.html#afd97d8b3f072b45a88c83490dd18e8d2">More...</a><br /></td></tr>
-<tr class="separator:afd97d8b3f072b45a88c83490dd18e8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a63d6905de4454d78d7e0d1d1e28437"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">GetCurrentSpeed</a> () const =0</td></tr>
 <tr class="memdesc:a9a63d6905de4454d78d7e0d1d1e28437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current speed of the mechanism. The value is in inches per second or degrees per second.  <a href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">More...</a><br /></td></tr>
 <tr class="separator:a9a63d6905de4454d78d7e0d1d1e28437"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06bbdacb531f60301062930ffebc85c2"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2">GetTargetSpeed</a> () const =0</td></tr>
-<tr class="memdesc:a06bbdacb531f60301062930ffebc85c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the target speed of the mechanism. The value is in inches per second or degrees per second.  <a href="class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2">More...</a><br /></td></tr>
-<tr class="separator:a06bbdacb531f60301062930ffebc85c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd973ca93855c485ed42d405f2fcba11"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">SetControlConstants</a> (<a class="el" href="class_control_data.html">ControlData</a> *pid)=0</td></tr>
 <tr class="memdesc:acd973ca93855c485ed42d405f2fcba11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values).  <a href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">More...</a><br /></td></tr>
 <tr class="separator:acd973ca93855c485ed42d405f2fcba11"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -302,72 +296,6 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>double speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) </dd></dl>
 
 <p>Implemented in <a class="el" href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">DriveTrainSide</a>, <a class="el" href="class_ball_transfer.html#add75fdc81285150babc0c52cf2b371b3">BallTransfer</a>, <a class="el" href="class_impeller.html#a38948021086ebb2d7f2651a618ece2e5">Impeller</a>, <a class="el" href="class_intake.html#a7e3783508ddf079750a1430d6fb2e6cf">Intake</a>, <a class="el" href="class_human_player_flap.html#a981fd78eb3df7ac72787881dab15b304">HumanPlayerFlap</a>, <a class="el" href="class_control_panel.html#a99f7157fc32fd4f2f10c2f78ba0e34cd">ControlPanel</a>, <a class="el" href="class_shooter_hood.html#afb58273b6dcb9f64c95c9de355671402">ShooterHood</a>, <a class="el" href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">Climber</a>, <a class="el" href="class_shooter.html#aa38c7c6e5aa105789119d0770ad0dc8e">Shooter</a>, and <a class="el" href="class_turret.html#a56b62c93ee21ac46d6428382d95b02d7">Turret</a>.</p>
-
-</div>
-</div>
-<a id="afd97d8b3f072b45a88c83490dd18e8d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd97d8b3f072b45a88c83490dd18e8d2">&#9670;&nbsp;</a></span>GetTargetPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IMechanism::GetTargetPosition </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return the targget position of the mechanism. The value is in inches or degrees. </p>
-<dl class="section return"><dt>Returns</dt><dd>double position in inches (translating mechanisms) or degrees (rotating mechanisms) </dd></dl>
-
-<p>Implemented in <a class="el" href="class_drive_train_side.html#a0ccf01a971eab34f5a053e6184af1b71">DriveTrainSide</a>, <a class="el" href="class_ball_transfer.html#ac419c5d7b1132883ff72b82b02127fec">BallTransfer</a>, <a class="el" href="class_impeller.html#aab43e22efa3957aeaede4eb9eb965e4c">Impeller</a>, <a class="el" href="class_intake.html#a09dd45bfc0e12d514bb1e1efa675ef06">Intake</a>, <a class="el" href="class_human_player_flap.html#ae873ee3ddaef45474d7e1c467e5c1281">HumanPlayerFlap</a>, <a class="el" href="class_control_panel.html#a4783314507db821a953567cdcfa88853">ControlPanel</a>, <a class="el" href="class_shooter_hood.html#a219222f503bdb4b43e914a74e1e883c2">ShooterHood</a>, <a class="el" href="class_climber.html#a66f3ec00b3ee63603c3dad2ef0a5853a">Climber</a>, <a class="el" href="class_shooter.html#a203e453080b616d2174075aa9f275cb1">Shooter</a>, and <a class="el" href="class_turret.html#a7224fca0dad060329e04903fda42899f">Turret</a>.</p>
-
-</div>
-</div>
-<a id="a06bbdacb531f60301062930ffebc85c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06bbdacb531f60301062930ffebc85c2">&#9670;&nbsp;</a></span>GetTargetSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double IMechanism::GetTargetSpeed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the target speed of the mechanism. The value is in inches per second or degrees per second. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ControlModes::MECHANISM_CONTROL_ID</td><td>controlItems: What item(s) are being requested </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>double speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) </dd></dl>
-
-<p>Implemented in <a class="el" href="class_drive_train_side.html#adf2337d61c0dd88d0a2b63032ce1075d">DriveTrainSide</a>, <a class="el" href="class_ball_transfer.html#ace28fe4d807a38c80cb60be729f81170">BallTransfer</a>, <a class="el" href="class_impeller.html#a89fb5f4080d2addd03c5102c7393564c">Impeller</a>, <a class="el" href="class_intake.html#a7d733c16727ac5509d2c42c5b3165103">Intake</a>, <a class="el" href="class_human_player_flap.html#ab23aa98663657ec1074fec9a7722d93d">HumanPlayerFlap</a>, <a class="el" href="class_control_panel.html#ad3f18a8d44d1516e8e5f41fca394fd2d">ControlPanel</a>, <a class="el" href="class_shooter_hood.html#af1b22880aa5bd740e2506573df3d37a1">ShooterHood</a>, <a class="el" href="class_climber.html#ae3eeaa36d95127bcb0cfe485d1873a05">Climber</a>, <a class="el" href="class_shooter.html#a34a634840a26e4d1373757ae231def97">Shooter</a>, and <a class="el" href="class_turret.html#a11658ee886370db874b3adedc1193328">Turret</a>.</p>
 
 </div>
 </div>

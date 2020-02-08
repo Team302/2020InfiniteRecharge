@@ -77,25 +77,14 @@ double ShooterHood :: GetCurrentPosition() const
 { 
 return m_shmotor.get()->GetRotations() * 360.0; 
 } 
-/// @brief  Return the targget position of the mechanism.  The value is in inches or degrees. 
-/// @return double  position in inches (translating mechanisms) or degrees (rotating mechanisms) 
-double ShooterHood :: GetTargetPosition() const  
-{ 
-return 0.0; 
-} 
+
 /// @brief  Get the current speed of the mechanism.  The value is in inches per second or degrees per second. 
 /// @return double  speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) 
 double ShooterHood ::GetCurrentSpeed() const  
 { 
  return m_shmotor.get()->GetRPS() * 360.0;
 } 
-/// @brief  Get the target speed of the mechanism.  The value is in inches per second or degrees per second. 
-/// @param [in] ControlModes::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested 
-/// @return double  speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) 
-double ShooterHood :: GetTargetSpeed() const  
-{ 
-return 0.0; 
-} 
+
 /// @brief  Set the control constants (e.g. PIDF values). 
 /// @param [in] ControlData*                                   pid:  the control constants 
 /// @return void 

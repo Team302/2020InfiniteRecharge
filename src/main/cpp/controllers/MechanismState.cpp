@@ -147,16 +147,16 @@ bool MechanismState::AtTarget() const
     {
         if ( m_positionBased && !m_speedBased )
         {
-            same = ( abs( m_mechanism->GetTargetPosition() - m_mechanism->GetCurrentPosition())  < 1.0 );
+            same = ( abs( m_target - m_mechanism->GetCurrentPosition())  < 1.0 );
         }
         else if ( !m_positionBased && m_speedBased )
         {
-            same = ( abs( m_mechanism->GetTargetSpeed() - m_mechanism->GetCurrentSpeed()) < 1.0 );
+            same = ( abs( m_target - m_mechanism->GetCurrentSpeed()) < 1.0 );
         }
         else if ( m_positionBased && m_speedBased )
         {
-            same = ( ( abs( m_mechanism->GetTargetPosition() - m_mechanism->GetCurrentPosition())  < 1.0 ) &&
-                     ( abs( m_mechanism->GetTargetSpeed()    - m_mechanism->GetCurrentSpeed())     < 1.0 ) );
+            same = ( ( abs( m_target - m_mechanism->GetCurrentPosition())  < 1.0 ) ||
+                     ( abs( m_target - m_mechanism->GetCurrentSpeed())     < 1.0 ) );
         }
     }
     return same;

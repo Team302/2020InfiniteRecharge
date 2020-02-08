@@ -123,15 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a439eba26f6912a85ac05fce629fb6b1c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_transfer.html#a439eba26f6912a85ac05fce629fb6b1c">GetCurrentPosition</a> () const override</td></tr>
 <tr class="memdesc:a439eba26f6912a85ac05fce629fb6b1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current position of the mechanism. The value is in inches or degrees.  <a href="class_ball_transfer.html#a439eba26f6912a85ac05fce629fb6b1c">More...</a><br /></td></tr>
 <tr class="separator:a439eba26f6912a85ac05fce629fb6b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac419c5d7b1132883ff72b82b02127fec"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_transfer.html#ac419c5d7b1132883ff72b82b02127fec">GetTargetPosition</a> () const override</td></tr>
-<tr class="memdesc:ac419c5d7b1132883ff72b82b02127fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the targget position of the mechanism. The value is in inches or degrees.  <a href="class_ball_transfer.html#ac419c5d7b1132883ff72b82b02127fec">More...</a><br /></td></tr>
-<tr class="separator:ac419c5d7b1132883ff72b82b02127fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add75fdc81285150babc0c52cf2b371b3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_transfer.html#add75fdc81285150babc0c52cf2b371b3">GetCurrentSpeed</a> () const override</td></tr>
 <tr class="memdesc:add75fdc81285150babc0c52cf2b371b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current speed of the mechanism. The value is in inches per second or degrees per second.  <a href="class_ball_transfer.html#add75fdc81285150babc0c52cf2b371b3">More...</a><br /></td></tr>
 <tr class="separator:add75fdc81285150babc0c52cf2b371b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace28fe4d807a38c80cb60be729f81170"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_transfer.html#ace28fe4d807a38c80cb60be729f81170">GetTargetSpeed</a> () const override</td></tr>
-<tr class="memdesc:ace28fe4d807a38c80cb60be729f81170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the target speed of the mechanism. The value is in inches per second or degrees per second.  <a href="class_ball_transfer.html#ace28fe4d807a38c80cb60be729f81170">More...</a><br /></td></tr>
-<tr class="separator:ace28fe4d807a38c80cb60be729f81170"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c99013d442e948437be3564500a07a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_transfer.html#a4c99013d442e948437be3564500a07a1">SetControlConstants</a> (<a class="el" href="class_control_data.html">ControlData</a> *pid) override</td></tr>
 <tr class="memdesc:a4c99013d442e948437be3564500a07a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values).  <a href="class_ball_transfer.html#a4c99013d442e948437be3564500a07a1">More...</a><br /></td></tr>
 <tr class="separator:a4c99013d442e948437be3564500a07a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,77 +260,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_ball_transfer_8cpp_source.html#l00102">102</a> of file <a class="el" href="_ball_transfer_8cpp_source.html">BallTransfer.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ac419c5d7b1132883ff72b82b02127fec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac419c5d7b1132883ff72b82b02127fec">&#9670;&nbsp;</a></span>GetTargetPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double BallTransfer::GetTargetPosition </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return the targget position of the mechanism. The value is in inches or degrees. </p>
-<dl class="section return"><dt>Returns</dt><dd>double position in inches (translating mechanisms) or degrees (rotating mechanisms) </dd></dl>
-
-<p>Implements <a class="el" href="class_i_mechanism.html#afd97d8b3f072b45a88c83490dd18e8d2">IMechanism</a>.</p>
-
 <p class="definition">Definition at line <a class="el" href="_ball_transfer_8cpp_source.html#l00093">93</a> of file <a class="el" href="_ball_transfer_8cpp_source.html">BallTransfer.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ace28fe4d807a38c80cb60be729f81170"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace28fe4d807a38c80cb60be729f81170">&#9670;&nbsp;</a></span>GetTargetSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double BallTransfer::GetTargetSpeed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the target speed of the mechanism. The value is in inches per second or degrees per second. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ControlModes::MECHANISM_CONTROL_ID</td><td>controlItems: What item(s) are being requested </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>double speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) </dd></dl>
-
-<p>Implements <a class="el" href="class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2">IMechanism</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_ball_transfer_8cpp_source.html#l00111">111</a> of file <a class="el" href="_ball_transfer_8cpp_source.html">BallTransfer.cpp</a>.</p>
 
 </div>
 </div>
@@ -439,7 +363,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_ball_transfer_8cpp_source.html#l00120">120</a> of file <a class="el" href="_ball_transfer_8cpp_source.html">BallTransfer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ball_transfer_8cpp_source.html#l00103">103</a> of file <a class="el" href="_ball_transfer_8cpp_source.html">BallTransfer.cpp</a>.</p>
 
 </div>
 </div>

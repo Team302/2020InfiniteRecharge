@@ -89,15 +89,6 @@ double BallTransfer::GetCurrentPosition
     return 0.0;
 }
 
-double BallTransfer::GetTargetPosition
-(
-
-) const
-{
-    Logger::GetLogger()->LogError(string("BallTransfer::GetTargetPosition"), string("Called"));
-    return 0.0;
-}
-
 double BallTransfer::GetCurrentSpeed
 (
 
@@ -107,14 +98,6 @@ double BallTransfer::GetCurrentSpeed
     return 0.0;
 }
 
-double BallTransfer::GetTargetSpeed
-(
-
-)const
-{
-    Logger::GetLogger()->LogError(string("BallTransfer::GetTargetSpeed"), string("Called"));
-    return 0.0;
-}
 
 void BallTransfer::SetControlConstants
 (
