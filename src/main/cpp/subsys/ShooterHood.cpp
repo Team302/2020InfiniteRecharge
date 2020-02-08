@@ -34,6 +34,7 @@
 
 using namespace std; 
 using namespace ctre::phoenix::sensors;
+using namespace ctre::phoenix::motorcontrol;
  
 ShooterHood::ShooterHood 
 ( 
@@ -43,6 +44,7 @@ ShooterHood::ShooterHood
 ) : m_shmotor(shmotor),
     m_encoder( canCoder )
 { 
+      m_shmotor->SetRemoteSensor( canCoder->GetDeviceNumber(), RemoteSensorSource::RemoteSensorSource_CANCoder );
 } 
 /// @brief          Indicates the type of mechanism this is 
 /// @return         MechanismTypes::MECHANISM_TYPE 

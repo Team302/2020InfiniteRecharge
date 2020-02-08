@@ -149,6 +149,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abdca297c707d0c1f5e36bc0be37396d5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#abdca297c707d0c1f5e36bc0be37396d5">SetControlConstants</a> (<a class="el" href="class_control_data.html">ControlData</a> *controlInfo)=0</td></tr>
 <tr class="memdesc:abdca297c707d0c1f5e36bc0be37396d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values).  <a href="class_i_dragon_motor_controller.html#abdca297c707d0c1f5e36bc0be37396d5">More...</a><br /></td></tr>
 <tr class="separator:abdca297c707d0c1f5e36bc0be37396d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f5568cf4e1c64b327795135753678a1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_dragon_motor_controller.html#a5f5568cf4e1c64b327795135753678a1">SetRemoteSensor</a> (int canID, ctre::phoenix::motorcontrol::RemoteSensorSource deviceType)=0</td></tr>
+<tr class="separator:a5f5568cf4e1c64b327795135753678a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -160,7 +162,7 @@ Protected Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The general interface to motor controllers so that the specific mechanisms that use motors, don't need to special case what motor controller is being used. </p>
 
-<p class="definition">Definition at line <a class="el" href="_i_dragon_motor_controller_8h_source.html#l00038">38</a> of file <a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_dragon_motor_controller_8h_source.html#l00037">37</a> of file <a class="el" href="_i_dragon_motor_controller_8h_source.html">IDragonMotorController.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abd89e75a66f4aa8ab989b2196e5d912f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd89e75a66f4aa8ab989b2196e5d912f">&#9670;&nbsp;</a></span>IDragonMotorController()</h2>
@@ -567,6 +569,44 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="class_dragon_falcon.html#a4a582d3070a1623396dbf5120bb4f390">DragonFalcon</a>, <a class="el" href="class_dragon_spark_max.html#a47cda85cdba80165e485bb5bf5c41726">DragonSparkMax</a>, and <a class="el" href="class_dragon_talon.html#a51ae73cebf47695a4c37cc874d7dd0b3">DragonTalon</a>.</p>
+
+</div>
+</div>
+<a id="a5f5568cf4e1c64b327795135753678a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f5568cf4e1c64b327795135753678a1">&#9670;&nbsp;</a></span>SetRemoteSensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IDragonMotorController::SetRemoteSensor </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>canID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ctre::phoenix::motorcontrol::RemoteSensorSource&#160;</td>
+          <td class="paramname"><em>deviceType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_dragon_falcon.html#ac2802287e9336cb907c5e0ce77e03d26">DragonFalcon</a>, <a class="el" href="class_dragon_talon.html#abfd29c75d1892ea7607114a337fe232b">DragonTalon</a>, and <a class="el" href="class_dragon_spark_max.html#a1efdeaf37e0d6296a155db0a0d5b0239">DragonSparkMax</a>.</p>
 
 </div>
 </div>

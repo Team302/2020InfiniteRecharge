@@ -15,6 +15,8 @@
 #include <hw/interfaces/IDragonMotorController.h>
 #include <hw/usages/MotorControllerUsage.h>
 
+// Third Party Includes
+#include <ctre/phoenix/motorcontrol/RemoteSensorSource.h>
 #include <rev/CANSparkMax.h>
 
 // namespaces
@@ -66,6 +68,11 @@ class DragonSparkMax : public IDragonMotorController
         void SetSmartCurrentLimiting(int limit);
         rev::CANError Follow(DragonSparkMax* leader, bool invert = false);
 
+        void SetRemoteSensor
+        (
+            int                                             canID,
+            ctre::phoenix::motorcontrol::RemoteSensorSource deviceType
+        ) override;
     private:
         double GetRotationsWithGearNoOffset() const;
         int m_id;

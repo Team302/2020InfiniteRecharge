@@ -221,3 +221,14 @@ void DragonSparkMax::SetControlConstants(ControlData* controlInfo)
     m_spark->GetPIDController().SetD(controlInfo->GetD(), 0);
     m_spark->GetPIDController().SetFF(controlInfo->GetF(), 0);
 }
+
+
+void DragonSparkMax::SetRemoteSensor
+(
+    int                                             canID,
+    ctre::phoenix::motorcontrol::RemoteSensorSource deviceType
+)
+{
+    
+}
+

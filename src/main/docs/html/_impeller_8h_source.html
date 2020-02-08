@@ -122,57 +122,63 @@ $(document).ready(function(){initNavTree('_impeller_8h_source.html','');});
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_talon_8h.html">hw/DragonTalon.h</a>&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_dragon_motor_controller_8h.html">hw/interfaces/IDragonMotorController.h</a>&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// Third Party Includes</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// Third Party Includes</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;ctre/phoenix/sensors/CANCoder.h&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_impeller.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_impeller.html">Impeller</a> : <span class="keyword">public</span> <a class="code" href="class_i_mechanism.html">IMechanism</a></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes::MECHANISM_TYPE</a> GetType() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_impeller.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_impeller.html">Impeller</a> : <span class="keyword">public</span> <a class="code" href="class_i_mechanism.html">IMechanism</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes::MECHANISM_TYPE</a> GetType() <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> SetOutput</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        (</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a> controlType,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordtype">double</span>                                   value       </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        ) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">void</span> ActivateSolenoid</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        (</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordtype">bool</span>     activate</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        ) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">bool</span> IsSolenoidActivated() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> SetOutput</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        (</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a> controlType,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordtype">double</span>                                   value       </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> ActivateSolenoid</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        (</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordtype">bool</span>     activate</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">bool</span> IsSolenoidActivated() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">double</span> GetCurrentPosition() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">double</span> GetCurrentSpeed() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">double</span> GetCurrentPosition() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">double</span> GetCurrentSpeed() <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">void</span> SetControlConstants</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        (</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <a class="code" href="class_control_data.html">ControlData</a>*                                pid                 </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        ) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="class_impeller.html">Impeller</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="class_impeller.html">Impeller</a>(std::shared_ptr&lt;IDragonMotorController&gt; motor);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        std::shared_ptr&lt;IDragonMotorController&gt; m_motor;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">double</span> m_target;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">//virtual ~Impeller() = default;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">void</span> SetControlConstants</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        (</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="class_control_data.html">ControlData</a>*                                pid                 </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="class_impeller.html">Impeller</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="class_impeller.html">Impeller</a></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        (</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            std::shared_ptr&lt;IDragonMotorController&gt; motor,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            std::shared_ptr&lt;ctre::phoenix::sensors::CANCoder&gt; encoder</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        std::shared_ptr&lt;IDragonMotorController&gt; m_motor;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        std::shared_ptr&lt;ctre::phoenix::sensors::CANCoder&gt; m_encoder;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">double</span> m_target;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">//virtual ~Impeller() = default;</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
 <div class="ttc" id="aclass_mechanism_types_html_adad17689ea795c3d65e2062bdc09284b"><div class="ttname"><a href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes::MECHANISM_TYPE</a></div><div class="ttdeci">MECHANISM_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_types_8h_source.html#l00031">MechanismTypes.h:31</a></div></div>
-<div class="ttc" id="aclass_impeller_html"><div class="ttname"><a href="class_impeller.html">Impeller</a></div><div class="ttdef"><b>Definition:</b> <a href="_impeller_8h_source.html#l00042">Impeller.h:42</a></div></div>
+<div class="ttc" id="aclass_impeller_html"><div class="ttname"><a href="class_impeller.html">Impeller</a></div><div class="ttdef"><b>Definition:</b> <a href="_impeller_8h_source.html#l00043">Impeller.h:43</a></div></div>
 <div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00022">ControlData.h:22</a></div></div>
 <div class="ttc" id="a_i_dragon_motor_controller_8h_html"><div class="ttname"><a href="_i_dragon_motor_controller_8h.html">IDragonMotorController.h</a></div></div>
 <div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>

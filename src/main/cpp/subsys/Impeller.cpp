@@ -40,6 +40,7 @@
 
 using namespace std;
 using namespace ctre::phoenix::sensors;
+using namespace ctre::phoenix::motorcontrol;
 
 
 
@@ -50,7 +51,7 @@ Impeller::Impeller
 ) : m_motor (motor),
     m_encoder( encoder)
 {
-    
+    m_motor->SetRemoteSensor( encoder->GetDeviceNumber(), RemoteSensorSource::RemoteSensorSource_CANCoder );
 }
 
 

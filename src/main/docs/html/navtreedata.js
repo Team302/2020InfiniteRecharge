@@ -59,10 +59,10 @@ var NAVTREEINDEX =
 "_motor_controller_usage_8cpp.html",
 "class_auton_selector.html#a321c5fb8d66485cf1b1c32af57d819b8a3f26d28268b2d438a4739c0046b24208",
 "class_digital_input_factory.html#a53c277332cda19ccbdfdef7e526b22bc",
-"class_dragon_ultrasonic_p_w_m.html#ae5baaa76cdd9e98847e662564bbb2f41",
-"class_i_dragon_game_pad.html#afde07811ccdd7565bc40c381adecee4da48e19565e5136daf64ad8e9f48d5f844",
-"class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba5a51c1e4ac283d458ddbd5c4cf9e011d",
-"class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a6f54ea506603240492346116d310c09e"
+"class_dragon_ultrasonic_p_w_m.html#a403cf728e7d6426edb94a4b64776eba0",
+"class_i_dragon_game_pad.html#af9eb9c48d80b094748b724294d00fef1",
+"class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba38d684c3976bffd9902a1852dc22d654",
+"class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a478186ef0eeda3702bdf2af97cb529f1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
