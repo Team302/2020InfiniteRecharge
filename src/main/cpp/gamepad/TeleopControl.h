@@ -67,6 +67,7 @@ class TeleopControl
             SHOOTER_MANUAL_AIM,
             SHOOTER_MANUAL_ADJUST_DISTANCE,
             SHOOTER_MANUAL_SHOOT,
+            SHOOTER_OFF,
             CONTROL_PANEL_STOW,
             CONTROL_PANEL_RAISE,
             CONTROL_PANEL_SPIN_WHEEL,

@@ -13,15 +13,15 @@
 #include "subsys/MechanismTypes.h"
 
 
-ShooterGetReady::ShooterGetReady(ControlData* controlData, double target): m_controlData(controlData),
-m_target(target),
-m_atTarget(false)
+ShooterGetReady::ShooterGetReady
+(
+    ControlData* controlData, 
+    double target
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER), controlData, target) 
 {
-    auto factory = MechanismFactory::GetMechanismFactory();
-    m_shooter = factory->GetIMechanism(MechanismTypes::SHOOTER);
 }
 
-void ShooterGetReady::Init()
+/*void ShooterGetReady::Init()
 {
     m_shooter->SetControlConstants(m_controlData);
 }
@@ -39,3 +39,4 @@ bool ShooterGetReady::AtTarget() const
 {
     return m_atTarget;
 }
+*/

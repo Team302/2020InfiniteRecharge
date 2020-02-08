@@ -11,19 +11,16 @@
 #include "subsys/MechanismFactory.h"
 #include "subsys/IMechanism.h"
 #include "subsys/MechanismTypes.h"
+#include "controllers/MechanismState.h"
 
 ShooterShoot::ShooterShoot
 (
     ControlData* controlData, 
     double target
-) : m_shooter( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER)),
-    m_controlData(controlData),
-    m_atTarget(false),
-    m_target(target)
-{
-}
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER), controlData, target)
+{}
 
-void ShooterShoot::Init()
+/*void ShooterShoot::Init()
 {
     m_shooter->SetControlConstants(m_controlData);
 }
@@ -41,3 +38,4 @@ bool ShooterShoot::AtTarget() const
 {
     return m_atTarget;
 }
+*/

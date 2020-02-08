@@ -116,15 +116,17 @@ void ShooterStateMgr::RunCurrentState()
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_PREPARE_TO_SHOOT ) && 
-             m_currentStateEnum != SHOOTER_STATE::GET_READY )
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_PREPARE_TO_SHOOT ))
         {
             SetCurrentState( SHOOTER_STATE::GET_READY, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_SHOOT ) &&
-                  m_currentStateEnum != SHOOTER_STATE::SHOOT )
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_SHOOT ))
         {
             SetCurrentState( SHOOTER_STATE::SHOOT, false );
+        }
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_OFF ))
+        {
+            SetCurrentState( SHOOTER_STATE::OFF, false );
         }
         // todo add all states/conditions here
     }
