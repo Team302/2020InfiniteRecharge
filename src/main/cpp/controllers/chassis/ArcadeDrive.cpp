@@ -138,8 +138,8 @@ void ArcadeDrive::NormalDrive
 )
 {
     // convert throttle  / steer values to left / right values
-    *left = throttle + steer;
-    *right = throttle - steer;
+    *left = -(throttle + steer);
+    *right = -(throttle - steer);
 
     // make sure the values are within -1.0 to 1.0
     auto maxValue = max(abs( *left ), abs( *right ) );

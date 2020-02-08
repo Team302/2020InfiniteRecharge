@@ -8,10 +8,10 @@
 					 value="0.0"/>
 	<mechanismTarget stateIdentifier="IMPELLERTOSHOOTER"
 	                 controlDataIdentifier="openloop"
-					 value="0.30"/>
+					 value="0.20"/>
 	<mechanismTarget stateIdentifier="IMPELLERHOLD"
 	                 controlDataIdentifier="openloop"
-					 value="-0.30"/>
+					 value="-0.20"/>
 	<mechanismTarget stateIdentifier="IMPELLERAGITATE"
 	                 controlDataIdentifier="openloop"
 					 value="-0.25"/>
