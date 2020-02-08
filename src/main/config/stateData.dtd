@@ -27,5 +27,6 @@
                                       UNKNOWN ) "UNKNOWN"
           controlDataIdentifier     CDATA #REQUIRED
           value                     CDATA #REQUIRED
+          solenoid                  ( NONE | ON | OFF ) "NONE"
 >
 
