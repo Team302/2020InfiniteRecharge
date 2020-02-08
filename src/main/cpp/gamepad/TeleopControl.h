@@ -40,7 +40,7 @@ class TeleopControl
 
         enum FUNCTION_IDENTIFIER
         {
-            UNKNOW_FUNCTION,
+            UNKNOWN_FUNCTION,
             TANK_DRIVE_LEFT_CONTROL,
             TANK_DRIVE_RIGHT_CONTROL,
             ARCADE_DRIVE_THROTTLE,
