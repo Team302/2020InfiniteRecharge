@@ -60,6 +60,7 @@ class PrimitiveParams
         float GetHeading() const;
         float GetDriveSpeed() const;
         float GetEndDriveSpeed() const;
+        bool  IsIntakeOn() const;
 
         //Setters
         void SetDistance(float distance);
@@ -74,6 +75,7 @@ class PrimitiveParams
         float                       m_heading;
         float                       m_startDriveSpeed;
         float                       m_endDriveSpeed;
+        bool                        m_intakeOn;
 };
 
 typedef std::vector<PrimitiveParams*> PrimitiveParamsVector;

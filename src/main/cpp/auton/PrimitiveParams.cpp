@@ -26,7 +26,8 @@ PrimitiveParams::PrimitiveParams
 		m_yLoc( yLoc ),
 		m_heading(heading),
 		m_startDriveSpeed( startDriveSpeed ),
-		m_endDriveSpeed( endDriveSpeed )
+		m_endDriveSpeed( endDriveSpeed ),
+		m_intakeOn(true)	//todo pass a param
 {
 }
 
@@ -73,6 +74,10 @@ float PrimitiveParams::GetDriveSpeed() const
 float PrimitiveParams::GetEndDriveSpeed() const
 {
     return m_endDriveSpeed;
+}
+bool PrimitiveParams::IsIntakeOn() const
+{
+	return m_intakeOn;
 }
 
 
