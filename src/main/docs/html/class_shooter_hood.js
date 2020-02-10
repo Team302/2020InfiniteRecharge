@@ -1,6 +1,6 @@
 var class_shooter_hood =
 [
-    [ "ShooterHood", "class_shooter_hood.html#a5d033306d0990fc276f89b0e7b38c16e", null ],
+    [ "ShooterHood", "class_shooter_hood.html#a81123eb53dad8258d0f8b99e503eed5c", null ],
     [ "~ShooterHood", "class_shooter_hood.html#ac66b2feb843b8dccdbe963cc41ea7258", null ],
     [ "ActivateSolenoid", "class_shooter_hood.html#a712e0e8e685521f54e5511f4c5b7d52e", null ],
     [ "GetCurrentPosition", "class_shooter_hood.html#a90c27f70b7fb405c155561bc56428306", null ],

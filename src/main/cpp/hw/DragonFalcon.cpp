@@ -356,4 +356,13 @@ void DragonFalcon::SetReverseLimitSwitch
 	m_talon->ConfigReverseLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );
 }
 
+void DragonFalcon::SetRemoteSensor
+(
+    int                                             canID,
+    ctre::phoenix::motorcontrol::RemoteSensorSource deviceType
+)
+{
+	m_talon->ConfigRemoteFeedbackFilter( canID, deviceType, 0, 0.0 );
+	m_talon->ConfigSelectedFeedbackSensor( RemoteFeedbackDevice::RemoteFeedbackDevice_RemoteSensor0, 0, 0 );
+}
 

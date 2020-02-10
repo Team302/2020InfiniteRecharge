@@ -167,6 +167,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af55d7051e52f7b65dedbff53d9e81c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54d569a45a527b83505b8e646d99a95b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_falcon.html#a54d569a45a527b83505b8e646d99a95b">SetAsSlave</a> (int masterCANID)</td></tr>
 <tr class="separator:a54d569a45a527b83505b8e646d99a95b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2802287e9336cb907c5e0ce77e03d26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_falcon.html#ac2802287e9336cb907c5e0ce77e03d26">SetRemoteSensor</a> (int canID, ctre::phoenix::motorcontrol::RemoteSensorSource deviceType) override</td></tr>
+<tr class="separator:ac2802287e9336cb907c5e0ce77e03d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -178,7 +180,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_dragon_falcon_8h_source.html#l00043">43</a> of file <a class="el" href="_dragon_falcon_8h_source.html">DragonFalcon.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dragon_falcon_8h_source.html#l00044">44</a> of file <a class="el" href="_dragon_falcon_8h_source.html">DragonFalcon.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad18650415bbad0f68b109ee8a634329d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad18650415bbad0f68b109ee8a634329d">&#9670;&nbsp;</a></span>DragonFalcon() <span class="overload">[1/2]</span></h2>
@@ -885,6 +887,46 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_dragon_falcon_8cpp_source.html#l00342">342</a> of file <a class="el" href="_dragon_falcon_8cpp_source.html">DragonFalcon.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac2802287e9336cb907c5e0ce77e03d26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2802287e9336cb907c5e0ce77e03d26">&#9670;&nbsp;</a></span>SetRemoteSensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DragonFalcon::SetRemoteSensor </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>canID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ctre::phoenix::motorcontrol::RemoteSensorSource&#160;</td>
+          <td class="paramname"><em>deviceType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_i_dragon_motor_controller.html#a5f5568cf4e1c64b327795135753678a1">IDragonMotorController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_dragon_falcon_8cpp_source.html#l00360">360</a> of file <a class="el" href="_dragon_falcon_8cpp_source.html">DragonFalcon.cpp</a>.</p>
 
 </div>
 </div>

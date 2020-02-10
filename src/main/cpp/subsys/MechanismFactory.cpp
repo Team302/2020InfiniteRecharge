@@ -172,7 +172,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::IMPELLER );
 				if ( motor.get() != nullptr )
 				{
-					auto impeller = new Impeller(motor);
+					auto impeller = new Impeller(motor, canCoder);
 					subsys = dynamic_cast<IMechanism*>(impeller);
 				}
 			}
@@ -206,7 +206,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 				auto shooterHoodMotor = GetMotorController ( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::SHOOTER_HOOD );
 				if ( shooterHoodMotor.get() != nullptr )
 				{
-					auto shooterHood = new ShooterHood( shooterHoodMotor);
+					auto shooterHood = new ShooterHood( shooterHoodMotor, canCoder);
 					subsys = dynamic_cast<IMechanism*>(shooterHood);
 				}
 			}

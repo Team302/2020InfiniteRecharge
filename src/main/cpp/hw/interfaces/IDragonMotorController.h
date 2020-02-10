@@ -29,8 +29,7 @@
 #include <controllers/ControlData.h>
 
 // Third Party Includes
-
-
+#include <ctre/phoenix/motorcontrol/RemoteSensorSource.h>
 
 /// @interface IDragonMotorController
 /// @brief The general interface to motor controllers so that the specific mechanisms that use motors,
@@ -78,6 +77,12 @@ class IDragonMotorController
         /// @param [in] ControlData*   pid - the control constants
         /// @return void
         virtual void SetControlConstants(ControlData* controlInfo) = 0;
+
+        virtual void SetRemoteSensor
+        (
+            int                                             canID,
+            ctre::phoenix::motorcontrol::RemoteSensorSource deviceType
+        ) = 0;
 
     protected:
         IDragonMotorController() = default;

@@ -13,6 +13,7 @@ using namespace ctre::phoenix::motorcontrol::can;
 using namespace ctre::phoenix::motorcontrol;
 using namespace ctre::phoenix;
 
+
 DragonTalon::DragonTalon
 (
 	MotorControllerUsage::MOTOR_CONTROLLER_USAGE deviceType, 
@@ -348,3 +349,12 @@ void DragonTalon::SetReverseLimitSwitch
 }
 
 
+void DragonTalon::SetRemoteSensor
+(
+    int                                             canID,
+    ctre::phoenix::motorcontrol::RemoteSensorSource deviceType
+)
+{
+	m_talon->ConfigRemoteFeedbackFilter( canID, deviceType, 0, 0.0 );
+	m_talon->ConfigSelectedFeedbackSensor( RemoteFeedbackDevice::RemoteFeedbackDevice_RemoteSensor0, 0, 0 );
+}

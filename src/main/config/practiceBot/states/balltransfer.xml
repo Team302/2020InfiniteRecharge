@@ -11,6 +11,6 @@
 					 value="0.1"/>
 	<mechanismTarget stateIdentifier="BALLTRANSFERTOSHOOTER"
 	                 controlDataIdentifier="openloop"
-					 value="-0.35"/>
+					 value="-1.0"/>
 
 </statedata>

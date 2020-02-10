@@ -33,9 +33,10 @@
 #include <subsys/IMechanism.h>
 #include <hw/DragonTalon.h>
 #include <hw/interfaces/IDragonMotorController.h>
-using namespace std;
 // Third Party Includes
+#include <ctre/phoenix/sensors/CANCoder.h>
 
+using namespace std;
 
 ///	 @interface IMechanism
 ///  @brief	    Interface for subsystems
@@ -89,10 +90,15 @@ class Impeller : public IMechanism
         ) override;
 
         Impeller() = delete;
-        Impeller(std::shared_ptr<IDragonMotorController> motor);
+        Impeller
+        (
+            std::shared_ptr<IDragonMotorController> motor,
+            std::shared_ptr<ctre::phoenix::sensors::CANCoder> encoder
+        );
 
         private:
         std::shared_ptr<IDragonMotorController> m_motor;
+        std::shared_ptr<ctre::phoenix::sensors::CANCoder> m_encoder;
         double m_target;
         
 	

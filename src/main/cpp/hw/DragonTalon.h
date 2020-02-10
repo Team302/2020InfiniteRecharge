@@ -16,6 +16,8 @@
 #include <hw/interfaces/IDragonMotorController.h>
 #include <hw/usages/MotorControllerUsage.h>
 
+// Third Party Includes
+#include <ctre/phoenix/motorcontrol/RemoteSensorSource.h>
 #include <ctre/phoenix/ErrorCode.h>
 #include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
 
@@ -91,6 +93,12 @@ class DragonTalon : public IDragonMotorController
         (
             bool normallyOpen
         );
+
+        void SetRemoteSensor
+        (
+            int                                             canID,
+            ctre::phoenix::motorcontrol::RemoteSensorSource deviceType
+        ) override;
 
 
     private:
