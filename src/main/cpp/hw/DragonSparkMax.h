@@ -73,6 +73,7 @@ class DragonSparkMax : public IDragonMotorController
             int                                             canID,
             ctre::phoenix::motorcontrol::RemoteSensorSource deviceType
         ) override;
+        void SetDiameter( double diameter ) override;
     private:
         double GetRotationsWithGearNoOffset() const;
         int m_id;
@@ -81,5 +82,7 @@ class DragonSparkMax : public IDragonMotorController
         ControlModes::CONTROL_TYPE m_controlMode;
         double m_outputRotationOffset;
         double m_gearRatio;
+		double m_diameter;
         MotorControllerUsage::MOTOR_CONTROLLER_USAGE m_deviceType;    
+        const int m_countsPerRev = 40;
 };

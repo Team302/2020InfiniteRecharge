@@ -11,5 +11,9 @@ var dir_32bedeabb3d89829b4a91f9bdf77e700 =
     [ "ManualAim.cpp", "_manual_aim_8cpp.html", null ],
     [ "ManualAim.h", "_manual_aim_8h.html", [
       [ "ManualAim", "class_manual_aim.html", "class_manual_aim" ]
+    ] ],
+    [ "TurretStateMgr.cpp", "_turret_state_mgr_8cpp.html", null ],
+    [ "TurretStateMgr.h", "_turret_state_mgr_8h.html", [
+      [ "TurretStateMgr", "class_turret_state_mgr.html", "class_turret_state_mgr" ]
     ] ]
 ];

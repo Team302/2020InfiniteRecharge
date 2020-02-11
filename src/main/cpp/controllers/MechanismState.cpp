@@ -31,6 +31,8 @@
 
 using namespace std;
 
+/// @class MechanismState
+/// @brief information about the control (open loop, closed loop position, closed loop velocity, etc.) for a mechanism state
 MechanismState::MechanismState
 (
     IMechanism*                     mechanism,
@@ -77,6 +79,7 @@ MechanismState::MechanismState
             
             case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
             case ControlModes::CONTROL_TYPE::VELOCITY_INCH:
+            case ControlModes::CONTROL_TYPE::VELOCITY_RPS:
                 m_positionBased = false;
                 m_speedBased = true;
                 break;

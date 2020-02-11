@@ -71,6 +71,7 @@ class IDragonMotorController
         virtual void EnableBrakeMode(bool enabled) = 0;
         virtual void Invert(bool inverted) = 0;
         virtual void SetSensorInverted(bool inverted) = 0;
+		virtual void SetDiameter( double diameter ) = 0;
 
 
         /// @brief  Set the control constants (e.g. PIDF values).

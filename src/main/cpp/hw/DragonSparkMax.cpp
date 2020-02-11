@@ -4,9 +4,12 @@
 #include <controllers/ControlModes.h>
 
 #include <memory>
+#include <string>
 #include <frc/SpeedController.h>
 #include "frc/smartdashboard/SmartDashboard.h"
 #include <frc/PowerDistributionPanel.h>
+#include <utils/ConversionUtils.h>
+#include <utils/Logger.h>
 
 using namespace frc;
 using namespace std;
@@ -25,6 +28,7 @@ DragonSparkMax::DragonSparkMax
     m_controlMode(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT),
     m_outputRotationOffset(0.0),
     m_gearRatio(gearRatio),
+	m_diameter( 1.0 ),
     m_deviceType(deviceType)
 {
     m_spark->GetPIDController().SetOutputRange(-1.0, 1.0, 0);
@@ -84,6 +88,7 @@ void DragonSparkMax::SetControlMode(ControlModes::CONTROL_TYPE mode)
 
             case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
             case ControlModes::CONTROL_TYPE::VELOCITY_INCH: 
+			case ControlModes::CONTROL_TYPE::VELOCITY_RPS:
                 m_spark->GetPIDController().SetReference(0, rev::ControlType::kVelocity, 1);
                 break;
 
@@ -110,43 +115,66 @@ void DragonSparkMax::SetControlMode(ControlModes::CONTROL_TYPE mode)
 
 void DragonSparkMax::Set(double value)
 {
+	auto output = value;
     switch (m_controlMode)
     {
         case ControlModes::CONTROL_TYPE::PERCENT_OUTPUT:
             m_spark->Set(value);
-            break;
-
+			break;
+			
         case ControlModes::CONTROL_TYPE::POSITION_DEGREES:
+			output = (ConversionUtils::DegreesToCounts(value,m_countsPerRev) / m_gearRatio) + m_outputRotationOffset;
+			m_spark->GetPIDController().SetReference( output, rev::ControlType::kPosition, 0);
+			break;
         case ControlModes::CONTROL_TYPE::POSITION_INCH:
-            // (rot * gear ratio) - m_outputRotationOffset
-            m_spark->GetPIDController().SetReference((value + m_outputRotationOffset) / m_gearRatio, rev::ControlType::kPosition, 0); // position is slot 0
-            break;
-
+			output = (ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio) + m_outputRotationOffset;
+			m_spark->GetPIDController().SetReference( output, rev::ControlType::kPosition, 0);
+        	break;
+        
         case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
-        case ControlModes::CONTROL_TYPE::VELOCITY_INCH: 
-            m_spark->GetPIDController().SetReference((value / 60.0) / m_gearRatio, rev::ControlType::kVelocity, 1);
-            break;
+			output = (ConversionUtils::DegreesPerSecondToCounts100ms( value, m_countsPerRev ) / m_gearRatio) + m_outputRotationOffset;
+			m_spark->GetPIDController().SetReference( output/60.0, rev::ControlType::kVelocity, 0);
+        	break;
 
-        case ControlModes::CONTROL_TYPE::CURRENT:
-           m_spark->GetPIDController().SetReference( value, rev::ControlType::kCurrent, 1);
-           break;
+        case ControlModes::CONTROL_TYPE::VELOCITY_INCH:
+			output = (ConversionUtils::InchesPerSecondToCounts100ms( value, m_countsPerRev, m_diameter ) / m_gearRatio) + m_outputRotationOffset;
+			m_spark->GetPIDController().SetReference( output/60.0, rev::ControlType::kVelocity, 0);
+        	break;
 
-        case ControlModes::CONTROL_TYPE::MOTION_PROFILE:
-        case ControlModes::CONTROL_TYPE::MOTION_PROFILE_ARC:
-        case ControlModes::CONTROL_TYPE::TRAPEZOID:
-           m_spark->GetPIDController().SetReference( value, rev::ControlType::kSmartMotion, 1);
-            break;
+		case ControlModes::CONTROL_TYPE::VELOCITY_RPS:
+			output = (ConversionUtils::RPSToCounts100ms( value, m_countsPerRev ) / m_gearRatio) + m_outputRotationOffset;
+			m_spark->GetPIDController().SetReference( output/60.0, rev::ControlType::kVelocity, 0);
+        	break;
+
+		case ControlModes::CONTROL_TYPE::CURRENT:
+			output = value;
+			m_spark->GetPIDController().SetReference( output, rev::ControlType::kCurrent, 0);
+			break;
+
+		case ControlModes::CONTROL_TYPE::MOTION_PROFILE:
+			output = value;
+			break;
+
+		case ControlModes::CONTROL_TYPE::MOTION_PROFILE_ARC:
+			output = value;
+			break;
+
+		case ControlModes::CONTROL_TYPE::TRAPEZOID:
+			output = (ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio) + m_outputRotationOffset;
+			m_spark->GetPIDController().SetReference( output, rev::ControlType::kSmartMotion, 0);
+			break;
 
    		case ControlModes::CONTROL_TYPE::VOLTAGE:
-           m_spark->GetPIDController().SetReference( value, rev::ControlType::kVoltage, 1);
-           break;
-
+		    output = (ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio) + m_outputRotationOffset;
+            m_spark->GetPIDController().SetReference( value, rev::ControlType::kVoltage, 0);
+            break;
 
         default:
-            // bad news if we are in the default branch... stop the motor
-            m_spark->Set(0);
-            break;
-    }
+            Logger::GetLogger()->LogError( string("DragonSparkMax::SetControlMode"), string("Invalid Control Mode"));
+            m_spark->Set(value);
+        	break;
+    }	
+
 }
 
 void DragonSparkMax::SetRotationOffset(double rotations)
@@ -232,3 +260,10 @@ void DragonSparkMax::SetRemoteSensor
     
 }
 
+void DragonSparkMax::SetDiameter
+(
+	double 	diameter
+)
+{
+	m_diameter = diameter;
+}
