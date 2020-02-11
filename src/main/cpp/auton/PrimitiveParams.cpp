@@ -26,7 +26,12 @@ PrimitiveParams::PrimitiveParams
 		m_yLoc( yLoc ),
 		m_heading(heading),
 		m_startDriveSpeed( startDriveSpeed ),
-		m_endDriveSpeed( endDriveSpeed )
+		m_endDriveSpeed( endDriveSpeed ),
+		m_intakeOn(true),	//todo pass a param
+		m_shooterOn(true),
+		m_impellerOn(true),
+		m_ballTransfer(true),
+		m_shooterHood(true)
 {
 }
 
@@ -74,8 +79,30 @@ float PrimitiveParams::GetEndDriveSpeed() const
 {
     return m_endDriveSpeed;
 }
-
-
+bool PrimitiveParams::IsIntakeOn() const
+{
+	return m_intakeOn;
+}
+bool PrimitiveParams::IsShooterOn() const
+{
+	return m_shooterOn;
+}
+bool PrimitiveParams::IsImpellerOn() const
+{
+	return m_impellerOn;
+}
+bool PrimitiveParams::IsBallTransferReady() const
+{
+	return m_ballTransfer;
+}
+bool PrimitiveParams::IsShooterHoodReady() const
+{
+	return m_shooterHood;
+}
+bool PrimitiveParams::IsTurretReady() const
+{
+	return m_turret;
+}
 
 //Setters
 void PrimitiveParams::SetDistance(float distance)
