@@ -11,15 +11,19 @@
 #include <controllers/mechanisms/IMechController.h>
 #include <controllers/ControlData.h>  
 #include <subsys/Turret.h>
+#include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
 
-class HoldTurretPosition : public IState
+class HoldTurretPosition : public MechanismState
 {
  public:
   HoldTurretPosition
   (
-    ControlData* controlData
+    ControlData* controlData,
+    double target,
+    MechanismTargetData::SOLENOID solenoid
   );
-  void Init() override;
+  /*void Init() override;
   void Run() override;
   bool AtTarget() const override;
  private:
@@ -27,5 +31,5 @@ class HoldTurretPosition : public IState
   bool m_atTarget;
   double m_targetPosition;
   IMechanism* m_turret;
-
+*/
 };
