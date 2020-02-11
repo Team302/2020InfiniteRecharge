@@ -22,8 +22,7 @@
 #include <auton/primitives/IPrimitive.h>
 #include <auton/primitives/AutoShoot.h>
 #include <auton/PrimitiveParams.h>
-#include <subsys/Shooter.h>
-#include <controllers/shooterHood/ShooterHoodStateMgr.h>
+#include <controllers/BallManipulator.h>
 
 
 using namespace std;
@@ -33,36 +32,28 @@ using namespace std;
 AutoShoot::AutoShoot
 (
 
-):  m_shooterStateMgr(new ShooterStateMgr()),
-    m_ballTransferStateMgr(new BallTransferStateMgr()),
-    m_impellerStateMgr(new ImpellerStateMgr()),
-    m_turretStateMgr(new TurretStateMgr()),
-    m_shooterHoodStateMgr(new ShooterHoodStateMgr())
+):  m_stateManager(new BallManipulator())
 {
 
 }
 
 void AutoShoot::Init(PrimitiveParams* params)
 {
-    m_turretStateMgr->SetCurrentState(TurretStateMgr::TURRET_STATE::LIMELIGHT_AIM, true);
-    m_shooterStateMgr->SetCurrentState(ShooterStateMgr::SHOOTER_STATE::GET_READY, true);
-    m_shooterHoodStateMgr->SetCurrentState(ShooterHoodStateMgr::SHOOTER_HOOD_STATE::MOVE_UP, true);
- 
+    bool ballManipulator = params->IsBallManipulatorOn();
+    auto state = BallManipulator::BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT;
+    if (!ballManipulator)
+    {
+        state = BallManipulator::BALL_MANIPULATOR_STATE::OFF;
+    }
+    m_stateManager -> SetCurrentState(state);
+
 }
 
 /// @brief run the primitive (periodic routine)
 /// @return void
 void AutoShoot::Run()
 {
-    m_ballTransferStateMgr->SetCurrentState(BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, true);
-    m_impellerStateMgr->SetCurrentState(ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, true);
-    bool shooterOn = params->IsShooterOn();
-    auto state = ShooterStateMgr::SHOOTER_STATE::SHOOT;
-    if (!shooterOn)
-    {
-        state = ShooterStateMgr::SHOOTER_STATE::OFF;
-    }
-    m_shooterStateMgr -> SetCurrentState(state, false);
+    m_stateManager -> RunCurrentState();
 }
 
 bool AutoShoot::IsDone()

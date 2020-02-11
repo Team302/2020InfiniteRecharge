@@ -61,11 +61,7 @@ class PrimitiveParams
         float GetDriveSpeed() const;
         float GetEndDriveSpeed() const;
         bool  IsIntakeOn() const;
-        bool  IsShooterOn() const;
-        bool  IsImpellerOn() const;
-        bool  IsBallTransferReady() const;
-        bool  IsTurretReady() const;
-        bool  IsShooterHoodReady() const;
+        bool  IsBallManipulatorOn() const;
 
         //Setters
         void SetDistance(float distance);
@@ -81,11 +77,7 @@ class PrimitiveParams
         float                       m_startDriveSpeed;
         float                       m_endDriveSpeed;
         bool                        m_intakeOn;
-        bool                        m_shooterOn;
-        bool                        m_impellerOn;
-        bool                        m_ballTransfer;
-        bool                        m_shooterHood;
-        bool                        m_turret;
+        bool                        m_ballManipulator;
 };
 
 typedef std::vector<PrimitiveParams*> PrimitiveParamsVector;

@@ -19,11 +19,7 @@
 #include <auton/PrimitiveParams.h>
 #include <subsys/Shooter.h>
 #include <auton/primitives/IPrimitive.h>
-#include <controllers/shooter/ShooterStateMgr.h>
-#include <controllers/balltransfer/BallTransferStateMgr.h>
-#include <controllers/turret/TurretStateMgr.h>
-#include <controllers/impeller/ImpellerStateMgr.h>
-#include <controllers/shooterHood/ShooterHoodStateMgr.h>
+#include <controllers/BallManipulator.h>
 
 class AutoShoot : public IPrimitive 
 {
@@ -49,11 +45,7 @@ class AutoShoot : public IPrimitive
 
         private:
 
-        ShooterStateMgr*     	m_shooterStateMgr;
-		ImpellerStateMgr*	 	m_impellerStateMgr;
-		BallTransferStateMgr*	m_ballTransferStateMgr;
-		TurretStateMgr*			m_turretStateMgr;
-		ShooterHoodStateMgr*	m_shooterHoodStateMgr;
+		BallManipulator*	m_stateManager;
 
 
 };
