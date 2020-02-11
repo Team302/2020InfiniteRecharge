@@ -24,6 +24,7 @@ var hierarchy =
     [ "ControlModes", "class_control_modes.html", null ],
     [ "ControlPanelColors", "class_control_panel_colors.html", null ],
     [ "ControlPanelStateMgr", "class_control_panel_state_mgr.html", null ],
+    [ "ConversionUtils", "class_conversion_utils.html", null ],
     [ "CyclePrimitives", "class_cycle_primitives.html", null ],
     [ "DigitalInputDefn", "class_digital_input_defn.html", null ],
     [ "DigitalInputFactory", "class_digital_input_factory.html", null ],
@@ -199,6 +200,7 @@ var hierarchy =
     [ "TimedRobot", null, [
       [ "Robot", "class_robot.html", null ]
     ] ],
+    [ "TurretStateMgr", "class_turret_state_mgr.html", null ],
     [ "UltrasonicFactory", "class_ultrasonic_factory.html", null ],
     [ "UsageValidation", "class_usage_validation.html", null ],
     [ "XboxDisplay", "class_xbox_display.html", null ]

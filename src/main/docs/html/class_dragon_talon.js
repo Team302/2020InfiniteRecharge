@@ -22,6 +22,7 @@ var class_dragon_talon =
     [ "SetAsSlave", "class_dragon_talon.html#ad17df52ab49a083f925d20bd9802cf6c", null ],
     [ "SetControlConstants", "class_dragon_talon.html#a051e7d9a21b9caf9db65bcb2c613808e", null ],
     [ "SetControlMode", "class_dragon_talon.html#a51ae73cebf47695a4c37cc874d7dd0b3", null ],
+    [ "SetDiameter", "class_dragon_talon.html#a741ea243997b62373ef198f75846704d", null ],
     [ "SetForwardLimitSwitch", "class_dragon_talon.html#a443cf82313c085b34dd35dedd86f21a9", null ],
     [ "SetRemoteSensor", "class_dragon_talon.html#abfd29c75d1892ea7607114a337fe232b", null ],
     [ "SetReverseLimitSwitch", "class_dragon_talon.html#ada032141404f5abda96dcb08ea6d7eba", null ],

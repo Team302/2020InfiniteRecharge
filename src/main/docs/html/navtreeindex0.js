@@ -148,6 +148,9 @@ var NAVTREEINDEX0 =
 "_control_panel_turn_8cpp_source.html":[2,0,1,3,10],
 "_control_panel_turn_8h.html":[2,0,1,3,11],
 "_control_panel_turn_8h_source.html":[2,0,1,3,11],
+"_conversion_utils_8h.html":[2,0,6,1],
+"_conversion_utils_8h.html#a525335710b53cb064ca56b936120431e":[2,0,6,1,1],
+"_conversion_utils_8h_source.html":[2,0,6,1],
 "_cubed_profile_8cpp.html":[2,0,2,0,2],
 "_cubed_profile_8cpp_source.html":[2,0,2,0,2],
 "_cubed_profile_8h.html":[2,0,2,0,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX0 =
 "_dragon_servo_factory_8h.html":[2,0,3,0,11],
 "_dragon_servo_factory_8h_source.html":[2,0,3,0,11],
 "_dragon_solenoid_8cpp.html":[2,0,3,21],
-"_dragon_solenoid_8cpp_source.html":[2,0,3,21],
-"_dragon_solenoid_8h.html":[2,0,3,22],
-"_dragon_solenoid_8h_source.html":[2,0,3,22],
-"_dragon_solenoid_map_8h.html":[2,0,3,2,6]
+"_dragon_solenoid_8cpp_source.html":[2,0,3,21]
 };

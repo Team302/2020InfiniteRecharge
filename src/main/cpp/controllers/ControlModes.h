@@ -28,6 +28,7 @@ class ControlModes
             POSITION_DEGREES,           /// Closed Loop Control - values are angles measured in degrees
             VELOCITY_INCH,              /// Closed Loop Control - values are linear velocity measured in inches per second
             VELOCITY_DEGREES,           /// Closed Loop Control - values are angular velocity measured in degrees per second
+			VELOCITY_RPS,               /// Closed Loop Control - values are in revolutions per second
             VOLTAGE,                    /// Closed Loop Control - values are in volts
             CURRENT,                    /// Closed Loop Control - values in amps
             TRAPEZOID,                  /// Closed Loop Control - trapezoid profile (e.g. Motion Magic)
