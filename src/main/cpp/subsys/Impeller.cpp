@@ -51,7 +51,7 @@ Impeller::Impeller
 ) : m_motor (motor),
     m_encoder( encoder)
 {
-    m_motor->SetRemoteSensor( encoder->GetDeviceNumber(), RemoteSensorSource::RemoteSensorSource_CANCoder );
+    m_motor.get()->SetRemoteSensor( encoder.get()->GetDeviceNumber(), RemoteSensorSource::RemoteSensorSource_CANCoder );
 }
 
 
