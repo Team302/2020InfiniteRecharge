@@ -1,6 +1,6 @@
 #include <utils/Logger.h>
 #include <pugixml/pugixml.hpp>
-#include <xmlhw/ThroughBorerEncoderDefn.h>
+#include <xmlhw/ThroughBorerEncoderDefn.h> //hong bing
  
 using namespace pugi;
 using namespace std;
