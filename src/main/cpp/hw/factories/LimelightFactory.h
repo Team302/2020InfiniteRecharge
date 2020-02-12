@@ -19,12 +19,12 @@ class LimelightFactory
   public:
     static LimelightFactory* GetLimelightFactory();
 
-    std::shared_ptr<DragonLimelight*> GetLimelight
+    std::shared_ptr<DragonLimelight> GetLimelight
     (
       IDragonSensor::SENSOR_USAGE usage
     );
 
-    std::shared_ptr<DragonLimelight*> CreateLimelight
+    std::shared_ptr<DragonLimelight> CreateLimelight
     (
       IDragonSensor::SENSOR_USAGE usage,
       std::string                 tableName,                  /// <I> - network table name
@@ -41,5 +41,5 @@ class LimelightFactory
     ~LimelightFactory() = default;
 
     static LimelightFactory* m_limelightFactory;
-    std::map <IDragonSensor::SENSOR_USAGE, std::shared_ptr<DragonLimelight*>> m_limelightMap;
+    std::map <IDragonSensor::SENSOR_USAGE, std::shared_ptr<DragonLimelight>> m_limelightMap;
 };

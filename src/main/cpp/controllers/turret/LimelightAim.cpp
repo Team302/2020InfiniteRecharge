@@ -20,11 +20,14 @@
 #include "controllers/ControlData.h"
 #include "subsys/MechanismTypes.h"
 #include "hw/DragonLimelight.h"
+#include "hw/factories/LimelightFactory.h"
 
-LimelightAim::LimelightAim(ControlData* controlData, DragonLimelight* limelight): m_controlData(controlData),
+using namespace std;
+
+LimelightAim::LimelightAim(ControlData* controlData): m_controlData(controlData),
     m_atTarget(false),
     m_turret( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::TURRET) ),
-    m_limelight(limelight),
+    m_limelight(LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::UNKNOWN_SENSOR)),
     m_targetPosition(0.0)
 {
 }
@@ -36,7 +39,7 @@ void LimelightAim::Init()
 
 void LimelightAim::Run()
 {
-    double targetHorizontalOffset = m_limelight->GetTargetHorizontalOffset();
+    double targetHorizontalOffset = m_limelight.get()->GetTargetHorizontalOffset();
     double m_targetPosition = m_turret->GetCurrentPosition() - targetHorizontalOffset;
     m_turret->SetOutput(m_controlData->GetMode(), m_targetPosition);
     if(m_targetPosition - 5 < m_turret->GetCurrentPosition() < m_targetPosition + 5) //arbitrary tolerance for now will change later
