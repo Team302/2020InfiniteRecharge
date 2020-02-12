@@ -25,16 +25,18 @@ LimelightFactory* LimelightFactory::GetLimelightFactory()
     return m_limelightFactory;
 }
 
-shared_ptr<DragonLimelight*> LimelightFactory::CreateLimelight(IDragonSensor::SENSOR_USAGE usage, string tableName, double mountingHeight, double mountingHorizontalOffset, double rotation, double mountingAngle, double targetHeight, double targetHeight2)
+shared_ptr<DragonLimelight> LimelightFactory::CreateLimelight(IDragonSensor::SENSOR_USAGE usage, string tableName, double mountingHeight, double mountingHorizontalOffset, double rotation, double mountingAngle, double targetHeight, double targetHeight2)
 {
     auto it = m_limelightMap.find(usage);
+    shared_ptr<DragonLimelight> limelight;
     if ( it != m_limelightMap.end() )
     {
         return GetLimelight(usage);
     }
     else
     {
-        shared_ptr<DragonLimelight*> limelight = make_shared<DragonLimelight*>(new DragonLimelight(usage, tableName, mountingHeight, mountingHorizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2));
+        shared_ptr<DragonLimelight> limelight;
+        limelight.reset(new DragonLimelight(usage, tableName, mountingHeight, mountingHorizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2));
         m_limelightMap[usage] = limelight;
         return limelight;
         
@@ -42,7 +44,7 @@ shared_ptr<DragonLimelight*> LimelightFactory::CreateLimelight(IDragonSensor::SE
     
 }
 
-shared_ptr<DragonLimelight*> LimelightFactory::GetLimelight(IDragonSensor::SENSOR_USAGE usage)
+shared_ptr<DragonLimelight> LimelightFactory::GetLimelight(IDragonSensor::SENSOR_USAGE usage)
 {
     auto it = m_limelightMap.find(usage);
     if ( it != m_limelightMap.end() )

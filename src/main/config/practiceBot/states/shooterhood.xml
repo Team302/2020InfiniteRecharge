@@ -3,17 +3,18 @@
 <statedata>
 	<controlData identifier="openloop" 
 	             mode="PERCENT_OUTPUT"/>
-	<mechanismTarget stateIdentifier="IMPELLEROFF"
+	<mechanismTarget stateIdentifier="MOVEUP"
 	                 controlDataIdentifier="openloop"
 					 value="0.0"/>
-	<mechanismTarget stateIdentifier="IMPELLERTOSHOOTER"
+	<mechanismTarget stateIdentifier="MOVEDOWN"
 	                 controlDataIdentifier="openloop"
-					 value="0.3"/>
-	<mechanismTarget stateIdentifier="IMPELLERHOLD"
+					 value="0.5"/>
+	<mechanismTarget stateIdentifier="HOLDPOSITION"
 	                 controlDataIdentifier="openloop"
-					 value="-0.30"/>
-	<mechanismTarget stateIdentifier="IMPELLERAGITATE"
+					 value="1.0"/>
+    <mechanismTarget stateIdentifier="MANUAL"
 	                 controlDataIdentifier="openloop"
-					 value="-0.25"/>
+					 value="1.0"/>
 
-</statedata>                                      
+
+</statedata>

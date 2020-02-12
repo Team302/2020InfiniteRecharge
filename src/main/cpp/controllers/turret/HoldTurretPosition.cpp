@@ -10,16 +10,15 @@
 #include "subsys/IMechanism.h"
 #include "subsys/Turret.h"
 #include "controllers/ControlData.h"
+#include "controllers/MechanismState.h"
+#include "controllers/MechanismTargetData.h"
 
-HoldTurretPosition::HoldTurretPosition(ControlData* controlData) : m_controlData(controlData), 
-    m_atTarget(false),
-    m_targetPosition(0.0)
+HoldTurretPosition::HoldTurretPosition(ControlData* controlData, double target, MechanismTargetData::SOLENOID solenoid) : 
+    MechanismState(MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET),controlData, target, solenoid)
 {
-    auto factory = MechanismFactory::GetMechanismFactory();
-    m_turret = factory->GetIMechanism(MechanismTypes::TURRET);
 }
 
-void HoldTurretPosition::Init()
+/*void HoldTurretPosition::Init()
 {
     m_turret->SetControlConstants(m_controlData);
     m_targetPosition = m_turret->GetCurrentPosition();
@@ -39,3 +38,4 @@ bool HoldTurretPosition::AtTarget() const
 {
     return m_atTarget;
 }
+*/
