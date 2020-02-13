@@ -57,7 +57,9 @@ DragonLimelight::DragonLimelight
     m_mountingAngle( mountingAngle ),
     m_targetHeight( targetHeight ),
     m_targetHeight2( targetHeight2 )
-{}
+{
+    SetLEDMode( DragonLimelight::LED_MODE::LED_OFF);
+}
 
 ///-----------------------------------------------------------------------
 /// Method:      GetDistance
