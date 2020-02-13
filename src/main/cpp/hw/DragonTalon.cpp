@@ -345,7 +345,7 @@ void DragonTalon::SetControlConstants(ControlData* controlInfo)
 			break;
 
 	}
-	m_talon->ConfigMotionAcceleration( accel );
+	/*m_talon->ConfigMotionAcceleration( accel );
 	m_talon->ConfigMotionCruiseVelocity( vel, 0);
 
 	auto peak = controlInfo->GetPeakValue();
@@ -354,7 +354,7 @@ void DragonTalon::SetControlConstants(ControlData* controlInfo)
 
 	auto nom = controlInfo->GetNominalValue();
 	m_talon->ConfigPeakOutputForward(nom);
-	m_talon->ConfigPeakOutputReverse(-1.0*nom);
+	m_talon->ConfigPeakOutputReverse(-1.0*nom);*/
 	
 }
 
