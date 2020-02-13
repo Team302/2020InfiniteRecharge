@@ -7,6 +7,7 @@
 
 #include <auton/PrimitiveEnums.h>
 #include <auton/PrimitiveParams.h>
+#include <controllers/BallManipulator.h>
 
 PrimitiveParams::PrimitiveParams
 (
@@ -17,7 +18,8 @@ PrimitiveParams::PrimitiveParams
     float                       yLoc,
     float                       heading,
     float                       startDriveSpeed,
-    float                       endDriveSpeed
+    float                       endDriveSpeed,
+	BallManipulator::BALL_MANIPULATOR_STATE						ballState
 ):	//Pass over parameters to class variables
 		m_id(id), //Primitive ID
 		m_time(time),
@@ -26,7 +28,8 @@ PrimitiveParams::PrimitiveParams
 		m_yLoc( yLoc ),
 		m_heading(heading),
 		m_startDriveSpeed( startDriveSpeed ),
-		m_endDriveSpeed( endDriveSpeed )
+		m_endDriveSpeed( endDriveSpeed ),
+		m_ballState( ballState )
 {
 }
 
@@ -75,8 +78,10 @@ float PrimitiveParams::GetEndDriveSpeed() const
     return m_endDriveSpeed;
 }
 
-
-
+BallManipulator::BALL_MANIPULATOR_STATE PrimitiveParams::GetBallState() const
+{
+	return m_ballState;
+}
 //Setters
 void PrimitiveParams::SetDistance(float distance)
 {

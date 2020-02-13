@@ -90,7 +90,8 @@ void CyclePrimitives::GetNextPrim()
 void CyclePrimitives::RunDoNothing()
 {
 	if (m_doNothing == nullptr)
-	{
+	{	
+		BallManipulator::BALL_MANIPULATOR_STATE state = BallManipulator::BALL_MANIPULATOR_STATE::SHOOT;
 		auto params = new PrimitiveParams( DO_NOTHING,          // identifier
 		                                   100000.0,            // time
 		                                   0.0,                 // distance
@@ -98,7 +99,8 @@ void CyclePrimitives::RunDoNothing()
 		                                   0.0,                 // target y location
 		                                   0.0,                 // heading
 		                                   0.0,                 // start drive speed
-		                                   0.0                  // end drive speed
+		                                   0.0,					// end drive speed
+										   state                  
 										   );             
 		m_doNothing = m_primFactory->GetIPrimitive(params);
 		m_doNothing->Init(params);

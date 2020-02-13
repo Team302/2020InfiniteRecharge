@@ -23,6 +23,7 @@
 
 // Team 302 includes
 #include <auton/PrimitiveEnums.h>
+#include <controllers/BallManipulator.h>
 //#include <utils/DragonMath.h>
 
 // Third Party Includes
@@ -44,7 +45,8 @@ class PrimitiveParams
                 float                       yLoc,
                 float                       heading,
                 float                       startDriveSpeed,
-                float                       endDriveSpeed
+                float                       endDriveSpeed,
+                BallManipulator::BALL_MANIPULATOR_STATE                       ballState
         );//Constructor. Takes in all parameters
 
         PrimitiveParams() = delete;
@@ -60,6 +62,7 @@ class PrimitiveParams
         float GetHeading() const;
         float GetDriveSpeed() const;
         float GetEndDriveSpeed() const;
+        BallManipulator::BALL_MANIPULATOR_STATE GetBallState() const;
 
         //Setters
         void SetDistance(float distance);
@@ -74,6 +77,7 @@ class PrimitiveParams
         float                       m_heading;
         float                       m_startDriveSpeed;
         float                       m_endDriveSpeed;
+        BallManipulator::BALL_MANIPULATOR_STATE                    m_ballState;
 };
 
 typedef std::vector<PrimitiveParams*> PrimitiveParamsVector;

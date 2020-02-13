@@ -18,7 +18,7 @@
 #include <auton/AutonSelector.h>
 #include <auton/PrimitiveEnums.h>
 #include <auton/primitives/IPrimitive.h>
-
+#include <controllers/BallManipulator.h>
 PrimitiveParamsVector PrimitiveParser::ParseXML
 (
     std::string     fileName
@@ -140,7 +140,8 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
                         }
                     }
                     if ( !hasError )
-                    {
+                    {   
+                        BallManipulator::BALL_MANIPULATOR_STATE state = BallManipulator::BALL_MANIPULATOR_STATE::SHOOT;
                         paramVector.emplace_back( new PrimitiveParams( primitiveType,
                                                                        time,
                                                                        distance,
@@ -148,7 +149,8 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
                                                                        yloc,
                                                                        heading,
                                                                        startDriveSpeed,
-                                                                       endDriveSpeed ) );
+                                                                       endDriveSpeed,
+                                                                       state ) );
                     }
                 }
             }
