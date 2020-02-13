@@ -132,12 +132,12 @@ $(document).ready(function(){initNavTree('_dragon_talon_8cpp_source.html','');})
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_dragon_talon.html#ae86a7edc78d019aea370ec7f49eddf6c">   42</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_talon.html#ae86a7edc78d019aea370ec7f49eddf6c">DragonTalon::GetRotations</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> (CountsToRevolutions( (m_talon-&gt;GetSelectedSensorPosition() - m_tickOffset), m_countsPerRev) * m_gearRatio);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="class_conversion_utils.html#a2ebd64af426c685b78a55ab81132a206">ConversionUtils::CountsToRevolutions</a>( (m_talon-&gt;GetSelectedSensorPosition() - m_tickOffset), m_countsPerRev) * m_gearRatio);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_dragon_talon.html#a6037fe288a4e4d73e8aefaff347af3eb">   47</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_talon.html#a6037fe288a4e4d73e8aefaff347af3eb">DragonTalon::GetRPS</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> (CountsPer100msToRPS( m_talon-&gt;GetSelectedSensorVelocity(), m_countsPerRev) * m_gearRatio);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="class_conversion_utils.html#adfcc98b85bed02cca67b1269ea97893b">ConversionUtils::CountsPer100msToRPS</a>( m_talon-&gt;GetSelectedSensorVelocity(), m_countsPerRev) * m_gearRatio);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_dragon_talon.html#a51ae73cebf47695a4c37cc874d7dd0b3">   52</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_talon.html#a51ae73cebf47695a4c37cc874d7dd0b3">DragonTalon::SetControlMode</a>(<a class="code" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a> mode)</div>
@@ -161,7 +161,7 @@ $(document).ready(function(){initNavTree('_dragon_talon_8cpp_source.html','');})
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">auto</span> output = value;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    ctre::phoenix::motorcontrol::ControlMode ctreMode = ctre::phoenix::motorcontrol::ControlMode::PercentOutput;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">switch</span> (mode)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">switch</span> (m_controlMode)</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">case</span> ControlModes::CONTROL_TYPE::PERCENT_OUTPUT:</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            ctreMode = ctre::phoenix::motorcontrol::ControlMode::PercentOutput;</div>
@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('_dragon_talon_8cpp_source.html','');})
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">case</span> ControlModes::CONTROL_TYPE::POSITION_INCH:</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            ctreMode = ctre::phoenix::motorcontrol::ControlMode::Position;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            output = (ConversionUtils::ConversionUtilsInchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio) + m_tickOffset;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            output = (ConversionUtils::ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio) + m_tickOffset;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">case</span> ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:</div>
@@ -400,68 +400,97 @@ $(document).ready(function(){initNavTree('_dragon_talon_8cpp_source.html','');})
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    m_talon-&gt;Config_kD(0, controlInfo-&gt;<a class="code" href="class_control_data.html#acbaf81f6f7dab5edcf4fcc445caf0dcd">GetD</a>());</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    m_talon-&gt;Config_kF(0, controlInfo-&gt;<a class="code" href="class_control_data.html#adbe7269501e2db1374a5f697da0fbe09">GetF</a>());</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordtype">int</span> sensorUnitsPer100msPerSec = static_cast&lt;int&gt;( (controlInfo-&gt;<a class="code" href="class_control_data.html#a75861c8f8b2fbe8ba22e134c660cdaf9">GetMaxAcceleration</a>() / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio ) ;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    m_talon-&gt;ConfigMotionAcceleration( sensorUnitsPer100msPerSec );</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    sensorUnitsPer100msPerSec = static_cast&lt;int&gt;( (controlInfo-&gt;<a class="code" href="class_control_data.html#aada3659777868036d560a428ea55bcdf">GetCruiseVelocity</a>() / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio );</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    m_talon-&gt;ConfigMotionCruiseVelocity( sensorUnitsPer100msPerSec, 0);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keyword">auto</span> peak = controlInfo-&gt;<a class="code" href="class_control_data.html#ad63cd22d187b4b30d27d8482a8ee3b8f">GetPeakValue</a>();</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    m_talon-&gt;ConfigPeakOutputForward(peak);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    m_talon-&gt;ConfigPeakOutputReverse(-1.0*peak);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keyword">auto</span> nom = controlInfo-&gt;<a class="code" href="class_control_data.html#a4352d6d0bcf6a75a8de2c42cf90689ea">GetNominalValue</a>();</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    m_talon-&gt;ConfigPeakOutputForward(nom);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    m_talon-&gt;ConfigPeakOutputReverse(-1.0*nom);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    </div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_talon.html#a443cf82313c085b34dd35dedd86f21a9">DragonTalon::SetForwardLimitSwitch</a></div>
-<div class="line"><a name="l00332"></a><span class="lineno"><a class="line" href="class_dragon_talon.html#a443cf82313c085b34dd35dedd86f21a9">  332</a></span>&#160;( </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordtype">bool</span> normallyOpen</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;)</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;{</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    LimitSwitchNormal type = normallyOpen ? LimitSwitchNormal::LimitSwitchNormal_NormallyOpen : LimitSwitchNormal::LimitSwitchNormal_NormallyClosed;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    m_talon-&gt;ConfigForwardLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_talon.html#ada032141404f5abda96dcb08ea6d7eba">DragonTalon::SetReverseLimitSwitch</a></div>
-<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="class_dragon_talon.html#ada032141404f5abda96dcb08ea6d7eba">  341</a></span>&#160;(</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordtype">bool</span> normallyOpen</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;)</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;{</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    LimitSwitchNormal type = normallyOpen ? LimitSwitchNormal::LimitSwitchNormal_NormallyOpen : LimitSwitchNormal::LimitSwitchNormal_NormallyClosed;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    m_talon-&gt;ConfigReverseLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_talon.html#abfd29c75d1892ea7607114a337fe232b">DragonTalon::SetRemoteSensor</a></div>
-<div class="line"><a name="l00351"></a><span class="lineno"><a class="line" href="class_dragon_talon.html#abfd29c75d1892ea7607114a337fe232b">  351</a></span>&#160;(</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">int</span>                                             canID,</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    ctre::phoenix::motorcontrol::RemoteSensorSource deviceType</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;)</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    m_talon-&gt;ConfigRemoteFeedbackFilter( canID, deviceType, 0, 0.0 );</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    m_talon-&gt;ConfigSelectedFeedbackSensor( RemoteFeedbackDevice::RemoteFeedbackDevice_RemoteSensor0, 0, 0 );</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_talon.html#a741ea243997b62373ef198f75846704d">DragonTalon::SetDiameter</a></div>
-<div class="line"><a name="l00361"></a><span class="lineno"><a class="line" href="class_dragon_talon.html#a741ea243997b62373ef198f75846704d">  361</a></span>&#160;(</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordtype">double</span>  diameter</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;)</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    m_diameter = diameter;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;}</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keyword">auto</span> accel = controlInfo-&gt;<a class="code" href="class_control_data.html#a75861c8f8b2fbe8ba22e134c660cdaf9">GetMaxAcceleration</a>() / m_gearRatio;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keyword">auto</span> vel = controlInfo-&gt;<a class="code" href="class_control_data.html#aada3659777868036d560a428ea55bcdf">GetCruiseVelocity</a>() / m_gearRatio;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">switch</span> ( controlInfo-&gt;<a class="code" href="class_control_data.html#a3e7157f943ecefb04cb30c274bf9a330">GetMode</a>() )</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    {</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordflow">case</span> ControlModes::CONTROL_TYPE::POSITION_DEGREES:</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            accel = <a class="code" href="class_conversion_utils.html#ae2ea65f967b72203e35cabcfab1e4c88">ConversionUtils::DegreesPerSecondToCounts100ms</a>( accel, m_countsPerRev ); <span class="comment">// todo this is velocity need accel</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            vel = <a class="code" href="class_conversion_utils.html#ae2ea65f967b72203e35cabcfab1e4c88">ConversionUtils::DegreesPerSecondToCounts100ms</a>( vel, m_countsPerRev );</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">case</span> ControlModes::CONTROL_TYPE::POSITION_INCH:</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            accel = <a class="code" href="class_conversion_utils.html#af70fc7530f004e338db5f9035bdc63b8">ConversionUtils::InchesPerSecondToCounts100ms</a>( accel, m_countsPerRev, m_diameter ); <span class="comment">// todo this is velocity need accel</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            vel = <a class="code" href="class_conversion_utils.html#af70fc7530f004e338db5f9035bdc63b8">ConversionUtils::InchesPerSecondToCounts100ms</a>( vel, m_countsPerRev, m_diameter );</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">case</span> ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            accel = <a class="code" href="class_conversion_utils.html#ae2ea65f967b72203e35cabcfab1e4c88">ConversionUtils::DegreesPerSecondToCounts100ms</a>( accel, m_countsPerRev ); <span class="comment">// todo this is velocity need accel</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            vel = <a class="code" href="class_conversion_utils.html#ae2ea65f967b72203e35cabcfab1e4c88">ConversionUtils::DegreesPerSecondToCounts100ms</a>( vel, m_countsPerRev );</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">case</span> ControlModes::CONTROL_TYPE::VELOCITY_INCH:</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            accel = <a class="code" href="class_conversion_utils.html#af70fc7530f004e338db5f9035bdc63b8">ConversionUtils::InchesPerSecondToCounts100ms</a>( accel, m_countsPerRev, m_diameter ); <span class="comment">// todo this is velocity need accel</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            vel = <a class="code" href="class_conversion_utils.html#af70fc7530f004e338db5f9035bdc63b8">ConversionUtils::InchesPerSecondToCounts100ms</a>( vel, m_countsPerRev, m_diameter );</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">case</span> ControlModes::CONTROL_TYPE::VELOCITY_RPS:</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            accel = <a class="code" href="class_conversion_utils.html#a7ca7eeabc23785f846d6192a7bbf4411">ConversionUtils::RPSToCounts100ms</a>( accel, m_countsPerRev ); <span class="comment">// todo this is velocity need accel</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            vel = <a class="code" href="class_conversion_utils.html#a7ca7eeabc23785f846d6192a7bbf4411">ConversionUtils::RPSToCounts100ms</a>( vel, m_countsPerRev );</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    }</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="comment">/*m_talon-&gt;ConfigMotionAcceleration( accel );</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="comment">    m_talon-&gt;ConfigMotionCruiseVelocity( vel, 0);</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment">    auto peak = controlInfo-&gt;GetPeakValue();</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="comment">    m_talon-&gt;ConfigPeakOutputForward(peak);</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="comment">    m_talon-&gt;ConfigPeakOutputReverse(-1.0*peak);</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment">    auto nom = controlInfo-&gt;GetNominalValue();</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="comment">    m_talon-&gt;ConfigPeakOutputForward(nom);</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment">    m_talon-&gt;ConfigPeakOutputReverse(-1.0*nom);*/</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    </div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_talon.html#a443cf82313c085b34dd35dedd86f21a9">DragonTalon::SetForwardLimitSwitch</a></div>
+<div class="line"><a name="l00362"></a><span class="lineno"><a class="line" href="class_dragon_talon.html#a443cf82313c085b34dd35dedd86f21a9">  362</a></span>&#160;( </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordtype">bool</span> normallyOpen</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;)</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;{</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    LimitSwitchNormal type = normallyOpen ? LimitSwitchNormal::LimitSwitchNormal_NormallyOpen : LimitSwitchNormal::LimitSwitchNormal_NormallyClosed;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    m_talon-&gt;ConfigForwardLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;}</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_talon.html#ada032141404f5abda96dcb08ea6d7eba">DragonTalon::SetReverseLimitSwitch</a></div>
+<div class="line"><a name="l00371"></a><span class="lineno"><a class="line" href="class_dragon_talon.html#ada032141404f5abda96dcb08ea6d7eba">  371</a></span>&#160;(</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordtype">bool</span> normallyOpen</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;)</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;{</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    LimitSwitchNormal type = normallyOpen ? LimitSwitchNormal::LimitSwitchNormal_NormallyOpen : LimitSwitchNormal::LimitSwitchNormal_NormallyClosed;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    m_talon-&gt;ConfigReverseLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;}</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_talon.html#abfd29c75d1892ea7607114a337fe232b">DragonTalon::SetRemoteSensor</a></div>
+<div class="line"><a name="l00381"></a><span class="lineno"><a class="line" href="class_dragon_talon.html#abfd29c75d1892ea7607114a337fe232b">  381</a></span>&#160;(</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordtype">int</span>                                             canID,</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    ctre::phoenix::motorcontrol::RemoteSensorSource deviceType</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;)</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;{</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    m_talon-&gt;ConfigRemoteFeedbackFilter( canID, deviceType, 0, 0.0 );</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    m_talon-&gt;ConfigSelectedFeedbackSensor( RemoteFeedbackDevice::RemoteFeedbackDevice_RemoteSensor0, 0, 0 );</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;}</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_talon.html#a741ea243997b62373ef198f75846704d">DragonTalon::SetDiameter</a></div>
+<div class="line"><a name="l00391"></a><span class="lineno"><a class="line" href="class_dragon_talon.html#a741ea243997b62373ef198f75846704d">  391</a></span>&#160;(</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordtype">double</span>  diameter</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;)</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;{</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    m_diameter = diameter;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_dragon_talon_html_ae9efb3be1b1474163bd43f4d37ddace8"><div class="ttname"><a href="class_dragon_talon.html#ae9efb3be1b1474163bd43f4d37ddace8">DragonTalon::SelectClosedLoopProfile</a></div><div class="ttdeci">void SelectClosedLoopProfile(int slot, int pidIndex)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00194">DragonTalon.cpp:194</a></div></div>
+<div class="ttc" id="aclass_conversion_utils_html_a2ebd64af426c685b78a55ab81132a206"><div class="ttname"><a href="class_conversion_utils.html#a2ebd64af426c685b78a55ab81132a206">ConversionUtils::CountsToRevolutions</a></div><div class="ttdeci">static double CountsToRevolutions(int counts, int countsPerRev)</div><div class="ttdoc">Convert from counts to revolutions.</div><div class="ttdef"><b>Definition:</b> <a href="_conversion_utils_8h_source.html#l00072">ConversionUtils.h:72</a></div></div>
 <div class="ttc" id="aclass_conversion_utils_html_ae2ea65f967b72203e35cabcfab1e4c88"><div class="ttname"><a href="class_conversion_utils.html#ae2ea65f967b72203e35cabcfab1e4c88">ConversionUtils::DegreesPerSecondToCounts100ms</a></div><div class="ttdeci">static double DegreesPerSecondToCounts100ms(double degreesPerSecond, int countsPerRev)</div><div class="ttdoc">Convert from Degrees per second to units/100ms (ctre units)</div><div class="ttdef"><b>Definition:</b> <a href="_conversion_utils_8h_source.html#l00125">ConversionUtils.h:125</a></div></div>
 <div class="ttc" id="aclass_dragon_talon_html_a6037fe288a4e4d73e8aefaff347af3eb"><div class="ttname"><a href="class_dragon_talon.html#a6037fe288a4e4d73e8aefaff347af3eb">DragonTalon::GetRPS</a></div><div class="ttdeci">double GetRPS() const override</div><div class="ttdoc">Return the angular velocity in revolutions per second.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00047">DragonTalon.cpp:47</a></div></div>
 <div class="ttc" id="aclass_dragon_talon_html_a7a7bf5cd79bd0458363892bcdf7f2b46"><div class="ttname"><a href="class_dragon_talon.html#a7a7bf5cd79bd0458363892bcdf7f2b46">DragonTalon::GetID</a></div><div class="ttdeci">int GetID() const override</div><div class="ttdoc">Return the CAN ID.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00183">DragonTalon.cpp:183</a></div></div>
 <div class="ttc" id="aclass_dragon_talon_html_aa816f5211ea0e05b88047c131e7d8e0e"><div class="ttname"><a href="class_dragon_talon.html#aa816f5211ea0e05b88047c131e7d8e0e">DragonTalon::GetSpeedController</a></div><div class="ttdeci">std::shared_ptr&lt; frc::SpeedController &gt; GetSpeedController() const override</div><div class="ttdoc">Return the speedcontroller.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00057">DragonTalon.cpp:57</a></div></div>
-<div class="ttc" id="aclass_dragon_talon_html_ada032141404f5abda96dcb08ea6d7eba"><div class="ttname"><a href="class_dragon_talon.html#ada032141404f5abda96dcb08ea6d7eba">DragonTalon::SetReverseLimitSwitch</a></div><div class="ttdeci">void SetReverseLimitSwitch(bool normallyOpen)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00341">DragonTalon.cpp:341</a></div></div>
-<div class="ttc" id="aclass_control_data_html_a4352d6d0bcf6a75a8de2c42cf90689ea"><div class="ttname"><a href="class_control_data.html#a4352d6d0bcf6a75a8de2c42cf90689ea">ControlData::GetNominalValue</a></div><div class="ttdeci">double GetNominalValue() const</div><div class="ttdoc">Retrieve the nominal value.</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00099">ControlData.h:99</a></div></div>
-<div class="ttc" id="aclass_control_data_html_ad63cd22d187b4b30d27d8482a8ee3b8f"><div class="ttname"><a href="class_control_data.html#ad63cd22d187b4b30d27d8482a8ee3b8f">ControlData::GetPeakValue</a></div><div class="ttdeci">double GetPeakValue() const</div><div class="ttdoc">Retrieve the peak value.</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00095">ControlData.h:95</a></div></div>
+<div class="ttc" id="aclass_dragon_talon_html_ada032141404f5abda96dcb08ea6d7eba"><div class="ttname"><a href="class_dragon_talon.html#ada032141404f5abda96dcb08ea6d7eba">DragonTalon::SetReverseLimitSwitch</a></div><div class="ttdeci">void SetReverseLimitSwitch(bool normallyOpen)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00371">DragonTalon.cpp:371</a></div></div>
 <div class="ttc" id="aclass_control_data_html_acbaf81f6f7dab5edcf4fcc445caf0dcd"><div class="ttname"><a href="class_control_data.html#acbaf81f6f7dab5edcf4fcc445caf0dcd">ControlData::GetD</a></div><div class="ttdeci">double GetD() const</div><div class="ttdoc">Retrieve the D coefficient for a PID-based control mode.</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00075">ControlData.h:75</a></div></div>
 <div class="ttc" id="aclass_dragon_talon_html_a87d056ac6683ceec4a985dff184b42e5"><div class="ttname"><a href="class_dragon_talon.html#a87d056ac6683ceec4a985dff184b42e5">DragonTalon::SetSensorInverted</a></div><div class="ttdeci">void SetSensorInverted(bool inverted) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00173">DragonTalon.cpp:173</a></div></div>
 <div class="ttc" id="aclass_dragon_talon_html_aba6be9a94e78685b4244aef6e7f96d23"><div class="ttname"><a href="class_dragon_talon.html#aba6be9a94e78685b4244aef6e7f96d23">DragonTalon::ConfigContinuousCurrentLimit</a></div><div class="ttdeci">int ConfigContinuousCurrentLimit(int amps, int timeoutMs)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00278">DragonTalon.cpp:278</a></div></div>
@@ -477,14 +506,16 @@ $(document).ready(function(){initNavTree('_dragon_talon_8cpp_source.html','');})
 <div class="ttc" id="aclass_dragon_talon_html_a51ae73cebf47695a4c37cc874d7dd0b3"><div class="ttname"><a href="class_dragon_talon.html#a51ae73cebf47695a4c37cc874d7dd0b3">DragonTalon::SetControlMode</a></div><div class="ttdeci">void SetControlMode(ControlModes::CONTROL_TYPE mode) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00052">DragonTalon.cpp:52</a></div></div>
 <div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
 <div class="ttc" id="aclass_dragon_talon_html_a418dee044c4b4b81492517ff06a1af19"><div class="ttname"><a href="class_dragon_talon.html#a418dee044c4b4b81492517ff06a1af19">DragonTalon::DragonTalon</a></div><div class="ttdeci">DragonTalon()=delete</div></div>
+<div class="ttc" id="aclass_control_data_html_a3e7157f943ecefb04cb30c274bf9a330"><div class="ttname"><a href="class_control_data.html#a3e7157f943ecefb04cb30c274bf9a330">ControlData::GetMode</a></div><div class="ttdeci">ControlModes::CONTROL_TYPE GetMode() const</div><div class="ttdoc">Retrieve the Control Type.</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00059">ControlData.h:59</a></div></div>
 <div class="ttc" id="aclass_motor_controller_usage_html_a03b7ee94f8c7e42884d5da8974e3a51a"><div class="ttname"><a href="class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51a">MotorControllerUsage::MOTOR_CONTROLLER_USAGE</a></div><div class="ttdeci">MOTOR_CONTROLLER_USAGE</div><div class="ttdoc">Defines motor usages. This should be modified for each robot.</div><div class="ttdef"><b>Definition:</b> <a href="_motor_controller_usage_8h_source.html#l00040">MotorControllerUsage.h:40</a></div></div>
 <div class="ttc" id="aclass_control_data_html_aada3659777868036d560a428ea55bcdf"><div class="ttname"><a href="class_control_data.html#aada3659777868036d560a428ea55bcdf">ControlData::GetCruiseVelocity</a></div><div class="ttdeci">double GetCruiseVelocity() const</div><div class="ttdoc">Retrieve the cruise velocity for a trapezoid control mode.</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00091">ControlData.h:91</a></div></div>
-<div class="ttc" id="aclass_dragon_talon_html_a741ea243997b62373ef198f75846704d"><div class="ttname"><a href="class_dragon_talon.html#a741ea243997b62373ef198f75846704d">DragonTalon::SetDiameter</a></div><div class="ttdeci">void SetDiameter(double diameter) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00361">DragonTalon.cpp:361</a></div></div>
+<div class="ttc" id="aclass_dragon_talon_html_a741ea243997b62373ef198f75846704d"><div class="ttname"><a href="class_dragon_talon.html#a741ea243997b62373ef198f75846704d">DragonTalon::SetDiameter</a></div><div class="ttdeci">void SetDiameter(double diameter) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00391">DragonTalon.cpp:391</a></div></div>
 <div class="ttc" id="aclass_dragon_talon_html_a8c91ab71fa1783a97338c981adcdcc3b"><div class="ttname"><a href="class_dragon_talon.html#a8c91ab71fa1783a97338c981adcdcc3b">DragonTalon::ConfigPeakCurrentLimit</a></div><div class="ttdeci">int ConfigPeakCurrentLimit(int amps, int timeoutMs)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00242">DragonTalon.cpp:242</a></div></div>
 <div class="ttc" id="aclass_conversion_utils_html_af70fc7530f004e338db5f9035bdc63b8"><div class="ttname"><a href="class_conversion_utils.html#af70fc7530f004e338db5f9035bdc63b8">ConversionUtils::InchesPerSecondToCounts100ms</a></div><div class="ttdeci">static double InchesPerSecondToCounts100ms(double inchesPerSecond, int countsPerRev, double diameter)</div><div class="ttdoc">Convert from inches per second to units/100ms (ctre units)</div><div class="ttdef"><b>Definition:</b> <a href="_conversion_utils_8h_source.html#l00156">ConversionUtils.h:156</a></div></div>
 <div class="ttc" id="a_dragon_p_d_p_8h_html"><div class="ttname"><a href="_dragon_p_d_p_8h.html">DragonPDP.h</a></div></div>
 <div class="ttc" id="aclass_dragon_talon_html_a1e450e634cd6d34cd0ba8f9bb0aebea1"><div class="ttname"><a href="class_dragon_talon.html#a1e450e634cd6d34cd0ba8f9bb0aebea1">DragonTalon::SetVoltageRamping</a></div><div class="ttdeci">void SetVoltageRamping(double ramping, double rampingClosedLoop=-1) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00147">DragonTalon.cpp:147</a></div></div>
-<div class="ttc" id="aclass_dragon_talon_html_abfd29c75d1892ea7607114a337fe232b"><div class="ttname"><a href="class_dragon_talon.html#abfd29c75d1892ea7607114a337fe232b">DragonTalon::SetRemoteSensor</a></div><div class="ttdeci">void SetRemoteSensor(int canID, ctre::phoenix::motorcontrol::RemoteSensorSource deviceType) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00351">DragonTalon.cpp:351</a></div></div>
+<div class="ttc" id="aclass_dragon_talon_html_abfd29c75d1892ea7607114a337fe232b"><div class="ttname"><a href="class_dragon_talon.html#abfd29c75d1892ea7607114a337fe232b">DragonTalon::SetRemoteSensor</a></div><div class="ttdeci">void SetRemoteSensor(int canID, ctre::phoenix::motorcontrol::RemoteSensorSource deviceType) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00381">DragonTalon.cpp:381</a></div></div>
+<div class="ttc" id="aclass_conversion_utils_html_adfcc98b85bed02cca67b1269ea97893b"><div class="ttname"><a href="class_conversion_utils.html#adfcc98b85bed02cca67b1269ea97893b">ConversionUtils::CountsPer100msToRPS</a></div><div class="ttdeci">static double CountsPer100msToRPS(double countsPer100ms, int countsPerRev)</div><div class="ttdoc">Convert from counts per 100ms (ctre units) to revolutions per second.</div><div class="ttdef"><b>Definition:</b> <a href="_conversion_utils_8h_source.html#l00131">ConversionUtils.h:131</a></div></div>
 <div class="ttc" id="aclass_logger_html_a98d7aec19dcdfb9d8faa46d83d927883"><div class="ttname"><a href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">Logger::LogError</a></div><div class="ttdeci">void LogError(const std::string &amp;locationIdentifier, const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00071">Logger.cpp:71</a></div></div>
 <div class="ttc" id="aclass_dragon_talon_html_ae86a7edc78d019aea370ec7f49eddf6c"><div class="ttname"><a href="class_dragon_talon.html#ae86a7edc78d019aea370ec7f49eddf6c">DragonTalon::GetRotations</a></div><div class="ttdeci">double GetRotations() const override</div><div class="ttdoc">Return the number of revolutions the output shaft has spun.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00042">DragonTalon.cpp:42</a></div></div>
 <div class="ttc" id="aclass_dragon_talon_html_a051e7d9a21b9caf9db65bcb2c613808e"><div class="ttname"><a href="class_dragon_talon.html#a051e7d9a21b9caf9db65bcb2c613808e">DragonTalon::SetControlConstants</a></div><div class="ttdeci">void SetControlConstants(ControlData *controlInfo) override</div><div class="ttdoc">Set the control constants (e.g. PIDF values).</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00307">DragonTalon.cpp:307</a></div></div>
@@ -503,7 +534,7 @@ $(document).ready(function(){initNavTree('_dragon_talon_8cpp_source.html','');})
 <div class="ttc" id="a_motor_controller_usage_8h_html"><div class="ttname"><a href="_motor_controller_usage_8h.html">MotorControllerUsage.h</a></div></div>
 <div class="ttc" id="aclass_dragon_talon_html_a50cab200ce935067feed69d862f48156"><div class="ttname"><a href="class_dragon_talon.html#a50cab200ce935067feed69d862f48156">DragonTalon::SetRotationOffset</a></div><div class="ttdeci">void SetRotationOffset(double rotations) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00140">DragonTalon.cpp:140</a></div></div>
 <div class="ttc" id="a_dragon_talon_8h_html"><div class="ttname"><a href="_dragon_talon_8h.html">DragonTalon.h</a></div></div>
-<div class="ttc" id="aclass_dragon_talon_html_a443cf82313c085b34dd35dedd86f21a9"><div class="ttname"><a href="class_dragon_talon.html#a443cf82313c085b34dd35dedd86f21a9">DragonTalon::SetForwardLimitSwitch</a></div><div class="ttdeci">void SetForwardLimitSwitch(bool normallyOpen)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00332">DragonTalon.cpp:332</a></div></div>
+<div class="ttc" id="aclass_dragon_talon_html_a443cf82313c085b34dd35dedd86f21a9"><div class="ttname"><a href="class_dragon_talon.html#a443cf82313c085b34dd35dedd86f21a9">DragonTalon::SetForwardLimitSwitch</a></div><div class="ttdeci">void SetForwardLimitSwitch(bool normallyOpen)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_talon_8cpp_source.html#l00362">DragonTalon.cpp:362</a></div></div>
 <div class="ttc" id="aclass_control_modes_html_a46c77e409ac22b3b3269f7fee2d3f736"><div class="ttname"><a href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a></div><div class="ttdeci">CONTROL_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_control_modes_8h_source.html#l00024">ControlModes.h:24</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

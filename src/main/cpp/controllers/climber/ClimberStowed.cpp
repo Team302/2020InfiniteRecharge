@@ -12,42 +12,24 @@
 // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
-// C++ Includes
+
+//C++ Includes
 #include <memory>
 
-// FRC includes
-
-// Team 302 includes
-#include <subsys/MechanismFactory.h>
-#include <subsys/IMechanism.h>
+//Team 302 Includes
 #include <controllers/climber/ClimberStowed.h>
-#include <controllers/IState.h>
-
-// Third Party Includes
-
-using namespace std;
-
-ClimberStowed::ClimberStowed()
-{
-    auto factory = MechanismFactory::GetMechanismFactory();
-
-    m_climber = factory -> GetIMechanism(MechanismTypes::MECHANISM_TYPE::CLIMBER);
-}
+#include <controllers/MechanismState.h>
+#include <subsys/IMechanism.h>
+#include <subsys/MechanismFactory.h>
+#include <controllers/MechanismTargetData.h>
 
 
-void ClimberStowed::Init()
+ClimberStowed::ClimberStowed
+(
+    ControlData*                    control,
+    double                          target,
+    MechanismTargetData::SOLENOID   solState
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::CLIMBER), control, target, solState )
 {
 
-}
-
-
-void ClimberStowed::Run()
-{
-    m_climber -> SetOutput(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT,0.0);     //turns off motors
-}
-
-
-bool ClimberStowed::AtTarget() const                                            //confirms it worked
-{
-    return true;
 }

@@ -13,42 +13,22 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-// C++ Includes
+//C++ Includes
 #include <memory>
 
-// FRC includes
-
-// Team 302 includes
-#include <subsys/MechanismFactory.h>
-#include <subsys/IMechanism.h>
+//Team 302 Includes
 #include <controllers/climber/ClimberRaise.h>
-#include <controllers/IState.h>
-
-// Third Party Includes
-
-using namespace std;
-
-ClimberRaise::ClimberRaise()
-{
-    auto factory = MechanismFactory::GetMechanismFactory();
-
-    m_climber = factory -> GetIMechanism(MechanismTypes::MECHANISM_TYPE::CLIMBER);
-}
+#include <controllers/MechanismState.h>
+#include <subsys/IMechanism.h>
+#include <subsys/MechanismFactory.h>
+#include <controllers/MechanismTargetData.h>
 
 
-void ClimberRaise::Init()
+ClimberRaise::ClimberRaise(
+    ControlData*                    control,
+    double                          target,
+    MechanismTargetData::SOLENOID   solState
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::CLIMBER), control, target, solState )
 {
 
-}
-
-
-void ClimberRaise::Run()
-{
-    m_climber -> SetOutput(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT,1.0);     //turns on motors
-}
-
-
-bool ClimberRaise::AtTarget() const                                                  //confirms it worked
-{
-    return true;
 }

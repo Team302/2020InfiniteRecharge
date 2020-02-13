@@ -15,22 +15,22 @@
 
 #pragma once
 
-#include <controllers/IState.h>
 #include <subsys/IMechanism.h>
+#include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
 
-class ClimberStowed : public IState
+class ClimberStowed : public MechanismState
 {
     public:
 
-    ClimberStowed();
-    ~ClimberStowed() = default;
+        ClimberStowed() = delete;
+        ClimberStowed
+        (
+            ControlData*                    control,
+            double                          target,
+            MechanismTargetData::SOLENOID   solState
+        );
 
-    void Init() override;
-    void Run() override;
-    bool AtTarget() const override;
-
-    private:
-
-    IMechanism* m_climber;
+        ~ClimberStowed() = default;
 
 };

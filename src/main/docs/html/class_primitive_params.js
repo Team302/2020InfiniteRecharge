@@ -1,8 +1,9 @@
 var class_primitive_params =
 [
-    [ "PrimitiveParams", "class_primitive_params.html#adc24964db6bb1735eb5580e74af20b33", null ],
+    [ "PrimitiveParams", "class_primitive_params.html#a5f01d8dcb7379edf326d27330b35f627", null ],
     [ "PrimitiveParams", "class_primitive_params.html#a294ec4f5898cdd78b4e23bdf0a9e78e3", null ],
     [ "~PrimitiveParams", "class_primitive_params.html#adab8abd069a9b2fbd3c7814f033d5065", null ],
+    [ "GetBallState", "class_primitive_params.html#acae304c2aa2134285d7feca227e799bc", null ],
     [ "GetDistance", "class_primitive_params.html#af2c666b36d1b271b03c05c4cf51a7bab", null ],
     [ "GetDriveSpeed", "class_primitive_params.html#aef9f99610cc71c25d4844d731cc8c6a2", null ],
     [ "GetEndDriveSpeed", "class_primitive_params.html#a9b452487c360f320951b178a23300fe2", null ],

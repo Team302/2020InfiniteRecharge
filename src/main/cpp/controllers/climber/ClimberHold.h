@@ -24,7 +24,6 @@
 
 #include <subsys/IMechanism.h>
 #include <controllers/MechanismState.h>
-#include <controllers/IState.h>
 #include <controllers/MechanismTargetData.h>
 
 class ClimberHold : public MechanismState

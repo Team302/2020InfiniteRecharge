@@ -18,7 +18,8 @@
 //Team 302 Includes
 #include <controllers/shooterHood/ShooterHoodHoldPosition.h>
 #include <subsys/IMechanism.h>
-#include <subsys/MechanismFactory.h>#include <controllers/MechanismTargetData.h>
+#include <subsys/MechanismFactory.h>
+#include <controllers/MechanismTargetData.h>
 #include <controllers/ControlData.h>
 
 

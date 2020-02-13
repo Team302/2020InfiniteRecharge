@@ -13,32 +13,30 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+#pragma once
+
 // C++ Includes
-#include <memory>
 
 // FRC includes
 
 // Team 302 includes
-#include <controllers/IState.h>
 #include <subsys/IMechanism.h>
+#include <controllers/MechanismState.h>
+#include <controllers/MechanismTargetData.h>
 
 // Third Party Includes
 
-#pragma once 
-
-class ClimberRaise : public IState
+class ClimberRaise : public MechanismState
 {
     public:
 
-    ClimberRaise();
+        ClimberRaise() = delete;
+        ClimberRaise
+        (
+            ControlData*                    control,
+            double                          target,
+            MechanismTargetData::SOLENOID   solState
+        );
+
     ~ClimberRaise() = default;
-
-    void Init() override;
-    void Run() override;
-    bool AtTarget() const override;
-
-    private:
-
-    IMechanism* m_climber;
-
 };
