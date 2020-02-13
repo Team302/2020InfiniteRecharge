@@ -104,5 +104,5 @@ void BallTransfer::SetControlConstants
     ControlData*    pid
 )
 {
-    Logger::GetLogger()->LogError(string("BallTransfer::SetControlConstraints"), string("Called"));
+    m_master.get()->SetControlConstants( pid );
 }

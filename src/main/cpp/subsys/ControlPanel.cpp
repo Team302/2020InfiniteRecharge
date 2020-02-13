@@ -155,7 +155,7 @@ void ControlPanel::SetControlConstants
     ControlData*                                pid                 
 )
 {
-    Logger::GetLogger()->LogError(string("ControlPanel::SetControlConstants"), string("Called"));
+    m_spinner.get()->SetControlConstants( pid );
 }
 
 ControlPanelColors::COLOR ControlPanel::GetColorSeen()
