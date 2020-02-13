@@ -7,6 +7,7 @@
 
 #include <auton/PrimitiveEnums.h>
 #include <auton/PrimitiveParams.h>
+#include <controllers/BallManipulator.h>
 
 PrimitiveParams::PrimitiveParams
 (
@@ -17,7 +18,8 @@ PrimitiveParams::PrimitiveParams
     float                       yLoc,
     float                       heading,
     float                       startDriveSpeed,
-    float                       endDriveSpeed
+    float                       endDriveSpeed,
+	BallManipulator::BALL_MANIPULATOR_STATE						ballState
 ):	//Pass over parameters to class variables
 		m_id(id), //Primitive ID
 		m_time(time),
@@ -27,11 +29,7 @@ PrimitiveParams::PrimitiveParams
 		m_heading(heading),
 		m_startDriveSpeed( startDriveSpeed ),
 		m_endDriveSpeed( endDriveSpeed ),
-		m_intakeOn(true),	//todo pass a param
-		m_shooterOn(true),
-		m_impellerOn(true),
-		m_ballTransfer(true),
-		m_shooterHood(true)
+		m_ballState( ballState )
 {
 }
 
@@ -79,31 +77,11 @@ float PrimitiveParams::GetEndDriveSpeed() const
 {
     return m_endDriveSpeed;
 }
-bool PrimitiveParams::IsIntakeOn() const
-{
-	return m_intakeOn;
-}
-bool PrimitiveParams::IsShooterOn() const
-{
-	return m_shooterOn;
-}
-bool PrimitiveParams::IsImpellerOn() const
-{
-	return m_impellerOn;
-}
-bool PrimitiveParams::IsBallTransferReady() const
-{
-	return m_ballTransfer;
-}
-bool PrimitiveParams::IsShooterHoodReady() const
-{
-	return m_shooterHood;
-}
-bool PrimitiveParams::IsTurretReady() const
-{
-	return m_turret;
-}
 
+BallManipulator::BALL_MANIPULATOR_STATE PrimitiveParams::GetBallState() const
+{
+	return m_ballState;
+}
 //Setters
 void PrimitiveParams::SetDistance(float distance)
 {

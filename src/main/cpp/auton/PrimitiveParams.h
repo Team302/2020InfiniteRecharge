@@ -23,6 +23,7 @@
 
 // Team 302 includes
 #include <auton/PrimitiveEnums.h>
+#include <controllers/BallManipulator.h>
 //#include <utils/DragonMath.h>
 
 // Third Party Includes
@@ -44,7 +45,8 @@ class PrimitiveParams
                 float                       yLoc,
                 float                       heading,
                 float                       startDriveSpeed,
-                float                       endDriveSpeed
+                float                       endDriveSpeed,
+                BallManipulator::BALL_MANIPULATOR_STATE                       ballState
         );//Constructor. Takes in all parameters
 
         PrimitiveParams() = delete;
@@ -60,19 +62,14 @@ class PrimitiveParams
         float GetHeading() const;
         float GetDriveSpeed() const;
         float GetEndDriveSpeed() const;
-        bool  IsIntakeOn() const;
-        bool  IsShooterOn() const;
-        bool  IsImpellerOn() const;
-        bool  IsBallTransferReady() const;
-        bool  IsTurretReady() const;
-        bool  IsShooterHoodReady() const;
+        BallManipulator::BALL_MANIPULATOR_STATE GetBallState() const;
 
         //Setters
         void SetDistance(float distance);
 
     private:
         //Primitive Parameters
-        PRIMITIVE_IDENTIFIER        m_id; //Primitive ID;
+        PRIMITIVE_IDENTIFIER        m_id; //Primitive ID
         float                       m_time;
         float                       m_distance;
         float                       m_xLoc;
@@ -80,12 +77,7 @@ class PrimitiveParams
         float                       m_heading;
         float                       m_startDriveSpeed;
         float                       m_endDriveSpeed;
-        bool                        m_intakeOn;
-        bool                        m_shooterOn;
-        bool                        m_impellerOn;
-        bool                        m_ballTransfer;
-        bool                        m_shooterHood;
-        bool                        m_turret;
+        BallManipulator::BALL_MANIPULATOR_STATE                    m_ballState;
 };
 
 typedef std::vector<PrimitiveParams*> PrimitiveParamsVector;
