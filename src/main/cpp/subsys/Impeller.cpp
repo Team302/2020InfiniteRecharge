@@ -51,7 +51,22 @@ Impeller::Impeller
 ) : m_motor (motor),
     m_encoder( encoder)
 {
-    m_motor.get()->SetRemoteSensor( encoder.get()->GetDeviceNumber(), RemoteSensorSource::RemoteSensorSource_CANCoder );
+    if ( m_motor.get() != nullptr )
+    {
+        if ( m_encoder.get() != nullptr )
+        {
+            m_motor.get()->SetRemoteSensor( encoder.get()->GetDeviceNumber(), RemoteSensorSource::RemoteSensorSource_CANCoder );
+        }
+        else
+        {
+            Logger::GetLogger()->LogError( string("Impeller::Impeller"), string("No encoder"));
+        }
+    }
+    else
+    {
+        Logger::GetLogger()->LogError( string("Impeller::Impeller"), string("No motor"));
+    }
+
 }
 
 
