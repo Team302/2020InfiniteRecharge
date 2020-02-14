@@ -30,6 +30,7 @@
 #include <controllers/impeller/ImpellerHold.h>
 #include <controllers/impeller/ImpellerAgitate.h>
 #include <controllers/impeller/ImpellerToShooter.h>
+#include <subsys/MechanismFactory.h>
 
 
 // Third Party Includes
@@ -38,7 +39,10 @@ using namespace std;
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
-                                       m_currentState()
+                                       m_currentState(),
+                                       m_impeller(  MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER) ),
+                                       m_reverse( false ),
+                                       m_numReverseLoops( 0 )
 {
     // Parse the configuration file 
     auto stateXML = make_unique<StateDataDefn>();
@@ -79,7 +83,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
                     case IMPELLER_STATE::TO_SHOOTER:
                     {   
                         auto thisState = new ImpellerToShooter(controlData, target, solState );
-                        m_stateEnumToObjectMap[IMPELLER_STATE::OFF] = thisState;
+                        m_stateEnumToObjectMap[IMPELLER_STATE::TO_SHOOTER] = thisState;
                         Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller To Shooter State added to Map");
                     }
                     break;
@@ -126,6 +130,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
 /// @return void
 void ImpellerStateMgr::RunCurrentState()
 {
+    auto changingStates = false;
     // process teleop/manual interrupts
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
@@ -133,19 +138,27 @@ void ImpellerStateMgr::RunCurrentState()
         if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_TO_SHOOTER ) && m_currentStateEnum != IMPELLER_STATE::TO_SHOOTER)
         {
             SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
+            changingStates = true;
+            m_numReverseLoops = 0;
         }
         if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_OFF ) && m_currentStateEnum != IMPELLER_STATE::OFF)
         {
             SetCurrentState( IMPELLER_STATE::OFF, false );
+            changingStates = true;
+            m_numReverseLoops = 0;
         }
         if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_AGITATE  ) && m_currentStateEnum != IMPELLER_STATE::AGITATE)
         {
             SetCurrentState( IMPELLER_STATE::AGITATE, false );
+            changingStates = true;
+            m_numReverseLoops = 0;
         }
         
         if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_HOLD ) && m_currentStateEnum != IMPELLER_STATE::HOLD )
         {
             SetCurrentState( IMPELLER_STATE::HOLD, false );
+            changingStates = true;
+            m_numReverseLoops = 0;
         }
         
         /*else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_AUTO_SHOOT ) )
@@ -168,6 +181,54 @@ void ImpellerStateMgr::RunCurrentState()
     {
         m_currentState->Run();
         Logger::GetLogger()->LogError("Logger::SetCurrentState", "Running Current State");
+
+        if ( !changingStates && ( m_currentStateEnum == IMPELLER_STATE::TO_SHOOTER || 
+                                  m_currentStateEnum == IMPELLER_STATE::HOLD ) )
+        {
+            auto speed = m_impeller->GetCurrentSpeed();
+            if ( abs(speed) < 0.0002 )
+            {
+                m_reverse = true;
+                switch ( m_currentStateEnum )
+                {
+                    case IMPELLER_STATE::TO_SHOOTER:
+                        SetCurrentState( IMPELLER_STATE::HOLD, false );
+                        break;
+                    
+                    case IMPELLER_STATE::HOLD:
+                        SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
+                        break;
+                    
+                    default:
+                        break;
+                }
+
+            }
+
+            if ( m_reverse )
+            {
+                m_numReverseLoops++;
+                if ( m_numReverseLoops > 5 )
+                {
+                    m_reverse = true;
+                    m_numReverseLoops = 0;
+                    switch ( m_currentStateEnum )
+                    {
+                        case IMPELLER_STATE::TO_SHOOTER:
+                            SetCurrentState( IMPELLER_STATE::HOLD, false );
+                            break;
+                        
+                        case IMPELLER_STATE::HOLD:
+                            SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
+                            break;
+                        
+                        default:
+                            break;
+                    }
+
+                }
+            }
+        }
     }
 
 }
