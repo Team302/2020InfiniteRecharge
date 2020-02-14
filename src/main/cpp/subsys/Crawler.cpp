@@ -83,37 +83,47 @@ void Crawler::ActivateSolenoid
 }
 
 ///@brief checks to see if the solenoid is extended or retracted
-///@return void
+///@return false
 bool Crawler::IsSolenoidActivated()
 {
     Logger::GetLogger()->LogError( string( "Crawler::IsSolenoidActivated" ), string( "Called" ) );
     return false; //No Solenoid on Crawler
 }
 
+///@brief Retrieves the current position of the mechanism
+///@return double 0.0
 double Crawler::GetCurrentPosition() const
 {
     Logger::GetLogger()->LogError( string( "Crawler::GetCurrentPosition" ), string( "Called" ) );
-    return 0.0;
+    return 0.0; //no encoder
 }
 
+///@brief Retrieves the target position of the mechanism
+///@return double 0.0
 double Crawler::GetTargetPosition() const
 {
     Logger::GetLogger()->LogError( string( "Crawler::GetTargetPosition" ), string( "Called" ) );
-    return 0.0;
+    return 0.0; //no encoder
 }
 
+///@brief Retrieves the current speed of the mechanism.
+///@return double 0.0
 double Crawler::GetCurrentSpeed() const
 {
     Logger::GetLogger()->LogError( string( "Crawler::GetCurrentSpeed" ), string( "Called" ) );
-    return 0.0;
+    return 0.0; //no encoder
 }
 
+///@brief Retrieves the target speed of the mechanism
+///@return double 0.0
 double Crawler::GetTargetSpeed() const
 {
     Logger::GetLogger()->LogError( string( "Crawler::GetTargetSpeed" ), string( "Called" ) );
     return 0.0;
 }
 
+///@brief Sets the control constants (i.e PIDF values)
+///@return void
 void Crawler::SetControlConstants
 (
     ControlData*    pid
