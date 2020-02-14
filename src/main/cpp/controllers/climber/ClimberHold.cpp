@@ -27,12 +27,10 @@
 
 //Team 302 Includes
 #include <controllers/climber/ClimberHold.h>
-#include <controllers/IState.h>
+#include <controllers/MechanismState.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
 #include <controllers/MechanismTargetData.h>
-
-using namespace std;
 
 
 

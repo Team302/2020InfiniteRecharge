@@ -116,52 +116,54 @@ $(document).ready(function(){initNavTree('_limelight_factory_8cpp_source.html','
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> m_limelightFactory;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_limelight_factory.html#a886d571d9dc9154c5f79cc10a99b1796">   28</a></span>&#160;shared_ptr&lt;DragonLimelight*&gt; <a class="code" href="class_limelight_factory.html#a886d571d9dc9154c5f79cc10a99b1796">LimelightFactory::CreateLimelight</a>(<a class="code" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> usage, <span class="keywordtype">string</span> tableName, <span class="keywordtype">double</span> mountingHeight, <span class="keywordtype">double</span> mountingHorizontalOffset, <span class="keywordtype">double</span> rotation, <span class="keywordtype">double</span> mountingAngle, <span class="keywordtype">double</span> targetHeight, <span class="keywordtype">double</span> targetHeight2)</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_limelight_factory.html#a2eb31e35e7d70de10fc9b4a76acd8be1">   28</a></span>&#160;shared_ptr&lt;DragonLimelight&gt; <a class="code" href="class_limelight_factory.html#a2eb31e35e7d70de10fc9b4a76acd8be1">LimelightFactory::CreateLimelight</a>(<a class="code" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> usage, <span class="keywordtype">string</span> tableName, <span class="keywordtype">double</span> mountingHeight, <span class="keywordtype">double</span> mountingHorizontalOffset, <span class="keywordtype">double</span> rotation, <span class="keywordtype">double</span> mountingAngle, <span class="keywordtype">double</span> targetHeight, <span class="keywordtype">double</span> targetHeight2)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">auto</span> it = m_limelightMap.find(usage);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> ( it != m_limelightMap.end() )</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> GetLimelight(usage);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        shared_ptr&lt;DragonLimelight*&gt; limelight = make_shared&lt;DragonLimelight*&gt;(<span class="keyword">new</span> <a class="code" href="class_dragon_limelight.html">DragonLimelight</a>(usage, tableName, mountingHeight, mountingHorizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2));</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        m_limelightMap[usage] = limelight;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> limelight;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_limelight_factory.html#aea83d8455ea31aa1b6d82458655e08f1">   45</a></span>&#160;shared_ptr&lt;DragonLimelight*&gt; <a class="code" href="class_limelight_factory.html#aea83d8455ea31aa1b6d82458655e08f1">LimelightFactory::GetLimelight</a>(<a class="code" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> usage)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">auto</span> it = m_limelightMap.find(usage);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> ( it != m_limelightMap.end() )</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> m_limelightMap[usage];</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        std::string msg = <span class="stringliteral">&quot;limelight not found; usage =&quot;</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        msg += to_string(usage);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>(<span class="stringliteral">&quot;LimelightFactory::GetLimilight&quot;</span>, msg);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    shared_ptr&lt;DragonLimelight&gt; limelight;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> ( it != m_limelightMap.end() )</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> GetLimelight(usage);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        shared_ptr&lt;DragonLimelight&gt; limelight;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        limelight.reset(<span class="keyword">new</span> <a class="code" href="class_dragon_limelight.html">DragonLimelight</a>(usage, tableName, mountingHeight, mountingHorizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        m_limelightMap[usage] = limelight;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> limelight;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_limelight_factory.html#ac8477b585b76b93d953f6f2d5561c749">   47</a></span>&#160;shared_ptr&lt;DragonLimelight&gt; <a class="code" href="class_limelight_factory.html#ac8477b585b76b93d953f6f2d5561c749">LimelightFactory::GetLimelight</a>(<a class="code" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> usage)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">auto</span> it = m_limelightMap.find(usage);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> ( it != m_limelightMap.end() )</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> m_limelightMap[usage];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        std::string msg = <span class="stringliteral">&quot;limelight not found; usage =&quot;</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        msg += to_string(usage);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>(<span class="stringliteral">&quot;LimelightFactory::GetLimilight&quot;</span>, msg);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclass_limelight_factory_html_ac8477b585b76b93d953f6f2d5561c749"><div class="ttname"><a href="class_limelight_factory.html#ac8477b585b76b93d953f6f2d5561c749">LimelightFactory::GetLimelight</a></div><div class="ttdeci">std::shared_ptr&lt; DragonLimelight &gt; GetLimelight(IDragonSensor::SENSOR_USAGE usage)</div><div class="ttdef"><b>Definition:</b> <a href="_limelight_factory_8cpp_source.html#l00047">LimelightFactory.cpp:47</a></div></div>
 <div class="ttc" id="aclass_limelight_factory_html"><div class="ttname"><a href="class_limelight_factory.html">LimelightFactory</a></div><div class="ttdef"><b>Definition:</b> <a href="_limelight_factory_8h_source.html#l00017">LimelightFactory.h:17</a></div></div>
 <div class="ttc" id="a_dragon_limelight_8h_html"><div class="ttname"><a href="_dragon_limelight_8h.html">DragonLimelight.h</a></div></div>
 <div class="ttc" id="aclass_i_dragon_sensor_html_a48f04b4f71b0f27f8330fd82a26b5fe9"><div class="ttname"><a href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a></div><div class="ttdeci">SENSOR_USAGE</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_sensor_8h_source.html#l00036">IDragonSensor.h:36</a></div></div>
-<div class="ttc" id="aclass_limelight_factory_html_a886d571d9dc9154c5f79cc10a99b1796"><div class="ttname"><a href="class_limelight_factory.html#a886d571d9dc9154c5f79cc10a99b1796">LimelightFactory::CreateLimelight</a></div><div class="ttdeci">std::shared_ptr&lt; DragonLimelight * &gt; CreateLimelight(IDragonSensor::SENSOR_USAGE usage, std::string tableName, double mountingHeight, double mountingHorizontalOffset, double rotation, double mountingAngle, double targetHeight, double targetHeight2)</div><div class="ttdef"><b>Definition:</b> <a href="_limelight_factory_8cpp_source.html#l00028">LimelightFactory.cpp:28</a></div></div>
 <div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
 <div class="ttc" id="aclass_limelight_factory_html_af3a2a9e7f01b16a693953e42908ed7f0"><div class="ttname"><a href="class_limelight_factory.html#af3a2a9e7f01b16a693953e42908ed7f0">LimelightFactory::GetLimelightFactory</a></div><div class="ttdeci">static LimelightFactory * GetLimelightFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_limelight_factory_8cpp_source.html#l00019">LimelightFactory.cpp:19</a></div></div>
 <div class="ttc" id="aclass_dragon_limelight_html"><div class="ttname"><a href="class_dragon_limelight.html">DragonLimelight</a></div><div class="ttdef"><b>Definition:</b> <a href="_dragon_limelight_8h_source.html#l00035">DragonLimelight.h:35</a></div></div>
 <div class="ttc" id="aclass_logger_html_a98d7aec19dcdfb9d8faa46d83d927883"><div class="ttname"><a href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">Logger::LogError</a></div><div class="ttdeci">void LogError(const std::string &amp;locationIdentifier, const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00071">Logger.cpp:71</a></div></div>
 <div class="ttc" id="aclass_logger_html_ae85cfbef8b7e6940475a5012fa1935c6"><div class="ttname"><a href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a></div><div class="ttdeci">static Logger * GetLogger()</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00052">Logger.cpp:52</a></div></div>
 <div class="ttc" id="a_limelight_factory_8h_html"><div class="ttname"><a href="_limelight_factory_8h.html">LimelightFactory.h</a></div></div>
-<div class="ttc" id="aclass_limelight_factory_html_aea83d8455ea31aa1b6d82458655e08f1"><div class="ttname"><a href="class_limelight_factory.html#aea83d8455ea31aa1b6d82458655e08f1">LimelightFactory::GetLimelight</a></div><div class="ttdeci">std::shared_ptr&lt; DragonLimelight * &gt; GetLimelight(IDragonSensor::SENSOR_USAGE usage)</div><div class="ttdef"><b>Definition:</b> <a href="_limelight_factory_8cpp_source.html#l00045">LimelightFactory.cpp:45</a></div></div>
+<div class="ttc" id="aclass_limelight_factory_html_a2eb31e35e7d70de10fc9b4a76acd8be1"><div class="ttname"><a href="class_limelight_factory.html#a2eb31e35e7d70de10fc9b4a76acd8be1">LimelightFactory::CreateLimelight</a></div><div class="ttdeci">std::shared_ptr&lt; DragonLimelight &gt; CreateLimelight(IDragonSensor::SENSOR_USAGE usage, std::string tableName, double mountingHeight, double mountingHorizontalOffset, double rotation, double mountingAngle, double targetHeight, double targetHeight2)</div><div class="ttdef"><b>Definition:</b> <a href="_limelight_factory_8cpp_source.html#l00028">LimelightFactory.cpp:28</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

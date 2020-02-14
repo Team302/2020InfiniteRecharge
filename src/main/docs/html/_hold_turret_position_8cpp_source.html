@@ -101,53 +101,50 @@ $(document).ready(function(){initNavTree('_hold_turret_position_8cpp_source.html
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_turret_8h.html">subsys/Turret.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_control_data_8h.html">controllers/ControlData.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_hold_turret_position.html#a448a6c4b0f6fdbc6f647bcaefa507b2a">   14</a></span>&#160;<a class="code" href="class_hold_turret_position.html#a448a6c4b0f6fdbc6f647bcaefa507b2a">HoldTurretPosition::HoldTurretPosition</a>(<a class="code" href="class_control_data.html">ControlData</a>* controlData) : m_controlData(controlData), </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    m_atTarget(false),</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    m_targetPosition(0.0)</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">auto</span> factory = <a class="code" href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    m_turret = factory-&gt;GetIMechanism(<a class="code" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba678e7373d7e0e40324f61c1be89f986f">MechanismTypes::TURRET</a>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_hold_turret_position.html#a0ad48ec9fb424d6bc86471f097125f0a">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_hold_turret_position.html#a0ad48ec9fb424d6bc86471f097125f0a">HoldTurretPosition::Init</a>()</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    m_turret-&gt;<a class="code" href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">SetControlConstants</a>(m_controlData);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    m_targetPosition = m_turret-&gt;<a class="code" href="class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d">GetCurrentPosition</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_hold_turret_position.html#a90feaf4e72cc2cc8452bce7367fe70b0">   28</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_hold_turret_position.html#a90feaf4e72cc2cc8452bce7367fe70b0">HoldTurretPosition::Run</a>()</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{   </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    m_turret-&gt;<a class="code" href="class_i_mechanism.html#abc72a6d0306a828de6f43418e75c04c0">SetOutput</a>(m_controlData-&gt;<a class="code" href="class_control_data.html#a3e7157f943ecefb04cb30c274bf9a330">GetMode</a>(), m_targetPosition);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> tolerance = 5.0;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> ( abs(m_targetPosition - m_turret-&gt;<a class="code" href="class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d">GetCurrentPosition</a>()) &lt; tolerance) <span class="comment">//arbitrary tolerance for now will change later</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        m_atTarget = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_hold_turret_position.html#a772fbf9dc4cdfef1c0d7ee7edbb49021">   38</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_hold_turret_position.html#a772fbf9dc4cdfef1c0d7ee7edbb49021">HoldTurretPosition::AtTarget</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> m_atTarget;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mechanism_state_8h.html">controllers/MechanismState.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mechanism_target_data_8h.html">controllers/MechanismTargetData.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_hold_turret_position.html#a759d7432e3d32253775197b3680076a1">   16</a></span>&#160;<a class="code" href="class_hold_turret_position.html#a759d7432e3d32253775197b3680076a1">HoldTurretPosition::HoldTurretPosition</a>(<a class="code" href="class_control_data.html">ControlData</a>* controlData, <span class="keywordtype">double</span> target, <a class="code" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a> solenoid) : </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_mechanism_state.html">MechanismState</a>(<a class="code" href="class_mechanism_factory.html">MechanismFactory</a>::GetMechanismFactory()-&gt;GetIMechanism(<a class="code" href="class_mechanism_types.html">MechanismTypes</a>::TURRET),controlData, target, solenoid)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/*void HoldTurretPosition::Init()</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">    m_turret-&gt;SetControlConstants(m_controlData);</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">    m_targetPosition = m_turret-&gt;GetCurrentPosition();</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">void HoldTurretPosition::Run()</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">{   </span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">    m_turret-&gt;SetOutput(m_controlData-&gt;GetMode(), m_targetPosition);</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">    const double tolerance = 5.0;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">    if ( abs(m_targetPosition - m_turret-&gt;GetCurrentPosition()) &lt; tolerance) //arbitrary tolerance for now will change later</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">    {</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">        m_atTarget = true;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">    }</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">bool HoldTurretPosition::AtTarget() const</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">    return m_atTarget;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">*/</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_hold_turret_position_html_a90feaf4e72cc2cc8452bce7367fe70b0"><div class="ttname"><a href="class_hold_turret_position.html#a90feaf4e72cc2cc8452bce7367fe70b0">HoldTurretPosition::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_hold_turret_position_8cpp_source.html#l00028">HoldTurretPosition.cpp:28</a></div></div>
+<div class="ttc" id="aclass_mechanism_target_data_html_a1bd7dca52842f28088b36d001b0ac125"><div class="ttname"><a href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a></div><div class="ttdeci">SOLENOID</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_target_data_8h_source.html#l00025">MechanismTargetData.h:25</a></div></div>
+<div class="ttc" id="aclass_hold_turret_position_html_a759d7432e3d32253775197b3680076a1"><div class="ttname"><a href="class_hold_turret_position.html#a759d7432e3d32253775197b3680076a1">HoldTurretPosition::HoldTurretPosition</a></div><div class="ttdeci">HoldTurretPosition(ControlData *controlData, double target, MechanismTargetData::SOLENOID solenoid)</div><div class="ttdef"><b>Definition:</b> <a href="_hold_turret_position_8cpp_source.html#l00016">HoldTurretPosition.cpp:16</a></div></div>
+<div class="ttc" id="aclass_mechanism_types_html"><div class="ttname"><a href="class_mechanism_types.html">MechanismTypes</a></div><div class="ttdoc">This contains the enum for the mechanism types.</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_types_8h_source.html#l00023">MechanismTypes.h:23</a></div></div>
+<div class="ttc" id="a_mechanism_state_8h_html"><div class="ttname"><a href="_mechanism_state_8h.html">MechanismState.h</a></div></div>
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
-<div class="ttc" id="aclass_i_mechanism_html_acd973ca93855c485ed42d405f2fcba11"><div class="ttname"><a href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">IMechanism::SetControlConstants</a></div><div class="ttdeci">virtual void SetControlConstants(ControlData *pid)=0</div><div class="ttdoc">Set the control constants (e.g. PIDF values).</div></div>
-<div class="ttc" id="aclass_i_mechanism_html_aa15197ff101d65447516a8f10bb6867d"><div class="ttname"><a href="class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d">IMechanism::GetCurrentPosition</a></div><div class="ttdeci">virtual double GetCurrentPosition() const =0</div><div class="ttdoc">Return the current position of the mechanism. The value is in inches or degrees.</div></div>
 <div class="ttc" id="a_mechanism_factory_8h_html"><div class="ttname"><a href="_mechanism_factory_8h.html">MechanismFactory.h</a></div></div>
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
-<div class="ttc" id="aclass_control_data_html_a3e7157f943ecefb04cb30c274bf9a330"><div class="ttname"><a href="class_control_data.html#a3e7157f943ecefb04cb30c274bf9a330">ControlData::GetMode</a></div><div class="ttdeci">ControlModes::CONTROL_TYPE GetMode() const</div><div class="ttdoc">Retrieve the Control Type.</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00059">ControlData.h:59</a></div></div>
-<div class="ttc" id="aclass_hold_turret_position_html_a772fbf9dc4cdfef1c0d7ee7edbb49021"><div class="ttname"><a href="class_hold_turret_position.html#a772fbf9dc4cdfef1c0d7ee7edbb49021">HoldTurretPosition::AtTarget</a></div><div class="ttdeci">bool AtTarget() const override</div><div class="ttdef"><b>Definition:</b> <a href="_hold_turret_position_8cpp_source.html#l00038">HoldTurretPosition.cpp:38</a></div></div>
+<div class="ttc" id="a_mechanism_target_data_8h_html"><div class="ttname"><a href="_mechanism_target_data_8h.html">MechanismTargetData.h</a></div></div>
+<div class="ttc" id="aclass_mechanism_factory_html"><div class="ttname"><a href="class_mechanism_factory.html">MechanismFactory</a></div><div class="ttdoc">MechanismFactory.h.</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_factory_8h_source.html#l00060">MechanismFactory.h:60</a></div></div>
 <div class="ttc" id="a_hold_turret_position_8h_html"><div class="ttname"><a href="_hold_turret_position_8h.html">HoldTurretPosition.h</a></div></div>
-<div class="ttc" id="aclass_hold_turret_position_html_a448a6c4b0f6fdbc6f647bcaefa507b2a"><div class="ttname"><a href="class_hold_turret_position.html#a448a6c4b0f6fdbc6f647bcaefa507b2a">HoldTurretPosition::HoldTurretPosition</a></div><div class="ttdeci">HoldTurretPosition(ControlData *controlData)</div><div class="ttdef"><b>Definition:</b> <a href="_hold_turret_position_8cpp_source.html#l00014">HoldTurretPosition.cpp:14</a></div></div>
-<div class="ttc" id="aclass_mechanism_types_html_adad17689ea795c3d65e2062bdc09284ba678e7373d7e0e40324f61c1be89f986f"><div class="ttname"><a href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba678e7373d7e0e40324f61c1be89f986f">MechanismTypes::TURRET</a></div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_types_8h_source.html#l00039">MechanismTypes.h:39</a></div></div>
 <div class="ttc" id="a_turret_8h_html"><div class="ttname"><a href="_turret_8h.html">Turret.h</a></div></div>
-<div class="ttc" id="aclass_i_mechanism_html_abc72a6d0306a828de6f43418e75c04c0"><div class="ttname"><a href="class_i_mechanism.html#abc72a6d0306a828de6f43418e75c04c0">IMechanism::SetOutput</a></div><div class="ttdeci">virtual void SetOutput(ControlModes::CONTROL_TYPE controlType, double value)=0</div><div class="ttdoc">Run mechanism as defined.</div></div>
 <div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00022">ControlData.h:22</a></div></div>
-<div class="ttc" id="aclass_mechanism_factory_html_a11b20a573ca93c56cb5da66ac5cbd2c0"><div class="ttname"><a href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a></div><div class="ttdeci">static MechanismFactory * GetMechanismFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_factory_8cpp_source.html#l00071">MechanismFactory.cpp:71</a></div></div>
-<div class="ttc" id="aclass_hold_turret_position_html_a0ad48ec9fb424d6bc86471f097125f0a"><div class="ttname"><a href="class_hold_turret_position.html#a0ad48ec9fb424d6bc86471f097125f0a">HoldTurretPosition::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdef"><b>Definition:</b> <a href="_hold_turret_position_8cpp_source.html#l00022">HoldTurretPosition.cpp:22</a></div></div>
+<div class="ttc" id="aclass_mechanism_state_html"><div class="ttname"><a href="class_mechanism_state.html">MechanismState</a></div><div class="ttdoc">information about the control (open loop, closed loop position, closed loop velocity,...</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_state_8h_source.html#l00024">MechanismState.h:24</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

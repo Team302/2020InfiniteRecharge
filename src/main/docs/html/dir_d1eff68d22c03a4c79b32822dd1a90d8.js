@@ -1,5 +1,9 @@
 var dir_d1eff68d22c03a4c79b32822dd1a90d8 =
 [
+    [ "AutoShoot.cpp", "_auto_shoot_8cpp.html", null ],
+    [ "AutoShoot.h", "_auto_shoot_8h.html", [
+      [ "AutoShoot", "class_auto_shoot.html", "class_auto_shoot" ]
+    ] ],
     [ "DoNothing.cpp", "_do_nothing_8cpp.html", null ],
     [ "DoNothing.h", "_do_nothing_8h.html", [
       [ "DoNothing", "class_do_nothing.html", "class_do_nothing" ]

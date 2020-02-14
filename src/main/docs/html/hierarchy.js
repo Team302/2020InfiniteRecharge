@@ -102,6 +102,7 @@ var hierarchy =
     [ "ImpellerStateMgr", "class_impeller_state_mgr.html", null ],
     [ "IntakeStateMgr", "class_intake_state_mgr.html", null ],
     [ "IPrimitive", "class_i_primitive.html", [
+      [ "AutoShoot", "class_auto_shoot.html", null ],
       [ "DoNothing", "class_do_nothing.html", null ],
       [ "HoldPosition", "class_hold_position.html", null ],
       [ "SuperDrive", "class_super_drive.html", [
@@ -129,7 +130,6 @@ var hierarchy =
       [ "ControlPanelRaise", "class_control_panel_raise.html", null ],
       [ "ControlPanelStow", "class_control_panel_stow.html", null ],
       [ "ControlPanelTurn", "class_control_panel_turn.html", null ],
-      [ "HoldTurretPosition", "class_hold_turret_position.html", null ],
       [ "LimelightAim", "class_limelight_aim.html", null ],
       [ "ManualAim", "class_manual_aim.html", null ],
       [ "MechanismState", "class_mechanism_state.html", [
@@ -137,6 +137,9 @@ var hierarchy =
         [ "BallTransferToImpeller", "class_ball_transfer_to_impeller.html", null ],
         [ "BallTransferToShooter", "class_ball_transfer_to_shooter.html", null ],
         [ "ClimberHold", "class_climber_hold.html", null ],
+        [ "ClimberRaise", "class_climber_raise.html", null ],
+        [ "ClimberStowed", "class_climber_stowed.html", null ],
+        [ "HoldTurretPosition", "class_hold_turret_position.html", null ],
         [ "ImpellerAgitate", "class_impeller_agitate.html", null ],
         [ "ImpellerHold", "class_impeller_hold.html", null ],
         [ "ImpellerOff", "class_impeller_off.html", null ],
@@ -197,6 +200,7 @@ var hierarchy =
     [ "StateDataDefn", "class_state_data_defn.html", null ],
     [ "TalonTachDefn", "class_talon_tach_defn.html", null ],
     [ "TeleopControl", "class_teleop_control.html", null ],
+    [ "TestIntake", "class_test_intake.html", null ],
     [ "TimedRobot", null, [
       [ "Robot", "class_robot.html", null ]
     ] ],

@@ -13,6 +13,15 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
+/*====================================================================================================================================================
+*     File name: AutonShoot.cpp
+*       
+*     Task: Runs Intake, Impeller, Ball Transfer, Shooter Hood and Turret to shoot durring auton.
+*      
+====================================================================================================================================================*/
+
+
+
 // C++ Includes
 #include <memory>
 
@@ -23,8 +32,7 @@
 #include <auton/primitives/AutoShoot.h>
 #include <auton/PrimitiveParams.h>
 #include <subsys/Shooter.h>
-#include <controllers/shooterHood/ShooterHoodStateMgr.h>
-
+#include <controllers/BallManipulator.h>
 
 using namespace std;
 
@@ -33,37 +41,23 @@ using namespace std;
 AutoShoot::AutoShoot
 (
 
-):  m_shooterStateMgr(new ShooterStateMgr()),
-    m_ballTransferStateMgr(new BallTransferStateMgr()),
-    m_impellerStateMgr(new ImpellerStateMgr()),
-    m_turretStateMgr(new TurretStateMgr()),
-    m_shooterHoodStateMgr(new ShooterHoodStateMgr())
+):  m_ballManipulator(new BallManipulator())
 {
 
 }
 
 void AutoShoot::Init(PrimitiveParams* params)
 {
-    m_turretStateMgr->SetCurrentState(TurretStateMgr::TURRET_STATE::LIMELIGHT_AIM, true);
-    m_shooterStateMgr->SetCurrentState(ShooterStateMgr::SHOOTER_STATE::GET_READY, true);
-    m_shooterHoodStateMgr->SetCurrentState(ShooterHoodStateMgr::SHOOTER_HOOD_STATE::MOVE_UP, true);
- 
+    BallManipulator::BALL_MANIPULATOR_STATE ballManipulatorStates = params -> GetBallState();
+    m_ballManipulator -> SetCurrentState( ballManipulatorStates );
 }
 
 /// @brief run the primitive (periodic routine)
 /// @return void
 void AutoShoot::Run()
 {
-    m_ballTransferStateMgr->SetCurrentState(BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, true);
-    m_impellerStateMgr->SetCurrentState(ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, true);
-    bool shooterOn = params->IsShooterOn();
-    auto state = ShooterStateMgr::SHOOTER_STATE::SHOOT;
-    if (!shooterOn)
-    {
-        state = ShooterStateMgr::SHOOTER_STATE::OFF;
-    }
-    m_shooterStateMgr -> SetCurrentState(state, false);
-}
+    m_ballManipulator -> RunCurrentState();
+} 
 
 bool AutoShoot::IsDone()
 {

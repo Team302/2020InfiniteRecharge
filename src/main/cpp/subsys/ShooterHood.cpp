@@ -44,7 +44,7 @@ ShooterHood::ShooterHood
 ) : m_shmotor(shmotor),
     m_encoder( canCoder )
 { 
-      m_shmotor->SetRemoteSensor( canCoder->GetDeviceNumber(), RemoteSensorSource::RemoteSensorSource_CANCoder );
+      m_shmotor.get()->SetRemoteSensor( canCoder.get()->GetDeviceNumber(), RemoteSensorSource::RemoteSensorSource_CANCoder );
 } 
 /// @brief          Indicates the type of mechanism this is 
 /// @return         MechanismTypes::MECHANISM_TYPE 
@@ -102,4 +102,5 @@ void ShooterHood :: SetControlConstants
 ControlData*                                pid                  
 )  
 { 
+    m_shmotor.get()->SetControlConstants( pid );
 } 

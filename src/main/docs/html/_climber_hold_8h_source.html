@@ -98,31 +98,29 @@ $(document).ready(function(){initNavTree('_climber_hold_8h_source.html','');});
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_state_8h.html">controllers/MechanismState.h</a>&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_state_8h.html">controllers/IState.h</a>&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_target_data_8h.html">controllers/MechanismTargetData.h</a>&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_climber_hold.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_climber_hold.html">ClimberHold</a> : <span class="keyword">public</span> <a class="code" href="class_mechanism_state.html">MechanismState</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_climber_hold.html#a0fe8dbd507bc0426e1688603f0bffafa">ClimberHold</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_climber_hold.html#a0fe8dbd507bc0426e1688603f0bffafa">ClimberHold</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        (</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="class_control_data.html">ControlData</a>*                    control,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordtype">double</span>                          target,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a>   solState</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        );</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="class_climber_hold.html#a2e97886aafef87e6ab244ffb8e0fd864">~ClimberHold</a>() =<span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_target_data_8h.html">controllers/MechanismTargetData.h</a>&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_climber_hold.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_climber_hold.html">ClimberHold</a> : <span class="keyword">public</span> <a class="code" href="class_mechanism_state.html">MechanismState</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_climber_hold.html#a0fe8dbd507bc0426e1688603f0bffafa">ClimberHold</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_climber_hold.html#a0fe8dbd507bc0426e1688603f0bffafa">ClimberHold</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        (</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="class_control_data.html">ControlData</a>*                    control,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordtype">double</span>                          target,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a>   solState</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="class_climber_hold.html#a2e97886aafef87e6ab244ffb8e0fd864">~ClimberHold</a>() =<span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_climber_hold_html"><div class="ttname"><a href="class_climber_hold.html">ClimberHold</a></div><div class="ttdoc">ClimberHold.h.</div><div class="ttdef"><b>Definition:</b> <a href="_climber_hold_8h_source.html#l00030">ClimberHold.h:30</a></div></div>
+<div class="ttc" id="aclass_climber_hold_html"><div class="ttname"><a href="class_climber_hold.html">ClimberHold</a></div><div class="ttdoc">ClimberHold.h.</div><div class="ttdef"><b>Definition:</b> <a href="_climber_hold_8h_source.html#l00029">ClimberHold.h:29</a></div></div>
 <div class="ttc" id="aclass_mechanism_target_data_html_a1bd7dca52842f28088b36d001b0ac125"><div class="ttname"><a href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a></div><div class="ttdeci">SOLENOID</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_target_data_8h_source.html#l00025">MechanismTargetData.h:25</a></div></div>
 <div class="ttc" id="aclass_climber_hold_html_a0fe8dbd507bc0426e1688603f0bffafa"><div class="ttname"><a href="class_climber_hold.html#a0fe8dbd507bc0426e1688603f0bffafa">ClimberHold::ClimberHold</a></div><div class="ttdeci">ClimberHold()=delete</div></div>
 <div class="ttc" id="a_mechanism_state_8h_html"><div class="ttname"><a href="_mechanism_state_8h.html">MechanismState.h</a></div></div>
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
 <div class="ttc" id="a_mechanism_target_data_8h_html"><div class="ttname"><a href="_mechanism_target_data_8h.html">MechanismTargetData.h</a></div></div>
-<div class="ttc" id="a_i_state_8h_html"><div class="ttname"><a href="_i_state_8h.html">IState.h</a></div></div>
 <div class="ttc" id="aclass_climber_hold_html_a2e97886aafef87e6ab244ffb8e0fd864"><div class="ttname"><a href="class_climber_hold.html#a2e97886aafef87e6ab244ffb8e0fd864">ClimberHold::~ClimberHold</a></div><div class="ttdeci">~ClimberHold()=default</div></div>
 <div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00022">ControlData.h:22</a></div></div>
 <div class="ttc" id="aclass_mechanism_state_html"><div class="ttname"><a href="class_mechanism_state.html">MechanismState</a></div><div class="ttdoc">information about the control (open loop, closed loop position, closed loop velocity,...</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_state_8h_source.html#l00024">MechanismState.h:24</a></div></div>

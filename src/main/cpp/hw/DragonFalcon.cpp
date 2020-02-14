@@ -334,7 +334,50 @@ void DragonFalcon::SetControlConstants(ControlData* controlInfo)
     m_talon->Config_kI(0, controlInfo->GetI());
     m_talon->Config_kD(0, controlInfo->GetD());
     m_talon->Config_kF(0, controlInfo->GetF());
-}
+
+	auto accel = controlInfo->GetMaxAcceleration() / m_gearRatio;
+	auto vel = controlInfo->GetCruiseVelocity() / m_gearRatio;
+	switch ( controlInfo->GetMode() )
+	{
+		case ControlModes::CONTROL_TYPE::POSITION_DEGREES:
+			accel = ConversionUtils::DegreesPerSecondToCounts100ms( accel, m_countsPerRev ); // todo this is velocity need accel
+			vel = ConversionUtils::DegreesPerSecondToCounts100ms( vel, m_countsPerRev );
+			break;
+
+		case ControlModes::CONTROL_TYPE::POSITION_INCH:
+			accel = ConversionUtils::InchesPerSecondToCounts100ms( accel, m_countsPerRev, m_diameter ); // todo this is velocity need accel
+			vel = ConversionUtils::InchesPerSecondToCounts100ms( vel, m_countsPerRev, m_diameter );
+			break;
+
+		case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
+			accel = ConversionUtils::DegreesPerSecondToCounts100ms( accel, m_countsPerRev ); // todo this is velocity need accel
+			vel = ConversionUtils::DegreesPerSecondToCounts100ms( vel, m_countsPerRev );
+			break;
+
+		case ControlModes::CONTROL_TYPE::VELOCITY_INCH:
+			accel = ConversionUtils::InchesPerSecondToCounts100ms( accel, m_countsPerRev, m_diameter ); // todo this is velocity need accel
+			vel = ConversionUtils::InchesPerSecondToCounts100ms( vel, m_countsPerRev, m_diameter );
+			break;
+
+		case ControlModes::CONTROL_TYPE::VELOCITY_RPS:
+			accel = ConversionUtils::RPSToCounts100ms( accel, m_countsPerRev ); // todo this is velocity need accel
+			vel = ConversionUtils::RPSToCounts100ms( vel, m_countsPerRev );
+			break;
+
+		default:
+			break;
+
+	}
+	m_talon->ConfigMotionAcceleration( accel );
+	m_talon->ConfigMotionCruiseVelocity( vel, 0);
+
+	auto peak = controlInfo->GetPeakValue();
+	m_talon->ConfigPeakOutputForward(peak);
+	m_talon->ConfigPeakOutputReverse(-1.0*peak);
+
+	auto nom = controlInfo->GetNominalValue();
+	m_talon->ConfigPeakOutputForward(nom);
+	m_talon->ConfigPeakOutputReverse(-1.0*nom);}
 
 void DragonFalcon::SetForwardLimitSwitch
 ( 

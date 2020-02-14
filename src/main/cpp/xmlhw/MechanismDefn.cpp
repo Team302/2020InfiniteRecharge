@@ -204,7 +204,7 @@ IMechanism* MechanismDefn::ParseXML
                 solenoids[sol.get()->GetType()] = sol;
             }
         }
-        else if ( strcmp( child.name(), "canCoder" ) )
+        else if ( strcmp( child.name(), "canCoder" ) == 0)
         {
             canCoder = cancoderXML.get()->ParseXML(child);
         }

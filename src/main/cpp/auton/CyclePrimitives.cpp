@@ -29,7 +29,8 @@ CyclePrimitives::CyclePrimitives() : m_primParams(),
 									 m_doNothing(nullptr), 
 									 m_autonSelector( new AutonSelector()) ,
 									 m_timer( make_unique<Timer>()),
-									 m_maxTime( 0.0 )
+									 m_maxTime( 0.0 ),
+									 m_powerCells( new AutoShoot() )
 {
 }
 
@@ -51,6 +52,7 @@ void CyclePrimitives::RunCurrentPrimitive()
 	if (m_currentPrim != nullptr)
 	{
 		m_currentPrim->Run();
+		m_powerCells->Run();
 		// todo: run gamepiece manipulator primitives in parallel here
 		if (m_currentPrim->IsDone() )
 		{
@@ -79,6 +81,7 @@ void CyclePrimitives::GetNextPrim()
 	if (m_currentPrim != nullptr)
 	{
 		m_currentPrim->Init(currentPrimParam);
+		m_powerCells->Init(currentPrimParam);
 		m_maxTime = currentPrimParam->GetTime();
 		m_timer->Reset();
 		m_timer->Start();
@@ -90,7 +93,8 @@ void CyclePrimitives::GetNextPrim()
 void CyclePrimitives::RunDoNothing()
 {
 	if (m_doNothing == nullptr)
-	{
+	{	
+		BallManipulator::BALL_MANIPULATOR_STATE state = BallManipulator::BALL_MANIPULATOR_STATE::HOLD;
 		auto params = new PrimitiveParams( DO_NOTHING,          // identifier
 		                                   100000.0,            // time
 		                                   0.0,                 // distance
@@ -98,10 +102,12 @@ void CyclePrimitives::RunDoNothing()
 		                                   0.0,                 // target y location
 		                                   0.0,                 // heading
 		                                   0.0,                 // start drive speed
-		                                   0.0                  // end drive speed
+		                                   0.0,					// end drive speed
+										   state                  
 										   );             
 		m_doNothing = m_primFactory->GetIPrimitive(params);
 		m_doNothing->Init(params);
+		m_powerCells->Init(params);
 	}
 	m_doNothing->Run();
 }

@@ -135,7 +135,7 @@ void Intake::SetControlConstants
     ControlData*                                pid                 
 )
 {
-    Logger::GetLogger()->LogError(string("Intake::SetControlConstants"), string("Called"));
+    m_master.get()->SetControlConstants( pid );
 }
 
 
