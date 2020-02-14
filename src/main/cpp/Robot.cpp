@@ -41,6 +41,9 @@
 #include <test/BallTransferStateMgrTest.h>
 #include <test/ShooterStateMgrTest.h>
 #include <ctre/Phoenix.h>
+#include <subsys/MechanismFactory.h>
+#include <subsys/MechanismTypes.h>
+#include <frc/smartdashboard/SmartDashboard.h>
 
 using namespace std;
 using namespace frc;
@@ -144,6 +147,8 @@ void Robot::TeleopPeriodic()
    m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
+    double speed = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER)->GetCurrentSpeed();
+    frc::SmartDashboard::PutNumber("Shooter speed", speed);
     
 }
 

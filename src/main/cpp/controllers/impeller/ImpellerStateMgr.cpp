@@ -130,20 +130,20 @@ void ImpellerStateMgr::RunCurrentState()
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_TO_SHOOTER ) && m_currentStateEnum != IMPELLER_STATE::TO_SHOOTER)
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_TO_SHOOTER ))
         {
             SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
         }
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_OFF ) && m_currentStateEnum != IMPELLER_STATE::OFF)
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_OFF ))
         {
             SetCurrentState( IMPELLER_STATE::OFF, false );
         }
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_AGITATE  ) && m_currentStateEnum != IMPELLER_STATE::AGITATE)
+        /*if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_AGITATE  ) && m_currentStateEnum != IMPELLER_STATE::AGITATE)
         {
             SetCurrentState( IMPELLER_STATE::AGITATE, false );
-        }
+        }*/
         
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_HOLD ) && m_currentStateEnum != IMPELLER_STATE::HOLD )
+        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_HOLD ))
         {
             SetCurrentState( IMPELLER_STATE::HOLD, false );
         }

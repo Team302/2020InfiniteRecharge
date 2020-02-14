@@ -306,7 +306,7 @@ void DragonTalon::SetAsSlave
 /// @return void
 void DragonTalon::SetControlConstants(ControlData* controlInfo)
 {
-	
+
 	m_talon->Config_kP(0, controlInfo->GetP());
     m_talon->Config_kI(0, controlInfo->GetI());
     m_talon->Config_kD(0, controlInfo->GetD());
