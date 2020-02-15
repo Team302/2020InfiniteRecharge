@@ -57,12 +57,13 @@ var NAVTREEINDEX =
 "_analog_axis_8cpp.html",
 "_dragon_position_sensor_8h.html",
 "_mechanism_factory_8h_source.html",
-"class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eabaef60a8f685327d5ca24c8b533de985",
-"class_control_panel_state_mgr.html#a87648a2688942ba2bbbaee7adb895c3aa90d95de39ad1304bfe701f02b3bfb243",
-"class_dragon_talon.html#a443cf82313c085b34dd35dedd86f21a9",
-"class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29acf1136017414251bc229ca2c2a747792",
-"class_logger.html#a81e0fa4eef4a980adb91577eac4bdebd",
-"class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7adbcdbd5832c8a77f81482ceeceda4f19"
+"class_analog_input_factory.html#ac9f6a5f11eb78aea303f29c084d9a4d0",
+"class_control_panel_state_mgr.html#a87648a2688942ba2bbbaee7adb895c3aa042a3e50fa0a28bc25b7064a4a61a69e",
+"class_dragon_talon.html#a418dee044c4b4b81492517ff06a1af19",
+"class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29ab9e2c5ce44e11958de5f894268c2bcc7",
+"class_logger.html#a4edb2ae414fe730aa45c9279c07f013aa30505ac45161ab12db3907e4236a7417",
+"class_solenoid_defn.html#a982ef38f8450833069b8d901cb7374a9",
+"globals_func.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

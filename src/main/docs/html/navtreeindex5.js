@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"class_dragon_talon.html#a418dee044c4b4b81492517ff06a1af19":[1,0,65,0],
+"class_dragon_talon.html#a435a83d26e7172119be05221610cb0ed":[1,0,65,6],
 "class_dragon_talon.html#a443cf82313c085b34dd35dedd86f21a9":[1,0,65,23],
 "class_dragon_talon.html#a484839978348bdad345043d469f7f744":[1,0,65,7],
 "class_dragon_talon.html#a50cab200ce935067feed69d862f48156":[1,0,65,26],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a9cfa3827180b055a7c1e01ef8ad99d84":[1,0,92,3,10],
 "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29aa71c9e42d1b8a13b8d2b0511098c0efe":[1,0,92,3,25],
 "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29aadf965f98331089bcd7cfea300b4bf61":[1,0,92,3,7],
-"class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29ab74a93048c6bbac440696a26eb242023":[1,0,92,3,4],
-"class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29ab9e2c5ce44e11958de5f894268c2bcc7":[1,0,92,3,9],
-"class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29abcb358b0b55426562b3586cc09012cb6":[1,0,92,3,47]
+"class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29ab74a93048c6bbac440696a26eb242023":[1,0,92,3,4]
 };

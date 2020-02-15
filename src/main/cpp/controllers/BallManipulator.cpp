@@ -37,6 +37,17 @@
 
 using namespace std;
 
+BallManipulator* BallManipulator::m_instance = nullptr;
+BallManipulator* BallManipulator::GetInstance()
+{
+	if ( BallManipulator::m_instance == nullptr )
+	{
+		BallManipulator::m_instance = new BallManipulator();
+	}
+	return BallManipulator::m_instance;
+}
+
+
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 BallManipulator::BallManipulator() : m_currentState( BALL_MANIPULATOR_STATE::OFF),
                                      m_intake( new IntakeStateMgr() ),

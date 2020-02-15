@@ -170,100 +170,101 @@ $(document).ready(function(){initNavTree('_teleop_control_8h_source.html','');})
 <div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ae5512346ac69a346a67665dc80da2a4f">   79</a></span>&#160;            <a class="code" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ae5512346ac69a346a67665dc80da2a4f">SHOOTER_HOOD_MANUAL_BUTTON</a>,</div>
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9680ce9fd26c12c8165de81d6776169b">   80</a></span>&#160;            <a class="code" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9680ce9fd26c12c8165de81d6776169b">SHOOTER_HOOD_MANUAL_AXIS</a>,</div>
 <div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3334c47ae393f925dd35b13c7211060b">   81</a></span>&#160;            <a class="code" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3334c47ae393f925dd35b13c7211060b">TURRET_MANUAL_AXIS</a>,</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af0a71fc177d1cdf5d455aa154441aafb">   82</a></span>&#160;            MAX_FUNCTIONS</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        };</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aee3ff24a2c4157913cb76ec8cf859b23">   82</a></span>&#160;            <a class="code" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aee3ff24a2c4157913cb76ec8cf859b23">TURRET_MANUAL_BUTTON</a>,</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af0a71fc177d1cdf5d455aa154441aafb">   83</a></span>&#160;            MAX_FUNCTIONS</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        };</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">// Method:      GetInstance</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// Description: If there isn&#39;t an instance of this class, it will create one.  The</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">//              single class instance will be returned.</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// Returns:     OperatorInterface*  instance of this class</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_teleop_control.html">TeleopControl</a>* GetInstance();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// Method:      GetInstance</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// Description: If there isn&#39;t an instance of this class, it will create one.  The</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">//              single class instance will be returned.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// Returns:     OperatorInterface*  instance of this class</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_teleop_control.html">TeleopControl</a>* GetInstance();</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// Method:      SetScaleFactor</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">// Description: Allow the range of values to be set smaller than</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment">//              -1.0 to 1.0.  By providing a scale factor between 0.0</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">//              and 1.0, the range can be made smaller.  If a value</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">//              outside the range is provided, then the value will</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">//              be set to the closest bounding value (e.g. 1.5 will</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">//              become 1.0)</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">// Returns:     void</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">void</span> SetAxisScaleFactor</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        (</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15">TeleopControl::FUNCTION_IDENTIFIER</a>  axis,          <span class="comment">// &lt;I&gt; - axis number to update</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordtype">float</span>                               scaleFactor    <span class="comment">// &lt;I&gt; - scale factor used to limit the range</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        );</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="comment">// Method:      SetAxisProfile</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="comment">// Description: Sets the axis profile for the specifed axis</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">// Returns:     void</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordtype">void</span> SetAxisProfile</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        (</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15">TeleopControl::FUNCTION_IDENTIFIER</a>      axis,       <span class="comment">// &lt;I&gt; - axis number to update</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676">IDragonGamePad::AXIS_PROFILE</a>            profile     <span class="comment">// &lt;I&gt; - profile to use</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        );</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="comment">// Method:      GetAxisValue</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">// Description: Reads the joystick axis, removes any deadband (small</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="comment">//              value) and then scales as requested.</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment">// Returns:     float   -  scaled axis value</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">float</span> GetAxisValue</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        (</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15">TeleopControl::FUNCTION_IDENTIFIER</a>     axis <span class="comment">// &lt;I&gt; - axis number to update</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="comment">// Method:      GetRawButton</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="comment">// Description: Reads the button value.  Also allows POV, bumpers,</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">//              and triggers to be treated as buttons.</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="comment">// Returns:     bool   -  scaled axis value</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordtype">bool</span> IsButtonPressed</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        (</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <a class="code" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15">TeleopControl::FUNCTION_IDENTIFIER</a> button   <span class="comment">// &lt;I&gt; - button number to query</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">// Method:      SetScaleFactor</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment">// Description: Allow the range of values to be set smaller than</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">//              -1.0 to 1.0.  By providing a scale factor between 0.0</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">//              and 1.0, the range can be made smaller.  If a value</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">//              outside the range is provided, then the value will</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">//              be set to the closest bounding value (e.g. 1.5 will</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">//              become 1.0)</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">// Returns:     void</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">void</span> SetAxisScaleFactor</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        (</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15">TeleopControl::FUNCTION_IDENTIFIER</a>  axis,          <span class="comment">// &lt;I&gt; - axis number to update</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordtype">float</span>                               scaleFactor    <span class="comment">// &lt;I&gt; - scale factor used to limit the range</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="comment">// Method:      SetAxisProfile</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">// Description: Sets the axis profile for the specifed axis</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment">// Returns:     void</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">void</span> SetAxisProfile</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        (</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <a class="code" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15">TeleopControl::FUNCTION_IDENTIFIER</a>      axis,       <span class="comment">// &lt;I&gt; - axis number to update</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676">IDragonGamePad::AXIS_PROFILE</a>            profile     <span class="comment">// &lt;I&gt; - profile to use</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        );</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">// Method:      GetAxisValue</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="comment">// Description: Reads the joystick axis, removes any deadband (small</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment">//              value) and then scales as requested.</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="comment">// Returns:     float   -  scaled axis value</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">float</span> GetAxisValue</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        (</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <a class="code" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15">TeleopControl::FUNCTION_IDENTIFIER</a>     axis <span class="comment">// &lt;I&gt; - axis number to update</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="comment">// Method:      GetRawButton</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">// Description: Reads the button value.  Also allows POV, bumpers,</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="comment">//              and triggers to be treated as buttons.</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="comment">// Returns:     bool   -  scaled axis value</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="comment">//------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">bool</span> IsButtonPressed</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        (</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <a class="code" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15">TeleopControl::FUNCTION_IDENTIFIER</a> button   <span class="comment">// &lt;I&gt; - button number to query</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        ) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="comment">// Method:      OperatorInterface &lt;&lt;constructor&gt;&gt;</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="comment">// Description: This will construct and initialize the object</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="class_teleop_control.html">TeleopControl</a>();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">// Method:      ~OperatorInterface &lt;&lt;destructor&gt;&gt;</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="comment">// Description: This will clean up the object</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="class_teleop_control.html">TeleopControl</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="comment">// Attributes</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_teleop_control.html">TeleopControl</a>*               m_instance; <span class="comment">// Singleton instance of this class</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        std::map&lt;FUNCTION_IDENTIFIER, IDragonGamePad::AXIS_IDENTIFIER&gt; m_axisMap;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        std::map&lt;FUNCTION_IDENTIFIER, IDragonGamePad::BUTTON_IDENTIFIER&gt; m_buttonMap;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        std::map&lt;FUNCTION_IDENTIFIER, int&gt; m_controllerMap;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        std::vector&lt;IDragonGamePad::AXIS_IDENTIFIER&gt;     m_axisIDs;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        std::vector&lt;IDragonGamePad::BUTTON_IDENTIFIER&gt;   m_buttonIDs;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        std::vector&lt;int&gt;                                 m_controllerIndex;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="class_i_dragon_game_pad.html">IDragonGamePad</a>*                     m_controllers[DriverStation::kJoystickPorts];</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keyword">mutable</span> <span class="keywordtype">int</span>                         m_count;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;};</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="comment">// Method:      OperatorInterface &lt;&lt;constructor&gt;&gt;</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">// Description: This will construct and initialize the object</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="class_teleop_control.html">TeleopControl</a>();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="comment">// Method:      ~OperatorInterface &lt;&lt;destructor&gt;&gt;</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="comment">// Description: This will clean up the object</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="class_teleop_control.html">TeleopControl</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="comment">// Attributes</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="comment">//----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keyword">static</span> <a class="code" href="class_teleop_control.html">TeleopControl</a>*               m_instance; <span class="comment">// Singleton instance of this class</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        std::map&lt;FUNCTION_IDENTIFIER, IDragonGamePad::AXIS_IDENTIFIER&gt; m_axisMap;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        std::map&lt;FUNCTION_IDENTIFIER, IDragonGamePad::BUTTON_IDENTIFIER&gt; m_buttonMap;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        std::map&lt;FUNCTION_IDENTIFIER, int&gt; m_controllerMap;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        std::vector&lt;IDragonGamePad::AXIS_IDENTIFIER&gt;     m_axisIDs;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        std::vector&lt;IDragonGamePad::BUTTON_IDENTIFIER&gt;   m_buttonIDs;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        std::vector&lt;int&gt;                                 m_controllerIndex;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="class_i_dragon_game_pad.html">IDragonGamePad</a>*                     m_controllers[DriverStation::kJoystickPorts];</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">mutable</span> <span class="keywordtype">int</span>                         m_count;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;};</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_teleop_control_html_a7d4c2a365d8eaf21214611064c8a3a15ad063756c98ae194e4e99c62e5b448ccf"><div class="ttname"><a href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ad063756c98ae194e4e99c62e5b448ccf">TeleopControl::BALL_TRANSFER_OFF</a></div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8h_source.html#l00062">TeleopControl.h:62</a></div></div>
@@ -293,6 +294,7 @@ $(document).ready(function(){initNavTree('_teleop_control_8h_source.html','');})
 <div class="ttc" id="aclass_teleop_control_html_a7d4c2a365d8eaf21214611064c8a3a15add49360d0a6d3a94231826b1512d44d1"><div class="ttname"><a href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15add49360d0a6d3a94231826b1512d44d1">TeleopControl::SHOOTER_HOOD_HOLD_POSITION</a></div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8h_source.html#l00078">TeleopControl.h:78</a></div></div>
 <div class="ttc" id="aclass_teleop_control_html_a7d4c2a365d8eaf21214611064c8a3a15a0615864c245df31bc3fd5f15fb12bbff"><div class="ttname"><a href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a0615864c245df31bc3fd5f15fb12bbff">TeleopControl::SHOOTER_OFF</a></div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8h_source.html#l00070">TeleopControl.h:70</a></div></div>
 <div class="ttc" id="aclass_teleop_control_html_a7d4c2a365d8eaf21214611064c8a3a15a3f87a76a9481d0207d162cd0bc406808"><div class="ttname"><a href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3f87a76a9481d0207d162cd0bc406808">TeleopControl::IMPELLER_HOLD</a></div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8h_source.html#l00057">TeleopControl.h:57</a></div></div>
+<div class="ttc" id="aclass_teleop_control_html_a7d4c2a365d8eaf21214611064c8a3a15aee3ff24a2c4157913cb76ec8cf859b23"><div class="ttname"><a href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aee3ff24a2c4157913cb76ec8cf859b23">TeleopControl::TURRET_MANUAL_BUTTON</a></div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8h_source.html#l00082">TeleopControl.h:82</a></div></div>
 <div class="ttc" id="aclass_teleop_control_html_a7d4c2a365d8eaf21214611064c8a3a15a0cad4007d5102d00d8813cf219bbe7b3"><div class="ttname"><a href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a0cad4007d5102d00d8813cf219bbe7b3">TeleopControl::INTAKE_OFF</a></div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8h_source.html#l00061">TeleopControl.h:61</a></div></div>
 <div class="ttc" id="aclass_teleop_control_html_a7d4c2a365d8eaf21214611064c8a3a15a60923c0845183221f8fde7da02f923e1"><div class="ttname"><a href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a60923c0845183221f8fde7da02f923e1">TeleopControl::INTAKE_ON</a></div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8h_source.html#l00060">TeleopControl.h:60</a></div></div>
 <div class="ttc" id="aclass_teleop_control_html_a7d4c2a365d8eaf21214611064c8a3a15aec5ac581259bea31dbdfcf11f44ee5c5"><div class="ttname"><a href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aec5ac581259bea31dbdfcf11f44ee5c5">TeleopControl::CONTROL_PANEL_SPIN_WHEEL</a></div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8h_source.html#l00073">TeleopControl.h:73</a></div></div>

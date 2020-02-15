@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"class_analog_input_factory.html#ac9f6a5f11eb78aea303f29c084d9a4d0":[1,0,3,0],
+"class_analog_input_usage.html":[1,0,4],
+"class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3e":[1,0,4,0],
+"class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3ea9729ca78d0d8bfa204899b1496c74167":[1,0,4,0,1],
 "class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eabaef60a8f685327d5ca24c8b533de985":[1,0,4,0,2],
 "class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eadd180056c5da0e5191d4b1dc044e3e5d":[1,0,4,0,0],
 "class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eae7622fb6eb6147bbe49ab9caf7533f27":[1,0,4,0,3],
@@ -34,9 +38,7 @@ var NAVTREEINDEX3 =
 "class_auton_selector.html#a9fa26e20a353c431eb637736b620319a":[1,0,6,2],
 "class_auton_selector.html#aa3ce88e9281070ee93d9437cb80b1ce1":[1,0,6,4],
 "class_ball_manipulator.html":[1,0,8],
-"class_ball_manipulator.html#a02e472b75522b7c08d127f29339047e2":[1,0,8,1],
-"class_ball_manipulator.html#a565ef49322a8a72a7cc72ae3b19ff4a8":[1,0,8,4],
-"class_ball_manipulator.html#a66ec09daa2384e4aa1f7d587404ae9ac":[1,0,8,2],
+"class_ball_manipulator.html#a565ef49322a8a72a7cc72ae3b19ff4a8":[1,0,8,2],
 "class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4":[1,0,8,0],
 "class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4a01c99115b3dc9fabf0d04543463096d1":[1,0,8,0,3],
 "class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4a4fe671d573281a8407473c5b13187199":[1,0,8,0,2],
@@ -45,8 +47,8 @@ var NAVTREEINDEX3 =
 "class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4ae6cb18d77fbcf82d85b25eaaa5d25b24":[1,0,8,0,1],
 "class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4ae9ace1e42c309a9b41cd54a33eac40f3":[1,0,8,0,0],
 "class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4aea96e42a3f8fe443ff14633c93543d16":[1,0,8,0,4],
-"class_ball_manipulator.html#ac6b06504ca8077c1b533895b2793e5a1":[1,0,8,5],
-"class_ball_manipulator.html#af24249d8efa5c38ef042178da0e40f29":[1,0,8,3],
+"class_ball_manipulator.html#ac6b06504ca8077c1b533895b2793e5a1":[1,0,8,3],
+"class_ball_manipulator.html#af24249d8efa5c38ef042178da0e40f29":[1,0,8,1],
 "class_ball_transfer.html":[1,0,9],
 "class_ball_transfer.html#a0e9e704cbc3fcb207b7377c3356487c3":[1,0,9,4],
 "class_ball_transfer.html#a439eba26f6912a85ac05fce629fb6b1c":[1,0,9,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "class_control_panel_state_mgr.html#a1e3c91c110f9fe2251f35dbd23d29220":[1,0,37,4],
 "class_control_panel_state_mgr.html#a31133fcec10aec96a451555e40e41658":[1,0,37,5],
 "class_control_panel_state_mgr.html#a6e7cb68402b7ded430ffe2b0806bdb55":[1,0,37,3],
-"class_control_panel_state_mgr.html#a87648a2688942ba2bbbaee7adb895c3a":[1,0,37,0],
-"class_control_panel_state_mgr.html#a87648a2688942ba2bbbaee7adb895c3aa042a3e50fa0a28bc25b7064a4a61a69e":[1,0,37,0,0],
-"class_control_panel_state_mgr.html#a87648a2688942ba2bbbaee7adb895c3aa1f12f7ab1e60bf0b294926174855063d":[1,0,37,0,4]
+"class_control_panel_state_mgr.html#a87648a2688942ba2bbbaee7adb895c3a":[1,0,37,0]
 };

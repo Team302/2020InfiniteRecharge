@@ -46,8 +46,9 @@ class BallManipulator
             MAX_BALL_MANIPULATOR_STATES
         };
 
-        BallManipulator();
-        ~BallManipulator() = default;
+		/// @brief  Find or create the Ball Manipulator
+		/// @return AnalogInputFactory* pointer to the factory
+		static BallManipulator* GetInstance();
 
 
         /// @brief  run the current state
@@ -67,6 +68,12 @@ class BallManipulator
         inline BALL_MANIPULATOR_STATE GetCurrentState() const { return m_currentState; };
 
     private:
+
+        BallManipulator();
+        ~BallManipulator() = default;
+		static BallManipulator*	m_instance;
+
+
         BALL_MANIPULATOR_STATE      m_currentState;
         IntakeStateMgr*             m_intake;
         ImpellerStateMgr*           m_impeller;

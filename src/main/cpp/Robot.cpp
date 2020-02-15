@@ -68,7 +68,7 @@ void Robot::RobotInit()
 
     m_chassisStateMgr = new ChassisStateMgr();
     //m_intake = new IntakeStateMgr();
-    m_powerCells = new BallManipulator();
+    m_powerCells = BallManipulator::GetInstance();
     //m_shooterHood = new TalonSRX(4);
     //m_turret = new TalonSRX(5);
     m_impeller = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::IMPELLER);

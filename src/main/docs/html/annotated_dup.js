@@ -159,6 +159,7 @@ var annotated_dup =
     [ "ShooterHoodMoveUp", "class_shooter_hood_move_up.html", "class_shooter_hood_move_up" ],
     [ "ShooterHoodStateMgr", "class_shooter_hood_state_mgr.html", "class_shooter_hood_state_mgr" ],
     [ "ShooterOff", "class_shooter_off.html", "class_shooter_off" ],
+    [ "ShooterSaveState", "class_shooter_save_state.html", "class_shooter_save_state" ],
     [ "ShooterShoot", "class_shooter_shoot.html", "class_shooter_shoot" ],
     [ "ShooterStateMgr", "class_shooter_state_mgr.html", "class_shooter_state_mgr" ],
     [ "ShooterStateMgrTest", "class_shooter_state_mgr_test.html", "class_shooter_state_mgr_test" ],

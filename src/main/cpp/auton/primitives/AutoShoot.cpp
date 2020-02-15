@@ -41,7 +41,7 @@ using namespace std;
 AutoShoot::AutoShoot
 (
 
-):  m_ballManipulator(new BallManipulator())
+):  m_ballManipulator( BallManipulator::GetInstance())
 {
 
 }

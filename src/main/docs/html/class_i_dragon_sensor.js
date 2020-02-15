@@ -2,6 +2,7 @@ var class_i_dragon_sensor =
 [
     [ "SENSOR_USAGE", "class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9", [
       [ "UNKNOWN_SENSOR", "class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9aa96ab0d2414159647879dfb522c7415d", null ],
+      [ "MAIN_LIMELIGHT", "class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9a2dc0986d1a2867bbc7d8e92d0c704db3", null ],
       [ "FORWARD_SENSOR", "class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9af1c618e0eb4f3b102dcab19d971be852", null ],
       [ "REARWARD_SENSOR", "class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9a795d5fd6a2cf04238e4ad9f5834f0efe", null ],
       [ "MAX_SENSORS", "class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9a32fc08369675005db967d48ee0fcca4b", null ]

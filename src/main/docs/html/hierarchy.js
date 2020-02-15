@@ -156,6 +156,7 @@ var hierarchy =
         [ "ShooterShoot", "class_shooter_shoot.html", null ]
       ] ],
       [ "ShooterHoodManual", "class_shooter_hood_manual.html", null ],
+      [ "ShooterSaveState", "class_shooter_save_state.html", null ],
       [ "TankDrive", "class_tank_drive.html", null ]
     ] ],
     [ "IStateTest", "class_i_state_test.html", [

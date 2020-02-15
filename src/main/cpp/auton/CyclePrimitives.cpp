@@ -12,6 +12,7 @@
 #include <frc/SmartDashboard/SmartDashboard.h>
 #include <auton/PrimitiveParser.h>
 #include <auton/PrimitiveParams.h>
+#include <controllers/BallManipulator.h>
 
 #include <string>
 #include <memory>

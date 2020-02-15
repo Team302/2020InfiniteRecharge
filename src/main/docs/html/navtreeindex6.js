@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29ab9e2c5ce44e11958de5f894268c2bcc7":[1,0,92,3,9],
+"class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29abcb358b0b55426562b3586cc09012cb6":[1,0,92,3,47],
 "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29acf1136017414251bc229ca2c2a747792":[1,0,92,3,21],
 "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29acfd29830cf152743137623f3f5defe84":[1,0,92,3,6],
 "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29ad17203bf93c78af4a34cc36b7ae04b08":[1,0,92,3,26],
@@ -73,10 +75,11 @@ var NAVTREEINDEX6 =
 "class_i_dragon_sensor.html#a2bdc48d7becd14702bef6447e9110954":[1,0,94,2],
 "class_i_dragon_sensor.html#a3040df89bae5da661a21d71c1df4ccb4":[1,0,94,4],
 "class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9":[1,0,94,0],
-"class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9a32fc08369675005db967d48ee0fcca4b":[1,0,94,0,3],
-"class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9a795d5fd6a2cf04238e4ad9f5834f0efe":[1,0,94,0,2],
+"class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9a2dc0986d1a2867bbc7d8e92d0c704db3":[1,0,94,0,1],
+"class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9a32fc08369675005db967d48ee0fcca4b":[1,0,94,0,4],
+"class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9a795d5fd6a2cf04238e4ad9f5834f0efe":[1,0,94,0,3],
 "class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9aa96ab0d2414159647879dfb522c7415d":[1,0,94,0,0],
-"class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9af1c618e0eb4f3b102dcab19d971be852":[1,0,94,0,1],
+"class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9af1c618e0eb4f3b102dcab19d971be852":[1,0,94,0,2],
 "class_i_dragon_sensor.html#ad5b217a4a40900db84330324383d89c7":[1,0,94,1],
 "class_i_mech_controller.html":[1,0,96],
 "class_i_mech_controller.html#a146e04000c38f5a657ff3633e9c9cf4e":[1,0,96,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX6 =
 "class_linear_profile.html#a8d90a7f74b2fc213ee0b07f6e621a519":[1,0,122,0],
 "class_logger.html":[1,0,123],
 "class_logger.html#a258aeb4010abaae86c40b35d6cceed5e":[1,0,123,3],
-"class_logger.html#a4edb2ae414fe730aa45c9279c07f013a":[1,0,123,0],
-"class_logger.html#a4edb2ae414fe730aa45c9279c07f013aa30505ac45161ab12db3907e4236a7417":[1,0,123,0,1],
-"class_logger.html#a4edb2ae414fe730aa45c9279c07f013aa79d5b0f7ae29658e8a44668f40fb59be":[1,0,123,0,2],
-"class_logger.html#a4edb2ae414fe730aa45c9279c07f013aacbcdf0940aae87a9c60c0c310aaf0836":[1,0,123,0,0]
+"class_logger.html#a4edb2ae414fe730aa45c9279c07f013a":[1,0,123,0]
 };
