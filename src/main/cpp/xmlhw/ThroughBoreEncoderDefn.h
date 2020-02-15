@@ -1,15 +1,18 @@
 #pragma once
 
+#include <memory>
 #include <pugixml/pugixml.hpp>
+#include <rev/CANEncoder.h>
+using namespace std;
 
-class ThroughBorerEncoderDefn
+class ThroughBoreEncoderDefn
 {
-    ThroughBorerEncoderDefn() = default;
+    ThroughBoreEncoderDefn() = default;
 
-    virtual ~ThroughBorerEncoderDefn() = default;
-    void ThroughBorerEncoderDefn::ParseXML
+    virtual ~ThroughBoreEncoderDefn() = default;
+    std::shared_ptr<rev::CANEncoder> ParseXML
     (
-        pugi::xml_node throughBorerEncoderNode
+        pugi::xml_node throughBoreEncoderNode
     );
 
 };
