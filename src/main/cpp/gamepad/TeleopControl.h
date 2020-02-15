@@ -79,6 +79,7 @@ class TeleopControl
             SHOOTER_HOOD_MANUAL_BUTTON,
             SHOOTER_HOOD_MANUAL_AXIS,
             TURRET_MANUAL_AXIS,
+            TURRET_MANUAL_BUTTON,
             MAX_FUNCTIONS
         };
 

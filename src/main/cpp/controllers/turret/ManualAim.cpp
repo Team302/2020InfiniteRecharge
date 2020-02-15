@@ -25,7 +25,7 @@ void ManualAim::Init()
 
 void ManualAim::Run()
 {
-    m_turret->SetOutput(m_controlData->GetMode(), TeleopControl::GetInstance()->GetAxisValue(TeleopControl::SHOOTER_MANUAL_AIM) * 45.0); //scaled to a percentage of a 45 degree turn
+    m_turret->SetOutput(m_controlData->GetMode(), TeleopControl::GetInstance()->GetAxisValue(TeleopControl::SHOOTER_MANUAL_AIM) * 5.0); //scaled to a percentage of a 45 degree turn
     m_atTarget = true;
 }
 

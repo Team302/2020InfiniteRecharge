@@ -51,6 +51,7 @@
 #include <test/ShooterStateMgrTest.h>
 #include <ctre/Phoenix.h>
 #include <gamepad/TeleopControl.h>
+#include <subsys/IMechanism.h>
 
 // third party includes
 
@@ -91,6 +92,8 @@ class Robot : public frc::TimedRobot
       TalonSRX* m_shooterHood;
       TalonSRX* m_turret;
       TeleopControl* m_controller;
+      IMechanism* m_impeller;
+      IMechanism* m_shooter;
 
       frc::SendableChooser<std::string>   m_testChooser;                    
       const std::string                   m_noTest = "No Test";      

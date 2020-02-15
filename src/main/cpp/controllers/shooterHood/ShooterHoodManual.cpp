@@ -29,7 +29,7 @@ void ShooterHoodManual::Init()
 
 void ShooterHoodManual::Run()
 {
-    m_shooterHood ->SetOutput(m_control -> GetMode(), m_gamepad -> GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_AXIS));
+    m_shooterHood ->SetOutput(m_control -> GetMode(), m_gamepad -> GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_AXIS) * .5);
 }
 
 bool ShooterHoodManual::AtTarget() const

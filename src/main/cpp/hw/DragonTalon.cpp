@@ -7,6 +7,7 @@
 #include <ctre/phoenix/motorcontrol/LimitSwitchType.h>
 #include <utils/ConversionUtils.h>
 #include <utils/Logger.h>
+#include <frc/smartdashboard/SmartDashboard.h>
 
 
 using namespace frc;
@@ -102,6 +103,7 @@ void DragonTalon::Set(double value)
 		case ControlModes::CONTROL_TYPE::VELOCITY_RPS:
             ctreMode = ctre::phoenix::motorcontrol::ControlMode::Velocity;
 			output = (ConversionUtils::RPSToCounts100ms( value, m_countsPerRev ) / m_gearRatio);
+			frc::SmartDashboard::PutNumber("output val", output);
         	break;
 
 		case ControlModes::CONTROL_TYPE::CURRENT:

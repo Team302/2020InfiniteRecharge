@@ -3,6 +3,9 @@
 <statedata>
 	<controlData identifier="openloop" 
 	             mode="PERCENT_OUTPUT"/>
+	<controlData identifier="closedloop"
+				 mode="TRAPEZOID"
+				 proportional=".1"/>
 	<mechanismTarget stateIdentifier="MOVEUP"
 	                 controlDataIdentifier="openloop"
 					 value="0.0"/>
@@ -10,8 +13,8 @@
 	                 controlDataIdentifier="openloop"
 					 value="0.5"/>
 	<mechanismTarget stateIdentifier="HOLDPOSITION"
-	                 controlDataIdentifier="openloop"
-					 value="1.0"/>
+	                 controlDataIdentifier="closedloop"
+					 value="0.0"/>
     <mechanismTarget stateIdentifier="MANUAL"
 	                 controlDataIdentifier="openloop"
 					 value="1.0"/>
