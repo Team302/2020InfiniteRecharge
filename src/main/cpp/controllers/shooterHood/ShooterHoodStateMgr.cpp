@@ -104,7 +104,10 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
                     break;
                 }
             }
-            Logger::GetLogger()->LogError( string("ShooterHoodStateMgr::ShooterHoodStateMgr"), string("multiple mechanism state info for state"));
+            else
+            {
+                Logger::GetLogger()->LogError( string("ShooterHoodStateMgr::ShooterHoodStateMgr"), string("multiple mechanism state info for state"));
+            }
         }
         else
         {

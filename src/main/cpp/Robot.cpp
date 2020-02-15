@@ -94,7 +94,10 @@ void Robot::RobotInit()
     m_xBoxDisplay = nullptr;
 
     auto limelight = LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT );
-    limelight->SetLEDMode( DragonLimelight::LED_MODE::LED_OFF);
+    if (limelight.get() != nullptr )
+    {
+        limelight.get()->SetLEDMode( DragonLimelight::LED_MODE::LED_OFF);
+    }   
 }
 
 /// @brief This function is called every robot packet, no matter the  mode. This is used for items like diagnostics that run 
