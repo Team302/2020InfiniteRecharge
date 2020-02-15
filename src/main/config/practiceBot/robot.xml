@@ -325,7 +325,7 @@
     		      canId="9"
     		      channel="1"
     		      reversed="false" />
-		<colorSensor port="kOnboard" />
+		<colorsensor port="kOnboard" />
 	</mechanism>
     
 	<mechanism type="CLIMBER">
