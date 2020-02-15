@@ -17,7 +17,8 @@
 #include <controllers/turret/LimelightAim.h>
 #include <controllers/turret/HoldTurretPosition.h>
 #include <hw/factories/LimelightFactory.h>
-
+#include <controllers/turret/ShooterSaveState.h>
+ 
 using namespace std;
 
 TurretStateMgr::TurretStateMgr() : m_stateMap(),
@@ -31,6 +32,7 @@ TurretStateMgr::TurretStateMgr() : m_stateMap(),
     stateMap["TURRETHOLD"] = TURRET_STATE::HOLD;
     stateMap["TURRETAUTOAIM"] = TURRET_STATE::LIMELIGHT_AIM;
     stateMap["TURRETMANUALAIM"] = TURRET_STATE::MANUAL_AIM;
+    stateMap["TURRETShooterSaveState"] = TURRET_STATE::SHOOTER_SAVE_STATE;
 
     for ( auto td: targetData )
     {
@@ -68,6 +70,13 @@ TurretStateMgr::TurretStateMgr() : m_stateMap(),
                     {
                         auto thisState = new ManualAim(controlData);
                         m_stateMap[TURRET_STATE::MANUAL_AIM] = thisState;
+                    }
+                    break;
+
+                    case TURRET_STATE::SHOOTER_SAVE_STATE:
+                    {
+                     auto thisState = new ShooterSaveState(controlData);   
+                     m_stateMap[TURRET_STATE::SHOOTER_SAVE_STATE] = thisState;
                     }
                     break;
 

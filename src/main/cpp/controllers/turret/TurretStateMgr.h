@@ -18,7 +18,8 @@ class TurretStateMgr {
     HOLD,
     LIMELIGHT_AIM,
     MANUAL_AIM,
-    MAX_TURRET_STATES
+    MAX_TURRET_STATES,
+    SHOOTER_SAVE_STATE
   };
   TurretStateMgr();
   ~TurretStateMgr() = default;
