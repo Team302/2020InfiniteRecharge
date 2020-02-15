@@ -143,7 +143,7 @@
 <!-- ========================================================================================================================================== -->
 <!--	mechanism  																																-->
 <!-- ========================================================================================================================================== -->
-<!ELEMENT mechanism (motor*, solenoid*, servo*, analogInput*, digitalInput*, canCoder*, colorSensor?)>
+<!ELEMENT mechanism (motor*, solenoid*, servo*, analogInput*, digitalInput*, canCoder*, colorsensor?)>
 <!ATTLIST mechanism
           type              ( INTAKE | HUMAN_PLAYER_FLAP | IMPELLER | BALL_TRANSFER | SHOOTER | SHOOTER_HOOD | TURRET |
 							  CONTROL_TABLE_MANIPULATOR | CLIMBER | CRAWLER ) "INTAKE"
