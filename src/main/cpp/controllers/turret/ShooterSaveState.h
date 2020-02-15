@@ -34,8 +34,7 @@ class ShooterSaveState : public IState
     
     ShooterSaveState
     (
-        ControlData*    control,
-        double          target
+        ControlData* controlData
     );
 
  
@@ -49,7 +48,7 @@ class ShooterSaveState : public IState
     double degreesToTurn;
 
     private:
-
+    ControlData*   m_controlData;
     IMechanism*    m_turret;
     ControlData*   m_control;
     double         m_target;
