@@ -25,9 +25,9 @@
 //#include <controllers/humanplayerflap/HumanPlayerFlapStateMgr.h>
 #include <controllers/impeller/ImpellerStateMgr.h>
 #include <controllers/balltransfer/BallTransferStateMgr.h>
-//#include <controllers/turret/TurretStateMgr.h>
+#include <controllers/turret/TurretStateMgr.h>
 #include <controllers/shooter/ShooterStateMgr.h>
-//#include <controllers/shooterhood/ShooterHoodStateMgr.h>
+#include <controllers/shooterhood/ShooterHoodStateMgr.h>
 
 // Third Party Includes
 
@@ -71,9 +71,9 @@ class BallManipulator
         IntakeStateMgr*             m_intake;
         ImpellerStateMgr*           m_impeller;
         BallTransferStateMgr*       m_transfer;
-        //TurretStateMgr*             m_turret;
+        TurretStateMgr*             m_turret;
         ShooterStateMgr*            m_shooter;
-        //ShooterHoodStateMgr*        m_hood;
+        ShooterHoodStateMgr*        m_hood;
 
 };
 

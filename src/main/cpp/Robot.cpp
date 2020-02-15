@@ -41,6 +41,8 @@
 #include <test/BallTransferStateMgrTest.h>
 #include <test/ShooterStateMgrTest.h>
 #include <ctre/Phoenix.h>
+#include <subsys/MechanismFactory.h>
+#include <subsys/MechanismTypes.h>
 
 using namespace std;
 using namespace frc;
@@ -65,9 +67,10 @@ void Robot::RobotInit()
     m_chassisStateMgr = new ChassisStateMgr();
     //m_intake = new IntakeStateMgr();
     m_powerCells = new BallManipulator();
-    m_shooterHood = new TalonSRX(4);
-    m_turret = new TalonSRX(5);
-
+    //m_shooterHood = new TalonSRX(4);
+    //m_turret = new TalonSRX(5);
+    m_impeller = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::IMPELLER);
+    m_shooter = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER);
     m_controller = TeleopControl::GetInstance();
 
 
@@ -138,12 +141,14 @@ void Robot::TeleopInit()
 void Robot::TeleopPeriodic() 
 {
     m_chassisStateMgr->RunCurrentState();
-    m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
-    m_shooterHood->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_AXIS) * .5);
+    //m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
+    //m_shooterHood->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_AXIS) * .5);
     //m_intake->RunCurrentState();
    m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
+    frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());
+    frc::SmartDashboard::PutNumber("Shooter speed", m_shooter->GetCurrentSpeed());
     
 }
 

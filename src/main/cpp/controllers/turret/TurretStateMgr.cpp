@@ -92,7 +92,15 @@ void TurretStateMgr::RunCurrentState()
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
-        
+        if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_BUTTON))
+        {
+            SetCurrentState( TURRET_STATE::MANUAL_AIM, false ); 
+        }
+    }
+    Logger::GetLogger()->OnDash(string("Turret State"), to_string(m_currentStateEnum));
+    if ( m_currentState != nullptr )
+    {
+        m_currentState->Run();
     }
 }
 void TurretStateMgr::SetCurrentState

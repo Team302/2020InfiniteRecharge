@@ -27,9 +27,9 @@
 //#include <controllers/humanplayerflap/HumanPlayerFlapStateMgr.h>
 #include <controllers/impeller/ImpellerStateMgr.h>
 #include <controllers/balltransfer/BallTransferStateMgr.h>
-//#include <controllers/turret/TurretStateMgr.h>
+#include <controllers/turret/TurretStateMgr.h>
 #include <controllers/shooter/ShooterStateMgr.h>
-//#include <controllers/shooterhood/ShooterHoodStateMgr.h>
+#include <controllers/shooterhood/ShooterHoodStateMgr.h>
 
 
 
@@ -42,9 +42,9 @@ BallManipulator::BallManipulator() : m_currentState( BALL_MANIPULATOR_STATE::OFF
                                      m_intake( new IntakeStateMgr() ),
                                      m_impeller( new ImpellerStateMgr() ),
                                      m_transfer( new BallTransferStateMgr() ),
-                                     // m_turret ( new TurretStateMgr() ),
-                                     m_shooter( new ShooterStateMgr() ) //,
-                                     //m_hood( new ShooterHoodStateMgr() )
+                                      m_turret ( new TurretStateMgr() ),
+                                     m_shooter( new ShooterStateMgr() ), //,
+                                     m_hood( new ShooterHoodStateMgr() )
 {
     /*m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
     m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
@@ -70,9 +70,9 @@ void BallManipulator::RunCurrentState()
     m_intake->RunCurrentState();
     m_impeller->RunCurrentState();
     m_transfer->RunCurrentState();
-    //m_turret->RunCurrentState();
+    m_turret->RunCurrentState();
     m_shooter->RunCurrentState();
-    //m_hood->RunCurrentState();
+    m_hood->RunCurrentState();
 
 }
 

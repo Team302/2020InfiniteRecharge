@@ -182,7 +182,7 @@ void ImpellerStateMgr::RunCurrentState()
         m_currentState->Run();
         Logger::GetLogger()->LogError("Logger::SetCurrentState", "Running Current State");
 
-        if ( !changingStates && ( m_currentStateEnum == IMPELLER_STATE::TO_SHOOTER || 
+        /*if ( !changingStates && ( m_currentStateEnum == IMPELLER_STATE::TO_SHOOTER || 
                                   m_currentStateEnum == IMPELLER_STATE::HOLD ) )
         {
             auto speed = m_impeller->GetCurrentSpeed();
@@ -208,7 +208,7 @@ void ImpellerStateMgr::RunCurrentState()
             if ( m_reverse )
             {
                 m_numReverseLoops++;
-                if ( m_numReverseLoops > 5 )
+                if ( m_numReverseLoops > 20 )
                 {
                     m_reverse = true;
                     m_numReverseLoops = 0;
@@ -228,7 +228,7 @@ void ImpellerStateMgr::RunCurrentState()
 
                 }
             }
-        }
+        }*/
     }
 
 }

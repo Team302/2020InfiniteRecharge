@@ -144,6 +144,7 @@ void ShooterHoodStateMgr::RunCurrentState()
         }*/
     }
 
+Logger::GetLogger()->OnDash(string("Shooterhood State"), to_string(m_currentStateEnum));
     // run the current state
     if ( m_currentState != nullptr )
     {
