@@ -314,7 +314,7 @@ void DragonTalon::SetControlConstants(ControlData* controlInfo)
 
 	auto accel = controlInfo->GetMaxAcceleration() / m_gearRatio;
 	auto vel = controlInfo->GetCruiseVelocity() / m_gearRatio;
-	switch ( controlInfo->GetMode() )
+	/*switch ( controlInfo->GetMode() )
 	{
 		case ControlModes::CONTROL_TYPE::POSITION_DEGREES:
 			accel = ConversionUtils::DegreesPerSecondToCounts100ms( accel, m_countsPerRev ); // todo this is velocity need accel
@@ -343,8 +343,8 @@ void DragonTalon::SetControlConstants(ControlData* controlInfo)
 
 		default:
 			break;
-
-	}
+*/
+	
 	/*m_talon->ConfigMotionAcceleration( accel );
 	m_talon->ConfigMotionCruiseVelocity( vel, 0);
 

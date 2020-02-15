@@ -236,7 +236,7 @@
 				canId="1"
 				pdpID="1"
 				type="FALCON"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"

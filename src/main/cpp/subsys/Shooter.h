@@ -67,4 +67,5 @@ class Shooter : public IMechanism {
   std::shared_ptr<IDragonMotorController> m_masterMotor;
   std::shared_ptr<IDragonMotorController> m_slaveMotor;
   double m_targetSpeed;
+  double m_p;
 };

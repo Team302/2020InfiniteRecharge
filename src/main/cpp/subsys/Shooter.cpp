@@ -9,11 +9,13 @@
 #include "hw/interfaces/IDragonMotorController.h"
 #include "subsys/MechanismTypes.h"
 #include "controllers/ControlModes.h"
+#include "frc/smartdashboard/SmartDashboard.h"
 Shooter::Shooter(std::shared_ptr<IDragonMotorController> motor1,
 std::shared_ptr<IDragonMotorController> motor2
 ): m_masterMotor(motor1),
 m_slaveMotor(motor2),
-m_targetSpeed(0.0)
+m_targetSpeed(0.0),
+m_p(0.0)
 {}
 
 MechanismTypes::MECHANISM_TYPE Shooter::GetType() const
@@ -35,6 +37,7 @@ void Shooter::SetOutput(ControlModes::CONTROL_TYPE controlType, double value)
             break;
         
     }
+    frc::SmartDashboard::PutNumber("P constants", m_p);
     m_masterMotor.get()->SetControlMode(controlType);
     m_masterMotor.get()->Set(value);
 }
@@ -61,4 +64,5 @@ double Shooter::GetCurrentSpeed() const
 void Shooter::SetControlConstants(ControlData* pid)
 {
     m_masterMotor.get()->SetControlConstants(pid);
+    m_p = pid->GetP();
 }

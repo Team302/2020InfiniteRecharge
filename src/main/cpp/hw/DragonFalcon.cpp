@@ -32,6 +32,7 @@
 
 // Third Party Includes
 #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
+#include <frc/smartdashboard/SmartDashboard.h>
 
 
 using namespace frc;
@@ -117,17 +118,17 @@ void DragonFalcon::Set(double value)
         
         case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
             ctreMode = ctre::phoenix::motorcontrol::ControlMode::Velocity;
-			output = (ConversionUtils::DegreesPerSecondToCounts100ms( value, m_countsPerRev ) / m_gearRatio) + m_tickOffset;
+			output = (ConversionUtils::DegreesPerSecondToCounts100ms( value, m_countsPerRev ) / m_gearRatio);
         	break;
 
         case ControlModes::CONTROL_TYPE::VELOCITY_INCH:
             ctreMode = ctre::phoenix::motorcontrol::ControlMode::Velocity;
-			output = (ConversionUtils::InchesPerSecondToCounts100ms( value, m_countsPerRev, m_diameter ) / m_gearRatio) + m_tickOffset;
+			output = (ConversionUtils::InchesPerSecondToCounts100ms( value, m_countsPerRev, m_diameter ) / m_gearRatio);
         	break;
 
 		case ControlModes::CONTROL_TYPE::VELOCITY_RPS:
             ctreMode = ctre::phoenix::motorcontrol::ControlMode::Velocity;
-			output = (ConversionUtils::RPSToCounts100ms( value, m_countsPerRev ) / m_gearRatio) + m_tickOffset;
+			output = (ConversionUtils::RPSToCounts100ms( value, m_countsPerRev ) / m_gearRatio);
         	break;
 
 		case ControlModes::CONTROL_TYPE::CURRENT:
@@ -156,7 +157,8 @@ void DragonFalcon::Set(double value)
 			output = value;
         	break;
     }	
-
+	frc::SmartDashboard::PutNumber("RPS set value", value);
+	frc::SmartDashboard::PutNumber("Ticks per 100 ms", output);
 	m_talon->Set( ctreMode, output );
 }
 
