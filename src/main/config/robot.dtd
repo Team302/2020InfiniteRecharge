@@ -171,8 +171,8 @@
           maxAngle          CDATA "360.0"
 >
 
-<!ELEMENT colorSensor EMPTY>
-<!ATTLIST colorSensor 
+<!ELEMENT colorsensor EMPTY>
+<!ATTLIST colorsensor 
           port ( kOnboard | kMXP ) "kOnboard" 
 >
 
