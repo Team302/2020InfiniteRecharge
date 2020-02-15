@@ -27,12 +27,9 @@
 
 ShooterSaveState::ShooterSaveState
 (
-    ControlData*    control,
-    double          target
+    ControlData*    controlData
 ) : IState(),
-    m_control( control ),
-    m_target( target )
-
+    m_controlData(controlData)
 {
     auto factory = MechanismFactory::GetMechanismFactory();
 
