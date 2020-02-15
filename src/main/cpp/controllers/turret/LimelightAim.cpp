@@ -27,7 +27,7 @@ using namespace std;
 LimelightAim::LimelightAim(ControlData* controlData): m_controlData(controlData),
     m_atTarget(false),
     m_turret( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::TURRET) ),
-    m_limelight(LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::UNKNOWN_SENSOR)),
+    m_limelight(LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT)),
     m_targetPosition(0.0)
 {
 }

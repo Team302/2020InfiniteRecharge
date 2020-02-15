@@ -7,7 +7,7 @@
 	          yloc="0.0"
 			  heading="0.0">
 		<pigeon canId="60" />
-		<limelight usage="MAINLIMELIGHT"
+		<limelight usage="MAIN_LIMELIGHT"
 				   tablename="limelight"
 				   mountingheight="20.0"
 				   horizontaloffset="-10.0"

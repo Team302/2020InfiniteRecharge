@@ -36,6 +36,7 @@ class IDragonSensor
         enum SENSOR_USAGE
         {
             UNKNOWN_SENSOR = -1,
+            MAIN_LIMELIGHT,
             FORWARD_SENSOR,
             REARWARD_SENSOR,
             MAX_SENSORS

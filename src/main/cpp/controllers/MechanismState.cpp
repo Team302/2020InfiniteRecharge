@@ -134,6 +134,7 @@ void MechanismState::Run()
                 break;
             
             case MechanismTargetData::SOLENOID::ON:
+                Logger::GetLogger()->LogError( string("MechanismState::Run"), string("activatingSolenoid"));
                 m_mechanism->ActivateSolenoid( true );
                 break;
 
