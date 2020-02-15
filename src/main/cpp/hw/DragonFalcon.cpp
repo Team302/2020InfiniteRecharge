@@ -57,11 +57,12 @@ DragonFalcon::DragonFalcon
 	m_gearRatio(gearRatio),
 	m_diameter( 1.0 )
 {
+	m_tickOffset = m_talon->GetSelectedSensorPosition();
 }
 
 double DragonFalcon::GetRotations() const
 {
-	return (ConversionUtils::CountsToRevolutions( (m_talon->GetSelectedSensorPosition()), m_countsPerRev) * m_gearRatio);
+	return (ConversionUtils::CountsToRevolutions( (m_talon->GetSelectedSensorPosition() - m_tickOffset), m_countsPerRev) * m_gearRatio);
 }
 
 double DragonFalcon::GetRPS() const
@@ -105,11 +106,11 @@ void DragonFalcon::Set(double value)
 
         case ControlModes::CONTROL_TYPE::POSITION_DEGREES:
 			ctreMode =:: ctre::phoenix::motorcontrol::ControlMode::Position;
-			output = (ConversionUtils::DegreesToCounts(value,m_countsPerRev) / m_gearRatio);
+			output = (ConversionUtils::DegreesToCounts(value,m_countsPerRev) / m_gearRatio) + m_tickOffset;
 			break;
         case ControlModes::CONTROL_TYPE::POSITION_INCH:
             ctreMode = ctre::phoenix::motorcontrol::ControlMode::Position;
-			output = (ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio);
+			output = (ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio) + m_tickOffset;
         	break;
         
         case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
@@ -144,7 +145,7 @@ void DragonFalcon::Set(double value)
 
 		case ControlModes::CONTROL_TYPE::TRAPEZOID:
 			ctreMode = ctre::phoenix::motorcontrol::ControlMode::MotionMagic;
-			output = (ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio);
+			output = (ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio) + m_tickOffset;
 			break;
 
         default:
@@ -160,7 +161,7 @@ void DragonFalcon::Set(double value)
 void DragonFalcon::SetRotationOffset(double rotations)
 {
 	double newRotations = -rotations + DragonFalcon::GetRotations();
-//	m_tickOffset += (int) (newRotations * m_countsPerRev / m_gearRatio);
+	m_tickOffset += (int) (newRotations * m_countsPerRev / m_gearRatio);
 }
 
 void DragonFalcon::SetVoltageRamping(double ramping, double rampingClosedLoop)
@@ -437,41 +438,6 @@ void DragonFalcon::SetControlConstants(ControlData* controlInfo)
 		}
 		break;
 	}
-
-	/**
-	switch ( controlInfo->GetMode() )
-	{
-		case ControlModes::CONTROL_TYPE::POSITION_DEGREES:
-			accel = ConversionUtils::DegreesPerSecondToCounts100ms( accel, m_countsPerRev ); // todo this is velocity need accel
-			vel = ConversionUtils::DegreesPerSecondToCounts100ms( vel, m_countsPerRev );
-			break;
-
-		case ControlModes::CONTROL_TYPE::POSITION_INCH:
-			accel = ConversionUtils::InchesPerSecondToCounts100ms( accel, m_countsPerRev, m_diameter ); // todo this is velocity need accel
-			vel = ConversionUtils::InchesPerSecondToCounts100ms( vel, m_countsPerRev, m_diameter );
-			break;
-
-		case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
-			accel = ConversionUtils::DegreesPerSecondToCounts100ms( accel, m_countsPerRev ); // todo this is velocity need accel
-			vel = ConversionUtils::DegreesPerSecondToCounts100ms( vel, m_countsPerRev );
-			break;
-
-		case ControlModes::CONTROL_TYPE::VELOCITY_INCH:
-			accel = ConversionUtils::InchesPerSecondToCounts100ms( accel, m_countsPerRev, m_diameter ); // todo this is velocity need accel
-			vel = ConversionUtils::InchesPerSecondToCounts100ms( vel, m_countsPerRev, m_diameter );
-			break;
-
-		case ControlModes::CONTROL_TYPE::VELOCITY_RPS:
-			accel = ConversionUtils::RPSToCounts100ms( accel, m_countsPerRev ); // todo this is velocity need accel
-			vel = ConversionUtils::RPSToCounts100ms( vel, m_countsPerRev );
-			break;
-
-		default:
-			break;
-
-	}
-	**/
-
 }
 
 void DragonFalcon::SetForwardLimitSwitch

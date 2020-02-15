@@ -111,7 +111,7 @@ class ConversionUtils
 		/// @param [in] revolutions per second
 		/// @param [in] counts per revolution
 		/// @return double units / 100 ms
-		inline static double RPSToCounts100ms( double rps, int countsPerRev ) { return rps*(double)countsPerRev / 0.1; }  // rev / sec * counts / rev  * 0.1 sec/100 ms
+		inline static double RPSToCounts100ms( double rps, int countsPerRev ) { return rps*(double)countsPerRev / 100.0; }  // rev / sec * counts / rev  * 0.1 sec/100 ms
 		
 		/// @brief Convert from Degrees per second to RPS
 		/// @param [in] Degrees per second
