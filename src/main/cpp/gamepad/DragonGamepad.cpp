@@ -14,8 +14,6 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once
-
 #include <gamepad/DragonGamepad.h>
 
 #include <gamepad/axis/IDeadband.h>
