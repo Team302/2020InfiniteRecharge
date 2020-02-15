@@ -42,7 +42,8 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
                                        m_currentState(),
                                        m_impeller(  MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER) ),
                                        m_reverse( false ),
-                                       m_numReverseLoops( 0 )
+                                       m_numReverseLoops( 0 ),
+                                       m_consecZero( 0 )
 {
     // Parse the configuration file 
     auto stateXML = make_unique<StateDataDefn>();
@@ -187,22 +188,29 @@ void ImpellerStateMgr::RunCurrentState()
         {
             auto speed = m_impeller->GetCurrentSpeed();
             if ( abs(speed) < 0.0002 )
-            {
-                m_reverse = true;
-                switch ( m_currentStateEnum )
+            { 
+                m_consecZero++;
+                if ( m_consecZero > 5 )
                 {
-                    case IMPELLER_STATE::TO_SHOOTER:
-                        SetCurrentState( IMPELLER_STATE::HOLD, false );
-                        break;
-                    
-                    case IMPELLER_STATE::HOLD:
-                        SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
-                        break;
-                    
-                    default:
-                        break;
+                    m_reverse = true;
+                    switch ( m_currentStateEnum )
+                    {
+                        case IMPELLER_STATE::TO_SHOOTER:
+                            SetCurrentState( IMPELLER_STATE::HOLD, false );
+                            break;
+                        
+                        case IMPELLER_STATE::HOLD:
+                            SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
+                            break;
+                        
+                        default:
+                            break;
+                    }
                 }
-
+            }
+            else
+            {
+                m_consecZero = 0;
             }
 
             if ( m_reverse )

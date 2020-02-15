@@ -69,6 +69,7 @@ class ImpellerStateMgr
         IMechanism*     m_impeller;
         bool            m_reverse;
         int             m_numReverseLoops;
+        int             m_consecZero;
 
 };
 

@@ -100,6 +100,8 @@ class Impeller : public IMechanism
         std::shared_ptr<IDragonMotorController> m_motor;
         std::shared_ptr<ctre::phoenix::sensors::CANCoder> m_encoder;
         double m_target;
+        mutable double m_lastTimeStamp;
+        mutable double m_lastVelocity;
         
 	
 	//virtual ~Impeller() = default;
