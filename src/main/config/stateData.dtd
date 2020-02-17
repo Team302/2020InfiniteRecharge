@@ -27,7 +27,7 @@
           controlDataIdentifier         CDATA #REQUIRED
           value                         CDATA #REQUIRED
           solenoid                      ( NONE | ON | OFF ) "NONE"
-          failoverControlDataIdentifier CDATA #REQUIRED
-          failoverValue                 CDATA #REQUIRED
+          failoverControlDataIdentifier CDATA #IMPLIED
+          failoverValue                 CDATA #IMPLIED
 >
 
