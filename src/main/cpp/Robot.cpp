@@ -69,8 +69,8 @@ void Robot::RobotInit()
     m_chassisStateMgr = new ChassisStateMgr();
     //m_intake = new IntakeStateMgr();
     m_powerCells = BallManipulator::GetInstance();
-    //m_shooterHood = new TalonSRX(4);
-    //m_turret = new TalonSRX(5);
+    m_shooterHood = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER_HOOD);
+    m_turret = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET);
     m_impeller = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::IMPELLER);
     m_shooter = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER);
     m_controller = TeleopControl::GetInstance();
@@ -154,6 +154,8 @@ void Robot::TeleopPeriodic()
    m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
+    frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
+    frc::SmartDashboard::PutNumber("Shooter Hood position", m_shooterHood->GetCurrentPosition());
     frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());
     frc::SmartDashboard::PutNumber("Shooter speed", m_shooter->GetCurrentSpeed());
     

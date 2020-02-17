@@ -61,7 +61,7 @@ TurretStateMgr::TurretStateMgr() : m_stateMap(),
 
                     case TURRET_STATE::LIMELIGHT_AIM:
                     {
-                        auto thisState = new LimelightAim(controlData);
+                        auto thisState = new LimelightAim(controlData, target);
                         m_stateMap[TURRET_STATE::LIMELIGHT_AIM] = thisState;
                     }
                     break;

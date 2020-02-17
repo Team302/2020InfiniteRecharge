@@ -53,7 +53,7 @@ BallManipulator::BallManipulator() : m_currentState( BALL_MANIPULATOR_STATE::OFF
                                      m_intake( new IntakeStateMgr() ),
                                      m_impeller( new ImpellerStateMgr() ),
                                      m_transfer( new BallTransferStateMgr() ),
-                                    m_turret ( new TurretStateMgr() ),
+                                     m_turret ( new TurretStateMgr() ),
                                      m_shooter( new ShooterStateMgr() ), 
                                      m_hood( new ShooterHoodStateMgr() )
 {

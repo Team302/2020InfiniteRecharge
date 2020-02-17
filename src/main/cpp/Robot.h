@@ -89,11 +89,12 @@ class Robot : public frc::TimedRobot
 	  BallTransferStateMgrTest* m_ballTransferStateMgrTest;
 	  ShooterStateMgrTest* m_shooterStateMgrTest;
 
-      TalonSRX* m_shooterHood;
-      TalonSRX* m_turret;
+      IMechanism* m_shooterHood;
+      IMechanism* m_turret;
       TeleopControl* m_controller;
       IMechanism* m_impeller;
       IMechanism* m_shooter;
+
 
       frc::SendableChooser<std::string>   m_testChooser;                    
       const std::string                   m_noTest = "No Test";      
