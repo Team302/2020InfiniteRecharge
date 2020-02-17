@@ -12,5 +12,9 @@
 	<mechanismTarget stateIdentifier="TURRETMANUALAIM"
 	                 controlDataIdentifier="openloop"
 					 value="1.0"/>
+	<mechanismTarget stateIdentifier="TURRETSHOOTERSAVESTATE"
+	                 controlDataIdentifier="openloop"
+					 value="1.5"/>
+
 
 </statedata>
