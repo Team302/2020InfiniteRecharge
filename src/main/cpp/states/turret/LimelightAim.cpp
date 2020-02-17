@@ -24,11 +24,13 @@
 
 using namespace std;
 
-LimelightAim::LimelightAim(ControlData* controlData): m_controlData(controlData),
+LimelightAim::LimelightAim(ControlData* controlData, double target): m_controlData(controlData),
     m_atTarget(false),
+    m_target(target),
     m_turret( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::TURRET) ),
     m_limelight(LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT)),
-    m_targetPosition(0.0)
+    m_targetPosition(0.0),
+    m_start(false)
 {
 }
 
@@ -39,6 +41,11 @@ void LimelightAim::Init()
 
 void LimelightAim::Run()
 {
+    if(!m_start)
+    {
+        m_turret->SetOutput(m_controlData->GetMode(), m_target);
+        m_start = true;
+    }
     double targetHorizontalOffset = m_limelight.get()->GetTargetHorizontalOffset();
     double m_targetPosition = m_turret->GetCurrentPosition() - targetHorizontalOffset;
     m_turret->SetOutput(m_controlData->GetMode(), m_targetPosition);
