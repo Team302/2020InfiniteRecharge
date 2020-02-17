@@ -21,6 +21,7 @@
 #include "subsys/MechanismTypes.h"
 #include "hw/DragonLimelight.h"
 #include "hw/factories/LimelightFactory.h"
+#include "frc/smartdashboard/SmartDashboard.h"
 
 using namespace std;
 
@@ -41,12 +42,12 @@ void LimelightAim::Init()
 
 void LimelightAim::Run()
 {
-    if(!m_start)
+    /*if(!m_start)
     {
         m_turret->SetOutput(m_controlData->GetMode(), m_target);
         m_start = true;
-    }
-    double targetHorizontalOffset = m_limelight.get()->GetTargetHorizontalOffset();
+    }*/
+    double targetHorizontalOffset =  -10.0;//m_limelight.get()->GetTargetHorizontalOffset();
     double m_targetPosition = m_turret->GetCurrentPosition() - targetHorizontalOffset;
     m_turret->SetOutput(m_controlData->GetMode(), m_targetPosition);
 //    if(m_targetPosition - 5 < m_turret->GetCurrentPosition() < m_targetPosition + 5) //arbitrary tolerance for now will change later
@@ -54,6 +55,7 @@ void LimelightAim::Run()
     {
         m_atTarget = true;
     }
+    frc::SmartDashboard::PutNumber("Target Position", m_targetPosition);
 }
 
 bool LimelightAim::AtTarget() const

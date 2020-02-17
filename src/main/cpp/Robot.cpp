@@ -46,6 +46,7 @@
 #include <subsys/MechanismFactory.h>
 #include <subsys/MechanismTypes.h>
 
+
 using namespace std;
 using namespace frc;
 
@@ -93,11 +94,11 @@ void Robot::RobotInit()
     m_buttonBoxDisplay = nullptr;
     m_xBoxDisplay = nullptr;
 
-    auto limelight = LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT );
-    if (limelight.get() != nullptr )
+    //m_limelight = LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT );
+    /*if (m_limelight.get() != nullptr )
     {
-        limelight.get()->SetLEDMode( DragonLimelight::LED_MODE::LED_OFF);
-    }   
+        m_limelight.get()->SetLEDMode( DragonLimelight::LED_MODE::LED_OFF);
+    } */  
 }
 
 /// @brief This function is called every robot packet, no matter the  mode. This is used for items like diagnostics that run 
@@ -158,7 +159,7 @@ void Robot::TeleopPeriodic()
     frc::SmartDashboard::PutNumber("Shooter Hood position", m_shooterHood->GetCurrentPosition());
     frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());
     frc::SmartDashboard::PutNumber("Shooter speed", m_shooter->GetCurrentSpeed());
-    
+    //frc::SmartDashboard::PutNumber("Limelight tx", m_limelight.get()->GetTargetHorizontalOffset());
 }
 
 

@@ -50,7 +50,7 @@ DragonLimelight::DragonLimelight
 ) : IDragonSensor(),
     IDragonDistanceSensor(),
     m_usage( usage ),
-    m_networktable( NetworkTableInstance::GetDefault().GetTable( tableName.c_str() ) ),
+    m_networktable( NetworkTableInstance::GetDefault().GetTable( tableName) ),
     m_mountHeight( mountingHeight ),
     m_mountingHorizontalOffset( mountingHorizontalOffset ),
     m_rotation(rotation),

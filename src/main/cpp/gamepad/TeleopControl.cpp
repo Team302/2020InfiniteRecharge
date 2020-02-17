@@ -128,6 +128,9 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 
 		m_controllerIndex[ TURRET_MANUAL_AXIS] = ctrlNo;
 		m_axisIDs[ TURRET_MANUAL_AXIS] = IDragonGamePad::LEFT_JOYSTICK_X;
+
+		m_controllerIndex[ TURRET_LIMELIGHT_AIM] = ctrlNo;
+		m_buttonIDs[ TURRET_LIMELIGHT_AIM] = IDragonGamePad::B_BUTTON;
 	}
     else if ( m_controllers[ctrlNo] != nullptr )
     {

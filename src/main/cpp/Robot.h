@@ -30,7 +30,6 @@
 
 // c++ includes
 #include <string>
-
 // wpilib includes
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
@@ -43,6 +42,7 @@
 //#include <states/climber/ClimberStateMgr.h>
 #include <states/intake/IntakeStateMgr.h>
 
+#include <hw/DragonLimelight.h>
 #include <test/ButtonBoxDisplay.h>
 #include <test/XboxDisplay.h>
 #include <test/IntakeStateMgrTest.h>
@@ -52,6 +52,7 @@
 #include <ctre/Phoenix.h>
 #include <gamepad/TeleopControl.h>
 #include <subsys/IMechanism.h>
+#include <hw/factories/LimelightFactory.h>
 
 // third party includes
 
@@ -94,6 +95,7 @@ class Robot : public frc::TimedRobot
       TeleopControl* m_controller;
       IMechanism* m_impeller;
       IMechanism* m_shooter;
+      std::shared_ptr<DragonLimelight> m_limelight;
 
 
       frc::SendableChooser<std::string>   m_testChooser;                    

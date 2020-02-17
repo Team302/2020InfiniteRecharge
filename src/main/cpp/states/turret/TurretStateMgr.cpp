@@ -105,6 +105,10 @@ void TurretStateMgr::RunCurrentState()
         {
             SetCurrentState( TURRET_STATE::MANUAL_AIM, false ); 
         }
+        if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TURRET_LIMELIGHT_AIM))
+        {
+            SetCurrentState( TURRET_STATE::LIMELIGHT_AIM, false);
+        }
     }
     Logger::GetLogger()->OnDash(string("Turret State"), to_string(m_currentStateEnum));
     if ( m_currentState != nullptr )
