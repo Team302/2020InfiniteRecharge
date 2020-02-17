@@ -32,10 +32,11 @@ class LimelightAim : public IState
         void Init() override;
         void Run() override;
         bool AtTarget() const override;
+        void UpdateTarget( double target );
     private:
         ControlData* m_controlData;
-        double m_target;
         bool m_atTarget;
+        double m_target;
         IMechanism* m_turret;
         std::shared_ptr<DragonLimelight> m_limelight;
         double m_targetPosition;

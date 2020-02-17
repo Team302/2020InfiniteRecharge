@@ -4,7 +4,6 @@ var class_mechanism_types =
       [ "UNKNOWN_MECHANISM", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284baf47163443d641a45c8ec02e3af24e0de", null ],
       [ "DRIVETRAIN_SIDE", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba71099bf20bbaf6649b120aaf51f32293", null ],
       [ "INTAKE", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba956f40423d599edebdd62f4d1fa9f0b5", null ],
-      [ "HUMAN_PLAYER_FLAP", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba887a14265ee42f4fc637dc991fdc81b7", null ],
       [ "IMPELLER", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba5a51c1e4ac283d458ddbd5c4cf9e011d", null ],
       [ "BALL_TRANSFER", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284bae5b6f8324e5f9c417b4ac91b7438ed9e", null ],
       [ "TURRET", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba678e7373d7e0e40324f61c1be89f986f", null ],

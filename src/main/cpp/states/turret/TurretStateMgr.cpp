@@ -17,12 +17,19 @@
 #include <states/turret/LimelightAim.h>
 #include <states/turret/HoldTurretPosition.h>
 #include <hw/factories/LimelightFactory.h>
+#include <subsys/MechanismFactory.h>
+#include <subsys/IMechanism.h>
+#include <subsys/MechanismTypes.h>
 
 using namespace std;
 
 TurretStateMgr::TurretStateMgr() : m_stateMap(),
-                            m_currentState()
+                                   m_currentState(),
+                                   m_approxTargetAngle( 0.0 )
 {
+    auto turret = MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::TURRET );
+    m_approxTargetAngle = turret->GetCurrentPosition();
+
     // Parse the configuration file 
     auto stateXML = make_unique<StateDataDefn>();
     vector<MechanismTargetData*> targetData = stateXML.get()->ParseXML( MechanismTypes::MECHANISM_TYPE::TURRET );
@@ -51,7 +58,7 @@ TurretStateMgr::TurretStateMgr() : m_stateMap(),
                 {
                     case TURRET_STATE::HOLD:
                     {
-                        auto thisState = new HoldTurretPosition(controlData, target, MechanismTargetData::SOLENOID::NONE);
+                        auto thisState = new HoldTurretPosition(controlData, m_approxTargetAngle, MechanismTargetData::SOLENOID::NONE);
                         m_stateMap[TURRET_STATE::HOLD] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -120,10 +127,18 @@ void TurretStateMgr::SetCurrentState
             m_currentState = state;
             m_currentStateEnum = stateEnum;
             m_currentState->Init();
+            if ( stateEnum == LIMELIGHT_AIM )
+            {
+                auto llAim = dynamic_cast<LimelightAim*>(m_currentState);
+                if ( llAim != nullptr )
+                {
+                    llAim->UpdateTarget( m_approxTargetAngle );
+                }
+            }
             if ( run )
             {
                 m_currentState->Run();
             }
         }
-}
+    }
 }

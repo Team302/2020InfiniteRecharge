@@ -41,10 +41,13 @@ class TurretStateMgr {
         /// @brief  return the current state
         /// @return SHOOTER_HOOD_STATE - the current state
         inline TURRET_STATE GetCurrentState() const { return m_currentStateEnum; };
+        
+        inline void SetApproxTargetAngle( double angle ) { m_approxTargetAngle = angle; }
 
     private:
 
         std::map<TURRET_STATE,IState*> m_stateMap;
         IState* m_currentState;
         TURRET_STATE m_currentStateEnum;
+        double m_approxTargetAngle;
 };

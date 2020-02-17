@@ -31,7 +31,6 @@
 #include <auton/primitives/IPrimitive.h>
 #include <auton/primitives/AutoShoot.h>
 #include <auton/PrimitiveParams.h>
-#include <subsys/Shooter.h>
 #include <states/BallManipulator.h>
 
 using namespace std;
@@ -48,8 +47,12 @@ AutoShoot::AutoShoot
 
 void AutoShoot::Init(PrimitiveParams* params)
 {
-    BallManipulator::BALL_MANIPULATOR_STATE ballManipulatorStates = params -> GetBallState();
-    m_ballManipulator -> SetCurrentState( ballManipulatorStates );
+    auto ballManipulatorState = params -> GetBallState();
+    m_ballManipulator->SetCurrentState( ballManipulatorState );
+    if ( ballManipulatorState == BallManipulator::BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT )
+    {
+        BallManipulator::GetInstance()->SetApproxAngle( params->GetTurretAngle());
+    }
 }
 
 /// @brief run the primitive (periodic routine)

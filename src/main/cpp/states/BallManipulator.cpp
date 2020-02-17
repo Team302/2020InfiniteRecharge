@@ -161,4 +161,13 @@ void BallManipulator::SetCurrentState
 
 }
 
-
+void BallManipulator::SetApproxAngle
+(
+    double angle
+)
+{
+    if ( m_turret != nullptr )
+    {
+        m_turret->SetApproxTargetAngle( angle );
+    }
+}

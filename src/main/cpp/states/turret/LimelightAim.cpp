@@ -60,3 +60,11 @@ bool LimelightAim::AtTarget() const
 {
     return m_atTarget;
 }
+
+void LimelightAim::UpdateTarget
+( 
+    double target
+)
+{
+    m_target = target;
+}

@@ -67,6 +67,8 @@ class BallManipulator
         /// @return INTAKE_STATE - the current state
         inline BALL_MANIPULATOR_STATE GetCurrentState() const { return m_currentState; };
 
+        void SetApproxAngle( double angle );
+
     private:
 
         BallManipulator();
