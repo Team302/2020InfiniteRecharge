@@ -7,7 +7,7 @@
 
 #include <auton/PrimitiveEnums.h>
 #include <auton/PrimitiveParams.h>
-#include <controllers/BallManipulator.h>
+#include <states/BallManipulator.h>
 
 PrimitiveParams::PrimitiveParams
 (

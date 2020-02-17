@@ -23,7 +23,7 @@
 // Team 302 includes
 #include <test/IStateTest.h>
 #include <test/IntakeStateMgrTest.h>
-#include <controllers/intake/IntakeStateMgr.h>
+#include <states/intake/IntakeStateMgr.h>
 
 // Third Party Includes
 

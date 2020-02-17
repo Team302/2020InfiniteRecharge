@@ -18,7 +18,7 @@
 #include <auton/AutonSelector.h>
 #include <auton/PrimitiveEnums.h>
 #include <auton/primitives/IPrimitive.h>
-#include <controllers/BallManipulator.h>
+#include <states/BallManipulator.h>
 PrimitiveParamsVector PrimitiveParser::ParseXML
 (
     std::string     fileName

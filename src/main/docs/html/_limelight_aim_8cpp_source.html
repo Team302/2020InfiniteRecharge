@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: controllers/turret/LimelightAim.cpp Source File</title>
+<title>Team 302 Robot: states/turret/LimelightAim.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('_limelight_aim_8cpp_source.html','');}
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_limelight_aim_8h.html">controllers/turret/LimelightAim.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_limelight_aim_8h.html">states/turret/LimelightAim.h</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mechanism_factory_8h.html">subsys/MechanismFactory.h</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_turret_8h.html">subsys/Turret.h</a>&quot;</span></div>
@@ -133,16 +133,17 @@ $(document).ready(function(){initNavTree('_limelight_aim_8cpp_source.html','');}
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">double</span> targetHorizontalOffset = m_limelight.get()-&gt;GetTargetHorizontalOffset();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">double</span> m_targetPosition = m_turret-&gt;<a class="code" href="class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d">GetCurrentPosition</a>() - targetHorizontalOffset;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_turret-&gt;<a class="code" href="class_i_mechanism.html#abc72a6d0306a828de6f43418e75c04c0">SetOutput</a>(m_controlData-&gt;<a class="code" href="class_control_data.html#a3e7157f943ecefb04cb30c274bf9a330">GetMode</a>(), m_targetPosition);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span>(m_targetPosition - 5 &lt; m_turret-&gt;<a class="code" href="class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d">GetCurrentPosition</a>() &lt; m_targetPosition + 5) <span class="comment">//arbitrary tolerance for now will change later</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        m_atTarget = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_limelight_aim.html#accee6775e1b1f3702ab5d9ba64bcafbf">   51</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_limelight_aim.html#accee6775e1b1f3702ab5d9ba64bcafbf">LimelightAim::AtTarget</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> m_atTarget;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//    if(m_targetPosition - 5 &lt; m_turret-&gt;GetCurrentPosition() &lt; m_targetPosition + 5) //arbitrary tolerance for now will change later</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span>( abs( m_targetPosition - m_turret-&gt;<a class="code" href="class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d">GetCurrentPosition</a>() ) &lt;  5.0 ) <span class="comment">//arbitrary tolerance for now will change later</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        m_atTarget = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_limelight_aim.html#accee6775e1b1f3702ab5d9ba64bcafbf">   52</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_limelight_aim.html#accee6775e1b1f3702ab5d9ba64bcafbf">LimelightAim::AtTarget</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> m_atTarget;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_i_dragon_sensor_html"><div class="ttname"><a href="class_i_dragon_sensor.html">IDragonSensor</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_sensor_8h_source.html#l00032">IDragonSensor.h:32</a></div></div>
@@ -158,7 +159,7 @@ $(document).ready(function(){initNavTree('_limelight_aim_8cpp_source.html','');}
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
 <div class="ttc" id="aclass_mechanism_factory_html"><div class="ttname"><a href="class_mechanism_factory.html">MechanismFactory</a></div><div class="ttdoc">MechanismFactory.h.</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_factory_8h_source.html#l00060">MechanismFactory.h:60</a></div></div>
 <div class="ttc" id="aclass_control_data_html_a3e7157f943ecefb04cb30c274bf9a330"><div class="ttname"><a href="class_control_data.html#a3e7157f943ecefb04cb30c274bf9a330">ControlData::GetMode</a></div><div class="ttdeci">ControlModes::CONTROL_TYPE GetMode() const</div><div class="ttdoc">Retrieve the Control Type.</div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00059">ControlData.h:59</a></div></div>
-<div class="ttc" id="aclass_limelight_aim_html_accee6775e1b1f3702ab5d9ba64bcafbf"><div class="ttname"><a href="class_limelight_aim.html#accee6775e1b1f3702ab5d9ba64bcafbf">LimelightAim::AtTarget</a></div><div class="ttdeci">bool AtTarget() const override</div><div class="ttdef"><b>Definition:</b> <a href="_limelight_aim_8cpp_source.html#l00051">LimelightAim.cpp:51</a></div></div>
+<div class="ttc" id="aclass_limelight_aim_html_accee6775e1b1f3702ab5d9ba64bcafbf"><div class="ttname"><a href="class_limelight_aim.html#accee6775e1b1f3702ab5d9ba64bcafbf">LimelightAim::AtTarget</a></div><div class="ttdeci">bool AtTarget() const override</div><div class="ttdef"><b>Definition:</b> <a href="_limelight_aim_8cpp_source.html#l00052">LimelightAim.cpp:52</a></div></div>
 <div class="ttc" id="a_limelight_aim_8h_html"><div class="ttname"><a href="_limelight_aim_8h.html">LimelightAim.h</a></div></div>
 <div class="ttc" id="a_turret_8h_html"><div class="ttname"><a href="_turret_8h.html">Turret.h</a></div></div>
 <div class="ttc" id="aclass_i_mechanism_html_abc72a6d0306a828de6f43418e75c04c0"><div class="ttname"><a href="class_i_mechanism.html#abc72a6d0306a828de6f43418e75c04c0">IMechanism::SetOutput</a></div><div class="ttdeci">virtual void SetOutput(ControlModes::CONTROL_TYPE controlType, double value)=0</div><div class="ttdoc">Run mechanism as defined.</div></div>
@@ -169,7 +170,7 @@ $(document).ready(function(){initNavTree('_limelight_aim_8cpp_source.html','');}
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="dir_32bedeabb3d89829b4a91f9bdf77e700.html">turret</a></li><li class="navelem"><a class="el" href="_limelight_aim_8cpp.html">LimelightAim.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_128f75dce35ba73c52fc2f45d15b5117.html">states</a></li><li class="navelem"><a class="el" href="dir_0a4a79cfe6c9c04f249898af22100543.html">turret</a></li><li class="navelem"><a class="el" href="_limelight_aim_8cpp.html">LimelightAim.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

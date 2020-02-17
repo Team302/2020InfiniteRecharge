@@ -421,19 +421,19 @@ CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\ControlData.cp
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\MechanismState.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\MechanismState.cpp.obj: ..\src\main\cpp\controllers\MechanismState.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/MechanismState.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/MechanismState.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\MechanismState.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\MechanismState.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\MechanismState.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/MechanismState.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/MechanismState.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\MechanismState.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\MechanismState.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\MechanismState.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/MechanismState.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/MechanismState.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\MechanismState.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\MechanismState.cpp
 <<
@@ -459,399 +459,399 @@ CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\MechanismTarge
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferOff.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferOff.cpp.obj: ..\src\main\cpp\controllers\balltransfer\BallTransferOff.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferOff.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferOff.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferOff.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\balltransfer\BallTransferOff.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferOff.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferOff.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferOff.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferOff.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\balltransfer\BallTransferOff.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferOff.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferOff.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferOff.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferOff.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\balltransfer\BallTransferOff.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferStateMgr.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferStateMgr.cpp.obj: ..\src\main\cpp\controllers\balltransfer\BallTransferStateMgr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferStateMgr.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferStateMgr.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferStateMgr.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\balltransfer\BallTransferStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferStateMgr.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferStateMgr.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferStateMgr.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferStateMgr.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\balltransfer\BallTransferStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferStateMgr.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferStateMgr.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferStateMgr.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferStateMgr.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\balltransfer\BallTransferStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToImpeller.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToImpeller.cpp.obj: ..\src\main\cpp\controllers\balltransfer\BallTransferToImpeller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferToImpeller.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferToImpeller.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToImpeller.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\balltransfer\BallTransferToImpeller.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToImpeller.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferToImpeller.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferToImpeller.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToImpeller.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\balltransfer\BallTransferToImpeller.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToImpeller.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferToImpeller.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferToImpeller.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToImpeller.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\balltransfer\BallTransferToImpeller.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToShooter.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToShooter.cpp.obj: ..\src\main\cpp\controllers\balltransfer\BallTransferToShooter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferToShooter.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferToShooter.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToShooter.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\balltransfer\BallTransferToShooter.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToShooter.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferToShooter.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferToShooter.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToShooter.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\balltransfer\BallTransferToShooter.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToShooter.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferToShooter.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferToShooter.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\balltransfer\BallTransferToShooter.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\balltransfer\BallTransferToShooter.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ArcadeDrive.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ArcadeDrive.cpp.obj: ..\src\main\cpp\controllers\chassis\ArcadeDrive.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/ArcadeDrive.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/ArcadeDrive.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ArcadeDrive.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\ArcadeDrive.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ArcadeDrive.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/ArcadeDrive.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/ArcadeDrive.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ArcadeDrive.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\ArcadeDrive.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ArcadeDrive.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/ArcadeDrive.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/ArcadeDrive.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ArcadeDrive.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\ArcadeDrive.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ChassisStateMgr.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ChassisStateMgr.cpp.obj: ..\src\main\cpp\controllers\chassis\ChassisStateMgr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/ChassisStateMgr.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/ChassisStateMgr.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ChassisStateMgr.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\ChassisStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ChassisStateMgr.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/ChassisStateMgr.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/ChassisStateMgr.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ChassisStateMgr.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\ChassisStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ChassisStateMgr.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/ChassisStateMgr.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/ChassisStateMgr.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ChassisStateMgr.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\ChassisStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\GTADrive.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\GTADrive.cpp.obj: ..\src\main\cpp\controllers\chassis\GTADrive.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/GTADrive.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/GTADrive.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\GTADrive.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\GTADrive.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\GTADrive.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/GTADrive.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/GTADrive.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\GTADrive.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\GTADrive.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\GTADrive.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/GTADrive.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/GTADrive.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\GTADrive.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\GTADrive.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\TankDrive.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\TankDrive.cpp.obj: ..\src\main\cpp\controllers\chassis\TankDrive.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/TankDrive.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/TankDrive.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\TankDrive.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\TankDrive.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\TankDrive.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/TankDrive.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/TankDrive.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\TankDrive.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\TankDrive.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\TankDrive.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/TankDrive.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/TankDrive.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\TankDrive.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\TankDrive.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ThrottleSteerDrive.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ThrottleSteerDrive.cpp.obj: ..\src\main\cpp\controllers\chassis\ThrottleSteerDrive.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/ThrottleSteerDrive.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/ThrottleSteerDrive.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ThrottleSteerDrive.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\ThrottleSteerDrive.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ThrottleSteerDrive.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/ThrottleSteerDrive.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/ThrottleSteerDrive.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ThrottleSteerDrive.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\ThrottleSteerDrive.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ThrottleSteerDrive.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/ThrottleSteerDrive.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/ThrottleSteerDrive.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\chassis\ThrottleSteerDrive.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\chassis\ThrottleSteerDrive.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\climber\ClimberHold.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\climber\ClimberHold.cpp.obj: ..\src\main\cpp\controllers\climber\ClimberHold.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/climber/ClimberHold.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/climber/ClimberHold.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\climber\ClimberHold.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\climber\ClimberHold.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\climber\ClimberHold.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/climber/ClimberHold.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/climber/ClimberHold.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\climber\ClimberHold.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\climber\ClimberHold.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\climber\ClimberHold.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/climber/ClimberHold.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/climber/ClimberHold.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\climber\ClimberHold.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\climber\ClimberHold.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelColorTurn.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelColorTurn.cpp.obj: ..\src\main\cpp\controllers\controlPanel\ControlPanelColorTurn.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelColorTurn.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelColorTurn.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelColorTurn.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\controlPanel\ControlPanelColorTurn.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelColorTurn.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelColorTurn.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelColorTurn.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelColorTurn.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\controlPanel\ControlPanelColorTurn.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelColorTurn.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelColorTurn.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelColorTurn.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelColorTurn.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\controlPanel\ControlPanelColorTurn.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelRaise.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelRaise.cpp.obj: ..\src\main\cpp\controllers\controlPanel\ControlPanelRaise.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelRaise.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelRaise.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelRaise.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\controlPanel\ControlPanelRaise.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelRaise.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelRaise.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelRaise.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelRaise.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\controlPanel\ControlPanelRaise.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelRaise.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelRaise.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelRaise.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelRaise.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\controlPanel\ControlPanelRaise.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelStow.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelStow.cpp.obj: ..\src\main\cpp\controllers\controlPanel\ControlPanelStow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelStow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelStow.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelStow.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\controlPanel\ControlPanelStow.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelStow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelStow.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelStow.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelStow.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\controlPanel\ControlPanelStow.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelStow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelStow.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelStow.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelStow.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\controlPanel\ControlPanelStow.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelTurn.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelTurn.cpp.obj: ..\src\main\cpp\controllers\controlPanel\ControlPanelTurn.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelTurn.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelTurn.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelTurn.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\controlPanel\ControlPanelTurn.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelTurn.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelTurn.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelTurn.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelTurn.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\controlPanel\ControlPanelTurn.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelTurn.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelTurn.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelTurn.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\controlPanel\ControlPanelTurn.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\controlPanel\ControlPanelTurn.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerAgitate.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerAgitate.cpp.obj: ..\src\main\cpp\controllers\impeller\ImpellerAgitate.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerAgitate.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerAgitate.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerAgitate.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\impeller\ImpellerAgitate.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerAgitate.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerAgitate.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerAgitate.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerAgitate.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\impeller\ImpellerAgitate.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerAgitate.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerAgitate.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerAgitate.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerAgitate.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\impeller\ImpellerAgitate.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOff.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOff.cpp.obj: ..\src\main\cpp\controllers\impeller\ImpellerOff.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerOff.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerOff.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOff.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\impeller\ImpellerOff.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOff.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerOff.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerOff.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOff.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\impeller\ImpellerOff.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOff.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerOff.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerOff.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOff.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\impeller\ImpellerOff.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOn.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOn.cpp.obj: ..\src\main\cpp\controllers\impeller\ImpellerOn.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerOn.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerOn.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOn.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\impeller\ImpellerOn.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOn.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerOn.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerOn.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOn.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\impeller\ImpellerOn.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOn.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerOn.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerOn.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerOn.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\impeller\ImpellerOn.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerStateMgr.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerStateMgr.cpp.obj: ..\src\main\cpp\controllers\impeller\ImpellerStateMgr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerStateMgr.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerStateMgr.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerStateMgr.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\impeller\ImpellerStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerStateMgr.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerStateMgr.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerStateMgr.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerStateMgr.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\impeller\ImpellerStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerStateMgr.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerStateMgr.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerStateMgr.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\impeller\ImpellerStateMgr.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\impeller\ImpellerStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOff.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOff.cpp.obj: ..\src\main\cpp\controllers\intake\IntakeOff.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeOff.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/intake/IntakeOff.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOff.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\intake\IntakeOff.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOff.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeOff.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/intake/IntakeOff.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOff.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\intake\IntakeOff.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOff.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeOff.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/intake/IntakeOff.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOff.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\intake\IntakeOff.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOn.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOn.cpp.obj: ..\src\main\cpp\controllers\intake\IntakeOn.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeOn.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/intake/IntakeOn.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOn.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\intake\IntakeOn.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOn.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeOn.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/intake/IntakeOn.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOn.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\intake\IntakeOn.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOn.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeOn.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/intake/IntakeOn.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeOn.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\intake\IntakeOn.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeStateMgr.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeStateMgr.cpp.obj: ..\src\main\cpp\controllers\intake\IntakeStateMgr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeStateMgr.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/intake/IntakeStateMgr.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeStateMgr.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\intake\IntakeStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeStateMgr.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeStateMgr.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/intake/IntakeStateMgr.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeStateMgr.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\intake\IntakeStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeStateMgr.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeStateMgr.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/intake/IntakeStateMgr.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\intake\IntakeStateMgr.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\intake\IntakeStateMgr.cpp
 <<
@@ -877,209 +877,209 @@ CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\mechanisms\Vel
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterGetReady.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterGetReady.cpp.obj: ..\src\main\cpp\controllers\shooter\ShooterGetReady.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterGetReady.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterGetReady.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterGetReady.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooter\ShooterGetReady.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterGetReady.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterGetReady.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterGetReady.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterGetReady.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooter\ShooterGetReady.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterGetReady.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterGetReady.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterGetReady.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterGetReady.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooter\ShooterGetReady.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterOff.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterOff.cpp.obj: ..\src\main\cpp\controllers\shooter\ShooterOff.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterOff.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterOff.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterOff.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooter\ShooterOff.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterOff.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterOff.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterOff.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterOff.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooter\ShooterOff.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterOff.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterOff.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterOff.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterOff.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooter\ShooterOff.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterShoot.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterShoot.cpp.obj: ..\src\main\cpp\controllers\shooter\ShooterShoot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterShoot.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterShoot.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterShoot.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooter\ShooterShoot.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterShoot.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterShoot.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterShoot.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterShoot.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooter\ShooterShoot.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterShoot.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterShoot.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterShoot.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterShoot.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooter\ShooterShoot.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterStateMgr.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterStateMgr.cpp.obj: ..\src\main\cpp\controllers\shooter\ShooterStateMgr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterStateMgr.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterStateMgr.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterStateMgr.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooter\ShooterStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterStateMgr.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterStateMgr.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterStateMgr.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterStateMgr.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooter\ShooterStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterStateMgr.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterStateMgr.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterStateMgr.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooter\ShooterStateMgr.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooter\ShooterStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodHoldPosition.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodHoldPosition.cpp.obj: ..\src\main\cpp\controllers\shooterhood\ShooterHoodHoldPosition.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodHoldPosition.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodHoldPosition.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodHoldPosition.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooterhood\ShooterHoodHoldPosition.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodHoldPosition.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodHoldPosition.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodHoldPosition.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodHoldPosition.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooterhood\ShooterHoodHoldPosition.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodHoldPosition.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodHoldPosition.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodHoldPosition.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodHoldPosition.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooterhood\ShooterHoodHoldPosition.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveDown.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveDown.cpp.obj: ..\src\main\cpp\controllers\shooterhood\ShooterHoodMoveDown.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodMoveDown.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodMoveDown.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveDown.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooterhood\ShooterHoodMoveDown.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveDown.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodMoveDown.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodMoveDown.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveDown.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooterhood\ShooterHoodMoveDown.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveDown.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodMoveDown.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodMoveDown.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveDown.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooterhood\ShooterHoodMoveDown.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveUp.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveUp.cpp.obj: ..\src\main\cpp\controllers\shooterhood\ShooterHoodMoveUp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodMoveUp.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodMoveUp.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveUp.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooterhood\ShooterHoodMoveUp.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveUp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodMoveUp.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodMoveUp.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveUp.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooterhood\ShooterHoodMoveUp.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveUp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodMoveUp.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodMoveUp.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodMoveUp.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooterhood\ShooterHoodMoveUp.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodStateMgr.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodStateMgr.cpp.obj: ..\src\main\cpp\controllers\shooterhood\ShooterHoodStateMgr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodStateMgr.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodStateMgr.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodStateMgr.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooterhood\ShooterHoodStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodStateMgr.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodStateMgr.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodStateMgr.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodStateMgr.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooterhood\ShooterHoodStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodStateMgr.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodStateMgr.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodStateMgr.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\shooterhood\ShooterHoodStateMgr.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\shooterhood\ShooterHoodStateMgr.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\HoldTurretPosition.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\HoldTurretPosition.cpp.obj: ..\src\main\cpp\controllers\turret\HoldTurretPosition.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/HoldTurretPosition.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/turret/HoldTurretPosition.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\HoldTurretPosition.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\turret\HoldTurretPosition.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\HoldTurretPosition.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/HoldTurretPosition.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/turret/HoldTurretPosition.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\HoldTurretPosition.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\turret\HoldTurretPosition.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\HoldTurretPosition.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/HoldTurretPosition.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/turret/HoldTurretPosition.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\HoldTurretPosition.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\turret\HoldTurretPosition.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\LimelightAim.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\LimelightAim.cpp.obj: ..\src\main\cpp\controllers\turret\LimelightAim.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/LimelightAim.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/turret/LimelightAim.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\LimelightAim.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\turret\LimelightAim.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\LimelightAim.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/LimelightAim.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/turret/LimelightAim.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\LimelightAim.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\turret\LimelightAim.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\LimelightAim.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/LimelightAim.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/turret/LimelightAim.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\LimelightAim.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\turret\LimelightAim.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\ManualAim.cpp.obj: CMakeFiles\fake_frcUserProgram_debug.dir\flags.make
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\ManualAim.cpp.obj: ..\src\main\cpp\controllers\turret\ManualAim.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/ManualAim.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\RoboticsCM\2020InfiniteRecharge\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/turret/ManualAim.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\ManualAim.cpp.obj /FdCMakeFiles\fake_frcUserProgram_debug.dir\ /FS -c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\turret\ManualAim.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\ManualAim.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/ManualAim.cpp.i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/turret/ManualAim.cpp.i"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\ManualAim.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\turret\ManualAim.cpp
 <<
 
 CMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\ManualAim.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/ManualAim.cpp.s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/turret/ManualAim.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\fake_frcUserProgram_debug.dir\src\main\cpp\controllers\turret\ManualAim.cpp.s /c C:\RoboticsCM\2020InfiniteRecharge\src\main\cpp\controllers\turret\ManualAim.cpp
 <<

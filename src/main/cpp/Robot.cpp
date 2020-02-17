@@ -26,12 +26,12 @@
 #include <Robot.h>
 #include <xmlhw/RobotDefn.h>
 #include <auton/CyclePrimitives.h>
-#include <controllers/chassis/ChassisStateMgr.h>
-#include <controllers/BallManipulator.h>
-#include <controllers/intake/IntakeStateMgr.h>
+#include <states/chassis/ChassisStateMgr.h>
+#include <states/BallManipulator.h>
+#include <states/intake/IntakeStateMgr.h>
 #include <gamepad/TeleopControl.h>
-//#include <controllers/controlPanel/ControlPanelStateMgr.h>
-//#include <controllers/climber/ClimberStateMgr.h>
+//#include <states/controlPanel/ControlPanelStateMgr.h>
+//#include <states/climber/ClimberStateMgr.h>
 #include <hw/factories/LimelightFactory.h>
 #include <hw/DragonLimelight.h>
 

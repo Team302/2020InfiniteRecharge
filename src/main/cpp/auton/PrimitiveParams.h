@@ -23,7 +23,7 @@
 
 // Team 302 includes
 #include <auton/PrimitiveEnums.h>
-#include <controllers/BallManipulator.h>
+#include <states/BallManipulator.h>
 //#include <utils/DragonMath.h>
 
 // Third Party Includes

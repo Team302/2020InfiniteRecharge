@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: controllers/BallManipulator.cpp Source File</title>
+<title>Team 302 Robot: states/BallManipulator.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -111,16 +111,16 @@ $(document).ready(function(){initNavTree('_ball_manipulator_8cpp_source.html',''
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// FRC includes</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_ball_manipulator_8h.html">controllers/BallManipulator.h</a>&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_ball_manipulator_8h.html">states/BallManipulator.h</a>&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_logger_8h.html">utils/Logger.h</a>&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_teleop_control_8h.html">gamepad/TeleopControl.h</a>&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_intake_state_mgr_8h.html">controllers/intake/IntakeStateMgr.h</a>&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_intake_state_mgr_8h.html">states/intake/IntakeStateMgr.h</a>&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//#include &lt;controllers/humanplayerflap/HumanPlayerFlapStateMgr.h&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_impeller_state_mgr_8h.html">controllers/impeller/ImpellerStateMgr.h</a>&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_ball_transfer_state_mgr_8h.html">controllers/balltransfer/BallTransferStateMgr.h</a>&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_turret_state_mgr_8h.html">controllers/turret/TurretStateMgr.h</a>&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_shooter_state_mgr_8h.html">controllers/shooter/ShooterStateMgr.h</a>&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_shooter_hood_state_mgr_8h.html">controllers/shooterhood/ShooterHoodStateMgr.h</a>&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_impeller_state_mgr_8h.html">states/impeller/ImpellerStateMgr.h</a>&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_ball_transfer_state_mgr_8h.html">states/balltransfer/BallTransferStateMgr.h</a>&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_turret_state_mgr_8h.html">states/turret/TurretStateMgr.h</a>&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_shooter_state_mgr_8h.html">states/shooter/ShooterStateMgr.h</a>&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_shooter_hood_state_mgr_8h.html">states/shooterhood/ShooterHoodStateMgr.h</a>&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
@@ -143,134 +143,138 @@ $(document).ready(function(){initNavTree('_ball_manipulator_8cpp_source.html',''
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                     m_intake( new <a class="code" href="class_intake_state_mgr.html">IntakeStateMgr</a>() ),</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                     m_impeller( new <a class="code" href="class_impeller_state_mgr.html">ImpellerStateMgr</a>() ),</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                     m_transfer( new <a class="code" href="class_ball_transfer_state_mgr.html">BallTransferStateMgr</a>() ),</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                      m_turret ( new <a class="code" href="class_turret_state_mgr.html">TurretStateMgr</a>() ),</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                     m_shooter( new <a class="code" href="class_shooter_state_mgr.html">ShooterStateMgr</a>() ), <span class="comment">//,</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                    m_turret ( new <a class="code" href="class_turret_state_mgr.html">TurretStateMgr</a>() ),</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                     m_shooter( new <a class="code" href="class_shooter_state_mgr.html">ShooterStateMgr</a>() ), </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                     m_hood( new <a class="code" href="class_shooter_hood_state_mgr.html">ShooterHoodStateMgr</a>() )</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">/*m_intake-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">    m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">    m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">    //m_turret-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">    m_shooter-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">    //m_hood-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_ball_manipulator.html#a565ef49322a8a72a7cc72ae3b19ff4a8">   71</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ball_manipulator.html#a565ef49322a8a72a7cc72ae3b19ff4a8">BallManipulator::RunCurrentState</a>()</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// todo: add gamepad interupts</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// process teleop/manual interrupts</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">auto</span> controller = <a class="code" href="class_teleop_control.html#abcca1fa489e538a5f42c920747a4f598">TeleopControl::GetInstance</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> ( controller != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// run the current state</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    m_intake-&gt;<a class="code" href="class_intake_state_mgr.html#ac27ccde795f471c38f5ae0c123e1ada3">RunCurrentState</a>();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    m_impeller-&gt;<a class="code" href="class_impeller_state_mgr.html#a493984fe4706c183ac8ba822f2e7d2c0">RunCurrentState</a>();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    m_transfer-&gt;<a class="code" href="class_ball_transfer_state_mgr.html#ae9a3c67861dc9c3c1f8afafff3313a24">RunCurrentState</a>();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    m_turret-&gt;<a class="code" href="class_turret_state_mgr.html#a6c0df093d2070fa547eb5855c5d9a9e2">RunCurrentState</a>();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    m_shooter-&gt;<a class="code" href="class_shooter_state_mgr.html#ac2efdc7eb599adf95df2e0d5a46e35d3">RunCurrentState</a>();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    m_hood-&gt;<a class="code" href="class_shooter_hood_state_mgr.html#a1ea4d12e259efebe9e17e36ec7800162">RunCurrentState</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ball_manipulator.html#ac6b06504ca8077c1b533895b2793e5a1">BallManipulator::SetCurrentState</a></div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_ball_manipulator.html#ac6b06504ca8077c1b533895b2793e5a1">   93</a></span>&#160;(</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4">BALL_MANIPULATOR_STATE</a>  state</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">/*m_currentState = state;</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">    switch ( state )</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">    {</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">        case BALL_MANIPULATOR_STATE::OFF:</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">            m_intake-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">            m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">            m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">            //m_turret-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">            m_shooter-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">            //m_hood-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">            break;</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">        case BALL_MANIPULATOR_STATE::INTAKE:</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">            m_intake-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::ON, false );</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">            if ( m_impeller-&gt;GetCurrentState() == ImpellerStateMgr::IMPELLER_STATE::OFF )</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">            {</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">                m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">            }</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">            if ( m_transfer-&gt;GetCurrentState() == BallTransferStateMgr::BALL_TRANSFER_STATE::OFF )</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">            {</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">                m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER , false );</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">            }</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">            break;</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">        case BALL_MANIPULATOR_STATE::INTAKE_HUMAN_PLAYER:</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">            m_intake-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::ON, false );  // todo: react to change</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">            if ( m_impeller-&gt;GetCurrentState() == ImpellerStateMgr::IMPELLER_STATE::OFF )</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">            {</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">                m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">            }</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">            if ( m_transfer-&gt;GetCurrentState() == BallTransferStateMgr::BALL_TRANSFER_STATE::OFF )</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">            {</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">                m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER , false );</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">            }</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">            break;</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">        case BALL_MANIPULATOR_STATE::HOLD:</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">            m_intake-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">            m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">            m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER , false );</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">            //m_turret-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">            m_shooter-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, false );</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">            //m_hood-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">            break;</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">        case BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT:</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">            m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">            m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER, false );</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">            //m_turret-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">            m_shooter-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, false );</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">            //m_hood-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">            break;</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">        case BALL_MANIPULATOR_STATE::SHOOT:</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">            m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">            m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false );</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">            //m_turret-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">            m_shooter-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">            //m_hood-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">            break;</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">        default:</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">            break;</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">    }</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">    RunCurrentState();</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    m_intake-&gt;<a class="code" href="class_intake_state_mgr.html#a1e25c496c344124e7a52b7bbdfa09f87">SetCurrentState</a>( IntakeStateMgr::INTAKE_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    m_impeller-&gt;<a class="code" href="class_impeller_state_mgr.html#afd05b5a5b87575f74f8f82eae0f915ce">SetCurrentState</a>( ImpellerStateMgr::IMPELLER_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    m_transfer-&gt;<a class="code" href="class_ball_transfer_state_mgr.html#a4ad4576d1df79e2e9749be0a6ec0daa6">SetCurrentState</a>( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    m_turret-&gt;<a class="code" href="class_turret_state_mgr.html#af55d845dff66699c6a9a0d4542707426">SetCurrentState</a>( TurretStateMgr::TURRET_STATE::HOLD, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    m_shooter-&gt;<a class="code" href="class_shooter_state_mgr.html#a523f0b84850fbc069340877decdae99d">SetCurrentState</a>( ShooterStateMgr::SHOOTER_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    m_hood-&gt;<a class="code" href="class_shooter_hood_state_mgr.html#a2d6262e573c83bb178742eb36588c7f4">SetCurrentState</a>( <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION</a>, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_ball_manipulator.html#a565ef49322a8a72a7cc72ae3b19ff4a8">   70</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ball_manipulator.html#a565ef49322a8a72a7cc72ae3b19ff4a8">BallManipulator::RunCurrentState</a>()</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// todo: add gamepad interupts</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// process teleop/manual interrupts</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">auto</span> controller = <a class="code" href="class_teleop_control.html#abcca1fa489e538a5f42c920747a4f598">TeleopControl::GetInstance</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> ( controller != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// run the current state</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    m_intake-&gt;<a class="code" href="class_intake_state_mgr.html#ac27ccde795f471c38f5ae0c123e1ada3">RunCurrentState</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    m_impeller-&gt;<a class="code" href="class_impeller_state_mgr.html#a493984fe4706c183ac8ba822f2e7d2c0">RunCurrentState</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    m_transfer-&gt;<a class="code" href="class_ball_transfer_state_mgr.html#ae9a3c67861dc9c3c1f8afafff3313a24">RunCurrentState</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    m_turret-&gt;<a class="code" href="class_turret_state_mgr.html#a6c0df093d2070fa547eb5855c5d9a9e2">RunCurrentState</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    m_shooter-&gt;<a class="code" href="class_shooter_state_mgr.html#ac2efdc7eb599adf95df2e0d5a46e35d3">RunCurrentState</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    m_hood-&gt;<a class="code" href="class_shooter_hood_state_mgr.html#a1ea4d12e259efebe9e17e36ec7800162">RunCurrentState</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ball_manipulator.html#ac6b06504ca8077c1b533895b2793e5a1">BallManipulator::SetCurrentState</a></div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_ball_manipulator.html#ac6b06504ca8077c1b533895b2793e5a1">   92</a></span>&#160;(</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4">BALL_MANIPULATOR_STATE</a>  state</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    m_currentState = state;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">switch</span> ( state )</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">case</span> BALL_MANIPULATOR_STATE::OFF:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            m_intake-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            m_turret-&gt;SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            m_shooter-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            m_hood-&gt;SetCurrentState( <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION</a>, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">case</span> BALL_MANIPULATOR_STATE::INTAKE:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            m_intake-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::ON, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">if</span> ( m_impeller-&gt;GetCurrentState() == ImpellerStateMgr::IMPELLER_STATE::OFF )</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">if</span> ( m_transfer-&gt;GetCurrentState() == BallTransferStateMgr::BALL_TRANSFER_STATE::OFF )</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER , <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">case</span> BALL_MANIPULATOR_STATE::INTAKE_HUMAN_PLAYER:</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            m_intake-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::HUMANPLAYER, <span class="keyword">false</span> );  </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">if</span> ( m_impeller-&gt;GetCurrentState() == ImpellerStateMgr::IMPELLER_STATE::OFF )</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">if</span> ( m_transfer-&gt;GetCurrentState() == BallTransferStateMgr::BALL_TRANSFER_STATE::OFF )</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER , <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">case</span> BALL_MANIPULATOR_STATE::HOLD:</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            m_intake-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER , <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            m_turret-&gt;SetCurrentState( TurretStateMgr::TURRET_STATE::LIMELIGHT_AIM, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            m_shooter-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            m_hood-&gt;SetCurrentState( <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION</a>, <span class="keyword">false</span> );  <span class="comment">// todo auto aim is needed</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">case</span> BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT:</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            m_turret-&gt;SetCurrentState( TurretStateMgr::TURRET_STATE::LIMELIGHT_AIM, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            m_shooter-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            m_hood-&gt;SetCurrentState( <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION</a>, <span class="keyword">false</span> );  <span class="comment">// todo auto aim is needed</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">case</span> BALL_MANIPULATOR_STATE::SHOOT:</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            m_turret-&gt;SetCurrentState( TurretStateMgr::TURRET_STATE::LIMELIGHT_AIM, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            m_shooter-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            m_hood-&gt;SetCurrentState( <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION</a>, <span class="keyword">false</span> );  <span class="comment">// todo auto aim is needed</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    RunCurrentState();</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_turret_state_mgr_html"><div class="ttname"><a href="class_turret_state_mgr.html">TurretStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_turret_state_mgr_8h_source.html#l00014">TurretStateMgr.h:14</a></div></div>
 <div class="ttc" id="a_ball_manipulator_8h_html"><div class="ttname"><a href="_ball_manipulator_8h.html">BallManipulator.h</a></div></div>
 <div class="ttc" id="aclass_ball_manipulator_html_a4cc746261343f7cbcc093f4e9fe29722"><div class="ttname"><a href="class_ball_manipulator.html#a4cc746261343f7cbcc093f4e9fe29722">BallManipulator::GetInstance</a></div><div class="ttdeci">static BallManipulator * GetInstance()</div><div class="ttdoc">Find or create the Ball Manipulator.</div><div class="ttdef"><b>Definition:</b> <a href="_ball_manipulator_8cpp_source.html#l00041">BallManipulator.cpp:41</a></div></div>
+<div class="ttc" id="aclass_turret_state_mgr_html_af55d845dff66699c6a9a0d4542707426"><div class="ttname"><a href="class_turret_state_mgr.html#af55d845dff66699c6a9a0d4542707426">TurretStateMgr::SetCurrentState</a></div><div class="ttdeci">void SetCurrentState(TURRET_STATE state, bool run)</div><div class="ttdoc">set the current state, initialize it and run it</div><div class="ttdef"><b>Definition:</b> <a href="_turret_state_mgr_8cpp_source.html#l00107">TurretStateMgr.cpp:107</a></div></div>
 <div class="ttc" id="a_teleop_control_8h_html"><div class="ttname"><a href="_teleop_control_8h.html">TeleopControl.h</a></div></div>
+<div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">HOLD_POSITION</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00033">PrimitiveEnums.h:33</a></div></div>
 <div class="ttc" id="aclass_turret_state_mgr_html_a6c0df093d2070fa547eb5855c5d9a9e2"><div class="ttname"><a href="class_turret_state_mgr.html#a6c0df093d2070fa547eb5855c5d9a9e2">TurretStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_turret_state_mgr_8cpp_source.html#l00089">TurretStateMgr.cpp:89</a></div></div>
-<div class="ttc" id="aclass_ball_manipulator_html_ac6b06504ca8077c1b533895b2793e5a1"><div class="ttname"><a href="class_ball_manipulator.html#ac6b06504ca8077c1b533895b2793e5a1">BallManipulator::SetCurrentState</a></div><div class="ttdeci">void SetCurrentState(BALL_MANIPULATOR_STATE state)</div><div class="ttdoc">set the current state, initialize it and run it</div><div class="ttdef"><b>Definition:</b> <a href="_ball_manipulator_8cpp_source.html#l00093">BallManipulator.cpp:93</a></div></div>
+<div class="ttc" id="aclass_ball_manipulator_html_ac6b06504ca8077c1b533895b2793e5a1"><div class="ttname"><a href="class_ball_manipulator.html#ac6b06504ca8077c1b533895b2793e5a1">BallManipulator::SetCurrentState</a></div><div class="ttdeci">void SetCurrentState(BALL_MANIPULATOR_STATE state)</div><div class="ttdoc">set the current state, initialize it and run it</div><div class="ttdef"><b>Definition:</b> <a href="_ball_manipulator_8cpp_source.html#l00092">BallManipulator.cpp:92</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_html"><div class="ttname"><a href="class_intake_state_mgr.html">IntakeStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8h_source.html#l00028">IntakeStateMgr.h:28</a></div></div>
+<div class="ttc" id="aclass_impeller_state_mgr_html_afd05b5a5b87575f74f8f82eae0f915ce"><div class="ttname"><a href="class_impeller_state_mgr.html#afd05b5a5b87575f74f8f82eae0f915ce">ImpellerStateMgr::SetCurrentState</a></div><div class="ttdeci">void SetCurrentState(IMPELLER_STATE state, bool run)</div><div class="ttdoc">set the current state, initialize it and run it</div><div class="ttdef"><b>Definition:</b> <a href="_impeller_state_mgr_8cpp_source.html#l00247">ImpellerStateMgr.cpp:247</a></div></div>
 <div class="ttc" id="aclass_shooter_state_mgr_html_ac2efdc7eb599adf95df2e0d5a46e35d3"><div class="ttname"><a href="class_shooter_state_mgr.html#ac2efdc7eb599adf95df2e0d5a46e35d3">ShooterStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_state_mgr_8cpp_source.html#l00114">ShooterStateMgr.cpp:114</a></div></div>
 <div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
 <div class="ttc" id="aclass_impeller_state_mgr_html"><div class="ttname"><a href="class_impeller_state_mgr.html">ImpellerStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_impeller_state_mgr_8h_source.html#l00029">ImpellerStateMgr.h:29</a></div></div>
+<div class="ttc" id="aclass_shooter_state_mgr_html_a523f0b84850fbc069340877decdae99d"><div class="ttname"><a href="class_shooter_state_mgr.html#a523f0b84850fbc069340877decdae99d">ShooterStateMgr::SetCurrentState</a></div><div class="ttdeci">void SetCurrentState(SHOOTER_STATE state, bool run)</div><div class="ttdoc">set the current state, initialize it and run it</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_state_mgr_8cpp_source.html#l00148">ShooterStateMgr.cpp:148</a></div></div>
 <div class="ttc" id="a_shooter_state_mgr_8h_html"><div class="ttname"><a href="_shooter_state_mgr_8h.html">ShooterStateMgr.h</a></div></div>
 <div class="ttc" id="aclass_shooter_state_mgr_html"><div class="ttname"><a href="class_shooter_state_mgr.html">ShooterStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_shooter_state_mgr_8h_source.html#l00028">ShooterStateMgr.h:28</a></div></div>
 <div class="ttc" id="a_shooter_hood_state_mgr_8h_html"><div class="ttname"><a href="_shooter_hood_state_mgr_8h.html">ShooterHoodStateMgr.h</a></div></div>
 <div class="ttc" id="a_impeller_state_mgr_8h_html"><div class="ttname"><a href="_impeller_state_mgr_8h.html">ImpellerStateMgr.h</a></div></div>
 <div class="ttc" id="aclass_ball_manipulator_html"><div class="ttname"><a href="class_ball_manipulator.html">BallManipulator</a></div><div class="ttdef"><b>Definition:</b> <a href="_ball_manipulator_8h_source.html#l00034">BallManipulator.h:34</a></div></div>
-<div class="ttc" id="aclass_ball_manipulator_html_a565ef49322a8a72a7cc72ae3b19ff4a8"><div class="ttname"><a href="class_ball_manipulator.html#a565ef49322a8a72a7cc72ae3b19ff4a8">BallManipulator::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_ball_manipulator_8cpp_source.html#l00071">BallManipulator.cpp:71</a></div></div>
+<div class="ttc" id="aclass_ball_manipulator_html_a565ef49322a8a72a7cc72ae3b19ff4a8"><div class="ttname"><a href="class_ball_manipulator.html#a565ef49322a8a72a7cc72ae3b19ff4a8">BallManipulator::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_ball_manipulator_8cpp_source.html#l00070">BallManipulator.cpp:70</a></div></div>
 <div class="ttc" id="a_intake_state_mgr_8h_html"><div class="ttname"><a href="_intake_state_mgr_8h.html">IntakeStateMgr.h</a></div></div>
 <div class="ttc" id="aclass_shooter_hood_state_mgr_html"><div class="ttname"><a href="class_shooter_hood_state_mgr.html">ShooterHoodStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_shooter_hood_state_mgr_8h_source.html#l00028">ShooterHoodStateMgr.h:28</a></div></div>
-<div class="ttc" id="aclass_shooter_hood_state_mgr_html_a1ea4d12e259efebe9e17e36ec7800162"><div class="ttname"><a href="class_shooter_hood_state_mgr.html#a1ea4d12e259efebe9e17e36ec7800162">ShooterHoodStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_hood_state_mgr_8cpp_source.html#l00118">ShooterHoodStateMgr.cpp:118</a></div></div>
+<div class="ttc" id="aclass_shooter_hood_state_mgr_html_a1ea4d12e259efebe9e17e36ec7800162"><div class="ttname"><a href="class_shooter_hood_state_mgr.html#a1ea4d12e259efebe9e17e36ec7800162">ShooterHoodStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_hood_state_mgr_8cpp_source.html#l00121">ShooterHoodStateMgr.cpp:121</a></div></div>
+<div class="ttc" id="aclass_intake_state_mgr_html_a1e25c496c344124e7a52b7bbdfa09f87"><div class="ttname"><a href="class_intake_state_mgr.html#a1e25c496c344124e7a52b7bbdfa09f87">IntakeStateMgr::SetCurrentState</a></div><div class="ttdeci">void SetCurrentState(INTAKE_STATE state, bool run)</div><div class="ttdoc">set the current state, initialize it and run it</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8cpp_source.html#l00149">IntakeStateMgr.cpp:149</a></div></div>
+<div class="ttc" id="aclass_shooter_hood_state_mgr_html_a2d6262e573c83bb178742eb36588c7f4"><div class="ttname"><a href="class_shooter_hood_state_mgr.html#a2d6262e573c83bb178742eb36588c7f4">ShooterHoodStateMgr::SetCurrentState</a></div><div class="ttdeci">void SetCurrentState(SHOOTER_HOOD_STATE state, bool run)</div><div class="ttdoc">set the current state, initialize it and run it</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_hood_state_mgr_8cpp_source.html#l00162">ShooterHoodStateMgr.cpp:162</a></div></div>
 <div class="ttc" id="aclass_ball_transfer_state_mgr_html_ae9a3c67861dc9c3c1f8afafff3313a24"><div class="ttname"><a href="class_ball_transfer_state_mgr.html#ae9a3c67861dc9c3c1f8afafff3313a24">BallTransferStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_ball_transfer_state_mgr_8cpp_source.html#l00117">BallTransferStateMgr.cpp:117</a></div></div>
 <div class="ttc" id="a_ball_transfer_state_mgr_8h_html"><div class="ttname"><a href="_ball_transfer_state_mgr_8h.html">BallTransferStateMgr.h</a></div></div>
 <div class="ttc" id="aclass_ball_manipulator_html_a91bf71119c5fecb46b41a90485f7a9a4"><div class="ttname"><a href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4">BallManipulator::BALL_MANIPULATOR_STATE</a></div><div class="ttdeci">BALL_MANIPULATOR_STATE</div><div class="ttdef"><b>Definition:</b> <a href="_ball_manipulator_8h_source.html#l00038">BallManipulator.h:38</a></div></div>
@@ -278,11 +282,12 @@ $(document).ready(function(){initNavTree('_ball_manipulator_8cpp_source.html',''
 <div class="ttc" id="aclass_teleop_control_html_abcca1fa489e538a5f42c920747a4f598"><div class="ttname"><a href="class_teleop_control.html#abcca1fa489e538a5f42c920747a4f598">TeleopControl::GetInstance</a></div><div class="ttdeci">static TeleopControl * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8cpp_source.html#l00044">TeleopControl.cpp:44</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_html_ac27ccde795f471c38f5ae0c123e1ada3"><div class="ttname"><a href="class_intake_state_mgr.html#ac27ccde795f471c38f5ae0c123e1ada3">IntakeStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8cpp_source.html#l00115">IntakeStateMgr.cpp:115</a></div></div>
 <div class="ttc" id="aclass_impeller_state_mgr_html_a493984fe4706c183ac8ba822f2e7d2c0"><div class="ttname"><a href="class_impeller_state_mgr.html#a493984fe4706c183ac8ba822f2e7d2c0">ImpellerStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_impeller_state_mgr_8cpp_source.html#l00132">ImpellerStateMgr.cpp:132</a></div></div>
+<div class="ttc" id="aclass_ball_transfer_state_mgr_html_a4ad4576d1df79e2e9749be0a6ec0daa6"><div class="ttname"><a href="class_ball_transfer_state_mgr.html#a4ad4576d1df79e2e9749be0a6ec0daa6">BallTransferStateMgr::SetCurrentState</a></div><div class="ttdeci">void SetCurrentState(BALL_TRANSFER_STATE state, bool run)</div><div class="ttdoc">set the current state, initialize it and run it</div><div class="ttdef"><b>Definition:</b> <a href="_ball_transfer_state_mgr_8cpp_source.html#l00155">BallTransferStateMgr.cpp:155</a></div></div>
 <div class="ttc" id="aclass_ball_transfer_state_mgr_html"><div class="ttname"><a href="class_ball_transfer_state_mgr.html">BallTransferStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_ball_transfer_state_mgr_8h_source.html#l00029">BallTransferStateMgr.h:29</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="_ball_manipulator_8cpp.html">BallManipulator.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_128f75dce35ba73c52fc2f45d15b5117.html">states</a></li><li class="navelem"><a class="el" href="_ball_manipulator_8cpp.html">BallManipulator.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

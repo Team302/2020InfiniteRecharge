@@ -63,7 +63,7 @@ var NAVTREEINDEX =
 "class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29ab9e2c5ce44e11958de5f894268c2bcc7",
 "class_logger.html#a4edb2ae414fe730aa45c9279c07f013aa30505ac45161ab12db3907e4236a7417",
 "class_solenoid_defn.html#a982ef38f8450833069b8d901cb7374a9",
-"globals_func.html"
+"globals_eval.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

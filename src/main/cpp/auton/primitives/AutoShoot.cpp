@@ -32,7 +32,7 @@
 #include <auton/primitives/AutoShoot.h>
 #include <auton/PrimitiveParams.h>
 #include <subsys/Shooter.h>
-#include <controllers/BallManipulator.h>
+#include <states/BallManipulator.h>
 
 using namespace std;
 

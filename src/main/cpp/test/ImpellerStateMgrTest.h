@@ -23,7 +23,7 @@
 
 // Team 302 includes
 #include <test/IStateTest.h>
-#include <controllers/impeller/ImpellerStateMgr.h>
+#include <states/impeller/ImpellerStateMgr.h>
 
 // Third Party Includes
 

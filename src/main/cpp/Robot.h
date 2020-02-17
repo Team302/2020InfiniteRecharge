@@ -37,11 +37,11 @@
 
 // team 302 includes
 #include <auton/CyclePrimitives.h>
-#include <controllers/chassis/ChassisStateMgr.h>
-#include <controllers/BallManipulator.h>
-//#include <controllers/controlPanel/ControlPanelStateMgr.h>
-//#include <controllers/climber/ClimberStateMgr.h>
-#include <controllers/intake/IntakeStateMgr.h>
+#include <states/chassis/ChassisStateMgr.h>
+#include <states/BallManipulator.h>
+//#include <states/controlPanel/ControlPanelStateMgr.h>
+//#include <states/climber/ClimberStateMgr.h>
+#include <states/intake/IntakeStateMgr.h>
 
 #include <test/ButtonBoxDisplay.h>
 #include <test/XboxDisplay.h>
