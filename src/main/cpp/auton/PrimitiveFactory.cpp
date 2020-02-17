@@ -107,22 +107,6 @@ IPrimitive* PrimitiveFactory::GetIPrimitive(PrimitiveParams* primitivePasser)
         primitive = m_driveToWall;
         break;
 
-    case TURN_TO_CUBE:
-        if (m_turnToCube == nullptr)
-        {
-            m_turnToCube = new TurnToCube();
-        }
-        primitive = m_turnToCube;
-        break;
-
-    case DRIVE_LIDAR_DISTANCE:
-        if (m_driveLidarDistance == nullptr)
-        {
-            m_driveLidarDistance = new DriveToTarget();
-        }
-        primitive = m_driveLidarDistance;
-        break;
-
 	default:
 		break;
 	}
