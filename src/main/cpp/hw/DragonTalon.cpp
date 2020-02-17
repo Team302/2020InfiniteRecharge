@@ -83,7 +83,8 @@ void DragonTalon::Set(double value)
 
         case ControlModes::CONTROL_TYPE::POSITION_DEGREES:
 			ctreMode = ctre::phoenix::motorcontrol::ControlMode::Position;
-			output = (ConversionUtils::DegreesToCounts(value,m_countsPerRev) / m_gearRatio) + m_tickOffset;
+			output = (ConversionUtils::DegreesToCounts(value,m_countsPerRev) / m_gearRatio);
+			frc::SmartDashboard::PutNumber("Target counts", output);
 			break;
         case ControlModes::CONTROL_TYPE::POSITION_INCH:
             ctreMode = ctre::phoenix::motorcontrol::ControlMode::Position;
