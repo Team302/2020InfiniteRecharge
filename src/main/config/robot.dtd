@@ -1,5 +1,5 @@
 <!-- temporary leave pigeon here until odometry is plugged in -->
-<!ELEMENT robot (pdp?, pcm?, odometry?, feedback?, chassis?, mechanism*, pigeon? )>
+<!ELEMENT robot (pdp?, pcm?, odometry?, feedback?, chassis?, mechanism*, pigeon?, limelight? )>
 
 <!-- ========================================================================================================================================== -->
 <!--	odometry 																																-->
