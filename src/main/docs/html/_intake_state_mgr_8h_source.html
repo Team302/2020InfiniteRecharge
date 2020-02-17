@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: controllers/intake/IntakeStateMgr.h Source File</title>
+<title>Team 302 Robot: states/intake/IntakeStateMgr.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('_intake_state_mgr_8h_source.html','');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// FRC includes</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_state_8h.html">controllers/IState.h</a>&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_state_8h.html">states/IState.h</a>&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Third Party Includes</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
@@ -158,16 +158,16 @@ $(document).ready(function(){initNavTree('_intake_state_mgr_8h_source.html','');
 <div class="ttc" id="aclass_intake_state_mgr_html_aaa5d73e08f73a95dca5c6aaa1de6b56ca820efa88b53ddab362a6f41b2b843e3a"><div class="ttname"><a href="class_intake_state_mgr.html#aaa5d73e08f73a95dca5c6aaa1de6b56ca820efa88b53ddab362a6f41b2b843e3a">IntakeStateMgr::MAX_INTAKE_STATES</a></div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8h_source.html#l00037">IntakeStateMgr.h:37</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_html"><div class="ttname"><a href="class_intake_state_mgr.html">IntakeStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8h_source.html#l00028">IntakeStateMgr.h:28</a></div></div>
 <div class="ttc" id="a_i_state_8h_html"><div class="ttname"><a href="_i_state_8h.html">IState.h</a></div></div>
-<div class="ttc" id="aclass_intake_state_mgr_html_a1e25c496c344124e7a52b7bbdfa09f87"><div class="ttname"><a href="class_intake_state_mgr.html#a1e25c496c344124e7a52b7bbdfa09f87">IntakeStateMgr::SetCurrentState</a></div><div class="ttdeci">void SetCurrentState(INTAKE_STATE state, bool run)</div><div class="ttdoc">set the current state, initialize it and run it</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8cpp_source.html#l00149">IntakeStateMgr.cpp:149</a></div></div>
+<div class="ttc" id="aclass_intake_state_mgr_html_a1e25c496c344124e7a52b7bbdfa09f87"><div class="ttname"><a href="class_intake_state_mgr.html#a1e25c496c344124e7a52b7bbdfa09f87">IntakeStateMgr::SetCurrentState</a></div><div class="ttdeci">void SetCurrentState(INTAKE_STATE state, bool run)</div><div class="ttdoc">set the current state, initialize it and run it</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8cpp_source.html#l00151">IntakeStateMgr.cpp:151</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_html_a67087cabbb04c3f8145ec41a1bbf5cea"><div class="ttname"><a href="class_intake_state_mgr.html#a67087cabbb04c3f8145ec41a1bbf5cea">IntakeStateMgr::IntakeStateMgr</a></div><div class="ttdeci">IntakeStateMgr()</div><div class="ttdoc">initialize the state manager, parse the configuration file and create the states.</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8cpp_source.html#l00040">IntakeStateMgr.cpp:40</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_html_aaa5d73e08f73a95dca5c6aaa1de6b56c"><div class="ttname"><a href="class_intake_state_mgr.html#aaa5d73e08f73a95dca5c6aaa1de6b56c">IntakeStateMgr::INTAKE_STATE</a></div><div class="ttdeci">INTAKE_STATE</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8h_source.html#l00032">IntakeStateMgr.h:32</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_html_aaa5d73e08f73a95dca5c6aaa1de6b56caf6d21481875c74e75a8d895516b88649"><div class="ttname"><a href="class_intake_state_mgr.html#aaa5d73e08f73a95dca5c6aaa1de6b56caf6d21481875c74e75a8d895516b88649">IntakeStateMgr::ON</a></div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8h_source.html#l00035">IntakeStateMgr.h:35</a></div></div>
-<div class="ttc" id="aclass_intake_state_mgr_html_ac27ccde795f471c38f5ae0c123e1ada3"><div class="ttname"><a href="class_intake_state_mgr.html#ac27ccde795f471c38f5ae0c123e1ada3">IntakeStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8cpp_source.html#l00115">IntakeStateMgr.cpp:115</a></div></div>
+<div class="ttc" id="aclass_intake_state_mgr_html_ac27ccde795f471c38f5ae0c123e1ada3"><div class="ttname"><a href="class_intake_state_mgr.html#ac27ccde795f471c38f5ae0c123e1ada3">IntakeStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8cpp_source.html#l00117">IntakeStateMgr.cpp:117</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_html_aaa5d73e08f73a95dca5c6aaa1de6b56caf4913ff1c5a47384d35664ab9b2ebcef"><div class="ttname"><a href="class_intake_state_mgr.html#aaa5d73e08f73a95dca5c6aaa1de6b56caf4913ff1c5a47384d35664ab9b2ebcef">IntakeStateMgr::HUMANPLAYER</a></div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_8h_source.html#l00036">IntakeStateMgr.h:36</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="dir_6a6f18b16a7999443df26d50492d7535.html">intake</a></li><li class="navelem"><a class="el" href="_intake_state_mgr_8h.html">IntakeStateMgr.h</a></li>
+    <li class="navelem"><a class="el" href="dir_128f75dce35ba73c52fc2f45d15b5117.html">states</a></li><li class="navelem"><a class="el" href="dir_4c0c69b8e30550a039bc9c87abfd1709.html">intake</a></li><li class="navelem"><a class="el" href="_intake_state_mgr_8h.html">IntakeStateMgr.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

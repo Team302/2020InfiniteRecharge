@@ -10,6 +10,7 @@
 #include "utils/HardwareIDValidation.h"
 #include "utils/UsageValidation.h"
 #include "utils/Logger.h"
+#include <hw/factories/LimelightFactory.h>
 
 #include <pugixml/pugixml.hpp>
 
@@ -83,7 +84,18 @@ std::shared_ptr<DragonLimelight> LimelightDefn::ParseXML(pugi::xml_node    limel
 
         if(!hasError)
         {
-            limelight = make_shared<DragonLimelight>(usage, tableName, mountingHeight, horizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2);
+            limelight = LimelightFactory::GetLimelightFactory()->CreateLimelight
+            (
+                IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT,
+                tableName,
+                mountingHeight,
+                horizontalOffset,
+                rotation,
+                mountingAngle,
+                targetHeight,
+                targetHeight2
+            );
+            //limelight = make_shared<DragonLimelight>(usage, tableName, mountingHeight, horizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2);
         }
     }
     return limelight;

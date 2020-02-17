@@ -41,5 +41,6 @@ class LimelightFactory
     ~LimelightFactory() = default;
 
     static LimelightFactory* m_limelightFactory;
-    std::map <IDragonSensor::SENSOR_USAGE, std::shared_ptr<DragonLimelight>> m_limelightMap;
+    std::shared_ptr<DragonLimelight> m_limelight;
+    //std::map <IDragonSensor::SENSOR_USAGE, std::shared_ptr<DragonLimelight>> m_limelightMap;
 };

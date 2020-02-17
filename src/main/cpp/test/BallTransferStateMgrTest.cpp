@@ -23,7 +23,7 @@
 // Team 302 includes
 #include <test/IStateTest.h>
 #include <test/BallTransferStateMgrTest.h>
-#include <controllers/balltransfer/BallTransferStateMgr.h>
+#include <states/balltransfer/BallTransferStateMgr.h>
 
 #include <utils/Logger.h>
 // Third Party Includes

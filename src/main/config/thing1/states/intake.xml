@@ -5,9 +5,15 @@
 	             mode="PERCENT_OUTPUT"/>
 	<mechanismTarget stateIdentifier="INTAKEOFF"
 	                 controlDataIdentifier="openloop"
-					 value="0.0"/>
+					 value="0.0"
+					 solenoid="OFF"/>
 	<mechanismTarget stateIdentifier="INTAKEON"
 	                 controlDataIdentifier="openloop"
-					 value="1.0"/>
+					 value="0.5"
+					 solenoid="ON"/>
+	<mechanismTarget stateIdentifier="INTAKEHUMANPLAYER"
+	                 controlDataIdentifier="openloop"
+					 value="-0.5"
+					 solenoid="ON"/>
 
 </statedata>

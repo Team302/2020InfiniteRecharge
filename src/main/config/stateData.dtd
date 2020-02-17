@@ -4,7 +4,7 @@
 <!ATTLIST controlData
           identifier CDATA  #REQUIRED
           mode ( PERCENT_OUTPUT | VELOCITY_INCH | VELOCITY_DEGREES  | VELOCITY_RPS |
-                 VOLTAGE | CURRENT | TRAPEZOID | MOTION_PROFILE | MOTION_PROFILE_ARC ) "PERCENT_OUTPUT"
+                 VOLTAGE | CURRENT | TRAPEZOID | MOTION_PROFILE | MOTION_PROFILE_ARC | POSITION_DEGREES) "PERCENT_OUTPUT"
 		  constrolServer ( MOTORCONTROLLER | ROBORIO ) "MOTORCONTROLLER"
           proportional CDATA "0.0"
           integral CDATA "0.0"
@@ -17,16 +17,17 @@
 
 <!ELEMENT mechanismTarget EMPTY>
 <!ATTLIST mechanismTarget 
-          stateIdentifier           ( INTAKEOFF | INTAKEON | INTAKEHUMANPLAYER |
-                                      HUMANPLAYERFLAPCLOSED | HUMANPLAYERFLAPOPEN |
-                                      IMPELLEROFF | IMPELLERHOLD | IMPELLERAGITATE | IMPELLERTOSHOOTER |
-                                      BALLTRANSFEROFF | BALLTRANSPORTTOIMPELLER | BALLTRANSFERTOSHOOTER |
-                                      SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN | SHOOTERHOODMANUAL |
-                                      TURRETHOLD | TURRETAUTOAIM | TURRETMANUALAIM |
-                                      SHOOTEROFF | SHOOTERGETREADY | SHOOTERSHOOT |
-                                      UNKNOWN ) "UNKNOWN"
-          controlDataIdentifier     CDATA #REQUIRED
-          value                     CDATA #REQUIRED
-          solenoid                  ( NONE | ON | OFF ) "NONE"
+          stateIdentifier               ( INTAKEOFF | INTAKEON | INTAKEHUMANPLAYER |
+                                          IMPELLEROFF | IMPELLERHOLD | IMPELLERAGITATE | IMPELLERTOSHOOTER |
+                                          BALLTRANSFEROFF | BALLTRANSPORTTOIMPELLER | BALLTRANSFERTOSHOOTER |
+                                          SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN | SHOOTERHOODMANUAL |
+                                          TURRETHOLD | TURRETAUTOAIM | TURRETMANUALAIM |
+                                          SHOOTEROFF | SHOOTERGETREADY | SHOOTERSHOOT |
+                                          UNKNOWN ) "UNKNOWN"
+          controlDataIdentifier         CDATA #REQUIRED
+          value                         CDATA #REQUIRED
+          solenoid                      ( NONE | ON | OFF ) "NONE"
+          failoverControlDataIdentifier CDATA #IMPLIED
+          failoverValue                 CDATA #IMPLIED
 >
 

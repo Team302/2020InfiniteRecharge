@@ -105,292 +105,290 @@ $(document).ready(function(){initNavTree('_dragon_gamepad_8cpp_source.html','');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_gamepad_8h.html">gamepad/DragonGamepad.h</a>&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_gamepad_8h.html">gamepad/DragonGamepad.h</a>&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_deadband_8h.html">gamepad/axis/IDeadband.h</a>&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_profile_8h.html">gamepad/axis/IProfile.h</a>&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_digital_button_8h.html">gamepad/button/DigitalButton.h</a>&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_analog_axis_8h.html">gamepad/axis/AnalogAxis.h</a>&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_analog_button_8h.html">gamepad/button/AnalogButton.h</a>&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_toggle_button_8h.html">gamepad/button/ToggleButton.h</a>&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;frc/GenericHID.h&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;frc/Joystick.h&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_logger_8h.html">utils/Logger.h</a>&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">using namespace </span>frc;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="class_dragon_gamepad.html#a041652af5bb0bdc987a2d8443c1fcb7f">DragonGamepad::DragonGamepad</a></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#a041652af5bb0bdc987a2d8443c1fcb7f">   38</a></span>&#160;(</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> port</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;)  : m_gamepad( <span class="keyword">new</span> Joystick(port)),</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;m_axis(),</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;m_axisScale(),</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;m_axisInversionFactor(),</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;m_axisProfile(),</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//m_button(),</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;m_button()</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// device type is 24</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// 8 axis</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// 11 buttons</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    m_axis.resize( AXIS_IDENTIFIER::MAX_AXIS );</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    m_axisScale.resize( AXIS_IDENTIFIER::MAX_AXIS );</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_axisInversionFactor.resize( AXIS_IDENTIFIER::MAX_AXIS );</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_axisProfile.resize( AXIS_IDENTIFIER::MAX_AXIS );</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">for</span> ( <span class="keyword">auto</span> inx=0; inx&lt;AXIS_IDENTIFIER::MAX_AXIS; ++inx )</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        m_axisScale[inx] = 1.0;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        m_axisInversionFactor[inx] = 1.0;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        m_axisProfile[inx] = LINEAR;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        m_axis[inx] = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//Create Axis objects</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    m_axis[GAMEPAD_AXIS_16] = <span class="keyword">new</span> <a class="code" href="class_analog_axis.html">AnalogAxis</a>(m_gamepad, LEFT_JOYSTICK,<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    m_axis[GAMEPAD_AXIS_16]-&gt;SetDeadBand( AXIS_DEADBAND::NONE);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    m_axis[GAMEPAD_AXIS_16]-&gt;SetAxisScaleFactor(JOYSTICK_SCALE);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    m_axis[GAMEPAD_AXIS_17] = <span class="keyword">new</span> <a class="code" href="class_analog_axis.html">AnalogAxis</a>(m_gamepad, RIGHT_JOYSTICK,<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    m_axis[GAMEPAD_AXIS_17]-&gt;SetDeadBand( AXIS_DEADBAND::NONE);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    m_axis[GAMEPAD_AXIS_17]-&gt;SetAxisScaleFactor(JOYSTICK_SCALE);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">//Create Button objects</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    m_button.resize( BUTTON_IDENTIFIER::MAX_BUTTONS );</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">for</span> ( <span class="keyword">auto</span> inx=0; inx&lt;BUTTON_IDENTIFIER::MAX_BUTTONS; ++inx )</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        m_button[inx] = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    m_axis[LEFT_ANALOG_BUTTON_AXIS] = <span class="keyword">new</span> <a class="code" href="class_analog_axis.html">AnalogAxis</a>(m_gamepad, LEFT_BUTTON_AXIS_ID,<span class="keyword">false</span> );</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    m_axis[LEFT_ANALOG_BUTTON_AXIS]-&gt;SetDeadBand( AXIS_DEADBAND::NONE);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    m_button[GAMEPAD_BUTTON_1] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_1_LOWERBOUND,BUTTON_1_UPPERBOUND);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    m_button[GAMEPAD_BUTTON_3] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_3_LOWERBOUND,BUTTON_3_UPPERBOUND);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    m_button[GAMEPAD_BUTTON_6] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_6_LOWERBOUND,BUTTON_6_UPPERBOUND);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    m_button[GAMEPAD_BUTTON_8] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_8_LOWERBOUND,BUTTON_8_UPPERBOUND);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    m_button[GAMEPAD_BUTTON_10] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_10_LOWERBOUND,BUTTON_10_UPPERBOUND);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    m_button[GAMEPAD_BUTTON_12] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_12_LOWERBOUND,BUTTON_12_UPPERBOUND);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    m_axis[RIGHT_ANALOG_BUTTON_AXIS] = <span class="keyword">new</span> <a class="code" href="class_analog_axis.html">AnalogAxis</a>(m_gamepad, RIGHT_BUTTON_AXIS_ID,<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    m_axis[RIGHT_ANALOG_BUTTON_AXIS]-&gt;SetDeadBand( AXIS_DEADBAND::NONE);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    m_button[GAMEPAD_BUTTON_2] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_2_LOWERBOUND,BUTTON_2_UPPERBOUND);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    m_button[GAMEPAD_BUTTON_4] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_4_LOWERBOUND,BUTTON_4_UPPERBOUND);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    m_button[GAMEPAD_BUTTON_5] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_5_LOWERBOUND,BUTTON_5_UPPERBOUND);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    m_button[GAMEPAD_BUTTON_7] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_7_LOWERBOUND,BUTTON_7_UPPERBOUND);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    m_button[GAMEPAD_BUTTON_9] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_9_LOWERBOUND,BUTTON_9_UPPERBOUND);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    m_button[GAMEPAD_BUTTON_11] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_11_LOWERBOUND,BUTTON_11_UPPERBOUND);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    m_button[GAMEPAD_BUTTON_13] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_13_LOWERBOUND,BUTTON_13_UPPERBOUND);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">//m_button[GAMEPAD_BIG_RED_BUTTON] = new AnalogButton(m_gamepad, GAMEPAD_BIG_RED_BUTTON,);</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    m_axis[DIAL_ANALOG_BUTTON_AXIS] = <span class="keyword">new</span> <a class="code" href="class_analog_axis.html">AnalogAxis</a>(m_gamepad, DIAL_BUTTON_AXIS_ID,<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    m_axis[DIAL_ANALOG_BUTTON_AXIS]-&gt;SetDeadBand( AXIS_DEADBAND::NONE);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    m_button[GAMEPAD_DIAL_22] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_22_LOWERBOUND, BUTTON_22_UPPERBOUND );</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    m_button[GAMEPAD_DIAL_23] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_23_LOWERBOUND, BUTTON_23_UPPERBOUND );</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    m_button[GAMEPAD_DIAL_24] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_24_LOWERBOUND, BUTTON_24_UPPERBOUND );</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    m_button[GAMEPAD_DIAL_25] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_25_LOWERBOUND, BUTTON_25_UPPERBOUND );</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    m_button[GAMEPAD_DIAL_26] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_26_LOWERBOUND, BUTTON_26_UPPERBOUND );</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    m_button[GAMEPAD_DIAL_27] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_27_LOWERBOUND, BUTTON_27_UPPERBOUND );</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    m_button[GAMEPAD_SWITCH_18] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, SWITCH_18_DIGITAL_ID);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    m_button[GAMEPAD_SWITCH_19] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, SWITCH_19_DIGITAL_ID);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    m_button[GAMEPAD_SWITCH_20] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, SWITCH_20_DIGITAL_ID);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    m_button[GAMEPAD_SWITCH_21] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, SWITCH_21_DIGITAL_ID);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    m_button[GAMEPAD_BUTTON_14_UP] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, LEVER_14_UP_DIGITAL_ID);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    m_button[GAMEPAD_BUTTON_14_DOWN] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, LEVER_14_DOWN_DIGITAL_ID);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    m_button[GAMEPAD_BUTTON_15_UP] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, LEVER_15_UP_DIGITAL_ID);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    m_button[GAMEPAD_BUTTON_15_DOWN] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, LEVER_15_DOWN_DIGITAL_ID);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#a484749bfa72081dfcf87fd4c5ec61212">  132</a></span>&#160;<a class="code" href="class_dragon_gamepad.html#a484749bfa72081dfcf87fd4c5ec61212">DragonGamepad::~DragonGamepad</a>()</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">delete</span> m_gamepad;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    m_gamepad = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_gamepad.html#a8942fb6acb85fff749481a6e998c9204">DragonGamepad::GetAxisValue</a></div>
-<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#a8942fb6acb85fff749481a6e998c9204">  139</a></span>&#160;(</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;) <span class="keyword">const</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">double</span> value = 0.0;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> ( m_axis[axis] != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        value = m_axis[axis]-&gt;GetAxisValue();</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">if</span> ( axis == AXIS_IDENTIFIER::GAMEPAD_AXIS_16 || axis == AXIS_IDENTIFIER::GAMEPAD_AXIS_17 )</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            value -= JOYSTICK_OFFSET;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::GetAxisValue no axis&quot;</span>), to_string(axis) );</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dragon_gamepad.html#a736e3af20879da0b6c9ab71608968be7">DragonGamepad::IsButtonPressed</a></div>
-<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#a736e3af20879da0b6c9ab71608968be7">  160</a></span>&#160;(</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;) <span class="keyword">const</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">bool</span> isPressed = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span> ( m_button[button] != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        isPressed = m_button[button]-&gt;IsButtonPressed();</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::IsButtonPressed no button&quot;</span>), to_string(button) );</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">return</span> isPressed;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#af03d2edf95e4fd043059134e05ae807c">DragonGamepad::SetAxisDeadband</a></div>
-<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#af03d2edf95e4fd043059134e05ae807c">  177</a></span>&#160;(</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis,</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#afde07811ccdd7565bc40c381adecee4d">AXIS_DEADBAND</a> type</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;)</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">if</span> ( m_axis[axis] != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        m_axis[axis]-&gt;SetDeadBand( type );</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }        </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::SetAxisDeadband no axis&quot;</span>), to_string(axis) );</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#aa206d96358046a54318db0ff82db648d">DragonGamepad::SetAxisProfile</a></div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#aa206d96358046a54318db0ff82db648d">  193</a></span>&#160;(</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis,</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676">AXIS_PROFILE</a> curve</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;)</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;{</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">if</span> ( m_axis[axis] != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        m_axis[axis]-&gt;SetAxisProfile( curve );</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    }        </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::SetAxisProfile no axis&quot;</span>), to_string(axis) );</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#a4c621d8b78609c4b52cefbc09b881975">DragonGamepad::SetAxisScale</a></div>
-<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#a4c621d8b78609c4b52cefbc09b881975">  209</a></span>&#160;(</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis,</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">float</span> scaleFactor</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;)</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;{</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">if</span> ( m_axis[axis] != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        m_axis[axis]-&gt;SetAxisScaleFactor( scaleFactor );</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }        </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::SetAxisScale no axis&quot;</span>), to_string(axis) );</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#aedddee103b3f859b9d94944eb89c9011">DragonGamepad::SetButtonMode</a></div>
-<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#aedddee103b3f859b9d94944eb89c9011">  225</a></span>&#160;(</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button,</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#af3915fb49841ce1fc53b35c9e24d3417">BUTTON_MODE</a> mode</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;) </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;{</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">if</span> ( m_button[button] != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    {</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">if</span> ( mode == BUTTON_MODE::TOGGLE)</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="keyword">auto</span> btn = <span class="keyword">new</span> <a class="code" href="class_toggle_button.html">ToggleButton</a>( m_button[button] );</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            m_button[button] = btn;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        }</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="comment">// TODO: should have else to re-create the button or remove the toggle decorator</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::SetButtonMode no button&quot;</span>), to_string(button) );</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_deadband_8h.html">gamepad/axis/IDeadband.h</a>&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_profile_8h.html">gamepad/axis/IProfile.h</a>&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_digital_button_8h.html">gamepad/button/DigitalButton.h</a>&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_analog_axis_8h.html">gamepad/axis/AnalogAxis.h</a>&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_analog_button_8h.html">gamepad/button/AnalogButton.h</a>&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_toggle_button_8h.html">gamepad/button/ToggleButton.h</a>&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;frc/GenericHID.h&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;frc/Joystick.h&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_logger_8h.html">utils/Logger.h</a>&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">using namespace </span>frc;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="class_dragon_gamepad.html#a041652af5bb0bdc987a2d8443c1fcb7f">DragonGamepad::DragonGamepad</a></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#a041652af5bb0bdc987a2d8443c1fcb7f">   36</a></span>&#160;(</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> port</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;)  : m_gamepad( <span class="keyword">new</span> Joystick(port)),</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;m_axis(),</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;m_axisScale(),</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;m_axisInversionFactor(),</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;m_axisProfile(),</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//m_button(),</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;m_button()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// device type is 24</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// 8 axis</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// 11 buttons</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    m_axis.resize( AXIS_IDENTIFIER::MAX_AXIS );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    m_axisScale.resize( AXIS_IDENTIFIER::MAX_AXIS );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    m_axisInversionFactor.resize( AXIS_IDENTIFIER::MAX_AXIS );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    m_axisProfile.resize( AXIS_IDENTIFIER::MAX_AXIS );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span> ( <span class="keyword">auto</span> inx=0; inx&lt;AXIS_IDENTIFIER::MAX_AXIS; ++inx )</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        m_axisScale[inx] = 1.0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        m_axisInversionFactor[inx] = 1.0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        m_axisProfile[inx] = LINEAR;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        m_axis[inx] = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">//Create Axis objects</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    m_axis[GAMEPAD_AXIS_16] = <span class="keyword">new</span> <a class="code" href="class_analog_axis.html">AnalogAxis</a>(m_gamepad, LEFT_JOYSTICK,<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    m_axis[GAMEPAD_AXIS_16]-&gt;SetDeadBand( AXIS_DEADBAND::NONE);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    m_axis[GAMEPAD_AXIS_16]-&gt;SetAxisScaleFactor(JOYSTICK_SCALE);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    m_axis[GAMEPAD_AXIS_17] = <span class="keyword">new</span> <a class="code" href="class_analog_axis.html">AnalogAxis</a>(m_gamepad, RIGHT_JOYSTICK,<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    m_axis[GAMEPAD_AXIS_17]-&gt;SetDeadBand( AXIS_DEADBAND::NONE);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    m_axis[GAMEPAD_AXIS_17]-&gt;SetAxisScaleFactor(JOYSTICK_SCALE);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">//Create Button objects</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    m_button.resize( BUTTON_IDENTIFIER::MAX_BUTTONS );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">for</span> ( <span class="keyword">auto</span> inx=0; inx&lt;BUTTON_IDENTIFIER::MAX_BUTTONS; ++inx )</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        m_button[inx] = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    m_axis[LEFT_ANALOG_BUTTON_AXIS] = <span class="keyword">new</span> <a class="code" href="class_analog_axis.html">AnalogAxis</a>(m_gamepad, LEFT_BUTTON_AXIS_ID,<span class="keyword">false</span> );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    m_axis[LEFT_ANALOG_BUTTON_AXIS]-&gt;SetDeadBand( AXIS_DEADBAND::NONE);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    m_button[GAMEPAD_BUTTON_1] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_1_LOWERBOUND,BUTTON_1_UPPERBOUND);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    m_button[GAMEPAD_BUTTON_3] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_3_LOWERBOUND,BUTTON_3_UPPERBOUND);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    m_button[GAMEPAD_BUTTON_6] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_6_LOWERBOUND,BUTTON_6_UPPERBOUND);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    m_button[GAMEPAD_BUTTON_8] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_8_LOWERBOUND,BUTTON_8_UPPERBOUND);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    m_button[GAMEPAD_BUTTON_10] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_10_LOWERBOUND,BUTTON_10_UPPERBOUND);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    m_button[GAMEPAD_BUTTON_12] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[LEFT_ANALOG_BUTTON_AXIS], BUTTON_12_LOWERBOUND,BUTTON_12_UPPERBOUND);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    m_axis[RIGHT_ANALOG_BUTTON_AXIS] = <span class="keyword">new</span> <a class="code" href="class_analog_axis.html">AnalogAxis</a>(m_gamepad, RIGHT_BUTTON_AXIS_ID,<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    m_axis[RIGHT_ANALOG_BUTTON_AXIS]-&gt;SetDeadBand( AXIS_DEADBAND::NONE);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    m_button[GAMEPAD_BUTTON_2] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_2_LOWERBOUND,BUTTON_2_UPPERBOUND);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    m_button[GAMEPAD_BUTTON_4] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_4_LOWERBOUND,BUTTON_4_UPPERBOUND);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    m_button[GAMEPAD_BUTTON_5] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_5_LOWERBOUND,BUTTON_5_UPPERBOUND);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    m_button[GAMEPAD_BUTTON_7] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_7_LOWERBOUND,BUTTON_7_UPPERBOUND);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    m_button[GAMEPAD_BUTTON_9] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_9_LOWERBOUND,BUTTON_9_UPPERBOUND);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    m_button[GAMEPAD_BUTTON_11] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_11_LOWERBOUND,BUTTON_11_UPPERBOUND);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    m_button[GAMEPAD_BUTTON_13] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>( m_axis[RIGHT_ANALOG_BUTTON_AXIS], BUTTON_13_LOWERBOUND,BUTTON_13_UPPERBOUND);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">//m_button[GAMEPAD_BIG_RED_BUTTON] = new AnalogButton(m_gamepad, GAMEPAD_BIG_RED_BUTTON,);</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    m_axis[DIAL_ANALOG_BUTTON_AXIS] = <span class="keyword">new</span> <a class="code" href="class_analog_axis.html">AnalogAxis</a>(m_gamepad, DIAL_BUTTON_AXIS_ID,<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    m_axis[DIAL_ANALOG_BUTTON_AXIS]-&gt;SetDeadBand( AXIS_DEADBAND::NONE);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    m_button[GAMEPAD_DIAL_22] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_22_LOWERBOUND, BUTTON_22_UPPERBOUND );</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    m_button[GAMEPAD_DIAL_23] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_23_LOWERBOUND, BUTTON_23_UPPERBOUND );</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    m_button[GAMEPAD_DIAL_24] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_24_LOWERBOUND, BUTTON_24_UPPERBOUND );</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    m_button[GAMEPAD_DIAL_25] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_25_LOWERBOUND, BUTTON_25_UPPERBOUND );</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    m_button[GAMEPAD_DIAL_26] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_26_LOWERBOUND, BUTTON_26_UPPERBOUND );</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    m_button[GAMEPAD_DIAL_27] = <span class="keyword">new</span> <a class="code" href="class_analog_button.html">AnalogButton</a>(m_axis[DIAL_ANALOG_BUTTON_AXIS], BUTTON_27_LOWERBOUND, BUTTON_27_UPPERBOUND );</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    m_button[GAMEPAD_SWITCH_18] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, SWITCH_18_DIGITAL_ID);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    m_button[GAMEPAD_SWITCH_19] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, SWITCH_19_DIGITAL_ID);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    m_button[GAMEPAD_SWITCH_20] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, SWITCH_20_DIGITAL_ID);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    m_button[GAMEPAD_SWITCH_21] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, SWITCH_21_DIGITAL_ID);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    m_button[GAMEPAD_BUTTON_14_UP] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, LEVER_14_UP_DIGITAL_ID);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    m_button[GAMEPAD_BUTTON_14_DOWN] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, LEVER_14_DOWN_DIGITAL_ID);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    m_button[GAMEPAD_BUTTON_15_UP] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, LEVER_15_UP_DIGITAL_ID);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    m_button[GAMEPAD_BUTTON_15_DOWN] = <span class="keyword">new</span> <a class="code" href="class_digital_button.html">DigitalButton</a>(m_gamepad, LEVER_15_DOWN_DIGITAL_ID);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#a484749bfa72081dfcf87fd4c5ec61212">  130</a></span>&#160;<a class="code" href="class_dragon_gamepad.html#a484749bfa72081dfcf87fd4c5ec61212">DragonGamepad::~DragonGamepad</a>()</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">delete</span> m_gamepad;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    m_gamepad = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_gamepad.html#a8942fb6acb85fff749481a6e998c9204">DragonGamepad::GetAxisValue</a></div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#a8942fb6acb85fff749481a6e998c9204">  137</a></span>&#160;(</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;) <span class="keyword">const</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">double</span> value = 0.0;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> ( m_axis[axis] != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        value = m_axis[axis]-&gt;GetAxisValue();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">if</span> ( axis == AXIS_IDENTIFIER::GAMEPAD_AXIS_16 || axis == AXIS_IDENTIFIER::GAMEPAD_AXIS_17 )</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            value -= JOYSTICK_OFFSET;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::GetAxisValue no axis&quot;</span>), to_string(axis) );</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dragon_gamepad.html#a736e3af20879da0b6c9ab71608968be7">DragonGamepad::IsButtonPressed</a></div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#a736e3af20879da0b6c9ab71608968be7">  158</a></span>&#160;(</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;) <span class="keyword">const</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">bool</span> isPressed = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span> ( m_button[button] != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        isPressed = m_button[button]-&gt;IsButtonPressed();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::IsButtonPressed no button&quot;</span>), to_string(button) );</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">return</span> isPressed;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#af03d2edf95e4fd043059134e05ae807c">DragonGamepad::SetAxisDeadband</a></div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#af03d2edf95e4fd043059134e05ae807c">  175</a></span>&#160;(</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis,</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#afde07811ccdd7565bc40c381adecee4d">AXIS_DEADBAND</a> type</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;{</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">if</span> ( m_axis[axis] != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        m_axis[axis]-&gt;SetDeadBand( type );</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }        </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::SetAxisDeadband no axis&quot;</span>), to_string(axis) );</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#aa206d96358046a54318db0ff82db648d">DragonGamepad::SetAxisProfile</a></div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#aa206d96358046a54318db0ff82db648d">  191</a></span>&#160;(</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis,</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676">AXIS_PROFILE</a> curve</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;)</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">if</span> ( m_axis[axis] != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        m_axis[axis]-&gt;SetAxisProfile( curve );</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }        </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::SetAxisProfile no axis&quot;</span>), to_string(axis) );</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#a4c621d8b78609c4b52cefbc09b881975">DragonGamepad::SetAxisScale</a></div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#a4c621d8b78609c4b52cefbc09b881975">  207</a></span>&#160;(</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">AXIS_IDENTIFIER</a> axis,</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">float</span> scaleFactor</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;{</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">if</span> ( m_axis[axis] != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        m_axis[axis]-&gt;SetAxisScaleFactor( scaleFactor );</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }        </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::SetAxisScale no axis&quot;</span>), to_string(axis) );</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_gamepad.html#aedddee103b3f859b9d94944eb89c9011">DragonGamepad::SetButtonMode</a></div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#aedddee103b3f859b9d94944eb89c9011">  223</a></span>&#160;(</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button,</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#af3915fb49841ce1fc53b35c9e24d3417">BUTTON_MODE</a> mode</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;) </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;{</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">if</span> ( m_button[button] != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">if</span> ( mode == BUTTON_MODE::TOGGLE)</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keyword">auto</span> btn = <span class="keyword">new</span> <a class="code" href="class_toggle_button.html">ToggleButton</a>( m_button[button] );</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            m_button[button] = btn;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="comment">// TODO: should have else to re-create the button or remove the toggle decorator</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::SetButtonMode no button&quot;</span>), to_string(button) );</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;}</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dragon_gamepad.html#a954798e159dab694fbd6c48a96c36657">DragonGamepad::WasButtonPressed</a></div>
-<div class="line"><a name="l00248"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#a954798e159dab694fbd6c48a96c36657">  248</a></span>&#160;(</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;) <span class="keyword">const</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;{</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordtype">bool</span> isPressed = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">if</span> ( m_button[button] != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        isPressed = m_button[button]-&gt;WasButtonPressed();</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::WasButtonPressed no button&quot;</span>), to_string(button) );</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">return</span> isPressed;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dragon_gamepad.html#afb3895ef1ce1f46c7fd9b1070ca30e64">DragonGamepad::WasButtonReleased</a></div>
-<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#afb3895ef1ce1f46c7fd9b1070ca30e64">  265</a></span>&#160;(</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;) <span class="keyword">const</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;{</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">bool</span> isPressed = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">if</span> ( m_button[button] != <span class="keyword">nullptr</span> )</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        isPressed = m_button[button]-&gt;WasButtonReleased();</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::WasButtonReleased no button&quot;</span>), to_string(button) );</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">return</span> isPressed;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dragon_gamepad.html#a954798e159dab694fbd6c48a96c36657">DragonGamepad::WasButtonPressed</a></div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#a954798e159dab694fbd6c48a96c36657">  246</a></span>&#160;(</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;) <span class="keyword">const</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;{</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordtype">bool</span> isPressed = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">if</span> ( m_button[button] != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        isPressed = m_button[button]-&gt;WasButtonPressed();</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::WasButtonPressed no button&quot;</span>), to_string(button) );</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> isPressed;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dragon_gamepad.html#afb3895ef1ce1f46c7fd9b1070ca30e64">DragonGamepad::WasButtonReleased</a></div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="class_dragon_gamepad.html#afb3895ef1ce1f46c7fd9b1070ca30e64">  263</a></span>&#160;(</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">BUTTON_IDENTIFIER</a> button</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;) <span class="keyword">const</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordtype">bool</span> isPressed = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">if</span> ( m_button[button] != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        isPressed = m_button[button]-&gt;WasButtonReleased();</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;DragonGamepad::WasButtonReleased no button&quot;</span>), to_string(button) );</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">return</span> isPressed;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_dragon_gamepad_html_a484749bfa72081dfcf87fd4c5ec61212"><div class="ttname"><a href="class_dragon_gamepad.html#a484749bfa72081dfcf87fd4c5ec61212">DragonGamepad::~DragonGamepad</a></div><div class="ttdeci">~DragonGamepad()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00132">DragonGamepad.cpp:132</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_af03d2edf95e4fd043059134e05ae807c"><div class="ttname"><a href="class_dragon_gamepad.html#af03d2edf95e4fd043059134e05ae807c">DragonGamepad::SetAxisDeadband</a></div><div class="ttdeci">void SetAxisDeadband(AXIS_IDENTIFIER axis, AXIS_DEADBAND type) override</div><div class="ttdoc">Method: SetAxisDeadband Description: Specify what deadband behavior is desired such as none,...</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00177">DragonGamepad.cpp:177</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_aedddee103b3f859b9d94944eb89c9011"><div class="ttname"><a href="class_dragon_gamepad.html#aedddee103b3f859b9d94944eb89c9011">DragonGamepad::SetButtonMode</a></div><div class="ttdeci">void SetButtonMode(BUTTON_IDENTIFIER button, BUTTON_MODE mode) override</div><div class="ttdoc">Method: SetButtonMode Description: Specify how the button should behave. Examples include (but not li...</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00225">DragonGamepad.cpp:225</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_a484749bfa72081dfcf87fd4c5ec61212"><div class="ttname"><a href="class_dragon_gamepad.html#a484749bfa72081dfcf87fd4c5ec61212">DragonGamepad::~DragonGamepad</a></div><div class="ttdeci">~DragonGamepad()</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00130">DragonGamepad.cpp:130</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_af03d2edf95e4fd043059134e05ae807c"><div class="ttname"><a href="class_dragon_gamepad.html#af03d2edf95e4fd043059134e05ae807c">DragonGamepad::SetAxisDeadband</a></div><div class="ttdeci">void SetAxisDeadband(AXIS_IDENTIFIER axis, AXIS_DEADBAND type) override</div><div class="ttdoc">Method: SetAxisDeadband Description: Specify what deadband behavior is desired such as none,...</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00175">DragonGamepad.cpp:175</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_aedddee103b3f859b9d94944eb89c9011"><div class="ttname"><a href="class_dragon_gamepad.html#aedddee103b3f859b9d94944eb89c9011">DragonGamepad::SetButtonMode</a></div><div class="ttdeci">void SetButtonMode(BUTTON_IDENTIFIER button, BUTTON_MODE mode) override</div><div class="ttdoc">Method: SetButtonMode Description: Specify how the button should behave. Examples include (but not li...</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00223">DragonGamepad.cpp:223</a></div></div>
 <div class="ttc" id="aclass_digital_button_html"><div class="ttname"><a href="class_digital_button.html">DigitalButton</a></div><div class="ttdoc">Class: DigitalButton Description: This is the standard button on a gamepad.</div><div class="ttdef"><b>Definition:</b> <a href="_digital_button_8h_source.html#l00038">DigitalButton.h:38</a></div></div>
 <div class="ttc" id="a_analog_button_8h_html"><div class="ttname"><a href="_analog_button_8h.html">AnalogButton.h</a></div></div>
 <div class="ttc" id="aclass_i_dragon_game_pad_html_a07a7fc32b5cb69f2019006c0eb0f7d29"><div class="ttname"><a href="class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29">IDragonGamePad::BUTTON_IDENTIFIER</a></div><div class="ttdeci">BUTTON_IDENTIFIER</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00039">IDragonGamePad.h:39</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_afb3895ef1ce1f46c7fd9b1070ca30e64"><div class="ttname"><a href="class_dragon_gamepad.html#afb3895ef1ce1f46c7fd9b1070ca30e64">DragonGamepad::WasButtonReleased</a></div><div class="ttdeci">bool WasButtonReleased(BUTTON_IDENTIFIER button) const override</div><div class="ttdoc">Method: WasButtonReleased Description: Read whether the button was released since the last query....</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00265">DragonGamepad.cpp:265</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_afb3895ef1ce1f46c7fd9b1070ca30e64"><div class="ttname"><a href="class_dragon_gamepad.html#afb3895ef1ce1f46c7fd9b1070ca30e64">DragonGamepad::WasButtonReleased</a></div><div class="ttdeci">bool WasButtonReleased(BUTTON_IDENTIFIER button) const override</div><div class="ttdoc">Method: WasButtonReleased Description: Read whether the button was released since the last query....</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00263">DragonGamepad.cpp:263</a></div></div>
 <div class="ttc" id="aclass_i_dragon_game_pad_html_a3b3c3165d9fc69500bd69ba575216676"><div class="ttname"><a href="class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676">IDragonGamePad::AXIS_PROFILE</a></div><div class="ttdeci">AXIS_PROFILE</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00132">IDragonGamePad.h:132</a></div></div>
 <div class="ttc" id="a_toggle_button_8h_html"><div class="ttname"><a href="_toggle_button_8h.html">ToggleButton.h</a></div></div>
 <div class="ttc" id="a_i_deadband_8h_html"><div class="ttname"><a href="_i_deadband_8h.html">IDeadband.h</a></div></div>
 <div class="ttc" id="a_i_profile_8h_html"><div class="ttname"><a href="_i_profile_8h.html">IProfile.h</a></div></div>
 <div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
 <div class="ttc" id="a_analog_axis_8h_html"><div class="ttname"><a href="_analog_axis_8h.html">AnalogAxis.h</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a4c621d8b78609c4b52cefbc09b881975"><div class="ttname"><a href="class_dragon_gamepad.html#a4c621d8b78609c4b52cefbc09b881975">DragonGamepad::SetAxisScale</a></div><div class="ttdeci">void SetAxisScale(AXIS_IDENTIFIER axis, float scaleFactor) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00209">DragonGamepad.cpp:209</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_a4c621d8b78609c4b52cefbc09b881975"><div class="ttname"><a href="class_dragon_gamepad.html#a4c621d8b78609c4b52cefbc09b881975">DragonGamepad::SetAxisScale</a></div><div class="ttdeci">void SetAxisScale(AXIS_IDENTIFIER axis, float scaleFactor) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00207">DragonGamepad.cpp:207</a></div></div>
 <div class="ttc" id="aclass_toggle_button_html"><div class="ttname"><a href="class_toggle_button.html">ToggleButton</a></div><div class="ttdoc">Class: ButtonDecorator Description: This is a decorator for modifying button behavior.</div><div class="ttdef"><b>Definition:</b> <a href="_toggle_button_8h_source.html#l00036">ToggleButton.h:36</a></div></div>
 <div class="ttc" id="aclass_analog_axis_html"><div class="ttname"><a href="class_analog_axis.html">AnalogAxis</a></div><div class="ttdoc">This class handles the analog inputs on a gamepad.</div><div class="ttdef"><b>Definition:</b> <a href="_analog_axis_8h_source.html#l00039">AnalogAxis.h:39</a></div></div>
 <div class="ttc" id="aclass_analog_button_html"><div class="ttname"><a href="class_analog_button.html">AnalogButton</a></div><div class="ttdoc">Class: AnalogButton Description: This is treats an analog axis as a button.</div><div class="ttdef"><b>Definition:</b> <a href="_analog_button_8h_source.html#l00038">AnalogButton.h:38</a></div></div>
 <div class="ttc" id="aclass_logger_html_a98d7aec19dcdfb9d8faa46d83d927883"><div class="ttname"><a href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">Logger::LogError</a></div><div class="ttdeci">void LogError(const std::string &amp;locationIdentifier, const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00071">Logger.cpp:71</a></div></div>
 <div class="ttc" id="aclass_logger_html_ae85cfbef8b7e6940475a5012fa1935c6"><div class="ttname"><a href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a></div><div class="ttdeci">static Logger * GetLogger()</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00052">Logger.cpp:52</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a736e3af20879da0b6c9ab71608968be7"><div class="ttname"><a href="class_dragon_gamepad.html#a736e3af20879da0b6c9ab71608968be7">DragonGamepad::IsButtonPressed</a></div><div class="ttdeci">bool IsButtonPressed(BUTTON_IDENTIFIER button) const override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00160">DragonGamepad.cpp:160</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_a736e3af20879da0b6c9ab71608968be7"><div class="ttname"><a href="class_dragon_gamepad.html#a736e3af20879da0b6c9ab71608968be7">DragonGamepad::IsButtonPressed</a></div><div class="ttdeci">bool IsButtonPressed(BUTTON_IDENTIFIER button) const override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00158">DragonGamepad.cpp:158</a></div></div>
 <div class="ttc" id="aclass_i_dragon_game_pad_html_af3915fb49841ce1fc53b35c9e24d3417"><div class="ttname"><a href="class_i_dragon_game_pad.html#af3915fb49841ce1fc53b35c9e24d3417">IDragonGamePad::BUTTON_MODE</a></div><div class="ttdeci">BUTTON_MODE</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00096">IDragonGamePad.h:96</a></div></div>
 <div class="ttc" id="a_dragon_gamepad_8h_html"><div class="ttname"><a href="_dragon_gamepad_8h.html">DragonGamepad.h</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_aa206d96358046a54318db0ff82db648d"><div class="ttname"><a href="class_dragon_gamepad.html#aa206d96358046a54318db0ff82db648d">DragonGamepad::SetAxisProfile</a></div><div class="ttdeci">void SetAxisProfile(AXIS_IDENTIFIER axis, AXIS_PROFILE curve) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00193">DragonGamepad.cpp:193</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a954798e159dab694fbd6c48a96c36657"><div class="ttname"><a href="class_dragon_gamepad.html#a954798e159dab694fbd6c48a96c36657">DragonGamepad::WasButtonPressed</a></div><div class="ttdeci">bool WasButtonPressed(BUTTON_IDENTIFIER button) const override</div><div class="ttdoc">Method: WasButtonPressed Description: Read whether the button was pressed since the last query....</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00248">DragonGamepad.cpp:248</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_aa206d96358046a54318db0ff82db648d"><div class="ttname"><a href="class_dragon_gamepad.html#aa206d96358046a54318db0ff82db648d">DragonGamepad::SetAxisProfile</a></div><div class="ttdeci">void SetAxisProfile(AXIS_IDENTIFIER axis, AXIS_PROFILE curve) override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00191">DragonGamepad.cpp:191</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_a954798e159dab694fbd6c48a96c36657"><div class="ttname"><a href="class_dragon_gamepad.html#a954798e159dab694fbd6c48a96c36657">DragonGamepad::WasButtonPressed</a></div><div class="ttdeci">bool WasButtonPressed(BUTTON_IDENTIFIER button) const override</div><div class="ttdoc">Method: WasButtonPressed Description: Read whether the button was pressed since the last query....</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00246">DragonGamepad.cpp:246</a></div></div>
 <div class="ttc" id="aclass_i_dragon_game_pad_html_a6ba0408b15301dd149474ebad9b4972b"><div class="ttname"><a href="class_i_dragon_game_pad.html#a6ba0408b15301dd149474ebad9b4972b">IDragonGamePad::AXIS_IDENTIFIER</a></div><div class="ttdeci">AXIS_IDENTIFIER</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00103">IDragonGamePad.h:103</a></div></div>
 <div class="ttc" id="aclass_i_dragon_game_pad_html_afde07811ccdd7565bc40c381adecee4d"><div class="ttname"><a href="class_i_dragon_game_pad.html#afde07811ccdd7565bc40c381adecee4d">IDragonGamePad::AXIS_DEADBAND</a></div><div class="ttdeci">AXIS_DEADBAND</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_game_pad_8h_source.html#l00124">IDragonGamePad.h:124</a></div></div>
 <div class="ttc" id="a_digital_button_8h_html"><div class="ttname"><a href="_digital_button_8h.html">DigitalButton.h</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a8942fb6acb85fff749481a6e998c9204"><div class="ttname"><a href="class_dragon_gamepad.html#a8942fb6acb85fff749481a6e998c9204">DragonGamepad::GetAxisValue</a></div><div class="ttdeci">double GetAxisValue(AXIS_IDENTIFIER axis) const override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00139">DragonGamepad.cpp:139</a></div></div>
-<div class="ttc" id="aclass_dragon_gamepad_html_a041652af5bb0bdc987a2d8443c1fcb7f"><div class="ttname"><a href="class_dragon_gamepad.html#a041652af5bb0bdc987a2d8443c1fcb7f">DragonGamepad::DragonGamepad</a></div><div class="ttdeci">DragonGamepad(int port)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00038">DragonGamepad.cpp:38</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_a8942fb6acb85fff749481a6e998c9204"><div class="ttname"><a href="class_dragon_gamepad.html#a8942fb6acb85fff749481a6e998c9204">DragonGamepad::GetAxisValue</a></div><div class="ttdeci">double GetAxisValue(AXIS_IDENTIFIER axis) const override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00137">DragonGamepad.cpp:137</a></div></div>
+<div class="ttc" id="aclass_dragon_gamepad_html_a041652af5bb0bdc987a2d8443c1fcb7f"><div class="ttname"><a href="class_dragon_gamepad.html#a041652af5bb0bdc987a2d8443c1fcb7f">DragonGamepad::DragonGamepad</a></div><div class="ttdeci">DragonGamepad(int port)</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_gamepad_8cpp_source.html#l00036">DragonGamepad.cpp:36</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

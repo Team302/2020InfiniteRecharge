@@ -1,0 +1,52 @@
+<!ELEMENT auton (primitive*) >
+
+<!-- primitive IDs
+
+       enum PRIMITIVE_IDENTIFIER
+         {
+             UNKNOWN_PRIMITIVE = -1,
+             DO_NOTHING,
+             HOLD_POSITION,
+             DRIVE_DISTANCE,
+             DRIVE_TIME,
+             DRIVE_TO_CUBE,
+             TURN_ANGLE_ABS,
+             TURN_ANGLE_REL,
+			 DRIVE_TO_WALL,
+			 TURN_TO_CUBE,
+			 DRIVE_LIDAR_DISTANCE,
+             MAX_AUTON_PRIMITIVES
+         };
+			
+		time in seconds
+		distance in inches
+		heading in degrees	
+		drivespeed in inches per second
+			
+
+		enum LIFT_PRESET_HEIGHTS
+		{
+			KEEP_SAME = -1,
+			FLOOR,
+			SWITCH,
+			SCALE
+		};
+
+-->
+
+<!ELEMENT primitive EMPTY >
+<!ATTLIST primitive 
+          id                ( DO_NOTHING | HOLD_POSITION | 
+                              DRIVE_DISTANCE | DRIVE_TIME | DRIVE_TO_WALL | 
+                              TURN_ANGLE_ABS | TURN_ANGLE_REL ) "DO_NOTHING"
+		  time				CDATA #IMPLIED
+          distance		    CDATA "0.0"
+          heading           CDATA "0.0"
+          drivespeed        CDATA "0.0"
+          enddrivespeed     CDATA "0.0"
+          xloc				CDATA "0.0"
+          yloc				CDATA "0.0"
+          ballState         ( OFF | INTAKE | INTAKE_HUMAN_PLAYER | HOLD | GET_READY_TO_SHOOT | SHOOT ) "OFF"
+          turretAngle       CDATA #IMPLIED
+>
+

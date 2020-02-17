@@ -27,6 +27,12 @@ LimelightFactory* LimelightFactory::GetLimelightFactory()
 
 shared_ptr<DragonLimelight> LimelightFactory::CreateLimelight(IDragonSensor::SENSOR_USAGE usage, string tableName, double mountingHeight, double mountingHorizontalOffset, double rotation, double mountingAngle, double targetHeight, double targetHeight2)
 {
+    if ( m_limelight == nullptr )
+    {
+        m_limelight.reset(new DragonLimelight(usage, tableName, mountingHeight, mountingHorizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2));
+    }
+    return m_limelight;
+    /**
     auto it = m_limelightMap.find(usage);
     shared_ptr<DragonLimelight> limelight;
     if ( it != m_limelightMap.end() )
@@ -41,11 +47,13 @@ shared_ptr<DragonLimelight> LimelightFactory::CreateLimelight(IDragonSensor::SEN
         return limelight;
         
     }
-    
+    **/
 }
 
 shared_ptr<DragonLimelight> LimelightFactory::GetLimelight(IDragonSensor::SENSOR_USAGE usage)
 {
+    return m_limelight;
+    /**
     auto it = m_limelightMap.find(usage);
     if ( it != m_limelightMap.end() )
     {
@@ -57,6 +65,6 @@ shared_ptr<DragonLimelight> LimelightFactory::GetLimelight(IDragonSensor::SENSOR
         msg += to_string(usage);
         Logger::GetLogger()->LogError("LimelightFactory::GetLimilight", msg);
     }
-    
+    **/
 }
 

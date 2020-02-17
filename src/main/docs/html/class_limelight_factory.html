@@ -173,6 +173,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>auto it = m_limelightMap.find(usage); shared_ptr&lt;DragonLimelight&gt; limelight; if ( it != m_limelightMap.end() ) { return GetLimelight(usage); } else { shared_ptr&lt;DragonLimelight&gt; limelight; limelight.reset(new DragonLimelight(usage, tableName, mountingHeight, mountingHorizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2)); m_limelightMap[usage] = limelight; return limelight;</p>
+<p>}</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mountingHeight</td><td><em> - network table name </em></td></tr>
@@ -204,8 +206,9 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>auto it = m_limelightMap.find(usage); if ( it != m_limelightMap.end() ) { return m_limelightMap[usage]; } else { std::string msg = "limelight not found; usage ="; msg += to_string(usage); <a class="el" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger()</a>-&gt;LogError("LimelightFactory::GetLimilight", msg); }</p>
 
-<p class="definition">Definition at line <a class="el" href="_limelight_factory_8cpp_source.html#l00047">47</a> of file <a class="el" href="_limelight_factory_8cpp_source.html">LimelightFactory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_limelight_factory_8cpp_source.html#l00053">53</a> of file <a class="el" href="_limelight_factory_8cpp_source.html">LimelightFactory.cpp</a>.</p>
 
 </div>
 </div>

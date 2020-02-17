@@ -18,8 +18,8 @@
 //Includes
 #include <auton/PrimitiveParams.h>
 #include <auton/primitives/IPrimitive.h>
-#include <controllers/shooter/ShooterStateMgr.h>
-#include <controllers/BallManipulator.h>
+#include <states/shooter/ShooterStateMgr.h>
+#include <states/BallManipulator.h>
 
 class AutoShoot : public IPrimitive 
 {

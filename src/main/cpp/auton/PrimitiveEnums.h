@@ -33,12 +33,9 @@
              HOLD_POSITION,
              DRIVE_DISTANCE,
              DRIVE_TIME,
-             DRIVE_TO_CUBE,
+			       DRIVE_TO_WALL,
              TURN_ANGLE_ABS,
              TURN_ANGLE_REL,
-			 DRIVE_TO_WALL,
-			 TURN_TO_CUBE,
-			 DRIVE_LIDAR_DISTANCE,
              MAX_AUTON_PRIMITIVES
          };
 

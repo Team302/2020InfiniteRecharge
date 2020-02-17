@@ -74,19 +74,19 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/Robot.cpp.obj
  ../src/main/cpp/auton/PrimitiveFactory.h
  ../src/main/cpp/auton/PrimitiveParams.h
  ../src/main/cpp/auton/primitives/IPrimitive.h
- ../src/main/cpp/controllers/BallManipulator.h
+ ../src/main/cpp/states/BallManipulator.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/balltransfer/BallTransferStateMgr.h
- ../src/main/cpp/controllers/chassis/ArcadeDrive.h
- ../src/main/cpp/controllers/chassis/ChassisStateMgr.h
- ../src/main/cpp/controllers/chassis/GTADrive.h
- ../src/main/cpp/controllers/chassis/TankDrive.h
- ../src/main/cpp/controllers/chassis/ThrottleSteerDrive.h
- ../src/main/cpp/controllers/impeller/ImpellerStateMgr.h
- ../src/main/cpp/controllers/intake/IntakeStateMgr.h
- ../src/main/cpp/controllers/shooter/ShooterStateMgr.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/balltransfer/BallTransferStateMgr.h
+ ../src/main/cpp/states/chassis/ArcadeDrive.h
+ ../src/main/cpp/states/chassis/ChassisStateMgr.h
+ ../src/main/cpp/states/chassis/GTADrive.h
+ ../src/main/cpp/states/chassis/TankDrive.h
+ ../src/main/cpp/states/chassis/ThrottleSteerDrive.h
+ ../src/main/cpp/states/impeller/ImpellerStateMgr.h
+ ../src/main/cpp/states/intake/IntakeStateMgr.h
+ ../src/main/cpp/states/shooter/ShooterStateMgr.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonGamepad.h
  ../src/main/cpp/gamepad/DragonXBox.h
@@ -1237,12 +1237,12 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/ButtonManipula
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/RobotState.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/XboxController.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/driverstation.h
- ../src/main/cpp/controllers/BallManipulator.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/balltransfer/BallTransferStateMgr.h
- ../src/main/cpp/controllers/impeller/ImpellerStateMgr.h
- ../src/main/cpp/controllers/intake/IntakeStateMgr.h
- ../src/main/cpp/controllers/shooter/ShooterStateMgr.h
+ ../src/main/cpp/states/BallManipulator.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/balltransfer/BallTransferStateMgr.h
+ ../src/main/cpp/states/impeller/ImpellerStateMgr.h
+ ../src/main/cpp/states/intake/IntakeStateMgr.h
+ ../src/main/cpp/states/shooter/ShooterStateMgr.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonXbox.h
  ../src/main/cpp/gamepad/IDragonGamePad.h
@@ -1259,21 +1259,21 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/ControlData.cp
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
  C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/ControlData.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/MechanismState.cpp.obj
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/MechanismState.cpp.obj
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
  ../src/main/cpp/subsys/IMechanism.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/Logger.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/MechanismState.cpp
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/MechanismState.cpp
 CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/MechanismTargetData.cpp.obj
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
  ../src/main/cpp/controllers/MechanismTargetData.h
  C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/MechanismTargetData.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferOff.cpp.obj
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferOff.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -1343,9 +1343,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/B
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
- ../src/main/cpp/controllers/balltransfer/BallTransferOff.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
+ ../src/main/cpp/states/balltransfer/BallTransferOff.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -1369,8 +1369,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/B
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/balltransfer/BallTransferOff.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferStateMgr.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/balltransfer/BallTransferOff.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferStateMgr.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/AlignOf.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/Compiler.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/ErrorHandling.h
@@ -1399,13 +1399,13 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/B
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/driverstation.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
  ../src/main/cpp/controllers/MechanismTargetData.h
- ../src/main/cpp/controllers/balltransfer/BallTransferOff.h
- ../src/main/cpp/controllers/balltransfer/BallTransferStateMgr.h
- ../src/main/cpp/controllers/balltransfer/BallTransferToImpeller.h
- ../src/main/cpp/controllers/balltransfer/BallTransferToShooter.h
+ ../src/main/cpp/states/balltransfer/BallTransferOff.h
+ ../src/main/cpp/states/balltransfer/BallTransferStateMgr.h
+ ../src/main/cpp/states/balltransfer/BallTransferToImpeller.h
+ ../src/main/cpp/states/balltransfer/BallTransferToShooter.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonXbox.h
  ../src/main/cpp/gamepad/IDragonGamePad.h
@@ -1420,8 +1420,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/B
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/Logger.h
  ../src/main/cpp/xmlmechdata/StateDataDefn.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/balltransfer/BallTransferStateMgr.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferToImpeller.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/balltransfer/BallTransferStateMgr.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferToImpeller.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -1491,9 +1491,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/B
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
- ../src/main/cpp/controllers/balltransfer/BallTransferToImpeller.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
+ ../src/main/cpp/states/balltransfer/BallTransferToImpeller.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -1517,8 +1517,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/B
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/balltransfer/BallTransferToImpeller.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/BallTransferToShooter.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/balltransfer/BallTransferToImpeller.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/balltransfer/BallTransferToShooter.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -1588,9 +1588,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/B
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
- ../src/main/cpp/controllers/balltransfer/BallTransferToShooter.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
+ ../src/main/cpp/states/balltransfer/BallTransferToShooter.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -1614,8 +1614,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/balltransfer/B
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/balltransfer/BallTransferToShooter.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/ArcadeDrive.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/balltransfer/BallTransferToShooter.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/ArcadeDrive.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/AlignOf.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/Compiler.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/ErrorHandling.h
@@ -1644,9 +1644,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/Arcade
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/driverstation.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/chassis/ArcadeDrive.h
- ../src/main/cpp/controllers/chassis/ThrottleSteerDrive.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/chassis/ArcadeDrive.h
+ ../src/main/cpp/states/chassis/ThrottleSteerDrive.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonXBox.h
  ../src/main/cpp/gamepad/DragonXbox.h
@@ -1661,8 +1661,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/Arcade
  ../src/main/cpp/subsys/IChassis.h
  ../src/main/cpp/subsys/IMechanism.h
  ../src/main/cpp/subsys/MechanismTypes.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/ArcadeDrive.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/ChassisStateMgr.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/ArcadeDrive.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/ChassisStateMgr.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/AlignOf.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/ArrayRef.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/Compiler.h
@@ -1718,12 +1718,12 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/Chassi
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/smartdashboard/SmartDashboard.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/chassis/ArcadeDrive.h
- ../src/main/cpp/controllers/chassis/ChassisStateMgr.h
- ../src/main/cpp/controllers/chassis/GTADrive.h
- ../src/main/cpp/controllers/chassis/TankDrive.h
- ../src/main/cpp/controllers/chassis/ThrottleSteerDrive.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/chassis/ArcadeDrive.h
+ ../src/main/cpp/states/chassis/ChassisStateMgr.h
+ ../src/main/cpp/states/chassis/GTADrive.h
+ ../src/main/cpp/states/chassis/TankDrive.h
+ ../src/main/cpp/states/chassis/ThrottleSteerDrive.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonXBox.h
  ../src/main/cpp/gamepad/DragonXbox.h
@@ -1738,8 +1738,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/Chassi
  ../src/main/cpp/subsys/IChassis.h
  ../src/main/cpp/subsys/IMechanism.h
  ../src/main/cpp/subsys/MechanismTypes.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/ChassisStateMgr.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/GTADrive.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/ChassisStateMgr.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/GTADrive.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/AlignOf.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/Compiler.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/ErrorHandling.h
@@ -1768,9 +1768,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/GTADri
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/driverstation.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/chassis/GTADrive.h
- ../src/main/cpp/controllers/chassis/ThrottleSteerDrive.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/chassis/GTADrive.h
+ ../src/main/cpp/states/chassis/ThrottleSteerDrive.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonXBox.h
  ../src/main/cpp/gamepad/DragonXbox.h
@@ -1785,8 +1785,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/GTADri
  ../src/main/cpp/subsys/IChassis.h
  ../src/main/cpp/subsys/IMechanism.h
  ../src/main/cpp/subsys/MechanismTypes.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/GTADrive.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/TankDrive.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/GTADrive.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/TankDrive.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/units/units.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/AlignOf.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/Compiler.h
@@ -1818,8 +1818,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/TankDr
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/driverstation.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/chassis/TankDrive.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/chassis/TankDrive.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonXbox.h
  ../src/main/cpp/gamepad/IDragonGamePad.h
@@ -1838,8 +1838,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/TankDr
  ../src/main/cpp/subsys/IMechanism.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/Logger.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/TankDrive.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/ThrottleSteerDrive.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/TankDrive.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/chassis/ThrottleSteerDrive.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/units/units.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/AlignOf.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/Compiler.h
@@ -1871,8 +1871,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/Thrott
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/driverstation.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/chassis/ThrottleSteerDrive.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/chassis/ThrottleSteerDrive.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonXbox.h
  ../src/main/cpp/gamepad/IDragonGamePad.h
@@ -1891,8 +1891,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/chassis/Thrott
  ../src/main/cpp/subsys/IMechanism.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/Logger.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/ThrottleSteerDrive.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/climber/ClimberHold.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/ThrottleSteerDrive.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/climber/ClimberHold.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -1962,9 +1962,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/climber/Climbe
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
- ../src/main/cpp/controllers/climber/ClimberHold.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
+ ../src/main/cpp/states/climber/ClimberHold.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -1988,8 +1988,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/climber/Climbe
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/climber/ClimberHold.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelColorTurn.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/climber/ClimberHold.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelColorTurn.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -2063,8 +2063,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/C
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/controlPanel/ControlPanelColorTurn.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/controlPanel/ControlPanelColorTurn.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -2090,8 +2090,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/C
  ../src/main/cpp/utils/ControlPanelColors.h
  ../src/main/cpp/utils/FMS.h
  ../src/main/cpp/utils/logger.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/controlPanel/ControlPanelColorTurn.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelRaise.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/controlPanel/ControlPanelColorTurn.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelRaise.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -2161,8 +2161,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/C
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/controlPanel/ControlPanelRaise.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/controlPanel/ControlPanelRaise.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -2186,8 +2186,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/C
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/controlPanel/ControlPanelRaise.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelStow.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/controlPanel/ControlPanelRaise.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelStow.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -2257,8 +2257,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/C
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/controlpanel/ControlPanelStow.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/controlPanel/ControlPanelStow.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -2282,8 +2282,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/C
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/controlPanel/ControlPanelStow.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/ControlPanelTurn.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/controlPanel/ControlPanelStow.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/controlPanel/ControlPanelTurn.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -2353,8 +2353,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/C
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/controlpanel/ControlPanelTurn.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/controlPanel/ControlPanelTurn.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -2378,8 +2378,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/controlPanel/C
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/controlPanel/ControlPanelTurn.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerAgitate.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/controlPanel/ControlPanelTurn.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerAgitate.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -2449,9 +2449,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/Impel
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
- ../src/main/cpp/controllers/impeller/ImpellerAgitate.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
+ ../src/main/cpp/states/impeller/ImpellerAgitate.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -2475,8 +2475,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/Impel
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/impeller/ImpellerAgitate.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerOff.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/impeller/ImpellerAgitate.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerOff.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -2546,9 +2546,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/Impel
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
- ../src/main/cpp/controllers/impeller/ImpellerOff.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
+ ../src/main/cpp/states/impeller/ImpellerOff.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -2572,8 +2572,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/Impel
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/impeller/ImpellerOff.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerOn.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/impeller/ImpellerOff.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerOn.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -2643,9 +2643,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/Impel
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
- ../src/main/cpp/controllers/impeller/ImpellerOn.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
+ ../src/main/cpp/states/impeller/ImpellerOn.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -2669,8 +2669,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/Impel
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/impeller/ImpellerOn.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/ImpellerStateMgr.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/impeller/ImpellerOn.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/impeller/ImpellerStateMgr.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/AlignOf.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/Compiler.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/ErrorHandling.h
@@ -2699,13 +2699,13 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/Impel
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/driverstation.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
  ../src/main/cpp/controllers/MechanismTargetData.h
- ../src/main/cpp/controllers/impeller/ImpellerAgitate.h
- ../src/main/cpp/controllers/impeller/ImpellerOff.h
- ../src/main/cpp/controllers/impeller/ImpellerOn.h
- ../src/main/cpp/controllers/impeller/ImpellerStateMgr.h
+ ../src/main/cpp/states/impeller/ImpellerAgitate.h
+ ../src/main/cpp/states/impeller/ImpellerOff.h
+ ../src/main/cpp/states/impeller/ImpellerOn.h
+ ../src/main/cpp/states/impeller/ImpellerStateMgr.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonXbox.h
  ../src/main/cpp/gamepad/IDragonGamePad.h
@@ -2720,8 +2720,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/impeller/Impel
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/Logger.h
  ../src/main/cpp/xmlmechdata/StateDataDefn.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/impeller/ImpellerStateMgr.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeOff.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/impeller/ImpellerStateMgr.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/intake/IntakeOff.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -2791,8 +2791,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeO
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/intake/IntakeOff.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/intake/IntakeOff.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -2816,8 +2816,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeO
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/intake/IntakeOff.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeOn.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/intake/IntakeOff.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/intake/IntakeOn.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -2887,8 +2887,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeO
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/intake/IntakeOn.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/intake/IntakeOn.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -2912,8 +2912,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeO
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/intake/IntakeOn.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeStateMgr.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/intake/IntakeOn.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/intake/IntakeStateMgr.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/AlignOf.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/Compiler.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/ErrorHandling.h
@@ -2942,11 +2942,11 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeS
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/driverstation.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
+ ../src/main/cpp/states/IState.h
  ../src/main/cpp/controllers/MechanismTargetData.h
- ../src/main/cpp/controllers/intake/IntakeOff.h
- ../src/main/cpp/controllers/intake/IntakeOn.h
- ../src/main/cpp/controllers/intake/IntakeStateMgr.h
+ ../src/main/cpp/states/intake/IntakeOff.h
+ ../src/main/cpp/states/intake/IntakeOn.h
+ ../src/main/cpp/states/intake/IntakeStateMgr.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonXbox.h
  ../src/main/cpp/gamepad/IDragonGamePad.h
@@ -2961,7 +2961,7 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/intake/IntakeS
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/Logger.h
  ../src/main/cpp/xmlmechdata/StateDataDefn.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/intake/IntakeStateMgr.cpp
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/intake/IntakeStateMgr.cpp
 CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/mechanisms/VelocityController.cpp.obj
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
@@ -2970,7 +2970,7 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/mechanisms/Vel
  ../src/main/cpp/subsys/IMechanism.h
  ../src/main/cpp/subsys/MechanismTypes.h
  C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/mechanisms/VelocityController.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterGetReady.cpp.obj
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterGetReady.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -3040,8 +3040,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/Shoote
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/shooter/ShooterGetReady.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/shooter/ShooterGetReady.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -3065,8 +3065,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/Shoote
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooter/ShooterGetReady.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterOff.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooter/ShooterGetReady.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterOff.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -3136,8 +3136,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/Shoote
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/shooter/ShooterOff.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/shooter/ShooterOff.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -3161,8 +3161,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/Shoote
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooter/ShooterOff.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterShoot.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooter/ShooterOff.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterShoot.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -3232,8 +3232,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/Shoote
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/shooter/ShooterShoot.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/shooter/ShooterShoot.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -3257,8 +3257,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/Shoote
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooter/ShooterShoot.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/ShooterStateMgr.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooter/ShooterShoot.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooter/ShooterStateMgr.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/AlignOf.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/Compiler.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/ErrorHandling.h
@@ -3287,9 +3287,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/Shoote
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/driverstation.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
+ ../src/main/cpp/states/IState.h
  ../src/main/cpp/controllers/MechanismTargetData.h
- ../src/main/cpp/controllers/shooter/ShooterStateMgr.h
+ ../src/main/cpp/states/shooter/ShooterStateMgr.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonXbox.h
  ../src/main/cpp/gamepad/IDragonGamePad.h
@@ -3303,8 +3303,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooter/Shoote
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/Logger.h
  ../src/main/cpp/xmlmechdata/StateDataDefn.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooter/ShooterStateMgr.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodHoldPosition.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooter/ShooterStateMgr.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodHoldPosition.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -3374,9 +3374,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/Sh
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
- ../src/main/cpp/controllers/shooterHood/ShooterHoodHoldPosition.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
+ ../src/main/cpp/states/shooterHood/ShooterHoodHoldPosition.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -3400,8 +3400,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/Sh
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooterhood/ShooterHoodHoldPosition.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodMoveDown.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooterhood/ShooterHoodHoldPosition.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodMoveDown.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -3471,9 +3471,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/Sh
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
- ../src/main/cpp/controllers/shooterHood/ShooterHoodMoveDown.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
+ ../src/main/cpp/states/shooterHood/ShooterHoodMoveDown.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -3497,8 +3497,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/Sh
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooterhood/ShooterHoodMoveDown.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodMoveUp.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooterhood/ShooterHoodMoveDown.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodMoveUp.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -3568,9 +3568,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/Sh
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
- ../src/main/cpp/controllers/shooterHood/ShooterHoodMoveUp.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
+ ../src/main/cpp/states/shooterHood/ShooterHoodMoveUp.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -3594,8 +3594,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/Sh
  ../src/main/cpp/subsys/MechanismFactory.h
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooterhood/ShooterHoodMoveUp.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/ShooterHoodStateMgr.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooterhood/ShooterHoodMoveUp.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/shooterhood/ShooterHoodStateMgr.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/AlignOf.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/Compiler.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/ErrorHandling.h
@@ -3624,13 +3624,13 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/Sh
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc/driverstation.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
- ../src/main/cpp/controllers/MechanismState.h
+ ../src/main/cpp/states/IState.h
+ ../src/main/cpp/states/MechanismState.h
  ../src/main/cpp/controllers/MechanismTargetData.h
- ../src/main/cpp/controllers/shooterHood/ShooterHoodHoldPosition.h
- ../src/main/cpp/controllers/shooterHood/ShooterHoodMoveDown.h
- ../src/main/cpp/controllers/shooterHood/ShooterHoodMoveUp.h
- ../src/main/cpp/controllers/shooterHood/ShooterHoodStateMgr.h
+ ../src/main/cpp/states/shooterHood/ShooterHoodHoldPosition.h
+ ../src/main/cpp/states/shooterHood/ShooterHoodMoveDown.h
+ ../src/main/cpp/states/shooterHood/ShooterHoodMoveUp.h
+ ../src/main/cpp/states/shooterHood/ShooterHoodStateMgr.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonXbox.h
  ../src/main/cpp/gamepad/IDragonGamePad.h
@@ -3645,8 +3645,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/shooterhood/Sh
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/utils/Logger.h
  ../src/main/cpp/xmlmechdata/StateDataDefn.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooterhood/ShooterHoodStateMgr.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/HoldTurretPosition.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooterhood/ShooterHoodStateMgr.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/turret/HoldTurretPosition.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -3716,9 +3716,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/HoldTur
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
+ ../src/main/cpp/states/IState.h
  ../src/main/cpp/controllers/mechanisms/IMechController.h
- ../src/main/cpp/controllers/turret/HoldTurretPosition.h
+ ../src/main/cpp/states/turret/HoldTurretPosition.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonServo.h
@@ -3743,8 +3743,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/HoldTur
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/subsys/Turret.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/turret/HoldTurretPosition.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/LimelightAim.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/turret/HoldTurretPosition.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/turret/LimelightAim.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -3814,9 +3814,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/Limelig
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
+ ../src/main/cpp/states/IState.h
  ../src/main/cpp/controllers/mechanisms/IMechController.h
- ../src/main/cpp/controllers/turret/LimelightAim.h
+ ../src/main/cpp/states/turret/LimelightAim.h
  ../src/main/cpp/hw/DragonAnalogInput.h
  ../src/main/cpp/hw/DragonDigitalInput.h
  ../src/main/cpp/hw/DragonLimelight.h
@@ -3844,8 +3844,8 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/Limelig
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/subsys/Turret.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/turret/LimelightAim.cpp
-CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/ManualAim.cpp.obj
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/turret/LimelightAim.cpp
+CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/states/turret/ManualAim.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/CIEColor.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorMatch.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/12b80ce887e4d15f4aa0a512179a5386/ColorSensorV3-cpp-1.0.1-headers/rev/ColorSensorV3.h
@@ -3922,9 +3922,9 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/ManualA
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/77aec02c88b6cdbbe6ae1baa0d102dbc/wpilibc-cpp-2020.1.2-headers/frc2/Timer.h
  ../src/main/cpp/controllers/ControlData.h
  ../src/main/cpp/controllers/ControlModes.h
- ../src/main/cpp/controllers/IState.h
+ ../src/main/cpp/states/IState.h
  ../src/main/cpp/controllers/mechanisms/IMechController.h
- ../src/main/cpp/controllers/turret/ManualAim.h
+ ../src/main/cpp/states/turret/ManualAim.h
  ../src/main/cpp/gamepad/DragonGamePad.h
  ../src/main/cpp/gamepad/DragonXbox.h
  ../src/main/cpp/gamepad/IDragonGamePad.h
@@ -3959,7 +3959,7 @@ CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/controllers/turret/ManualA
  ../src/main/cpp/subsys/MechanismTypes.h
  ../src/main/cpp/subsys/Turret.h
  ../src/main/cpp/utils/ControlPanelColors.h
- C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/turret/ManualAim.cpp
+ C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/turret/ManualAim.cpp
 CMakeFiles/fake_frcUserProgram_debug.dir/src/main/cpp/gamepad/DragonGamepad.cpp.obj
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/AlignOf.h
  ../../../Users/joewi/.gradle/caches/transforms-2/files-2.1/2aade005695a325322cde8f3ee86761b/wpiutil-cpp-2020.1.2-headers/wpi/Compiler.h

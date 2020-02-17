@@ -40,6 +40,7 @@ var class_teleop_control =
       [ "SHOOTER_HOOD_MANUAL_BUTTON", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ae5512346ac69a346a67665dc80da2a4f", null ],
       [ "SHOOTER_HOOD_MANUAL_AXIS", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9680ce9fd26c12c8165de81d6776169b", null ],
       [ "TURRET_MANUAL_AXIS", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3334c47ae393f925dd35b13c7211060b", null ],
+      [ "TURRET_MANUAL_BUTTON", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aee3ff24a2c4157913cb76ec8cf859b23", null ],
       [ "MAX_FUNCTIONS", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af0a71fc177d1cdf5d455aa154441aafb", null ]
     ] ],
     [ "GetAxisValue", "class_teleop_control.html#a9c6affa7d87ae898c531e567fce73b15", null ],

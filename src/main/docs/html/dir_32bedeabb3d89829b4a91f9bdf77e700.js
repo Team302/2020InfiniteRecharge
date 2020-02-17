@@ -12,6 +12,10 @@ var dir_32bedeabb3d89829b4a91f9bdf77e700 =
     [ "ManualAim.h", "_manual_aim_8h.html", [
       [ "ManualAim", "class_manual_aim.html", "class_manual_aim" ]
     ] ],
+    [ "ShooterSaveState.cpp", "_shooter_save_state_8cpp.html", null ],
+    [ "ShooterSaveState.h", "_shooter_save_state_8h.html", [
+      [ "ShooterSaveState", "class_shooter_save_state.html", "class_shooter_save_state" ]
+    ] ],
     [ "TurretStateMgr.cpp", "_turret_state_mgr_8cpp.html", null ],
     [ "TurretStateMgr.h", "_turret_state_mgr_8h.html", [
       [ "TurretStateMgr", "class_turret_state_mgr.html", "class_turret_state_mgr" ]

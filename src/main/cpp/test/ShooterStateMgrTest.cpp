@@ -24,7 +24,7 @@
 #include <test/IStateTest.h>
 #include <test/ShooterStateMgrTest.h>
 
-#include <controllers/shooter/ShooterStateMgr.h>
+#include <states/shooter/ShooterStateMgr.h>
 
 // Third Party Includes
 

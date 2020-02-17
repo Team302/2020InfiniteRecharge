@@ -32,29 +32,50 @@
 // FRC includes
 
 // Team 302 includes
-#include <subsys/IMechanism.h>
+//#include <subsys/IMechanism.h>
 #include <subsys/MechanismTypes.h>
-#include <hw/interfaces/IDragonMotorController.h>
+//#include <hw/interfaces/IDragonMotorController.h>
 #include <hw/usages/IDragonMotorControllerMap.h>
 #include <hw/usages/AnalogInputMap.h>
 #include <hw/usages/DigitalInputMap.h>
 #include <hw/usages/DragonSolenoidMap.h>
 #include <hw/usages/ServoMap.h>
-#include <hw/DragonSolenoid.h>
-#include <hw/DragonServo.h>
-#include <hw/DragonAnalogInput.h>
-#include <hw/DragonDigitalInput.h>
-#include <subsys/Intake.h>
-#include <subsys/HumanPlayerFlap.h>
-#include <subsys/BallTransfer.h>
-#include <subsys/ControlPanel.h>
-#include <subsys/ShooterHood.h>
+//#include <hw/DragonSolenoid.h>
+//#include <hw/DragonServo.h>
+//#include <hw/DragonAnalogInput.h>
+//#include <hw/DragonDigitalInput.h>
+//#include <subsys/Intake.h>
+//#include <subsys/BallTransfer.h>
+//#include <subsys/ControlPanel.h>
+//#include <subsys/ShooterHood.h>
 
 
 
 // Third Party Includes
-#include <ctre/phoenix/sensors/CANCoder.h>
-#include <rev/ColorSensorV3.h>
+//#include <ctre/phoenix/sensors/CANCoder.h>
+//#include <rev/ColorSensorV3.h>
+
+class DragonAnalogInput;
+class DragonDigitalInput;
+class DragonServo;
+class DragonSolenoid;
+class IDragonMotorController;
+class IMechanism;
+
+namespace ctre
+{
+	namespace phoenix
+	{
+		namespace sensors
+		{
+			class CANCoder;
+		}
+	}
+}
+namespace rev
+{
+	class ColorSensorV3;
+}
 
 
 class MechanismFactory

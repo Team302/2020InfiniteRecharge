@@ -49,7 +49,9 @@ Impeller::Impeller
     shared_ptr<IDragonMotorController> motor,
     shared_ptr<CANCoder> encoder
 ) : m_motor (motor),
-    m_encoder( encoder)
+    m_encoder( encoder),
+    m_lastTimeStamp( 0.0 ),
+    m_lastVelocity( 0.0 )
 {
     if ( m_motor.get() != nullptr )
     {
@@ -76,7 +78,7 @@ Impeller::Impeller
 /// @return         MechanismTypes::MECHANISM_TYPE
 MechanismTypes::MECHANISM_TYPE Impeller::GetType() const
 {
-
+    return MechanismTypes::MECHANISM_TYPE::IMPELLER;
 }
 
 
@@ -110,7 +112,7 @@ void Impeller::ActivateSolenoid
 /// @return     bool - true == extended, false == retract
 bool Impeller::IsSolenoidActivated()
 {
-
+    return true;
 }
 
 
@@ -126,7 +128,23 @@ double Impeller::GetCurrentPosition() const
 /// @return double	speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms)
 double Impeller::GetCurrentSpeed() const
 {
-    return m_encoder.get() != nullptr ? m_encoder.get()->GetVelocity()*10.0 : 0.0;
+    double speed = 0.0;
+    if ( m_motor.get() != nullptr && m_motor.get()->GetCurrent() > 10.0 )
+    {
+        speed = 0.0;
+    }
+    else if ( m_encoder.get() != nullptr )
+    {
+        auto vel = m_encoder.get()->GetVelocity();
+        auto time = m_encoder.get()->GetLastTimestamp();
+        if ( time > m_lastTimeStamp )
+        {
+            speed = vel*10.0;
+            m_lastTimeStamp = time;
+            m_lastVelocity = speed;
+        }
+    }
+    return speed;
 }
 
 

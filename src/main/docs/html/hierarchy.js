@@ -89,7 +89,6 @@ var hierarchy =
       [ "Climber", "class_climber.html", null ],
       [ "ControlPanel", "class_control_panel.html", null ],
       [ "DriveTrainSide", "class_drive_train_side.html", null ],
-      [ "HumanPlayerFlap", "class_human_player_flap.html", null ],
       [ "Impeller", "class_impeller.html", null ],
       [ "Intake", "class_intake.html", null ],
       [ "Shooter", "class_shooter.html", null ],
@@ -156,6 +155,7 @@ var hierarchy =
         [ "ShooterShoot", "class_shooter_shoot.html", null ]
       ] ],
       [ "ShooterHoodManual", "class_shooter_hood_manual.html", null ],
+      [ "ShooterSaveState", "class_shooter_save_state.html", null ],
       [ "TankDrive", "class_tank_drive.html", null ]
     ] ],
     [ "IStateTest", "class_i_state_test.html", [

@@ -30,19 +30,19 @@
 
 // c++ includes
 #include <string>
-
 // wpilib includes
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
 
 // team 302 includes
 #include <auton/CyclePrimitives.h>
-#include <controllers/chassis/ChassisStateMgr.h>
-#include <controllers/BallManipulator.h>
-//#include <controllers/controlPanel/ControlPanelStateMgr.h>
-//#include <controllers/climber/ClimberStateMgr.h>
-#include <controllers/intake/IntakeStateMgr.h>
+#include <states/chassis/ChassisStateMgr.h>
+#include <states/BallManipulator.h>
+//#include <states/controlPanel/ControlPanelStateMgr.h>
+//#include <states/climber/ClimberStateMgr.h>
+#include <states/intake/IntakeStateMgr.h>
 
+#include <hw/DragonLimelight.h>
 #include <test/ButtonBoxDisplay.h>
 #include <test/XboxDisplay.h>
 #include <test/IntakeStateMgrTest.h>
@@ -51,6 +51,8 @@
 #include <test/ShooterStateMgrTest.h>
 #include <ctre/Phoenix.h>
 #include <gamepad/TeleopControl.h>
+#include <subsys/IMechanism.h>
+#include <hw/factories/LimelightFactory.h>
 
 // third party includes
 
@@ -88,9 +90,13 @@ class Robot : public frc::TimedRobot
 	  BallTransferStateMgrTest* m_ballTransferStateMgrTest;
 	  ShooterStateMgrTest* m_shooterStateMgrTest;
 
-      TalonSRX* m_shooterHood;
-      TalonSRX* m_turret;
+      IMechanism* m_shooterHood;
+      IMechanism* m_turret;
       TeleopControl* m_controller;
+      IMechanism* m_impeller;
+      IMechanism* m_shooter;
+      std::shared_ptr<DragonLimelight> m_limelight;
+
 
       frc::SendableChooser<std::string>   m_testChooser;                    
       const std::string                   m_noTest = "No Test";      

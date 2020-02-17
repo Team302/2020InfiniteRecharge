@@ -50,7 +50,7 @@ DragonLimelight::DragonLimelight
 ) : IDragonSensor(),
     IDragonDistanceSensor(),
     m_usage( usage ),
-    m_networktable( NetworkTableInstance::GetDefault().GetTable( tableName.c_str() ) ),
+    m_networktable( NetworkTableInstance::GetDefault().GetTable( tableName) ),
     m_mountHeight( mountingHeight ),
     m_mountingHorizontalOffset( mountingHorizontalOffset ),
     m_rotation(rotation),
@@ -104,8 +104,8 @@ bool DragonLimelight::HasTarget() const
 
 double DragonLimelight::GetTargetHorizontalOffset() const
 {
-    double tx = m_networktable->GetNumber("tx", 0.0);
-    double ty = m_networktable->GetNumber("ty", 0.0);
+    double tx = m_networktable->GetNumber("tx", 0.0) - m_mountingHorizontalOffset;
+    double ty = m_networktable->GetNumber("ty", 0.0) - m_mountingHorizontalOffset;
     if(m_rotation == 0.0)
     {
         return tx;

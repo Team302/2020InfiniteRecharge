@@ -9,19 +9,21 @@
 
 #include <pugixml/pugixml.hpp>
 
-#include <iostream>
-
-
 #include <frc/SmartDashboard/SmartDashboard.h>
 
 #include <auton/PrimitiveParams.h>
 #include <auton/AutonSelector.h>
 #include <auton/PrimitiveEnums.h>
 #include <auton/primitives/IPrimitive.h>
-#include <controllers/BallManipulator.h>
+#include <states/BallManipulator.h>
+#include <utils/Logger.h>
+
+using namespace std;
+using namespace pugi;
+
 PrimitiveParamsVector PrimitiveParser::ParseXML
 (
-    std::string     fileName
+    string     fileName
 )
 {
 
@@ -35,76 +37,57 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
     float                       endDriveSpeed = 0.0;
     float                       xloc = 0.0;
     float                       yloc = 0.0;
-
+    BallManipulator::BALL_MANIPULATOR_STATE ballState = BallManipulator::BALL_MANIPULATOR_STATE::OFF;
+    float                       turretAngle = 0.0;
     bool hasError = false;
 
-    pugi::xml_document doc;
-    pugi::xml_parse_result result = doc.load_file( fileName.c_str() );
+    // initialize the xml string to enum maps
+    map<string, PRIMITIVE_IDENTIFIER> primStringToEnumMap;
+    primStringToEnumMap["DO_NOTHING"] = DO_NOTHING;
+    primStringToEnumMap["HOLD_POSITION"]  = HOLD_POSITION;
+    primStringToEnumMap["DRIVE_DISTANCE"] = DRIVE_DISTANCE;
+    primStringToEnumMap["DRIVE_TIME"] = DRIVE_TIME;
+    primStringToEnumMap["DRIVE_TO_WALL"] = DRIVE_TO_WALL;
+    primStringToEnumMap["TURN_ANGLE_ABS"] = TURN_ANGLE_ABS;
+    primStringToEnumMap["TURN_ANGLE_REL"] = TURN_ANGLE_REL;
+
+    map<string, BallManipulator::BALL_MANIPULATOR_STATE> ballStringToEnumMap;
+    ballStringToEnumMap["OFF"] = BallManipulator::BALL_MANIPULATOR_STATE::OFF;
+    ballStringToEnumMap["INTAKE"]  = BallManipulator::BALL_MANIPULATOR_STATE::INTAKE;
+    ballStringToEnumMap["INTAKE_HUMAN_PLAYER"] = BallManipulator::BALL_MANIPULATOR_STATE::INTAKE_HUMAN_PLAYER;
+    ballStringToEnumMap["HOLD"] = BallManipulator::BALL_MANIPULATOR_STATE::HOLD;
+    ballStringToEnumMap["GET_READY_TO_SHOOT"] = BallManipulator::BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT;
+    ballStringToEnumMap["SHOOT"] = BallManipulator::BALL_MANIPULATOR_STATE::SHOOT;
+
+
+
+
+    xml_document doc;
+    xml_parse_result result = doc.load_file( fileName.c_str() );
     if ( result )
     {
-//        printf( "XML file [ %s ] parsed without errors \n ", fileName.c_str() );
-
-        pugi::xml_node auton = doc.root();
-        for (pugi::xml_node node = auton.first_child(); node; node = node.next_sibling())
+        xml_node auton = doc.root();
+        for (xml_node node = auton.first_child(); node; node = node.next_sibling())
         {
-            for (pugi::xml_node primitiveNode = node.first_child(); primitiveNode; primitiveNode = primitiveNode.next_sibling())
+            for (xml_node primitiveNode = node.first_child(); primitiveNode; primitiveNode = primitiveNode.next_sibling())
             {
                 if ( strcmp( primitiveNode.name(), "primitive") == 0 )
                 {
 
-                    for (pugi::xml_attribute attr = primitiveNode.first_attribute(); attr; attr = attr.next_attribute())
+                    for (xml_attribute attr = primitiveNode.first_attribute(); attr; attr = attr.next_attribute())
                     {
                         if ( strcmp( attr.name(), "id" ) == 0 )
                         {
-                            int iVal = attr.as_int();
-                            switch ( iVal )
+                            auto paramStringToEnumItr = primStringToEnumMap.find( attr.value() );
+                            if ( paramStringToEnumItr != primStringToEnumMap.end() )
                             {
-                                case DO_NOTHING:
-                                    primitiveType = DO_NOTHING;
-                                    break;
-
-                                case HOLD_POSITION:
-                                    primitiveType = HOLD_POSITION;
-                                    break;
-
-                                case DRIVE_DISTANCE:
-                                    primitiveType = DRIVE_DISTANCE;
-                                    break;
-
-                                case DRIVE_TIME:
-                                    primitiveType = DRIVE_TIME;
-                                    break;
-
-                                case DRIVE_TO_CUBE:
-                                    primitiveType = DRIVE_TO_CUBE;
-                                    break;
-
-                                case TURN_ANGLE_ABS:
-                                    primitiveType = TURN_ANGLE_ABS;
-                                    break;
-
-                                case TURN_ANGLE_REL:
-                                    primitiveType = TURN_ANGLE_REL;
-                                    break;
-
-                                case DRIVE_TO_WALL:
-                                    primitiveType = DRIVE_TO_WALL;
-                                    break;
-
-                                case TURN_TO_CUBE:
-                                    primitiveType = TURN_TO_CUBE;
-                                    break;
-
-                                case DRIVE_LIDAR_DISTANCE:
-                                    primitiveType = DRIVE_LIDAR_DISTANCE;
-                                    break;
-
-                                default:
-                                    printf( "==>> PrimitiveParser::ParseXML:  Invalid Primitive Type %d \n", iVal );
-                                    hasError = true;
-                                    break;
+                                primitiveType = paramStringToEnumItr->second;
                             }
-
+                            else
+                            {
+                                Logger::GetLogger()->LogError( string("PrimitiveParser::ParseXML invalid id"), attr.value());
+                                hasError = true;
+                            }
                         }
                         else if ( strcmp( attr.name(), "time" ) == 0 )
                         {
@@ -134,14 +117,31 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
                         {
                             yloc = attr.as_float();
                         }
+                        else if ( strcmp( attr.name(), "ballState" ) == 0 )
+                        {
+                            auto ballStringToEnumItr = ballStringToEnumMap.find( attr.value() );
+                            if ( ballStringToEnumItr != ballStringToEnumMap.end() )
+                            {
+                                ballState = ballStringToEnumItr->second;
+                            }
+                            else
+                            {
+                                Logger::GetLogger()->LogError( string("PrimitiveParser::ParseXML invalid ball state"), attr.value());
+                                hasError = true;
+                            }
+                        }
+                        else if ( strcmp( attr.name(), "turretAngle") == 0 )
+                        {
+                            turretAngle = attr.as_float();
+                        }
                         else
                         {
-                        	printf("You spelled something wrong \n");
+                            Logger::GetLogger()->LogError( string("PrimitiveParser::ParseXML invalid attribute"), attr.name());
+                            hasError = true;
                         }
                     }
                     if ( !hasError )
                     {   
-                        BallManipulator::BALL_MANIPULATOR_STATE state = BallManipulator::BALL_MANIPULATOR_STATE::SHOOT;
                         paramVector.emplace_back( new PrimitiveParams( primitiveType,
                                                                        time,
                                                                        distance,
@@ -150,7 +150,8 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
                                                                        heading,
                                                                        startDriveSpeed,
                                                                        endDriveSpeed,
-                                                                       state ) );
+                                                                       ballState,
+                                                                       turretAngle ) );
                     }
                 }
             }
@@ -158,9 +159,8 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
     }
     else
     {
-        printf("Errors parsing file %s\n", fileName.c_str() );
-        printf("Error %s \n", result.description() );
-
+        Logger::GetLogger()->LogError( string("PrimitiveParser::ParseXML error parsing file"), fileName );
+        Logger::GetLogger()->LogError( string("PrimitiveParser::ParseXML error message"), result.description() );
     }
 
     return paramVector;

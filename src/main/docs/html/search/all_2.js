@@ -8,7 +8,7 @@ var searchData=
   ['ball_5ftransfer_5fstate_54',['BALL_TRANSFER_STATE',['../class_ball_transfer_state_mgr.html#a60f3deceead6d874baae678a4fc7acb2',1,'BallTransferStateMgr']]],
   ['ball_5ftransfer_5fto_5fimpeller_55',['BALL_TRANSFER_TO_IMPELLER',['../class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a515a84aad58b3d799487bed79c9e38eb',1,'TeleopControl']]],
   ['ball_5ftransfer_5fto_5fshooter_56',['BALL_TRANSFER_TO_SHOOTER',['../class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a478186ef0eeda3702bdf2af97cb529f1',1,'TeleopControl']]],
-  ['ballmanipulator_57',['BallManipulator',['../class_ball_manipulator.html',1,'BallManipulator'],['../class_ball_manipulator.html#a02e472b75522b7c08d127f29339047e2',1,'BallManipulator::BallManipulator()']]],
+  ['ballmanipulator_57',['BallManipulator',['../class_ball_manipulator.html',1,'']]],
   ['ballmanipulator_2ecpp_58',['BallManipulator.cpp',['../_ball_manipulator_8cpp.html',1,'']]],
   ['ballmanipulator_2eh_59',['BallManipulator.h',['../_ball_manipulator_8h.html',1,'']]],
   ['balltransfer_60',['BallTransfer',['../class_ball_transfer.html',1,'BallTransfer'],['../class_ball_transfer.html#a9ec97e88767744887b31728d871c9af3',1,'BallTransfer::BallTransfer()']]],

@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "ctre", "namespacectre.html", "namespacectre" ],
     [ "AnalogAxis", "class_analog_axis.html", "class_analog_axis" ],
     [ "AnalogButton", "class_analog_button.html", "class_analog_button" ],
     [ "AnalogInputDefn", "class_analog_input_defn.html", "class_analog_input_defn" ],
@@ -86,7 +87,6 @@ var annotated_dup =
     [ "HardwareIDValidation", "class_hardware_i_d_validation.html", null ],
     [ "HoldPosition", "class_hold_position.html", "class_hold_position" ],
     [ "HoldTurretPosition", "class_hold_turret_position.html", "class_hold_turret_position" ],
-    [ "HumanPlayerFlap", "class_human_player_flap.html", "class_human_player_flap" ],
     [ "IButton", "class_i_button.html", "class_i_button" ],
     [ "IChassis", "class_i_chassis.html", "class_i_chassis" ],
     [ "IDeadband", "class_i_deadband.html", "class_i_deadband" ],
@@ -159,6 +159,7 @@ var annotated_dup =
     [ "ShooterHoodMoveUp", "class_shooter_hood_move_up.html", "class_shooter_hood_move_up" ],
     [ "ShooterHoodStateMgr", "class_shooter_hood_state_mgr.html", "class_shooter_hood_state_mgr" ],
     [ "ShooterOff", "class_shooter_off.html", "class_shooter_off" ],
+    [ "ShooterSaveState", "class_shooter_save_state.html", "class_shooter_save_state" ],
     [ "ShooterShoot", "class_shooter_shoot.html", "class_shooter_shoot" ],
     [ "ShooterStateMgr", "class_shooter_state_mgr.html", "class_shooter_state_mgr" ],
     [ "ShooterStateMgrTest", "class_shooter_state_mgr_test.html", "class_shooter_state_mgr_test" ],

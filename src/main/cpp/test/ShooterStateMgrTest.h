@@ -23,7 +23,7 @@
 
 // Team 302 includes
 #include <test/IStateTest.h>
-#include <controllers/shooter/ShooterStateMgr.h>
+#include <states/shooter/ShooterStateMgr.h>
 
 // Third Party Includes
 

@@ -132,11 +132,12 @@ $(document).ready(function(){initNavTree('_limelight_factory_8h_source.html','')
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ~<a class="code" href="class_limelight_factory.html">LimelightFactory</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_limelight_factory.html">LimelightFactory</a>* m_limelightFactory;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::map &lt;IDragonSensor::SENSOR_USAGE, std::shared_ptr&lt;DragonLimelight&gt;&gt; m_limelightMap;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::shared_ptr&lt;DragonLimelight&gt; m_limelight;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//std::map &lt;IDragonSensor::SENSOR_USAGE, std::shared_ptr&lt;DragonLimelight&gt;&gt; m_limelightMap;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_limelight_factory_html_ac8477b585b76b93d953f6f2d5561c749"><div class="ttname"><a href="class_limelight_factory.html#ac8477b585b76b93d953f6f2d5561c749">LimelightFactory::GetLimelight</a></div><div class="ttdeci">std::shared_ptr&lt; DragonLimelight &gt; GetLimelight(IDragonSensor::SENSOR_USAGE usage)</div><div class="ttdef"><b>Definition:</b> <a href="_limelight_factory_8cpp_source.html#l00047">LimelightFactory.cpp:47</a></div></div>
+<div class="ttc" id="aclass_limelight_factory_html_ac8477b585b76b93d953f6f2d5561c749"><div class="ttname"><a href="class_limelight_factory.html#ac8477b585b76b93d953f6f2d5561c749">LimelightFactory::GetLimelight</a></div><div class="ttdeci">std::shared_ptr&lt; DragonLimelight &gt; GetLimelight(IDragonSensor::SENSOR_USAGE usage)</div><div class="ttdef"><b>Definition:</b> <a href="_limelight_factory_8cpp_source.html#l00053">LimelightFactory.cpp:53</a></div></div>
 <div class="ttc" id="aclass_limelight_factory_html"><div class="ttname"><a href="class_limelight_factory.html">LimelightFactory</a></div><div class="ttdef"><b>Definition:</b> <a href="_limelight_factory_8h_source.html#l00017">LimelightFactory.h:17</a></div></div>
 <div class="ttc" id="a_dragon_limelight_8h_html"><div class="ttname"><a href="_dragon_limelight_8h.html">DragonLimelight.h</a></div></div>
 <div class="ttc" id="aclass_i_dragon_sensor_html_a48f04b4f71b0f27f8330fd82a26b5fe9"><div class="ttname"><a href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a></div><div class="ttdeci">SENSOR_USAGE</div><div class="ttdef"><b>Definition:</b> <a href="_i_dragon_sensor_8h_source.html#l00036">IDragonSensor.h:36</a></div></div>

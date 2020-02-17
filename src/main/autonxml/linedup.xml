@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE auton SYSTEM "auton.dtd">
+<auton>
+	<primitive id="HOLD_POSITION"
+			   time="0.25"
+               ballState="SHOOT"/>
+	<primitive id="DRIVE_DISTANCE"
+			   distance="78.75"
+			   drivespeed="60.0"               
+               ballState="GET_READY_TO_SHOOT"
+               turretAngle="270.0"/>
+	<primitive id="HOLD_POSITION"
+			   time="0.25"
+               ballState="SHOOT"/>
+	<primitive id="TURN_ANGLE_REL"
+			   heading="45.0"
+               ballState="GET_READY_TO_SHOOT"/>
+	<primitive id="DRIVE_DISTANCE"
+			   distance="45.0"
+			   drivespeed="60.0"
+               ballState="SHOOT"
+               turretAngle="180.0"/>
+</auton>

@@ -159,8 +159,7 @@ void DriveTrainSide::SetControlConstants
     ControlData*                                 pid                 
 )
 {
-    // todo:  need to account for voltage mode
-    // NO-OP since we can't run closed loop since we don't have sensors
+    m_master.get()->SetControlConstants( pid );
 }
 
 
