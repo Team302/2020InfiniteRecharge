@@ -44,6 +44,8 @@ TurretStateMgr::TurretStateMgr() : m_stateMap(),
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
+                auto fbControlData = td->GetFailoverController(); // todo pass through to the states
+                auto fbTarget = td->GetFailoverTarget();  // todo pass through to the states
 
                 switch ( stateEnum )
                 {

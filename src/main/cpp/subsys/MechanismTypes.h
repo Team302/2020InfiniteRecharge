@@ -33,7 +33,6 @@ class MechanismTypes
             UNKNOWN_MECHANISM = -1,
             DRIVETRAIN_SIDE,
             INTAKE,
-            HUMAN_PLAYER_FLAP,
             IMPELLER,
             BALL_TRANSFER,
             TURRET,

@@ -20,6 +20,7 @@
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismFactory.h>
 #include <controllers/ControlData.h>
+#include <subsys/ControlPanel.h>
 
 class ControlPanelManual : public IState
 {

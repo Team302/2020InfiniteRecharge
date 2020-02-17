@@ -40,6 +40,7 @@
 #include <hw/DragonServo.h>
 #include <hw/DragonAnalogInput.h>
 #include <hw/DragonDigitalInput.h>
+#include <subsys/ControlPanel.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismTypes.h>
@@ -47,7 +48,6 @@
 #include <utils/Logger.h>
 #include <subsys/Impeller.h>
 #include <subsys/BallTransfer.h>
-#include <subsys/HumanPlayerFlap.h>
 #include <subsys/Turret.h>
 #include <subsys/Shooter.h>
 #include <subsys/ShooterHood.h>
@@ -156,17 +156,6 @@ IMechanism*  MechanismFactory::CreateIMechanism
             }
             break;
 
-			case MechanismTypes::MECHANISM_TYPE::HUMAN_PLAYER_FLAP:
-			{
-				auto solenoid = GetSolenoid( solenoids, SolenoidUsage::SOLENOID_USAGE::HUMAN_PLAYER_FLAP );
-				if ( solenoid.get() != nullptr )
-				{
-					auto flap = new HumanPlayerFlap( solenoid );
-					subsys = dynamic_cast<IMechanism*>( flap );
-				}
-			}
-			break;
-			
 			case MechanismTypes::MECHANISM_TYPE::IMPELLER:
 			{
 				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::IMPELLER );

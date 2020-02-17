@@ -64,6 +64,8 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
                 auto solState = td->GetSolenoidState();
+                auto fbControlData = td->GetFailoverController(); // todo pass through to the states
+                auto fbTarget = td->GetFailoverTarget();  // todo pass through to the states
                 switch ( stateEnum )
                 {
                     case BALL_TRANSFER_STATE::OFF:
