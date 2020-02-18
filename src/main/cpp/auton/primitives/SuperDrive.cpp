@@ -26,6 +26,7 @@
 #include <auton/PrimitiveParams.h>
 #include <auton/primitives/IPrimitive.h>
 #include <subsys/MechanismFactory.h>
+#include <controllers/ControlData.h>
 #include <controllers/ControlModes.h>
 #include <subsys/IMechanism.h>
 #include <utils/Logger.h>
@@ -97,8 +98,21 @@ void SuperDrive::Init(PrimitiveParams* params)
 	}
 
 	//m_startHeading = m_chassis->GetHeading();
+	auto cd = make_shared<ControlData>( ControlModes::CONTROL_TYPE::VELOCITY_INCH, 
+							   			ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER,
+							   			string("SuperDrive"),
+							   			12.0,
+							   			0.0,
+							   			0.0,
+							   			0.0,
+							   			0.0,
+							   			0.0,
+							   			0.0,
+							   			1.0,
+							  			0.0   );
+	m_chassis->SetControlConstants( cd.get() );
 	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::VELOCITY_INCH, m_leftSpeed, m_rightSpeed );
-						  
+
     //m_chassis->SetVelocityParams(PROPORTIONAL_COEFF, INTREGRAL_COEFF, DERIVATIVE_COEFF, FEET_FORWARD_COEFF,
     //		m_leftSpeed, m_rightSpeed);
 
@@ -171,6 +185,8 @@ void SuperDrive::Run()
 
 	m_leftSpeed -= m_currentHeading * GYRO_CORRECTION_CONSTANT;
 	m_rightSpeed += m_currentHeading * GYRO_CORRECTION_CONSTANT;
+
+	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::VELOCITY_INCH, m_leftSpeed, m_rightSpeed );
 
 	//m_chassis->SetVelocityParams(PROPORTIONAL_COEFF, INTREGRAL_COEFF, DERIVATIVE_COEFF, FEET_FORWARD_COEFF, m_leftSpeed, m_rightSpeed);
 
