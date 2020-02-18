@@ -36,6 +36,7 @@ class ShooterSaveState : public IState
     (
         ControlData* controlData
     );
+    
 
  
     ShooterSaveState() = delete;
