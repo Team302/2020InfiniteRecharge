@@ -101,6 +101,8 @@ class DragonChassis : public IChassis
         (
             ControlData*                                 pid               
         ) override;
+
+        double GetWheelDiameter() const override;
         
     private:
         IMechanism*                     m_leftSide;
@@ -108,6 +110,7 @@ class DragonChassis : public IChassis
 
         double                          m_wheelBase;
         double                          m_wheelTrack;
+        double                          m_wheelDiameter;
 };
 
 

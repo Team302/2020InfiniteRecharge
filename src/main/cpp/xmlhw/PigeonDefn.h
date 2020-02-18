@@ -18,7 +18,6 @@
 
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
 #include <frc/SmartDashboard/SmartDashboard.h>
@@ -44,7 +43,7 @@ class PigeonDefn
         //              its definition.
         // Returns:     DragonPigeon*       pigeon IMU (or nullptr if XML is ill-formed)
         //-----------------------------------------------------------------------
-        std::shared_ptr<DragonPigeon> ParseXML
+        DragonPigeon* ParseXML
         (
             pugi::xml_node      pigeonNode
         );

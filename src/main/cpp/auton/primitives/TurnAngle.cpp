@@ -31,6 +31,8 @@
 #include <controllers/ControlModes.h>
 #include <subsys/IChassis.h>
 #include <utils/Logger.h>
+#include <hw/factories/PigeonFactory.h>
+#include <hw/DragonPigeon.h>
 
 // Third Party Includes
 
@@ -53,6 +55,29 @@ TurnAngle::TurnAngle() : m_chassis( ChassisFactory::GetChassisFactory()->GetICha
 void TurnAngle::Init(PrimitiveParams* params) 
 {
 	m_isDone = false;
+	auto startHeading = 0.0;
+	auto pigeon = PigeonFactory::GetFactory()->GetPigeon();
+	if ( pigeon != nullptr )
+	{
+		startHeading = pigeon->GetYaw();
+		m_targetAngle = startHeading + params->GetHeading();
+	}
+
+
+	auto cd = make_shared<ControlData>( ControlModes::CONTROL_TYPE::POSITION_INCH, 
+									ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER,
+									string("TurnAngle"),
+									3.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									0.0,
+									1.0,
+									0.0   );
+	m_chassis->SetControlConstants( cd.get() );
+
 	// todo re-work
 	/*
 	m_chassis->SetTalonMode(DragonTalon::POSITION); 													//Set the talon mode to position
@@ -73,9 +98,14 @@ void TurnAngle::Init(PrimitiveParams* params)
 
 void TurnAngle::Run() //best method ever. Does nothing, and should do nothing... NOT ANYMORE, BUDDY!
 {
-	// todo:  re-work
-	/*
-	float deltaAngle = m_targetAngle - m_chassis->GetHeading();
+	auto heading = 0.0;
+	auto pigeon = PigeonFactory::GetFactory()->GetPigeon();
+	if ( pigeon != nullptr )
+	{
+		heading = pigeon->GetYaw();
+	}
+
+	float deltaAngle = m_targetAngle - heading;
 	float velocity = deltaAngle * ANGLE_DIFFERENCE_VELOCITY_MULTIPLIER;
 	bool sign = velocity > 0;	//Store sign of velocity as positive = true
 	velocity = clamp(abs(velocity), MIN_VELOCITY, MAX_VELOCITY);
@@ -87,23 +117,27 @@ void TurnAngle::Run() //best method ever. Does nothing, and should do nothing...
 	m_leftPos  += (velocity * 0.02) / (m_chassis->GetWheelDiameter() * M_PI);
 	m_rightPos -= (velocity * 0.02) / (m_chassis->GetWheelDiameter() * M_PI);
 
-	m_chassis->SetLeftRightMagnitudes(m_leftPos, m_rightPos);
-    */
+	//m_chassis->SetLeftRightMagnitudes(m_leftPos, m_rightPos);
+	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::POSITION_INCH, m_leftPos, m_rightPos );
 }
 
 bool TurnAngle::IsDone() 
 {
 	if (!m_isDone) 
 	{
-		// todo rework
-		/*
-		float absDeltaAngle = std::abs(m_targetAngle - m_chassis->GetHeading());
+		auto heading = 0.0;
+		auto pigeon = PigeonFactory::GetFactory()->GetPigeon();
+		if ( pigeon != nullptr )
+		{
+			heading = pigeon->GetYaw();
+		}
+		float absDeltaAngle = abs(m_targetAngle - heading);
 		if (absDeltaAngle < ANGLE_THRESH) {
 			m_isDone = true;
-			m_chassis->SetTalonMode(DragonTalon::PERCENT);
-			m_chassis->SetLeftRightMagnitudes(0, 0);
+			m_chassis->SetOutput( ControlModes::PERCENT_OUTPUT, 0.0, 0.0 );
+			//m_chassis->SetTalonMode(DragonTalon::PERCENT);
+			//m_chassis->SetLeftRightMagnitudes(0, 0);
 		}
-		*/
 	}
 	return m_isDone || m_timer->HasPeriodPassed( m_maxTime );
 }
