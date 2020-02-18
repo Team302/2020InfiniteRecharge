@@ -307,7 +307,7 @@
 				feedbackDevice="QUADENCODER"
 				countsPerRev="6000"
 				gearRatio="1.0"
-				brakeMode="false"
+				brakeMode="true"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"

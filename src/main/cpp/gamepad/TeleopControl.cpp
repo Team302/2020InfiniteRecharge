@@ -131,6 +131,9 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 
 		m_controllerIndex[ TURRET_LIMELIGHT_AIM] = ctrlNo;
 		m_buttonIDs[ TURRET_LIMELIGHT_AIM] = IDragonGamePad::B_BUTTON;
+
+		m_controllerIndex[ TURRET_MANUAL_BUTTON] = ctrlNo;
+		m_buttonIDs[ TURRET_MANUAL_BUTTON] = IDragonGamePad::A_BUTTON;
 	}
     else if ( m_controllers[ctrlNo] != nullptr )
     {
@@ -193,8 +196,8 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_buttonIDs[SHOOTER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10;
 		m_controllerIndex[SHOOTER_OFF] = ctrlNo;
 
-		m_controllerIndex[TURRET_MANUAL_BUTTON] = ctrlNo;
-		m_buttonIDs[TURRET_MANUAL_BUTTON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_11;
+		/*m_controllerIndex[TURRET_MANUAL_BUTTON] = ctrlNo;
+		m_buttonIDs[TURRET_MANUAL_BUTTON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_11;*/
 		m_controllerIndex[ SHOOTER_HOOD_MANUAL_BUTTON] = ctrlNo;
 		m_buttonIDs[ SHOOTER_HOOD_MANUAL_BUTTON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_12;
 		/*m_buttonIDs[SHOOTER_MANUAL_AIM] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_9;
