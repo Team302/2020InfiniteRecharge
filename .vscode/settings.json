@@ -15,6 +15,7 @@
   },
   "C_Cpp.default.configurationProvider": "vscode-wpilib",
   "files.associations": {
+<<<<<<< Updated upstream
     "array": "cpp",
     "atomic": "cpp",
     "hash_map": "cpp",
@@ -100,3 +101,16 @@
     "stack": "cpp"
   }
 }
+=======
+    "xstring": "cpp",
+    "string": "cpp",
+    "array": "cpp",
+    "vector": "cpp",
+    "xutility": "cpp",
+    "string_view": "cpp",
+    "*.inc": "cpp",
+    "iosfwd": "cpp",
+    "xlocbuf": "cpp"
+  }
+}
+>>>>>>> Stashed changes
