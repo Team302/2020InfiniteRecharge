@@ -66,18 +66,10 @@ class Crawler : public IMechanism
         ///@return void
         double GetCurrentPosition() const override;
 
-        ///@brief get the target position of the mechanism
-        ///@return void
-        double GetTargetPosition() const override;
-
         ///@brief Get the current speed of the mechanism.
         ///@return void
         double GetCurrentSpeed() const override;
-
-        ///@brief Get the target speed of the mechanism
-        ///@return void
-        double GetTargetSpeed() const override;
-
+        
         ///@brief Set the control constants (i.e the PIDF values)
         ///@param [in] ControlData* pid: The control constants
         ///@return void
