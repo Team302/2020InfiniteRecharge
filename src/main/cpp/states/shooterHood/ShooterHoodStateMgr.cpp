@@ -45,10 +45,10 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
 
     // initialize the xml string to state map
     map<string, SHOOTER_HOOD_STATE> stateMap;
-    stateMap["MOVEUP"] = SHOOTER_HOOD_STATE::MOVE_UP;
-    stateMap["MOVEDOWN"]  = SHOOTER_HOOD_STATE::MOVE_DOWN;
-    stateMap["HOLDPOSITION"] = SHOOTER_HOOD_STATE::HOLD_POSITION;
-    stateMap["MANUAL"] = SHOOTER_HOOD_STATE::MANUAL;
+    stateMap["SHOOTERHOODUP"] = SHOOTER_HOOD_STATE::MOVE_UP;
+    stateMap["SHOOTERHOODDOWN"]  = SHOOTER_HOOD_STATE::MOVE_DOWN;
+    stateMap["SHOOTERHOODHOLD"] = SHOOTER_HOOD_STATE::HOLD_POSITION;
+    stateMap["SHOOTERHOODMANUAL"] = SHOOTER_HOOD_STATE::MANUAL;
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -113,7 +113,7 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
         }
         else
         {
-            Logger::GetLogger()->LogError( string("ShooterHoodStateMgr::ShooterHoodStateMgr"), string("state not found"));
+            Logger::GetLogger()->LogError( string("ShooterHoodStateMgr::ShooterHoodStateMgr state not found"), stateString );
         }
     }
 }

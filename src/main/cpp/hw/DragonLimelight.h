@@ -38,7 +38,7 @@ class DragonLimelight : public IDragonSensor, public IDragonDistanceSensor
         //Enums
         enum LED_MODE 
         {
-            LED_DEFUALT,
+            LED_DEFAULT,
             LED_OFF,
             LED_BLINK,
             LED_ON

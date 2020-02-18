@@ -123,10 +123,10 @@ $(document).ready(function(){initNavTree('_shooter_hood_state_mgr_8cpp_source.ht
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// initialize the xml string to state map</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    map&lt;string, SHOOTER_HOOD_STATE&gt; stateMap;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    stateMap[<span class="stringliteral">&quot;MOVEUP&quot;</span>] = SHOOTER_HOOD_STATE::MOVE_UP;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    stateMap[<span class="stringliteral">&quot;MOVEDOWN&quot;</span>]  = SHOOTER_HOOD_STATE::MOVE_DOWN;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    stateMap[<span class="stringliteral">&quot;HOLDPOSITION&quot;</span>] = <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">SHOOTER_HOOD_STATE::HOLD_POSITION</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    stateMap[<span class="stringliteral">&quot;MANUAL&quot;</span>] = SHOOTER_HOOD_STATE::MANUAL;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    stateMap[<span class="stringliteral">&quot;SHOOTERHOODUP&quot;</span>] = SHOOTER_HOOD_STATE::MOVE_UP;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    stateMap[<span class="stringliteral">&quot;SHOOTERHOODDOWN&quot;</span>]  = SHOOTER_HOOD_STATE::MOVE_DOWN;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    stateMap[<span class="stringliteral">&quot;SHOOTERHOODHOLD&quot;</span>] = <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">SHOOTER_HOOD_STATE::HOLD_POSITION</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    stateMap[<span class="stringliteral">&quot;SHOOTERHOODMANUAL&quot;</span>] = SHOOTER_HOOD_STATE::MANUAL;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// create the states passing the configuration data</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span> ( <span class="keyword">auto</span> td: targetData )</div>
@@ -191,7 +191,7 @@ $(document).ready(function(){initNavTree('_shooter_hood_state_mgr_8cpp_source.ht
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;ShooterHoodStateMgr::ShooterHoodStateMgr&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;state not found&quot;</span>));</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;ShooterHoodStateMgr::ShooterHoodStateMgr state not found&quot;</span>), stateString );</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>

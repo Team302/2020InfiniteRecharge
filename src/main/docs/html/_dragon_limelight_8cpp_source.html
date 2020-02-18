@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('_dragon_limelight_8cpp_source.html',''
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;) : <a class="code" href="class_i_dragon_sensor.html">IDragonSensor</a>(),</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_i_dragon_distance_sensor.html">IDragonDistanceSensor</a>(),</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    m_usage( usage ),</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_networktable( NetworkTableInstance::GetDefault().GetTable( tableName.c_str() ) ),</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_networktable( NetworkTableInstance::GetDefault().GetTable( tableName) ),</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_mountHeight( mountingHeight ),</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_mountingHorizontalOffset( mountingHorizontalOffset ),</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    m_rotation(rotation),</div>
@@ -180,8 +180,8 @@ $(document).ready(function(){initNavTree('_dragon_limelight_8cpp_source.html',''
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#a47d04ae8a2230a52887d696109f37eed">  105</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_limelight.html#a47d04ae8a2230a52887d696109f37eed">DragonLimelight::GetTargetHorizontalOffset</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">double</span> tx = m_networktable-&gt;GetNumber(<span class="stringliteral">&quot;tx&quot;</span>, 0.0);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">double</span> ty = m_networktable-&gt;GetNumber(<span class="stringliteral">&quot;ty&quot;</span>, 0.0);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">double</span> tx = m_networktable-&gt;GetNumber(<span class="stringliteral">&quot;tx&quot;</span>, 0.0) - m_mountingHorizontalOffset;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">double</span> ty = m_networktable-&gt;GetNumber(<span class="stringliteral">&quot;ty&quot;</span>, 0.0) - m_mountingHorizontalOffset;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span>(m_rotation == 0.0)</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> tx;</div>

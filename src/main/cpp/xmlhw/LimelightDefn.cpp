@@ -33,6 +33,15 @@ std::shared_ptr<DragonLimelight> LimelightDefn::ParseXML(pugi::xml_node    limel
     double targetHeight = 0.0;
     double targetHeight2 = 0.0;
 
+    DragonLimelight::LED_MODE ledMode = DragonLimelight::LED_MODE::LED_DEFAULT;
+    DragonLimelight::CAM_MODE camMode = DragonLimelight::CAM_MODE::CAM_VISION;
+    DragonLimelight::STREAM_MODE streamMode = DragonLimelight::STREAM_MODE::STREAM_DEFAULT;
+    DragonLimelight::SNAPSHOT_MODE snapMode = DragonLimelight::SNAPSHOT_MODE::SNAP_OFF;
+    double defaultXHairX = -2.0;
+    double defaultXHairY = -2.0;
+    double secXHairX = -2.0;
+    double secXHairY = -2.0;
+
     for (pugi::xml_attribute attr = limelightNode.first_attribute(); attr && !hasError; attr = attr.next_attribute())
     {
         // validate/set the usage
@@ -69,10 +78,72 @@ std::shared_ptr<DragonLimelight> LimelightDefn::ParseXML(pugi::xml_node    limel
         {
             targetHeight = attr.as_double();
         }
-        else if ( strcmp( attr.name(), "targetheight 2" ) == 0 )
+        else if ( strcmp( attr.name(), "targetheight2" ) == 0 )
         {
             targetHeight2 = attr.as_double();
         }
+        else if ( strcmp( attr.name(), "defaultledmode" ) == 0 )
+        {
+            if ( strcmp( attr.value(), "currentpipeline") == 0 )
+            {
+                ledMode = DragonLimelight::LED_MODE::LED_DEFAULT;
+            }
+            else if ( strcmp( attr.value(), "off") == 0 )
+            {
+                ledMode = DragonLimelight::LED_MODE::LED_OFF;
+            }
+            else if ( strcmp( attr.value(), "blink") == 0 )
+            {
+                ledMode = DragonLimelight::LED_MODE::LED_BLINK;
+            }
+            else if ( strcmp( attr.value(), "on") == 0 )
+            {
+                ledMode = DragonLimelight::LED_MODE::LED_ON;
+            }
+        }        
+        else if ( strcmp( attr.name(), "defaultcammode" ) == 0 )
+        {
+            if ( strcmp( attr.value(), "drivercamera")==0)
+            {
+                camMode = DragonLimelight::CAM_MODE::CAM_DRIVER;
+            }
+        }        
+        else if ( strcmp( attr.name(), "streammode" ) == 0 )
+        {
+            if ( strcmp( attr.value(), "pipmain") == 0 )
+            {
+                streamMode = DragonLimelight::STREAM_MODE::STREAM_MAIN_AND_SECOND;
+            }
+            else if ( strcmp( attr.value(), "pipsecondary" ) == 0 )
+            {
+                streamMode = DragonLimelight::STREAM_MODE::STREAM_SECOND_AND_MAIN;
+            }
+        }        
+        else if ( strcmp( attr.name(), "snapshots" ) == 0 )
+        {
+            if ( strcmp( attr.value(), "twopersec") == 0 )
+            {
+                snapMode = DragonLimelight::SNAPSHOT_MODE::SNAP_ON;
+            }
+        }
+        else if ( strcmp( attr.name(), "crosshairx" ) == 0 )
+        {
+            defaultXHairX = attr.as_double();
+        }        
+        else if ( strcmp( attr.name(), "crosshairy" ) == 0 )
+        {
+            defaultXHairY = attr.as_double();
+        }        
+        else if ( strcmp( attr.name(), "secondcrosshairx" ) == 0 )
+        {
+            secXHairX = attr.as_double();
+        }        
+        else if ( strcmp( attr.name(), "secondcrosshairy" ) == 0 )
+        {
+            secXHairY = attr.as_double();
+        }
+
+
 		//todo:  add cross hair stuff/streaming options -- everything after target heights
         else
         {
@@ -93,7 +164,15 @@ std::shared_ptr<DragonLimelight> LimelightDefn::ParseXML(pugi::xml_node    limel
                 rotation,
                 mountingAngle,
                 targetHeight,
-                targetHeight2
+                targetHeight2,
+                ledMode,
+                camMode,
+                streamMode,
+                snapMode,
+                defaultXHairX,
+                defaultXHairY,
+                secXHairX,
+                secXHairY
             );
             //limelight = make_shared<DragonLimelight>(usage, tableName, mountingHeight, horizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2);
         }

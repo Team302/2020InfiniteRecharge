@@ -46,10 +46,11 @@ var searchData=
   ['turret_2eh_1039',['Turret.h',['../_turret_8h.html',1,'']]],
   ['turret_5fangle_5fmax_1040',['TURRET_ANGLE_MAX',['../class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46af156ef0d7bf497ddce8c288cf7e4ea30',1,'DigitalInputUsage']]],
   ['turret_5fangle_5fmin_1041',['TURRET_ANGLE_MIN',['../class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46a4ce8750a063ee2e0d01a370cf462ab05',1,'DigitalInputUsage']]],
-  ['turret_5fmanual_5faxis_1042',['TURRET_MANUAL_AXIS',['../class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3334c47ae393f925dd35b13c7211060b',1,'TeleopControl']]],
-  ['turret_5fmanual_5fbutton_1043',['TURRET_MANUAL_BUTTON',['../class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aee3ff24a2c4157913cb76ec8cf859b23',1,'TeleopControl']]],
-  ['turret_5fstate_1044',['TURRET_STATE',['../class_turret_state_mgr.html#aa185afc9e9d378aca360e2f2376c1b98',1,'TurretStateMgr']]],
-  ['turretstatemgr_1045',['TurretStateMgr',['../class_turret_state_mgr.html',1,'TurretStateMgr'],['../class_turret_state_mgr.html#a21b466ae29bfd851aec923cd63ad9bd6',1,'TurretStateMgr::TurretStateMgr()']]],
-  ['turretstatemgr_2ecpp_1046',['TurretStateMgr.cpp',['../_turret_state_mgr_8cpp.html',1,'']]],
-  ['turretstatemgr_2eh_1047',['TurretStateMgr.h',['../_turret_state_mgr_8h.html',1,'']]]
+  ['turret_5flimelight_5faim_1042',['TURRET_LIMELIGHT_AIM',['../class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a98635ab21bb0cce829a83fe475c9ae72',1,'TeleopControl']]],
+  ['turret_5fmanual_5faxis_1043',['TURRET_MANUAL_AXIS',['../class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3334c47ae393f925dd35b13c7211060b',1,'TeleopControl']]],
+  ['turret_5fmanual_5fbutton_1044',['TURRET_MANUAL_BUTTON',['../class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aee3ff24a2c4157913cb76ec8cf859b23',1,'TeleopControl']]],
+  ['turret_5fstate_1045',['TURRET_STATE',['../class_turret_state_mgr.html#aa185afc9e9d378aca360e2f2376c1b98',1,'TurretStateMgr']]],
+  ['turretstatemgr_1046',['TurretStateMgr',['../class_turret_state_mgr.html',1,'TurretStateMgr'],['../class_turret_state_mgr.html#a21b466ae29bfd851aec923cd63ad9bd6',1,'TurretStateMgr::TurretStateMgr()']]],
+  ['turretstatemgr_2ecpp_1047',['TurretStateMgr.cpp',['../_turret_state_mgr_8cpp.html',1,'']]],
+  ['turretstatemgr_2eh_1048',['TurretStateMgr.h',['../_turret_state_mgr_8h.html',1,'']]]
 ];

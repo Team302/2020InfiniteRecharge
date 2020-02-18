@@ -4,7 +4,7 @@ var searchData=
   ['led_2ecpp_623',['LED.cpp',['../_l_e_d_8cpp.html',1,'']]],
   ['led_2eh_624',['LED.h',['../_l_e_d_8h.html',1,'']]],
   ['led_5fblink_625',['LED_BLINK',['../class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40a269dc53e2b1a2fd2690580c13abb8deb',1,'DragonLimelight']]],
-  ['led_5fdefualt_626',['LED_DEFUALT',['../class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40ab7dd6a5238dad33d9e9c5b91040536a0',1,'DragonLimelight']]],
+  ['led_5fdefault_626',['LED_DEFAULT',['../class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40ad9c257ad846d9e7e5ca111f71660cc6c',1,'DragonLimelight']]],
   ['led_5fmode_627',['LED_MODE',['../class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40',1,'DragonLimelight']]],
   ['led_5foff_628',['LED_OFF',['../class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40ae81aad277be42064a5119ae40c133e02',1,'DragonLimelight']]],
   ['led_5fon_629',['LED_ON',['../class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40adbb464c1dcf76bc2aaa7164dfb5ff917',1,'DragonLimelight']]],
