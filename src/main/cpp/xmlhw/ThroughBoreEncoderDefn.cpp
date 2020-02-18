@@ -17,7 +17,7 @@ shared_ptr<rev::CANEncoder> ThroughBoreEncoderDefn::ParseXML
     string usage;
     int DIOA;
     int DIOB;
-    int PWM = 0;
+    int PWMID = 0;
     bool hasError = false;
     shared_ptr<rev::CANEncoder> throughboreencoder = nullptr;
     for ( xml_attribute attr = throughBoreEncoderNode.first_attribute(); attr && !hasError; attr = attr.next_attribute())
@@ -41,7 +41,7 @@ shared_ptr<rev::CANEncoder> ThroughBoreEncoderDefn::ParseXML
             int iVal = attr.as_int();
             if (iVal >= 0 && iVal <= 9)
             {
-                PWM = attr.as_int();
+                PWMID = attr.as_int();
             }
             else
             {
@@ -50,9 +50,9 @@ shared_ptr<rev::CANEncoder> ThroughBoreEncoderDefn::ParseXML
             }
         }
     }
-    /*if (!hasError)
+    if (!hasError)
     {
-        throughboreencoder = make_shared<rev::CANEncoder> ( usage, DIOA, DIOB, PWM );
+        throughboreencoder = make_shared<rev::CANEncoder> ( /*usage, DIOA, DIOB, PWMID*/ );
     }
-    return throughboreencoder;*/
+    return throughboreencoder;
 }
