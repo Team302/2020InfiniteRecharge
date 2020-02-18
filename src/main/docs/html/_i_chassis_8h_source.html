@@ -149,13 +149,14 @@ $(document).ready(function(){initNavTree('_i_chassis_8h_source.html','');});
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="class_control_data.html">ControlData</a>*                                pid                 </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        ) = 0;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="class_i_chassis.html#af4d7d56ee1cd2e0a249402941e3c8f48">IChassis</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_i_chassis.html#a251e92765c8e297490b62875b4c2fd1f">~IChassis</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_i_chassis.html#aef1d1542c93a347d2a4915f50085bd8a">GetWheelDiameter</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="class_i_chassis.html#af4d7d56ee1cd2e0a249402941e3c8f48">IChassis</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_i_chassis.html#a251e92765c8e297490b62875b4c2fd1f">~IChassis</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_i_chassis_html_a251e92765c8e297490b62875b4c2fd1f"><div class="ttname"><a href="class_i_chassis.html#a251e92765c8e297490b62875b4c2fd1f">IChassis::~IChassis</a></div><div class="ttdeci">virtual ~IChassis()=default</div></div>
@@ -164,6 +165,7 @@ $(document).ready(function(){initNavTree('_i_chassis_8h_source.html','');});
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
 <div class="ttc" id="aclass_i_chassis_html_a98a230f90ea350636f7b720efba18d8a"><div class="ttname"><a href="class_i_chassis.html#a98a230f90ea350636f7b720efba18d8a">IChassis::SetOutput</a></div><div class="ttdeci">virtual void SetOutput(ControlModes::CONTROL_TYPE controlType, double leftValue, double rightValue)=0</div><div class="ttdoc">Run chassis.</div></div>
+<div class="ttc" id="aclass_i_chassis_html_aef1d1542c93a347d2a4915f50085bd8a"><div class="ttname"><a href="class_i_chassis.html#aef1d1542c93a347d2a4915f50085bd8a">IChassis::GetWheelDiameter</a></div><div class="ttdeci">virtual double GetWheelDiameter() const =0</div></div>
 <div class="ttc" id="aclass_i_chassis_html_ac1978a942d42934c78784c7099edb538"><div class="ttname"><a href="class_i_chassis.html#ac1978a942d42934c78784c7099edb538">IChassis::GetCurrentPosition</a></div><div class="ttdeci">virtual double GetCurrentPosition() const =0</div><div class="ttdoc">Return the current position of the center of the DragonChassis in inches.</div></div>
 <div class="ttc" id="aclass_i_chassis_html_a757ef3421a2a88c0c7d00e84d1c87313"><div class="ttname"><a href="class_i_chassis.html#a757ef3421a2a88c0c7d00e84d1c87313">IChassis::GetCurrentRightSpeed</a></div><div class="ttdeci">virtual double GetCurrentRightSpeed() const =0</div><div class="ttdoc">Return the current speed of the right side of the DragonChassis in inches per second.</div></div>
 <div class="ttc" id="aclass_i_chassis_html"><div class="ttname"><a href="class_i_chassis.html">IChassis</a></div><div class="ttdoc">Interface for differential drives.</div><div class="ttdef"><b>Definition:</b> <a href="_i_chassis_8h_source.html#l00034">IChassis.h:34</a></div></div>

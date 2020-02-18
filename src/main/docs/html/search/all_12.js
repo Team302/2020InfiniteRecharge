@@ -41,7 +41,7 @@ var searchData=
   ['turntocube_1034',['TurnToCube',['../class_turn_to_cube.html',1,'TurnToCube'],['../class_turn_to_cube.html#a0434c3e826070bda7c81b72e206ac4f3',1,'TurnToCube::TurnToCube()']]],
   ['turntocube_2ecpp_1035',['TurnToCube.cpp',['../_turn_to_cube_8cpp.html',1,'']]],
   ['turntocube_2eh_1036',['TurnToCube.h',['../_turn_to_cube_8h.html',1,'']]],
-  ['turret_1037',['Turret',['../class_turret.html',1,'Turret'],['../class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aae9d0bae3dc4df63175ca1465703faafb',1,'MotorControllerUsage::TURRET()'],['../class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba678e7373d7e0e40324f61c1be89f986f',1,'MechanismTypes::TURRET()'],['../class_turret.html#a7aeac226e1065a563b67774c6aa5ee53',1,'Turret::Turret()']]],
+  ['turret_1037',['Turret',['../class_turret.html',1,'Turret'],['../class_turret.html#a7aeac226e1065a563b67774c6aa5ee53',1,'Turret::Turret()'],['../class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aae9d0bae3dc4df63175ca1465703faafb',1,'MotorControllerUsage::TURRET()'],['../class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba678e7373d7e0e40324f61c1be89f986f',1,'MechanismTypes::TURRET()']]],
   ['turret_2ecpp_1038',['Turret.cpp',['../_turret_8cpp.html',1,'']]],
   ['turret_2eh_1039',['Turret.h',['../_turret_8h.html',1,'']]],
   ['turret_5fangle_5fmax_1040',['TURRET_ANGLE_MAX',['../class_digital_input_usage.html#a2137e04f1b7fa23da836b516e8365f46af156ef0d7bf497ddce8c288cf7e4ea30',1,'DigitalInputUsage']]],

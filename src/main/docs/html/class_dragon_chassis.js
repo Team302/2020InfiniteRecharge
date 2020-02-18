@@ -9,6 +9,7 @@ var class_dragon_chassis =
     [ "GetCurrentRightPosition", "class_dragon_chassis.html#aca949d9c42fdb5fa948a8fd7b5918e1d", null ],
     [ "GetCurrentRightSpeed", "class_dragon_chassis.html#af8880818f285216514de50c8a400678e", null ],
     [ "GetCurrentSpeed", "class_dragon_chassis.html#a54c251e24c4a4504f1363e17239a4fbc", null ],
+    [ "GetWheelDiameter", "class_dragon_chassis.html#a53e2d52a02a6653a0ecb0de910271e45", null ],
     [ "SetControlConstants", "class_dragon_chassis.html#a0db28ff16679b084010cb4cd706c598e", null ],
     [ "SetOutput", "class_dragon_chassis.html#a39dce0dd0a51b21be140226cc1e9931a", null ]
 ];

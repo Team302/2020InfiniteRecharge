@@ -16,16 +16,6 @@
 
 #pragma once
 
-// C++ Includes
-
-// FRC includes
-
-// Team 302 includes
-
-// Third Party Includes
-
-
-
 #include <string>
 #include <vector>
 #include <frc/SmartDashboard/SendableChooser.h>
@@ -33,19 +23,6 @@
 class AutonSelector
 {
 	public:
-		// TODO: Add boolean to show if Evan is dumb or not
-
-		enum AUTON_POSITION
-		{
-			LEFT_CORNER,
-			CENTER,
-			RIGHT_CORNER
-		};
-
-		enum AUTON_OPTION
-		{
-			CROSS_LINE
-		};
 		//---------------------------------------------------------------------
 		// Method: 		<<constructor>>
 		// Description: This creates this object and reads the auto script (CSV)
@@ -71,19 +48,11 @@ class AutonSelector
 	private:
 
 		//---------------------------------------------------------------------
-		// Method: 		GetCrossLineFile
-		// Description: This determines which Cross line file to run based on starting
-		//				position 
-		// Returns:		std::string		filename to run
-		//---------------------------------------------------------------------
-        std::string GetCrossLineFile();
-
-		//---------------------------------------------------------------------
 		// Method: 		FindXMLFileNames
-		// Description: This builds up a list of XML files in the directory and
-		//				stores them in the attributes.
+		// Description: This builds up a list of CSV files in the directory and
+		//				stores them in the m_csvFiles attribute.
 		// Returns:		void
-			//---------------------------------------------------------------------
+		//---------------------------------------------------------------------
 		void FindXMLFileNames();
 
 		//---------------------------------------------------------------------
@@ -94,51 +63,8 @@ class AutonSelector
 		//---------------------------------------------------------------------
 		void PutChoicesOnDashboard();
 
-		//---------------------------------------------------------------------
-		// Method: 		GetRobotStartPosition
-		// Description: Read the starting position from the smart dashboard
-		// Returns:		AutonSelector::AUTON_POSITION		starting position
-		//---------------------------------------------------------------------
-		AUTON_POSITION GetRobotStartPosition();
-
-		//---------------------------------------------------------------------
-		// Method: 		GetDesiredOption
-		// Description: Read the desired behavior from the smart dashboard
-		// Returns:		AutonSelector::AUTON_OPTION		desired behavior
-		//---------------------------------------------------------------------
-		AUTON_OPTION GetDesiredOption();
-
-		// Attributes
-		std::vector<std::string> m_leftXMLFiles;
-		std::vector<std::string> m_centerXMLFiles;
-		std::vector<std::string> m_rightXMLFiles;
-
-
-		// 16 character limits to avoid some smartdashboard issues
-		// AUTOLINE Option
-		const std::string CROSS_AUTON_LINE_STR = "Auto Line";
-		frc::SendableChooser<std::string> m_chooserOptions;
-
-		// STARTING Positions
-		const std::string LEFT_CORNER_STR = "LeftCorner";
-		const std::string CENTER_STR = "Center";
-		const std::string RIGHT_CORNER_STR = "RightCorner";
-		frc::SendableChooser<std::string> m_chooserPosition;
-
+		// Attributues
+		std::vector<std::string> m_xmlFiles;
 		frc::SendableChooser<std::string> m_chooser;
-		frc::SendableChooser<std::string> m_chooserLeft;
-		frc::SendableChooser<std::string> m_chooserCenter;
-		frc::SendableChooser<std::string> m_chooserRight;
-
-		const std::string m_autonDir = "/home/lvuser/auton/";
-		const std::string m_defaultFile = "CrossAutonLine.xml";
-		std::string 	  m_autonPositionModifier;
-		std::string 	  m_autonOption;
-
-
-        const std::string XML = ".xml";
-        const std::string DTD = ".dtd";
-
-		const std::string CROSS_AUTON_LINE = "Cross Auton Line";
 };
 

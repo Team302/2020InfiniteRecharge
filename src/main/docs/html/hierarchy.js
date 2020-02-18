@@ -184,6 +184,7 @@ var hierarchy =
     [ "PCMDefn", "class_p_c_m_defn.html", null ],
     [ "PDPDefn", "class_p_d_p_defn.html", null ],
     [ "PigeonDefn", "class_pigeon_defn.html", null ],
+    [ "PigeonFactory", "class_pigeon_factory.html", null ],
     [ "PrimitiveFactory", "class_primitive_factory.html", null ],
     [ "PrimitiveParams", "class_primitive_params.html", null ],
     [ "PrimitiveParser", "class_primitive_parser.html", null ],

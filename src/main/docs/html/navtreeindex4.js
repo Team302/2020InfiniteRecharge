@@ -1,7 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"class_control_panel_state_mgr.html#acbe49bffdab1d538516a19e5f917c7c0":[1,0,38,1],
-"class_control_panel_stow.html":[1,0,39],
 "class_control_panel_stow.html#a2aea3083dad0852b8ec101a4515714ca":[1,0,39,0],
 "class_control_panel_stow.html#a2ced85ef5bedf990d8374807b71ca029":[1,0,39,1],
 "class_control_panel_stow.html#a2f33179204da626e0c587f649436de4b":[1,0,39,2],
@@ -61,10 +59,11 @@ var NAVTREEINDEX4 =
 "class_dragon_analog_input.html#aaf7e56872e0f74030bfbc93eff4d3654":[1,0,51,1],
 "class_dragon_analog_input.html#ad1b1a03e48875f5d53b6d703c9808541":[1,0,51,0],
 "class_dragon_chassis.html":[1,0,52],
-"class_dragon_chassis.html#a0db28ff16679b084010cb4cd706c598e":[1,0,52,9],
+"class_dragon_chassis.html#a0db28ff16679b084010cb4cd706c598e":[1,0,52,10],
 "class_dragon_chassis.html#a0fe145c70986165ffa4e69f455465b35":[1,0,52,0],
 "class_dragon_chassis.html#a17a96d5df8c06046dc24e2d84940baad":[1,0,52,3],
-"class_dragon_chassis.html#a39dce0dd0a51b21be140226cc1e9931a":[1,0,52,10],
+"class_dragon_chassis.html#a39dce0dd0a51b21be140226cc1e9931a":[1,0,52,11],
+"class_dragon_chassis.html#a53e2d52a02a6653a0ecb0de910271e45":[1,0,52,9],
 "class_dragon_chassis.html#a54c251e24c4a4504f1363e17239a4fbc":[1,0,52,8],
 "class_dragon_chassis.html#a58b6034bf0e83f44cfdfa83d99632e9e":[1,0,52,1],
 "class_dragon_chassis.html#a8e840dd932ccb1b6de98a1e362ff299a":[1,0,52,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX4 =
 "class_dragon_talon.html#a443cf82313c085b34dd35dedd86f21a9":[1,0,66,23],
 "class_dragon_talon.html#a484839978348bdad345043d469f7f744":[1,0,66,7],
 "class_dragon_talon.html#a50cab200ce935067feed69d862f48156":[1,0,66,26],
-"class_dragon_talon.html#a51ae73cebf47695a4c37cc874d7dd0b3":[1,0,66,21]
+"class_dragon_talon.html#a51ae73cebf47695a4c37cc874d7dd0b3":[1,0,66,21],
+"class_dragon_talon.html#a6037fe288a4e4d73e8aefaff347af3eb":[1,0,66,13]
 };

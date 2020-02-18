@@ -139,6 +139,7 @@ var annotated_dup =
     [ "PCMDefn", "class_p_c_m_defn.html", "class_p_c_m_defn" ],
     [ "PDPDefn", "class_p_d_p_defn.html", "class_p_d_p_defn" ],
     [ "PigeonDefn", "class_pigeon_defn.html", "class_pigeon_defn" ],
+    [ "PigeonFactory", "class_pigeon_factory.html", "class_pigeon_factory" ],
     [ "POVButton", "class_p_o_v_button.html", "class_p_o_v_button" ],
     [ "PrimitiveFactory", "class_primitive_factory.html", "class_primitive_factory" ],
     [ "PrimitiveParams", "class_primitive_params.html", "class_primitive_params" ],
