@@ -169,7 +169,7 @@
 				reverselimitswitchopen="true"/>
     	<solenoid usage="INTAKE"
     		      canId="9"
-    		      channel="0"
+    		      channel="4"
     		      reversed="false" />
 	</mechanism>
 
@@ -213,7 +213,7 @@
 				canId="3"
 				pdpID="3"
 				type="TALONSRX"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="QUADENCODER"
 				countsPerRev="4096"
@@ -234,7 +234,7 @@
 				canId="16"
 				pdpID="0"
 				type="FALCON"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
@@ -253,7 +253,7 @@
 				canId="1"
 				pdpID="1"
 				type="FALCON"
-				inverted="true"
+				inverted="false"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"

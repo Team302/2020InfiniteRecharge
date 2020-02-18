@@ -150,10 +150,11 @@ void Robot::TeleopPeriodic()
 {
     m_chassisStateMgr->RunCurrentState();
     //m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
-    //m_shooterHood->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_AXIS) * .5);
+    m_shooterHood->SetOutput(ControlModes::PERCENT_OUTPUT, .5* m_controller->GetAxisValue(TeleopControl::SHOOTER_HOOD_MANUAL_AXIS));
     //m_intake->RunCurrentState();
    m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
+    
     // m_climber->RunCurrentState();
     frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
     frc::SmartDashboard::PutNumber("Shooter Hood position", m_shooterHood->GetCurrentPosition());
