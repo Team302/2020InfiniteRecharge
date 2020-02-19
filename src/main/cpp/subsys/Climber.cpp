@@ -131,7 +131,6 @@ double Climber::GetCurrentPosition() const
     return distance;
 }
 
-
 ///@brief return the current speed of the climber in degrees per second.
 ///@return double   speed in degrees per second
 double Climber::GetCurrentSpeed() const
@@ -150,8 +149,6 @@ double Climber::GetCurrentSpeed() const
     return speed;
 
 }
-
-
 
 ///@brief Set the control constants (e.g. PIDF values)
 ///@param [in] ControlData*     pid - the control constants
