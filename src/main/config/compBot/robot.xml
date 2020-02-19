@@ -1,13 +1,30 @@
 <?xml version="1.0"?>
 <!DOCTYPE robot SYSTEM "robot.dtd">
 <robot>
-	<pdp canId="51" />
-	
-	<odometry xloc="0.0"
+	<pdp canId="0" />
+
+	<pigeon canId="60" />
+	<limelight usage="MAIN_LIMELIGHT"
+				tablename="limelight"
+				mountingheight="20.0"
+				horizontaloffset="-10.0"
+				mountingangle="15.0"
+				rotation="90.0"
+				targetheight="120.0"
+				targetheight2="30.0"
+				defaultledmode="currentpipeline"
+				defaultcammode="vision"
+				streammode="sidebyside"
+				snapshots="off"
+				crosshairx="0.5"
+				crosshairy="0.5"
+				secondcrosshairx="0.25"
+				secondcrosshairy="0.25" />
+	<!-- odometry xloc="0.0"
 	          yloc="0.0"
 			  heading="0.0">
 		<pigeon canId="60" />
-		<limelight usage="MAINLIMELIGHT"
+		<limelight usage="MAIN_LIMELIGHT"
 				   tablename="limelight"
 				   mountingheight="20.0"
 				   horizontaloffset="-10.0"
@@ -24,7 +41,7 @@
 				   secondcrosshairx="0.25"
 				   secondcrosshairy="0.25" />
 
-	</odometry>
+	</odometry -->
 	
 	<!-- feedback>
 		<camera id="0"
@@ -47,10 +64,10 @@
              track="18.0">
 			 
 		<motor usage="LEFT_DRIVE_MASTER"
-				canId="1"
-				pdpID="1"
+				canId="12"
+				pdpID="12"
 				type="FALCON"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
@@ -66,16 +83,16 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
 		<motor  usage="LEFT_DRIVE_FOLLOWER"
-				canId="2"
-				pdpID="2"
+				canId="13"
+				pdpID="13"
 				type="FALCON"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
 				gearRatio="1.0"
 				brakeMode="true"
-				slaveTo="1"
+				slaveTo="12"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"
@@ -87,8 +104,8 @@
 				
 			 
 		<motor usage="RIGHT_DRIVE_MASTER"
-				canId="3"
-				pdpID="3"
+				canId="15"
+				pdpID="15"
 				type="FALCON"
 				inverted="false"
 				sensorInverted="false"
@@ -106,8 +123,8 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
 		<motor  usage="RIGHT_DRIVE_FOLLOWER"
-				canId="4"
-				pdpID="4"
+				canId="14"
+				pdpID="14"
 				type="FALCON"
 				inverted="false"
 				sensorInverted="false"
@@ -115,7 +132,7 @@
 				countsPerRev="2048"
 				gearRatio="1.0"
 				brakeMode="true"
-				slaveTo="1"
+				slaveTo="15"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"
@@ -133,10 +150,10 @@
     
 	<mechanism type="INTAKE">
 		<motor usage="INTAKE"
-				canId="7"
+				canId="11"
 				pdpID="7"
 				type="TALONSRX"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="NONE"
 				countsPerRev="0"
@@ -151,9 +168,9 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
     	<solenoid usage="INTAKE"
-    		      canId="50"
-    		      channel="0"
-    		      reversed="false" />
+    		      canId="9"
+    		      channel="4"
+    		      reversed="true" />
 	</mechanism>
 
 	<!-- mechanism type="HUMAN_PLAYER_FLAP">
@@ -165,13 +182,13 @@
 	
 	<mechanism type="IMPELLER">
 		<motor usage="IMPELLER"
-				canId="8"
-				pdpID="8"
+				canId="7"
+				pdpID="7"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
 				feedbackDevice="NONE"
-				countsPerRev="0"
+				countsPerRev="4096"
 				gearRatio="1.0"
 				brakeMode="false"
 				peakCurrentDuration="50"
@@ -193,10 +210,10 @@
     		      channel="3"
     		      reversed="false" / -->
 		<motor usage="BALL_TRANSFER"
-				canId="9"
-				pdpID="9"
+				canId="3"
+				pdpID="3"
 				type="TALONSRX"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="QUADENCODER"
 				countsPerRev="4096"
@@ -214,10 +231,10 @@
     
 	<mechanism type="SHOOTER">
 		<motor usage="SHOOTER_1"
-				canId="5"
-				pdpID="5"
+				canId="16"
+				pdpID="0"
 				type="FALCON"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
@@ -233,8 +250,8 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
 		<motor usage="SHOOTER_2"
-				canId="6"
-				pdpID="6"
+				canId="1"
+				pdpID="1"
 				type="FALCON"
 				inverted="false"
 				sensorInverted="false"
@@ -242,7 +259,7 @@
 				countsPerRev="2048"
 				gearRatio="1.0"
 				brakeMode="true"
-				slaveTo="5"
+				slaveTo="16"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"
@@ -259,8 +276,8 @@
     		      channel="7"
     		      reversed="false" / -->
 		<motor usage="SHOOTER_HOOD"
-				canId="10"
-				pdpID="10"
+				canId="4"
+				pdpID="4"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
@@ -281,14 +298,14 @@
 	</mechanism>
     
 	<mechanism type="TURRET">
-		<motor usage="SHOOTER_HOOD"
-				canId="11"
-				pdpID="11"
+		<motor usage="TURRET"
+				canId="5"
+				pdpID="5"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
-				feedbackDevice="NONE"
-				countsPerRev="0"
+				feedbackDevice="QUADENCODER"
+				countsPerRev="6000"
 				gearRatio="1.0"
 				brakeMode="false"
 				peakCurrentDuration="50"
@@ -296,16 +313,16 @@
 				peakCurrentLimit="40"
 				currentLimiting="true" 
 				forwardlimitswitch="false"
-				forwardlimitswitchopen="true"
+				forwardlimitswitchopen="false"
 				reverselimitswitch="false"
-				reverselimitswitchopen="true"/>
+				reverselimitswitchopen="false"/>
 		<!-- todo need to add limit switches -->
 	</mechanism>
     
 	<mechanism type="CONTROL_TABLE_MANIPULATOR">
 		<motor usage="CONTROL_TABLE_MANIPULATOR"
-				canId="12"
-				pdpID="12"
+				canId="6"
+				pdpID="6"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
@@ -322,16 +339,16 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
     	<solenoid usage="CONTROL_TABLE_MANIPULATOR"
-    		      canId="50"
+    		      canId="9"
     		      channel="1"
     		      reversed="false" />
-		<colorSensor port="kOnboard" />
+		<colorsensor port="kOnboard" />
 	</mechanism>
     
 	<mechanism type="CLIMBER">
 		<motor usage="CONTROL_TABLE_MANIPULATOR"
-				canId="13"
-				pdpID="13"
+				canId="2"
+				pdpID="2"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
@@ -348,15 +365,15 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
     	<solenoid usage="CLIMBER"
-    		      canId="50"
+    		      canId="9"
     		      channel="2"
     		      reversed="false" />
 	</mechanism>
     
-	<mechanism type="CRAWLER">
+	<!--mechanism type="CRAWLER">
 		<motor usage="CONTROL_TABLE_MANIPULATOR"
-				canId="14"
-				pdpID="14"
+				canId="63"
+				pdpID="63"
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
@@ -372,5 +389,5 @@
 				forwardlimitswitchopen="true"
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
-	</mechanism>
+	</mechanism -->
 </robot>

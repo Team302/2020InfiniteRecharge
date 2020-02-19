@@ -5,6 +5,9 @@
 #include <frc/SpeedController.h>
 #include <memory>
 #include <ctre/phoenix/motorcontrol/LimitSwitchType.h>
+#include <utils/ConversionUtils.h>
+#include <utils/Logger.h>
+#include <frc/smartdashboard/SmartDashboard.h>
 
 
 using namespace frc;
@@ -12,6 +15,7 @@ using namespace std;
 using namespace ctre::phoenix::motorcontrol::can;
 using namespace ctre::phoenix::motorcontrol;
 using namespace ctre::phoenix;
+
 
 DragonTalon::DragonTalon
 (
@@ -21,71 +25,31 @@ DragonTalon::DragonTalon
 	int countsPerRev, 
 	double gearRatio 
 ) : m_talon( make_shared<WPI_TalonSRX>(deviceID)),
-	m_controlMode(ctre::phoenix::motorcontrol::ControlMode::PercentOutput),
+	m_controlMode(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT),
 	m_type(deviceType),
 	m_id(deviceID),
 	m_pdp( pdpID ),
 	m_countsPerRev(countsPerRev),
 	m_tickOffset(0),
-	m_gearRatio(gearRatio)
+	m_gearRatio(gearRatio),
+	m_diameter( 1.0 )
 {
-	// m_tickOffset
-	// m_talon->GetSelectedSensorPo
 	m_tickOffset = m_talon->GetSelectedSensorPosition();
-
 }
 
 double DragonTalon::GetRotations() const
 {
-    return ((m_talon->GetSelectedSensorPosition() - m_tickOffset) / (double) m_countsPerRev) * m_gearRatio;
+	return (ConversionUtils::CountsToRevolutions( (m_talon->GetSelectedSensorPosition() - m_tickOffset), m_countsPerRev) * m_gearRatio);
 }
 
 double DragonTalon::GetRPS() const
 {
-    return m_talon->GetSelectedSensorVelocity() / (double) m_countsPerRev;
+	return (ConversionUtils::CountsPer100msToRPS( m_talon->GetSelectedSensorVelocity(), m_countsPerRev) * m_gearRatio);
 }
 
 void DragonTalon::SetControlMode(ControlModes::CONTROL_TYPE mode)
 { 
-    switch (mode)
-    {
-        case ControlModes::CONTROL_TYPE::PERCENT_OUTPUT:
-		case ControlModes::CONTROL_TYPE::VOLTAGE:
-            m_controlMode = ctre::phoenix::motorcontrol::ControlMode::PercentOutput;
-        	break;
-
-        case ControlModes::CONTROL_TYPE::POSITION_DEGREES:
-        case ControlModes::CONTROL_TYPE::POSITION_INCH:
-            m_controlMode = ctre::phoenix::motorcontrol::ControlMode::Position;
-        	break;
-        
-        case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
-        case ControlModes::CONTROL_TYPE::VELOCITY_INCH:
-            m_controlMode = ctre::phoenix::motorcontrol::ControlMode::Velocity;
-        	break;
-
-		case ControlModes::CONTROL_TYPE::CURRENT:
-			m_controlMode = ctre::phoenix::motorcontrol::ControlMode::Current;
-			break;
-
-		case ControlModes::CONTROL_TYPE::MOTION_PROFILE:
-			m_controlMode = ctre::phoenix::motorcontrol::ControlMode::MotionProfile;
-			break;
-
-		case ControlModes::CONTROL_TYPE::MOTION_PROFILE_ARC:
-			m_controlMode = ctre::phoenix::motorcontrol::ControlMode::MotionProfileArc;
-			break;
-
-		case ControlModes::CONTROL_TYPE::TRAPEZOID:
-			m_controlMode = ctre::phoenix::motorcontrol::ControlMode::MotionMagic;
-			break;
-
-        default:
-            // bad place to be
-			printf("SCREAMIN!!!!!111 invalid controlmode set in DragonTalon SetControlMode\n");
-        	m_controlMode = ctre::phoenix::motorcontrol::ControlMode::PercentOutput;
-        	break;
-    }
+	m_controlMode = mode;
 }
 
 shared_ptr<SpeedController> DragonTalon::GetSpeedController() const
@@ -102,45 +66,79 @@ double DragonTalon::GetCurrent() const
 
 void DragonTalon::Set(double value)
 {
+	auto output = value;
+	ctre::phoenix::motorcontrol::ControlMode ctreMode = ctre::phoenix::motorcontrol::ControlMode::PercentOutput;
     switch (m_controlMode)
     {
-        case ctre::phoenix::motorcontrol::ControlMode::PercentOutput:
-			m_talon->Set( m_controlMode, value );
+        case ControlModes::CONTROL_TYPE::PERCENT_OUTPUT:
+			ctreMode = ctre::phoenix::motorcontrol::ControlMode::PercentOutput;
+			output = value;
 			break;
-
-        case ctre::phoenix::motorcontrol::ControlMode::Position:
-			m_talon->Set(m_controlMode, (value * m_countsPerRev / m_gearRatio) + m_tickOffset);
-        	break;
-
-        case ctre::phoenix::motorcontrol::ControlMode::Velocity:
-            m_talon->Set(m_controlMode, value * m_gearRatio / 600.0);
-        	break;
 			
-		case ctre::phoenix::motorcontrol::ControlMode::Current:
-            m_talon->Set(m_controlMode, value );
+			
+		case ControlModes::CONTROL_TYPE::VOLTAGE:
+			ctreMode = ctre::phoenix::motorcontrol::ControlMode::PercentOutput;
+			output = value;
+			break;
+
+        case ControlModes::CONTROL_TYPE::POSITION_DEGREES:
+			ctreMode = ctre::phoenix::motorcontrol::ControlMode::Position;
+			output = (ConversionUtils::DegreesToCounts(value,m_countsPerRev) / m_gearRatio);
+			frc::SmartDashboard::PutNumber("Target counts", output);
+			break;
+        case ControlModes::CONTROL_TYPE::POSITION_INCH:
+            ctreMode = ctre::phoenix::motorcontrol::ControlMode::Position;
+			output = (ConversionUtils::ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio) + m_tickOffset;
+        	break;
+        
+        case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
+            ctreMode = ctre::phoenix::motorcontrol::ControlMode::Velocity;
+			output = (ConversionUtils::DegreesPerSecondToCounts100ms( value, m_countsPerRev ) / m_gearRatio);
         	break;
 
-		case ctre::phoenix::motorcontrol::ControlMode::MotionProfile:
-			m_talon->Set(m_controlMode, value );
+        case ControlModes::CONTROL_TYPE::VELOCITY_INCH:
+            ctreMode = ctre::phoenix::motorcontrol::ControlMode::Velocity;
+			output = (ConversionUtils::InchesPerSecondToCounts100ms( value, m_countsPerRev, m_diameter ) / m_gearRatio);
+        	break;
+
+		case ControlModes::CONTROL_TYPE::VELOCITY_RPS:
+            ctreMode = ctre::phoenix::motorcontrol::ControlMode::Velocity;
+			output = (ConversionUtils::RPSToCounts100ms( value, m_countsPerRev ) / m_gearRatio);
+			frc::SmartDashboard::PutNumber("output val", output);
+        	break;
+
+		case ControlModes::CONTROL_TYPE::CURRENT:
+			ctreMode = ctre::phoenix::motorcontrol::ControlMode::Current;
+			output = value;
 			break;
 
-		case ctre::phoenix::motorcontrol::ControlMode::MotionProfileArc:
-			m_talon->Set(m_controlMode, value );
+		case ControlModes::CONTROL_TYPE::MOTION_PROFILE:
+			ctreMode = ctre::phoenix::motorcontrol::ControlMode::MotionProfile;
+			output = value;
 			break;
 
-		case ctre::phoenix::motorcontrol::ControlMode::MotionMagic:
-            m_talon->Set(m_controlMode, (value * m_countsPerRev / m_gearRatio) + m_tickOffset);
-        break;
+		case ControlModes::CONTROL_TYPE::MOTION_PROFILE_ARC:
+			ctreMode = ctre::phoenix::motorcontrol::ControlMode::MotionProfileArc;
+			output = value;
+			break;
+
+		case ControlModes::CONTROL_TYPE::TRAPEZOID:
+			ctreMode = ctre::phoenix::motorcontrol::ControlMode::MotionMagic;
+			output = (ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio) + m_tickOffset;
+			break;
 
         default:
-            m_talon->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0);
-        break;
-    }
+            Logger::GetLogger()->LogError( string("DragonTalon::SetControlMode"), string("Invalid Control Mode"));
+        	ctreMode = ctre::phoenix::motorcontrol::ControlMode::PercentOutput;
+			output = value;
+        	break;
+    }	
+
+	m_talon->Set( ctreMode, output );
 }
 
 void DragonTalon::SetRotationOffset(double rotations)
 {
-    // m_tickOffset = (rotations * m_countsPerRev * m_gearRatio);
 	double newRotations = -rotations + DragonTalon::GetRotations();
 	m_tickOffset += (int) (newRotations * m_countsPerRev / m_gearRatio);
 }
@@ -307,17 +305,6 @@ void DragonTalon::SetAsSlave
 /// @return void
 void DragonTalon::SetControlConstants(ControlData* controlInfo)
 {
-	m_talon->Config_kP(0, controlInfo->GetP());
-    m_talon->Config_kI(0, controlInfo->GetI());
-    m_talon->Config_kD(0, controlInfo->GetD());
-    m_talon->Config_kF(0, controlInfo->GetF());
-
-	int sensorUnitsPer100msPerSec = static_cast<int>( (controlInfo->GetMaxAcceleration() / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio ) ;
-	m_talon->ConfigMotionAcceleration( sensorUnitsPer100msPerSec );
-
-	sensorUnitsPer100msPerSec = static_cast<int>( (controlInfo->GetCruiseVelocity() / 360.0) * (m_countsPerRev / 10.0) / m_gearRatio );
-	m_talon->ConfigMotionCruiseVelocity( sensorUnitsPer100msPerSec, 0);
-
 	auto peak = controlInfo->GetPeakValue();
 	m_talon->ConfigPeakOutputForward(peak);
 	m_talon->ConfigPeakOutputReverse(-1.0*peak);
@@ -326,6 +313,109 @@ void DragonTalon::SetControlConstants(ControlData* controlInfo)
 	m_talon->ConfigPeakOutputForward(nom);
 	m_talon->ConfigPeakOutputReverse(-1.0*nom);
 
+	switch ( controlInfo->GetMode() )
+	{
+		case ControlModes::CONTROL_TYPE::PERCENT_OUTPUT:
+		{
+		}
+		break;
+
+		case ControlModes::CONTROL_TYPE::POSITION_DEGREES:
+		{
+			m_talon->Config_kP(0, controlInfo->GetP());
+			m_talon->Config_kI(0, controlInfo->GetI());
+			m_talon->Config_kD(0, controlInfo->GetD());
+			m_talon->Config_kF(0, controlInfo->GetF());
+		}
+		break;
+
+		case ControlModes::CONTROL_TYPE::POSITION_INCH:
+		{
+			m_talon->Config_kP(0, controlInfo->GetP());
+			m_talon->Config_kI(0, controlInfo->GetI());
+			m_talon->Config_kD(0, controlInfo->GetD());
+			m_talon->Config_kF(0, controlInfo->GetF());
+		}
+		break;
+
+		case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
+		{
+			m_talon->Config_kP(0, controlInfo->GetP());
+			m_talon->Config_kI(0, controlInfo->GetI());
+			m_talon->Config_kD(0, controlInfo->GetD());
+			m_talon->Config_kF(0, controlInfo->GetF());
+		}
+		break;
+
+		case ControlModes::CONTROL_TYPE::VELOCITY_INCH:
+		{
+			m_talon->Config_kP(0, controlInfo->GetP());
+			m_talon->Config_kI(0, controlInfo->GetI());
+			m_talon->Config_kD(0, controlInfo->GetD());
+			m_talon->Config_kF(0, controlInfo->GetF());
+		}
+		break;
+
+		case ControlModes::CONTROL_TYPE::VELOCITY_RPS:
+		{
+			m_talon->Config_kP(0, controlInfo->GetP());
+			m_talon->Config_kI(0, controlInfo->GetI());
+			m_talon->Config_kD(0, controlInfo->GetD());
+			m_talon->Config_kF(0, controlInfo->GetF());
+		}
+		break;
+
+		case ControlModes::CONTROL_TYPE::VOLTAGE:
+		{
+			m_talon->Config_kP(0, controlInfo->GetP());
+			m_talon->Config_kI(0, controlInfo->GetI());
+			m_talon->Config_kD(0, controlInfo->GetD());
+			m_talon->Config_kF(0, controlInfo->GetF());
+		}
+		break;
+
+		case ControlModes::CONTROL_TYPE::CURRENT:
+		{
+			m_talon->Config_kP(0, controlInfo->GetP());
+			m_talon->Config_kI(0, controlInfo->GetI());
+			m_talon->Config_kD(0, controlInfo->GetD());
+			m_talon->Config_kF(0, controlInfo->GetF());
+		}
+		break;
+
+		case ControlModes::CONTROL_TYPE::TRAPEZOID:
+		{
+			m_talon->Config_kP(0, controlInfo->GetP());
+			m_talon->Config_kI(0, controlInfo->GetI());
+			m_talon->Config_kD(0, controlInfo->GetD());
+			m_talon->Config_kF(0, controlInfo->GetF());
+
+			auto accel = controlInfo->GetMaxAcceleration() / m_gearRatio;
+			m_talon->ConfigMotionAcceleration( accel );
+
+			auto vel = controlInfo->GetCruiseVelocity() / m_gearRatio;
+			m_talon->ConfigMotionCruiseVelocity( vel, 0);
+		}
+		break;
+
+		case ControlModes::CONTROL_TYPE::MOTION_PROFILE:
+		{
+
+		}
+		break;
+
+		case ControlModes::CONTROL_TYPE::MOTION_PROFILE_ARC:
+		{
+
+		}
+		break;
+
+		default:
+		{
+
+		}
+		break;
+	}
 }
 
 void DragonTalon::SetForwardLimitSwitch
@@ -347,3 +437,20 @@ void DragonTalon::SetReverseLimitSwitch
 }
 
 
+void DragonTalon::SetRemoteSensor
+(
+    int                                             canID,
+    ctre::phoenix::motorcontrol::RemoteSensorSource deviceType
+)
+{
+	m_talon->ConfigRemoteFeedbackFilter( canID, deviceType, 0, 0.0 );
+	m_talon->ConfigSelectedFeedbackSensor( RemoteFeedbackDevice::RemoteFeedbackDevice_RemoteSensor0, 0, 0 );
+}
+
+void DragonTalon::SetDiameter
+(
+	double 	diameter
+)
+{
+	m_diameter = diameter;
+}

@@ -78,11 +78,11 @@ void DriveTrainSide::SetOutput
 ) 
 {
     m_target = value;
-    if ( m_master != nullptr )
+    if ( m_master.get() != nullptr )
     {
         // todo map mechanism control mode to motor control mode (create method)
-        m_master->SetControlMode( controlType );
-        m_master->Set( value );
+        m_master.get()->SetControlMode( controlType );
+        m_master.get()->Set( value );
     }
     else
     {
@@ -114,10 +114,10 @@ bool DriveTrainSide::IsSolenoidActivated()
 double DriveTrainSide::GetCurrentPosition() const
 {
     double distance = 0.0;
-    if ( m_master != nullptr )
+    if ( m_master.get() != nullptr )
     {
         distance = ( m_wheelSize * M_PI );          // distance the wheel travels per revolution
-        auto nRotations = m_master->GetRotations(); // number of rotations
+        auto nRotations = m_master.get()->GetRotations(); // number of rotations
         distance *= nRotations;                     // distance per revolution * number of revolutions is the distance
     }
     else
@@ -128,12 +128,6 @@ double DriveTrainSide::GetCurrentPosition() const
 }
 
 
-/// @brief  Return the target position of the DriveTrainSide in inches.  
-double DriveTrainSide::GetTargetPosition() const
-{
-    return m_target;  // todo either need 2 variables or know the current mode
-}
-
 /// @brief  Return the current speed of the DriveTrainSide in degrees per second.  Since we 
 ///         don't have a sensor this will return -360 for clockwise rotations and 360 
 ///         for counter-clockwise rotations.
@@ -141,10 +135,10 @@ double DriveTrainSide::GetTargetPosition() const
 double DriveTrainSide::GetCurrentSpeed() const
 {
     double speed = 0.0;
-    if ( m_master != nullptr )
+    if ( m_master.get() != nullptr )
     {
         speed = ( m_wheelSize * M_PI ); // distance the wheel travels per revolution (inches)
-        auto rps = m_master->GetRPS();  // number of rotations per second
+        auto rps = m_master.get()->GetRPS();  // number of rotations per second
         speed *= rps;                   // distance per revolution * revolutions per second is inches per second
     }
     else
@@ -153,16 +147,6 @@ double DriveTrainSide::GetCurrentSpeed() const
     }
     return speed;
 
-}
-
-
-/// @brief  Return the target speed of the DriveTrainSide in degrees per second.  Since we 
-///         don't have a sensor this will return -360 for clockwise rotations and 360 
-///         for counter-clockwise rotations.
-/// @return double  speed in degrees per second (rotating mechansim)
-double DriveTrainSide::GetTargetSpeed() const
-{
-    return m_target;  // todo either need 2 variables or know the current mode
 }
 
 
@@ -175,8 +159,7 @@ void DriveTrainSide::SetControlConstants
     ControlData*                                 pid                 
 )
 {
-    // todo:  need to account for voltage mode
-    // NO-OP since we can't run closed loop since we don't have sensors
+    m_master.get()->SetControlConstants( pid );
 }
 
 

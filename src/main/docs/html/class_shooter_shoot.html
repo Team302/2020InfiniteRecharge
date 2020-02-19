@@ -100,27 +100,44 @@ Inheritance diagram for ShooterShoot:</div>
  <div class="center">
   <img src="class_shooter_shoot.png" usemap="#ShooterShoot_map" alt=""/>
   <map id="ShooterShoot_map" name="ShooterShoot_map">
-<area href="class_i_state.html" title="Interface for state classes." alt="IState" shape="rect" coords="0,0,88,24"/>
+<area href="class_mechanism_state.html" title="information about the control (open loop, closed loop position, closed loop velocity,..." alt="MechanismState" shape="rect" coords="0,56,104,80"/>
+<area href="class_i_state.html" title="Interface for state classes." alt="IState" shape="rect" coords="0,0,104,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6e7baa83c8bd2394b827363421629080"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_shoot.html#a6e7baa83c8bd2394b827363421629080">ShooterShoot</a> (<a class="el" href="class_control_data.html">ControlData</a> *controlData, double target)</td></tr>
-<tr class="separator:a6e7baa83c8bd2394b827363421629080"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c08dfc5f6ca55aacab5129de4770e05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_shoot.html#a5c08dfc5f6ca55aacab5129de4770e05">Init</a> () override</td></tr>
-<tr class="separator:a5c08dfc5f6ca55aacab5129de4770e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c9046ad0346defdafeb6ba12c4161cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_shoot.html#a4c9046ad0346defdafeb6ba12c4161cc">Run</a> () override</td></tr>
-<tr class="separator:a4c9046ad0346defdafeb6ba12c4161cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a125182c39590a833041cc85807f3c148"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_shoot.html#a125182c39590a833041cc85807f3c148">AtTarget</a> () const override</td></tr>
-<tr class="separator:a125182c39590a833041cc85807f3c148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cab7b9b8b54c6c6239ceb35809ca9e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_shoot.html#a8cab7b9b8b54c6c6239ceb35809ca9e7">ShooterShoot</a> (<a class="el" href="class_control_data.html">ControlData</a> *controlData, double target, <a class="el" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a> solState)</td></tr>
+<tr class="separator:a8cab7b9b8b54c6c6239ceb35809ca9e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdad2970e6e24b2dbf0db8b6bf959317"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_shoot.html#abdad2970e6e24b2dbf0db8b6bf959317">ShooterShoot</a> ()=delete</td></tr>
+<tr class="separator:abdad2970e6e24b2dbf0db8b6bf959317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb4e303965b91b08d1e38e52cf6bb7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_shoot.html#aafb4e303965b91b08d1e38e52cf6bb7a">~ShooterShoot</a> ()=default</td></tr>
+<tr class="separator:aafb4e303965b91b08d1e38e52cf6bb7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_mechanism_state"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_mechanism_state')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_mechanism_state.html">MechanismState</a></td></tr>
+<tr class="memitem:aa341740dad3529424f29c5d863e8dfc2 inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#aa341740dad3529424f29c5d863e8dfc2">MechanismState</a> (<a class="el" href="class_i_mechanism.html">IMechanism</a> *mechanism, <a class="el" href="class_control_data.html">ControlData</a> *control, double target, <a class="el" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a> solState)</td></tr>
+<tr class="separator:aa341740dad3529424f29c5d863e8dfc2 inherit pub_methods_class_mechanism_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afef2ac5c394d3bc012ccd2f6040fd4cd inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#afef2ac5c394d3bc012ccd2f6040fd4cd">MechanismState</a> ()=delete</td></tr>
+<tr class="separator:afef2ac5c394d3bc012ccd2f6040fd4cd inherit pub_methods_class_mechanism_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d86a4d0951c1a9b3d8671abb47f293 inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#a93d86a4d0951c1a9b3d8671abb47f293">~MechanismState</a> ()=default</td></tr>
+<tr class="separator:a93d86a4d0951c1a9b3d8671abb47f293 inherit pub_methods_class_mechanism_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a7fc5e078e8702a94806d3ace52efe1 inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#a2a7fc5e078e8702a94806d3ace52efe1">Init</a> () override</td></tr>
+<tr class="separator:a2a7fc5e078e8702a94806d3ace52efe1 inherit pub_methods_class_mechanism_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a759f0868b42408ec677b84a34084bf54 inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#a759f0868b42408ec677b84a34084bf54">Run</a> () override</td></tr>
+<tr class="separator:a759f0868b42408ec677b84a34084bf54 inherit pub_methods_class_mechanism_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cc455930db83c07cc6373948aea3069 inherit pub_methods_class_mechanism_state"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#a0cc455930db83c07cc6373948aea3069">AtTarget</a> () const override</td></tr>
+<tr class="separator:a0cc455930db83c07cc6373948aea3069 inherit pub_methods_class_mechanism_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_i_state"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_i_state')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_i_state.html">IState</a></td></tr>
+<tr class="memitem:ae6590bd1d41bcb788780f9f0f4767f66 inherit pub_methods_class_i_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_state.html#ae6590bd1d41bcb788780f9f0f4767f66">IState</a> ()=default</td></tr>
+<tr class="separator:ae6590bd1d41bcb788780f9f0f4767f66 inherit pub_methods_class_i_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28a7b15d44be7a1d40ccf5d0790f7ec8 inherit pub_methods_class_i_state"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_state.html#a28a7b15d44be7a1d40ccf5d0790f7ec8">~IState</a> ()=default</td></tr>
+<tr class="separator:a28a7b15d44be7a1d40ccf5d0790f7ec8 inherit pub_methods_class_i_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_shooter_shoot_8h_source.html#l00014">14</a> of file <a class="el" href="_shooter_shoot_8h_source.html">ShooterShoot.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shooter_shoot_8h_source.html#l00025">25</a> of file <a class="el" href="_shooter_shoot_8h_source.html">ShooterShoot.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6e7baa83c8bd2394b827363421629080"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e7baa83c8bd2394b827363421629080">&#9670;&nbsp;</a></span>ShooterShoot()</h2>
+<a id="a8cab7b9b8b54c6c6239ceb35809ca9e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cab7b9b8b54c6c6239ceb35809ca9e7">&#9670;&nbsp;</a></span>ShooterShoot() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,7 +152,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>target</em>&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a>&#160;</td>
+          <td class="paramname"><em>solState</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -145,13 +168,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_shooter_shoot_8cpp_source.html#l00015">15</a> of file <a class="el" href="_shooter_shoot_8cpp_source.html">ShooterShoot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shooter_shoot_8cpp_source.html#l00027">27</a> of file <a class="el" href="_shooter_shoot_8cpp_source.html">ShooterShoot.cpp</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a125182c39590a833041cc85807f3c148"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a125182c39590a833041cc85807f3c148">&#9670;&nbsp;</a></span>AtTarget()</h2>
+<a id="abdad2970e6e24b2dbf0db8b6bf959317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdad2970e6e24b2dbf0db8b6bf959317">&#9670;&nbsp;</a></span>ShooterShoot() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,36 +182,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool ShooterShoot::AtTarget </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="class_i_state.html#a15624686c47f28cf90f76bb28e938937">IState</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_shooter_shoot_8cpp_source.html#l00037">37</a> of file <a class="el" href="_shooter_shoot_8cpp_source.html">ShooterShoot.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a5c08dfc5f6ca55aacab5129de4770e05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c08dfc5f6ca55aacab5129de4770e05">&#9670;&nbsp;</a></span>Init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ShooterShoot::Init </td>
+          <td class="memname">ShooterShoot::ShooterShoot </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -197,19 +190,15 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_i_state.html#ac1400e68fde2f088873f5ec283309977">IState</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_shooter_shoot_8cpp_source.html#l00023">23</a> of file <a class="el" href="_shooter_shoot_8cpp_source.html">ShooterShoot.cpp</a>.</p>
-
 </div>
 </div>
-<a id="a4c9046ad0346defdafeb6ba12c4161cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c9046ad0346defdafeb6ba12c4161cc">&#9670;&nbsp;</a></span>Run()</h2>
+<a id="aafb4e303965b91b08d1e38e52cf6bb7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb4e303965b91b08d1e38e52cf6bb7a">&#9670;&nbsp;</a></span>~ShooterShoot()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,7 +207,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ShooterShoot::Run </td>
+          <td class="memname">ShooterShoot::~ShooterShoot </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -226,20 +215,16 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Implements <a class="el" href="class_i_state.html#a1dc31736da7d9e9322c1cc417672ea0f">IState</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_shooter_shoot_8cpp_source.html#l00028">28</a> of file <a class="el" href="_shooter_shoot_8cpp_source.html">ShooterShoot.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>controllers/shooter/<a class="el" href="_shooter_shoot_8h_source.html">ShooterShoot.h</a></li>
-<li>controllers/shooter/<a class="el" href="_shooter_shoot_8cpp_source.html">ShooterShoot.cpp</a></li>
+<li>states/shooter/<a class="el" href="_shooter_shoot_8h_source.html">ShooterShoot.h</a></li>
+<li>states/shooter/<a class="el" href="_shooter_shoot_8cpp_source.html">ShooterShoot.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

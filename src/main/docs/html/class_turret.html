@@ -123,15 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a935bb5ade4573d7cb6f72ed1540eff1f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turret.html#a935bb5ade4573d7cb6f72ed1540eff1f">GetCurrentPosition</a> () const override</td></tr>
 <tr class="memdesc:a935bb5ade4573d7cb6f72ed1540eff1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current position of the mechanism. The value is in inches or degrees.  <a href="class_turret.html#a935bb5ade4573d7cb6f72ed1540eff1f">More...</a><br /></td></tr>
 <tr class="separator:a935bb5ade4573d7cb6f72ed1540eff1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7224fca0dad060329e04903fda42899f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turret.html#a7224fca0dad060329e04903fda42899f">GetTargetPosition</a> () const override</td></tr>
-<tr class="memdesc:a7224fca0dad060329e04903fda42899f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the targget position of the mechanism. The value is in inches or degrees.  <a href="class_turret.html#a7224fca0dad060329e04903fda42899f">More...</a><br /></td></tr>
-<tr class="separator:a7224fca0dad060329e04903fda42899f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56b62c93ee21ac46d6428382d95b02d7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turret.html#a56b62c93ee21ac46d6428382d95b02d7">GetCurrentSpeed</a> () const override</td></tr>
 <tr class="memdesc:a56b62c93ee21ac46d6428382d95b02d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current speed of the mechanism. The value is in inches per second or degrees per second.  <a href="class_turret.html#a56b62c93ee21ac46d6428382d95b02d7">More...</a><br /></td></tr>
 <tr class="separator:a56b62c93ee21ac46d6428382d95b02d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11658ee886370db874b3adedc1193328"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turret.html#a11658ee886370db874b3adedc1193328">GetTargetSpeed</a> () const override</td></tr>
-<tr class="memdesc:a11658ee886370db874b3adedc1193328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the target speed of the mechanism. The value is in inches per second or degrees per second.  <a href="class_turret.html#a11658ee886370db874b3adedc1193328">More...</a><br /></td></tr>
-<tr class="separator:a11658ee886370db874b3adedc1193328"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeadb069eaf12fdcd6579386be0b4e6c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turret.html#aeadb069eaf12fdcd6579386be0b4e6c4">SetControlConstants</a> (<a class="el" href="class_control_data.html">ControlData</a> *pid) override</td></tr>
 <tr class="memdesc:aeadb069eaf12fdcd6579386be0b4e6c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values).  <a href="class_turret.html#aeadb069eaf12fdcd6579386be0b4e6c4">More...</a><br /></td></tr>
 <tr class="separator:aeadb069eaf12fdcd6579386be0b4e6c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,77 +260,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_turret_8cpp_source.html#l00070">70</a> of file <a class="el" href="_turret_8cpp_source.html">Turret.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a7224fca0dad060329e04903fda42899f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7224fca0dad060329e04903fda42899f">&#9670;&nbsp;</a></span>GetTargetPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Turret::GetTargetPosition </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return the targget position of the mechanism. The value is in inches or degrees. </p>
-<dl class="section return"><dt>Returns</dt><dd>double position in inches (translating mechanisms) or degrees (rotating mechanisms) </dd></dl>
-
-<p>Implements <a class="el" href="class_i_mechanism.html#afd97d8b3f072b45a88c83490dd18e8d2">IMechanism</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_turret_8cpp_source.html#l00065">65</a> of file <a class="el" href="_turret_8cpp_source.html">Turret.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a11658ee886370db874b3adedc1193328"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11658ee886370db874b3adedc1193328">&#9670;&nbsp;</a></span>GetTargetSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Turret::GetTargetSpeed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the target speed of the mechanism. The value is in inches per second or degrees per second. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ControlModes::MECHANISM_CONTROL_ID</td><td>controlItems: What item(s) are being requested </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>double speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms) </dd></dl>
-
-<p>Implements <a class="el" href="class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2">IMechanism</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_turret_8cpp_source.html#l00075">75</a> of file <a class="el" href="_turret_8cpp_source.html">Turret.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_turret_8cpp_source.html#l00066">66</a> of file <a class="el" href="_turret_8cpp_source.html">Turret.cpp</a>.</p>
 
 </div>
 </div>
@@ -439,7 +363,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_turret_8cpp_source.html#l00080">80</a> of file <a class="el" href="_turret_8cpp_source.html">Turret.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_turret_8cpp_source.html#l00072">72</a> of file <a class="el" href="_turret_8cpp_source.html">Turret.cpp</a>.</p>
 
 </div>
 </div>

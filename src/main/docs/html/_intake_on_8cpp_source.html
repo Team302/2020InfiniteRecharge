@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: controllers/intake/IntakeOn.cpp Source File</title>
+<title>Team 302 Robot: states/intake/IntakeOn.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,58 +96,43 @@ $(document).ready(function(){initNavTree('_intake_on_8cpp_source.html','');});
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span><span class="comment">//========================================================================================================</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// C++ Includes</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// FRC includes</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//========================================================================================================</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_intake_on_8h.html">controllers/intake/IntakeOn.h</a>&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_state_8h.html">controllers/IState.h</a>&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_factory_8h.html">subsys/MechanismFactory.h</a>&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// FRC includes</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//========================================================================================================</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Team 302 includes</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_intake_on_8h.html">states/intake/IntakeOn.h</a>&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_factory_8h.html">subsys/MechanismFactory.h</a>&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_state_8h.html">states/MechanismState.h</a>&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_target_data_8h.html">controllers/MechanismTargetData.h</a>&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Third Party Includes</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_intake_on.html#ad7794e57489a7883c1de88c5e3e50611">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_intake_on.html#ad7794e57489a7883c1de88c5e3e50611">IntakeOn::Init</a>()</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_intake_on.html#a3916ea1bd5d3afa8c88bc20b5843ad56">   44</a></span>&#160;<a class="code" href="class_intake_on.html#a3916ea1bd5d3afa8c88bc20b5843ad56">IntakeOn::IntakeOn</a>()</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">auto</span> factory = <a class="code" href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    m_intake = factory -&gt; GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_intake_on.html#a8fd106de85081b49a151b7a53542d286">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_intake_on.html#a8fd106de85081b49a151b7a53542d286">IntakeOn::Run</a>()           </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_intake -&gt; SetOutput(ControlModes::CONTROL_TYPE::PERCENT_OUTPUT,0.0);      <span class="comment">//turns off motors</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_intake -&gt; ActivateSolenoid( <span class="keyword">false</span> );                                      <span class="comment">//raises air cylinder</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_intake_on.html#ad3ec20e411ceb82f90c41ca46751ca32">   57</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_intake_on.html#ad3ec20e411ceb82f90c41ca46751ca32">IntakeOn::AtTarget</a>() const                                         <span class="comment">//confirms that it worked</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<a class="code" href="class_intake_on.html#a367a3036c0252cdd6be977736475c7f6">IntakeOn::IntakeOn</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_intake_on.html#a32d2f721eb8277686e53f526dd4a2150">   40</a></span>&#160;(</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>* control,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">double</span> target,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a> solState</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;) : <a class="code" href="class_mechanism_state.html">MechanismState</a>( <a class="code" href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a>()-&gt;GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE), control, target, solState )</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_intake_on_html_a8fd106de85081b49a151b7a53542d286"><div class="ttname"><a href="class_intake_on.html#a8fd106de85081b49a151b7a53542d286">IntakeOn::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_intake_on_8cpp_source.html#l00051">IntakeOn.cpp:51</a></div></div>
+<div class="ttc" id="aclass_mechanism_target_data_html_a1bd7dca52842f28088b36d001b0ac125"><div class="ttname"><a href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a></div><div class="ttdeci">SOLENOID</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_target_data_8h_source.html#l00025">MechanismTargetData.h:25</a></div></div>
+<div class="ttc" id="a_mechanism_state_8h_html"><div class="ttname"><a href="_mechanism_state_8h.html">MechanismState.h</a></div></div>
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
 <div class="ttc" id="a_mechanism_factory_8h_html"><div class="ttname"><a href="_mechanism_factory_8h.html">MechanismFactory.h</a></div></div>
-<div class="ttc" id="aclass_intake_on_html_ad7794e57489a7883c1de88c5e3e50611"><div class="ttname"><a href="class_intake_on.html#ad7794e57489a7883c1de88c5e3e50611">IntakeOn::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdef"><b>Definition:</b> <a href="_intake_on_8cpp_source.html#l00039">IntakeOn.cpp:39</a></div></div>
-<div class="ttc" id="aclass_intake_on_html_ad3ec20e411ceb82f90c41ca46751ca32"><div class="ttname"><a href="class_intake_on.html#ad3ec20e411ceb82f90c41ca46751ca32">IntakeOn::AtTarget</a></div><div class="ttdeci">bool AtTarget() const override</div><div class="ttdef"><b>Definition:</b> <a href="_intake_on_8cpp_source.html#l00057">IntakeOn.cpp:57</a></div></div>
+<div class="ttc" id="a_mechanism_target_data_8h_html"><div class="ttname"><a href="_mechanism_target_data_8h.html">MechanismTargetData.h</a></div></div>
 <div class="ttc" id="a_intake_on_8h_html"><div class="ttname"><a href="_intake_on_8h.html">IntakeOn.h</a></div></div>
-<div class="ttc" id="a_i_state_8h_html"><div class="ttname"><a href="_i_state_8h.html">IState.h</a></div></div>
-<div class="ttc" id="aclass_intake_on_html_a3916ea1bd5d3afa8c88bc20b5843ad56"><div class="ttname"><a href="class_intake_on.html#a3916ea1bd5d3afa8c88bc20b5843ad56">IntakeOn::IntakeOn</a></div><div class="ttdeci">IntakeOn()</div><div class="ttdef"><b>Definition:</b> <a href="_intake_on_8cpp_source.html#l00044">IntakeOn.cpp:44</a></div></div>
-<div class="ttc" id="aclass_mechanism_factory_html_a11b20a573ca93c56cb5da66ac5cbd2c0"><div class="ttname"><a href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a></div><div class="ttdeci">static MechanismFactory * GetMechanismFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_factory_8cpp_source.html#l00068">MechanismFactory.cpp:68</a></div></div>
+<div class="ttc" id="aclass_intake_on_html_a367a3036c0252cdd6be977736475c7f6"><div class="ttname"><a href="class_intake_on.html#a367a3036c0252cdd6be977736475c7f6">IntakeOn::IntakeOn</a></div><div class="ttdeci">IntakeOn()=delete</div></div>
+<div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00022">ControlData.h:22</a></div></div>
+<div class="ttc" id="aclass_mechanism_state_html"><div class="ttname"><a href="class_mechanism_state.html">MechanismState</a></div><div class="ttdoc">information about the control (open loop, closed loop position, closed loop velocity,...</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_state_8h_source.html#l00024">MechanismState.h:24</a></div></div>
+<div class="ttc" id="aclass_mechanism_factory_html_a11b20a573ca93c56cb5da66ac5cbd2c0"><div class="ttname"><a href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a></div><div class="ttdeci">static MechanismFactory * GetMechanismFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_factory_8cpp_source.html#l00071">MechanismFactory.cpp:71</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="dir_6a6f18b16a7999443df26d50492d7535.html">intake</a></li><li class="navelem"><a class="el" href="_intake_on_8cpp.html">IntakeOn.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_128f75dce35ba73c52fc2f45d15b5117.html">states</a></li><li class="navelem"><a class="el" href="dir_4c0c69b8e30550a039bc9c87abfd1709.html">intake</a></li><li class="navelem"><a class="el" href="_intake_on_8cpp.html">IntakeOn.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

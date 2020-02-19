@@ -3,6 +3,10 @@
 <statedata>
 	<controlData identifier="openloop" 
 	             mode="PERCENT_OUTPUT"/>
+	<controlData identifier="closedloop"
+				 mode="VELOCITY_RPS"
+				 proportional="0.01"
+				 feedforward="0.5"/>
 	<mechanismTarget stateIdentifier="SHOOTEROFF"
 	                 controlDataIdentifier="openloop"
 					 value="0.0"/>
@@ -10,7 +14,7 @@
 	                 controlDataIdentifier="openloop"
 					 value="0.5"/>
 	<mechanismTarget stateIdentifier="SHOOTERSHOOT"
-	                 controlDataIdentifier="openloop"
-					 value="1.0"/>
+	                 controlDataIdentifier="closedloop"
+					 value="50.0"/>
 
 </statedata>

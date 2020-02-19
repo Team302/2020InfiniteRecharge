@@ -29,6 +29,7 @@
 #include <subsys/MechanismTypes.h>
 #include <controllers/ControlData.h>
 #include <subsys/DriveTrainSide.h>
+#include <utils/Logger.h>
 
 // Third Party Includes
 
@@ -51,7 +52,8 @@ DragonChassis::DragonChassis
 ) : m_leftSide( new DriveTrainSide( leftMaster, leftFollower, wheelDiameter ) ),
     m_rightSide( new DriveTrainSide( rightMaster, rightFollower, wheelDiameter ) ),
     m_wheelBase( wheelBase ),
-    m_wheelTrack( track )
+    m_wheelTrack( track ),
+    m_wheelDiameter( wheelDiameter )
 {
 }
 
@@ -101,27 +103,6 @@ double DragonChassis::GetCurrentRightPosition() const
     return m_rightSide->GetCurrentPosition();
 }
 
-/// @brief  Return the target position of the center of the DragonChassis in inches.  
-/// @return double  position in inches of the center of the DragonChassis
-double DragonChassis::GetTargetPosition() const
-{
-    return ( m_leftSide->GetTargetPosition() + m_rightSide->GetTargetPosition() ) / 2.0;
-}
-
-
-/// @brief  Return the target position of the left side of the DragonChassis in inches.  
-/// @return double  position in inches of the left side of the DragonChassis
-double DragonChassis::GetTargetLeftPosition() const
-{
-    return m_leftSide->GetTargetPosition();
-}
-
-/// @brief  Return the target position of the right side of the DragonChassis in inches.  
-/// @return double  position in inches of the right side of the DragonChassis
-double DragonChassis::GetTargetRightPosition() const
-{
-    return m_rightSide->GetTargetPosition();
-}
 
 
 /// @brief  Return the current speed of the center of the DragonChassis in inches per second.  
@@ -146,26 +127,6 @@ double DragonChassis::GetCurrentRightSpeed() const
 }
 
 
-/// @brief  Get the target speed of the center of the chassis.  The value is in inches per second.
-/// @return double	speed in inches/second of the center of the chassis.
-double DragonChassis::GetTargetSpeed() const
-{
-    return ( m_leftSide->GetTargetSpeed() + m_rightSide->GetTargetSpeed() ) / 2.0;
-}
-
-/// @brief  Get the target speed of the left side of the chassis.  The value is in inches per second.
-/// @return double	speed in inches/second of the left side of the chassis.
-double DragonChassis::GetTargetLeftSpeed() const
-{
-    return m_leftSide->GetTargetSpeed();
-}
-
-/// @brief  Get the target speed of the right side of the chassis.  The value is in inches per second.
-/// @return double	speed in inches/second of the right side of the chassis.
-double DragonChassis::GetTargetRightSpeed() const
-{
-    return m_rightSide->GetTargetSpeed();
-}
 
 
 /// @brief  Set the control constants (e.g. PIDF values).
@@ -178,6 +139,11 @@ void DragonChassis::SetControlConstants
 {
     m_leftSide->SetControlConstants( pid );
     m_rightSide->SetControlConstants( pid );
+}
+
+double DragonChassis::GetWheelDiameter() const
+{ 
+    return m_wheelDiameter; 
 }
 
 

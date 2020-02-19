@@ -77,10 +77,6 @@ vector<MechanismTargetData*> StateDataDefn::ParseXML
             filename += string( "intake.xml");
             break;
 
-        case MechanismTypes::HUMAN_PLAYER_FLAP:
-            filename += string( "humanplayerflap.xml");
-            break;
-
         case MechanismTypes::IMPELLER:
             filename += string( "impeller.xml");
             break;

@@ -15,6 +15,7 @@
   },
   "C_Cpp.default.configurationProvider": "vscode-wpilib",
   "files.associations": {
+<<<<<<< Updated upstream
     "array": "cpp",
     "atomic": "cpp",
     "hash_map": "cpp",
@@ -75,6 +76,41 @@
     "streambuf": "cpp",
     "thread": "cpp",
     "cinttypes": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "ios": "cpp",
+    "locale": "cpp",
+    "queue": "cpp",
+    "xfacet": "cpp",
+    "xhash": "cpp",
+    "xiosbase": "cpp",
+    "xlocale": "cpp",
+    "xlocbuf": "cpp",
+    "xlocinfo": "cpp",
+    "xlocmes": "cpp",
+    "xlocmon": "cpp",
+    "xlocnum": "cpp",
+    "xloctime": "cpp",
+    "xmemory": "cpp",
+    "xmemory0": "cpp",
+    "xstddef": "cpp",
+    "xstring": "cpp",
+    "xtr1common": "cpp",
+    "xtree": "cpp",
+    "xutility": "cpp",
+    "shared_mutex": "cpp",
+    "stack": "cpp"
   }
 }
+=======
+    "xstring": "cpp",
+    "string": "cpp",
+    "array": "cpp",
+    "vector": "cpp",
+    "xutility": "cpp",
+    "string_view": "cpp",
+    "*.inc": "cpp",
+    "iosfwd": "cpp",
+    "xlocbuf": "cpp"
+  }
+}
+>>>>>>> Stashed changes

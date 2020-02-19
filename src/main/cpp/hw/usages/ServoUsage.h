@@ -49,7 +49,7 @@ class ServoUsage
 
         SERVO_USAGE GetUsage
         ( 
-            std::string         usageString
+            const std::string         usageString
         );
 
     private:

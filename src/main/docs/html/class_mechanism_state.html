@@ -93,6 +93,9 @@ $(document).ready(function(){initNavTree('class_mechanism_state.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>information about the control (open loop, closed loop position, closed loop velocity, etc.) for a mechanism state  
+ <a href="class_mechanism_state.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_mechanism_state_8h_source.html">MechanismState.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MechanismState:</div>
@@ -100,17 +103,35 @@ Inheritance diagram for MechanismState:</div>
  <div class="center">
   <img src="class_mechanism_state.png" usemap="#MechanismState_map" alt=""/>
   <map id="MechanismState_map" name="MechanismState_map">
-<area href="class_i_state.html" title="Interface for state classes." alt="IState" shape="rect" coords="149,0,288,24"/>
-<area href="class_ball_transfer_off.html" alt="BallTransferOff" shape="rect" coords="0,112,139,136"/>
-<area href="class_ball_transfer_to_impeller.html" alt="BallTransferToImpeller" shape="rect" coords="149,112,288,136"/>
-<area href="class_ball_transfer_to_shooter.html" alt="BallTransferToShooter" shape="rect" coords="298,112,437,136"/>
+<area href="class_i_state.html" title="Interface for state classes." alt="IState" shape="rect" coords="0,0,156,24"/>
+<area href="class_ball_transfer_off.html" alt="BallTransferOff" shape="rect" coords="166,112,322,136"/>
+<area href="class_ball_transfer_to_impeller.html" alt="BallTransferToImpeller" shape="rect" coords="166,168,322,192"/>
+<area href="class_ball_transfer_to_shooter.html" alt="BallTransferToShooter" shape="rect" coords="166,224,322,248"/>
+<area href="class_climber_hold.html" title="ClimberHold.h." alt="ClimberHold" shape="rect" coords="166,280,322,304"/>
+<area href="class_climber_raise.html" alt="ClimberRaise" shape="rect" coords="166,336,322,360"/>
+<area href="class_climber_stowed.html" alt="ClimberStowed" shape="rect" coords="166,392,322,416"/>
+<area href="class_hold_turret_position.html" alt="HoldTurretPosition" shape="rect" coords="166,448,322,472"/>
+<area href="class_impeller_agitate.html" alt="ImpellerAgitate" shape="rect" coords="166,504,322,528"/>
+<area href="class_impeller_hold.html" alt="ImpellerHold" shape="rect" coords="166,560,322,584"/>
+<area href="class_impeller_off.html" alt="ImpellerOff" shape="rect" coords="166,616,322,640"/>
+<area href="class_impeller_to_shooter.html" alt="ImpellerToShooter" shape="rect" coords="166,672,322,696"/>
+<area href="class_intake_h_p_s_state.html" alt="IntakeHPSState" shape="rect" coords="166,728,322,752"/>
+<area href="class_intake_off.html" title="IntakeOff.h." alt="IntakeOff" shape="rect" coords="166,784,322,808"/>
+<area href="class_intake_on.html" title="File name: IntakeOff." alt="IntakeOn" shape="rect" coords="166,840,322,864"/>
+<area href="class_shooter_get_ready.html" alt="ShooterGetReady" shape="rect" coords="166,896,322,920"/>
+<area href="class_shooter_hood_hold.html" alt="ShooterHoodHold" shape="rect" coords="166,952,322,976"/>
+<area href="class_shooter_hood_hold_position.html" alt="ShooterHoodHoldPosition" shape="rect" coords="166,1008,322,1032"/>
+<area href="class_shooter_hood_move_down.html" alt="ShooterHoodMoveDown" shape="rect" coords="166,1064,322,1088"/>
+<area href="class_shooter_hood_move_up.html" alt="ShooterHoodMoveUp" shape="rect" coords="166,1120,322,1144"/>
+<area href="class_shooter_off.html" alt="ShooterOff" shape="rect" coords="166,1176,322,1200"/>
+<area href="class_shooter_shoot.html" alt="ShooterShoot" shape="rect" coords="166,1232,322,1256"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa1b3c1a85d07002986a54407f76c7a68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#aa1b3c1a85d07002986a54407f76c7a68">MechanismState</a> (<a class="el" href="class_i_mechanism.html">IMechanism</a> *mechanism, <a class="el" href="class_control_data.html">ControlData</a> *control, double target)</td></tr>
-<tr class="separator:aa1b3c1a85d07002986a54407f76c7a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa341740dad3529424f29c5d863e8dfc2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#aa341740dad3529424f29c5d863e8dfc2">MechanismState</a> (<a class="el" href="class_i_mechanism.html">IMechanism</a> *mechanism, <a class="el" href="class_control_data.html">ControlData</a> *control, double target, <a class="el" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a> solState)</td></tr>
+<tr class="separator:aa341740dad3529424f29c5d863e8dfc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afef2ac5c394d3bc012ccd2f6040fd4cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#afef2ac5c394d3bc012ccd2f6040fd4cd">MechanismState</a> ()=delete</td></tr>
 <tr class="separator:afef2ac5c394d3bc012ccd2f6040fd4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93d86a4d0951c1a9b3d8671abb47f293"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mechanism_state.html#a93d86a4d0951c1a9b3d8671abb47f293">~MechanismState</a> ()=default</td></tr>
@@ -128,15 +149,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a28a7b15d44be7a1d40ccf5d0790f7ec8 inherit pub_methods_class_i_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Copyright 2019 Lake Orion Robotics FIRST Team 302</p>
+<div class="textblock"><p>information about the control (open loop, closed loop position, closed loop velocity, etc.) for a mechanism state </p>
+<p>Copyright 2019 Lake Orion Robotics FIRST Team 302</p>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
 <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. </p>
 
-<p class="definition">Definition at line <a class="el" href="_mechanism_state_8h_source.html#l00023">23</a> of file <a class="el" href="_mechanism_state_8h_source.html">MechanismState.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_mechanism_state_8h_source.html#l00024">24</a> of file <a class="el" href="_mechanism_state_8h_source.html">MechanismState.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa1b3c1a85d07002986a54407f76c7a68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1b3c1a85d07002986a54407f76c7a68">&#9670;&nbsp;</a></span>MechanismState() <span class="overload">[1/2]</span></h2>
+<a id="aa341740dad3529424f29c5d863e8dfc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa341740dad3529424f29c5d863e8dfc2">&#9670;&nbsp;</a></span>MechanismState() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,7 +179,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>target</em>&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a>&#160;</td>
+          <td class="paramname"><em>solState</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -167,7 +195,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_mechanism_state_8cpp_source.html#l00034">34</a> of file <a class="el" href="_mechanism_state_8cpp_source.html">MechanismState.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_mechanism_state_8cpp_source.html#l00037">37</a> of file <a class="el" href="_mechanism_state_8cpp_source.html">MechanismState.cpp</a>.</p>
 
 </div>
 </div>
@@ -247,7 +275,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_state.html#a15624686c47f28cf90f76bb28e938937">IState</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_mechanism_state_8cpp_source.html#l00127">127</a> of file <a class="el" href="_mechanism_state_8cpp_source.html">MechanismState.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_mechanism_state_8cpp_source.html#l00147">147</a> of file <a class="el" href="_mechanism_state_8cpp_source.html">MechanismState.cpp</a>.</p>
 
 </div>
 </div>
@@ -276,7 +304,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_state.html#ac1400e68fde2f088873f5ec283309977">IState</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_mechanism_state_8cpp_source.html#l00110">110</a> of file <a class="el" href="_mechanism_state_8cpp_source.html">MechanismState.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_mechanism_state_8cpp_source.html#l00116">116</a> of file <a class="el" href="_mechanism_state_8cpp_source.html">MechanismState.cpp</a>.</p>
 
 </div>
 </div>
@@ -305,13 +333,13 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_i_state.html#a1dc31736da7d9e9322c1cc417672ea0f">IState</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_mechanism_state_8cpp_source.html#l00119">119</a> of file <a class="el" href="_mechanism_state_8cpp_source.html">MechanismState.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_mechanism_state_8cpp_source.html#l00125">125</a> of file <a class="el" href="_mechanism_state_8cpp_source.html">MechanismState.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>controllers/<a class="el" href="_mechanism_state_8h_source.html">MechanismState.h</a></li>
-<li>controllers/<a class="el" href="_mechanism_state_8cpp_source.html">MechanismState.cpp</a></li>
+<li>states/<a class="el" href="_mechanism_state_8h_source.html">MechanismState.h</a></li>
+<li>states/<a class="el" href="_mechanism_state_8cpp_source.html">MechanismState.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

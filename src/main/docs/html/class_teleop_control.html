@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('class_teleop_control.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a7d4c2a365d8eaf21214611064c8a3a15"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15">FUNCTION_IDENTIFIER</a> { <br />
-&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ae6371c6efda702c24be36bab83e23d89">UNKNOW_FUNCTION</a>, 
+&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a6f54ea506603240492346116d310c09e">UNKNOWN_FUNCTION</a>, 
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ae61617712eb2f2daa93ef0766e679195">TANK_DRIVE_LEFT_CONTROL</a>, 
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a57127209ca90268d9ec1e585f31fe590">TANK_DRIVE_RIGHT_CONTROL</a>, 
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9917aed04a2cb8d60c6f1afca9dff6b5">ARCADE_DRIVE_THROTTLE</a>, 
@@ -111,31 +111,46 @@ Public Types</h2></td></tr>
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3473c611d1d16a64546e1cff0d8693fc">GTA_DRIVE_STEER</a>, 
 <br />
 &#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aed8935f1b493bab6a7bceef70e08c29c">SWITCH_DRIVE_MODE</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9b7150ec3d3dcc42432a77b3b9e062a8">CURVATURE_DRIVE_QUICK_TURN</a>, 
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a28572b334fad1f837f9c010c6b1f9e46">CLIMBER_EXTEND</a>, 
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aaad6666ff47670ed1b6d5d21023c82ce">CLIMBER_LIFT</a>, 
-<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a99ec8c8b04aa477537e9f23ca91fb544">CLIMBER_CRAWL</a>, 
 <br />
-&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af58ae3bb1b551524453fabc31957a2b6">IMPELLER_SPIN</a>, 
-<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af5d813c6b4d56879ffc1e8a24536b80a">IMPELLER_STOP</a>, 
+&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a99ec8c8b04aa477537e9f23ca91fb544">CLIMBER_CRAWL</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a554663d63f2c91d5a3d48ecd0e24002b">IMPELLER_OFF</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3f87a76a9481d0207d162cd0bc406808">IMPELLER_HOLD</a>, 
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15afbf864cd90eeab272729dffbb26dc27c">IMPELLER_AGITATE</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a78656a40b5017b43fcc4742e6aafc5f9">IMPELLER_TO_SHOOTER</a>, 
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a60923c0845183221f8fde7da02f923e1">INTAKE_ON</a>, 
-<br />
-&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a0cad4007d5102d00d8813cf219bbe7b3">INTAKE_OFF</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a0cad4007d5102d00d8813cf219bbe7b3">INTAKE_OFF</a>, 
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ad063756c98ae194e4e99c62e5b448ccf">BALL_TRANSFER_OFF</a>, 
-<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a515a84aad58b3d799487bed79c9e38eb">BALL_TRANSFER_TO_IMPELLER</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a515a84aad58b3d799487bed79c9e38eb">BALL_TRANSFER_TO_IMPELLER</a>, 
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a478186ef0eeda3702bdf2af97cb529f1">BALL_TRANSFER_TO_SHOOTER</a>, 
-<br />
-&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a336a8ceb63bc0f2dd4c97a069dc2ad12">SHOOTER_PREPARE_TO_SHOOT</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a336a8ceb63bc0f2dd4c97a069dc2ad12">SHOOTER_PREPARE_TO_SHOOT</a>, 
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a46e4062e5e94e83a00437fda3bdef6d0">SHOOTER_AUTO_SHOOT</a>, 
-<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a8319f92bd29070421b1b7b0e052417fc">SHOOTER_MANUAL_AIM</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a8319f92bd29070421b1b7b0e052417fc">SHOOTER_MANUAL_AIM</a>, 
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ae5b7b1e64b8bcd9676566127684436ba">SHOOTER_MANUAL_ADJUST_DISTANCE</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af687189b25bc1743e40aa06da67d79ea">SHOOTER_MANUAL_SHOOT</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a0615864c245df31bc3fd5f15fb12bbff">SHOOTER_OFF</a>, 
 <br />
-&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af687189b25bc1743e40aa06da67d79ea">SHOOTER_MANUAL_SHOOT</a>, 
-<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9d945c2804009cdd03120f508995be76">CONTROL_PANNEL_STOW</a>, 
-<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ad2d54503ff3ea656ccc0ba241dcd51b0">CONTROL_PANNEL_RAISE</a>, 
-<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a143cdbae151eeb8cceddfe2db66134c6">CONTROL_PANNEL_SPIN_WHEEL</a>, 
+&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a7f77110f4ea2eb0f0f4ec822071eff16">CONTROL_PANEL_STOW</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a819590d46ab8d92fc5facd86cb7860e3">CONTROL_PANEL_RAISE</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aec5ac581259bea31dbdfcf11f44ee5c5">CONTROL_PANEL_SPIN_WHEEL</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aa3605f3c1402f0cb944c7ce7f54dcbd9">CONTROL_PANEL_MANUAL</a>, 
 <br />
-&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a92a407beeced4d52f8980eff2eb5771b">CONTROL_PANNEL_TURN_TO_COLOR</a>, 
+&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15afb7ecae83e48084433d3d209be5915f1">CONTROL_PANEL_TURN_TO_COLOR</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9d764d78d67e2f9c8b90e83800cc8004">SHOOTER_HOOD_MOVE_UP</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a7ce4b53770adeeec0a93291fe5ba3ca0">SHOOTER_HOOD_MOVE_DOWN</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15add49360d0a6d3a94231826b1512d44d1">SHOOTER_HOOD_HOLD_POSITION</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ae5512346ac69a346a67665dc80da2a4f">SHOOTER_HOOD_MANUAL_BUTTON</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9680ce9fd26c12c8165de81d6776169b">SHOOTER_HOOD_MANUAL_AXIS</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3334c47ae393f925dd35b13c7211060b">TURRET_MANUAL_AXIS</a>, 
+<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aee3ff24a2c4157913cb76ec8cf859b23">TURRET_MANUAL_BUTTON</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a98635ab21bb0cce829a83fe475c9ae72">TURRET_LIMELIGHT_AIM</a>, 
 <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af0a71fc177d1cdf5d455aa154441aafb">MAX_FUNCTIONS</a>
 <br />
  }</td></tr>
@@ -173,7 +188,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15ae6371c6efda702c24be36bab83e23d89"></a>UNKNOW_FUNCTION&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a6f54ea506603240492346116d310c09e"></a>UNKNOWN_FUNCTION&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15ae61617712eb2f2daa93ef0766e679195"></a>TANK_DRIVE_LEFT_CONTROL&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a57127209ca90268d9ec1e585f31fe590"></a>TANK_DRIVE_RIGHT_CONTROL&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a9917aed04a2cb8d60c6f1afca9dff6b5"></a>ARCADE_DRIVE_THROTTLE&#160;</td><td class="fielddoc"></td></tr>
@@ -182,12 +197,14 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a3ff7fa29fbe3d18bf36e8762b83c40a3"></a>GTA_DRIVE_BACKWARD&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a3473c611d1d16a64546e1cff0d8693fc"></a>GTA_DRIVE_STEER&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15aed8935f1b493bab6a7bceef70e08c29c"></a>SWITCH_DRIVE_MODE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a9b7150ec3d3dcc42432a77b3b9e062a8"></a>CURVATURE_DRIVE_QUICK_TURN&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a28572b334fad1f837f9c010c6b1f9e46"></a>CLIMBER_EXTEND&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15aaad6666ff47670ed1b6d5d21023c82ce"></a>CLIMBER_LIFT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a99ec8c8b04aa477537e9f23ca91fb544"></a>CLIMBER_CRAWL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15af58ae3bb1b551524453fabc31957a2b6"></a>IMPELLER_SPIN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15af5d813c6b4d56879ffc1e8a24536b80a"></a>IMPELLER_STOP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a554663d63f2c91d5a3d48ecd0e24002b"></a>IMPELLER_OFF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a3f87a76a9481d0207d162cd0bc406808"></a>IMPELLER_HOLD&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15afbf864cd90eeab272729dffbb26dc27c"></a>IMPELLER_AGITATE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a78656a40b5017b43fcc4742e6aafc5f9"></a>IMPELLER_TO_SHOOTER&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a60923c0845183221f8fde7da02f923e1"></a>INTAKE_ON&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a0cad4007d5102d00d8813cf219bbe7b3"></a>INTAKE_OFF&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15ad063756c98ae194e4e99c62e5b448ccf"></a>BALL_TRANSFER_OFF&#160;</td><td class="fielddoc"></td></tr>
@@ -198,10 +215,20 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a8319f92bd29070421b1b7b0e052417fc"></a>SHOOTER_MANUAL_AIM&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15ae5b7b1e64b8bcd9676566127684436ba"></a>SHOOTER_MANUAL_ADJUST_DISTANCE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15af687189b25bc1743e40aa06da67d79ea"></a>SHOOTER_MANUAL_SHOOT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a9d945c2804009cdd03120f508995be76"></a>CONTROL_PANNEL_STOW&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15ad2d54503ff3ea656ccc0ba241dcd51b0"></a>CONTROL_PANNEL_RAISE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a143cdbae151eeb8cceddfe2db66134c6"></a>CONTROL_PANNEL_SPIN_WHEEL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a92a407beeced4d52f8980eff2eb5771b"></a>CONTROL_PANNEL_TURN_TO_COLOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a0615864c245df31bc3fd5f15fb12bbff"></a>SHOOTER_OFF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a7f77110f4ea2eb0f0f4ec822071eff16"></a>CONTROL_PANEL_STOW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a819590d46ab8d92fc5facd86cb7860e3"></a>CONTROL_PANEL_RAISE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15aec5ac581259bea31dbdfcf11f44ee5c5"></a>CONTROL_PANEL_SPIN_WHEEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15aa3605f3c1402f0cb944c7ce7f54dcbd9"></a>CONTROL_PANEL_MANUAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15afb7ecae83e48084433d3d209be5915f1"></a>CONTROL_PANEL_TURN_TO_COLOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a9d764d78d67e2f9c8b90e83800cc8004"></a>SHOOTER_HOOD_MOVE_UP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a7ce4b53770adeeec0a93291fe5ba3ca0"></a>SHOOTER_HOOD_MOVE_DOWN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15add49360d0a6d3a94231826b1512d44d1"></a>SHOOTER_HOOD_HOLD_POSITION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15ae5512346ac69a346a67665dc80da2a4f"></a>SHOOTER_HOOD_MANUAL_BUTTON&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a9680ce9fd26c12c8165de81d6776169b"></a>SHOOTER_HOOD_MANUAL_AXIS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a3334c47ae393f925dd35b13c7211060b"></a>TURRET_MANUAL_AXIS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15aee3ff24a2c4157913cb76ec8cf859b23"></a>TURRET_MANUAL_BUTTON&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15a98635ab21bb0cce829a83fe475c9ae72"></a>TURRET_LIMELIGHT_AIM&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7d4c2a365d8eaf21214611064c8a3a15af0a71fc177d1cdf5d455aa154441aafb"></a>MAX_FUNCTIONS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
@@ -226,7 +253,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_teleop_control_8cpp_source.html#l00230">230</a> of file <a class="el" href="_teleop_control_8cpp_source.html">TeleopControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_teleop_control_8cpp_source.html#l00308">308</a> of file <a class="el" href="_teleop_control_8cpp_source.html">TeleopControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -273,7 +300,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_teleop_control_8cpp_source.html#l00254">254</a> of file <a class="el" href="_teleop_control_8cpp_source.html">TeleopControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_teleop_control_8cpp_source.html#l00332">332</a> of file <a class="el" href="_teleop_control_8cpp_source.html">TeleopControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -303,7 +330,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_teleop_control_8cpp_source.html#l00207">207</a> of file <a class="el" href="_teleop_control_8cpp_source.html">TeleopControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_teleop_control_8cpp_source.html#l00285">285</a> of file <a class="el" href="_teleop_control_8cpp_source.html">TeleopControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -333,7 +360,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_teleop_control_8cpp_source.html#l00185">185</a> of file <a class="el" href="_teleop_control_8cpp_source.html">TeleopControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_teleop_control_8cpp_source.html#l00263">263</a> of file <a class="el" href="_teleop_control_8cpp_source.html">TeleopControl.cpp</a>.</p>
 
 </div>
 </div>

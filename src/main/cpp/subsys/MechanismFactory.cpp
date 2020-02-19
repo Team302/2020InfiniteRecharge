@@ -40,6 +40,7 @@
 #include <hw/DragonServo.h>
 #include <hw/DragonAnalogInput.h>
 #include <hw/DragonDigitalInput.h>
+#include <subsys/ControlPanel.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismTypes.h>
@@ -47,16 +48,18 @@
 #include <utils/Logger.h>
 #include <subsys/Impeller.h>
 #include <subsys/BallTransfer.h>
-#include <subsys/HumanPlayerFlap.h>
 #include <subsys/Turret.h>
 #include <subsys/Shooter.h>
+#include <subsys/ShooterHood.h>
 
 // Third Party Includes
 #include <rev/ColorSensorV3.h>
+#include <ctre/phoenix/sensors/CANCoder.h>
 
 
 using namespace std;
 using namespace rev;
+using namespace ctre::phoenix::sensors;
 
 
 //=====================================================================================
@@ -118,7 +121,8 @@ IMechanism*  MechanismFactory::CreateIMechanism
 	const ServoMap&						    servos,
 	const DigitalInputMap&					digitalInputs,
 	const AnalogInputMap&                   analogInputs,
-	ColorSensorV3*					        colorSensor
+	ColorSensorV3*					        colorSensor,
+	shared_ptr<CANCoder>					canCoder
 )
 {
 	IMechanism* subsys = nullptr;
@@ -152,23 +156,12 @@ IMechanism*  MechanismFactory::CreateIMechanism
             }
             break;
 
-			case MechanismTypes::MECHANISM_TYPE::HUMAN_PLAYER_FLAP:
-			{
-				auto solenoid = GetSolenoid( solenoids, SolenoidUsage::SOLENOID_USAGE::HUMAN_PLAYER_FLAP );
-				if ( solenoid.get() != nullptr )
-				{
-					auto flap = new HumanPlayerFlap( solenoid );
-					subsys = dynamic_cast<IMechanism*>( flap );
-				}
-			}
-			break;
-			
 			case MechanismTypes::MECHANISM_TYPE::IMPELLER:
 			{
 				auto motor = GetMotorController( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::IMPELLER );
 				if ( motor.get() != nullptr )
 				{
-					auto impeller = new Impeller(motor);
+					auto impeller = new Impeller(motor, canCoder);
 					subsys = dynamic_cast<IMechanism*>(impeller);
 				}
 			}
@@ -199,6 +192,12 @@ IMechanism*  MechanismFactory::CreateIMechanism
 			
 			case MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD:
 			{
+				auto shooterHoodMotor = GetMotorController ( motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::SHOOTER_HOOD );
+				if ( shooterHoodMotor.get() != nullptr )
+				{
+					auto shooterHood = new ShooterHood( shooterHoodMotor, canCoder);
+					subsys = dynamic_cast<IMechanism*>(shooterHood);
+				}
 			}
 			break;		
 			

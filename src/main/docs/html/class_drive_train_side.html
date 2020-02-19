@@ -132,15 +132,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a557590423b84c081762e79c161d55ee9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drive_train_side.html#a557590423b84c081762e79c161d55ee9">GetCurrentPosition</a> () const override</td></tr>
 <tr class="memdesc:a557590423b84c081762e79c161d55ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current position of the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> in inches (positive is forward, negative is backward)  <a href="class_drive_train_side.html#a557590423b84c081762e79c161d55ee9">More...</a><br /></td></tr>
 <tr class="separator:a557590423b84c081762e79c161d55ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ccf01a971eab34f5a053e6184af1b71"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drive_train_side.html#a0ccf01a971eab34f5a053e6184af1b71">GetTargetPosition</a> () const override</td></tr>
-<tr class="memdesc:a0ccf01a971eab34f5a053e6184af1b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the target position of the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> in inches (positive is forward, negative is backward)  <a href="class_drive_train_side.html#a0ccf01a971eab34f5a053e6184af1b71">More...</a><br /></td></tr>
-<tr class="separator:a0ccf01a971eab34f5a053e6184af1b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b2d55207f0a6244caa19cc5197bac5e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">GetCurrentSpeed</a> () const override</td></tr>
 <tr class="memdesc:a5b2d55207f0a6244caa19cc5197bac5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current speed of the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> in inches / second (positive is forward, negative is backward)  <a href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">More...</a><br /></td></tr>
 <tr class="separator:a5b2d55207f0a6244caa19cc5197bac5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf2337d61c0dd88d0a2b63032ce1075d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drive_train_side.html#adf2337d61c0dd88d0a2b63032ce1075d">GetTargetSpeed</a> () const override</td></tr>
-<tr class="memdesc:adf2337d61c0dd88d0a2b63032ce1075d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the target speed of the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> in inches / second (positive is forward, negative is backward)  <a href="class_drive_train_side.html#adf2337d61c0dd88d0a2b63032ce1075d">More...</a><br /></td></tr>
-<tr class="separator:adf2337d61c0dd88d0a2b63032ce1075d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a706257d98af9460c245b7f34b61423"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">SetControlConstants</a> (<a class="el" href="class_control_data.html">ControlData</a> *pid) override</td></tr>
 <tr class="memdesc:a5a706257d98af9460c245b7f34b61423"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the control constants (e.g. PIDF values).  <a href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">More...</a><br /></td></tr>
 <tr class="separator:a5a706257d98af9460c245b7f34b61423"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -364,76 +358,7 @@ double speed in degrees per second (rotating mechansim) </dd></dl>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_drive_train_side_8cpp_source.html#l00141">141</a> of file <a class="el" href="_drive_train_side_8cpp_source.html">DriveTrainSide.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a0ccf01a971eab34f5a053e6184af1b71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ccf01a971eab34f5a053e6184af1b71">&#9670;&nbsp;</a></span>GetTargetPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double DriveTrainSide::GetTargetPosition </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return the target position of the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> in inches (positive is forward, negative is backward) </p>
-<p>Return the target position of the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> in inches. <br  />
-</p>
-<dl class="section return"><dt>Returns</dt><dd>double position in inches </dd></dl>
-
-<p>Implements <a class="el" href="class_i_mechanism.html#afd97d8b3f072b45a88c83490dd18e8d2">IMechanism</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_drive_train_side_8cpp_source.html#l00132">132</a> of file <a class="el" href="_drive_train_side_8cpp_source.html">DriveTrainSide.cpp</a>.</p>
-
-</div>
-</div>
-<a id="adf2337d61c0dd88d0a2b63032ce1075d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf2337d61c0dd88d0a2b63032ce1075d">&#9670;&nbsp;</a></span>GetTargetSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double DriveTrainSide::GetTargetSpeed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return the target speed of the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> in inches / second (positive is forward, negative is backward) </p>
-<p>Return the target speed of the <a class="el" href="class_drive_train_side.html" title="This is the DriveTrainSide Subsystem.">DriveTrainSide</a> in degrees per second. Since we don't have a sensor this will return -360 for clockwise rotations and 360 for counter-clockwise rotations.</p>
-<dl class="section return"><dt>Returns</dt><dd>double speed in inches / second</dd>
-<dd>
-double speed in degrees per second (rotating mechansim) </dd></dl>
-
-<p>Implements <a class="el" href="class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2">IMechanism</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_drive_train_side_8cpp_source.html#l00163">163</a> of file <a class="el" href="_drive_train_side_8cpp_source.html">DriveTrainSide.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_drive_train_side_8cpp_source.html#l00135">135</a> of file <a class="el" href="_drive_train_side_8cpp_source.html">DriveTrainSide.cpp</a>.</p>
 
 </div>
 </div>
@@ -536,7 +461,7 @@ double speed in degrees per second (rotating mechansim) </dd></dl>
 
 <p>Implements <a class="el" href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">IMechanism</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_drive_train_side_8cpp_source.html#l00174">174</a> of file <a class="el" href="_drive_train_side_8cpp_source.html">DriveTrainSide.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_drive_train_side_8cpp_source.html#l00158">158</a> of file <a class="el" href="_drive_train_side_8cpp_source.html">DriveTrainSide.cpp</a>.</p>
 
 </div>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: controllers/impeller/ImpellerAgitate.h Source File</title>
+<title>Team 302 Robot: states/impeller/ImpellerAgitate.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,53 +89,43 @@ $(document).ready(function(){initNavTree('_impeller_agitate_8h_source.html','');
 <div class="title">ImpellerAgitate.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_impeller_agitate_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//Created by the one, the only, Big Chief, AJ Gdowski</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//Nobody will ever be brave enough to steal my code, so don&#39;t even think about it</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_state_8h.html">controllers/IState.h</a>&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_factory_8h.html">subsys/MechanismFactory.h</a>&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_impeller_agitate.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_impeller_agitate.html">ImpellerAgitate</a> : <span class="keyword">public</span> <a class="code" href="class_i_state.html">IState</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_impeller_agitate.html#a8ea1ca987b0a7493421b42b6bcfc4e9b">ImpellerAgitate</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_impeller_agitate.html#a5723912af8e3cbb18721b75afa8acce6">~ImpellerAgitate</a>() = <span class="keywordflow">default</span>;</div>
+<a href="_impeller_agitate_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="comment">//====================================================================================================================================================</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_impeller_agitate.html#aae0d9ee97b35898dfdab1960a0110194">Init</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_impeller_agitate.html#a9ec73949e85350f2a637c5738b34f96d">Run</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_impeller_agitate.html#a4116fc359da06628e1c49f8788fe4d53">AtTarget</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_i_mechanism.html">IMechanism</a>* m_impeller;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> addition_delta = 20;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> subtraction_delta = 10; <span class="comment">//Used to move the motor either forwards or backwards</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">double</span> m_target;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">bool</span> is_moving_forward;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_state_8h.html">states/MechanismState.h</a>&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_target_data_8h.html">controllers/MechanismTargetData.h</a>&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span><a class="code" href="class_control_data.html">ControlData</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_impeller_agitate.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_impeller_agitate.html">ImpellerAgitate</a> : <span class="keyword">public</span> <a class="code" href="class_mechanism_state.html">MechanismState</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_impeller_agitate.html#aa1a0b6ff2e5f54ea9668c094cda15fb3">ImpellerAgitate</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        (</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="class_control_data.html">ControlData</a>*                    control,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordtype">double</span>                          target,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a>   solState</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_impeller_agitate.html#aa1a0b6ff2e5f54ea9668c094cda15fb3">ImpellerAgitate</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_impeller_agitate.html#a5723912af8e3cbb18721b75afa8acce6">~ImpellerAgitate</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_impeller_agitate_html"><div class="ttname"><a href="class_impeller_agitate.html">ImpellerAgitate</a></div><div class="ttdef"><b>Definition:</b> <a href="_impeller_agitate_8h_source.html#l00011">ImpellerAgitate.h:11</a></div></div>
-<div class="ttc" id="aclass_i_state_html"><div class="ttname"><a href="class_i_state.html">IState</a></div><div class="ttdoc">Interface for state classes.</div><div class="ttdef"><b>Definition:</b> <a href="_i_state_8h_source.html#l00021">IState.h:21</a></div></div>
-<div class="ttc" id="aclass_impeller_agitate_html_aae0d9ee97b35898dfdab1960a0110194"><div class="ttname"><a href="class_impeller_agitate.html#aae0d9ee97b35898dfdab1960a0110194">ImpellerAgitate::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdoc">This initializes any elements of the code I am going to use in Run.</div><div class="ttdef"><b>Definition:</b> <a href="_impeller_agitate_8cpp_source.html#l00020">ImpellerAgitate.cpp:20</a></div></div>
-<div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
-<div class="ttc" id="aclass_impeller_agitate_html_a9ec73949e85350f2a637c5738b34f96d"><div class="ttname"><a href="class_impeller_agitate.html#a9ec73949e85350f2a637c5738b34f96d">ImpellerAgitate::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdoc">This runs the code elements every 20ms on repeat.</div><div class="ttdef"><b>Definition:</b> <a href="_impeller_agitate_8cpp_source.html#l00028">ImpellerAgitate.cpp:28</a></div></div>
-<div class="ttc" id="a_mechanism_factory_8h_html"><div class="ttname"><a href="_mechanism_factory_8h.html">MechanismFactory.h</a></div></div>
-<div class="ttc" id="aclass_impeller_agitate_html_a4116fc359da06628e1c49f8788fe4d53"><div class="ttname"><a href="class_impeller_agitate.html#a4116fc359da06628e1c49f8788fe4d53">ImpellerAgitate::AtTarget</a></div><div class="ttdeci">bool AtTarget() const override</div><div class="ttdoc">This ends all the processes once a condition is reached.</div><div class="ttdef"><b>Definition:</b> <a href="_impeller_agitate_8cpp_source.html#l00063">ImpellerAgitate.cpp:63</a></div></div>
-<div class="ttc" id="a_i_state_8h_html"><div class="ttname"><a href="_i_state_8h.html">IState.h</a></div></div>
+<div class="ttc" id="aclass_impeller_agitate_html_aa1a0b6ff2e5f54ea9668c094cda15fb3"><div class="ttname"><a href="class_impeller_agitate.html#aa1a0b6ff2e5f54ea9668c094cda15fb3">ImpellerAgitate::ImpellerAgitate</a></div><div class="ttdeci">ImpellerAgitate()=delete</div></div>
+<div class="ttc" id="aclass_mechanism_target_data_html_a1bd7dca52842f28088b36d001b0ac125"><div class="ttname"><a href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a></div><div class="ttdeci">SOLENOID</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_target_data_8h_source.html#l00025">MechanismTargetData.h:25</a></div></div>
+<div class="ttc" id="aclass_impeller_agitate_html"><div class="ttname"><a href="class_impeller_agitate.html">ImpellerAgitate</a></div><div class="ttdef"><b>Definition:</b> <a href="_impeller_agitate_8h_source.html#l00023">ImpellerAgitate.h:23</a></div></div>
+<div class="ttc" id="a_mechanism_state_8h_html"><div class="ttname"><a href="_mechanism_state_8h.html">MechanismState.h</a></div></div>
+<div class="ttc" id="a_mechanism_target_data_8h_html"><div class="ttname"><a href="_mechanism_target_data_8h.html">MechanismTargetData.h</a></div></div>
+<div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00022">ControlData.h:22</a></div></div>
 <div class="ttc" id="aclass_impeller_agitate_html_a5723912af8e3cbb18721b75afa8acce6"><div class="ttname"><a href="class_impeller_agitate.html#a5723912af8e3cbb18721b75afa8acce6">ImpellerAgitate::~ImpellerAgitate</a></div><div class="ttdeci">~ImpellerAgitate()=default</div></div>
-<div class="ttc" id="aclass_impeller_agitate_html_a8ea1ca987b0a7493421b42b6bcfc4e9b"><div class="ttname"><a href="class_impeller_agitate.html#a8ea1ca987b0a7493421b42b6bcfc4e9b">ImpellerAgitate::ImpellerAgitate</a></div><div class="ttdeci">ImpellerAgitate()</div><div class="ttdoc">This is used to contruct any elements I am going to use.</div><div class="ttdef"><b>Definition:</b> <a href="_impeller_agitate_8cpp_source.html#l00011">ImpellerAgitate.cpp:11</a></div></div>
-<div class="ttc" id="aclass_i_mechanism_html"><div class="ttname"><a href="class_i_mechanism.html">IMechanism</a></div><div class="ttdoc">This is the interface for all subsystems.</div><div class="ttdef"><b>Definition:</b> <a href="_i_mechanism_8h_source.html#l00038">IMechanism.h:38</a></div></div>
+<div class="ttc" id="aclass_mechanism_state_html"><div class="ttname"><a href="class_mechanism_state.html">MechanismState</a></div><div class="ttdoc">information about the control (open loop, closed loop position, closed loop velocity,...</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_state_8h_source.html#l00024">MechanismState.h:24</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="dir_22f51177c548b8bb35146d0382414103.html">impeller</a></li><li class="navelem"><a class="el" href="_impeller_agitate_8h.html">ImpellerAgitate.h</a></li>
+    <li class="navelem"><a class="el" href="dir_128f75dce35ba73c52fc2f45d15b5117.html">states</a></li><li class="navelem"><a class="el" href="dir_5fda87a21b6a0f55da3c225aae6f0d56.html">impeller</a></li><li class="navelem"><a class="el" href="_impeller_agitate_8h.html">ImpellerAgitate.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

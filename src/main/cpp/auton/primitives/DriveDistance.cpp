@@ -44,6 +44,8 @@ using namespace frc;
 #include <auton/primitives/DriveDistance.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/IChassis.h>
+#include <hw/factories/PigeonFactory.h>
+#include <hw/DragonPigeon.h>
 
 DriveDistance::DriveDistance() :
 	SuperDrive(),
@@ -64,7 +66,7 @@ void DriveDistance::Init(PrimitiveParams* params)
 {
 	SuperDrive::Init(params);
 	
-	m_arcing = std::abs(params->GetHeading()) > 0.1;
+	m_arcing = abs(params->GetHeading()) > 0.1;
 	//m_startHeading =  ChassisFactory::GetChassisFactory()->GetIChassis()->GetTargetHeading();
 	m_endHeading = m_startHeading + params->GetHeading();
 
@@ -83,8 +85,8 @@ void DriveDistance::Run()
 	if (m_arcing) 
 	{
 		//Calculate progress from 0 to 1
-		float progress = std::abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition() - m_initialDistance);
-		progress /= std::abs(m_targetDistance); //progress = progress / targetDistance
+		float progress = abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition() - m_initialDistance);
+		progress /= abs(m_targetDistance); //progress = progress / targetDistance
 
 		float newTargetHeading = 0;
 		//Linear interpolation between start heading and end heading based on progress
@@ -98,7 +100,7 @@ void DriveDistance::Run()
 
 	if (m_minSpeedCountTime <= 0) 
 	{
-		if (std::abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentSpeed()) < SPEED_THRESHOLD) 
+		if (abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentSpeed()) < SPEED_THRESHOLD) 
 		{
 			m_underSpeedCounts++;
 		}
@@ -109,7 +111,7 @@ void DriveDistance::Run()
 bool DriveDistance::IsDone() 
 {
 	float progress =  ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition() - m_initialDistance;
-	bool reachedTarget = std::abs(progress) > std::abs(m_targetDistance);
+	bool reachedTarget = abs(progress) > abs(m_targetDistance);
 
 	m_timeRemaining -= IPrimitive::LOOP_LENGTH;
 
@@ -127,9 +129,9 @@ void DriveDistance::CalculateSlowDownDistance()
 
 	float currentVel =  ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentSpeed();
 	float decelTime = currentVel / SuperDrive::INCHES_PER_SECOND_SECOND;
-	float decelDist = std::abs(((currentVel - m_minSpeed)) * decelTime * DECEL_TIME_MULTIPLIER);
-	float currentDistance = std::abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition() - m_initialDistance);
-	float distanceRemaining = std::abs(m_targetDistance - currentDistance);
+	float decelDist = abs(((currentVel - m_minSpeed)) * decelTime * DECEL_TIME_MULTIPLIER);
+	float currentDistance = abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition() - m_initialDistance);
+	float distanceRemaining = abs(m_targetDistance - currentDistance);
 
 	if (distanceRemaining <= decelDist)
 	{

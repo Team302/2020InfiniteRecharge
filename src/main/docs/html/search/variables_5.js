@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x_2026',['x',['../struct_point2_d.html#a42fcad8b63853b1136e6207ace6d555e',1,'Point2D']]]
+  ['m_5fdeadband_5fvalue_2281',['M_DEADBAND_VALUE',['../class_i_deadband.html#a45b3ece586ef6217fe85721c3265056a',1,'IDeadband']]],
+  ['min_5fspeed_5fslowdown_2282',['MIN_SPEED_SLOWDOWN',['../class_super_drive.html#ac415c90fe844cd40e438ec7f05061e32',1,'SuperDrive']]]
 ];

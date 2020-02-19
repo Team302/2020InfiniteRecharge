@@ -51,7 +51,7 @@ AnalogInputUsage::~AnalogInputUsage()
 
 AnalogInputUsage::ANALOG_SENSOR_USAGE AnalogInputUsage::GetUsage
 (
-    string              usageString
+    const string              usageString
 )
 {
     return m_usageMap.find(usageString)->second;

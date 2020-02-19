@@ -80,18 +80,6 @@ class DragonChassis : public IChassis
         /// @return double  position in inches of the right side of the chassis
         double GetCurrentRightPosition() const override;
 
-        /// @brief  Return the target position of the center of the DragonChassis in inches.  
-        /// @return double  position in inches of the center of the DragonChassis
-        double GetTargetPosition() const override;
-
-        /// @brief  Return the target position of the left side of the DragonChassis in inches.  
-        /// @return double  position in inches of the left side of the DragonChassis
-        double GetTargetLeftPosition() const override;
-
-        /// @brief  Return the target position of the right side of the DragonChassis in inches.  
-        /// @return double  position in inches of the right side of the DragonChassis
-        double GetTargetRightPosition() const override;
-
 
         /// @brief  Return the current speed of the center of the DragonChassis in inches per second.  
         /// @return double  speed in inches per second of the center of the chassis
@@ -106,19 +94,6 @@ class DragonChassis : public IChassis
         double GetCurrentRightSpeed() const override;
 
 
-        /// @brief  Get the target speed of the center of the chassis.  The value is in inches per second.
-        /// @return double	speed in inches/second of the center of the chassis.
-        double GetTargetSpeed() const override;
-
-        /// @brief  Get the target speed of the left side of the chassis.  The value is in inches per second.
-        /// @return double	speed in inches/second of the left side of the chassis.
-        double GetTargetLeftSpeed() const override;
-
-        /// @brief  Get the target speed of the right side of the chassis.  The value is in inches per second.
-        /// @return double	speed in inches/second of the right side of the chassis.
-        double GetTargetRightSpeed() const override;
-
-
         /// @brief  Set the control constants (e.g. PIDF values).
         /// @param [in] ControlData*   pid - the control constants
         /// @return void
@@ -126,6 +101,8 @@ class DragonChassis : public IChassis
         (
             ControlData*                                 pid               
         ) override;
+
+        double GetWheelDiameter() const override;
         
     private:
         IMechanism*                     m_leftSide;
@@ -133,6 +110,7 @@ class DragonChassis : public IChassis
 
         double                          m_wheelBase;
         double                          m_wheelTrack;
+        double                          m_wheelDiameter;
 };
 
 

@@ -7,25 +7,18 @@
 
 #include <ctre/phoenix/Sensors/PigeonIMU.h>
 #include <hw/DragonPigeon.h>
-#include <iostream>
-#include <frc/SmartDashboard/SmartDashboard.h>
-#include <cmath>
 #include <memory>
 
 using namespace std;
-using namespace frc;
 
-using namespace ctre;
-using namespace phoenix;
-using namespace motorcontrol;
-using namespace can;
+using namespace ctre::phoenix::sensors;
 
 DragonPigeon::DragonPigeon
 (
     int  canID
 )
 {
-    m_pigeon = make_unique<ctre::phoenix::sensors::PigeonIMU>( canID );
+    m_pigeon = make_unique<PigeonIMU>( canID );
     m_initialRoll  = GetRawRoll( );
     m_initialPitch = GetRawPitch( );
     m_initialYaw   = GetRawYaw( );

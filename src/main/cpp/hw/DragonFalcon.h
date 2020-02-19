@@ -36,6 +36,7 @@
 
 
 // Third Party Includes
+#include <ctre/phoenix/motorcontrol/RemoteSensorSource.h>
 #include <ctre/phoenix/ErrorCode.h>
 #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
 
@@ -111,9 +112,17 @@ class DragonFalcon : public IDragonMotorController
         );
         void SetAsSlave(int masterCANID); 
 
+        void SetRemoteSensor
+        (
+            int                                             canID,
+            ctre::phoenix::motorcontrol::RemoteSensorSource deviceType
+        ) override;
+
+        void SetDiameter( double diameter ) override;
+
     private:
         std::shared_ptr<ctre::phoenix::motorcontrol::can::WPI_TalonFX>  m_talon;
-        ctre::phoenix::motorcontrol::ControlMode m_controlMode;
+        ControlModes::CONTROL_TYPE m_controlMode;
         MotorControllerUsage::MOTOR_CONTROLLER_USAGE m_type;
 
         int m_id;
@@ -121,6 +130,8 @@ class DragonFalcon : public IDragonMotorController
         int m_countsPerRev;
         int m_tickOffset;
         double m_gearRatio;
+		double m_diameter;
+
 };
 
 typedef std::vector<DragonFalcon*> DragonFalconVector;

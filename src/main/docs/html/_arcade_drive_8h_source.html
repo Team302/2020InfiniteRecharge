@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: controllers/chassis/ArcadeDrive.h Source File</title>
+<title>Team 302 Robot: states/chassis/ArcadeDrive.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('_arcade_drive_8h_source.html','');});
 <div class="contents">
 <a href="_arcade_drive_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright 2019 Lake Orion Robotics FIRST Team 302</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright 2020 Lake Orion Robotics FIRST Team 302</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;),</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span></div>
@@ -111,56 +111,91 @@ $(document).ready(function(){initNavTree('_arcade_drive_8h_source.html','');});
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Team 302 include</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_throttle_steer_drive_8h.html">controllers/chassis/ThrottleSteerDrive.h</a>&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_chassis_8h.html">subsys/IChassis.h</a>&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_x_box_8h.html">gamepad/DragonXBox.h</a>&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_state_8h.html">controllers/IState.h</a>&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// CTRE includes </span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_chassis_8h.html">subsys/IChassis.h</a>&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_state_8h.html">states/IState.h</a>&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_teleop_control_8h.html">gamepad/TeleopControl.h</a>&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// CTRE includes </span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/*========================================================================================================</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * ArcadeDrive.h</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *========================================================================================================</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * File Description:  This class calculates the drive percents for a tank drive</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> *========================================================================================================*/</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_arcade_drive.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_arcade_drive.html">ArcadeDrive</a> : <span class="keyword">public</span> <a class="code" href="class_throttle_steer_drive.html">ThrottleSteerDrive</a> </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="class_arcade_drive.html#a9afb22cd1045ba60d6493999a133d58b">ArcadeDrive</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="class_arcade_drive.html#a5c96aff37fe5d0af942276288451f5e2">~ArcadeDrive</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_arcade_drive.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_arcade_drive.html">ArcadeDrive</a> : <span class="keyword">public</span> <a class="code" href="class_i_state.html">IState</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_arcade_drive.html#a25967baf04ef247f67aff2f4297d99d8">ArcadeDrive</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_arcade_drive.html#a5c96aff37fe5d0af942276288451f5e2">~ArcadeDrive</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_arcade_drive.html#ae7f039013a505a09abc8f7203f6fd063">SetCurvatureBased</a></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        ( </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordtype">bool</span>    CurvatureBased</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        );</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_arcade_drive.html#ad498acb6a567ee09fe1976bc09cbae6e">Init</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;               </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_arcade_drive.html#aeeaff99c7ea86131d1e52381fc7e00b5">GetSteer</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_arcade_drive.html#a25cb244e8c4f6af2410e47c7e8031099">GetThrottle</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_arcade_drive.html#ad498acb6a567ee09fe1976bc09cbae6e">Init</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_arcade_drive.html#a5e545344cf8ad3566f3ffbb571d75eab">Run</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_arcade_drive.html#a4bc91dcea5ccecad1ec5531d2e5ca469">AtTarget</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;               </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_arcade_drive.html#ade85686198528341067ef4d09b3ae166">GetThrottle</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_arcade_drive.html#a79fe9f851e62b7abdb54eecbda36b165">GetSteer</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_arcade_drive.html#a780d74c9d07285eab84982e60053bcab">NormalDrive</a></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        (</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordtype">double</span>  throttle,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordtype">double</span>  steer,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordtype">double</span>* left,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordtype">double</span>* right</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_arcade_drive.html#af97807eb188bc6c561d80469a364bf83">CurvatureDrive</a></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        (</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordtype">double</span>  throttle,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordtype">double</span>  steer,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordtype">double</span>* left,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordtype">double</span>* right</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        );</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_arcade_drive.html#acb1a70e9c3bea7f2f156301cfb86bdf8">   97</a></span>&#160;        <span class="keyword">inline</span> <a class="code" href="class_teleop_control.html">TeleopControl</a>* <a class="code" href="class_arcade_drive.html#acb1a70e9c3bea7f2f156301cfb86bdf8">GetController</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_controller; }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="class_arcade_drive.html#ac912ea0a5abb34cdf5a6469dc7288296">  101</a></span>&#160;        <span class="keyword">inline</span> std::shared_ptr&lt;IChassis&gt; <a class="code" href="class_arcade_drive.html#ac912ea0a5abb34cdf5a6469dc7288296">GetChassis</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_chassis; }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        std::shared_ptr&lt;IChassis&gt; m_chassis;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="class_teleop_control.html">TeleopControl</a>* m_controller;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">bool</span> m_curvatureBased;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> m_quickStopThreshold = 0.2;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">double</span> m_quickStopAccumulator;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordtype">double</span> m_quickStopAlpha;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_arcade_drive_html_aeeaff99c7ea86131d1e52381fc7e00b5"><div class="ttname"><a href="class_arcade_drive.html#aeeaff99c7ea86131d1e52381fc7e00b5">ArcadeDrive::GetSteer</a></div><div class="ttdeci">double GetSteer() override</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8cpp_source.html#l00048">ArcadeDrive.cpp:48</a></div></div>
-<div class="ttc" id="a_dragon_x_box_8h_html"><div class="ttname"><a href="_dragon_x_box_8h.html">DragonXBox.h</a></div></div>
-<div class="ttc" id="aclass_arcade_drive_html_a9afb22cd1045ba60d6493999a133d58b"><div class="ttname"><a href="class_arcade_drive.html#a9afb22cd1045ba60d6493999a133d58b">ArcadeDrive::ArcadeDrive</a></div><div class="ttdeci">ArcadeDrive()=default</div></div>
-<div class="ttc" id="a_throttle_steer_drive_8h_html"><div class="ttname"><a href="_throttle_steer_drive_8h.html">ThrottleSteerDrive.h</a></div></div>
-<div class="ttc" id="aclass_throttle_steer_drive_html"><div class="ttname"><a href="class_throttle_steer_drive.html">ThrottleSteerDrive</a></div><div class="ttdoc">Drive differential chassis using a throttle input and a sheer (turn) input.</div><div class="ttdef"><b>Definition:</b> <a href="_throttle_steer_drive_8h_source.html#l00035">ThrottleSteerDrive.h:35</a></div></div>
+<div class="ttc" id="aclass_arcade_drive_html_a25967baf04ef247f67aff2f4297d99d8"><div class="ttname"><a href="class_arcade_drive.html#a25967baf04ef247f67aff2f4297d99d8">ArcadeDrive::ArcadeDrive</a></div><div class="ttdeci">ArcadeDrive()</div><div class="ttdoc">initialize the object and validate the necessary items are not nullptrs</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8cpp_source.html#l00035">ArcadeDrive.cpp:35</a></div></div>
+<div class="ttc" id="aclass_arcade_drive_html_ae7f039013a505a09abc8f7203f6fd063"><div class="ttname"><a href="class_arcade_drive.html#ae7f039013a505a09abc8f7203f6fd063">ArcadeDrive::SetCurvatureBased</a></div><div class="ttdeci">void SetCurvatureBased(bool CurvatureBased)</div><div class="ttdoc">toggle between curvature and normal modes</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8cpp_source.html#l00058">ArcadeDrive.cpp:58</a></div></div>
+<div class="ttc" id="aclass_i_state_html"><div class="ttname"><a href="class_i_state.html">IState</a></div><div class="ttdoc">Interface for state classes.</div><div class="ttdef"><b>Definition:</b> <a href="_i_state_8h_source.html#l00021">IState.h:21</a></div></div>
+<div class="ttc" id="a_teleop_control_8h_html"><div class="ttname"><a href="_teleop_control_8h.html">TeleopControl.h</a></div></div>
+<div class="ttc" id="aclass_arcade_drive_html_ade85686198528341067ef4d09b3ae166"><div class="ttname"><a href="class_arcade_drive.html#ade85686198528341067ef4d09b3ae166">ArcadeDrive::GetThrottle</a></div><div class="ttdeci">virtual double GetThrottle()</div><div class="ttdoc">get the throttle component from the game controller</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8cpp_source.html#l00112">ArcadeDrive.cpp:112</a></div></div>
+<div class="ttc" id="aclass_arcade_drive_html_a4bc91dcea5ccecad1ec5531d2e5ca469"><div class="ttname"><a href="class_arcade_drive.html#a4bc91dcea5ccecad1ec5531d2e5ca469">ArcadeDrive::AtTarget</a></div><div class="ttdeci">bool AtTarget() const override</div><div class="ttdoc">indicates that we are not at our target</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8cpp_source.html#l00104">ArcadeDrive.cpp:104</a></div></div>
 <div class="ttc" id="a_i_chassis_8h_html"><div class="ttname"><a href="_i_chassis_8h.html">IChassis.h</a></div></div>
-<div class="ttc" id="aclass_arcade_drive_html_ad498acb6a567ee09fe1976bc09cbae6e"><div class="ttname"><a href="class_arcade_drive.html#ad498acb6a567ee09fe1976bc09cbae6e">ArcadeDrive::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8cpp_source.html#l00030">ArcadeDrive.cpp:30</a></div></div>
+<div class="ttc" id="aclass_arcade_drive_html_ad498acb6a567ee09fe1976bc09cbae6e"><div class="ttname"><a href="class_arcade_drive.html#ad498acb6a567ee09fe1976bc09cbae6e">ArcadeDrive::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdoc">initialize the profiles for the various gamepad inputs</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8cpp_source.html#l00068">ArcadeDrive.cpp:68</a></div></div>
+<div class="ttc" id="aclass_arcade_drive_html_af97807eb188bc6c561d80469a364bf83"><div class="ttname"><a href="class_arcade_drive.html#af97807eb188bc6c561d80469a364bf83">ArcadeDrive::CurvatureDrive</a></div><div class="ttdeci">void CurvatureDrive(double throttle, double steer, double *left, double *right)</div><div class="ttdoc">calculate the curvature-based output values for the wheels on the chassis from the throttle and steer...</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8cpp_source.html#l00161">ArcadeDrive.cpp:161</a></div></div>
+<div class="ttc" id="aclass_arcade_drive_html_acb1a70e9c3bea7f2f156301cfb86bdf8"><div class="ttname"><a href="class_arcade_drive.html#acb1a70e9c3bea7f2f156301cfb86bdf8">ArcadeDrive::GetController</a></div><div class="ttdeci">TeleopControl * GetController() const</div><div class="ttdoc">return the teleop controller mapper</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8h_source.html#l00097">ArcadeDrive.h:97</a></div></div>
+<div class="ttc" id="aclass_arcade_drive_html_ac912ea0a5abb34cdf5a6469dc7288296"><div class="ttname"><a href="class_arcade_drive.html#ac912ea0a5abb34cdf5a6469dc7288296">ArcadeDrive::GetChassis</a></div><div class="ttdeci">std::shared_ptr&lt; IChassis &gt; GetChassis() const</div><div class="ttdoc">return the chassis</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8h_source.html#l00101">ArcadeDrive.h:101</a></div></div>
 <div class="ttc" id="a_i_state_8h_html"><div class="ttname"><a href="_i_state_8h.html">IState.h</a></div></div>
-<div class="ttc" id="aclass_arcade_drive_html"><div class="ttname"><a href="class_arcade_drive.html">ArcadeDrive</a></div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8h_source.html#l00038">ArcadeDrive.h:38</a></div></div>
+<div class="ttc" id="aclass_teleop_control_html"><div class="ttname"><a href="class_teleop_control.html">TeleopControl</a></div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8h_source.html#l00037">TeleopControl.h:37</a></div></div>
+<div class="ttc" id="aclass_arcade_drive_html_a79fe9f851e62b7abdb54eecbda36b165"><div class="ttname"><a href="class_arcade_drive.html#a79fe9f851e62b7abdb54eecbda36b165">ArcadeDrive::GetSteer</a></div><div class="ttdeci">virtual double GetSteer()</div><div class="ttdoc">get the steer component from the game controller</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8cpp_source.html#l00120">ArcadeDrive.cpp:120</a></div></div>
+<div class="ttc" id="aclass_arcade_drive_html_a5e545344cf8ad3566f3ffbb571d75eab"><div class="ttname"><a href="class_arcade_drive.html#a5e545344cf8ad3566f3ffbb571d75eab">ArcadeDrive::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdoc">calculate the output for the wheels on the chassis from the throttle and steer components</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8cpp_source.html#l00080">ArcadeDrive.cpp:80</a></div></div>
+<div class="ttc" id="aclass_arcade_drive_html"><div class="ttname"><a href="class_arcade_drive.html">ArcadeDrive</a></div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8h_source.html#l00030">ArcadeDrive.h:30</a></div></div>
 <div class="ttc" id="aclass_arcade_drive_html_a5c96aff37fe5d0af942276288451f5e2"><div class="ttname"><a href="class_arcade_drive.html#a5c96aff37fe5d0af942276288451f5e2">ArcadeDrive::~ArcadeDrive</a></div><div class="ttdeci">~ArcadeDrive()=default</div></div>
-<div class="ttc" id="aclass_arcade_drive_html_a25cb244e8c4f6af2410e47c7e8031099"><div class="ttname"><a href="class_arcade_drive.html#a25cb244e8c4f6af2410e47c7e8031099">ArcadeDrive::GetThrottle</a></div><div class="ttdeci">double GetThrottle() override</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8cpp_source.html#l00041">ArcadeDrive.cpp:41</a></div></div>
+<div class="ttc" id="aclass_arcade_drive_html_a780d74c9d07285eab84982e60053bcab"><div class="ttname"><a href="class_arcade_drive.html#a780d74c9d07285eab84982e60053bcab">ArcadeDrive::NormalDrive</a></div><div class="ttdeci">void NormalDrive(double throttle, double steer, double *left, double *right)</div><div class="ttdoc">calculate the normal output values for the wheels on the chassis from the throttle and steer componen...</div><div class="ttdef"><b>Definition:</b> <a href="_arcade_drive_8cpp_source.html#l00133">ArcadeDrive.cpp:133</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="dir_142ce975c76f4587562ed8193513a2b7.html">chassis</a></li><li class="navelem"><a class="el" href="_arcade_drive_8h.html">ArcadeDrive.h</a></li>
+    <li class="navelem"><a class="el" href="dir_128f75dce35ba73c52fc2f45d15b5117.html">states</a></li><li class="navelem"><a class="el" href="dir_14278792266e8d8b74f14855d1b9b523.html">chassis</a></li><li class="navelem"><a class="el" href="_arcade_drive_8h.html">ArcadeDrive.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

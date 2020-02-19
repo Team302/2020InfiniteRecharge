@@ -33,9 +33,10 @@
 #include <subsys/IMechanism.h>
 #include <hw/DragonTalon.h>
 #include <hw/interfaces/IDragonMotorController.h>
-using namespace std;
 // Third Party Includes
+#include <ctre/phoenix/sensors/CANCoder.h>
 
+using namespace std;
 
 ///	 @interface IMechanism
 ///  @brief	    Interface for subsystems
@@ -75,19 +76,9 @@ class Impeller : public IMechanism
         /// @return double	position in inches (translating mechanisms) or degrees (rotating mechanisms)
         double GetCurrentPosition() const override;
 
-        /// @brief  Return the targget position of the mechanism.  The value is in inches or degrees.
-        /// @return double	position in inches (translating mechanisms) or degrees (rotating mechanisms)
-        double GetTargetPosition() const override;
-
         /// @brief  Get the current speed of the mechanism.  The value is in inches per second or degrees per second.
         /// @return double	speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms)
         double GetCurrentSpeed() const override;
-
-
-        /// @brief  Get the target speed of the mechanism.  The value is in inches per second or degrees per second.
-        /// @param [in] ControlModes::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
-        /// @return double	speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms)
-        double GetTargetSpeed() const override;
 
 
         /// @brief  Set the control constants (e.g. PIDF values).
@@ -99,11 +90,18 @@ class Impeller : public IMechanism
         ) override;
 
         Impeller() = delete;
-        Impeller(std::shared_ptr<IDragonMotorController> motor);
+        Impeller
+        (
+            std::shared_ptr<IDragonMotorController> motor,
+            std::shared_ptr<ctre::phoenix::sensors::CANCoder> encoder
+        );
 
         private:
         std::shared_ptr<IDragonMotorController> m_motor;
+        std::shared_ptr<ctre::phoenix::sensors::CANCoder> m_encoder;
         double m_target;
+        mutable double m_lastTimeStamp;
+        mutable double m_lastVelocity;
         
 	
 	//virtual ~Impeller() = default;

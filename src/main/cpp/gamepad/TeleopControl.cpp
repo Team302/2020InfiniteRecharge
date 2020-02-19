@@ -69,7 +69,7 @@ TeleopControl::TeleopControl() : m_axisIDs(),
             auto xbox = new DragonXBox( inx );
 			m_controllers[inx] = xbox;
 		}
-		else if ( ds->GetJoystickType( inx ) == GenericHID::kHIDJoystick )
+		else if ( ds->GetJoystickType( inx ) == GenericHID::kHID1stPerson )
 		{
             auto gamepad = new DragonGamepad( inx );
 			m_controllers[inx] = gamepad;
@@ -78,33 +78,40 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 
 
     // Initialize the items to not defined
-    for ( int inx=0; inx<m_maxFunctions; ++inx )
+	m_axisIDs.resize(FUNCTION_IDENTIFIER::MAX_FUNCTIONS);
+	m_buttonIDs.resize(FUNCTION_IDENTIFIER::MAX_FUNCTIONS);
+	m_controllerIndex.resize(FUNCTION_IDENTIFIER::MAX_FUNCTIONS);
+    for ( int inx=0; inx<FUNCTION_IDENTIFIER::MAX_FUNCTIONS; ++inx )
     {
         m_axisIDs[inx]    		= IDragonGamePad::UNDEFINED_AXIS;
         m_buttonIDs[inx]  		= IDragonGamePad::UNDEFINED_BUTTON;
         m_controllerIndex[inx]  = -1;
     }
 
-    if ( m_controllers[0] != nullptr && ds->GetJoystickIsXbox(0) )
+    auto ctrlNo = 0;
+    if ( m_controllers[ctrlNo] != nullptr && ds->GetJoystickIsXbox(ctrlNo) )
     {
-		m_controllerIndex[ TANK_DRIVE_LEFT_CONTROL ] 	= 0;
+		m_controllerIndex[ TANK_DRIVE_LEFT_CONTROL ] 	= ctrlNo;
 		m_axisIDs[ TANK_DRIVE_LEFT_CONTROL ]    		= IDragonGamePad::LEFT_JOYSTICK_Y;
-		m_controllerIndex[ TANK_DRIVE_RIGHT_CONTROL ] 	= 0;
+		m_controllerIndex[ TANK_DRIVE_RIGHT_CONTROL ] 	= ctrlNo;
 		m_axisIDs[ TANK_DRIVE_RIGHT_CONTROL ]   		= IDragonGamePad::RIGHT_JOYSTICK_Y;
 
-		m_controllerIndex[ ARCADE_DRIVE_THROTTLE ] 		= 0;
+		m_controllerIndex[ ARCADE_DRIVE_THROTTLE ] 		= ctrlNo;
 		m_axisIDs[ ARCADE_DRIVE_THROTTLE ]      		= IDragonGamePad::LEFT_JOYSTICK_Y;
-		m_controllerIndex[ ARCADE_DRIVE_STEER ] 		= 0;
+		m_controllerIndex[ ARCADE_DRIVE_STEER ] 		= ctrlNo;
 		m_axisIDs[ ARCADE_DRIVE_STEER ]         		= IDragonGamePad::RIGHT_JOYSTICK_X;
 
-		m_controllerIndex[ GTA_DRIVE_FORWARD ] 		    = 0;
+		m_controllerIndex[ GTA_DRIVE_FORWARD ] 		    = ctrlNo;
 		m_axisIDs[ GTA_DRIVE_FORWARD ]      		    = IDragonGamePad::RIGHT_TRIGGER;
-		m_controllerIndex[ GTA_DRIVE_BACKWARD ] 		= 0;
+		m_controllerIndex[ GTA_DRIVE_BACKWARD ] 		= ctrlNo;
 		m_axisIDs[ GTA_DRIVE_BACKWARD ]         		= IDragonGamePad::LEFT_TRIGGER;
-		m_controllerIndex[ GTA_DRIVE_STEER ] 		    = 0;
+		m_controllerIndex[ GTA_DRIVE_STEER ] 		    = ctrlNo;
 		m_axisIDs[ GTA_DRIVE_STEER ]         		    = IDragonGamePad::LEFT_JOYSTICK_X;
 
-		m_controllerIndex[ SWITCH_DRIVE_MODE ]          = 0;
+		m_controllerIndex[ CURVATURE_DRIVE_QUICK_TURN ]	= ctrlNo;
+		m_buttonIDs[ CURVATURE_DRIVE_QUICK_TURN ]		= IDragonGamePad::RIGHT_BUMPER;
+
+		m_controllerIndex[ SWITCH_DRIVE_MODE ]          = ctrlNo;
 		m_buttonIDs[ SWITCH_DRIVE_MODE ]                = IDragonGamePad::A_BUTTON;
 
     }
@@ -113,11 +120,22 @@ TeleopControl::TeleopControl() : m_axisIDs(),
         Logger::GetLogger()->LogError( string("TeleopControl::TeleopControl"), string("No controller plugged into port 0"));
     }
 
-    if ( m_controllers[1] != nullptr && ds->GetJoystickIsXbox(1) )
+    ctrlNo = 1;
+    if ( m_controllers[ctrlNo] != nullptr && ds->GetJoystickIsXbox(ctrlNo) )
     {
+		m_controllerIndex[ SHOOTER_HOOD_MANUAL_AXIS] = ctrlNo;
+		m_axisIDs[ SHOOTER_HOOD_MANUAL_AXIS ] = IDragonGamePad::LEFT_JOYSTICK_Y;
 
+		m_controllerIndex[ TURRET_MANUAL_AXIS] = ctrlNo;
+		m_axisIDs[ TURRET_MANUAL_AXIS] = IDragonGamePad::LEFT_JOYSTICK_X;
+
+		m_controllerIndex[ TURRET_LIMELIGHT_AIM] = ctrlNo;
+		m_buttonIDs[ TURRET_LIMELIGHT_AIM] = IDragonGamePad::B_BUTTON;
+
+		m_controllerIndex[ TURRET_MANUAL_BUTTON] = ctrlNo;
+		m_buttonIDs[ TURRET_MANUAL_BUTTON] = IDragonGamePad::A_BUTTON;
 	}
-    else if ( m_controllers[1] != nullptr )
+    else if ( m_controllers[ctrlNo] != nullptr )
     {
 	}
 	else
@@ -125,66 +143,78 @@ TeleopControl::TeleopControl() : m_axisIDs(),
         Logger::GetLogger()->LogError( string("TeleopControl::TeleopControl"), string("Controller 1 not handled"));
     }
 
-    if ( m_controllers[2] != nullptr && ds->GetJoystickIsXbox(2) )
+	ctrlNo = 2;
+    if ( m_controllers[ctrlNo] != nullptr && ds->GetJoystickIsXbox(ctrlNo) )
     {
 	}
-    else if ( m_controllers[2] != nullptr )
+    else if ( m_controllers[ctrlNo] != nullptr )
     {
-		m_controllerIndex[INTAKE_ON] = 0;
+		m_controllerIndex[INTAKE_ON] = ctrlNo;
 		m_buttonIDs[INTAKE_ON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_1;
-		m_controllerIndex[INTAKE_OFF] = 0;
+		m_controllerIndex[INTAKE_OFF] = ctrlNo;
 		m_buttonIDs[INTAKE_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_2;
 
-		m_controllerIndex[IMPELLER_SPIN] = 0;
-		m_buttonIDs[IMPELLER_SPIN] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_SWITCH_18;
-		m_controllerIndex[IMPELLER_STOP] = 0;
-		m_buttonIDs[IMPELLER_STOP] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_3;
-		m_controllerIndex[IMPELLER_AGITATE] = 0;
-		m_buttonIDs[IMPELLER_AGITATE] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_SWITCH_19;
+		m_controllerIndex[IMPELLER_OFF] = ctrlNo;
+		m_buttonIDs[IMPELLER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_3;
+		m_controllerIndex[IMPELLER_HOLD] = ctrlNo;
+		m_buttonIDs[IMPELLER_HOLD] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_4;
+		/*m_controllerIndex[IMPELLER_AGITATE] = ctrlNo;
+		m_buttonIDs[IMPELLER_AGITATE] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_5;
+		*/
+		m_controllerIndex[IMPELLER_TO_SHOOTER] = ctrlNo;
+		m_buttonIDs[IMPELLER_TO_SHOOTER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_5;
+		
 
-		//m_controllerIndex[CLIMBER_EXTEND] = 0;
+		//m_controllerIndex[CLIMBER_EXTEND] = ctrlNo;
 		//m_buttonIDs[CLIMBER_EXTEND] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_14_UP;
-		//m_controllerIndex[CLIMBER_LIFT] = 0;
+		//m_controllerIndex[CLIMBER_LIFT] = ctrlNo;
 		//m_buttonIDs[CLIMBER_LIFT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_14_DOWN;
-		//m_controllerIndex[CLIMBER_CRAWL] = 0;
+		//m_controllerIndex[CLIMBER_CRAWL] = ctrlNo;
 		//m_buttonIDs[CLIMBER_CRAWL] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_DIAL_23;
 
-		m_controllerIndex[BALL_TRANSFER_OFF] = 0;
-		m_buttonIDs[BALL_TRANSFER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_4;
-		m_controllerIndex[BALL_TRANSFER_TO_IMPELLER] = 0;
-		m_buttonIDs[BALL_TRANSFER_TO_IMPELLER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_SWITCH_20;
-		m_controllerIndex[BALL_TRANSFER_TO_SHOOTER] = 0;
-		m_buttonIDs[BALL_TRANSFER_TO_SHOOTER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_SWITCH_21;
+		m_controllerIndex[BALL_TRANSFER_OFF] = ctrlNo;
+		m_buttonIDs[BALL_TRANSFER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_6;
+		m_controllerIndex[BALL_TRANSFER_TO_IMPELLER] = ctrlNo;
+		m_buttonIDs[BALL_TRANSFER_TO_IMPELLER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_7;
+		m_controllerIndex[BALL_TRANSFER_TO_SHOOTER] = ctrlNo;
+		m_buttonIDs[BALL_TRANSFER_TO_SHOOTER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_8;
+		
+		/*m_controllerIndex[CONTROL_PANEL_STOW] = ctrlNo;
+		m_buttonIDs[CONTROL_PANEL_STOW] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_15_DOWN;
+		m_controllerIndex[CONTROL_PANEL_RAISE] = ctrlNo;
+		m_buttonIDs[CONTROL_PANEL_RAISE] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_15_UP;
+		m_controllerIndex[CONTROL_PANEL_SPIN_WHEEL] = ctrlNo;
+		m_buttonIDs[CONTROL_PANEL_SPIN_WHEEL] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_5;
+		m_controllerIndex[CONTROL_PANEL_TURN_TO_COLOR] = ctrlNo;
+		m_buttonIDs[CONTROL_PANEL_TURN_TO_COLOR] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_6;
+*/
+		m_controllerIndex[SHOOTER_MANUAL_SHOOT] = ctrlNo;
+		m_buttonIDs[SHOOTER_MANUAL_SHOOT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_9;
+		m_controllerIndex[SHOOTER_PREPARE_TO_SHOOT] = ctrlNo;
+		/*m_buttonIDs[SHOOTER_PREPARE_TO_SHOOT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10;
+		m_controllerIndex[SHOOTER_PREPARE_TO_SHOOT] = ctrlNo;*/
+		m_buttonIDs[SHOOTER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10;
+		m_controllerIndex[SHOOTER_OFF] = ctrlNo;
 
-		m_controllerIndex[CONTROL_PANNEL_STOW] = 0;
-		m_buttonIDs[CONTROL_PANNEL_STOW] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_15_DOWN;
-		m_controllerIndex[CONTROL_PANNEL_RAISE] = 0;
-		m_buttonIDs[CONTROL_PANNEL_RAISE] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_15_UP;
-		m_controllerIndex[CONTROL_PANNEL_SPIN_WHEEL] = 0;
-		m_buttonIDs[CONTROL_PANNEL_SPIN_WHEEL] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_5;
-		m_controllerIndex[CONTROL_PANNEL_TURN_TO_COLOR] = 0;
-		m_buttonIDs[CONTROL_PANNEL_TURN_TO_COLOR] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_6;
-
-		m_controllerIndex[SHOOTER_PREPARE_TO_SHOOT] = 0;
-		m_buttonIDs[SHOOTER_PREPARE_TO_SHOOT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_7;
-		m_controllerIndex[SHOOTER_AUTO_SHOOT] = 0;
-		m_buttonIDs[SHOOTER_AUTO_SHOOT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_8;
-		m_controllerIndex[SHOOTER_MANUAL_AIM] = 0;
-		m_buttonIDs[SHOOTER_MANUAL_AIM] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_9;
-		m_controllerIndex[SHOOTER_MANUAL_ADJUST_DISTANCE] = 0;
+		/*m_controllerIndex[TURRET_MANUAL_BUTTON] = ctrlNo;
+		m_buttonIDs[TURRET_MANUAL_BUTTON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_11;*/
+		m_controllerIndex[ SHOOTER_HOOD_MANUAL_BUTTON] = ctrlNo;
+		m_buttonIDs[ SHOOTER_HOOD_MANUAL_BUTTON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_12;
+		/*m_buttonIDs[SHOOTER_MANUAL_AIM] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_9;
+		m_controllerIndex[SHOOTER_MANUAL_ADJUST_DISTANCE] = ctrlNo;
 		m_buttonIDs[SHOOTER_MANUAL_ADJUST_DISTANCE] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10;
-		m_controllerIndex[SHOOTER_MANUAL_SHOOT] = 0;
-		m_buttonIDs[SHOOTER_MANUAL_SHOOT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_11;
+		*/
 	}
 	else
 	{
         Logger::GetLogger()->LogError( string("TeleopControl::TeleopControl"), string("Controller 2 not handled"));
     }
 
-    if ( m_controllers[3] != nullptr && ds->GetJoystickIsXbox(3) )
+    ctrlNo = 3;
+    if ( m_controllers[ctrlNo] != nullptr && ds->GetJoystickIsXbox(ctrlNo) )
     {
 	}
-    else if ( m_controllers[3] != nullptr )
+    else if ( m_controllers[ctrlNo] != nullptr )
     {
 	}
 	else
@@ -193,10 +223,11 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 
 	}
 
-    if ( m_controllers[4] != nullptr && ds->GetJoystickIsXbox(4) )
+    ctrlNo = 4;
+    if ( m_controllers[ctrlNo] != nullptr && ds->GetJoystickIsXbox(ctrlNo) )
     {
 	}
-    else if ( m_controllers[4] != nullptr )
+    else if ( m_controllers[ctrlNo] != nullptr )
     {
 	}
 	else
@@ -204,10 +235,11 @@ TeleopControl::TeleopControl() : m_axisIDs(),
         Logger::GetLogger()->LogError( string("TeleopControl::TeleopControl"), string("Controller 4 not handled"));
     }
 
-    if ( m_controllers[5] != nullptr && ds->GetJoystickIsXbox(5) )
+    ctrlNo = 5;
+    if ( m_controllers[ctrlNo] != nullptr && ds->GetJoystickIsXbox(ctrlNo) )
     {
 	}
-    else if ( m_controllers[5] != nullptr )
+    else if ( m_controllers[ctrlNo] != nullptr )
     {
 	}
 	else

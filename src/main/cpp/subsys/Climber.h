@@ -65,6 +65,7 @@ class Climber : public IMechanism
         ///@return double speed in inches
         double GetCurrentSpeed() const override
 
+
         ///@brief Set the control constants (e.g. PIDF values)
         ///@param [in] ControlData*    pid - the control constants
         ///@return void

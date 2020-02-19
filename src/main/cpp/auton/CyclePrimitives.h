@@ -30,29 +30,32 @@
 #include <auton/PrimitiveFactory.h>
 #include <auton/AutonSelector.h>
 #include <auton/primitives/IPrimitive.h>
+#include <auton/primitives/AutoShoot.h>
 #include <string>
 #include <vector>
 
-class CyclePrimitives {
-public:
-	CyclePrimitives();
-	virtual ~CyclePrimitives() = default;
+class CyclePrimitives 
+{
+	public:
+		CyclePrimitives();
+		virtual ~CyclePrimitives() = default;
 
-	void Init();
-	void RunCurrentPrimitive();
+		void Init();
+		void RunCurrentPrimitive();
 
-protected:
-	void GetNextPrim();
-	void RunDoNothing();
+	protected:
+		void GetNextPrim();
+		void RunDoNothing();
 
-private:
-	std::vector<PrimitiveParams*> 	m_primParams;
-	int 							m_currentPrimSlot;
-	IPrimitive*						m_currentPrim;
-	PrimitiveFactory* 				m_primFactory;
-	IPrimitive* 					m_doNothing;
-	AutonSelector* 					m_autonSelector;
-	std::unique_ptr<frc::Timer>     m_timer;
-	double                          m_maxTime;
+	private:
+		std::vector<PrimitiveParams*> 	m_primParams;
+		int 							m_currentPrimSlot;
+		IPrimitive*						m_currentPrim;
+		PrimitiveFactory* 				m_primFactory;
+		IPrimitive* 					m_doNothing;
+		AutonSelector* 					m_autonSelector;
+		std::unique_ptr<frc::Timer>     m_timer;
+		double                          m_maxTime;
+		AutoShoot*						m_powerCells;
 };
 

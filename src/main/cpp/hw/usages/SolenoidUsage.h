@@ -41,7 +41,6 @@ class SolenoidUsage
         {
             UNKNOWN_SOLENOID_USAGE = -1,
             INTAKE,
-            HUMAN_PLAYER_FLAP,
             BALL_TRANSFER,
             SHOOTER_HOOD,
             CONTROL_TABLE_MANIPULATOR,
@@ -54,7 +53,7 @@ class SolenoidUsage
 
         SOLENOID_USAGE GetUsage
         ( 
-            std::string         usageString
+            const std::string         usageString
         );
 
     private:

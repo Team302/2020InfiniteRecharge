@@ -1,7 +1,6 @@
 var class_shooter_shoot =
 [
-    [ "ShooterShoot", "class_shooter_shoot.html#a6e7baa83c8bd2394b827363421629080", null ],
-    [ "AtTarget", "class_shooter_shoot.html#a125182c39590a833041cc85807f3c148", null ],
-    [ "Init", "class_shooter_shoot.html#a5c08dfc5f6ca55aacab5129de4770e05", null ],
-    [ "Run", "class_shooter_shoot.html#a4c9046ad0346defdafeb6ba12c4161cc", null ]
+    [ "ShooterShoot", "class_shooter_shoot.html#a8cab7b9b8b54c6c6239ceb35809ca9e7", null ],
+    [ "ShooterShoot", "class_shooter_shoot.html#abdad2970e6e24b2dbf0db8b6bf959317", null ],
+    [ "~ShooterShoot", "class_shooter_shoot.html#aafb4e303965b91b08d1e38e52cf6bb7a", null ]
 ];

@@ -34,17 +34,41 @@
 #include <memory>
 #include <subsys/Impeller.h>
 #include <hw/interfaces/IDragonMotorController.h>
-using namespace std;
+
 // Third Party Includes
+#include <ctre/phoenix/sensors/CANCoder.h>
+
+using namespace std;
+using namespace ctre::phoenix::sensors;
+using namespace ctre::phoenix::motorcontrol;
 
 
 
 Impeller::Impeller
 (
-    shared_ptr<IDragonMotorController> motor
-) : m_motor (motor)
+    shared_ptr<IDragonMotorController> motor,
+    shared_ptr<CANCoder> encoder
+) : m_motor (motor),
+    m_encoder( encoder),
+    m_lastTimeStamp( 0.0 ),
+    m_lastVelocity( 0.0 )
 {
-    
+    if ( m_motor.get() != nullptr )
+    {
+        if ( m_encoder.get() != nullptr )
+        {
+            m_motor.get()->SetRemoteSensor( encoder.get()->GetDeviceNumber(), RemoteSensorSource::RemoteSensorSource_CANCoder );
+        }
+        else
+        {
+            Logger::GetLogger()->LogError( string("Impeller::Impeller"), string("No encoder"));
+        }
+    }
+    else
+    {
+        Logger::GetLogger()->LogError( string("Impeller::Impeller"), string("No motor"));
+    }
+
 }
 
 
@@ -54,7 +78,7 @@ Impeller::Impeller
 /// @return         MechanismTypes::MECHANISM_TYPE
 MechanismTypes::MECHANISM_TYPE Impeller::GetType() const
 {
-
+    return MechanismTypes::MECHANISM_TYPE::IMPELLER;
 }
 
 
@@ -68,8 +92,8 @@ void Impeller::SetOutput
     double value       
 )
 {
-    m_motor->SetControlMode(controlType);
-    m_motor->Set(value);
+    m_motor.get()->SetControlMode(controlType);
+    m_motor.get()->Set(value);
     m_target = value;
 }
 
@@ -88,7 +112,7 @@ void Impeller::ActivateSolenoid
 /// @return     bool - true == extended, false == retract
 bool Impeller::IsSolenoidActivated()
 {
-
+    return true;
 }
 
 
@@ -96,34 +120,33 @@ bool Impeller::IsSolenoidActivated()
 /// @return double	position in inches (translating mechanisms) or degrees (rotating mechanisms)
 double Impeller::GetCurrentPosition() const
 {
-    double current_rotations = m_motor -> GetRotations();
-    double current_angle = current_rotations / 360;
-    return current_angle;
+    return m_encoder.get() != nullptr ? m_encoder.get()->GetAbsolutePosition() : 0.0;
 }
 
-/// @brief  Return the targget position of the mechanism.  The value is in inches or degrees.
-/// @return double	position in inches (translating mechanisms) or degrees (rotating mechanisms)
-double Impeller::GetTargetPosition() const
-{
-    return m_target;
-}
 
 /// @brief  Get the current speed of the mechanism.  The value is in inches per second or degrees per second.
 /// @return double	speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms)
 double Impeller::GetCurrentSpeed() const
 {
-    double current_RPS = m_motor -> GetRPS();
-    return current_RPS;
+    double speed = 0.0;
+    if ( m_motor.get() != nullptr && m_motor.get()->GetCurrent() > 10.0 )
+    {
+        speed = 0.0;
+    }
+    else if ( m_encoder.get() != nullptr )
+    {
+        auto vel = m_encoder.get()->GetVelocity();
+        auto time = m_encoder.get()->GetLastTimestamp();
+        if ( time > m_lastTimeStamp )
+        {
+            speed = vel*10.0;
+            m_lastTimeStamp = time;
+            m_lastVelocity = speed;
+        }
+    }
+    return speed;
 }
 
-
-/// @brief  Get the target speed of the mechanism.  The value is in inches per second or degrees per second.
-/// @param [in] ControlModes::MECHANISM_CONTROL_ID     controlItems: What item(s) are being requested
-/// @return double	speed in inches/second (translating mechanisms) or degrees/second (rotating mechanisms)
-double Impeller::GetTargetSpeed() const
-{
-    return m_target;
-}
 
 
 /// @brief  Set the control constants (e.g. PIDF values).
@@ -134,5 +157,5 @@ void Impeller::SetControlConstants
     ControlData*                                pid                 
 )
 {
-
+    m_motor.get()->SetControlConstants( pid );
 }

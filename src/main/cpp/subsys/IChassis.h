@@ -60,18 +60,6 @@ class IChassis
         /// @return double  position in inches of the right side of the chassis
         virtual double GetCurrentRightPosition() const = 0;
 
-        /// @brief  Return the target position of the center of the DragonChassis in inches.  
-        /// @return double  position in inches of the center of the DragonChassis
-        virtual double GetTargetPosition() const = 0;
-
-        /// @brief  Return the target position of the left side of the DragonChassis in inches.  
-        /// @return double  position in inches of the left side of the DragonChassis
-        virtual double GetTargetLeftPosition() const = 0;
-
-        /// @brief  Return the target position of the right side of the DragonChassis in inches.  
-        /// @return double  position in inches of the right side of the DragonChassis
-        virtual double GetTargetRightPosition() const = 0;
-
         /// @brief  Return the current speed of the center of the DragonChassis in inches per second.  
         /// @return double  speed in inches per second of the center of the chassis
         virtual double GetCurrentSpeed() const = 0;
@@ -84,20 +72,6 @@ class IChassis
         /// @return double  speed in inches per second of the right side of the chassis
         virtual double GetCurrentRightSpeed() const = 0;
 
-
-        /// @brief  Get the target speed of the center of the chassis.  The value is in inches per second.
-        /// @return double	speed in inches/second of the center of the chassis.
-        virtual double GetTargetSpeed() const = 0;
-
-        /// @brief  Get the target speed of the left side of the chassis.  The value is in inches per second.
-        /// @return double	speed in inches/second of the left side of the chassis.
-        virtual double GetTargetLeftSpeed() const = 0;
-
-        /// @brief  Get the target speed of the right side of the chassis.  The value is in inches per second.
-        /// @return double	speed in inches/second of the right side of the chassis.
-        virtual double GetTargetRightSpeed() const = 0;
-
-
         /// @brief  Set the control constants (e.g. PIDF values).
         /// @param [in] ControlData*                                   pid:  the control constants
         /// @return void
@@ -106,6 +80,7 @@ class IChassis
             ControlData*                                pid                 
         ) = 0;
 
+        virtual double GetWheelDiameter() const = 0;
 
 	IChassis() = default;
 	virtual ~IChassis() = default;

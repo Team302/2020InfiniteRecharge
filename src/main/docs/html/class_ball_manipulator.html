@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('class_ball_manipulator.html','');});
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_ball_manipulator-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">BallManipulator Class Reference</div>  </div>
@@ -113,11 +114,6 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a02e472b75522b7c08d127f29339047e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_manipulator.html#a02e472b75522b7c08d127f29339047e2">BallManipulator</a> ()</td></tr>
-<tr class="memdesc:a02e472b75522b7c08d127f29339047e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize the state manager, parse the configuration file and create the states.  <a href="class_ball_manipulator.html#a02e472b75522b7c08d127f29339047e2">More...</a><br /></td></tr>
-<tr class="separator:a02e472b75522b7c08d127f29339047e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66ec09daa2384e4aa1f7d587404ae9ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_manipulator.html#a66ec09daa2384e4aa1f7d587404ae9ac">~BallManipulator</a> ()=default</td></tr>
-<tr class="separator:a66ec09daa2384e4aa1f7d587404ae9ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a565ef49322a8a72a7cc72ae3b19ff4a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_manipulator.html#a565ef49322a8a72a7cc72ae3b19ff4a8">RunCurrentState</a> ()</td></tr>
 <tr class="memdesc:a565ef49322a8a72a7cc72ae3b19ff4a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the current state  <a href="class_ball_manipulator.html#a565ef49322a8a72a7cc72ae3b19ff4a8">More...</a><br /></td></tr>
 <tr class="separator:a565ef49322a8a72a7cc72ae3b19ff4a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,6 +123,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af24249d8efa5c38ef042178da0e40f29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4">BALL_MANIPULATOR_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_manipulator.html#af24249d8efa5c38ef042178da0e40f29">GetCurrentState</a> () const</td></tr>
 <tr class="memdesc:af24249d8efa5c38ef042178da0e40f29"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the current state  <a href="class_ball_manipulator.html#af24249d8efa5c38ef042178da0e40f29">More...</a><br /></td></tr>
 <tr class="separator:af24249d8efa5c38ef042178da0e40f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ba3e69926ef2b3a46793b49adf4003a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_manipulator.html#a9ba3e69926ef2b3a46793b49adf4003a">SetApproxAngle</a> (double angle)</td></tr>
+<tr class="separator:a9ba3e69926ef2b3a46793b49adf4003a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a4cc746261343f7cbcc093f4e9fe29722"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_ball_manipulator.html">BallManipulator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_manipulator.html#a4cc746261343f7cbcc093f4e9fe29722">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a4cc746261343f7cbcc093f4e9fe29722"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find or create the Ball Manipulator.  <a href="class_ball_manipulator.html#a4cc746261343f7cbcc093f4e9fe29722">More...</a><br /></td></tr>
+<tr class="separator:a4cc746261343f7cbcc093f4e9fe29722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -157,53 +161,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a02e472b75522b7c08d127f29339047e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02e472b75522b7c08d127f29339047e2">&#9670;&nbsp;</a></span>BallManipulator()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BallManipulator::BallManipulator </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>initialize the state manager, parse the configuration file and create the states. </p>
-
-<p class="definition">Definition at line <a class="el" href="_button_manipulator_8cpp_source.html#l00041">41</a> of file <a class="el" href="_button_manipulator_8cpp_source.html">ButtonManipulator.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a66ec09daa2384e4aa1f7d587404ae9ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66ec09daa2384e4aa1f7d587404ae9ac">&#9670;&nbsp;</a></span>~BallManipulator()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">BallManipulator::~BallManipulator </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="af24249d8efa5c38ef042178da0e40f29"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af24249d8efa5c38ef042178da0e40f29">&#9670;&nbsp;</a></span>GetCurrentState()</h2>
@@ -231,7 +188,37 @@ Public Member Functions</h2></td></tr>
 <p>return the current state </p>
 <dl class="section return"><dt>Returns</dt><dd>INTAKE_STATE - the current state </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ball_manipulator_8h_source.html#l00067">67</a> of file <a class="el" href="_ball_manipulator_8h_source.html">BallManipulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ball_manipulator_8h_source.html#l00068">68</a> of file <a class="el" href="_ball_manipulator_8h_source.html">BallManipulator.h</a>.</p>
+
+</div>
+</div>
+<a id="a4cc746261343f7cbcc093f4e9fe29722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cc746261343f7cbcc093f4e9fe29722">&#9670;&nbsp;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ball_manipulator.html">BallManipulator</a> * BallManipulator::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find or create the Ball Manipulator. </p>
+<dl class="section return"><dt>Returns</dt><dd>AnalogInputFactory* pointer to the factory </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ball_manipulator_8cpp_source.html#l00041">41</a> of file <a class="el" href="_ball_manipulator_8cpp_source.html">BallManipulator.cpp</a>.</p>
 
 </div>
 </div>
@@ -253,7 +240,27 @@ Public Member Functions</h2></td></tr>
 <p>run the current state </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_button_manipulator_8cpp_source.html#l00059">59</a> of file <a class="el" href="_button_manipulator_8cpp_source.html">ButtonManipulator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ball_manipulator_8cpp_source.html#l00070">70</a> of file <a class="el" href="_ball_manipulator_8cpp_source.html">BallManipulator.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9ba3e69926ef2b3a46793b49adf4003a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ba3e69926ef2b3a46793b49adf4003a">&#9670;&nbsp;</a></span>SetApproxAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BallManipulator::SetApproxAngle </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_ball_manipulator_8cpp_source.html#l00165">165</a> of file <a class="el" href="_ball_manipulator_8cpp_source.html">BallManipulator.cpp</a>.</p>
 
 </div>
 </div>
@@ -284,13 +291,13 @@ Public Member Functions</h2></td></tr>
 <dd>
 void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_button_manipulator_8cpp_source.html#l00081">81</a> of file <a class="el" href="_button_manipulator_8cpp_source.html">ButtonManipulator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ball_manipulator_8cpp_source.html#l00092">92</a> of file <a class="el" href="_ball_manipulator_8cpp_source.html">BallManipulator.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>controllers/<a class="el" href="_ball_manipulator_8h_source.html">BallManipulator.h</a></li>
-<li>controllers/<a class="el" href="_button_manipulator_8cpp_source.html">ButtonManipulator.cpp</a></li>
+<li>states/<a class="el" href="_ball_manipulator_8h_source.html">BallManipulator.h</a></li>
+<li>states/<a class="el" href="_ball_manipulator_8cpp_source.html">BallManipulator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

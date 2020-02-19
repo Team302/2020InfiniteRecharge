@@ -1,5 +1,5 @@
 //====================================================================================================================================================
-// Copyright 2019 Lake Orion Robotics FIRST Team 302
+// Copyright 2020 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
@@ -22,15 +22,29 @@
 class MechanismTargetData
 {
     public:
+        enum SOLENOID
+        {
+            NONE,
+            ON,
+            OFF
+        };
         /// @brief      Create the ControlData object that is used to control mechanisms
         /// @param [in] state - State indentifier
         /// @param [in] controller - controller indentifer
-        /// @param [in] target - target value 
+        /// @param [in] target - target value         
+        /// @param [in] solenoid value
+        /// @param [in] failovercontroller - controller indentifer if in failover mode
+        /// @param [in] failoverTarget - target value if in failover mode
+
+        
         MechanismTargetData
         (
             std::string                                 state,
             std::string                                 controller,
-            double                                      target
+            double                                      target,
+            SOLENOID                                    solenoid,
+            std::string                                 failoverController,
+            double                                      failoverTarget
         );
         MechanismTargetData() = delete;
 
@@ -52,6 +66,22 @@ class MechanismTargetData
         /// @return double - target value
         inline double GetTarget() const { return m_target; };
 
+        /// @brief get the solenoid state
+        /// @return SOLENOID state of the solenoid
+        SOLENOID GetSolenoidState() const { return m_solenoid; }
+
+        /// @brief  Retrieve the controller identifier
+        /// @return std::string controller indentifier
+        inline std::string GetFailoverControllerString() const { return m_failoverController; };
+
+        /// @brief  Retrieve the controller
+        /// @return ControlData* controller
+        inline ControlData* GetFailoverController() const { return m_failoverControlData; };
+
+        /// @brief  Retrieve the target value
+        /// @return double - target value
+        inline double GetFailoverTarget() const { return m_failoverTarget; };
+
         /// @brief update to include ControlData
         /// @param [in] std::vector<ControlData*> - vector of ControlData Objects
         /// @return void
@@ -65,6 +95,10 @@ class MechanismTargetData
         std::string                                 m_controller;
         double                                      m_target;
         ControlData*                                m_controlData;
+        SOLENOID                                    m_solenoid;
+        std::string                                 m_failoverController;
+        double                                      m_failoverTarget;
+        ControlData*                                m_failoverControlData;
 };
 
 

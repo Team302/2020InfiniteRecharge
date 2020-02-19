@@ -1,0 +1,41 @@
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
+/* Open Source Software - may be modified and shared by FRC teams. The code   */
+/* must be accompanied by the FIRST BSD license file in the root directory of */
+/* the project.                                                               */
+/*----------------------------------------------------------------------------*/
+
+#include "states/turret/HoldTurretPosition.h"
+#include "subsys/MechanismFactory.h"
+#include "subsys/IMechanism.h"
+#include "subsys/Turret.h"
+#include "controllers/ControlData.h"
+#include "states/MechanismState.h"
+#include "controllers/MechanismTargetData.h"
+
+HoldTurretPosition::HoldTurretPosition(ControlData* controlData, double target, MechanismTargetData::SOLENOID solenoid) : 
+    MechanismState(MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET),controlData, target, solenoid)
+{
+}
+
+/*void HoldTurretPosition::Init()
+{
+    m_turret->SetControlConstants(m_controlData);
+    m_targetPosition = m_turret->GetCurrentPosition();
+}
+
+void HoldTurretPosition::Run()
+{   
+    m_turret->SetOutput(m_controlData->GetMode(), m_targetPosition);
+    const double tolerance = 5.0;
+    if ( abs(m_targetPosition - m_turret->GetCurrentPosition()) < tolerance) //arbitrary tolerance for now will change later
+    {
+        m_atTarget = true;
+    }
+}
+
+bool HoldTurretPosition::AtTarget() const
+{
+    return m_atTarget;
+}
+*/

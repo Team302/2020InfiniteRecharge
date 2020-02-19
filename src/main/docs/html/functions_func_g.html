@@ -113,6 +113,9 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="class_i_dragon_game_pad.html#aa707bbbb824aeca55d260a9efc95f23e">IDragonGamePad</a>
 , <a class="el" href="class_teleop_control.html#a9c6affa7d87ae898c531e567fce73b15">TeleopControl</a>
 </li>
+<li>GetBallState()
+: <a class="el" href="class_primitive_params.html#acae304c2aa2134285d7feca227e799bc">PrimitiveParams</a>
+</li>
 <li>GetButton()
 : <a class="el" href="class_button_decorator.html#a6532bf7fb303e28e29ef5b9f669a7741">ButtonDecorator</a>
 </li>
@@ -125,11 +128,17 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 <li>GetChannel()
 : <a class="el" href="class_dragon_digital_input.html#a3d7e42603d0b74e921a0757605446b3a">DragonDigitalInput</a>
 </li>
+<li>GetChassis()
+: <a class="el" href="class_arcade_drive.html#ac912ea0a5abb34cdf5a6469dc7288296">ArcadeDrive</a>
+</li>
 <li>GetChassisFactory()
 : <a class="el" href="class_chassis_factory.html#a654b3190a697e11c31d4e0288eb335a6">ChassisFactory</a>
 </li>
+<li>GetColor()
+: <a class="el" href="class_f_m_s.html#a0842106f20ae40af1b63fc969a3a0f20">FMS</a>
+</li>
 <li>GetColorSeen()
-: <a class="el" href="class_control_panel.html#a76d84ee9c215bca0e74dbb67574e4020">ControlPanel</a>
+: <a class="el" href="class_control_panel.html#a38e4c0847f8d0d88f8ec51171b49a4ad">ControlPanel</a>
 </li>
 <li>GetConfidence()
 : <a class="el" href="class_dragon_lidar.html#af61a05912f5a6ef2b05a6aed0b5db02e">DragonLidar</a>
@@ -139,8 +148,8 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="class_i_dragon_sensor.html#a26335856e226fcaca3ce3954ba846cb7">IDragonSensor</a>
 </li>
 <li>GetController()
-: <a class="el" href="class_mechanism_target_data.html#a899cdcaf506a4385c9e81a6870d177f1">MechanismTargetData</a>
-, <a class="el" href="class_throttle_steer_drive.html#a2e58cbb98aa76a5999526a7b4357b128">ThrottleSteerDrive</a>
+: <a class="el" href="class_arcade_drive.html#acb1a70e9c3bea7f2f156301cfb86bdf8">ArcadeDrive</a>
+, <a class="el" href="class_mechanism_target_data.html#a899cdcaf506a4385c9e81a6870d177f1">MechanismTargetData</a>
 </li>
 <li>GetControllerIndex()
 : <a class="el" href="class_function_map.html#a7afc0c9b431b4690efc5cfd9f8a5278a">FunctionMap</a>
@@ -171,7 +180,6 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="class_control_panel.html#abdff4646934ab23158cfce4261322889">ControlPanel</a>
 , <a class="el" href="class_dragon_chassis.html#acef48e705afedea9337b90272bae5a80">DragonChassis</a>
 , <a class="el" href="class_drive_train_side.html#a557590423b84c081762e79c161d55ee9">DriveTrainSide</a>
-, <a class="el" href="class_human_player_flap.html#a08951df8e2ccd925a46a944b249765dd">HumanPlayerFlap</a>
 , <a class="el" href="class_i_chassis.html#ac1978a942d42934c78784c7099edb538">IChassis</a>
 , <a class="el" href="class_i_mechanism.html#aa15197ff101d65447516a8f10bb6867d">IMechanism</a>
 , <a class="el" href="class_impeller.html#a04b455224bc6145f19b09b5d7ee2f8bc">Impeller</a>
@@ -194,7 +202,6 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="class_control_panel.html#a99f7157fc32fd4f2f10c2f78ba0e34cd">ControlPanel</a>
 , <a class="el" href="class_dragon_chassis.html#a54c251e24c4a4504f1363e17239a4fbc">DragonChassis</a>
 , <a class="el" href="class_drive_train_side.html#a5b2d55207f0a6244caa19cc5197bac5e">DriveTrainSide</a>
-, <a class="el" href="class_human_player_flap.html#a981fd78eb3df7ac72787881dab15b304">HumanPlayerFlap</a>
 , <a class="el" href="class_i_chassis.html#a022a02c30026eb8f9d169332a448f9d1">IChassis</a>
 , <a class="el" href="class_i_mechanism.html#a9a63d6905de4454d78d7e0d1d1e28437">IMechanism</a>
 , <a class="el" href="class_impeller.html#a38948021086ebb2d7f2651a618ece2e5">Impeller</a>
@@ -206,9 +213,12 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 <li>GetCurrentState()
 : <a class="el" href="class_ball_manipulator.html#af24249d8efa5c38ef042178da0e40f29">BallManipulator</a>
 , <a class="el" href="class_ball_transfer_state_mgr.html#a8e3bfb4df043294473e16315bc1d802c">BallTransferStateMgr</a>
+, <a class="el" href="class_control_panel_state_mgr.html#a6e7cb68402b7ded430ffe2b0806bdb55">ControlPanelStateMgr</a>
 , <a class="el" href="class_impeller_state_mgr.html#acea55b039f5bdc2db2051440fe613496">ImpellerStateMgr</a>
 , <a class="el" href="class_intake_state_mgr.html#ab830ea475e60fca1e06fbff31a4c7980">IntakeStateMgr</a>
+, <a class="el" href="class_shooter_hood_state_mgr.html#a8de5d50a126019bdc3f04c8099755702">ShooterHoodStateMgr</a>
 , <a class="el" href="class_shooter_state_mgr.html#a46e44a74e38681367c030ae5e36f5ac7">ShooterStateMgr</a>
+, <a class="el" href="class_turret_state_mgr.html#accdae0fe99a3ebc30ad4b8cedbc6b178">TurretStateMgr</a>
 </li>
 <li>GetD()
 : <a class="el" href="class_control_data.html#acbaf81f6f7dab5edcf4fcc445caf0dcd">ControlData</a>
@@ -244,6 +254,16 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 : <a class="el" href="class_analog_input_factory.html#ab34638380d3af42b8a1ded73e548a65b">AnalogInputFactory</a>
 , <a class="el" href="class_digital_input_factory.html#a7685259a5ccde269a209535f0dbd11de">DigitalInputFactory</a>
 , <a class="el" href="class_distance_sensor_factory.html#ac26949a95d6b5582d689f3d2100dff3e">DistanceSensorFactory</a>
+, <a class="el" href="class_pigeon_factory.html#ac70f2642bb631a0d6b0957f4e8d14dca">PigeonFactory</a>
+</li>
+<li>GetFailoverController()
+: <a class="el" href="class_mechanism_target_data.html#ab954eaca369aa57b67d107eedf0b9e70">MechanismTargetData</a>
+</li>
+<li>GetFailoverControllerString()
+: <a class="el" href="class_mechanism_target_data.html#ac7a7bbd9670132cd60e9d1d51af1351e">MechanismTargetData</a>
+</li>
+<li>GetFailoverTarget()
+: <a class="el" href="class_mechanism_target_data.html#a1f83b49fd83c293c1443fcf031b7ad07">MechanismTargetData</a>
 </li>
 <li>GetFieldMeasurement()
 : <a class="el" href="class_field_measurement.html#ac952361cfa7e159f3f654ad01e7ee65d">FieldMeasurement</a>
@@ -287,6 +307,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 </li>
 <li>GetInstance()
 : <a class="el" href="class_analog_input_usage.html#a3b147566fc1852814fa75cdff467d7c9">AnalogInputUsage</a>
+, <a class="el" href="class_ball_manipulator.html#a4cc746261343f7cbcc093f4e9fe29722">BallManipulator</a>
 , <a class="el" href="class_canifier_factory.html#a53c59664e599e722295c044a441d09ca">CanifierFactory</a>
 , <a class="el" href="class_cubed_profile.html#a38ad01df0a8c1f442d8f17a49c241e41">CubedProfile</a>
 , <a class="el" href="class_deadband_value.html#aeacc198fd0880958590fc4bab4ff001c">DeadbandValue</a>
@@ -327,7 +348,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 : <a class="el" href="class_lidar_factory.html#a14e25d1b8a7271a179c38d157d6c8da4">LidarFactory</a>
 </li>
 <li>GetLimelight()
-: <a class="el" href="class_limelight_factory.html#aea83d8455ea31aa1b6d82458655e08f1">LimelightFactory</a>
+: <a class="el" href="class_limelight_factory.html#ac8477b585b76b93d953f6f2d5561c749">LimelightFactory</a>
 </li>
 <li>GetLimelightFactory()
 : <a class="el" href="class_limelight_factory.html#af3a2a9e7f01b16a693953e42908ed7f0">LimelightFactory</a>
@@ -354,9 +375,6 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 <li>GetNormalizedAngle()
 : <a class="el" href="class_i_dragon_angle_position_sensor.html#ad85d53d4003e652e479444398300613f">IDragonAnglePositionSensor</a>
 </li>
-<li>GetOppSwitchPos()
-: <a class="el" href="class_f_m_s.html#acd505ad46e3abad3186046cd00645132">FMS</a>
-</li>
 <li>GetP()
 : <a class="el" href="class_control_data.html#a905b66966177981526553ca8145f560f">ControlData</a>
 </li>
@@ -365,6 +383,9 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 </li>
 <li>GetPeakValue()
 : <a class="el" href="class_control_data.html#ad63cd22d187b4b30d27d8482a8ee3b8f">ControlData</a>
+</li>
+<li>GetPigeon()
+: <a class="el" href="class_pigeon_factory.html#a6ee5db14924132c7cbfb26ce72262cdf">PigeonFactory</a>
 </li>
 <li>GetPipelineLatency()
 : <a class="el" href="class_dragon_limelight.html#a597d5a2a3eed41cdfb400bdb8cc91405">DragonLimelight</a>
@@ -396,17 +417,14 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="class_dragon_talon.html#a6037fe288a4e4d73e8aefaff347af3eb">DragonTalon</a>
 , <a class="el" href="class_i_dragon_motor_controller.html#a17ff2a8c53eb525c629ea1dbfe617e72">IDragonMotorController</a>
 </li>
-<li>GetScalePos()
-: <a class="el" href="class_f_m_s.html#a26eefb366176c80c6b3f7db3c564c231">FMS</a>
-</li>
 <li>GetSelectedAutoFile()
 : <a class="el" href="class_auton_selector.html#aa3ce88e9281070ee93d9437cb80b1ce1">AutonSelector</a>
 </li>
 <li>GetSensor()
 : <a class="el" href="class_distance_sensor_factory.html#a433cac9d3711d99a953369dc15dd9dd3">DistanceSensorFactory</a>
 </li>
-<li>GetSmallestDeltaAngle()
-: <a class="el" href="class_dragon_math.html#a7269c41ccb2b992c7c350091e7cde496">DragonMath</a>
+<li>GetSolenoidState()
+: <a class="el" href="class_mechanism_target_data.html#a3573373ee47500efb618cbcbdc2e8405">MechanismTargetData</a>
 </li>
 <li>GetSparkMax()
 : <a class="el" href="class_dragon_spark_max.html#aae4682908f0d1d4632305afcc7c29722">DragonSparkMax</a>
@@ -421,12 +439,8 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 : <a class="el" href="class_mechanism_target_data.html#a4611ff25ddb6fd0bdb831c2d280bc0fa">MechanismTargetData</a>
 </li>
 <li>GetSteer()
-: <a class="el" href="class_arcade_drive.html#aeeaff99c7ea86131d1e52381fc7e00b5">ArcadeDrive</a>
+: <a class="el" href="class_arcade_drive.html#a79fe9f851e62b7abdb54eecbda36b165">ArcadeDrive</a>
 , <a class="el" href="class_g_t_a_drive.html#a0f50c172e24c8f9fc901320c71d1b53c">GTADrive</a>
-, <a class="el" href="class_throttle_steer_drive.html#a9a22e90d6e4520d921fb634637d35b2c">ThrottleSteerDrive</a>
-</li>
-<li>GetSwitchPos()
-: <a class="el" href="class_f_m_s.html#a657860464f746df2c8bfcc4913112684">FMS</a>
 </li>
 <li>GetTarget()
 : <a class="el" href="class_mechanism_target_data.html#a1ca5146630ae51b3040363631e4d684d">MechanismTargetData</a>
@@ -437,68 +451,21 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 <li>GetTargetHorizontalOffset()
 : <a class="el" href="class_dragon_limelight.html#a47d04ae8a2230a52887d696109f37eed">DragonLimelight</a>
 </li>
-<li>GetTargetLeftPosition()
-: <a class="el" href="class_dragon_chassis.html#aac0e89b59f946ece24ccd5a45d085391">DragonChassis</a>
-, <a class="el" href="class_i_chassis.html#a5e64d84a7e3a54e5944e5a34fdbb66c9">IChassis</a>
-</li>
-<li>GetTargetLeftSpeed()
-: <a class="el" href="class_dragon_chassis.html#aa3bb8d472f5de9c713f77a0ef2630e81">DragonChassis</a>
-, <a class="el" href="class_i_chassis.html#a454daaee3a36c4108b1c589bac12a211">IChassis</a>
-</li>
-<li>GetTargetPosition()
-: <a class="el" href="class_ball_transfer.html#ac419c5d7b1132883ff72b82b02127fec">BallTransfer</a>
-, <a class="el" href="class_climber.html#a66f3ec00b3ee63603c3dad2ef0a5853a">Climber</a>
-, <a class="el" href="class_control_panel.html#a4783314507db821a953567cdcfa88853">ControlPanel</a>
-, <a class="el" href="class_dragon_chassis.html#aba4aeb4f8b9c4e31e3db936a630e327b">DragonChassis</a>
-, <a class="el" href="class_drive_train_side.html#a0ccf01a971eab34f5a053e6184af1b71">DriveTrainSide</a>
-, <a class="el" href="class_human_player_flap.html#ae873ee3ddaef45474d7e1c467e5c1281">HumanPlayerFlap</a>
-, <a class="el" href="class_i_chassis.html#a6d7622496bd890a280bbd499ac0b9a79">IChassis</a>
-, <a class="el" href="class_i_mechanism.html#afd97d8b3f072b45a88c83490dd18e8d2">IMechanism</a>
-, <a class="el" href="class_impeller.html#aab43e22efa3957aeaede4eb9eb965e4c">Impeller</a>
-, <a class="el" href="class_intake.html#a09dd45bfc0e12d514bb1e1efa675ef06">Intake</a>
-, <a class="el" href="class_shooter.html#a203e453080b616d2174075aa9f275cb1">Shooter</a>
-, <a class="el" href="class_shooter_hood.html#a219222f503bdb4b43e914a74e1e883c2">ShooterHood</a>
-, <a class="el" href="class_turret.html#a7224fca0dad060329e04903fda42899f">Turret</a>
-</li>
-<li>GetTargetRightPosition()
-: <a class="el" href="class_dragon_chassis.html#a82ea72da7e49854d8ebdb0ba256d310a">DragonChassis</a>
-, <a class="el" href="class_i_chassis.html#aa0244f29342ccc91a5c10b6a1cd540c1">IChassis</a>
-</li>
-<li>GetTargetRightSpeed()
-: <a class="el" href="class_dragon_chassis.html#adf955795007132b4f3c94763a85cd757">DragonChassis</a>
-, <a class="el" href="class_i_chassis.html#acb56e2e6d0840dc438de2a9e904900c2">IChassis</a>
-</li>
 <li>GetTargetSkew()
 : <a class="el" href="class_dragon_limelight.html#a9c2b9b606d2643467df517a786545e49">DragonLimelight</a>
-</li>
-<li>GetTargetSpeed()
-: <a class="el" href="class_ball_transfer.html#ace28fe4d807a38c80cb60be729f81170">BallTransfer</a>
-, <a class="el" href="class_climber.html#ae3eeaa36d95127bcb0cfe485d1873a05">Climber</a>
-, <a class="el" href="class_control_panel.html#ad3f18a8d44d1516e8e5f41fca394fd2d">ControlPanel</a>
-, <a class="el" href="class_dragon_chassis.html#ac3a8dfcb50aa3371a2e89c0ce038e3a5">DragonChassis</a>
-, <a class="el" href="class_drive_train_side.html#adf2337d61c0dd88d0a2b63032ce1075d">DriveTrainSide</a>
-, <a class="el" href="class_human_player_flap.html#ab23aa98663657ec1074fec9a7722d93d">HumanPlayerFlap</a>
-, <a class="el" href="class_i_chassis.html#af2ca52a26ac8743473db9fd4c7412eeb">IChassis</a>
-, <a class="el" href="class_i_mechanism.html#a06bbdacb531f60301062930ffebc85c2">IMechanism</a>
-, <a class="el" href="class_impeller.html#a89fb5f4080d2addd03c5102c7393564c">Impeller</a>
-, <a class="el" href="class_intake.html#a7d733c16727ac5509d2c42c5b3165103">Intake</a>
-, <a class="el" href="class_shooter.html#a34a634840a26e4d1373757ae231def97">Shooter</a>
-, <a class="el" href="class_shooter_hood.html#af1b22880aa5bd740e2506573df3d37a1">ShooterHood</a>
-, <a class="el" href="class_turret.html#a11658ee886370db874b3adedc1193328">Turret</a>
 </li>
 <li>GetTargetVerticalOffset()
 : <a class="el" href="class_dragon_limelight.html#ae8f2120ffbf5207fd7053860c6a591b0">DragonLimelight</a>
 </li>
 <li>GetThrottle()
-: <a class="el" href="class_arcade_drive.html#a25cb244e8c4f6af2410e47c7e8031099">ArcadeDrive</a>
+: <a class="el" href="class_arcade_drive.html#ade85686198528341067ef4d09b3ae166">ArcadeDrive</a>
 , <a class="el" href="class_g_t_a_drive.html#a87797574579b59e0618c8b2a274d7982">GTADrive</a>
-, <a class="el" href="class_throttle_steer_drive.html#aa0833d612a63b0cfd62a922849075df3">ThrottleSteerDrive</a>
 </li>
 <li>GetTime()
 : <a class="el" href="class_primitive_params.html#a478d763e9de6526e13de4d23d1dca71c">PrimitiveParams</a>
 </li>
-<li>GetTrimmedValue()
-: <a class="el" href="class_limit_value.html#afd8bad8748ed028514ea1c0cdf1deac5">LimitValue</a>
+<li>GetTurretAngle()
+: <a class="el" href="class_primitive_params.html#a956f05573b6157c4418eb9bafa86470e">PrimitiveParams</a>
 </li>
 <li>GetType()
 : <a class="el" href="class_ball_transfer.html#a0e9e704cbc3fcb207b7377c3356487c3">BallTransfer</a>
@@ -510,7 +477,6 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="class_dragon_spark_max.html#a0a1ff495bb882e7c5a5ecee6beef728e">DragonSparkMax</a>
 , <a class="el" href="class_dragon_talon.html#a38bc49d974be18c5bd76c990b8b785c6">DragonTalon</a>
 , <a class="el" href="class_drive_train_side.html#afb3d28141117ebdf1e00af89e1f90007">DriveTrainSide</a>
-, <a class="el" href="class_human_player_flap.html#aa7388dc05650ecaf822f3bb6aa119dcf">HumanPlayerFlap</a>
 , <a class="el" href="class_i_dragon_motor_controller.html#a0b4ae4352bf46cae7d783c4e8c36aa6e">IDragonMotorController</a>
 , <a class="el" href="class_i_mechanism.html#a62096808201ffc31609e99dc2fa92d44">IMechanism</a>
 , <a class="el" href="class_impeller.html#acb60389f253ee9eac8b7ae540dd0e173">Impeller</a>
@@ -523,7 +489,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 : <a class="el" href="class_ultrasonic_factory.html#ac7f6ef1d6d146fa6a1e364eb90439df7">UltrasonicFactory</a>
 </li>
 <li>GetUsage()
-: <a class="el" href="class_analog_input_usage.html#a6a6c5245a0cc9e0ce8d0c3a1aa662993">AnalogInputUsage</a>
+: <a class="el" href="class_analog_input_usage.html#a894ad312f5cf60afd953ef2eaaf99cd5">AnalogInputUsage</a>
 , <a class="el" href="class_digital_input_usage.html#acb414552a92cca2e59d7d88929a6342f">DigitalInputUsage</a>
 , <a class="el" href="class_dragon_analog_input.html#a28dff412d4b7d4d51692da8cc72e4b4a">DragonAnalogInput</a>
 , <a class="el" href="class_dragon_lidar.html#ac6cc307d3dbce27c07ffd779543101d6">DragonLidar</a>
@@ -533,8 +499,12 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="class_dragon_ultrasonic_p_w_m.html#ad618781c45fd1f5b85216279828eca10">DragonUltrasonicPWM</a>
 , <a class="el" href="class_i_dragon_sensor.html#a3040df89bae5da661a21d71c1df4ccb4">IDragonSensor</a>
 , <a class="el" href="class_motor_controller_usage.html#a0848ff0dafad9b93b252cefb8fc82bd0">MotorControllerUsage</a>
-, <a class="el" href="class_servo_usage.html#a771e321c61ce6cc567ce7a45612b5ecf">ServoUsage</a>
-, <a class="el" href="class_solenoid_usage.html#a041ae5300c727d2dc6a06153d0f767df">SolenoidUsage</a>
+, <a class="el" href="class_servo_usage.html#a93b051c007f23891222f48f2818ff426">ServoUsage</a>
+, <a class="el" href="class_solenoid_usage.html#a6b9c948a50254b2e8fa3da95ba515ec5">SolenoidUsage</a>
+</li>
+<li>GetWheelDiameter()
+: <a class="el" href="class_dragon_chassis.html#a53e2d52a02a6653a0ecb0de910271e45">DragonChassis</a>
+, <a class="el" href="class_i_chassis.html#aef1d1542c93a347d2a4915f50085bd8a">IChassis</a>
 </li>
 <li>getWidth()
 : <a class="el" href="class_dragon_vision.html#a49052f9ed6b6b518a735efba95dadf3e">DragonVision</a>

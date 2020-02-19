@@ -39,6 +39,7 @@
 #include <hw/usages/ServoMap.h>
 
 #include <xmlhw/AnalogInputDefn.h>
+#include <xmlhw/CanCoderDefn.h>
 #include <xmlhw/DigitalInputDefn.h>
 #include <xmlhw/MotorDefn.h>
 #include <xmlhw/ServoDefn.h> 
@@ -90,10 +91,6 @@ IMechanism* MechanismDefn::ParseXML
             if ( typeStr.compare( "INTAKE") == 0 )
             {
                 type = MechanismTypes::MECHANISM_TYPE::INTAKE;
-            }
-            else if ( typeStr.compare( "HUMAN_PLAYER_FLAP") == 0 )
-            {
-                type = MechanismTypes::MECHANISM_TYPE::HUMAN_PLAYER_FLAP;
             }
             else if ( typeStr.compare( "IMPELLER") == 0 )
             {
@@ -151,6 +148,7 @@ IMechanism* MechanismDefn::ParseXML
     unique_ptr<ServoDefn> servoXML = make_unique<ServoDefn>();
     unique_ptr<SolenoidDefn> solenoidXML = make_unique<SolenoidDefn>();
     unique_ptr<ColorSensorDefn> colorXML = make_unique<ColorSensorDefn>();
+    unique_ptr<CanCoderDefn> cancoderXML = make_unique<CanCoderDefn>();
 
     IDragonMotorControllerMap motors;
     ServoMap servos;
@@ -158,6 +156,7 @@ IMechanism* MechanismDefn::ParseXML
     AnalogInputMap analogInputs;
     DigitalInputMap digitalInputs;
     rev::ColorSensorV3* colorSensor = nullptr;
+    shared_ptr<ctre::phoenix::sensors::CANCoder> canCoder = nullptr;
 
     for (xml_node child = mechanismNode.first_child(); child  && !hasError; child = child.next_sibling())
     {
@@ -201,13 +200,19 @@ IMechanism* MechanismDefn::ParseXML
                 solenoids[sol.get()->GetType()] = sol;
             }
         }
+        else if ( strcmp( child.name(), "canCoder" ) == 0)
+        {
+            canCoder = cancoderXML.get()->ParseXML(child);
+        }
         else if ( strcmp( child.name(), "colorsensor" ) == 0 )
         {
             colorSensor = colorXML.get()->ParseXML(child);
         }
         else
         {
-            Logger::GetLogger()->LogError( "MechanismDefn", "unknown child" );
+            string msg = "unknown child ";
+            msg += child.name();
+            Logger::GetLogger()->LogError( string("MechanismDefn"), msg );
         }
     }
 
@@ -216,7 +221,7 @@ IMechanism* MechanismDefn::ParseXML
     if ( !hasError )
     {
         MechanismFactory* factory =  MechanismFactory::GetMechanismFactory();
-        mech = factory->CreateIMechanism( type, motors, solenoids, servos, digitalInputs, analogInputs, colorSensor );
+        mech = factory->CreateIMechanism( type, motors, solenoids, servos, digitalInputs, analogInputs, colorSensor, canCoder );
     }
 
     return mech;

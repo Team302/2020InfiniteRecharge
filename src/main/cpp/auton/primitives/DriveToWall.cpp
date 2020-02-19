@@ -65,7 +65,7 @@ void DriveToWall::Run()
 {
 	if (m_minimumTime <= 0) 
 	{
-		if (std::abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentSpeed()) < SPEED_THRESHOLD) 
+		if (abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentSpeed()) < SPEED_THRESHOLD) 
 		{
 			m_underSpeedCounts++;
 		}

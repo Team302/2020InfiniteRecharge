@@ -91,18 +91,6 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>Scale()
 : <a class="el" href="class_scaled_axis.html#ab14e83592c21e05ab7ecda01a75d5319">ScaledAxis</a>
 </li>
-<li>SCALE_BACKUP_HALFWAY
-: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa527812f5fee7996548c66f4f042fb534">AutonSelector</a>
-</li>
-<li>SCALE_BACKUP_PLACE_FAR
-: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa3b67044073039efc6a8d8307c98a0112">AutonSelector</a>
-</li>
-<li>SCALE_HALFWAY
-: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aad59c0a47aeed85440c3e2f3d80da4bef">AutonSelector</a>
-</li>
-<li>SCALE_PLACE_FAR
-: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa5dc9a3090ab0be9b67f85e0d06123cc3">AutonSelector</a>
-</li>
 <li>ScaledAxis()
 : <a class="el" href="class_scaled_axis.html#a26c7beedaa36283fa1331ca978c71e29">ScaledAxis</a>
 </li>
@@ -132,6 +120,12 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 </li>
 <li>SetAngle()
 : <a class="el" href="class_dragon_servo.html#ae0793a737303c3d5d4b3be3ae2e6f4bf">DragonServo</a>
+</li>
+<li>SetApproxAngle()
+: <a class="el" href="class_ball_manipulator.html#a9ba3e69926ef2b3a46793b49adf4003a">BallManipulator</a>
+</li>
+<li>SetApproxTargetAngle()
+: <a class="el" href="class_turret_state_mgr.html#a79a43204337f787919606f0480a62087">TurretStateMgr</a>
 </li>
 <li>SetAsSlave()
 : <a class="el" href="class_dragon_falcon.html#a54d569a45a527b83505b8e646d99a95b">DragonFalcon</a>
@@ -178,7 +172,6 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="class_dragon_spark_max.html#a3d5608ab963c80b01dcfbeba3ad71f49">DragonSparkMax</a>
 , <a class="el" href="class_dragon_talon.html#a051e7d9a21b9caf9db65bcb2c613808e">DragonTalon</a>
 , <a class="el" href="class_drive_train_side.html#a5a706257d98af9460c245b7f34b61423">DriveTrainSide</a>
-, <a class="el" href="class_human_player_flap.html#a4efefb7367ccb49b9d76cae58c752983">HumanPlayerFlap</a>
 , <a class="el" href="class_i_chassis.html#a64b0c5e1c4aa54ecfac53c7677b184e7">IChassis</a>
 , <a class="el" href="class_i_dragon_motor_controller.html#abdca297c707d0c1f5e36bc0be37396d5">IDragonMotorController</a>
 , <a class="el" href="class_i_mechanism.html#acd973ca93855c485ed42d405f2fcba11">IMechanism</a>
@@ -197,12 +190,24 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>SetCurrentState()
 : <a class="el" href="class_ball_manipulator.html#ac6b06504ca8077c1b533895b2793e5a1">BallManipulator</a>
 , <a class="el" href="class_ball_transfer_state_mgr.html#a4ad4576d1df79e2e9749be0a6ec0daa6">BallTransferStateMgr</a>
+, <a class="el" href="class_control_panel_state_mgr.html#a31133fcec10aec96a451555e40e41658">ControlPanelStateMgr</a>
 , <a class="el" href="class_impeller_state_mgr.html#afd05b5a5b87575f74f8f82eae0f915ce">ImpellerStateMgr</a>
 , <a class="el" href="class_intake_state_mgr.html#a1e25c496c344124e7a52b7bbdfa09f87">IntakeStateMgr</a>
+, <a class="el" href="class_shooter_hood_state_mgr.html#a2d6262e573c83bb178742eb36588c7f4">ShooterHoodStateMgr</a>
 , <a class="el" href="class_shooter_state_mgr.html#a523f0b84850fbc069340877decdae99d">ShooterStateMgr</a>
+, <a class="el" href="class_turret_state_mgr.html#af55d845dff66699c6a9a0d4542707426">TurretStateMgr</a>
+</li>
+<li>SetCurvatureBased()
+: <a class="el" href="class_arcade_drive.html#ae7f039013a505a09abc8f7203f6fd063">ArcadeDrive</a>
 </li>
 <li>SetDeadBand()
 : <a class="el" href="class_analog_axis.html#affc8b08e1a2bb32adcb971f644d2458d">AnalogAxis</a>
+</li>
+<li>SetDiameter()
+: <a class="el" href="class_dragon_falcon.html#a58a336a886347ec83d2b393569fc9d19">DragonFalcon</a>
+, <a class="el" href="class_dragon_spark_max.html#a8db88ceea2f749de7f6ca866f1a8e764">DragonSparkMax</a>
+, <a class="el" href="class_dragon_talon.html#a741ea243997b62373ef198f75846704d">DragonTalon</a>
+, <a class="el" href="class_i_dragon_motor_controller.html#ae94b716ecf9b1bb64c7184d904ef9e6d">IDragonMotorController</a>
 </li>
 <li>SetDistance()
 : <a class="el" href="class_drive_distance.html#a8a39fae7fc4f3991163613994447e84e">DriveDistance</a>
@@ -227,7 +232,6 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="class_control_panel.html#a23d9f02873f94d4cc5299212f091c1fe">ControlPanel</a>
 , <a class="el" href="class_dragon_chassis.html#a39dce0dd0a51b21be140226cc1e9931a">DragonChassis</a>
 , <a class="el" href="class_drive_train_side.html#a780ffb564264716f6d86e6a089bd3dd3">DriveTrainSide</a>
-, <a class="el" href="class_human_player_flap.html#aa8707ca4f7ad9e434ee479cbb36b9bcb">HumanPlayerFlap</a>
 , <a class="el" href="class_i_chassis.html#a98a230f90ea350636f7b720efba18d8a">IChassis</a>
 , <a class="el" href="class_i_mechanism.html#abc72a6d0306a828de6f43418e75c04c0">IMechanism</a>
 , <a class="el" href="class_impeller.html#a103e6a39e063fa96c1d0ddd3f144e8bb">Impeller</a>
@@ -241,6 +245,12 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 </li>
 <li>SetPulseDuration()
 : <a class="el" href="class_dragon_solenoid.html#a3b7b19681de1f63075e9f4c1e83e6ccd">DragonSolenoid</a>
+</li>
+<li>SetRemoteSensor()
+: <a class="el" href="class_dragon_falcon.html#ac2802287e9336cb907c5e0ce77e03d26">DragonFalcon</a>
+, <a class="el" href="class_dragon_spark_max.html#a1efdeaf37e0d6296a155db0a0d5b0239">DragonSparkMax</a>
+, <a class="el" href="class_dragon_talon.html#abfd29c75d1892ea7607114a337fe232b">DragonTalon</a>
+, <a class="el" href="class_i_dragon_motor_controller.html#a5f5568cf4e1c64b327795135753678a1">IDragonMotorController</a>
 </li>
 <li>SetReverseLimitSwitch()
 : <a class="el" href="class_dragon_falcon.html#af55d7051e52f7b65dedbff53d9e81c0f">DragonFalcon</a>
@@ -307,6 +317,24 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="class_servo_usage.html#a77ece7abcaf45a9b3b4d717f9503b5aaa24eab91d6dc3515af025086a4aa2855a">ServoUsage</a>
 , <a class="el" href="class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7adbcdbd5832c8a77f81482ceeceda4f19">SolenoidUsage</a>
 </li>
+<li>SHOOTER_HOOD_HOLD_POSITION
+: <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15add49360d0a6d3a94231826b1512d44d1">TeleopControl</a>
+</li>
+<li>SHOOTER_HOOD_MANUAL_AXIS
+: <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9680ce9fd26c12c8165de81d6776169b">TeleopControl</a>
+</li>
+<li>SHOOTER_HOOD_MANUAL_BUTTON
+: <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ae5512346ac69a346a67665dc80da2a4f">TeleopControl</a>
+</li>
+<li>SHOOTER_HOOD_MOVE_DOWN
+: <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a7ce4b53770adeeec0a93291fe5ba3ca0">TeleopControl</a>
+</li>
+<li>SHOOTER_HOOD_MOVE_UP
+: <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9d764d78d67e2f9c8b90e83800cc8004">TeleopControl</a>
+</li>
+<li>SHOOTER_HOOD_STATE
+: <a class="el" href="class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516">ShooterHoodStateMgr</a>
+</li>
 <li>SHOOTER_MANUAL_ADJUST_DISTANCE
 : <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15ae5b7b1e64b8bcd9676566127684436ba">TeleopControl</a>
 </li>
@@ -316,6 +344,9 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>SHOOTER_MANUAL_SHOOT
 : <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af687189b25bc1743e40aa06da67d79ea">TeleopControl</a>
 </li>
+<li>SHOOTER_OFF
+: <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a0615864c245df31bc3fd5f15fb12bbff">TeleopControl</a>
+</li>
 <li>SHOOTER_PREPARE_TO_SHOOT
 : <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a336a8ceb63bc0f2dd4c97a069dc2ad12">TeleopControl</a>
 </li>
@@ -323,19 +354,43 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 : <a class="el" href="class_shooter_state_mgr.html#aaf1212bf0ab2ee8a79e315bd1401b670">ShooterStateMgr</a>
 </li>
 <li>ShooterGetReady()
-: <a class="el" href="class_shooter_get_ready.html#ade151b597ba0dbfb04cc48c0863234f5">ShooterGetReady</a>
+: <a class="el" href="class_shooter_get_ready.html#aa2a7578f2668cf39c6b7dae051ec46af">ShooterGetReady</a>
 </li>
 <li>ShooterHood()
-: <a class="el" href="class_shooter_hood.html#ac59f7158801a5c8a9f148d8e13851598">ShooterHood</a>
+: <a class="el" href="class_shooter_hood.html#a81123eb53dad8258d0f8b99e503eed5c">ShooterHood</a>
+</li>
+<li>ShooterHoodHold()
+: <a class="el" href="class_shooter_hood_hold.html#ad10a6f2e2d99f82227a63391bd1b0d22">ShooterHoodHold</a>
+</li>
+<li>ShooterHoodHoldPosition()
+: <a class="el" href="class_shooter_hood_hold_position.html#af5840f31a1fb90bfe8390283856725d3">ShooterHoodHoldPosition</a>
+</li>
+<li>ShooterHoodManual()
+: <a class="el" href="class_shooter_hood_manual.html#a523e67f3894b568d253ddae465fe1ac0">ShooterHoodManual</a>
+</li>
+<li>ShooterHoodMoveDown()
+: <a class="el" href="class_shooter_hood_move_down.html#a892fc245dff4c813ff84641bacaddede">ShooterHoodMoveDown</a>
+</li>
+<li>ShooterHoodMoveUp()
+: <a class="el" href="class_shooter_hood_move_up.html#aa379c5eea21bf9d255d6302dc75b65dc">ShooterHoodMoveUp</a>
+</li>
+<li>ShooterHoodStateMgr()
+: <a class="el" href="class_shooter_hood_state_mgr.html#a3011c77c357335e5fa72af70ce787186">ShooterHoodStateMgr</a>
 </li>
 <li>ShooterOff()
-: <a class="el" href="class_shooter_off.html#a67883c52172d141a6bc9b9fd395454b7">ShooterOff</a>
+: <a class="el" href="class_shooter_off.html#a7dde4c8feb22725697b3d5060223f2cb">ShooterOff</a>
+</li>
+<li>ShooterSaveState()
+: <a class="el" href="class_shooter_save_state.html#aaf9dd2f9b05f38ab513bd05108d649da">ShooterSaveState</a>
 </li>
 <li>ShooterShoot()
-: <a class="el" href="class_shooter_shoot.html#a6e7baa83c8bd2394b827363421629080">ShooterShoot</a>
+: <a class="el" href="class_shooter_shoot.html#abdad2970e6e24b2dbf0db8b6bf959317">ShooterShoot</a>
 </li>
 <li>ShooterStateMgr()
 : <a class="el" href="class_shooter_state_mgr.html#a0e517eb524ceb068405b00c665c396fd">ShooterStateMgr</a>
+</li>
+<li>ShooterStateMgrTest()
+: <a class="el" href="class_shooter_state_mgr_test.html#a6ab48705dfd4ba47a5c141a461ca0424">ShooterStateMgrTest</a>
 </li>
 <li>showCircle()
 : <a class="el" href="class_dragon_vision.html#af93520cfaefab3d570a56750e041e764">DragonVision</a>
@@ -346,9 +401,6 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>SlowDown()
 : <a class="el" href="class_super_drive.html#aa8baae85dbb3bcfb38f22c25b820562a">SuperDrive</a>
 </li>
-<li>SMART
-: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa23dd3ab5ef9cc880c789c62d6c19c5e6">AutonSelector</a>
-</li>
 <li>SNAP_OFF
 : <a class="el" href="class_dragon_limelight.html#ad153a8681f6b1f71906fba0a6c4863eda3ca0d71b2c71150a290493d7db061037">DragonLimelight</a>
 </li>
@@ -357,6 +409,9 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 </li>
 <li>SNAPSHOT_MODE
 : <a class="el" href="class_dragon_limelight.html#ad153a8681f6b1f71906fba0a6c4863ed">DragonLimelight</a>
+</li>
+<li>SOLENOID
+: <a class="el" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData</a>
 </li>
 <li>SOLENOID_USAGE
 : <a class="el" href="class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7">SolenoidUsage</a>
@@ -379,6 +434,9 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>StateDataDefn()
 : <a class="el" href="class_state_data_defn.html#af44ab953d7e93c28ad74c59476af8eb2">StateDataDefn</a>
 </li>
+<li>STOW
+: <a class="el" href="class_control_panel_state_mgr.html#a87648a2688942ba2bbbaee7adb895c3aad4664a475c055354d8904ab4ff434093">ControlPanelStateMgr</a>
+</li>
 <li>STREAM_DEFAULT
 : <a class="el" href="class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91ac2171c51a110c25a7ccdd8ee94131409">DragonLimelight</a>
 </li>
@@ -394,14 +452,8 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>SuperDrive()
 : <a class="el" href="class_super_drive.html#ab57095c722e3cd8396c04297b5463900">SuperDrive</a>
 </li>
-<li>SWITCH
-: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa0e46f0dd53d0a15b52e956ec2f7d03c9">AutonSelector</a>
-</li>
 <li>SWITCH_DRIVE_MODE
 : <a class="el" href="class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aed8935f1b493bab6a7bceef70e08c29c">TeleopControl</a>
-</li>
-<li>SWITCH_SCALE
-: <a class="el" href="class_auton_selector.html#a02a4524799ea71bf859451d5fa93873aa910ac842bf02c7377ca2656b42ca3359">AutonSelector</a>
 </li>
 </ul>
 </div><!-- contents -->

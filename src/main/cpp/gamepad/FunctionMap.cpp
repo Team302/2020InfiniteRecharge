@@ -30,7 +30,7 @@
 /// @brief This defines the mapping from a single function to its controller (index and mode) and button or axis 
 
 /// @brief      The contructor initializes the object to default values
-FunctionMap::FunctionMap() : m_function( TeleopControl::FUNCTION_IDENTIFIER::UNKNOW_FUNCTION ),
+FunctionMap::FunctionMap() : m_function( TeleopControl::FUNCTION_IDENTIFIER::UNKNOWN_FUNCTION ),
                              m_controllerIndex( 0 ),
                              m_axisID( IDragonGamePad::AXIS_IDENTIFIER::UNDEFINED_AXIS ),
                              m_axisDeadband( IDragonGamePad::AXIS_DEADBAND::APPLY_STANDARD_DEADBAND ),

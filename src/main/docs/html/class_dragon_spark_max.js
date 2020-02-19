@@ -17,6 +17,8 @@ var class_dragon_spark_max =
     [ "Set", "class_dragon_spark_max.html#a38eb54d110601f8fb7bb2e324f549016", null ],
     [ "SetControlConstants", "class_dragon_spark_max.html#a3d5608ab963c80b01dcfbeba3ad71f49", null ],
     [ "SetControlMode", "class_dragon_spark_max.html#a47cda85cdba80165e485bb5bf5c41726", null ],
+    [ "SetDiameter", "class_dragon_spark_max.html#a8db88ceea2f749de7f6ca866f1a8e764", null ],
+    [ "SetRemoteSensor", "class_dragon_spark_max.html#a1efdeaf37e0d6296a155db0a0d5b0239", null ],
     [ "SetRotationOffset", "class_dragon_spark_max.html#a30be4189ed4796945e3de09a5e9131e8", null ],
     [ "SetSensorInverted", "class_dragon_spark_max.html#a67be736e73bf22920239944c5a9ebc5d", null ],
     [ "SetSmartCurrentLimiting", "class_dragon_spark_max.html#af4d2ada3b631fae7e56521dc053f20a6", null ],

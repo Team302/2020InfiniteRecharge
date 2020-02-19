@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team 302 Robot: controllers/chassis/ChassisStateMgr.h Source File</title>
+<title>Team 302 Robot: states/chassis/ChassisStateMgr.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -115,9 +115,9 @@ $(document).ready(function(){initNavTree('_chassis_state_mgr_8h_source.html','')
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;frc/smartdashboard/SendableChooser.h&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// team 302 includes</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_arcade_drive_8h.html">controllers/chassis/ArcadeDrive.h</a>&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_g_t_a_drive_8h.html">controllers/chassis/GTADrive.h</a>&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_tank_drive_8h.html">controllers/chassis/TankDrive.h</a>&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_arcade_drive_8h.html">states/chassis/ArcadeDrive.h</a>&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_g_t_a_drive_8h.html">states/chassis/GTADrive.h</a>&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_tank_drive_8h.html">states/chassis/TankDrive.h</a>&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_chassis_state_mgr.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_chassis_state_mgr.html">ChassisStateMgr</a></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
@@ -148,32 +148,34 @@ $(document).ready(function(){initNavTree('_chassis_state_mgr_8h_source.html','')
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <a class="code" href="class_chassis_state_mgr.html#aa0a242007069f6ac807a0bffda4011b4">CHASSIS_STATE</a>                   m_currentState;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      frc::SendableChooser&lt;std::string&gt;   m_driveModeChooser;                    </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keyword">const</span> std::string                   m_driveModeArcade = <span class="stringliteral">&quot;Arcade&quot;</span>;      </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keyword">const</span> std::string                   m_driveModeGTA = <span class="stringliteral">&quot;GTA&quot;</span>;       </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keyword">const</span> std::string                   m_driveModeTank = <span class="stringliteral">&quot;Tank&quot;</span>;       </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      std::string                         m_driveModeSelected;       </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keyword">const</span> std::string                   m_driveModeArcade = <span class="stringliteral">&quot;Arcade&quot;</span>;     </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keyword">const</span> std::string                   m_driveModeArcadeCurve = <span class="stringliteral">&quot;Arcade Curvature&quot;</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keyword">const</span> std::string                   m_driveModeGTA = <span class="stringliteral">&quot;GTA&quot;</span>;       </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keyword">const</span> std::string                   m_driveModeGTACurve = <span class="stringliteral">&quot;GTA Curvature&quot;</span>;       </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keyword">const</span> std::string                   m_driveModeTank = <span class="stringliteral">&quot;Tank&quot;</span>;       </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      std::string                         m_driveModeSelected;       </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_g_t_a_drive_8h_html"><div class="ttname"><a href="_g_t_a_drive_8h.html">GTADrive.h</a></div></div>
-<div class="ttc" id="aclass_chassis_state_mgr_html_ac5c821136e187f2057a9c4b956975df8"><div class="ttname"><a href="class_chassis_state_mgr.html#ac5c821136e187f2057a9c4b956975df8">ChassisStateMgr::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdoc">initialize this object</div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8cpp_source.html#l00055">ChassisStateMgr.cpp:55</a></div></div>
+<div class="ttc" id="aclass_chassis_state_mgr_html_ac5c821136e187f2057a9c4b956975df8"><div class="ttname"><a href="class_chassis_state_mgr.html#ac5c821136e187f2057a9c4b956975df8">ChassisStateMgr::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdoc">initialize this object</div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8cpp_source.html#l00058">ChassisStateMgr.cpp:58</a></div></div>
 <div class="ttc" id="aclass_chassis_state_mgr_html_aa0a242007069f6ac807a0bffda4011b4af5f2c0cf847126026206a39ef7b96e98"><div class="ttname"><a href="class_chassis_state_mgr.html#aa0a242007069f6ac807a0bffda4011b4af5f2c0cf847126026206a39ef7b96e98">ChassisStateMgr::DRIVER_ASSIST_DRIVE_TO_LOADING_STATION</a></div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8h_source.html#l00040">ChassisStateMgr.h:40</a></div></div>
 <div class="ttc" id="a_tank_drive_8h_html"><div class="ttname"><a href="_tank_drive_8h.html">TankDrive.h</a></div></div>
 <div class="ttc" id="aclass_chassis_state_mgr_html_aa0a242007069f6ac807a0bffda4011b4"><div class="ttname"><a href="class_chassis_state_mgr.html#aa0a242007069f6ac807a0bffda4011b4">ChassisStateMgr::CHASSIS_STATE</a></div><div class="ttdeci">CHASSIS_STATE</div><div class="ttdoc">States the Chassis can be in.</div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8h_source.html#l00036">ChassisStateMgr.h:36</a></div></div>
 <div class="ttc" id="a_arcade_drive_8h_html"><div class="ttname"><a href="_arcade_drive_8h.html">ArcadeDrive.h</a></div></div>
-<div class="ttc" id="aclass_chassis_state_mgr_html_aee10455f341306f03501a486e83a78cc"><div class="ttname"><a href="class_chassis_state_mgr.html#aee10455f341306f03501a486e83a78cc">ChassisStateMgr::SetState</a></div><div class="ttdeci">void SetState(CHASSIS_STATE state)</div><div class="ttdoc">change the state of the chassis</div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8cpp_source.html#l00086">ChassisStateMgr.cpp:86</a></div></div>
+<div class="ttc" id="aclass_chassis_state_mgr_html_aee10455f341306f03501a486e83a78cc"><div class="ttname"><a href="class_chassis_state_mgr.html#aee10455f341306f03501a486e83a78cc">ChassisStateMgr::SetState</a></div><div class="ttdeci">void SetState(CHASSIS_STATE state)</div><div class="ttdoc">change the state of the chassis</div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8cpp_source.html#l00109">ChassisStateMgr.cpp:109</a></div></div>
 <div class="ttc" id="aclass_chassis_state_mgr_html_aa0a242007069f6ac807a0bffda4011b4ae264b2edf87d81a349001e4d184763a7"><div class="ttname"><a href="class_chassis_state_mgr.html#aa0a242007069f6ac807a0bffda4011b4ae264b2edf87d81a349001e4d184763a7">ChassisStateMgr::TELEOP</a></div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8h_source.html#l00039">ChassisStateMgr.h:39</a></div></div>
 <div class="ttc" id="aclass_chassis_state_mgr_html"><div class="ttname"><a href="class_chassis_state_mgr.html">ChassisStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8h_source.html#l00031">ChassisStateMgr.h:31</a></div></div>
 <div class="ttc" id="aclass_chassis_state_mgr_html_aa0a242007069f6ac807a0bffda4011b4a4ea7b8f81fdb10beeb3641a38c7bb180"><div class="ttname"><a href="class_chassis_state_mgr.html#aa0a242007069f6ac807a0bffda4011b4a4ea7b8f81fdb10beeb3641a38c7bb180">ChassisStateMgr::MAX_CHASSIS_STATES</a></div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8h_source.html#l00041">ChassisStateMgr.h:41</a></div></div>
-<div class="ttc" id="aclass_chassis_state_mgr_html_a16e107db442bbb345f22ccb44b7dd7fc"><div class="ttname"><a href="class_chassis_state_mgr.html#a16e107db442bbb345f22ccb44b7dd7fc">ChassisStateMgr::ChassisStateMgr</a></div><div class="ttdeci">ChassisStateMgr()</div><div class="ttdoc">create chassis states</div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8cpp_source.html#l00032">ChassisStateMgr.cpp:32</a></div></div>
-<div class="ttc" id="aclass_chassis_state_mgr_html_ac2fceaadcb51a3a1076b53d26cd69a83"><div class="ttname"><a href="class_chassis_state_mgr.html#ac2fceaadcb51a3a1076b53d26cd69a83">ChassisStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8cpp_source.html#l00078">ChassisStateMgr.cpp:78</a></div></div>
+<div class="ttc" id="aclass_chassis_state_mgr_html_a16e107db442bbb345f22ccb44b7dd7fc"><div class="ttname"><a href="class_chassis_state_mgr.html#a16e107db442bbb345f22ccb44b7dd7fc">ChassisStateMgr::ChassisStateMgr</a></div><div class="ttdeci">ChassisStateMgr()</div><div class="ttdoc">create chassis states</div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8cpp_source.html#l00033">ChassisStateMgr.cpp:33</a></div></div>
+<div class="ttc" id="aclass_chassis_state_mgr_html_ac2fceaadcb51a3a1076b53d26cd69a83"><div class="ttname"><a href="class_chassis_state_mgr.html#ac2fceaadcb51a3a1076b53d26cd69a83">ChassisStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8cpp_source.html#l00089">ChassisStateMgr.cpp:89</a></div></div>
 <div class="ttc" id="aclass_chassis_state_mgr_html_aa0a242007069f6ac807a0bffda4011b4acfdc47a0cb6c9fbd05acd16530580438"><div class="ttname"><a href="class_chassis_state_mgr.html#aa0a242007069f6ac807a0bffda4011b4acfdc47a0cb6c9fbd05acd16530580438">ChassisStateMgr::AUTON</a></div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8h_source.html#l00038">ChassisStateMgr.h:38</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2.html">controllers</a></li><li class="navelem"><a class="el" href="dir_142ce975c76f4587562ed8193513a2b7.html">chassis</a></li><li class="navelem"><a class="el" href="_chassis_state_mgr_8h.html">ChassisStateMgr.h</a></li>
+    <li class="navelem"><a class="el" href="dir_128f75dce35ba73c52fc2f45d15b5117.html">states</a></li><li class="navelem"><a class="el" href="dir_14278792266e8d8b74f14855d1b9b523.html">chassis</a></li><li class="navelem"><a class="el" href="_chassis_state_mgr_8h.html">ChassisStateMgr.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

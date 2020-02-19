@@ -14,16 +14,6 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-//========================================================================================================
-/// Robot.cpp
-//========================================================================================================
-///
-/// File Description:
-///     The main robot code.  The Init methods get called when that state gets entered and then the 
-///     Periodic methods get called every 20 milliseconds.
-///
-//========================================================================================================
-
 // C++ Includes
 #include <iostream>
 #include <memory>
@@ -36,20 +26,35 @@
 #include <Robot.h>
 #include <xmlhw/RobotDefn.h>
 #include <auton/CyclePrimitives.h>
-#include <controllers/chassis/ChassisStateMgr.h>
-#include <controllers/BallManipulator.h>
-//#include <controllers/controlPanel/ControlPanelStateMgr.h>
-//#include <controllers/climber/ClimberStateMgr.h>
+#include <states/chassis/ChassisStateMgr.h>
+#include <states/BallManipulator.h>
+#include <states/intake/IntakeStateMgr.h>
+#include <gamepad/TeleopControl.h>
+//#include <states/controlPanel/ControlPanelStateMgr.h>
+//#include <states/climber/ClimberStateMgr.h>
+#include <hw/factories/LimelightFactory.h>
+#include <hw/DragonLimelight.h>
+
+
+#include <test/ButtonBoxDisplay.h>
+#include <test/XboxDisplay.h>
+#include <test/IntakeStateMgrTest.h>
+#include <test/ImpellerStateMgrTest.h>
+#include <test/BallTransferStateMgrTest.h>
+#include <test/ShooterStateMgrTest.h>
+#include <ctre/Phoenix.h>
+#include <subsys/MechanismFactory.h>
+#include <subsys/MechanismTypes.h>
+
 
 using namespace std;
 using namespace frc;
 
+/// @brief  The main robot code.  The Init methods get called when that state gets entered and then the 
+///     Periodic methods get called every 20 milliseconds.
 
-///-----------------------------------------------------------------------
-/// Method:      RobotInit
-/// Description: When the robot gets created this gets called.  It initializes
-///              the robot subsystems (hardware).
-///-----------------------------------------------------------------------
+/// @brief When the robot gets created this gets called.  It initializes the robot subsystems (hardware).
+/// @return void
 void Robot::RobotInit() 
 {
     // Read the robot definition from the xml configuration files and
@@ -63,39 +68,51 @@ void Robot::RobotInit()
     // m_cyclePrims = new CyclePrimitives();
 
     m_chassisStateMgr = new ChassisStateMgr();
-    m_powerCells = new BallManipulator();
+    //m_intake = new IntakeStateMgr();
+    m_powerCells = BallManipulator::GetInstance();
+    m_shooterHood = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER_HOOD);
+    m_turret = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET);
+    m_impeller = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::IMPELLER);
+    m_shooter = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER);
+    m_controller = TeleopControl::GetInstance();
+
+
     // m_control = new ControlPanelStateMgr();
     // m_climber = new ClimberStateMgr();
 
         // pick test mode
     m_testChooser.SetDefaultOption( m_noTest, m_noTest);
-    m_testChooser.AddOption( m_buttonBox, m_buttonBox );
-    m_testChooser.AddOption( m_dragonXBox, m_dragonXBox );
+    m_testChooser.AddOption( m_buttonBoxTest, m_buttonBoxTest );
+    m_testChooser.AddOption( m_dragonXBoxTest, m_dragonXBoxTest );    
+    m_testChooser.AddOption( m_intakeTest, m_intakeTest );
+    m_testChooser.AddOption( m_impellerTest, m_impellerTest );
+    m_testChooser.AddOption( m_ballTransferTest, m_ballTransferTest );
+//    m_testChooser.AddOption( m_shooterTest, m_shooterTest );
+
     SmartDashboard::PutData("Test", &m_testChooser);
 
     m_buttonBoxDisplay = nullptr;
     m_xBoxDisplay = nullptr;
 
+    //m_limelight = LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT );
+    /*if (m_limelight.get() != nullptr )
+    {
+        m_limelight.get()->SetLEDMode( DragonLimelight::LED_MODE::LED_OFF);
+    } */  
 }
 
-///-----------------------------------------------------------------------
-/// Method:      RobotPeriodic
-/// Description: This function is called every robot packet, no matter the 
-///              mode. This is used for items like diagnostics that run 
-///              during disabled, autonomous, teleoperated and test modes
-///              (states).  THis runs after the specific state periodic 
-///              methods and before the LiveWindow and SmartDashboard updating.
-///-----------------------------------------------------------------------
+/// @brief This function is called every robot packet, no matter the  mode. This is used for items like diagnostics that run 
+///        during disabled, autonomous, teleoperated and test modes (states).  THis runs after the specific state periodic 
+///        methods and before the LiveWindow and SmartDashboard updating.
+/// @return void
 void Robot::RobotPeriodic() 
 {
 
 }
 
 
-///-----------------------------------------------------------------------
-/// Method:      AutonomousInit
-/// Description: This initializes the autonomous state
-///-----------------------------------------------------------------------
+/// @brief This initializes the autonomous state
+/// @return void
 void Robot::AutonomousInit() 
 {
     m_chassisStateMgr->Init();
@@ -106,11 +123,8 @@ void Robot::AutonomousInit()
 }
 
 
-///-----------------------------------------------------------------------
-/// Method:      AutonomousPeriodic
-/// Description: Runs every 20 milliseconds when the autonomous state is 
-///              active.
-///-----------------------------------------------------------------------
+/// @brief Runs every 20 milliseconds when the autonomous state is active.
+/// @return void
 void Robot::AutonomousPeriodic() 
 {
     //Real auton magic right here:
@@ -118,12 +132,11 @@ void Robot::AutonomousPeriodic()
 }
 
 
-///-----------------------------------------------------------------------
-/// Method:      TeleopInit
-/// Description: This initializes the teleoperated state
-///-----------------------------------------------------------------------
+/// @brief This initializes the teleoperated state
+/// @return void
 void Robot::TeleopInit() 
 {
+    m_chassisStateMgr->Init();
     m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
     m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
@@ -131,37 +144,64 @@ void Robot::TeleopInit()
 }
 
 
-///-----------------------------------------------------------------------
-/// Method:      TeleopPeriodic
-/// Description: Runs every 20 milliseconds when the teleoperated state is 
-///              active.
-///-----------------------------------------------------------------------
+/// @brief Runs every 20 milliseconds when the teleoperated state is active.
+/// @return void
 void Robot::TeleopPeriodic() 
 {
     m_chassisStateMgr->RunCurrentState();
-    m_powerCells->RunCurrentState();
+    //m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
+    m_shooterHood->SetOutput(ControlModes::PERCENT_OUTPUT, .5* m_controller->GetAxisValue(TeleopControl::SHOOTER_HOOD_MANUAL_AXIS));
+    //m_intake->RunCurrentState();
+   m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
+    
     // m_climber->RunCurrentState();
+    frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
+    frc::SmartDashboard::PutNumber("Shooter Hood position", m_shooterHood->GetCurrentPosition());
+    frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());
+    frc::SmartDashboard::PutNumber("Shooter speed", m_shooter->GetCurrentSpeed());
+    //frc::SmartDashboard::PutNumber("Limelight tx", m_limelight.get()->GetTargetHorizontalOffset());
 }
 
 
-///-----------------------------------------------------------------------
-/// Method:      TestInit
-/// Description: This initializes the test state
-///-----------------------------------------------------------------------
+
+/// @brief This initializes the test state
+/// @return void
 void Robot::TestInit() 
 {
     m_testSelected = m_testChooser.GetSelected();
-    if ( m_testSelected == m_buttonBox )
+    if ( m_testSelected == m_buttonBoxTest )
     {
         m_currentTest = BUTTON_BOX;
         m_buttonBoxDisplay = new ButtonBoxDisplay();
     }
-    else if ( m_testSelected == m_buttonBox )
+    else if ( m_testSelected == m_dragonXBoxTest )
     {
         m_currentTest = XBOX;
         m_xBoxDisplay = new XboxDisplay();
     }
+	else if ( m_testSelected == m_intakeTest )
+	{
+        m_currentTest = INTAKE;
+		m_intakeStateMgrTest = new IntakeStateMgrTest();
+	}
+	else if ( m_testSelected == m_impellerTest )
+	{
+        m_currentTest = IMPELLER;
+		m_impellerStateMgrTest = new ImpellerStateMgrTest();
+	}
+	else if ( m_testSelected == m_ballTransferTest )
+	{
+        m_currentTest = TRANSFER;
+		m_ballTransferStateMgrTest = new BallTransferStateMgrTest();
+	}
+    /**
+	else if ( m_testSelected == m_shooterTest )
+	{
+        m_currentTest = SHOOTER;
+		m_shooterStateMgrTest = new ShooterStateMgrTest();
+	}
+    **/
     else
     {
         m_currentTest = NONE;
@@ -169,11 +209,8 @@ void Robot::TestInit()
 }
 
 
-///-----------------------------------------------------------------------
-/// Method:      TestPeriodic
-/// Description: Runs every 20 milliseconds when the test state is 
-///              active.
-///-----------------------------------------------------------------------
+/// @brief Runs every 20 milliseconds when the test state is active.
+/// @return void
 void Robot::TestPeriodic() 
 {
     switch ( m_currentTest )
@@ -185,7 +222,35 @@ void Robot::TestPeriodic()
         case XBOX:
             m_xBoxDisplay->periodic();
             break;
-
+			
+		case INTAKE: 
+			if ( !m_intakeStateMgrTest->IsDone() )
+			{
+				m_intakeStateMgrTest->Periodic();
+			}
+			break;
+			
+		case IMPELLER: 
+			if ( !m_impellerStateMgrTest->IsDone() )
+			{
+				m_impellerStateMgrTest->Periodic();
+			}
+			break;
+			
+		case TRANSFER: 
+			if ( !m_ballTransferStateMgrTest->IsDone() )
+			{
+				m_ballTransferStateMgrTest->Periodic();
+			}
+			break;
+		/**
+		case SHOOTER: 
+			if ( !m_shooterStateMgrTest->IsDone() )
+			{
+				m_shooterStateMgrTest->Periodic();
+			}
+			break;
+        **/
         default:
             break;
     }
@@ -194,6 +259,6 @@ void Robot::TestPeriodic()
 #ifndef RUNNING_FRC_TESTS
 int main() 
 {
-    return frc::StartRobot<Robot>(); 
+    return StartRobot<Robot>(); 
 }
 #endif

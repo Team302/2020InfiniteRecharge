@@ -58,10 +58,10 @@ void Intake::SetOutput
 (ControlModes::CONTROL_TYPE controlType,
    double                   value       )
 {
-    if ( m_master != nullptr )
+    if ( m_master.get() != nullptr )
     {
-        m_master->SetControlMode(controlType);
-        m_master->Set( value );
+        m_master.get()->SetControlMode(controlType);
+        m_master.get()->Set( value );
     }
     else 
     {
@@ -74,9 +74,9 @@ void Intake::ActivateSolenoid
     bool activate
 )
 {
-    if ( m_crawlingLifter != nullptr )
+    if ( m_crawlingLifter.get() != nullptr )
     {
-        m_crawlingLifter->Set( activate );
+        m_crawlingLifter.get()->Set( activate );
     }
     else
     {
@@ -92,9 +92,9 @@ bool Intake::IsSolenoidActivated
 {
     bool on = false;
 
-    if ( m_crawlingLifter != nullptr )
+    if ( m_crawlingLifter.get() != nullptr )
     {
-       on = m_crawlingLifter -> Get();
+       on = m_crawlingLifter.get() -> Get();
     }
     else
     {
@@ -116,15 +116,6 @@ double Intake::GetCurrentPosition
 }
 
 
-double Intake::GetTargetPosition 
-(
-
-)const
-{
-    Logger::GetLogger()->LogError(string("Intake::GetTargetPosition"),string ("Called"));
-    return 0.0;     //subj. to change
-}
-
 
 double Intake::GetCurrentSpeed
 (
@@ -136,15 +127,6 @@ double Intake::GetCurrentSpeed
 }
 
 
-double Intake::GetTargetSpeed
-(
-
-)const
-{
-    Logger::GetLogger()->LogError(string("Intake::GetTargetSpeed"), string("Called"));
-    return 0.0;     //subj. to change
-}
-
 /// @brief  Set the control constants (e.g. PIDF values).
 /// @param [in] ControlData*                                   pid:  the control constants
 /// @return void
@@ -153,7 +135,7 @@ void Intake::SetControlConstants
     ControlData*                                pid                 
 )
 {
-    Logger::GetLogger()->LogError(string("Intake::SetControlConstants"), string("Called"));
+    m_master.get()->SetControlConstants( pid );
 }
 
 

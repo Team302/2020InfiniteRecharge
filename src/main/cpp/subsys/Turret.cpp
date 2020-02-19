@@ -42,8 +42,8 @@ void Turret::SetOutput(ControlModes::CONTROL_TYPE controlType, double value)
 
             
 
-    m_turretMotor->SetControlMode(controlType);
-    m_turretMotor->Set(value);
+    m_turretMotor.get()->SetControlMode(controlType);
+    m_turretMotor.get()->Set(value);
 
 }
 
@@ -59,25 +59,17 @@ bool Turret::IsSolenoidActivated()
 
 double Turret::GetCurrentPosition() const
 {
-    return m_turretMotor->GetRotations() * 360.0;
+    return m_turretMotor.get()->GetRotations() * 360.0;
 }
 
-double Turret::GetTargetPosition() const
-{
-    return m_targetPosition;
-}
 
 double Turret::GetCurrentSpeed() const
 {
-    return m_turretMotor->GetRPS() * 360.0;
+    return m_turretMotor.get()->GetRPS() * 360.0;
 }
 
-double Turret::GetTargetSpeed() const
-{
-    return m_targetSpeed;
-}
 
 void Turret::SetControlConstants(ControlData* pid)
 {
-    m_turretMotor->SetControlConstants(pid);
+    m_turretMotor.get()->SetControlConstants(pid);
 }

@@ -63,12 +63,14 @@ ControlData* ControlDataDefn::ParseXML
 	modeMap[string("PERCENT_OUTPUT")] = ControlModes::CONTROL_TYPE::PERCENT_OUTPUT;
 	modeMap[string("VELOCITY_INCH")]  = ControlModes::CONTROL_TYPE::VELOCITY_INCH;
 	modeMap[string("VELOCITY_DEGREES")] = ControlModes::CONTROL_TYPE::VELOCITY_DEGREES;
+	modeMap[string("VELOCITY_RPS")]  = ControlModes::CONTROL_TYPE::VELOCITY_RPS;
 	modeMap[string("VOLTAGE")] = ControlModes::CONTROL_TYPE::VOLTAGE;
     modeMap[string("CURRENT")] = ControlModes::CONTROL_TYPE::CURRENT;
 	modeMap[string("TRAPEZOID")] = ControlModes::CONTROL_TYPE::TRAPEZOID;
 	modeMap[string("MOTION_PROFILE")] = ControlModes::CONTROL_TYPE::MOTION_PROFILE;
     modeMap[string("MOTION_PROFILE_ARC")] = ControlModes::CONTROL_TYPE::MOTION_PROFILE_ARC;
 	modeMap[string("PERCENT_OUTPUT")] = ControlModes::CONTROL_TYPE::PERCENT_OUTPUT;
+    modeMap[string("POSITION_DEGREES")] = ControlModes::CONTROL_TYPE::POSITION_DEGREES;
 	
 	map<string, ControlModes::CONTROL_RUN_LOCS> serverMap;
 	serverMap[string("MOTORCONTROLLER")] = ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER;

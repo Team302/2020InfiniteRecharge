@@ -6,5 +6,5 @@ var class_analog_input_usage =
       [ "CRAWLER_LEVEL", "class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eabaef60a8f685327d5ca24c8b533de985", null ],
       [ "MAX_ANALOG_TYPES", "class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3eae7622fb6eb6147bbe49ab9caf7533f27", null ]
     ] ],
-    [ "GetUsage", "class_analog_input_usage.html#a6a6c5245a0cc9e0ce8d0c3a1aa662993", null ]
+    [ "GetUsage", "class_analog_input_usage.html#a894ad312f5cf60afd953ef2eaaf99cd5", null ]
 ];

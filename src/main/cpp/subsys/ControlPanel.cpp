@@ -77,10 +77,10 @@ void ControlPanel::SetOutput
     double                     value       
 )
 {
-    if ( m_spinner != nullptr )
+    if ( m_spinner.get() != nullptr )
     {
-        m_spinner->SetControlMode(controlType);
-        m_spinner->Set( value );
+        m_spinner.get()->SetControlMode(controlType);
+        m_spinner.get()->Set( value );
     }
     else 
     {
@@ -93,9 +93,9 @@ void ControlPanel::ActivateSolenoid
     bool activate
 )
 {
-    if ( m_manipulatorExtender != nullptr )
+    if ( m_manipulatorExtender.get() != nullptr )
     {
-        m_manipulatorExtender->Set( activate );
+        m_manipulatorExtender.get()->Set( activate );
     }
     else
     {
@@ -111,9 +111,9 @@ bool ControlPanel::IsSolenoidActivated
 {
     bool on = false;
 
-    if ( m_manipulatorExtender != nullptr )
+    if ( m_manipulatorExtender.get() != nullptr )
     {
-       on = m_manipulatorExtender -> Get();
+       on = m_manipulatorExtender.get() -> Get();
     }
     else
     {
@@ -134,14 +134,6 @@ double ControlPanel::GetCurrentPosition
 
 }
 
-double ControlPanel::GetTargetPosition 
-(
-
-)const
-{
-    Logger::GetLogger()->LogError(string("ControlPanel::GetTargetPosition"),string ("Called"));
-    return 0.0;     //subj. to change
-}
 
 
 double ControlPanel::GetCurrentSpeed
@@ -154,15 +146,6 @@ double ControlPanel::GetCurrentSpeed
 }
 
 
-double ControlPanel::GetTargetSpeed
-(
-
-)const
-{
-    Logger::GetLogger()->LogError(string("ControlPanel::GetTargetSpeed"), string("Called"));
-    return 0.0;     //subj. to change
-}
-
 
 /// @brief  Set the control constants (e.g. PIDF values).
 /// @param [in] ControlData*                                   pid:  the control constants
@@ -172,10 +155,10 @@ void ControlPanel::SetControlConstants
     ControlData*                                pid                 
 )
 {
-    Logger::GetLogger()->LogError(string("ControlPanel::SetControlConstants"), string("Called"));
+    m_spinner.get()->SetControlConstants( pid );
 }
 
-ControlPanel::COLORS ControlPanel::GetColorSeen()
+ControlPanelColors::COLOR ControlPanel::GetColorSeen()
 {
     frc::Color detectedColor = m_color->GetColor();
     uint32_t detectedProximity = m_color->GetProximity();
@@ -183,13 +166,20 @@ ControlPanel::COLORS ControlPanel::GetColorSeen()
     double confidence = 0.0;
     frc::Color matchedColor = m_colorMatcher->MatchClosestColor(detectedColor, confidence);
     if(matchedColor == kGreenTarget && confidence >= 0.94 )
-        return COLORS::BLUE;
+    {
+        return ControlPanelColors::COLOR::BLUE;
+    }
     else if(matchedColor == kBlueTarget && confidence >= 0.94 )
-        return COLORS::GREEN;
+    {
+        return ControlPanelColors::COLOR::GREEN;
+    }
     else if(matchedColor == kYellowTarget && confidence >= 0.9 )
-        return COLORS::YELLOW;
+    {
+        return ControlPanelColors::COLOR::YELLOW;
+    }
     else if(matchedColor == kBlueTarget && confidence >= 0.9 )
-        return COLORS::RED;
-    else 
-        return COLORS::UNKNOWN;
+    {
+        return ControlPanelColors::COLOR::RED;
+    }
+    return ControlPanelColors::COLOR::UNKNOWN;
 }

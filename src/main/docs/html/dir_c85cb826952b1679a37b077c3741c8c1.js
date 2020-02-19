@@ -24,10 +24,6 @@ var dir_c85cb826952b1679a37b077c3741c8c1 =
     [ "DriveTrainSide.h", "_drive_train_side_8h.html", [
       [ "DriveTrainSide", "class_drive_train_side.html", "class_drive_train_side" ]
     ] ],
-    [ "HumanPlayerFlap.cpp", "_human_player_flap_8cpp.html", null ],
-    [ "HumanPlayerFlap.h", "_human_player_flap_8h.html", [
-      [ "HumanPlayerFlap", "class_human_player_flap.html", "class_human_player_flap" ]
-    ] ],
     [ "IChassis.h", "_i_chassis_8h.html", [
       [ "IChassis", "class_i_chassis.html", "class_i_chassis" ]
     ] ],

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE statedata SYSTEM "stateData.dtd">
+<statedata>
+	<controlData identifier="openloop" 
+	             mode="PERCENT_OUTPUT"/>
+	<controlData identifier="closedloop"
+				 mode="TRAPEZOID"
+				 proportional=".1"/>
+	<mechanismTarget stateIdentifier="SHOOTERHOODUP"
+	                 controlDataIdentifier="openloop"
+					 value="0.0"/>
+	<mechanismTarget stateIdentifier="SHOOTERHOODDOWN"
+	                 controlDataIdentifier="openloop"
+					 value="0.5"/>
+	<mechanismTarget stateIdentifier="SHOOTERHOODHOLD"
+	                 controlDataIdentifier="closedloop"
+					 value="0.0"/>
+    <mechanismTarget stateIdentifier="SHOOTERHOODMANUAL"
+	                 controlDataIdentifier="openloop"
+					 value="1.0"/>
+
+
+</statedata>

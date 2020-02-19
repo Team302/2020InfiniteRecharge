@@ -3,14 +3,27 @@
 <statedata>
 	<controlData identifier="openloop" 
 	             mode="PERCENT_OUTPUT"/>
+	<controlData identifier="closedloop" 
+	             mode="VELOCITY_RPS"
+				 proportional="4.0"
+				 feedforward="0.6"/>
 	<mechanismTarget stateIdentifier="IMPELLEROFF"
 	                 controlDataIdentifier="openloop"
 					 value="0.0"/>
-	<mechanismTarget stateIdentifier="IMPELLERON"
+	<!--mechanismTarget stateIdentifier="IMPELLERTOSHOOTER"
+	                 controlDataIdentifier="closedloop"
+					 value="2.0" /-->
+	<mechanismTarget stateIdentifier="IMPELLERTOSHOOTER"
 	                 controlDataIdentifier="openloop"
-					 value="0.5"/>
-	<mechanismTarget stateIdentifier="IMPELLERAGITATE"
+					 value="0.4"/> 
+	<!--mechanismTarget stateIdentifier="IMPELLERHOLD"
+	                 controlDataIdentifier="closedloop"
+					 value="-2.0"/-->
+	<mechanismTarget stateIdentifier="IMPELLERHOLD"
 	                 controlDataIdentifier="openloop"
-					 value="-0.25"/>
+					 value="-0.40"/>
+	<!--mechanismTarget stateIdentifier="IMPELLERAGITATE"
+	                 controlDataIdentifier="openloop"
+					 value="-0.25"/ -->
 
 </statedata>                                      

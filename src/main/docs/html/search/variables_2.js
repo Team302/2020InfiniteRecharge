@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inches_5fper_5fsecond_5fsecond_2021',['INCHES_PER_SECOND_SECOND',['../class_super_drive.html#aa7ab753722262aae87138667bb0bac2f',1,'SuperDrive']]]
+  ['gyro_5fcorrection_5fconstant_2278',['GYRO_CORRECTION_CONSTANT',['../class_super_drive.html#a97309413dd3b3f1d68324476d57daba0',1,'SuperDrive']]]
 ];
