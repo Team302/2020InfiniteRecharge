@@ -5,7 +5,7 @@
 	             mode="PERCENT_OUTPUT"/>
 	<controlData identifier="closedloop"
 				 mode="POSITION_DEGREES"
-				 proportional="0.1"/>
+				 proportional="1.0"/>
 	<mechanismTarget stateIdentifier="TURRETHOLD"
 	                 controlDataIdentifier="openloop"
 					 value="0.0"/>
