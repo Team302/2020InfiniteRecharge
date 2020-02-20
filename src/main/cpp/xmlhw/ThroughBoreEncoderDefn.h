@@ -2,15 +2,14 @@
 
 #include <memory>
 #include <pugixml/pugixml.hpp>
-#include <rev/CANEncoder.h>
-using namespace std;
+#include <frc/Encoder.h>
 
 class ThroughBoreEncoderDefn
 {
     ThroughBoreEncoderDefn() = default;
 
     virtual ~ThroughBoreEncoderDefn() = default;
-    std::shared_ptr<rev::CANEncoder> ParseXML
+    std::shared_ptr<frc::Encoder> ParseXML
     (
         pugi::xml_node throughBoreEncoderNode
     );
