@@ -35,6 +35,17 @@
 
 using namespace std;
 
+ShooterStateMgr* ShooterStateMgr::m_instance = nullptr;
+ShooterStateMgr* ShooterStateMgr::GetInstance()
+{
+	if ( ShooterStateMgr::m_instance == nullptr )
+	{
+		ShooterStateMgr::m_instance = new ShooterStateMgr();
+	}
+	return ShooterStateMgr::m_instance;
+}
+
+
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
                                      m_currentState()

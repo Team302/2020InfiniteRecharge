@@ -23,6 +23,17 @@
 
 using namespace std;
 
+TurretStateMgr* TurretStateMgr::m_instance = nullptr;
+TurretStateMgr* TurretStateMgr::GetInstance()
+{
+	if ( TurretStateMgr::m_instance == nullptr )
+	{
+		TurretStateMgr::m_instance = new TurretStateMgr();
+	}
+	return TurretStateMgr::m_instance;
+}
+
+
 TurretStateMgr::TurretStateMgr() : m_stateMap(),
                                    m_currentState(),
                                    m_approxTargetAngle( 0.0 )

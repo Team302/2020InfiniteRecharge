@@ -35,6 +35,17 @@
 
 using namespace std;
 
+BallTransferStateMgr* BallTransferStateMgr::m_instance = nullptr;
+BallTransferStateMgr* BallTransferStateMgr::GetInstance()
+{
+	if ( BallTransferStateMgr::m_instance == nullptr )
+	{
+		BallTransferStateMgr::m_instance = new BallTransferStateMgr();
+	}
+	return BallTransferStateMgr::m_instance;
+}
+
+
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                                                m_stateEnumToObjectMap(),

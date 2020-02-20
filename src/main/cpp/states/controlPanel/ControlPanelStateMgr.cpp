@@ -20,6 +20,16 @@
 
 using namespace std;
 
+ControlPanelStateMgr* ControlPanelStateMgr::m_instance = nullptr;
+ControlPanelStateMgr* ControlPanelStateMgr::GetInstance()
+{
+	if ( ControlPanelStateMgr::m_instance == nullptr )
+	{
+		ControlPanelStateMgr::m_instance = new ControlPanelStateMgr();
+	}
+	return ControlPanelStateMgr::m_instance;
+}
+
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 ControlPanelStateMgr::ControlPanelStateMgr() : m_stateMap(),
                                        m_currentState()

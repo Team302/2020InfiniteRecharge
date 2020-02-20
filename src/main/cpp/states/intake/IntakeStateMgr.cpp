@@ -36,6 +36,16 @@
 
 using namespace std;
 
+IntakeStateMgr* IntakeStateMgr::GetInstance()
+{
+	if ( IntakeStateMgr::m_instance == nullptr )
+	{
+		IntakeStateMgr::m_instance = new IntakeStateMgr();
+	}
+	return IntakeStateMgr::m_instance;
+}
+
+
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 IntakeStateMgr::IntakeStateMgr() : m_stateEnumToObjectMap(),
                                    m_currentState()

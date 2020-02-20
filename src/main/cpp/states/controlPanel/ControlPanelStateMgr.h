@@ -24,9 +24,9 @@ class ControlPanelStateMgr
             MAX_CONTROL_PANEL_STATES
         };
 
-        ControlPanelStateMgr();
-        ~ControlPanelStateMgr() = default;
-
+        /// @brief  Find or create the Control Panel State Manager
+		/// @return AnalogInputFactory* pointer to the factory
+		static ControlPanelStateMgr* GetInstance();
 
         /// @brief  run the current state
         /// @return void
@@ -47,6 +47,9 @@ class ControlPanelStateMgr
         inline CONTROL_PANEL_STATE GetCurrentState() const { return m_currentStateEnum; };
 
     private:
+        ControlPanelStateMgr();
+        ~ControlPanelStateMgr() = default;
+        static ControlPanelStateMgr* m_instance;
 
         std::map<CONTROL_PANEL_STATE,IState*> m_stateMap;
         IState* m_currentState;

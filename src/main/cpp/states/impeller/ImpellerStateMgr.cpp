@@ -37,6 +37,16 @@
 
 using namespace std;
 
+ImpellerStateMgr::m_instance = nullptr;
+ImpellerStateMgr* ImpellerStateMgr::GetInstance()
+{
+	if ( ImpellerStateMgr::m_instance == nullptr )
+	{
+		ImpellerStateMgr::m_instance = new ImpellerStateMgr();
+	}
+	return BallManipulator::m_instance;
+}
+
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
                                        m_currentState(),

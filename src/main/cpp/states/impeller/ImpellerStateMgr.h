@@ -39,9 +39,10 @@ class ImpellerStateMgr
             MAX_IMPELLER_STATES
         };
 
-        ImpellerStateMgr();
-        ~ImpellerStateMgr() = default;
-
+        
+/// @brief  Find or create the Impeller State Manager
+		/// @return AnalogInputFactory* pointer to the factory
+		static ImpellerStateMgr* GetInstance();
 
         /// @brief  run the current state
         /// @return void
@@ -62,6 +63,9 @@ class ImpellerStateMgr
         inline IMPELLER_STATE GetCurrentState() const { return m_currentStateEnum; };
 
     private:
+        ImpellerStateMgr();
+        ~ImpellerStateMgr() = default;
+        static IntakeStateMgr* m_instance;
 
         std::map<IMPELLER_STATE,IState*> m_stateEnumToObjectMap;
         IState* m_currentState;

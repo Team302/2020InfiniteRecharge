@@ -13,61 +13,24 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once
+#include <controllers/DriverFeedback.h>
+#include <states/balltransfer/BallTransferStateMgr.h>
+#include <states/chassis/ChassisStateMgr.h>
+#include <states/controlPanel/ControlPanelStateMgr.h>
+#include <states/impeller/ImpellerStateMgr.h>
+#include <states/intake/IntakeStateMgr.h>
+#include <states/shooter/ShooterStateMgr.h>
+#include <states/shooterHood/ShooterHoodStateMgr.h>
+#include <states/turret/TurretStateMgr.h>
+#include <frc/smartdashboard/SmartDashboard.h>
 
-// C++ Includes
-#include <map>
 
-// FRC includes
-
-// Team 302 includes
-#include <states/IState.h>
-
-// Third Party Includes
-
-class IntakeStateMgr 
+DriverFeedback::DriverFeedback()
 {
-    public:
-        /// @enum the various states of the intake
-        enum INTAKE_STATE
-        {
-            OFF,
-            ON,
-            HUMANPLAYER,
-            MAX_INTAKE_STATES
-        };
+    
+}
 
-        /// @brief  Find or create the Intake State Manager
-		/// @return AnalogInputFactory* pointer to the factory
-		static IntakeStateMgr* GetInstance();
+void DriverFeedback::periodic()
+{
 
-
-        /// @brief  run the current state
-        /// @return void
-        void RunCurrentState();
-
-        /// @brief  set the current state, initialize it and run it
-        /// @param [in]     INTAKE_STATE - state to set
-        /// @param [in]     run - true means run, false just initialize it
-        /// @return void
-        void SetCurrentState
-        (
-            INTAKE_STATE    state,
-            bool            run
-        );
-
-        /// @brief  return the current state
-        /// @return INTAKE_STATE - the current state
-        inline INTAKE_STATE GetCurrentState() const { return m_currentStateEnum; };
-
-    private:
-        IntakeStateMgr();
-        ~IntakeStateMgr() = default;
-        static IntakeStateMgr* m_instance;
-
-        std::map<INTAKE_STATE,IState*> m_stateEnumToObjectMap;
-        IState* m_currentState;
-        INTAKE_STATE m_currentStateEnum;
-
-};
-
+}

@@ -20,9 +20,10 @@ class TurretStateMgr {
     MANUAL_AIM,
     MAX_TURRET_STATES
   };
-  TurretStateMgr();
-  ~TurretStateMgr() = default;
-
+  
+  /// @brief  Find or create the Turret State Manger
+		/// @return AnalogInputFactory* pointer to the factory
+		static TurretStateMgr* GetInstance();
 
   /// @brief  run the current state
         /// @return void
@@ -45,6 +46,9 @@ class TurretStateMgr {
         inline void SetApproxTargetAngle( double angle ) { m_approxTargetAngle = angle; }
 
     private:
+      TurretStateMgr();
+      ~TurretStateMgr() = default;
+      static TurretStateMgr* m_instance;
 
         std::map<TURRET_STATE,IState*> m_stateMap;
         IState* m_currentState;

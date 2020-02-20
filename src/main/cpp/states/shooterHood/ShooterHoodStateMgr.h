@@ -38,8 +38,9 @@ class ShooterHoodStateMgr
             MAX_SHOOTER_HOOD_STATES
         };
 
-        ShooterHoodStateMgr();
-        ~ShooterHoodStateMgr() = default;
+       /// @brief  Find or create the Shooter Hood State Manager
+	    /// @return AnalogInputFactory* pointer to the factory
+		static ShooterHoodStateMgr* GetInstance();
 
 
         /// @brief  run the current state
@@ -61,6 +62,9 @@ class ShooterHoodStateMgr
         inline SHOOTER_HOOD_STATE GetCurrentState() const { return m_currentStateEnum; };
 
     private:
+        ShooterHoodStateMgr();
+        ~ShooterHoodStateMgr() = default;
+        static ShooterStateMgr* m_instance;
 
         std::map<SHOOTER_HOOD_STATE,IState*> m_stateMap;
         IState* m_currentState;

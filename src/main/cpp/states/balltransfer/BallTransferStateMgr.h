@@ -38,9 +38,9 @@ class BallTransferStateMgr
             MAX_BALL_TRANSFER_STATES
         };
 
-        BallTransferStateMgr();
-        ~BallTransferStateMgr() = default;
-
+        /// @brief  Find or create the Ball Transfer
+		/// @return AnalogInputFactory* pointer to the factory
+		static BallTransferStateMgr* GetInstance();
 
         /// @brief  run the current state
         /// @return void
@@ -61,6 +61,9 @@ class BallTransferStateMgr
         inline BALL_TRANSFER_STATE GetCurrentState() const { return m_currentStateEnum; };
 
     private:
+        BallTransferStateMgr();
+        ~BallTransferStateMgr() = default;
+        static BallTransferStateMgr* m_instance;
 
         IState* m_currentState;
         std::map<BALL_TRANSFER_STATE,IState*> m_stateEnumToObjectMap;
