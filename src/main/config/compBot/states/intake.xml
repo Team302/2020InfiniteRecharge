@@ -9,7 +9,7 @@
 					 solenoid="OFF"/>
 	<mechanismTarget stateIdentifier="INTAKEON"
 	                 controlDataIdentifier="openloop"
-					 value="1.0"
+					 value=".5"
 					 solenoid="ON"/>
 	<mechanismTarget stateIdentifier="INTAKEHUMANPLAYER"
 	                 controlDataIdentifier="openloop"
