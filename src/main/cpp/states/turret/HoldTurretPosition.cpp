@@ -17,25 +17,3 @@ HoldTurretPosition::HoldTurretPosition(ControlData* controlData, double target, 
     MechanismState(MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET),controlData, target, solenoid)
 {
 }
-
-/*void HoldTurretPosition::Init()
-{
-    m_turret->SetControlConstants(m_controlData);
-    m_targetPosition = m_turret->GetCurrentPosition();
-}
-
-void HoldTurretPosition::Run()
-{   
-    m_turret->SetOutput(m_controlData->GetMode(), m_targetPosition);
-    const double tolerance = 5.0;
-    if ( abs(m_targetPosition - m_turret->GetCurrentPosition()) < tolerance) //arbitrary tolerance for now will change later
-    {
-        m_atTarget = true;
-    }
-}
-
-bool HoldTurretPosition::AtTarget() const
-{
-    return m_atTarget;
-}
-*/

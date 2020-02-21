@@ -34,12 +34,12 @@ DragonTalon::DragonTalon
 	m_gearRatio(gearRatio),
 	m_diameter( 1.0 )
 {
-	m_tickOffset = m_talon->GetSelectedSensorPosition();
+	//m_tickOffset = m_talon->GetSelectedSensorPosition();
 }
 
 double DragonTalon::GetRotations() const
 {
-	return (ConversionUtils::CountsToRevolutions( (m_talon->GetSelectedSensorPosition() - m_tickOffset), m_countsPerRev) * m_gearRatio);
+	return (ConversionUtils::CountsToRevolutions( (m_talon->GetSelectedSensorPosition()), m_countsPerRev) * m_gearRatio);
 }
 
 double DragonTalon::GetRPS() const
@@ -88,7 +88,7 @@ void DragonTalon::Set(double value)
 			break;
         case ControlModes::CONTROL_TYPE::POSITION_INCH:
             ctreMode = ctre::phoenix::motorcontrol::ControlMode::Position;
-			output = (ConversionUtils::ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio) + m_tickOffset;
+			output = (ConversionUtils::ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio);
         	break;
         
         case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
@@ -124,7 +124,7 @@ void DragonTalon::Set(double value)
 
 		case ControlModes::CONTROL_TYPE::TRAPEZOID:
 			ctreMode = ctre::phoenix::motorcontrol::ControlMode::MotionMagic;
-			output = (ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio) + m_tickOffset;
+			output = (ConversionUtils::InchesToCounts(value, m_countsPerRev, m_diameter) / m_gearRatio);
 			break;
 
         default:
@@ -139,8 +139,8 @@ void DragonTalon::Set(double value)
 
 void DragonTalon::SetRotationOffset(double rotations)
 {
-	double newRotations = -rotations + DragonTalon::GetRotations();
-	m_tickOffset += (int) (newRotations * m_countsPerRev / m_gearRatio);
+//	double newRotations = -rotations + DragonTalon::GetRotations();
+//	m_tickOffset += (int) (newRotations * m_countsPerRev / m_gearRatio);
 }
 
 void DragonTalon::SetVoltageRamping(double ramping, double rampingClosedLoop)
