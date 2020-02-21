@@ -16,10 +16,10 @@
 
 using namespace std;
 
-std::shared_ptr<DragonLimelight> LimelightDefn::ParseXML(pugi::xml_node    limelightNode)
+DragonLimelight* LimelightDefn::ParseXML(pugi::xml_node    limelightNode)
 {
     // initialize the output
-    shared_ptr<DragonLimelight> limelight = nullptr;
+    DragonLimelight* limelight = nullptr;
 
     bool hasError = false;
 
@@ -174,7 +174,6 @@ std::shared_ptr<DragonLimelight> LimelightDefn::ParseXML(pugi::xml_node    limel
                 secXHairX,
                 secXHairY
             );
-            //limelight = make_shared<DragonLimelight>(usage, tableName, mountingHeight, horizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2);
         }
     }
     return limelight;

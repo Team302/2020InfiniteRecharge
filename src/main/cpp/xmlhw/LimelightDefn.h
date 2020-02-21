@@ -13,13 +13,14 @@
 
 #include <pugixml/pugixml.hpp>
 
-class LimelightDefn {
- public:
-  LimelightDefn() = default;
-  virtual ~LimelightDefn() = default;
+class LimelightDefn 
+{
+  public:
+      LimelightDefn() = default;
+      virtual ~LimelightDefn() = default;
 
-  std::shared_ptr<DragonLimelight> ParseXML
-  (
-    pugi::xml_node    limelightNode
-  );
+      DragonLimelight* ParseXML
+      (
+        pugi::xml_node    limelightNode
+      );
 };

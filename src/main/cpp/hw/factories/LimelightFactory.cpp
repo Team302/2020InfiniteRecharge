@@ -25,7 +25,10 @@ LimelightFactory* LimelightFactory::GetLimelightFactory()
     return m_limelightFactory;
 }
 
-shared_ptr<DragonLimelight> LimelightFactory::CreateLimelight
+LimelightFactory::LimelightFactory() : m_limelight( nullptr )
+{
+}
+DragonLimelight* LimelightFactory::CreateLimelight
 (
     IDragonSensor::SENSOR_USAGE     usage, 
     string                          tableName, 
@@ -47,55 +50,26 @@ shared_ptr<DragonLimelight> LimelightFactory::CreateLimelight
 {
     if ( m_limelight == nullptr )
     {
-        m_limelight.reset(new DragonLimelight(usage, tableName, mountingHeight, mountingHorizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2));
-        m_limelight.get()->SetLEDMode( ledMode );
-        m_limelight.get()->SetCamMode( camMode );
-        m_limelight.get()->SetStreamMode( streamMode );
-        m_limelight.get()->ToggleSnapshot( snapMode );
+        m_limelight = new DragonLimelight(usage, tableName, mountingHeight, mountingHorizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2);
+        m_limelight->SetLEDMode( ledMode );
+        m_limelight->SetCamMode( camMode );
+        m_limelight->SetStreamMode( streamMode );
+        m_limelight->ToggleSnapshot( snapMode );
         if ( defaultXHairX > -1.5 && defaultXHairY > -1.5 )
         {
-            // m_limelight.get()->  todo add method
+            // m_limelight->  todo add method
         }        
         if ( secXHairX > -1.5 && secXHairY > -1.5 )
         {
-            // m_limelight.get()->  todo add method
+            // m_limelight->  todo add method
         }
 
     }
     return m_limelight;
-    /**
-    auto it = m_limelightMap.find(usage);
-    shared_ptr<DragonLimelight> limelight;
-    if ( it != m_limelightMap.end() )
-    {
-        return GetLimelight(usage);
-    }
-    else
-    {
-        shared_ptr<DragonLimelight> limelight;
-        limelight.reset(new DragonLimelight(usage, tableName, mountingHeight, mountingHorizontalOffset, rotation, mountingAngle, targetHeight, targetHeight2));
-        m_limelightMap[usage] = limelight;
-        return limelight;
-        
-    }
-    **/
 }
 
-shared_ptr<DragonLimelight> LimelightFactory::GetLimelight(IDragonSensor::SENSOR_USAGE usage)
+DragonLimelight* LimelightFactory::GetLimelight(IDragonSensor::SENSOR_USAGE usage)
 {
     return m_limelight;
-    /**
-    auto it = m_limelightMap.find(usage);
-    if ( it != m_limelightMap.end() )
-    {
-        return m_limelightMap[usage];
-    }
-    else
-    {
-        std::string msg = "limelight not found; usage =";
-        msg += to_string(usage);
-        Logger::GetLogger()->LogError("LimelightFactory::GetLimilight", msg);
-    }
-    **/
 }
 
