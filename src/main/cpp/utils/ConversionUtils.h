@@ -69,7 +69,7 @@ class ConversionUtils
 		/// @param [in] revolutions
 		/// @param [in] counts per revolution
 		/// @return double units
-		inline static double CountsToRevolutions( int counts, int countsPerRev ) { return counts/(double)countsPerRev; }  		
+		inline static double CountsToRevolutions( int counts, int countsPerRev ) { return ((double)counts/(double)countsPerRev); }  		
 		
 		//-------------  Linear Position Conversions
 		
