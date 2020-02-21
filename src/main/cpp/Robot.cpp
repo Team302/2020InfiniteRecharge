@@ -65,7 +65,7 @@ void Robot::RobotInit()
 
     // Display the autonomous choices on the dashboard for selection.
     // comment out for now since auton hasn't been implemented
-    // m_cyclePrims = new CyclePrimitives();
+    m_cyclePrims = new CyclePrimitives();
 
     m_chassisStateMgr = new ChassisStateMgr();
     //m_intake = new IntakeStateMgr();
