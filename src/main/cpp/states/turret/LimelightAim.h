@@ -38,7 +38,7 @@ class LimelightAim : public IState
         bool m_atTarget;
         double m_target;
         IMechanism* m_turret;
-        std::shared_ptr<DragonLimelight> m_limelight;
+        DragonLimelight* m_limelight;
         double m_targetPosition;
         bool m_start;
 };

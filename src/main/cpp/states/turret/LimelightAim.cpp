@@ -29,7 +29,7 @@ LimelightAim::LimelightAim(ControlData* controlData, double target): m_controlDa
     m_atTarget(false),
     m_target(target),
     m_turret( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::TURRET) ),
-    m_limelight(LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT)),
+    m_limelight(new DragonLimelight(IDragonSensor::MAIN_LIMELIGHT, "limelight", 0.0, 0.0, 90.0, 0.0, 0.0, 0.0)),
     m_targetPosition(0.0),
     m_start(false)
 {
@@ -47,15 +47,16 @@ void LimelightAim::Run()
         m_turret->SetOutput(m_controlData->GetMode(), m_target);
         m_start = true;
     }*/
-    double targetHorizontalOffset = m_limelight.get()->GetTargetHorizontalOffset();
-    double m_targetPosition = m_turret->GetCurrentPosition() - targetHorizontalOffset;
-    m_turret->SetOutput(m_controlData->GetMode(), m_targetPosition);
+    double targetHorizontalOffset = m_limelight->GetTargetHorizontalOffset();
+    double power = -targetHorizontalOffset / 20 *.5;
+    m_turret->SetOutput(m_controlData->GetMode(), power);
 //    if(m_targetPosition - 5 < m_turret->GetCurrentPosition() < m_targetPosition + 5) //arbitrary tolerance for now will change later
     if( abs( m_targetPosition - m_turret->GetCurrentPosition() ) <  5.0 ) //arbitrary tolerance for now will change later
     {
         m_atTarget = true;
     }
-    frc::SmartDashboard::PutNumber("Target Position", m_targetPosition);
+    //frc::SmartDashboard::PutNumber("Target Position", targetPosition);
+    frc::SmartDashboard::PutNumber("limelight position", targetHorizontalOffset);
 }
 
 bool LimelightAim::AtTarget() const

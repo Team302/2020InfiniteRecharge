@@ -104,8 +104,8 @@ bool DragonLimelight::HasTarget() const
 
 double DragonLimelight::GetTargetHorizontalOffset() const
 {
-    double tx = m_networktable.get()->GetNumber("tx", 0.0);// - m_mountingHorizontalOffset;
-    double ty = m_networktable.get()->GetNumber("ty", 0.0);// - m_mountingHorizontalOffset;
+    double tx = m_networktable.get()->GetNumber("tx", 0.0);
+    double ty = m_networktable.get()->GetNumber("ty", 0.0);
     if(m_rotation == 0.0)
     {
         return tx;
