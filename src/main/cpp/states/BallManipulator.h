@@ -16,18 +16,17 @@
 #pragma once
 
 // C++ Includes
-#include <map>
 
 // FRC includes
 
 // Team 302 includes
-#include <states/intake/IntakeStateMgr.h>
-//#include <controllers/humanplayerflap/HumanPlayerFlapStateMgr.h>
-#include <states/impeller/ImpellerStateMgr.h>
-#include <states/balltransfer/BallTransferStateMgr.h>
-#include <states/turret/TurretStateMgr.h>
-#include <states/shooter/ShooterStateMgr.h>
-#include <states/shooterhood/ShooterHoodStateMgr.h>
+// forward declares
+class BallTransferStateMgr;
+class ImpellerStateMgr;
+class IntakeStateMgr;
+class ShooterStateMgr;
+class ShooterHoodStateMgr;
+class TurretStateMgr;
 
 // Third Party Includes
 
@@ -47,7 +46,7 @@ class BallManipulator
         };
 
 		/// @brief  Find or create the Ball Manipulator
-		/// @return AnalogInputFactory* pointer to the factory
+		/// @return BallManipulator* pointer to the singleton
 		static BallManipulator* GetInstance();
 
 

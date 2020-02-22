@@ -14,30 +14,27 @@
 //====================================================================================================================================================
 
 // C++ Includes
-#include <map>
-#include <memory>
 
 // FRC includes
 
 // Team 302 includes
 #include <states/BallManipulator.h>
-#include <utils/Logger.h>
-#include <gamepad/TeleopControl.h>
-#include <states/intake/IntakeStateMgr.h>
-//#include <controllers/humanplayerflap/HumanPlayerFlapStateMgr.h>
-#include <states/impeller/ImpellerStateMgr.h>
 #include <states/balltransfer/BallTransferStateMgr.h>
-#include <states/turret/TurretStateMgr.h>
+#include <states/impeller/ImpellerStateMgr.h>
+#include <states/intake/IntakeStateMgr.h>
 #include <states/shooter/ShooterStateMgr.h>
 #include <states/shooterhood/ShooterHoodStateMgr.h>
-
-
+#include <states/turret/TurretStateMgr.h>
+#include <utils/Logger.h>
 
 // Third Party Includes
 
 using namespace std;
 
 BallManipulator* BallManipulator::m_instance = nullptr;
+
+/// @brief Get the ball manipulator (singleton) class
+/// @return BallManipulator*  singleton class
 BallManipulator* BallManipulator::GetInstance()
 {
 	if ( BallManipulator::m_instance == nullptr )
@@ -69,13 +66,6 @@ BallManipulator::BallManipulator() : m_currentState( BALL_MANIPULATOR_STATE::OFF
 /// @return void
 void BallManipulator::RunCurrentState()
 {
-    // todo: add gamepad interupts
-    // process teleop/manual interrupts
-    auto controller = TeleopControl::GetInstance();
-    if ( controller != nullptr )
-    {
-    }
-
     // run the current state
     m_intake->RunCurrentState();
     m_impeller->RunCurrentState();
