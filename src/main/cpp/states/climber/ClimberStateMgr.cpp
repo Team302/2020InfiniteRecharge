@@ -37,6 +37,7 @@
 
 using namespace std;
 
+ClimberStateMgr* ClimberStateMgr::m_instance = nullptr;
 ClimberStateMgr* ClimberStateMgr::GetInstance()
 {
 	if ( ClimberStateMgr::m_instance == nullptr )

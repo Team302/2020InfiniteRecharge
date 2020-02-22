@@ -53,6 +53,7 @@ class TeleopControl
             CLIMBER_EXTEND,
             CLIMBER_LIFT,
             CLIMBER_CRAWL,
+            CLIMBER_HOLD,
             IMPELLER_OFF,
             IMPELLER_HOLD,
             IMPELLER_AGITATE,
