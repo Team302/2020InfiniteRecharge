@@ -13,13 +13,13 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 #pragma once
-#include <memory>
 
 //Includes
-#include <auton/PrimitiveParams.h>
 #include <auton/primitives/IPrimitive.h>
-#include <states/shooter/ShooterStateMgr.h>
-#include <states/BallManipulator.h>
+
+//forward declares
+class PrimitiveParams;
+class BallManipulator;
 
 class AutoShoot : public IPrimitive 
 {
