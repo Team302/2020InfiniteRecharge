@@ -34,17 +34,17 @@ DragonTalon::DragonTalon
 	m_gearRatio(gearRatio),
 	m_diameter( 1.0 )
 {
-	//m_tickOffset = m_talon->GetSelectedSensorPosition();
+	//m_tickOffset = m_talon.get()->GetSelectedSensorPosition();
 }
 
 double DragonTalon::GetRotations() const
 {
-	return (ConversionUtils::CountsToRevolutions( (m_talon->GetSelectedSensorPosition()), m_countsPerRev) * m_gearRatio);
+	return (ConversionUtils::CountsToRevolutions( (m_talon.get()->GetSelectedSensorPosition()), m_countsPerRev) * m_gearRatio);
 }
 
 double DragonTalon::GetRPS() const
 {
-	return (ConversionUtils::CountsPer100msToRPS( m_talon->GetSelectedSensorVelocity(), m_countsPerRev) * m_gearRatio);
+	return (ConversionUtils::CountsPer100msToRPS( m_talon.get()->GetSelectedSensorVelocity(), m_countsPerRev) * m_gearRatio);
 }
 
 void DragonTalon::SetControlMode(ControlModes::CONTROL_TYPE mode)
@@ -134,7 +134,7 @@ void DragonTalon::Set(double value)
         	break;
     }	
 
-	m_talon->Set( ctreMode, output );
+	m_talon.get()->Set( ctreMode, output );
 }
 
 void DragonTalon::SetRotationOffset(double rotations)
@@ -145,33 +145,33 @@ void DragonTalon::SetRotationOffset(double rotations)
 
 void DragonTalon::SetVoltageRamping(double ramping, double rampingClosedLoop)
 {
-    m_talon->ConfigOpenloopRamp(ramping);
+    m_talon.get()->ConfigOpenloopRamp(ramping);
 
 	if (rampingClosedLoop >= 0)
 	{
-		m_talon->ConfigClosedloopRamp(rampingClosedLoop);
+		m_talon.get()->ConfigClosedloopRamp(rampingClosedLoop);
 	}
 }
 
 
 void DragonTalon::EnableCurrentLimiting(bool enabled)
 {
-    m_talon->EnableCurrentLimit(enabled);
+    m_talon.get()->EnableCurrentLimit(enabled);
 }
 
 void DragonTalon::EnableBrakeMode(bool enabled)
 {
-    m_talon->SetNeutralMode(enabled ? ctre::phoenix::motorcontrol::NeutralMode::Brake : ctre::phoenix::motorcontrol::NeutralMode::Coast);
+    m_talon.get()->SetNeutralMode(enabled ? ctre::phoenix::motorcontrol::NeutralMode::Brake : ctre::phoenix::motorcontrol::NeutralMode::Coast);
 }
 
 void DragonTalon::Invert(bool inverted)
 {
-    m_talon->SetInverted(inverted);
+    m_talon.get()->SetInverted(inverted);
 }
 
 void DragonTalon::SetSensorInverted(bool inverted)
 {
-    m_talon->SetSensorPhase(inverted);
+    m_talon.get()->SetSensorPhase(inverted);
 }
 
 MotorControllerUsage::MOTOR_CONTROLLER_USAGE DragonTalon::GetType() const
@@ -195,7 +195,7 @@ void DragonTalon::SelectClosedLoopProfile
 	int    pidIndex			// <I> - 0 for primary closed loop, 1 for cascaded closed-loop
 )
 {
-	m_talon->SelectProfileSlot( slot, pidIndex );
+	m_talon.get()->SelectProfileSlot( slot, pidIndex );
 }
 
 
@@ -207,13 +207,13 @@ int DragonTalon::ConfigSelectedFeedbackSensor
 )
 {
 	int error = 0;
-	if ( m_talon != nullptr )
+	if ( m_talon.get() != nullptr )
 	{
-		error = m_talon->ConfigSelectedFeedbackSensor( feedbackDevice, pidIdx, timeoutMs );
+		error = m_talon.get()->ConfigSelectedFeedbackSensor( feedbackDevice, pidIdx, timeoutMs );
 	}
 	else
 	{
-//		printf( "DragonTalon::ConfigSelectedFeedbackSensor: m_talon not initialized \n" );
+//		printf( "DragonTalon::ConfigSelectedFeedbackSensor: m_talon.get() not initialized \n" );
 	}
 	return error;
 }
@@ -226,13 +226,13 @@ int DragonTalon::ConfigSelectedFeedbackSensor
 )
 {
 	int error = 0;
-	if ( m_talon != nullptr )
+	if ( m_talon.get() != nullptr )
 	{
-		error = m_talon->ConfigSelectedFeedbackSensor( feedbackDevice, pidIdx, timeoutMs );
+		error = m_talon.get()->ConfigSelectedFeedbackSensor( feedbackDevice, pidIdx, timeoutMs );
 	}
 	else
 	{
-//		printf( "DragonTalon::ConfigSelectedFeedbackSensor: m_talon not initialized \n" );
+//		printf( "DragonTalon::ConfigSelectedFeedbackSensor: m_talon.get() not initialized \n" );
 	}
 	return error;
 }
@@ -244,13 +244,13 @@ int DragonTalon::ConfigPeakCurrentLimit
 )
 {
 	int error = 0;
-	if ( m_talon != nullptr )
+	if ( m_talon.get() != nullptr )
 	{
-		error = m_talon->ConfigPeakCurrentLimit( amps, timeoutMs );
+		error = m_talon.get()->ConfigPeakCurrentLimit( amps, timeoutMs );
 	}
 	else
 	{
-//		printf( "DragonTalon::ConfigPeakCurrentLimit: m_talon not initialized \n" );
+//		printf( "DragonTalon::ConfigPeakCurrentLimit: m_talon.get() not initialized \n" );
 	}
 	return error;
 }
@@ -262,13 +262,13 @@ int DragonTalon::ConfigPeakCurrentDuration
 )
 {
 	int error = 0;
-	if ( m_talon != nullptr )
+	if ( m_talon.get() != nullptr )
 	{
-		error = m_talon->ConfigPeakCurrentDuration( milliseconds, timeoutMs );
+		error = m_talon.get()->ConfigPeakCurrentDuration( milliseconds, timeoutMs );
 	}
 	else
 	{
-//		printf( "DragonTalon::ConfigPeakCurrentDuration: m_talon not initialized \n" );
+//		printf( "DragonTalon::ConfigPeakCurrentDuration: m_talon.get() not initialized \n" );
 	}
 	return error;
 }
@@ -280,13 +280,13 @@ int DragonTalon::ConfigContinuousCurrentLimit
 )
 {
 	int error = 0;
-	if ( m_talon != nullptr )
+	if ( m_talon.get() != nullptr )
 	{
-		error = m_talon->ConfigContinuousCurrentLimit( amps, timeoutMs );
+		error = m_talon.get()->ConfigContinuousCurrentLimit( amps, timeoutMs );
 	}
 	else
 	{
-//		printf( "DragonTalon::ConfigContinuousCurrentLimit: m_talon not initialized \n" );
+//		printf( "DragonTalon::ConfigContinuousCurrentLimit: m_talon.get() not initialized \n" );
 	}
 	return error;
 }
@@ -296,7 +296,7 @@ void DragonTalon::SetAsSlave
     int         masterCANID         // <I> - master motor
 )
 {
-    m_talon->Set( ControlMode::Follower, masterCANID );
+    m_talon.get()->Set( ControlMode::Follower, masterCANID );
 }
 
 
@@ -306,12 +306,12 @@ void DragonTalon::SetAsSlave
 void DragonTalon::SetControlConstants(ControlData* controlInfo)
 {
 	auto peak = controlInfo->GetPeakValue();
-	m_talon->ConfigPeakOutputForward(peak);
-	m_talon->ConfigPeakOutputReverse(-1.0*peak);
+	m_talon.get()->ConfigPeakOutputForward(peak);
+	m_talon.get()->ConfigPeakOutputReverse(-1.0*peak);
 
 	auto nom = controlInfo->GetNominalValue();
-	m_talon->ConfigPeakOutputForward(nom);
-	m_talon->ConfigPeakOutputReverse(-1.0*nom);
+	m_talon.get()->ConfigPeakOutputForward(nom);
+	m_talon.get()->ConfigPeakOutputReverse(-1.0*nom);
 
 	switch ( controlInfo->GetMode() )
 	{
@@ -322,79 +322,79 @@ void DragonTalon::SetControlConstants(ControlData* controlInfo)
 
 		case ControlModes::CONTROL_TYPE::POSITION_DEGREES:
 		{
-			m_talon->Config_kP(0, controlInfo->GetP());
-			m_talon->Config_kI(0, controlInfo->GetI());
-			m_talon->Config_kD(0, controlInfo->GetD());
-			m_talon->Config_kF(0, controlInfo->GetF());
+			m_talon.get()->Config_kP(0, controlInfo->GetP());
+			m_talon.get()->Config_kI(0, controlInfo->GetI());
+			m_talon.get()->Config_kD(0, controlInfo->GetD());
+			m_talon.get()->Config_kF(0, controlInfo->GetF());
 		}
 		break;
 
 		case ControlModes::CONTROL_TYPE::POSITION_INCH:
 		{
-			m_talon->Config_kP(0, controlInfo->GetP());
-			m_talon->Config_kI(0, controlInfo->GetI());
-			m_talon->Config_kD(0, controlInfo->GetD());
-			m_talon->Config_kF(0, controlInfo->GetF());
+			m_talon.get()->Config_kP(0, controlInfo->GetP());
+			m_talon.get()->Config_kI(0, controlInfo->GetI());
+			m_talon.get()->Config_kD(0, controlInfo->GetD());
+			m_talon.get()->Config_kF(0, controlInfo->GetF());
 		}
 		break;
 
 		case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
 		{
-			m_talon->Config_kP(0, controlInfo->GetP());
-			m_talon->Config_kI(0, controlInfo->GetI());
-			m_talon->Config_kD(0, controlInfo->GetD());
-			m_talon->Config_kF(0, controlInfo->GetF());
+			m_talon.get()->Config_kP(0, controlInfo->GetP());
+			m_talon.get()->Config_kI(0, controlInfo->GetI());
+			m_talon.get()->Config_kD(0, controlInfo->GetD());
+			m_talon.get()->Config_kF(0, controlInfo->GetF());
 		}
 		break;
 
 		case ControlModes::CONTROL_TYPE::VELOCITY_INCH:
 		{
-			m_talon->Config_kP(0, controlInfo->GetP());
-			m_talon->Config_kI(0, controlInfo->GetI());
-			m_talon->Config_kD(0, controlInfo->GetD());
-			m_talon->Config_kF(0, controlInfo->GetF());
+			m_talon.get()->Config_kP(0, controlInfo->GetP());
+			m_talon.get()->Config_kI(0, controlInfo->GetI());
+			m_talon.get()->Config_kD(0, controlInfo->GetD());
+			m_talon.get()->Config_kF(0, controlInfo->GetF());
 		}
 		break;
 
 		case ControlModes::CONTROL_TYPE::VELOCITY_RPS:
 		{
-			m_talon->Config_kP(0, controlInfo->GetP());
-			m_talon->Config_kI(0, controlInfo->GetI());
-			m_talon->Config_kD(0, controlInfo->GetD());
-			m_talon->Config_kF(0, controlInfo->GetF());
+			m_talon.get()->Config_kP(0, controlInfo->GetP());
+			m_talon.get()->Config_kI(0, controlInfo->GetI());
+			m_talon.get()->Config_kD(0, controlInfo->GetD());
+			m_talon.get()->Config_kF(0, controlInfo->GetF());
 		}
 		break;
 
 		case ControlModes::CONTROL_TYPE::VOLTAGE:
 		{
-			m_talon->Config_kP(0, controlInfo->GetP());
-			m_talon->Config_kI(0, controlInfo->GetI());
-			m_talon->Config_kD(0, controlInfo->GetD());
-			m_talon->Config_kF(0, controlInfo->GetF());
+			m_talon.get()->Config_kP(0, controlInfo->GetP());
+			m_talon.get()->Config_kI(0, controlInfo->GetI());
+			m_talon.get()->Config_kD(0, controlInfo->GetD());
+			m_talon.get()->Config_kF(0, controlInfo->GetF());
 		}
 		break;
 
 		case ControlModes::CONTROL_TYPE::CURRENT:
 		{
-			m_talon->Config_kP(0, controlInfo->GetP());
-			m_talon->Config_kI(0, controlInfo->GetI());
-			m_talon->Config_kD(0, controlInfo->GetD());
-			m_talon->Config_kF(0, controlInfo->GetF());
+			m_talon.get()->Config_kP(0, controlInfo->GetP());
+			m_talon.get()->Config_kI(0, controlInfo->GetI());
+			m_talon.get()->Config_kD(0, controlInfo->GetD());
+			m_talon.get()->Config_kF(0, controlInfo->GetF());
 		}
 		break;
 
 		case ControlModes::CONTROL_TYPE::TRAPEZOID:
 		{
-			m_talon->Config_kP(0, controlInfo->GetP());
-			m_talon->Config_kI(0, controlInfo->GetI());
-			m_talon->Config_kD(0, controlInfo->GetD());
-			m_talon->Config_kF(0, controlInfo->GetF());
+			m_talon.get()->Config_kP(0, controlInfo->GetP());
+			m_talon.get()->Config_kI(0, controlInfo->GetI());
+			m_talon.get()->Config_kD(0, controlInfo->GetD());
+			m_talon.get()->Config_kF(0, controlInfo->GetF());
 
 			auto accel = controlInfo->GetMaxAcceleration() / m_gearRatio;
-			m_talon->ConfigMotionAcceleration( accel );
+			m_talon.get()->ConfigMotionAcceleration( accel );
 
 			auto vel = controlInfo->GetCruiseVelocity() / m_gearRatio;
-			m_talon->ConfigMotionCruiseVelocity( vel, 0);
+			m_talon.get()->ConfigMotionCruiseVelocity( vel, 0);
 		}
 		break;
 
@@ -424,7 +424,7 @@ void DragonTalon::SetForwardLimitSwitch
 )
 {
 	LimitSwitchNormal type = normallyOpen ? LimitSwitchNormal::LimitSwitchNormal_NormallyOpen : LimitSwitchNormal::LimitSwitchNormal_NormallyClosed;
-	m_talon->ConfigForwardLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );
+	m_talon.get()->ConfigForwardLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );
 }
 
 void DragonTalon::SetReverseLimitSwitch
@@ -433,7 +433,7 @@ void DragonTalon::SetReverseLimitSwitch
 )
 {
 	LimitSwitchNormal type = normallyOpen ? LimitSwitchNormal::LimitSwitchNormal_NormallyOpen : LimitSwitchNormal::LimitSwitchNormal_NormallyClosed;
-	m_talon->ConfigReverseLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );
+	m_talon.get()->ConfigReverseLimitSwitchSource( LimitSwitchSource::LimitSwitchSource_FeedbackConnector, type, 0  );
 }
 
 
@@ -443,8 +443,8 @@ void DragonTalon::SetRemoteSensor
     ctre::phoenix::motorcontrol::RemoteSensorSource deviceType
 )
 {
-	m_talon->ConfigRemoteFeedbackFilter( canID, deviceType, 0, 0.0 );
-	m_talon->ConfigSelectedFeedbackSensor( RemoteFeedbackDevice::RemoteFeedbackDevice_RemoteSensor0, 0, 0 );
+	m_talon.get()->ConfigRemoteFeedbackFilter( canID, deviceType, 0, 0.0 );
+	m_talon.get()->ConfigSelectedFeedbackSensor( RemoteFeedbackDevice::RemoteFeedbackDevice_RemoteSensor0, 0, 0 );
 }
 
 void DragonTalon::SetDiameter

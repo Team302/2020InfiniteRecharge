@@ -52,8 +52,8 @@ ChassisStateMgr::ChassisStateMgr() : m_arcade(make_shared<ArcadeDrive>()),
 
 void ChassisStateMgr::Init()
 {
-//    if ( m_currentState == CHASSIS_STATE::TELEOP )
-//    {
+    if ( m_currentState == CHASSIS_STATE::TELEOP )
+    {
         m_driveModeSelected = m_driveModeChooser.GetSelected();
         Logger::GetLogger()->LogError( string("ChassisStateMgr"), m_driveModeSelected );
         if( m_driveModeSelected == m_driveModeArcade || m_driveModeSelected == m_driveModeArcadeCurve ) 
@@ -79,23 +79,23 @@ void ChassisStateMgr::Init()
             Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("arcade2"));
         }
 
-        m_currentDrive->Init();
+        m_currentDrive.get()->Init();
 //        m_currentDrive->Run();
-//   }
-//    else if ( m_currentState == CHASSIS_STATE::AUTON )
-//    {
+   }
+    else if ( m_currentState == CHASSIS_STATE::AUTON )
+    {
         m_cyclePrims.get()->Init();
  //       m_cyclePrims.get()->Run();
- //   }
+    }
 }
 
 void ChassisStateMgr::RunCurrentState()
 {
     if ( m_currentState == CHASSIS_STATE::TELEOP )
     {
-        if ( m_currentDrive != nullptr )
+        if ( m_currentDrive.get() != nullptr )
         {
-            m_currentDrive->Run();
+            m_currentDrive.get()->Run();
         }
         else
         {
