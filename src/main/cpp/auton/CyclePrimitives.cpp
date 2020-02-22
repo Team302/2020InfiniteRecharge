@@ -72,7 +72,6 @@ void CyclePrimitives::Run()
 		Logger::GetLogger()->LogError( string("CyclePrimitive::RunCurrentPrimitive"), string("Primitive Detected!"));
 		m_currentPrim->Run();
 		//m_powerCells->Run();
-		// todo: run gamepiece manipulator primitives in parallel here
 		if (m_currentPrim->IsDone() )
 		{
 			GetNextPrim();

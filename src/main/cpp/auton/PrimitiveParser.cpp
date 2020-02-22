@@ -40,7 +40,7 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
     PrimitiveParamsVector paramVector;
 
     PRIMITIVE_IDENTIFIER        primitiveType = UNKNOWN_PRIMITIVE;
-    float                       time = 0.0;
+    float                       time = 15.0;
     float                       distance = 0.0;
     float                       heading = 0.0;
     float                       startDriveSpeed = 0.0;
