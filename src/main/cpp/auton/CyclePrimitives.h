@@ -27,13 +27,16 @@
 // Third Party Includes
 
 
-#include <auton/PrimitiveFactory.h>
-#include <auton/AutonSelector.h>
-#include <auton/primitives/IPrimitive.h>
-#include <auton/primitives/AutoShoot.h>
-#include <string>
+
 #include <vector>
 #include <states/IState.h>
+
+class AutonSelector;
+class AutoShoot;
+class IPrimitive;
+class PrimitiveFactory;
+class PrimitiveParams;
+
 
 class CyclePrimitives : public IState
 {

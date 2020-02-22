@@ -31,6 +31,7 @@
 #include <auton/PrimitiveParams.h>
 #include <states/BallManipulator.h>
 #include <utils/Logger.h>
+#include <auton/primitives/AutoShoot.h>
 
 // Third Party Includes
 
