@@ -67,8 +67,9 @@ void CyclePrimitives::RunCurrentPrimitive()
 {
 	if (m_currentPrim != nullptr)
 	{
+		Logger::GetLogger()->LogError( string("CyclePrimitive::RunCurrentPrimitive"), string("Primitive Detected!"));
 		m_currentPrim->Run();
-		m_powerCells->Run();
+		//m_powerCells->Run();
 		// todo: run gamepiece manipulator primitives in parallel here
 		if (m_currentPrim->IsDone() )
 		{
@@ -83,6 +84,7 @@ void CyclePrimitives::RunCurrentPrimitive()
 	}
 	else
 	{
+		Logger::GetLogger()->LogError(string("CyclePrimitive"), string("Completed"));
 		m_primParams.clear();	// clear the primitive params vector
 		m_currentPrimSlot = 0;  //Reset current prim slot
 		RunDoNothing();
@@ -97,7 +99,7 @@ void CyclePrimitives::GetNextPrim()
 	if (m_currentPrim != nullptr)
 	{
 		m_currentPrim->Init(currentPrimParam);
-		m_powerCells->Init(currentPrimParam);
+		//m_powerCells->Init(currentPrimParam);
 		m_maxTime = currentPrimParam->GetTime();
 		m_timer->Reset();
 		m_timer->Start();
@@ -124,7 +126,7 @@ void CyclePrimitives::RunDoNothing()
 										   );             
 		m_doNothing = m_primFactory->GetIPrimitive(params);
 		m_doNothing->Init(params);
-		m_powerCells->Init(params);
+		//m_powerCells->Init(params);
 	}
 	m_doNothing->Run();
 }

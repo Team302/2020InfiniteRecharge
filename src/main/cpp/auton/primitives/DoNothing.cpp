@@ -65,6 +65,7 @@ void DoNothing::Init(PrimitiveParams* params)
 /// @return void
 void DoNothing::Run() 
 {
+	Logger::GetLogger() -> LogError(string("DoNothing::Run()"), string("Arrived!"));
 	if ( m_chassis != nullptr )
 	{
 		m_chassis->SetOutput( ControlModes::CONTROL_TYPE::PERCENT_OUTPUT, 0.0, 0.0 );  

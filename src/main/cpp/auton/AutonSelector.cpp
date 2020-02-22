@@ -24,6 +24,7 @@
 
 //Team302 includes
 #include <auton/AutonSelector.h>
+#include <utils/Logger.h>
 
 
 using namespace std;
@@ -49,6 +50,7 @@ AutonSelector::AutonSelector() : m_xmlFiles(),
 //---------------------------------------------------------------------
 std::string AutonSelector::GetSelectedAutoFile()
 {
+	Logger::GetLogger()->LogError(string("Auton Selector Get Selected Auton"), m_chooser.GetSelected());
 	return m_chooser.GetSelected();
 }
 
