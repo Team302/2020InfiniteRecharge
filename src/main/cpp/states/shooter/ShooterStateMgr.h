@@ -37,8 +37,11 @@ class ShooterStateMgr
             MAX_SHOOTER_STATES
         };
 
-        ShooterStateMgr();
-        ~ShooterStateMgr() = default;
+        
+		/// @brief  Find or create the state manmanager
+		/// @return ShooterStateMgr* pointer to the state manager
+		static ShooterStateMgr* GetInstance();
+
 
 
         /// @brief  run the current state
@@ -65,5 +68,9 @@ class ShooterStateMgr
         IState* m_currentState;
         SHOOTER_STATE m_currentStateEnum;
 
+		static ShooterStateMgr*	m_instance;
+
+        ShooterStateMgr();
+        ~ShooterStateMgr() = default;
 };
 

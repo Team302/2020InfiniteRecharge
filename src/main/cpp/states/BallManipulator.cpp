@@ -50,12 +50,12 @@ BallManipulator* BallManipulator::GetInstance()
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 BallManipulator::BallManipulator() : m_currentState( BALL_MANIPULATOR_STATE::OFF),
-                                     m_intake( new IntakeStateMgr() ),
-                                     m_impeller( new ImpellerStateMgr() ),
-                                     m_transfer( new BallTransferStateMgr() ),
-                                     m_turret ( new TurretStateMgr() ),
-                                     m_shooter( new ShooterStateMgr() ), 
-                                     m_hood( new ShooterHoodStateMgr() )
+                                     m_intake( IntakeStateMgr::GetInstance() ),
+                                     m_impeller( ImpellerStateMgr::GetInstance() ),
+                                     m_transfer( BallTransferStateMgr::GetInstance() ),
+                                     m_turret ( TurretStateMgr::GetInstance() ),
+                                     m_shooter( ShooterStateMgr::GetInstance() ), 
+                                     m_hood( ShooterHoodStateMgr::GetInstance() )
 {
     m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
     m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );

@@ -29,11 +29,25 @@
 #include <states/balltransfer/BallTransferOff.h>
 #include <states/balltransfer/BallTransferToImpeller.h>
 #include <states/balltransfer/BallTransferToShooter.h>
+#include <subsys/MechanismFactory.h>
+#include <subsys/MechanismTypes.h>
 
 
 // Third Party Includes
 
 using namespace std;
+
+
+BallTransferStateMgr* BallTransferStateMgr::m_instance = nullptr;
+BallTransferStateMgr* BallTransferStateMgr::GetInstance()
+{
+	if ( BallTransferStateMgr::m_instance == nullptr )
+	{
+		BallTransferStateMgr::m_instance = new BallTransferStateMgr();
+	}
+	return BallTransferStateMgr::m_instance;
+}
+
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
@@ -118,35 +132,38 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
 /// @return void
 void BallTransferStateMgr::RunCurrentState()
 {
-    // process teleop/manual interrupts
-    
-    auto controller = TeleopControl::GetInstance();
-    if ( controller != nullptr )
+    if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::BALL_TRANSFER ) != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::BALL_TRANSFER_OFF ) && 
-             m_currentStateEnum != BALL_TRANSFER_STATE::OFF )
+        // process teleop/manual interrupts
+        
+        auto controller = TeleopControl::GetInstance();
+        if ( controller != nullptr )
         {
-            SetCurrentState( BALL_TRANSFER_STATE::OFF, false );
+            if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::BALL_TRANSFER_OFF ) && 
+                m_currentStateEnum != BALL_TRANSFER_STATE::OFF )
+            {
+                SetCurrentState( BALL_TRANSFER_STATE::OFF, false );
+            }
+            else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::BALL_TRANSFER_TO_IMPELLER ) &&
+                    m_currentStateEnum != BALL_TRANSFER_STATE::TO_IMPELLER )
+            {
+                SetCurrentState( BALL_TRANSFER_STATE::TO_IMPELLER, false );
+            }
+            else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::BALL_TRANSFER_TO_SHOOTER ) &&
+                    m_currentStateEnum != BALL_TRANSFER_STATE::TO_SHOOTER )
+            {
+                SetCurrentState( BALL_TRANSFER_STATE::TO_SHOOTER, false );
+            }
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::BALL_TRANSFER_TO_IMPELLER ) &&
-                  m_currentStateEnum != BALL_TRANSFER_STATE::TO_IMPELLER )
-        {
-            SetCurrentState( BALL_TRANSFER_STATE::TO_IMPELLER, false );
-        }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::BALL_TRANSFER_TO_SHOOTER ) &&
-                  m_currentStateEnum != BALL_TRANSFER_STATE::TO_SHOOTER )
-        {
-            SetCurrentState( BALL_TRANSFER_STATE::TO_SHOOTER, false );
-        }
-    }
-    
+        
 
-    Logger::GetLogger()->OnDash(string("Ball Transfer State"), to_string(m_currentStateEnum));
+        Logger::GetLogger()->OnDash(string("Ball Transfer State"), to_string(m_currentStateEnum));
 
-    // run the current state
-    if ( m_currentState != nullptr )
-    {
-        m_currentState->Run();
+        // run the current state
+        if ( m_currentState != nullptr )
+        {
+            m_currentState->Run();
+        }
     }
 
 }
@@ -173,7 +190,10 @@ void BallTransferStateMgr::SetCurrentState
             m_currentState->Init();
             if ( run )
             {
-                m_currentState->Run();
+                if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::BALL_TRANSFER ) != nullptr )
+                {
+                    m_currentState->Run();
+                }
             }
         }
     }

@@ -23,6 +23,16 @@
 
 using namespace std;
 
+TurretStateMgr* TurretStateMgr::m_instance = nullptr;
+TurretStateMgr* TurretStateMgr::GetInstance()
+{
+	if ( TurretStateMgr::m_instance == nullptr )
+	{
+		TurretStateMgr::m_instance = new TurretStateMgr();
+	}
+	return TurretStateMgr::m_instance;
+}
+
 TurretStateMgr::TurretStateMgr() : m_stateMap(),
                                    m_currentState(),
                                    m_approxTargetAngle( 0.0 )
@@ -97,23 +107,26 @@ TurretStateMgr::TurretStateMgr() : m_stateMap(),
 
 void TurretStateMgr::RunCurrentState()
 {
-    // process teleop/manual interrupts
-    auto controller = TeleopControl::GetInstance();
-    if ( controller != nullptr )
+    if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::TURRET) != nullptr )
     {
-        if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_BUTTON))
+        // process teleop/manual interrupts
+        auto controller = TeleopControl::GetInstance();
+        if ( controller != nullptr )
         {
-            SetCurrentState( TURRET_STATE::MANUAL_AIM, false ); 
+            if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_BUTTON))
+            {
+                SetCurrentState( TURRET_STATE::MANUAL_AIM, false ); 
+            }
+            if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TURRET_LIMELIGHT_AIM))
+            {
+                SetCurrentState( TURRET_STATE::LIMELIGHT_AIM, false);
+            }
         }
-        if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TURRET_LIMELIGHT_AIM))
+        Logger::GetLogger()->OnDash(string("Turret State"), to_string(m_currentStateEnum));
+        if ( m_currentState != nullptr )
         {
-            SetCurrentState( TURRET_STATE::LIMELIGHT_AIM, false);
+            m_currentState->Run();
         }
-    }
-    Logger::GetLogger()->OnDash(string("Turret State"), to_string(m_currentStateEnum));
-    if ( m_currentState != nullptr )
-    {
-        m_currentState->Run();
     }
 }
 void TurretStateMgr::SetCurrentState
@@ -141,7 +154,10 @@ void TurretStateMgr::SetCurrentState
             }
             if ( run )
             {
-                m_currentState->Run();
+                if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::TURRET) != nullptr )
+                {
+                    m_currentState->Run();
+                }
             }
         }
     }

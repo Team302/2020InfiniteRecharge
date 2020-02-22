@@ -30,11 +30,23 @@
 #include <states/intake/IntakeOn.h>
 #include <states/intake/IntakeHPSState.h>
 #include <frc/smartdashboard/SmartDashboard.h>
+#include <subsys/MechanismFactory.h>
+#include <subsys/MechanismTypes.h>
 
 
 // Third Party Includes
 
 using namespace std;
+
+IntakeStateMgr* IntakeStateMgr::m_instance = nullptr;
+IntakeStateMgr* IntakeStateMgr::GetInstance()
+{
+	if ( IntakeStateMgr::m_instance == nullptr )
+	{
+		IntakeStateMgr::m_instance = new IntakeStateMgr();
+	}
+	return IntakeStateMgr::m_instance;
+}
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 IntakeStateMgr::IntakeStateMgr() : m_stateEnumToObjectMap(),
@@ -116,33 +128,35 @@ IntakeStateMgr::IntakeStateMgr() : m_stateEnumToObjectMap(),
 /// @return void
 void IntakeStateMgr::RunCurrentState()
 {
-    // process teleop/manual interrupts
-    auto controller = TeleopControl::GetInstance();
-    if ( controller != nullptr )
+    if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::INTAKE) != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_ON ) )
+        // process teleop/manual interrupts
+        auto controller = TeleopControl::GetInstance();
+        if ( controller != nullptr )
         {
-            SetCurrentState( INTAKE_STATE::ON, false );
+            if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_ON ) )
+            {
+                SetCurrentState( INTAKE_STATE::ON, false );
+            }
+            else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_OFF ) )
+            {
+                SetCurrentState( INTAKE_STATE::OFF, false );
+            }
+            /*else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_HUMAN_PLAYER))
+            {
+                SetCurrentState( INTAKE_STATE::HUMANPLAYER, false );
+            }
+            */
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_OFF ) )
+
+        Logger::GetLogger()->OnDash(string("Intake State"), to_string(m_currentStateEnum));
+
+        // run the current state
+        if ( m_currentState != nullptr )
         {
-            SetCurrentState( INTAKE_STATE::OFF, false );
+            m_currentState->Run();
         }
-        /*else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_HUMAN_PLAYER))
-        {
-            SetCurrentState( INTAKE_STATE::HUMANPLAYER, false );
-        }
-        */
     }
-
-    Logger::GetLogger()->OnDash(string("Intake State"), to_string(m_currentStateEnum));
-
-    // run the current state
-    if ( m_currentState != nullptr )
-    {
-        m_currentState->Run();
-    }
-
 }
 
 /// @brief  set the current state, initialize it and run it
@@ -164,7 +178,10 @@ void IntakeStateMgr::SetCurrentState
         m_currentState->Init();
         if ( run )
         {
-            m_currentState->Run();
+            if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::INTAKE) != nullptr )
+            {
+                m_currentState->Run();
+            }
         }
         
     }

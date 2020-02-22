@@ -36,7 +36,7 @@ using namespace frc;
 ///  @brief	Tests for ImpellerStateMgr.  There are the following states: OFF, HOLD and AGITATE, TO_SHOOTER.  Each will run for 15 seconds in the following order:
 ///         HOLD, OFF, AGITATE, TO_SHOOTER.
 ImpellerStateMgrTest::ImpellerStateMgrTest() : IStateTest(),
-													   m_stateMgr( make_unique<ImpellerStateMgr>() ),
+													   m_stateMgr( ImpellerStateMgr::GetInstance() ),
 													   m_ranOff( false ),
 													   m_ranHold( false ),
 													   m_ranShoot( false ),
@@ -51,7 +51,7 @@ ImpellerStateMgrTest::ImpellerStateMgrTest() : IStateTest(),
 void ImpellerStateMgrTest::Init()
 {
 	m_loopCnt = 0;
-	m_stateMgr.get()->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, true );
+	m_stateMgr->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, true );
 	m_ranHold = true;
 }
 
@@ -64,32 +64,32 @@ void ImpellerStateMgrTest::Periodic()
 	{
 		if ( !m_ranHold )
 		{
-			m_stateMgr.get()->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );
+			m_stateMgr->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );
 			m_ranHold = true;
 		}
 		else if ( !m_ranShoot )
 		{
-			m_stateMgr.get()->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
+			m_stateMgr->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
 			m_ranShoot = true;
 		}
 		else if ( !m_ranOff )
 		{
-			m_stateMgr.get()->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
+			m_stateMgr->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
 			m_ranOff = true;
 		}
 		else if ( !m_ranAgitate )
 		{
-			m_stateMgr.get()->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::AGITATE, false );
+			m_stateMgr->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::AGITATE, false );
 			m_ranAgitate = true;
 		}
 		else
 		{
-			m_stateMgr.get()->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
+			m_stateMgr->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
 			m_isDone = true;
 		}
 		m_loopCnt = 0;
 	}
-	m_stateMgr.get()->RunCurrentState();
+	m_stateMgr->RunCurrentState();
 }
 
 /// @brief Indicate whether the test has completed or not.

@@ -15,10 +15,22 @@
 #include <states/controlPanel/ControlPanelRaise.h>
 #include <states/controlPanel/ControlPanelStow.h>
 #include <states/controlPanel/ControlPanelTurn.h>
+#include <subsys/MechanismFactory.h>
+#include <subsys/MechanismTypes.h>
 
 // Third Party Includes
 
 using namespace std;
+
+ControlPanelStateMgr* ControlPanelStateMgr::m_instance = nullptr;
+ControlPanelStateMgr* ControlPanelStateMgr::GetInstance()
+{
+	if ( ControlPanelStateMgr::m_instance == nullptr )
+	{
+		ControlPanelStateMgr::m_instance = new ControlPanelStateMgr();
+	}
+	return ControlPanelStateMgr::m_instance;
+}
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 ControlPanelStateMgr::ControlPanelStateMgr() : m_stateMap(),
@@ -104,38 +116,40 @@ ControlPanelStateMgr::ControlPanelStateMgr() : m_stateMap(),
 /// @return void
 void ControlPanelStateMgr::RunCurrentState()
 {
-    // process teleop/manual interrupts
-    auto controller = TeleopControl::GetInstance();
-    if ( controller != nullptr )
+    if ( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::CONTROL_TABLE_MANIPULATOR) != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_RAISE ) && 
-             m_currentStateEnum != CONTROL_PANEL_STATE::RAISE )
+        // process teleop/manual interrupts
+        auto controller = TeleopControl::GetInstance();
+        if ( controller != nullptr )
         {
-            SetCurrentState( CONTROL_PANEL_STATE::RAISE, false );
+            if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_RAISE ) && 
+                m_currentStateEnum != CONTROL_PANEL_STATE::RAISE )
+            {
+                SetCurrentState( CONTROL_PANEL_STATE::RAISE, false );
+            }
+            else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_STOW ) &&
+                    m_currentStateEnum != CONTROL_PANEL_STATE::STOW )
+            {
+                SetCurrentState( CONTROL_PANEL_STATE::STOW, false );
+            }
+            else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_SPIN_WHEEL ) &&
+                    m_currentStateEnum != CONTROL_PANEL_STATE::TURN )
+            {
+                SetCurrentState( CONTROL_PANEL_STATE::TURN, false );
+            }
+            else if ( controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_TURN_TO_COLOR)  &&
+                    m_currentStateEnum != CONTROL_PANEL_STATE::COLOR_TURN)
+            {
+                SetCurrentState(CONTROL_PANEL_STATE::COLOR_TURN, false);
+            }
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_STOW ) &&
-                  m_currentStateEnum != CONTROL_PANEL_STATE::STOW )
+
+        // run the current state
+        if ( m_currentState != nullptr )
         {
-            SetCurrentState( CONTROL_PANEL_STATE::STOW, false );
-        }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_SPIN_WHEEL ) &&
-                  m_currentStateEnum != CONTROL_PANEL_STATE::TURN )
-        {
-            SetCurrentState( CONTROL_PANEL_STATE::TURN, false );
-        }
-        else if ( controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_TURN_TO_COLOR)  &&
-                  m_currentStateEnum != CONTROL_PANEL_STATE::COLOR_TURN)
-        {
-            SetCurrentState(CONTROL_PANEL_STATE::COLOR_TURN, false);
+            m_currentState->Run();
         }
     }
-
-    // run the current state
-    if ( m_currentState != nullptr )
-    {
-        m_currentState->Run();
-    }
-
 }
 
 /// @brief  set the current state, initialize it and run it
@@ -157,7 +171,10 @@ void ControlPanelStateMgr::SetCurrentState
             m_currentState->Init();
             if ( run )
             {
-                m_currentState->Run();
+                if ( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::CONTROL_TABLE_MANIPULATOR) != nullptr )
+                {
+                    m_currentState->Run();
+                }
             }
         }
     }

@@ -29,11 +29,23 @@
 #include <controllers/MechanismTargetData.h>
 #include <utils/Logger.h>
 #include <gamepad/TeleopControl.h>
+#include <subsys/MechanismFactory.h>
+#include <subsys/MechanismTypes.h>
 
 
 // Third Party Includes
 
 using namespace std;
+
+ShooterStateMgr* ShooterStateMgr::m_instance = nullptr;
+ShooterStateMgr* ShooterStateMgr::GetInstance()
+{
+	if ( ShooterStateMgr::m_instance == nullptr )
+	{
+		ShooterStateMgr::m_instance = new ShooterStateMgr();
+	}
+	return ShooterStateMgr::m_instance;
+}
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
@@ -115,31 +127,34 @@ ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
 /// @return void
 void ShooterStateMgr::RunCurrentState()
 {
-    // process teleop/manual interrupts
-    auto controller = TeleopControl::GetInstance();
-    if ( controller != nullptr )
+    if ( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::SHOOTER) != nullptr)
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_PREPARE_TO_SHOOT ))
+        // process teleop/manual interrupts
+        auto controller = TeleopControl::GetInstance();
+        if ( controller != nullptr )
         {
-            SetCurrentState( SHOOTER_STATE::GET_READY, false );
+            if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_PREPARE_TO_SHOOT ))
+            {
+                SetCurrentState( SHOOTER_STATE::GET_READY, false );
+            }
+            if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_SHOOT ))
+            {
+                SetCurrentState( SHOOTER_STATE::SHOOT, false );
+            }
+            if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_OFF ))
+            {
+                SetCurrentState( SHOOTER_STATE::OFF, false );
+            }
+            // todo add all states/conditions here
         }
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_SHOOT ))
-        {
-            SetCurrentState( SHOOTER_STATE::SHOOT, false );
-        }
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_OFF ))
-        {
-            SetCurrentState( SHOOTER_STATE::OFF, false );
-        }
-        // todo add all states/conditions here
-    }
 
-    Logger::GetLogger()->OnDash(string("Shooter State"), to_string(m_currentStateEnum));
+        Logger::GetLogger()->OnDash(string("Shooter State"), to_string(m_currentStateEnum));
 
-    // run the current state
-    if ( m_currentState != nullptr )
-    {
-        m_currentState->Run();
+        // run the current state
+        if ( m_currentState != nullptr )
+        {
+            m_currentState->Run();
+        }
     }
 
 }
@@ -163,7 +178,10 @@ void ShooterStateMgr::SetCurrentState
             m_currentState->Init();
             if ( run )
             {
-                m_currentState->Run();
+                if ( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::SHOOTER) != nullptr)
+                {
+                    m_currentState->Run();
+                }
             }
         }
     }

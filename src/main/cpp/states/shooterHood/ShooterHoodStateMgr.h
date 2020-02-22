@@ -37,9 +37,11 @@ class ShooterHoodStateMgr
             MANUAL,
             MAX_SHOOTER_HOOD_STATES
         };
+        
+		/// @brief  Find or create the state manmanager
+		/// @return ShooterHoodStateMgr* pointer to the state manager
+		static ShooterHoodStateMgr* GetInstance();
 
-        ShooterHoodStateMgr();
-        ~ShooterHoodStateMgr() = default;
 
 
         /// @brief  run the current state
@@ -65,5 +67,10 @@ class ShooterHoodStateMgr
         std::map<SHOOTER_HOOD_STATE,IState*> m_stateMap;
         IState* m_currentState;
         SHOOTER_HOOD_STATE m_currentStateEnum;
+
+        ShooterHoodStateMgr();
+        ~ShooterHoodStateMgr() = default;
+
+		static ShooterHoodStateMgr*	m_instance;
 
 };

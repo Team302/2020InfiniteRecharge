@@ -38,9 +38,10 @@ class BallTransferStateMgr
             MAX_BALL_TRANSFER_STATES
         };
 
-        BallTransferStateMgr();
-        ~BallTransferStateMgr() = default;
-
+        
+		/// @brief  Find or create the state manmanager
+		/// @return BallTransferStateMgr* pointer to the state manager
+		static BallTransferStateMgr* GetInstance();
 
         /// @brief  run the current state
         /// @return void
@@ -65,6 +66,12 @@ class BallTransferStateMgr
         IState* m_currentState;
         std::map<BALL_TRANSFER_STATE,IState*> m_stateEnumToObjectMap;
         BALL_TRANSFER_STATE m_currentStateEnum;
+
+        BallTransferStateMgr();
+        ~BallTransferStateMgr() = default;
+
+		static BallTransferStateMgr*	m_instance;
+
 
 };
 

@@ -27,6 +27,8 @@
 #include <subsys/IMechanism.h>
 #include <utils/Logger.h>
 
+#include <gamepad/TeleopControl.h>
+
 // Third Party Includes
 
 using namespace std;
@@ -126,6 +128,18 @@ void MechanismState::Run()
 {
     if ( m_mechanism != nullptr && m_control != nullptr )
     {
+
+        auto incr = TeleopControl::GetInstance()->IsButtonPressed( TeleopControl::GARBAGE_INCREMENT );
+        auto decr = TeleopControl::GetInstance()->IsButtonPressed( TeleopControl::GARBAGE_DECREMENT );
+        if ( incr )
+        {
+            m_target *= 1.1;
+        }
+        else if ( decr )
+        {
+            m_target *= 0.9;
+        }
+
         m_mechanism->SetOutput( m_control->GetMode(), m_target );
         switch ( m_solenoidState )
         {

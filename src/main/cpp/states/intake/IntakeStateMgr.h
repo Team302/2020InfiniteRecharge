@@ -37,9 +37,9 @@ class IntakeStateMgr
             MAX_INTAKE_STATES
         };
 
-        IntakeStateMgr();
-        ~IntakeStateMgr() = default;
-
+		/// @brief  Find or create the state manmanager
+		/// @return IntakeStateMgr* pointer to the state manager
+		static IntakeStateMgr* GetInstance();
 
         /// @brief  run the current state
         /// @return void
@@ -64,6 +64,11 @@ class IntakeStateMgr
         std::map<INTAKE_STATE,IState*> m_stateEnumToObjectMap;
         IState* m_currentState;
         INTAKE_STATE m_currentStateEnum;
+
+        IntakeStateMgr();
+        ~IntakeStateMgr() = default;
+
+		static IntakeStateMgr*	m_instance;
 
 };
 

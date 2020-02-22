@@ -17,7 +17,6 @@
 #pragma once
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
 
@@ -50,7 +49,7 @@ class IntakeStateMgrTest : public IStateTest
 		bool IsDone() override;
 		
 	private:
-		std::unique_ptr<IntakeStateMgr>	m_stateMgr;
+		IntakeStateMgr*							m_stateMgr;
 		bool                                    m_ranOff;
 		bool                                    m_ranOn;
 		bool 									m_isDone;

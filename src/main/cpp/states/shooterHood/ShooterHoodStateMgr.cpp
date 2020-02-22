@@ -30,10 +30,22 @@
 #include <states/shooterHood/ShooterHoodMoveDown.h>
 #include <states/shooterHood/ShooterHoodMoveUp.h>
 #include <states/shooterHood/ShooterHoodManual.h>
+#include <subsys/MechanismFactory.h>
+#include <subsys/MechanismTypes.h>
 
 // Third Party Includes
 
 using namespace std;
+
+ShooterHoodStateMgr* ShooterHoodStateMgr::m_instance = nullptr;
+ShooterHoodStateMgr* ShooterHoodStateMgr::GetInstance()
+{
+	if ( ShooterHoodStateMgr::m_instance == nullptr )
+	{
+		ShooterHoodStateMgr::m_instance = new ShooterHoodStateMgr();
+	}
+	return ShooterHoodStateMgr::m_instance;
+}
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
@@ -122,40 +134,42 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
 /// @return void
 void ShooterHoodStateMgr::RunCurrentState()
 {
-    // process teleop/manual interrupts
-    auto controller = TeleopControl::GetInstance();
-    if ( controller != nullptr )
+    if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD) != nullptr )
     {
-        if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_BUTTON))
+        // process teleop/manual interrupts
+        auto controller = TeleopControl::GetInstance();
+        if ( controller != nullptr )
         {
-            SetCurrentState( SHOOTER_HOOD_STATE::MANUAL, false ); 
-            Logger::GetLogger()->LogError("ShootHoodStateMgr::SetCurrentState", "Shooter Hood State Manual Hood");
+            if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_BUTTON))
+            {
+                SetCurrentState( SHOOTER_HOOD_STATE::MANUAL, false ); 
+                Logger::GetLogger()->LogError("ShootHoodStateMgr::SetCurrentState", "Shooter Hood State Manual Hood");
+            }
+            
+            /*if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MOVE_UP ) && 
+                m_currentStateEnum != SHOOTER_HOOD_STATE::MOVE_UP )
+            {
+                SetCurrentState( SHOOTER_HOOD_STATE::MOVE_UP, false );
+            }
+            else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MOVE_DOWN ) &&
+                    m_currentStateEnum != SHOOTER_HOOD_STATE::MOVE_DOWN )
+            {
+                SetCurrentState( SHOOTER_HOOD_STATE::MOVE_DOWN, false );
+            }
+            else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_HOLD_POSITION ) &&
+                    m_currentStateEnum != SHOOTER_HOOD_STATE::HOLD_POSITION )
+            {
+                SetCurrentState( SHOOTER_HOOD_STATE::HOLD_POSITION, false );
+            }*/
         }
-        
-        /*if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MOVE_UP ) && 
-             m_currentStateEnum != SHOOTER_HOOD_STATE::MOVE_UP )
-        {
-            SetCurrentState( SHOOTER_HOOD_STATE::MOVE_UP, false );
-        }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MOVE_DOWN ) &&
-                  m_currentStateEnum != SHOOTER_HOOD_STATE::MOVE_DOWN )
-        {
-            SetCurrentState( SHOOTER_HOOD_STATE::MOVE_DOWN, false );
-        }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_HOLD_POSITION ) &&
-                  m_currentStateEnum != SHOOTER_HOOD_STATE::HOLD_POSITION )
-        {
-            SetCurrentState( SHOOTER_HOOD_STATE::HOLD_POSITION, false );
-        }*/
-    }
 
-Logger::GetLogger()->OnDash(string("Shooterhood State"), to_string(m_currentStateEnum));
-    // run the current state
-    if ( m_currentState != nullptr )
-    {
-        m_currentState->Run();
+    Logger::GetLogger()->OnDash(string("Shooterhood State"), to_string(m_currentStateEnum));
+        // run the current state
+        if ( m_currentState != nullptr )
+        {
+            m_currentState->Run();
+        }
     }
-
 }
 
 /// @brief  set the current state, initialize it and run it
@@ -177,7 +191,10 @@ void ShooterHoodStateMgr::SetCurrentState
             m_currentState->Init();
             if ( run )
             {
-                m_currentState->Run();
+                if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD) != nullptr )
+                {
+                    m_currentState->Run();
+                }
             }
         }
     }

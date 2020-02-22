@@ -17,7 +17,6 @@
 #pragma once
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
 
@@ -50,7 +49,7 @@ class ShooterStateMgrTest : public IStateTest
 		bool IsDone() override;
 		
 	private:
-		std::unique_ptr<ShooterStateMgr>	    m_stateMgr;
+		ShooterStateMgr*					    m_stateMgr;
 		bool                                    m_ranReady;
 		bool                                    m_ranShoot;
 		bool                                    m_ranOff;

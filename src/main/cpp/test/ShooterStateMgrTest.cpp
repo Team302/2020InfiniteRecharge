@@ -35,7 +35,7 @@ using namespace std;
 ///  @brief Tests for ShooterStateMgr.  There are three states: OFF, GET_READY, and SHOOT.  This will run each for 15 seconds each;
 ///  		running GET_READY, then SHOOT and finally OFF.
 ShooterStateMgrTest::ShooterStateMgrTest() : IStateTest(),
-											 m_stateMgr( make_unique<ShooterStateMgr>() ),
+											 m_stateMgr( ShooterStateMgr::GetInstance() ),
 											 m_ranReady( false ),
 											 m_ranShoot( false ),
 											 m_ranOff( false ),
@@ -49,7 +49,7 @@ ShooterStateMgrTest::ShooterStateMgrTest() : IStateTest(),
 void ShooterStateMgrTest::Init()
 {
 	m_loopCnt = 0;
-	m_stateMgr.get()->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, true );
+	m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, true );
 	m_ranReady = true;
 }
 
@@ -62,27 +62,27 @@ void ShooterStateMgrTest::Periodic()
 	{
 		if ( !m_ranReady )
 		{
-			m_stateMgr.get()->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, false );
+			m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, false );
 			m_ranReady = true;
 		}
 		else if ( !m_ranShoot )
 		{
-			m_stateMgr.get()->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
+			m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
 			m_ranShoot = true;
 		}
 		else if ( !m_ranOff )
 		{
-			m_stateMgr.get()->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
+			m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
 			m_ranOff = true;
 		}
 		else
 		{
-			m_stateMgr.get()->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
+			m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
 			m_isDone = true;
 		}
 		m_loopCnt = 0;
 	}
-	m_stateMgr.get()->RunCurrentState();
+	m_stateMgr->RunCurrentState();
 }
 
 /// @brief Indicate whether the test has completed or not.

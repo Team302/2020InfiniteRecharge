@@ -22,7 +22,7 @@ using namespace frc;
 TestIntake::TestIntake()
 {
     m_timer = new Timer();
-    m_intakeStates = new IntakeStateMgr();
+    m_intakeStates = IntakeStateMgr::GetInstance();
 }
 
 void TestIntake::Periodic()

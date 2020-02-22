@@ -12,19 +12,21 @@
 #include <states/IState.h>
 
 class TurretStateMgr {
- public:
-  enum TURRET_STATE
-  {
-    HOLD,
-    LIMELIGHT_AIM,
-    MANUAL_AIM,
-    MAX_TURRET_STATES
-  };
-  TurretStateMgr();
-  ~TurretStateMgr() = default;
+  public:
+      enum TURRET_STATE
+      {
+        HOLD,
+        LIMELIGHT_AIM,
+        MANUAL_AIM,
+        MAX_TURRET_STATES
+      };
 
 
-  /// @brief  run the current state
+        /// @brief  Find or create the state manmanager
+        /// @return TurretStateMgr* pointer to the state manager
+        static TurretStateMgr* GetInstance();
+
+        /// @brief  run the current state
         /// @return void
         void RunCurrentState();
 
@@ -50,4 +52,10 @@ class TurretStateMgr {
         IState* m_currentState;
         TURRET_STATE m_currentStateEnum;
         double m_approxTargetAngle;
+
+        TurretStateMgr();
+        ~TurretStateMgr() = default;
+
+        static TurretStateMgr*	m_instance;
+
 };

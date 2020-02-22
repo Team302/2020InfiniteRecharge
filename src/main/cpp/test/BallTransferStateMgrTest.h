@@ -17,7 +17,6 @@
 #pragma once
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
 
@@ -50,7 +49,7 @@ class BallTransferStateMgrTest : public IStateTest
 		bool IsDone() override;
 		
 	private:
-		std::unique_ptr<BallTransferStateMgr>	m_stateMgr;
+		BallTransferStateMgr*					m_stateMgr;
 		bool                                    m_ranImpeller;
 		bool                                    m_ranOff;
 		bool                                    m_ranShooter;

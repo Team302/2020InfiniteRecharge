@@ -24,9 +24,9 @@ class ControlPanelStateMgr
             MAX_CONTROL_PANEL_STATES
         };
 
-        ControlPanelStateMgr();
-        ~ControlPanelStateMgr() = default;
-
+		/// @brief  Find or create the state manmanager
+		/// @return ControlPanelStateMgr* pointer to the state manager
+		static ControlPanelStateMgr* GetInstance();
 
         /// @brief  run the current state
         /// @return void
@@ -51,5 +51,10 @@ class ControlPanelStateMgr
         std::map<CONTROL_PANEL_STATE,IState*> m_stateMap;
         IState* m_currentState;
         CONTROL_PANEL_STATE m_currentStateEnum;
+
+        ControlPanelStateMgr();
+        ~ControlPanelStateMgr() = default;
+
+		static ControlPanelStateMgr*	m_instance;
 
 };

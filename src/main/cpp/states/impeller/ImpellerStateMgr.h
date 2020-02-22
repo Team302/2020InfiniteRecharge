@@ -38,9 +38,11 @@ class ImpellerStateMgr
             TO_SHOOTER,
             MAX_IMPELLER_STATES
         };
+        
+		/// @brief  Find or create the state manmanager
+		/// @return ImpellerStateMgr* pointer to the state manager
+		static ImpellerStateMgr* GetInstance();
 
-        ImpellerStateMgr();
-        ~ImpellerStateMgr() = default;
 
 
         /// @brief  run the current state
@@ -70,6 +72,12 @@ class ImpellerStateMgr
         bool            m_reverse;
         int             m_numReverseLoops;
         int             m_consecZero;
+
+
+		static ImpellerStateMgr*	m_instance;
+
+        ImpellerStateMgr();
+        ~ImpellerStateMgr() = default;
 
 };
 
