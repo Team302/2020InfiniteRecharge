@@ -44,9 +44,6 @@ protected:
     );
 private:
 	void CalculateSlowDownDistance();
-	//TODO: remove timeout. it is no longer being used
-//	const float TIMEOUT_MULTIPIER = 200000; // Multiplier for the max expected time (speed * distance) * TIMEOUT_MULTIPLIER = expected time
-									//1.4
 	PrimitiveParams* m_params;
 
 	float m_targetDistance;

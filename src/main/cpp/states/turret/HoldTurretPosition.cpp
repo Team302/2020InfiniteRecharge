@@ -14,6 +14,6 @@
 #include "controllers/MechanismTargetData.h"
 
 HoldTurretPosition::HoldTurretPosition(ControlData* controlData, double target, MechanismTargetData::SOLENOID solenoid) : 
-    MechanismState(MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET),controlData, target, solenoid)
+    MechanismState(MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET),controlData, MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::TURRET)->GetCurrentPosition(), solenoid)
 {
 }
