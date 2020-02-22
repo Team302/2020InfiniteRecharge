@@ -92,13 +92,17 @@ class Robot : public frc::TimedRobot
 	  BallTransferStateMgrTest* m_ballTransferStateMgrTest;
 	  ShooterStateMgrTest* m_shooterStateMgrTest;
 
-      std::shared_ptr<IChassis> m_chassis;
+      //std::shared_ptr<IChassis> m_chassis;
       IMechanism* m_shooterHood;
       IMechanism* m_turret;
       TeleopControl* m_controller;
       IMechanism* m_impeller;
       IMechanism* m_shooter;
       std::shared_ptr<DragonLimelight> m_limelight;
+      TalonFX* m_leftMaster;
+      TalonFX* m_leftSlave;
+      TalonFX* m_rightMaster;
+      TalonFX* m_rightSlave;
 
 
       frc::SendableChooser<std::string>   m_testChooser;                    
