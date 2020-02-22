@@ -40,7 +40,8 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
     BallManipulator::BALL_MANIPULATOR_STATE ballState = BallManipulator::BALL_MANIPULATOR_STATE::OFF;
     float                       turretAngle = 0.0;
     bool hasError = false;
-
+    string fulldirfile = string("/home/lvuser/auton/");
+    fulldirfile += fileName;
     // initialize the xml string to enum maps
     map<string, PRIMITIVE_IDENTIFIER> primStringToEnumMap;
     primStringToEnumMap["DO_NOTHING"] = DO_NOTHING;
@@ -63,14 +64,17 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
 
 
     xml_document doc;
-    xml_parse_result result = doc.load_file( fileName.c_str() );
+    xml_parse_result result = doc.load_file( fulldirfile.c_str() );
     if ( result )
     {
+        Logger::GetLogger()->LogError( string("PrimitiveParser::ParseXML"), string("Parse Successful"));
         xml_node auton = doc.root();
         for (xml_node node = auton.first_child(); node; node = node.next_sibling())
         {
+            Logger::GetLogger()->LogError( string("PrimitiveParser::ParseXML"), string(node.name()));
             for (xml_node primitiveNode = node.first_child(); primitiveNode; primitiveNode = primitiveNode.next_sibling())
             {
+                Logger::GetLogger()->LogError( string("PrimitiveParser::ParseXML"), string(primitiveNode.name()));
                 if ( strcmp( primitiveNode.name(), "primitive") == 0 )
                 {
 
@@ -82,6 +86,8 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
                             if ( paramStringToEnumItr != primStringToEnumMap.end() )
                             {
                                 primitiveType = paramStringToEnumItr->second;
+                                Logger::GetLogger() -> LogError( string("PrimitiveParser::ParseXML "), to_string(primitiveType));
+                                Logger::GetLogger() -> LogError( string("PrimitiveParser::ParseXML "), string(attr.value()));
                             }
                             else
                             {
@@ -153,6 +159,10 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
                                                                        ballState,
                                                                        turretAngle ) );
                     }
+                    else 
+                    {
+                         Logger::GetLogger() -> LogError( string("PrimitiveParser::ParseXML"), string("Has Error"));
+                    }
                 }
             }
         }
@@ -162,6 +172,6 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
         Logger::GetLogger()->LogError( string("PrimitiveParser::ParseXML error parsing file"), fileName );
         Logger::GetLogger()->LogError( string("PrimitiveParser::ParseXML error message"), result.description() );
     }
-
+    Logger::GetLogger() -> LogError( string("PrimitiveParser::ParseXML "), to_string(paramVector.size()));
     return paramVector;
 }

@@ -46,6 +46,7 @@ using namespace frc;
 #include <subsys/IChassis.h>
 #include <hw/factories/PigeonFactory.h>
 #include <hw/DragonPigeon.h>
+#include <utils/Logger.h>
 
 DriveDistance::DriveDistance() :
 	SuperDrive(),
@@ -80,6 +81,7 @@ void DriveDistance::Init(PrimitiveParams* params)
 
 void DriveDistance::Run() 
 {
+	Logger::GetLogger() -> LogError(string("DriveDistance::Run()"), string("Arrived!"));
 	SuperDrive::Run();
 
 	if (m_arcing) 
