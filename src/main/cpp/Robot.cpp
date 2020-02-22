@@ -45,6 +45,9 @@
 #include <ctre/Phoenix.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/MechanismTypes.h>
+#include <subsys/ChassisFactory.h>
+#include <subsys/IChassis.h>
+
 
 
 using namespace std;
@@ -78,7 +81,7 @@ void Robot::RobotInit()
     m_impeller = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::IMPELLER);
     m_shooter = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER);
     m_controller = TeleopControl::GetInstance();
-
+    m_chassis = ChassisFactory::GetChassisFactory()->GetIChassis(); 
 
     // m_control = new ControlPanelStateMgr();
     // m_climber = new ClimberStateMgr();
@@ -159,8 +162,12 @@ void Robot::TeleopPeriodic()
     //m_intake->RunCurrentState();
    m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
-    
+    double leftSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL);
+    double rightSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL);
+    m_chassis.get()->SetOutput(ControlModes::PERCENT_OUTPUT, leftSpeed, rightSpeed);
     // m_climber->RunCurrentState();
+    frc::SmartDashboard::PutNumber("leftSpeed", leftSpeed);
+    frc::SmartDashboard::PutNumber("rightSpeed", rightSpeed);
     frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
     frc::SmartDashboard::PutNumber("Shooter Hood position", m_shooterHood->GetCurrentPosition());
     frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());

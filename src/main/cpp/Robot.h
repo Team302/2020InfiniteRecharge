@@ -53,6 +53,8 @@
 #include <gamepad/TeleopControl.h>
 #include <subsys/IMechanism.h>
 #include <hw/factories/LimelightFactory.h>
+#include <subsys/ChassisFactory.h>
+#include <subsys/IChassis.h>
 
 // third party includes
 
@@ -90,6 +92,7 @@ class Robot : public frc::TimedRobot
 	  BallTransferStateMgrTest* m_ballTransferStateMgrTest;
 	  ShooterStateMgrTest* m_shooterStateMgrTest;
 
+      std::shared_ptr<IChassis> m_chassis;
       IMechanism* m_shooterHood;
       IMechanism* m_turret;
       TeleopControl* m_controller;
