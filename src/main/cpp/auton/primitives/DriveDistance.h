@@ -24,15 +24,12 @@
 
 // Third Party Includes
 
-
-
-#include <auton/PrimitiveParams.h>
-#include <subsys/MechanismFactory.h>
 #include <auton/primitives/SuperDrive.h>
-#include <subsys/IChassis.h>
-#include <auton/primitives/IPrimitive.h>
 
-class DriveDistance : public SuperDrive {
+class PrimitiveParams;
+
+class DriveDistance : public SuperDrive 
+{
 public:
 	bool IsDone() override;
 	void Init(PrimitiveParams* params) override;
