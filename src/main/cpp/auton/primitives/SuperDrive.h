@@ -20,14 +20,17 @@
 #include <memory>
 
 // FRC includes
-#include <frc/Timer.h>
 // Team 302 includes
-#include <subsys/IChassis.h>
 #include <auton/primitives/IPrimitive.h>
 
 // Third Party Includes
 
 
+class IChassis;
+namespace frc
+{
+	class Timer;
+}
 
 
 class SuperDrive : public IPrimitive 

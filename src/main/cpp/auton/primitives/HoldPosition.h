@@ -25,13 +25,13 @@
 
 // Third Party Includes
 
-
-
-#include <auton/PrimitiveParams.h>
-#include <subsys/IChassis.h>
 #include <auton/primitives/IPrimitive.h>
 
-class HoldPosition : public IPrimitive {
+class IChassis;
+class PrimitiveParams;
+
+class HoldPosition : public IPrimitive 
+{
 public:
 	void Init(PrimitiveParams*	params) override;
 	void Run() override;

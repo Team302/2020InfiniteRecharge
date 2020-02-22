@@ -16,7 +16,6 @@
 #include <auton/primitives/DoNothing.h>
 #include <auton/primitives/HoldPosition.h>
 #include <auton/primitives/TurnAngle.h>
-#include <auton/primitives/TurnToCube.h>
 #include <auton/primitives/DriveToWall.h>
 #include <auton/primitives/IPrimitive.h>
 
@@ -36,7 +35,6 @@ PrimitiveFactory::PrimitiveFactory() :
 				m_turnAngle(nullptr),
 				m_holdPosition(nullptr),
 				m_driveToWall(nullptr),
-				m_turnToCube( nullptr ),
 				m_driveLidarDistance( nullptr )
 {
 }
