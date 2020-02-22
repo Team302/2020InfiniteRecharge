@@ -35,6 +35,8 @@
 #include <hw/factories/LimelightFactory.h>
 #include <hw/DragonLimelight.h>
 
+#include <ctre/Phoenix.h>
+
 
 #include <test/ButtonBoxDisplay.h>
 #include <test/XboxDisplay.h>
@@ -45,6 +47,9 @@
 #include <ctre/Phoenix.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/MechanismTypes.h>
+#include <subsys/ChassisFactory.h>
+#include <subsys/IChassis.h>
+
 
 
 using namespace std;
@@ -71,6 +76,24 @@ void Robot::RobotInit()
     // on the dashboard for selection.
     m_chassisStateMgr = new ChassisStateMgr();
 
+    /*m_leftMaster = new TalonFX(12);
+    m_leftSlave = new TalonFX(13);
+    m_rightMaster = new TalonFX(15);
+    m_rightSlave = new TalonFX(14);
+
+    m_leftMaster->ConfigFactoryDefault();
+    m_leftSlave->ConfigFactoryDefault();
+    m_rightMaster->ConfigFactoryDefault();
+    m_rightSlave->ConfigFactoryDefault();
+
+    m_leftSlave->SetInverted(false);
+    m_leftMaster->SetInverted(false);
+    m_rightMaster->SetInverted(true);
+    m_rightSlave->SetInverted(true);
+
+    m_leftSlave->Set(ControlMode::Follower, 12);
+    m_rightSlave->Set(ControlMode::Follower, 15);*/
+
     //m_intake = new IntakeStateMgr();
     m_powerCells = BallManipulator::GetInstance();
     m_shooterHood = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER_HOOD);
@@ -78,7 +101,7 @@ void Robot::RobotInit()
     m_impeller = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::IMPELLER);
     m_shooter = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER);
     m_controller = TeleopControl::GetInstance();
-
+    //m_chassis = ChassisFactory::GetChassisFactory()->GetIChassis(); 
 
     // m_control = new ControlPanelStateMgr();
     // m_climber = new ClimberStateMgr();
@@ -159,8 +182,14 @@ void Robot::TeleopPeriodic()
     //m_intake->RunCurrentState();
    m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
-    
+    //double leftSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL);
+    //double rightSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL);
+    //m_chassis.get()->SetOutput(ControlModes::PERCENT_OUTPUT, leftSpeed, rightSpeed);
     // m_climber->RunCurrentState();
+    //m_rightMaster->Set(ControlMode::PercentOutput, rightSpeed);
+    //m_leftMaster->Set(ControlMode::PercentOutput, leftSpeed);
+    //frc::SmartDashboard::PutNumber("leftSpeed", leftSpeed);
+    //frc::SmartDashboard::PutNumber("rightSpeed", rightSpeed);
     frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
     frc::SmartDashboard::PutNumber("Shooter Hood position", m_shooterHood->GetCurrentPosition());
     frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());

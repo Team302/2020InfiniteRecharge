@@ -117,7 +117,7 @@ void SuperDrive::Init(PrimitiveParams* params)
 							   			0.0,
 							   			1.0,
 							  			0.0   );
-	m_chassis->SetControlConstants( cd.get() );
+	//m_chassis->SetControlConstants( cd.get() );
 	m_leftSpeed = 0.2;
 	m_rightSpeed = 0.2;
 	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::PERCENT_OUTPUT, m_leftSpeed, m_rightSpeed );
@@ -130,7 +130,7 @@ void SuperDrive::Init(PrimitiveParams* params)
 
 void SuperDrive::Run() 
 {
-	auto pigeon = PigeonFactory::GetFactory()->GetPigeon();
+	/*auto pigeon = PigeonFactory::GetFactory()->GetPigeon();
 	if ( pigeon != nullptr )
 	{
 		m_currentHeading = pigeon->GetYaw() - m_startHeading;
@@ -199,8 +199,8 @@ void SuperDrive::Run()
 
 	m_leftSpeed -= m_currentHeading * GYRO_CORRECTION_CONSTANT;
 	m_rightSpeed += m_currentHeading * GYRO_CORRECTION_CONSTANT;
-
-	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::VELOCITY_INCH, m_leftSpeed, m_rightSpeed );
+*/
+	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::PERCENT_OUTPUT, m_leftSpeed, m_rightSpeed );
 
 	//m_chassis->SetVelocityParams(PROPORTIONAL_COEFF, INTREGRAL_COEFF, DERIVATIVE_COEFF, FEET_FORWARD_COEFF, m_leftSpeed, m_rightSpeed);
 

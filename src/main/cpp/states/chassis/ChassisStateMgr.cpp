@@ -116,7 +116,7 @@ void ChassisStateMgr::RunCurrentState()
 void ChassisStateMgr::SetState( ChassisStateMgr::CHASSIS_STATE state )
 {
     m_currentState = state;
-    /**
+    
     if ( m_currentState == CHASSIS_STATE::TELEOP )
     {
         m_currentDrive->Run();
@@ -130,5 +130,5 @@ void ChassisStateMgr::SetState( ChassisStateMgr::CHASSIS_STATE state )
     {
         Logger::GetLogger()->LogError( string("ChassisStateMgr::SetState"), string("unsupported state"));
     }
-    **/
+    
 }

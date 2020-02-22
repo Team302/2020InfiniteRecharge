@@ -62,7 +62,7 @@ DragonFalcon::DragonFalcon
 
 double DragonFalcon::GetRotations() const
 {
-	return (ConversionUtils::CountsToRevolutions( (m_talon.get()->GetSelectedSensorPosition()), m_countsPerRev) * m_gearRatio);
+	return (ConversionUtils::CountsToRevolutions( (m_talon.get()->GetSelectedSensorPosition()), m_countsPerRev) / m_gearRatio);
 }
 
 double DragonFalcon::GetRPS() const
