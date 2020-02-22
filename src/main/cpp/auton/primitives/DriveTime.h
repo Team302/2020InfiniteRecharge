@@ -24,17 +24,14 @@
 
 // Third Party Includes
 
-
-
 //Includes
 //Team302 includes
 #include <auton/primitives/SuperDrive.h>
-#include <auton/primitives/DriveTime.h>
-#include <subsys/IChassis.h>
-#include <auton/primitives/IPrimitive.h>
 
+class PrimitiveParams;
 
-class DriveTime: public SuperDrive {
+class DriveTime: public SuperDrive 
+{
 public:
 	DriveTime();
 	virtual ~DriveTime() = default;

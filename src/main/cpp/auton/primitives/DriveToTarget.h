@@ -28,8 +28,9 @@
 
 
 #include <auton/primitives/DriveDistance.h>
-#include <auton/PrimitiveParams.h>
-#include <hw/interfaces/IDragonDistanceSensor.h>
+
+class IDragonDistanceSensor;
+class PrimitiveParams;
 
 class DriveToTarget: public DriveDistance
 {
