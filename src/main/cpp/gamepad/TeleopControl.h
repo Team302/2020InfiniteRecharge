@@ -81,6 +81,8 @@ class TeleopControl
             TURRET_MANUAL_AXIS,
             TURRET_MANUAL_BUTTON,
             TURRET_LIMELIGHT_AIM,
+            GARBAGE_INCREMENT,
+            GARBAGE_DECREMENT,
             MAX_FUNCTIONS
         };
 

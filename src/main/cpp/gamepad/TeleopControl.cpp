@@ -134,6 +134,13 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 
 		m_controllerIndex[ TURRET_MANUAL_BUTTON] = ctrlNo;
 		m_buttonIDs[ TURRET_MANUAL_BUTTON] = IDragonGamePad::A_BUTTON;
+
+		m_controllerIndex[ GARBAGE_DECREMENT ] = ctrlNo;
+		m_buttonIDs[ GARBAGE_DECREMENT ] = IDragonGamePad::POV_180;
+
+		m_controllerIndex[ GARBAGE_INCREMENT ] = ctrlNo;
+		m_buttonIDs[ GARBAGE_INCREMENT ] = IDragonGamePad::POV_0;
+
 	}
     else if ( m_controllers[ctrlNo] != nullptr )
     {
