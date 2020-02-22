@@ -17,13 +17,12 @@
 #pragma once
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
 
 // Team 302 includes
 #include <test/IStateTest.h>
-#include <controllers/shooter/ShooterStateMgr.h>
+#include <states/shooter/ShooterStateMgr.h>
 
 // Third Party Includes
 
@@ -50,7 +49,7 @@ class ShooterStateMgrTest : public IStateTest
 		bool IsDone() override;
 		
 	private:
-		std::unique_ptr<ShooterStateMgr>	    m_stateMgr;
+		ShooterStateMgr*					    m_stateMgr;
 		bool                                    m_ranReady;
 		bool                                    m_ranShoot;
 		bool                                    m_ranOff;

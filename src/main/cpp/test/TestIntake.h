@@ -16,7 +16,7 @@
 
 #pragma once
 
-#include <controllers/intake/IntakeStateMgr.h>
+#include <states/intake/IntakeStateMgr.h>
 #include <frc/Timer.h>
 
 class TestIntake

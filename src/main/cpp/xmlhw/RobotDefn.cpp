@@ -40,6 +40,7 @@
 #include <xmlhw/ChassisDefn.h>
 #include <xmlhw/RobotDefn.h>
 #include <xmlhw/MechanismDefn.h>
+#include <xmlhw/LimelightDefn.h>
 #include <xmlhw/PDPDefn.h>
 #include <xmlhw/PigeonDefn.h>
 #include <hw/DragonPigeon.h>
@@ -74,6 +75,7 @@ void RobotDefn::ParseXML()
         unique_ptr<MechanismDefn> mechanismXML = make_unique<MechanismDefn>();
         unique_ptr<PDPDefn> pdpXML = make_unique<PDPDefn>();
         unique_ptr<PigeonDefn> pigeonXML = make_unique<PigeonDefn>();
+        unique_ptr<LimelightDefn> limelightXML = make_unique<LimelightDefn>();
 
         // get the root node <robot>
         xml_node parent = doc.root();
@@ -105,6 +107,10 @@ void RobotDefn::ParseXML()
                 else if ( strcmp(child.name(), "pigeon") == 0 )
                 {
                     auto pigeon = pigeonXML.get()->ParseXML( child);
+                }
+                else if ( strcmp(child.name(), "limelight") == 0 )
+                {
+                    ///auto limelight = limelightXML.get()->ParseXML( child);
                 }
                 else
                 {

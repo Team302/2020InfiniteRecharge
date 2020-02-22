@@ -6,16 +6,16 @@
 	<controlData identifier="closedloop"
 				 mode="TRAPEZOID"
 				 proportional=".1"/>
-	<mechanismTarget stateIdentifier="MOVEUP"
+	<mechanismTarget stateIdentifier="SHOOTERHOODUP"
 	                 controlDataIdentifier="openloop"
 					 value="0.0"/>
-	<mechanismTarget stateIdentifier="MOVEDOWN"
+	<mechanismTarget stateIdentifier="SHOOTERHOODDOWN"
 	                 controlDataIdentifier="openloop"
 					 value="0.5"/>
-	<mechanismTarget stateIdentifier="HOLDPOSITION"
+	<mechanismTarget stateIdentifier="SHOOTERHOODHOLD"
 	                 controlDataIdentifier="closedloop"
 					 value="0.0"/>
-    <mechanismTarget stateIdentifier="MANUAL"
+    <mechanismTarget stateIdentifier="SHOOTERHOODMANUAL"
 	                 controlDataIdentifier="openloop"
 					 value="1.0"/>
 

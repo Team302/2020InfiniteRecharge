@@ -26,8 +26,10 @@
 #include <auton/PrimitiveParams.h>
 #include <auton/primitives/IPrimitive.h>
 #include <subsys/MechanismFactory.h>
+#include <controllers/ControlData.h>
 #include <controllers/ControlModes.h>
 #include <subsys/IMechanism.h>
+#include <hw/factories/PigeonFactory.h>
 #include <utils/Logger.h>
 
 // Third Party Includes
@@ -97,16 +99,42 @@ void SuperDrive::Init(PrimitiveParams* params)
 	}
 
 	//m_startHeading = m_chassis->GetHeading();
-	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::VELOCITY_INCH, m_leftSpeed, m_rightSpeed );
-						  
+	m_startHeading = 0.0;
+	auto pigeon = PigeonFactory::GetFactory()->GetPigeon();
+	if ( pigeon != nullptr )
+	{
+		m_startHeading = pigeon->GetYaw();
+	}
+	auto cd = make_shared<ControlData>( ControlModes::CONTROL_TYPE::PERCENT_OUTPUT, 
+							   			ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER,
+							   			string("SuperDrive"),
+							   			12.0,
+							   			0.0,
+							   			0.0,
+							   			0.0,
+							   			0.0,
+							   			0.0,
+							   			0.0,
+							   			1.0,
+							  			0.0   );
+	m_chassis->SetControlConstants( cd.get() );
+	m_leftSpeed = 0.2;
+	m_rightSpeed = 0.2;
+	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::PERCENT_OUTPUT, m_leftSpeed, m_rightSpeed );
+
     //m_chassis->SetVelocityParams(PROPORTIONAL_COEFF, INTREGRAL_COEFF, DERIVATIVE_COEFF, FEET_FORWARD_COEFF,
     //		m_leftSpeed, m_rightSpeed);
 
-    //m_speedOffset = m_targetSpeed > 0.0 ? GYRO_CORRECTION_CONSTANT : -GYRO_CORRECTION_CONSTANT;
+    m_speedOffset = m_targetSpeed > 0.0 ? GYRO_CORRECTION_CONSTANT : -GYRO_CORRECTION_CONSTANT;
 }
 
 void SuperDrive::Run() 
 {
+	auto pigeon = PigeonFactory::GetFactory()->GetPigeon();
+	if ( pigeon != nullptr )
+	{
+		m_currentHeading = pigeon->GetYaw() - m_startHeading;
+	}
 	//m_currentHeading = m_chassis->GetHeading() - m_chassis->GetTargetHeading(); //Calculate target heading
 
 	//Calculate ramp up speed if we are not already slowing down
@@ -171,6 +199,8 @@ void SuperDrive::Run()
 
 	m_leftSpeed -= m_currentHeading * GYRO_CORRECTION_CONSTANT;
 	m_rightSpeed += m_currentHeading * GYRO_CORRECTION_CONSTANT;
+
+	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::VELOCITY_INCH, m_leftSpeed, m_rightSpeed );
 
 	//m_chassis->SetVelocityParams(PROPORTIONAL_COEFF, INTREGRAL_COEFF, DERIVATIVE_COEFF, FEET_FORWARD_COEFF, m_leftSpeed, m_rightSpeed);
 

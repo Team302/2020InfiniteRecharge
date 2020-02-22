@@ -22,10 +22,10 @@
       <change beforePath="$PROJECT_DIR$/src/main/config/practiceBot/states/impeller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/config/practiceBot/states/impeller.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/config/stateData.dtd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/config/stateData.dtd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/cpp/controllers/ButtonManipulator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/controllers/ButtonManipulator.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/controllers/impeller/ImpellerOn.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/controllers/impeller/ImpellerOn.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/controllers/impeller/ImpellerStateMgr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/controllers/impeller/ImpellerStateMgr.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/cpp/controllers/impeller/ImpellerStateMgr.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/controllers/impeller/ImpellerStateMgr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/states/impeller/ImpellerOn.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/states/impeller/ImpellerOn.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/states/impeller/ImpellerStateMgr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/states/impeller/ImpellerStateMgr.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/cpp/states/impeller/ImpellerStateMgr.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/cpp/states/impeller/ImpellerStateMgr.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_agitate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_agitate.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_analog_button.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_analog_button.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/docs/html/class_arcade_drive.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/docs/html/class_arcade_drive.html" afterDir="false" />

@@ -26,14 +26,12 @@
 
 
 
-#include <auton/PrimitiveParams.h>
-#include <subsys/MechanismFactory.h>
 #include <auton/primitives/SuperDrive.h>
-#include <subsys/IChassis.h>
-#include <auton/primitives/IPrimitive.h>
 
+class PrimitiveParams;
 
-class DriveToWall : public SuperDrive {
+class DriveToWall : public SuperDrive 
+{
 public:
 	bool IsDone() override;
 	void Init(PrimitiveParams* params) override;

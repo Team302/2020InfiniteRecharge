@@ -2,8 +2,25 @@
 <!DOCTYPE robot SYSTEM "robot.dtd">
 <robot>
 	<pdp canId="0" />
-	
-	<odometry xloc="0.0"
+
+	<pigeon canId="60" />
+	<limelight usage="MAIN_LIMELIGHT"
+				tablename="limelight"
+				mountingheight="20.0"
+				horizontaloffset="-10.0"
+				mountingangle="15.0"
+				rotation="90.0"
+				targetheight="120.0"
+				targetheight2="30.0"
+				defaultledmode="currentpipeline"
+				defaultcammode="vision"
+				streammode="sidebyside"
+				snapshots="off"
+				crosshairx="0.5"
+				crosshairy="0.5"
+				secondcrosshairx="0.25"
+				secondcrosshairy="0.25" />
+	<!-- odometry xloc="0.0"
 	          yloc="0.0"
 			  heading="0.0">
 		<pigeon canId="60" />
@@ -24,7 +41,7 @@
 				   secondcrosshairx="0.25"
 				   secondcrosshairy="0.25" />
 
-	</odometry>
+	</odometry -->
 	
 	<!-- feedback>
 		<camera id="0"
@@ -287,10 +304,10 @@
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
-				feedbackDevice="NONE"
-				countsPerRev="0"
+				feedbackDevice="QUADENCODER"
+				countsPerRev="6000"
 				gearRatio="1.0"
-				brakeMode="false"
+				brakeMode="true"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"

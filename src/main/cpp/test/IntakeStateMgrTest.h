@@ -17,13 +17,12 @@
 #pragma once
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
 
 // Team 302 includes
 #include <test/IStateTest.h>
-#include <controllers/intake/IntakeStateMgr.h>
+#include <states/intake/IntakeStateMgr.h>
 
 // Third Party Includes
 
@@ -50,7 +49,7 @@ class IntakeStateMgrTest : public IStateTest
 		bool IsDone() override;
 		
 	private:
-		std::unique_ptr<IntakeStateMgr>	m_stateMgr;
+		IntakeStateMgr*							m_stateMgr;
 		bool                                    m_ranOff;
 		bool                                    m_ranOn;
 		bool 									m_isDone;

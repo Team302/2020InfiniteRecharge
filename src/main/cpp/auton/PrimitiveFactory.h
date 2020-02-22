@@ -27,10 +27,12 @@
 
 
 #include <auton/PrimitiveEnums.h>
-#include <auton/PrimitiveParams.h>
-#include <auton/primitives/IPrimitive.h>
 
-class PrimitiveFactory {
+class IPrimitive;
+class PrimitiveParams;
+
+class PrimitiveFactory 
+{
 public:
 
 
@@ -47,7 +49,6 @@ private:
     IPrimitive* m_turnAngle;
     IPrimitive* m_holdPosition;
     IPrimitive* m_driveToWall;
-    IPrimitive* m_turnToCube;
     IPrimitive* m_driveLidarDistance;
 };
 

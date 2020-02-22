@@ -23,9 +23,14 @@
 
 // Team 302 includes
 #include <auton/primitives/IPrimitive.h>
-#include <subsys/IChassis.h>
 
 // Third Party Includes
+
+class IChassis;
+namespace frc
+{
+    class Timer;
+}
 
 
 class TurnAngle : public IPrimitive 

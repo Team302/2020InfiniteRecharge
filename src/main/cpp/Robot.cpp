@@ -26,12 +26,12 @@
 #include <Robot.h>
 #include <xmlhw/RobotDefn.h>
 #include <auton/CyclePrimitives.h>
-#include <controllers/chassis/ChassisStateMgr.h>
-#include <controllers/BallManipulator.h>
-#include <controllers/intake/IntakeStateMgr.h>
+#include <states/chassis/ChassisStateMgr.h>
+#include <states/BallManipulator.h>
+#include <states/intake/IntakeStateMgr.h>
 #include <gamepad/TeleopControl.h>
-//#include <controllers/controlPanel/ControlPanelStateMgr.h>
-//#include <controllers/climber/ClimberStateMgr.h>
+//#include <states/controlPanel/ControlPanelStateMgr.h>
+//#include <states/climber/ClimberStateMgr.h>
 #include <hw/factories/LimelightFactory.h>
 #include <hw/DragonLimelight.h>
 
@@ -45,6 +45,7 @@
 #include <ctre/Phoenix.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/MechanismTypes.h>
+
 
 using namespace std;
 using namespace frc;
@@ -64,13 +65,16 @@ void Robot::RobotInit()
 
     // Display the autonomous choices on the dashboard for selection.
     // comment out for now since auton hasn't been implemented
-    // m_cyclePrims = new CyclePrimitives();
+    //m_cyclePrims = new CyclePrimitives();
 
+    // Create the Chassis Control (state) modes which puts the auton choices and teleop drive modes 
+    // on the dashboard for selection.
     m_chassisStateMgr = new ChassisStateMgr();
+
     //m_intake = new IntakeStateMgr();
     m_powerCells = BallManipulator::GetInstance();
-    //m_shooterHood = new TalonSRX(4);
-    //m_turret = new TalonSRX(5);
+    m_shooterHood = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER_HOOD);
+    m_turret = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET);
     m_impeller = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::IMPELLER);
     m_shooter = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER);
     m_controller = TeleopControl::GetInstance();
@@ -93,11 +97,11 @@ void Robot::RobotInit()
     m_buttonBoxDisplay = nullptr;
     m_xBoxDisplay = nullptr;
 
-    auto limelight = LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT );
-    if (limelight.get() != nullptr )
+    //m_limelight = LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT );
+    /*if (m_limelight.get() != nullptr )
     {
-        limelight.get()->SetLEDMode( DragonLimelight::LED_MODE::LED_OFF);
-    }   
+        m_limelight.get()->SetLEDMode( DragonLimelight::LED_MODE::LED_OFF);
+    } */  
 }
 
 /// @brief This function is called every robot packet, no matter the  mode. This is used for items like diagnostics that run 
@@ -114,7 +118,7 @@ void Robot::RobotPeriodic()
 /// @return void
 void Robot::AutonomousInit() 
 {
-    m_chassisStateMgr->Init();
+    m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::AUTON );
 
     // run selected auton option
     //m_cyclePrims->Init();
@@ -128,6 +132,8 @@ void Robot::AutonomousPeriodic()
 {
     //Real auton magic right here:
     //m_cyclePrims->RunCurrentPrimitive();
+
+    m_chassisStateMgr->RunCurrentState();
 }
 
 
@@ -135,8 +141,8 @@ void Robot::AutonomousPeriodic()
 /// @return void
 void Robot::TeleopInit() 
 {
-    m_chassisStateMgr->Init();
     m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
+    m_chassisStateMgr->Init();
     m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     // m_climber->RunCurrentState();
@@ -149,14 +155,17 @@ void Robot::TeleopPeriodic()
 {
     m_chassisStateMgr->RunCurrentState();
     //m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
-    //m_shooterHood->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_HOOD_MANUAL_AXIS) * .5);
+    m_shooterHood->SetOutput(ControlModes::PERCENT_OUTPUT, .5* m_controller->GetAxisValue(TeleopControl::SHOOTER_HOOD_MANUAL_AXIS));
     //m_intake->RunCurrentState();
    m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
+    
     // m_climber->RunCurrentState();
+    frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
+    frc::SmartDashboard::PutNumber("Shooter Hood position", m_shooterHood->GetCurrentPosition());
     frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());
     frc::SmartDashboard::PutNumber("Shooter speed", m_shooter->GetCurrentSpeed());
-    
+    //frc::SmartDashboard::PutNumber("Limelight tx", m_limelight.get()->GetTargetHorizontalOffset());
 }
 
 

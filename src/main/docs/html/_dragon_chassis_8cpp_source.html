@@ -128,100 +128,107 @@ $(document).ready(function(){initNavTree('_dragon_chassis_8cpp_source.html','');
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;) : m_leftSide( <span class="keyword">new</span> <a class="code" href="class_drive_train_side.html">DriveTrainSide</a>( leftMaster, leftFollower, wheelDiameter ) ),</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_rightSide( <span class="keyword">new</span> <a class="code" href="class_drive_train_side.html">DriveTrainSide</a>( rightMaster, rightFollower, wheelDiameter ) ),</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_wheelBase( wheelBase ),</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_wheelTrack( track )</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#a8e840dd932ccb1b6de98a1e362ff299a">   60</a></span>&#160;<a class="code" href="class_dragon_chassis.html#a8e840dd932ccb1b6de98a1e362ff299a">DragonChassis::~DragonChassis</a>()</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">delete</span> m_leftSide;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">delete</span> m_rightSide;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_wheelTrack( track ),</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    m_wheelDiameter( wheelDiameter )</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#a8e840dd932ccb1b6de98a1e362ff299a">   61</a></span>&#160;<a class="code" href="class_dragon_chassis.html#a8e840dd932ccb1b6de98a1e362ff299a">DragonChassis::~DragonChassis</a>()</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">delete</span> m_leftSide;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">delete</span> m_rightSide;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_chassis.html#a39dce0dd0a51b21be140226cc1e9931a">DragonChassis::SetOutput</a></div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#a39dce0dd0a51b21be140226cc1e9931a">   73</a></span>&#160;(</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a> controlType,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">double</span>                                   leftValue,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">double</span>                                   rightValue     </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    m_leftSide-&gt;SetOutput( controlType, leftValue );</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    m_rightSide-&gt;SetOutput( controlType, rightValue );</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_chassis.html#a39dce0dd0a51b21be140226cc1e9931a">DragonChassis::SetOutput</a></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#a39dce0dd0a51b21be140226cc1e9931a">   74</a></span>&#160;(</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a> controlType,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">double</span>                                   leftValue,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">double</span>                                   rightValue     </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    m_leftSide-&gt;SetOutput( controlType, leftValue );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    m_rightSide-&gt;SetOutput( controlType, rightValue );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#acef48e705afedea9337b90272bae5a80">   86</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#acef48e705afedea9337b90272bae5a80">DragonChassis::GetCurrentPosition</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> ( m_leftSide-&gt;GetCurrentPosition() + m_rightSide-&gt;GetCurrentPosition() ) / 2.0;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#a17a96d5df8c06046dc24e2d84940baad">   93</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#a17a96d5df8c06046dc24e2d84940baad">DragonChassis::GetCurrentLeftPosition</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> m_leftSide-&gt;GetCurrentPosition();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#aca949d9c42fdb5fa948a8fd7b5918e1d">  100</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#aca949d9c42fdb5fa948a8fd7b5918e1d">DragonChassis::GetCurrentRightPosition</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> m_rightSide-&gt;GetCurrentPosition();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#acef48e705afedea9337b90272bae5a80">   87</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#acef48e705afedea9337b90272bae5a80">DragonChassis::GetCurrentPosition</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> ( m_leftSide-&gt;GetCurrentPosition() + m_rightSide-&gt;GetCurrentPosition() ) / 2.0;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#a17a96d5df8c06046dc24e2d84940baad">   94</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#a17a96d5df8c06046dc24e2d84940baad">DragonChassis::GetCurrentLeftPosition</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> m_leftSide-&gt;GetCurrentPosition();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#aca949d9c42fdb5fa948a8fd7b5918e1d">  101</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#aca949d9c42fdb5fa948a8fd7b5918e1d">DragonChassis::GetCurrentRightPosition</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> m_rightSide-&gt;GetCurrentPosition();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#a54c251e24c4a4504f1363e17239a4fbc">  109</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#a54c251e24c4a4504f1363e17239a4fbc">DragonChassis::GetCurrentSpeed</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> ( m_leftSide-&gt;GetCurrentSpeed() + m_rightSide-&gt;GetCurrentSpeed() ) / 2.0;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#af7f34790a7ae5ab604214486359d4dcb">  116</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#af7f34790a7ae5ab604214486359d4dcb">DragonChassis::GetCurrentLeftSpeed</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> m_leftSide-&gt;GetCurrentSpeed();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#af8880818f285216514de50c8a400678e">  123</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#af8880818f285216514de50c8a400678e">DragonChassis::GetCurrentRightSpeed</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span> m_rightSide-&gt;GetCurrentSpeed();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#a54c251e24c4a4504f1363e17239a4fbc">  110</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#a54c251e24c4a4504f1363e17239a4fbc">DragonChassis::GetCurrentSpeed</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> ( m_leftSide-&gt;GetCurrentSpeed() + m_rightSide-&gt;GetCurrentSpeed() ) / 2.0;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#af7f34790a7ae5ab604214486359d4dcb">  117</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#af7f34790a7ae5ab604214486359d4dcb">DragonChassis::GetCurrentLeftSpeed</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> m_leftSide-&gt;GetCurrentSpeed();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#af8880818f285216514de50c8a400678e">  124</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#af8880818f285216514de50c8a400678e">DragonChassis::GetCurrentRightSpeed</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> m_rightSide-&gt;GetCurrentSpeed();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_chassis.html#a0db28ff16679b084010cb4cd706c598e">DragonChassis::SetControlConstants</a></div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#a0db28ff16679b084010cb4cd706c598e">  135</a></span>&#160;(</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>*                                 pid               </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;)</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;{</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    m_leftSide-&gt;SetControlConstants( pid );</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    m_rightSide-&gt;SetControlConstants( pid );</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_chassis.html#a0db28ff16679b084010cb4cd706c598e">DragonChassis::SetControlConstants</a></div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#a0db28ff16679b084010cb4cd706c598e">  136</a></span>&#160;(</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>*                                 pid               </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    m_leftSide-&gt;SetControlConstants( pid );</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    m_rightSide-&gt;SetControlConstants( pid );</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="class_dragon_chassis.html#a53e2d52a02a6653a0ecb0de910271e45">  144</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_chassis.html#a53e2d52a02a6653a0ecb0de910271e45">DragonChassis::GetWheelDiameter</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keyword"></span>{ </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">return</span> m_wheelDiameter; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_drive_train_side_8h_html"><div class="ttname"><a href="_drive_train_side_8h.html">DriveTrainSide.h</a></div></div>
-<div class="ttc" id="aclass_dragon_chassis_html_a39dce0dd0a51b21be140226cc1e9931a"><div class="ttname"><a href="class_dragon_chassis.html#a39dce0dd0a51b21be140226cc1e9931a">DragonChassis::SetOutput</a></div><div class="ttdeci">void SetOutput(ControlModes::CONTROL_TYPE controlType, double leftValue, double rightValue) override</div><div class="ttdoc">Run chassis.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00073">DragonChassis.cpp:73</a></div></div>
+<div class="ttc" id="aclass_dragon_chassis_html_a39dce0dd0a51b21be140226cc1e9931a"><div class="ttname"><a href="class_dragon_chassis.html#a39dce0dd0a51b21be140226cc1e9931a">DragonChassis::SetOutput</a></div><div class="ttdeci">void SetOutput(ControlModes::CONTROL_TYPE controlType, double leftValue, double rightValue) override</div><div class="ttdoc">Run chassis.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00074">DragonChassis.cpp:74</a></div></div>
+<div class="ttc" id="aclass_dragon_chassis_html_a53e2d52a02a6653a0ecb0de910271e45"><div class="ttname"><a href="class_dragon_chassis.html#a53e2d52a02a6653a0ecb0de910271e45">DragonChassis::GetWheelDiameter</a></div><div class="ttdeci">double GetWheelDiameter() const override</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00144">DragonChassis.cpp:144</a></div></div>
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
-<div class="ttc" id="aclass_dragon_chassis_html_a17a96d5df8c06046dc24e2d84940baad"><div class="ttname"><a href="class_dragon_chassis.html#a17a96d5df8c06046dc24e2d84940baad">DragonChassis::GetCurrentLeftPosition</a></div><div class="ttdeci">double GetCurrentLeftPosition() const override</div><div class="ttdoc">Return the current position of the left side of the DragonChassis in inches.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00093">DragonChassis.cpp:93</a></div></div>
+<div class="ttc" id="aclass_dragon_chassis_html_a17a96d5df8c06046dc24e2d84940baad"><div class="ttname"><a href="class_dragon_chassis.html#a17a96d5df8c06046dc24e2d84940baad">DragonChassis::GetCurrentLeftPosition</a></div><div class="ttdeci">double GetCurrentLeftPosition() const override</div><div class="ttdoc">Return the current position of the left side of the DragonChassis in inches.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00094">DragonChassis.cpp:94</a></div></div>
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
 <div class="ttc" id="a_i_chassis_8h_html"><div class="ttname"><a href="_i_chassis_8h.html">IChassis.h</a></div></div>
 <div class="ttc" id="a_dragon_chassis_8h_html"><div class="ttname"><a href="_dragon_chassis_8h.html">DragonChassis.h</a></div></div>
 <div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
-<div class="ttc" id="aclass_dragon_chassis_html_a54c251e24c4a4504f1363e17239a4fbc"><div class="ttname"><a href="class_dragon_chassis.html#a54c251e24c4a4504f1363e17239a4fbc">DragonChassis::GetCurrentSpeed</a></div><div class="ttdeci">double GetCurrentSpeed() const override</div><div class="ttdoc">Return the current speed of the center of the DragonChassis in inches per second.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00109">DragonChassis.cpp:109</a></div></div>
-<div class="ttc" id="aclass_dragon_chassis_html_a0db28ff16679b084010cb4cd706c598e"><div class="ttname"><a href="class_dragon_chassis.html#a0db28ff16679b084010cb4cd706c598e">DragonChassis::SetControlConstants</a></div><div class="ttdeci">void SetControlConstants(ControlData *pid) override</div><div class="ttdoc">Set the control constants (e.g. PIDF values).</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00135">DragonChassis.cpp:135</a></div></div>
-<div class="ttc" id="aclass_dragon_chassis_html_aca949d9c42fdb5fa948a8fd7b5918e1d"><div class="ttname"><a href="class_dragon_chassis.html#aca949d9c42fdb5fa948a8fd7b5918e1d">DragonChassis::GetCurrentRightPosition</a></div><div class="ttdeci">double GetCurrentRightPosition() const override</div><div class="ttdoc">Return the current position of the right side of the DragonChassis in inches.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00100">DragonChassis.cpp:100</a></div></div>
+<div class="ttc" id="aclass_dragon_chassis_html_a54c251e24c4a4504f1363e17239a4fbc"><div class="ttname"><a href="class_dragon_chassis.html#a54c251e24c4a4504f1363e17239a4fbc">DragonChassis::GetCurrentSpeed</a></div><div class="ttdeci">double GetCurrentSpeed() const override</div><div class="ttdoc">Return the current speed of the center of the DragonChassis in inches per second.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00110">DragonChassis.cpp:110</a></div></div>
+<div class="ttc" id="aclass_dragon_chassis_html_a0db28ff16679b084010cb4cd706c598e"><div class="ttname"><a href="class_dragon_chassis.html#a0db28ff16679b084010cb4cd706c598e">DragonChassis::SetControlConstants</a></div><div class="ttdeci">void SetControlConstants(ControlData *pid) override</div><div class="ttdoc">Set the control constants (e.g. PIDF values).</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00136">DragonChassis.cpp:136</a></div></div>
+<div class="ttc" id="aclass_dragon_chassis_html_aca949d9c42fdb5fa948a8fd7b5918e1d"><div class="ttname"><a href="class_dragon_chassis.html#aca949d9c42fdb5fa948a8fd7b5918e1d">DragonChassis::GetCurrentRightPosition</a></div><div class="ttdeci">double GetCurrentRightPosition() const override</div><div class="ttdoc">Return the current position of the right side of the DragonChassis in inches.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00101">DragonChassis.cpp:101</a></div></div>
 <div class="ttc" id="aclass_control_data_html"><div class="ttname"><a href="class_control_data.html">ControlData</a></div><div class="ttdef"><b>Definition:</b> <a href="_control_data_8h_source.html#l00022">ControlData.h:22</a></div></div>
 <div class="ttc" id="aclass_drive_train_side_html"><div class="ttname"><a href="class_drive_train_side.html">DriveTrainSide</a></div><div class="ttdoc">This is the DriveTrainSide Subsystem.</div><div class="ttdef"><b>Definition:</b> <a href="_drive_train_side_8h_source.html#l00035">DriveTrainSide.h:35</a></div></div>
-<div class="ttc" id="aclass_dragon_chassis_html_acef48e705afedea9337b90272bae5a80"><div class="ttname"><a href="class_dragon_chassis.html#acef48e705afedea9337b90272bae5a80">DragonChassis::GetCurrentPosition</a></div><div class="ttdeci">double GetCurrentPosition() const override</div><div class="ttdoc">Return the current position of the center of the DragonChassis in inches.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00086">DragonChassis.cpp:86</a></div></div>
-<div class="ttc" id="aclass_dragon_chassis_html_af8880818f285216514de50c8a400678e"><div class="ttname"><a href="class_dragon_chassis.html#af8880818f285216514de50c8a400678e">DragonChassis::GetCurrentRightSpeed</a></div><div class="ttdeci">double GetCurrentRightSpeed() const override</div><div class="ttdoc">Return the current speed of the right side of the DragonChassis in inches per second.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00123">DragonChassis.cpp:123</a></div></div>
-<div class="ttc" id="aclass_dragon_chassis_html_a8e840dd932ccb1b6de98a1e362ff299a"><div class="ttname"><a href="class_dragon_chassis.html#a8e840dd932ccb1b6de98a1e362ff299a">DragonChassis::~DragonChassis</a></div><div class="ttdeci">~DragonChassis() override</div><div class="ttdoc">clean up memory when this object gets deleted</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00060">DragonChassis.cpp:60</a></div></div>
+<div class="ttc" id="aclass_dragon_chassis_html_acef48e705afedea9337b90272bae5a80"><div class="ttname"><a href="class_dragon_chassis.html#acef48e705afedea9337b90272bae5a80">DragonChassis::GetCurrentPosition</a></div><div class="ttdeci">double GetCurrentPosition() const override</div><div class="ttdoc">Return the current position of the center of the DragonChassis in inches.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00087">DragonChassis.cpp:87</a></div></div>
+<div class="ttc" id="aclass_dragon_chassis_html_af8880818f285216514de50c8a400678e"><div class="ttname"><a href="class_dragon_chassis.html#af8880818f285216514de50c8a400678e">DragonChassis::GetCurrentRightSpeed</a></div><div class="ttdeci">double GetCurrentRightSpeed() const override</div><div class="ttdoc">Return the current speed of the right side of the DragonChassis in inches per second.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00124">DragonChassis.cpp:124</a></div></div>
+<div class="ttc" id="aclass_dragon_chassis_html_a8e840dd932ccb1b6de98a1e362ff299a"><div class="ttname"><a href="class_dragon_chassis.html#a8e840dd932ccb1b6de98a1e362ff299a">DragonChassis::~DragonChassis</a></div><div class="ttdeci">~DragonChassis() override</div><div class="ttdoc">clean up memory when this object gets deleted</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00061">DragonChassis.cpp:61</a></div></div>
 <div class="ttc" id="a_i_dragon_motor_controller_8h_html"><div class="ttname"><a href="_i_dragon_motor_controller_8h.html">IDragonMotorController.h</a></div></div>
 <div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>
 <div class="ttc" id="a_mechanism_types_8h_html"><div class="ttname"><a href="_mechanism_types_8h.html">MechanismTypes.h</a></div></div>
 <div class="ttc" id="aclass_dragon_chassis_html_a58b6034bf0e83f44cfdfa83d99632e9e"><div class="ttname"><a href="class_dragon_chassis.html#a58b6034bf0e83f44cfdfa83d99632e9e">DragonChassis::DragonChassis</a></div><div class="ttdeci">DragonChassis()=delete</div></div>
-<div class="ttc" id="aclass_dragon_chassis_html_af7f34790a7ae5ab604214486359d4dcb"><div class="ttname"><a href="class_dragon_chassis.html#af7f34790a7ae5ab604214486359d4dcb">DragonChassis::GetCurrentLeftSpeed</a></div><div class="ttdeci">double GetCurrentLeftSpeed() const override</div><div class="ttdoc">Return the current speed of the left side of the DragonChassis in inches per second.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00116">DragonChassis.cpp:116</a></div></div>
+<div class="ttc" id="aclass_dragon_chassis_html_af7f34790a7ae5ab604214486359d4dcb"><div class="ttname"><a href="class_dragon_chassis.html#af7f34790a7ae5ab604214486359d4dcb">DragonChassis::GetCurrentLeftSpeed</a></div><div class="ttdeci">double GetCurrentLeftSpeed() const override</div><div class="ttdoc">Return the current speed of the left side of the DragonChassis in inches per second.</div><div class="ttdef"><b>Definition:</b> <a href="_dragon_chassis_8cpp_source.html#l00117">DragonChassis.cpp:117</a></div></div>
 <div class="ttc" id="aclass_control_modes_html_a46c77e409ac22b3b3269f7fee2d3f736"><div class="ttname"><a href="class_control_modes.html#a46c77e409ac22b3b3269f7fee2d3f736">ControlModes::CONTROL_TYPE</a></div><div class="ttdeci">CONTROL_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_control_modes_8h_source.html#l00024">ControlModes.h:24</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

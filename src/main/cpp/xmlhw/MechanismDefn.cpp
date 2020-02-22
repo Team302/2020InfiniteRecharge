@@ -92,10 +92,6 @@ IMechanism* MechanismDefn::ParseXML
             {
                 type = MechanismTypes::MECHANISM_TYPE::INTAKE;
             }
-            else if ( typeStr.compare( "HUMAN_PLAYER_FLAP") == 0 )
-            {
-                type = MechanismTypes::MECHANISM_TYPE::HUMAN_PLAYER_FLAP;
-            }
             else if ( typeStr.compare( "IMPELLER") == 0 )
             {
                 type = MechanismTypes::MECHANISM_TYPE::IMPELLER;

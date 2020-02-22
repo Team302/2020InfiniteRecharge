@@ -19,28 +19,36 @@ class LimelightFactory
   public:
     static LimelightFactory* GetLimelightFactory();
 
-    std::shared_ptr<DragonLimelight> GetLimelight
+    DragonLimelight* GetLimelight
     (
       IDragonSensor::SENSOR_USAGE usage
     );
 
-    std::shared_ptr<DragonLimelight> CreateLimelight
+    DragonLimelight* CreateLimelight
     (
-      IDragonSensor::SENSOR_USAGE usage,
-      std::string                 tableName,                  /// <I> - network table name
-      double                      mountingHeight,             /// <I> - mounting height of the limelight
-      double                      mountingHorizontalOffset,   /// <I> - mounting horizontal offset from the middle of the robot
-      double                      rotation,                   /// <I> - clockwise rotation of limelight
-      double                      mountingAngle,              /// <I> - mounting angle of the camera
-      double                      targetHeight,               /// <I> - height the target
-      double                      targetHeight2               /// <I> - height of second target
+      IDragonSensor::SENSOR_USAGE     usage,
+      std::string                     tableName,                  /// <I> - network table name
+      double                          mountingHeight,             /// <I> - mounting height of the limelight
+      double                          mountingHorizontalOffset,   /// <I> - mounting horizontal offset from the middle of the robot
+      double                          rotation,                   /// <I> - clockwise rotation of limelight
+      double                          mountingAngle,              /// <I> - mounting angle of the camera
+      double                          targetHeight,               /// <I> - height the target
+      double                          targetHeight2,              /// <I> - height of second target
+      DragonLimelight::LED_MODE       ledMode,
+      DragonLimelight::CAM_MODE       camMode,
+      DragonLimelight::STREAM_MODE    streamMode,
+      DragonLimelight::SNAPSHOT_MODE  snapMode,
+      double                          defaultXHairX,
+      double                          defaultXHairY,
+      double                          secXHairX,
+      double                          secXHairY
     );
 
   private:
-    LimelightFactory() = default;
+    LimelightFactory();
     ~LimelightFactory() = default;
 
     static LimelightFactory* m_limelightFactory;
-    std::shared_ptr<DragonLimelight> m_limelight;
+    DragonLimelight* m_limelight;
     //std::map <IDragonSensor::SENSOR_USAGE, std::shared_ptr<DragonLimelight>> m_limelightMap;
 };

@@ -41,7 +41,6 @@ SolenoidUsage* SolenoidUsage::GetInstance()
 SolenoidUsage::SolenoidUsage()
 {
     m_usageMap["INTAKE"] = SOLENOID_USAGE::INTAKE;
-    m_usageMap["HUMAN_PLAYER_FLAP"] = SOLENOID_USAGE::HUMAN_PLAYER_FLAP;
     m_usageMap["BALL_TRANSFER"] = SOLENOID_USAGE::BALL_TRANSFER;
     m_usageMap["SHOOTER_HOOD"] = SOLENOID_USAGE::SHOOTER_HOOD;
 

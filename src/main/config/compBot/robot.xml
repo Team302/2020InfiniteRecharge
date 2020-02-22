@@ -1,13 +1,30 @@
 <?xml version="1.0"?>
 <!DOCTYPE robot SYSTEM "robot.dtd">
 <robot>
-	<pdp canId="51" />
-	
-	<odometry xloc="0.0"
+	<pdp canId="0" />
+
+	<pigeon canId="60" />
+	<limelight usage="MAIN_LIMELIGHT"
+				tablename="limelight"
+				mountingheight="20.0"
+				horizontaloffset="-10.0"
+				mountingangle="15.0"
+				rotation="90.0"
+				targetheight="120.0"
+				targetheight2="30.0"
+				defaultledmode="currentpipeline"
+				defaultcammode="vision"
+				streammode="sidebyside"
+				snapshots="off"
+				crosshairx="0.5"
+				crosshairy="0.5"
+				secondcrosshairx="0.25"
+				secondcrosshairy="0.25" />
+	<!-- odometry xloc="0.0"
 	          yloc="0.0"
 			  heading="0.0">
 		<pigeon canId="60" />
-		<limelight usage="MAINLIMELIGHT"
+		<limelight usage="MAIN_LIMELIGHT"
 				   tablename="limelight"
 				   mountingheight="20.0"
 				   horizontaloffset="-10.0"
@@ -24,7 +41,7 @@
 				   secondcrosshairx="0.25"
 				   secondcrosshairy="0.25" />
 
-	</odometry>
+	</odometry -->
 	
 	<!-- feedback>
 		<camera id="0"
@@ -50,11 +67,11 @@
 				canId="12"
 				pdpID="12"
 				type="FALCON"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
-				gearRatio="1.0"
+				gearRatio="8.4"
 				brakeMode="true"
 				slaveTo="-1"
 				peakCurrentDuration="50"
@@ -69,13 +86,13 @@
 				canId="13"
 				pdpID="13"
 				type="FALCON"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
-				gearRatio="1.0"
+				gearRatio="8.4"
 				brakeMode="true"
-				slaveTo="1"
+				slaveTo="12"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"
@@ -94,7 +111,7 @@
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
-				gearRatio="1.0"
+				gearRatio="8.4"
 				brakeMode="true"
 				slaveTo="-1"
 				peakCurrentDuration="50"
@@ -113,9 +130,9 @@
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
-				gearRatio="1.0"
+				gearRatio="8.4"
 				brakeMode="true"
-				slaveTo="1"
+				slaveTo="15"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"
@@ -133,10 +150,10 @@
     
 	<mechanism type="INTAKE">
 		<motor usage="INTAKE"
-				canId="7"
+				canId="11"
 				pdpID="7"
 				type="TALONSRX"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="NONE"
 				countsPerRev="0"
@@ -151,9 +168,9 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
     	<solenoid usage="INTAKE"
-    		      canId="50"
-    		      channel="0"
-    		      reversed="false" />
+    		      canId="9"
+    		      channel="4"
+    		      reversed="true" />
 	</mechanism>
 
 	<!-- mechanism type="HUMAN_PLAYER_FLAP">
@@ -171,7 +188,7 @@
 				inverted="false"
 				sensorInverted="false"
 				feedbackDevice="NONE"
-				countsPerRev="0"
+				countsPerRev="4096"
 				gearRatio="1.0"
 				brakeMode="false"
 				peakCurrentDuration="50"
@@ -196,7 +213,7 @@
 				canId="3"
 				pdpID="3"
 				type="TALONSRX"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="QUADENCODER"
 				countsPerRev="4096"
@@ -217,7 +234,7 @@
 				canId="16"
 				pdpID="0"
 				type="FALCON"
-				inverted="false"
+				inverted="true"
 				sensorInverted="false"
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
@@ -242,7 +259,7 @@
 				countsPerRev="2048"
 				gearRatio="1.0"
 				brakeMode="true"
-				slaveTo="5"
+				slaveTo="16"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"
@@ -287,18 +304,18 @@
 				type="TALONSRX"
 				inverted="false"
 				sensorInverted="false"
-				feedbackDevice="NONE"
-				countsPerRev="0"
+				feedbackDevice="QUADENCODER"
+				countsPerRev="6000"
 				gearRatio="1.0"
-				brakeMode="false"
+				brakeMode="true"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"
 				currentLimiting="true" 
 				forwardlimitswitch="false"
-				forwardlimitswitchopen="true"
+				forwardlimitswitchopen="false"
 				reverselimitswitch="false"
-				reverselimitswitchopen="true"/>
+				reverselimitswitchopen="false"/>
 		<!-- todo need to add limit switches -->
 	</mechanism>
     
@@ -322,7 +339,7 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
     	<solenoid usage="CONTROL_TABLE_MANIPULATOR"
-    		      canId="50"
+    		      canId="9"
     		      channel="1"
     		      reversed="false" />
 		<colorsensor port="kOnboard" />
@@ -348,7 +365,7 @@
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
     	<solenoid usage="CLIMBER"
-    		      canId="50"
+    		      canId="9"
     		      channel="2"
     		      reversed="false" />
 	</mechanism>

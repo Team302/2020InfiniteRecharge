@@ -23,7 +23,7 @@
 // Team 302 includes
 #include <test/IStateTest.h>
 #include <test/IntakeStateMgrTest.h>
-#include <controllers/intake/IntakeStateMgr.h>
+#include <states/intake/IntakeStateMgr.h>
 
 // Third Party Includes
 
@@ -35,7 +35,7 @@ using namespace frc;
 ///  @brief Tests for IntakeStateMgr.  There are two states: OFF and ON.  This will run each for 15 seconds.
 ///  		running OFF, then ON.
 IntakeStateMgrTest::IntakeStateMgrTest() : IStateTest(),
-													   m_stateMgr( make_unique<IntakeStateMgr>() ),
+													   m_stateMgr( IntakeStateMgr::GetInstance() ),
 													   m_ranOff( false ),
 													   m_ranOn( false ),
 													   m_isDone( false ),
@@ -48,7 +48,7 @@ IntakeStateMgrTest::IntakeStateMgrTest() : IStateTest(),
 void IntakeStateMgrTest::Init()
 {
 	m_loopCnt = 0;
-	m_stateMgr.get()->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, true );
+	m_stateMgr->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, true );
 	m_ranOff = true;
 }
 
@@ -61,22 +61,22 @@ void IntakeStateMgrTest::Periodic()
 	{
 		if ( !m_ranOff )
 		{
-			m_stateMgr.get()->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
+			m_stateMgr->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
 			m_ranOff = true;
 		}
 		else if ( !m_ranOn )
 		{
-			m_stateMgr.get()->SetCurrentState( IntakeStateMgr::INTAKE_STATE::ON, false );
+			m_stateMgr->SetCurrentState( IntakeStateMgr::INTAKE_STATE::ON, false );
 			m_ranOn = true;
 		}
 		else
 		{
-			m_stateMgr.get()->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
+			m_stateMgr->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
 			m_isDone = true;
 		}
 		m_loopCnt = 0;
 	}
-	m_stateMgr.get()->RunCurrentState();
+	m_stateMgr->RunCurrentState();
 }
 
 /// @brief Indicate whether the test has completed or not.

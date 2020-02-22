@@ -17,13 +17,12 @@
 #pragma once
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
 
 // Team 302 includes
 #include <test/IStateTest.h>
-#include <controllers/impeller/ImpellerStateMgr.h>
+#include <states/impeller/ImpellerStateMgr.h>
 
 // Third Party Includes
 
@@ -50,7 +49,7 @@ class ImpellerStateMgrTest : public IStateTest
 		bool IsDone() override;
 		
 	private:
-		std::unique_ptr<ImpellerStateMgr>	    m_stateMgr;
+		ImpellerStateMgr*					    m_stateMgr;
 		bool                                    m_ranOff;
 		bool                                    m_ranHold;
 		bool                                    m_ranShoot;

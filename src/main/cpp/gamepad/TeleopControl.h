@@ -53,6 +53,7 @@ class TeleopControl
             CLIMBER_EXTEND,
             CLIMBER_LIFT,
             CLIMBER_CRAWL,
+            CLIMBER_HOLD,
             IMPELLER_OFF,
             IMPELLER_HOLD,
             IMPELLER_AGITATE,
@@ -80,6 +81,9 @@ class TeleopControl
             SHOOTER_HOOD_MANUAL_AXIS,
             TURRET_MANUAL_AXIS,
             TURRET_MANUAL_BUTTON,
+            TURRET_LIMELIGHT_AIM,
+            GARBAGE_INCREMENT,
+            GARBAGE_DECREMENT,
             MAX_FUNCTIONS
         };
 

@@ -50,7 +50,7 @@ DragonLimelight::DragonLimelight
 ) : IDragonSensor(),
     IDragonDistanceSensor(),
     m_usage( usage ),
-    m_networktable( NetworkTableInstance::GetDefault().GetTable( tableName.c_str() ) ),
+    m_networktable( NetworkTableInstance::GetDefault().GetTable( tableName.c_str()) ),
     m_mountHeight( mountingHeight ),
     m_mountingHorizontalOffset( mountingHorizontalOffset ),
     m_rotation(rotation),
@@ -94,18 +94,18 @@ double DragonLimelight::GetConfidence() const
 
 std::vector<double> DragonLimelight::Get3DSolve() const
 {
-    return m_networktable->GetNumberArray("camtran", 0);
+    return m_networktable.get()->GetNumberArray("camtran", 0);
 }
 
 bool DragonLimelight::HasTarget() const
 {
-    return ( m_networktable->GetNumber("tv", 0.0) > 0.1 );
+    return ( m_networktable.get()->GetNumber("tv", 0.0) > 0.1 );
 }
 
 double DragonLimelight::GetTargetHorizontalOffset() const
 {
-    double tx = m_networktable->GetNumber("tx", 0.0);
-    double ty = m_networktable->GetNumber("ty", 0.0);
+    double tx = m_networktable.get()->GetNumber("tx", 0.0);
+    double ty = m_networktable.get()->GetNumber("ty", 0.0);
     if(m_rotation == 0.0)
     {
         return tx;
@@ -133,8 +133,8 @@ double DragonLimelight::GetTargetHorizontalOffset() const
 
 double DragonLimelight::GetTargetVerticalOffset() const
 {
-    double tx = m_networktable->GetNumber("tx", 0.0);
-    double ty = m_networktable->GetNumber("ty", 0.0);
+    double tx = m_networktable.get()->GetNumber("tx", 0.0);
+    double ty = m_networktable.get()->GetNumber("ty", 0.0);
     if(m_rotation == 0.0)
     {
         return ty;
@@ -161,17 +161,17 @@ double DragonLimelight::GetTargetVerticalOffset() const
 
 double DragonLimelight::GetTargetArea() const
 {
-    return m_networktable->GetNumber("ta", 0.0);
+    return m_networktable.get()->GetNumber("ta", 0.0);
 }
 
 double DragonLimelight::GetTargetSkew() const
 {
-    return m_networktable->GetNumber("ts", 0.0);
+    return m_networktable.get()->GetNumber("ts", 0.0);
 }
 
 double DragonLimelight::GetPipelineLatency() const
 {
-    return m_networktable->GetNumber("tl", 0.0);
+    return m_networktable.get()->GetNumber("tl", 0.0);
 }
 
 ///-----------------------------------------------------------------------
@@ -194,28 +194,28 @@ void DragonLimelight::SetTargetHeight
 
 void DragonLimelight::SetLEDMode(DragonLimelight::LED_MODE mode)
 {
-    m_networktable->PutNumber("ledMode", mode);
+    m_networktable.get()->PutNumber("ledMode", mode);
 }
 
 void DragonLimelight::SetCamMode(DragonLimelight::CAM_MODE mode)
 {
-    m_networktable->PutNumber("camMode", mode);
+    m_networktable.get()->PutNumber("camMode", mode);
 }
 
 void DragonLimelight::SetPipeline(int pipeline)
 {
-    m_networktable->PutNumber("pipeline", pipeline);
+    m_networktable.get()->PutNumber("pipeline", pipeline);
 }
 
 void DragonLimelight::SetStreamMode(DragonLimelight::STREAM_MODE mode)
 {
-    m_networktable->PutNumber("stream", mode);
+    m_networktable.get()->PutNumber("stream", mode);
 }
 
 // MAX of 32 snapshots can be saved
 void DragonLimelight::ToggleSnapshot(DragonLimelight::SNAPSHOT_MODE toggle)
 {
-    m_networktable->PutNumber("snapshot", toggle);
+    m_networktable.get()->PutNumber("snapshot", toggle);
 }
 
 void DragonLimelight::PrintValues()

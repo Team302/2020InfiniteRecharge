@@ -1,9 +1,19 @@
-/*
- * AutonSelector.cpp
- *
- *  Created on: Jan 20, 2018
- *      Author: jonah
- */
+
+//====================================================================================================================================================
+// Copyright 2020 Lake Orion Robotics FIRST Team 302
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+// OR OTHER DEALINGS IN THE SOFTWARE.
+//====================================================================================================================================================
+
 //Includes
 #include <string>
 #include <vector>
@@ -14,24 +24,18 @@
 
 //Team302 includes
 #include <auton/AutonSelector.h>
+#include <utils/Logger.h>
+
+
+using namespace std;
 
 //---------------------------------------------------------------------
 // Method: 		<<constructor>>
 // Description: This creates this object and reads the auto script (CSV)
 //  			files and displays a list on the dashboard.
 //---------------------------------------------------------------------
-AutonSelector::AutonSelector() : m_leftXMLFiles(),
-								 m_centerXMLFiles(),
-								 m_rightXMLFiles(),
-								 m_chooserOptions(),
-								 m_chooserPosition(),
-								 m_chooserLeft(),
-								 m_chooserCenter(),
-								 m_chooserRight(),
-								 m_autonPositionModifier( "" ),
-								 m_autonOption( "CrossAutonLine.xml")
-//									 m_autonOption( "LeftCorner_PlaceLeftScale.xml")
-
+AutonSelector::AutonSelector() : m_xmlFiles(),
+								 m_chooser()
 {
 	FindXMLFileNames();
 	PutChoicesOnDashboard();
@@ -46,103 +50,14 @@ AutonSelector::AutonSelector() : m_leftXMLFiles(),
 //---------------------------------------------------------------------
 std::string AutonSelector::GetSelectedAutoFile()
 {
-	// initialize output
-	std::string autonFile;
-
-	m_autonPositionModifier.clear();
-
-	bool hasError = false;
-
-	// Get Starting Location and strategy
-	AutonSelector::AUTON_POSITION  position = GetRobotStartPosition();
-
-	// Handle the strategy
-	AutonSelector::AUTON_OPTION strategy = GetDesiredOption();
-	switch ( strategy )
-	{
-		  case AutonSelector::CROSS_LINE:
-			  autonFile = GetCrossLineFile();
-			  break;
-
-		  default:
-			  hasError = true;
-			  printf( "==>> AutonSelector::GetSelectedAutoFile ... invalid strategy specified \n" );
-			  break;
-	}
-
-	if ( hasError )
-	{
-		autonFile = GetCrossLineFile();
-	}
-	autonFile = m_autonDir + autonFile;
-
-	frc::SmartDashboard::PutString("Auton file var", autonFile);
-
-	return autonFile;
+	Logger::GetLogger()->LogError(string("Auton Selector Get Selected Auton"), m_chooser.GetSelected());
+	return m_chooser.GetSelected();
 }
-
-
-//---------------------------------------------------------------------
-// Method: 		GetCrossLineFile
-// Description: This determines which Cross line file to run based on starting
-//				position 
-// Returns:		std::string		filename to run
-//---------------------------------------------------------------------
-std::string AutonSelector::GetCrossLineFile()
-{
-	std::string file = "CrossAutonLine.xml";
-	return file;
-}
-
-//---------------------------------------------------------------------
-// Method: 		GetRobotStartPosition
-// Description: Read the starting position from the smart dashboard
-// Returns:		AutonSelector::AUTON_POSITION		starting position
-//---------------------------------------------------------------------
-AutonSelector::AUTON_POSITION AutonSelector::GetRobotStartPosition()
-{
-	AutonSelector::AUTON_POSITION position = AUTON_POSITION::LEFT_CORNER;
-
-	auto selection = m_chooserPosition.GetSelected();
-	if ( selection.compare( LEFT_CORNER_STR ) == 0 )
-	{
-		position = AutonSelector::LEFT_CORNER;
-	}
-	else if ( selection.compare( RIGHT_CORNER_STR ) == 0  )
-	{
-		position = AutonSelector::RIGHT_CORNER;
-	}
-	else
-	{
-		position = AutonSelector::CENTER;
-	}
-	return position;
-}
-
-//---------------------------------------------------------------------
-// Method: 		GetDesiredOption
-// Description: Read the desired behavior from the smart dashboard
-// Returns:		AutonSelector::AUTON_OPTION		desired behavior
-//---------------------------------------------------------------------
-AutonSelector::AUTON_OPTION AutonSelector::GetDesiredOption()
-{
-	AutonSelector::AUTON_OPTION option = AUTON_OPTION::CROSS_LINE;
-
-	std::string selection = m_chooserOptions.GetSelected();
-	frc::SmartDashboard::PutString("selected auton: ", selection);
-	if ( selection.compare( CROSS_AUTON_LINE_STR ) == 0 )
-	{
-		option = AutonSelector::CROSS_LINE;
-	}
-	return option;
-}
-
-
 
 //---------------------------------------------------------------------
 // Method: 		FindXMLFileNames
-// Description: This builds up a list of XML files in the directory and
-//				stores them in the attributes.
+// Description: This builds up a list of CSV files in the directory and
+//				stores them in the m_csvFiles attribute.
 // Returns:		void
 //---------------------------------------------------------------------
 void AutonSelector::FindXMLFileNames()
@@ -162,61 +77,20 @@ void AutonSelector::FindXMLFileNames()
 				moreFiles = false;
 				break;
 			}
-
-			std::string fileName = std::string( files->d_name );
-
-			// skip the current directory and parent directory filenames
-			if ( fileName.compare( "." ) )
+			else 
 			{
-				continue;
-			}
-			if ( fileName.compare( ".." ) )
-			{
-				continue;
-			}
-
-			auto foundPos = fileName.find( XML );
-			if ( foundPos != std::string::npos )		// has xml extension
-			{
-				foundPos = fileName.find( LEFT_CORNER );
-				if ( foundPos != std::string::npos )
+				auto filename = string( files->d_name);
+				if ( filename != "." && filename != ".." && filename != "auton.dtd" )
 				{
-					m_leftXMLFiles.emplace_back( fileName );
-				}
-				else
-				{
-					foundPos = fileName.find( RIGHT_CORNER );
-					if ( foundPos != std::string::npos )
-					{
-						m_rightXMLFiles.emplace_back( fileName );
-					}
-					else
-					{
-						foundPos = fileName.find( CENTER );
-						if ( foundPos != std::string::npos )
-						{
-							m_centerXMLFiles.emplace_back( fileName );
-						}
-					}
-				}
-			}
-			else
-			{
-				// skip dtd files
-				foundPos = fileName.find( DTD );
-				if ( foundPos != std::string::npos )
-				{
-					continue;
+					m_xmlFiles.emplace_back(string(files->d_name));
 				}
 
-				// else invalid file name
-				printf( "==>> invalid auton file %s \n", fileName.c_str() );
-			}
+			} 
 		}
 	}
 	else
 	{
-		printf( "==>> auton directory not found \n" );
+		// error condition need to handle
 	}
 }
 
@@ -228,14 +102,21 @@ void AutonSelector::FindXMLFileNames()
 //---------------------------------------------------------------------
 void AutonSelector::PutChoicesOnDashboard()
 {
-	// Where is the robot located
-	m_chooserPosition.SetDefaultOption( LEFT_CORNER_STR, LEFT_CORNER_STR );
-	m_chooserPosition.AddOption( CENTER_STR, CENTER_STR );
-	m_chooserPosition.AddOption( RIGHT_CORNER_STR, RIGHT_CORNER_STR );
-	frc::SmartDashboard::PutData( "Auton: Robot Start Position", &m_chooserPosition );
-
-	// What is our desired action
-	// AUTOLINE Option
-	m_chooserOptions.SetDefaultOption( CROSS_AUTON_LINE_STR, CROSS_AUTON_LINE_STR );
-	frc::SmartDashboard::PutData( "Auton: Robot Scoring Action", &m_chooserOptions);
+	auto gotDefault = false;
+	for (unsigned int inx = 0; inx < m_xmlFiles.size(); ++inx)
+	{
+		if(m_xmlFiles[inx] != "." && m_xmlFiles[inx] != "..")
+		{
+			if ( !gotDefault )
+			{
+				m_chooser.SetDefaultOption(  m_xmlFiles[inx], m_xmlFiles[inx] );
+			}
+			else
+			{
+				m_chooser.AddOption( m_xmlFiles[inx], m_xmlFiles[inx]);	
+			}
+		}
+	}
+	frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 }
+

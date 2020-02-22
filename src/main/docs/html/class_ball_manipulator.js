@@ -11,5 +11,6 @@ var class_ball_manipulator =
     ] ],
     [ "GetCurrentState", "class_ball_manipulator.html#af24249d8efa5c38ef042178da0e40f29", null ],
     [ "RunCurrentState", "class_ball_manipulator.html#a565ef49322a8a72a7cc72ae3b19ff4a8", null ],
+    [ "SetApproxAngle", "class_ball_manipulator.html#a9ba3e69926ef2b3a46793b49adf4003a", null ],
     [ "SetCurrentState", "class_ball_manipulator.html#ac6b06504ca8077c1b533895b2793e5a1", null ]
 ];

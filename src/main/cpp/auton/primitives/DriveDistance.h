@@ -24,15 +24,12 @@
 
 // Third Party Includes
 
-
-
-#include <auton/PrimitiveParams.h>
-#include <subsys/MechanismFactory.h>
 #include <auton/primitives/SuperDrive.h>
-#include <subsys/IChassis.h>
-#include <auton/primitives/IPrimitive.h>
 
-class DriveDistance : public SuperDrive {
+class PrimitiveParams;
+
+class DriveDistance : public SuperDrive 
+{
 public:
 	bool IsDone() override;
 	void Init(PrimitiveParams* params) override;
@@ -47,9 +44,6 @@ protected:
     );
 private:
 	void CalculateSlowDownDistance();
-	//TODO: remove timeout. it is no longer being used
-//	const float TIMEOUT_MULTIPIER = 200000; // Multiplier for the max expected time (speed * distance) * TIMEOUT_MULTIPLIER = expected time
-									//1.4
 	PrimitiveParams* m_params;
 
 	float m_targetDistance;

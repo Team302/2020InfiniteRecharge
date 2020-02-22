@@ -16,6 +16,10 @@ var dir_c85cb826952b1679a37b077c3741c8c1 =
     [ "ControlPanel.h", "_control_panel_8h.html", [
       [ "ControlPanel", "class_control_panel.html", "class_control_panel" ]
     ] ],
+    [ "Crawler.cpp", "_crawler_8cpp.html", null ],
+    [ "Crawler.h", "_crawler_8h.html", [
+      [ "Crawler", "class_crawler.html", "class_crawler" ]
+    ] ],
     [ "DragonChassis.cpp", "_dragon_chassis_8cpp.html", null ],
     [ "DragonChassis.h", "_dragon_chassis_8h.html", [
       [ "DragonChassis", "class_dragon_chassis.html", "class_dragon_chassis" ]
@@ -23,10 +27,6 @@ var dir_c85cb826952b1679a37b077c3741c8c1 =
     [ "DriveTrainSide.cpp", "_drive_train_side_8cpp.html", "_drive_train_side_8cpp" ],
     [ "DriveTrainSide.h", "_drive_train_side_8h.html", [
       [ "DriveTrainSide", "class_drive_train_side.html", "class_drive_train_side" ]
-    ] ],
-    [ "HumanPlayerFlap.cpp", "_human_player_flap_8cpp.html", null ],
-    [ "HumanPlayerFlap.h", "_human_player_flap_8h.html", [
-      [ "HumanPlayerFlap", "class_human_player_flap.html", "class_human_player_flap" ]
     ] ],
     [ "IChassis.h", "_i_chassis_8h.html", [
       [ "IChassis", "class_i_chassis.html", "class_i_chassis" ]

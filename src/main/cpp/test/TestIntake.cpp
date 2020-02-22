@@ -15,15 +15,15 @@
 
 #include <test/TestIntake.h>
 #include <frc/Timer.h>
-#include <controllers/intake/IntakeStateMgr.h>
+#include <states/intake/IntakeStateMgr.h>
 
 using namespace frc;
 
 TestIntake::TestIntake()
 {
     m_timer = new Timer();
-    m_intakeStates = new IntakeStateMgr();
-};
+    m_intakeStates = IntakeStateMgr::GetInstance();
+}
 
 void TestIntake::Periodic()
 {
@@ -37,4 +37,4 @@ void TestIntake::Periodic()
         m_intakeStates -> SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, true );
     }
 
-};
+}

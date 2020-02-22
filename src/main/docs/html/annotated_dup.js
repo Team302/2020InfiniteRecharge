@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "ctre", "namespacectre.html", "namespacectre" ],
     [ "AnalogAxis", "class_analog_axis.html", "class_analog_axis" ],
     [ "AnalogButton", "class_analog_button.html", "class_analog_button" ],
     [ "AnalogInputDefn", "class_analog_input_defn.html", "class_analog_input_defn" ],
@@ -41,6 +42,7 @@ var annotated_dup =
     [ "ControlPanelStow", "class_control_panel_stow.html", "class_control_panel_stow" ],
     [ "ControlPanelTurn", "class_control_panel_turn.html", "class_control_panel_turn" ],
     [ "ConversionUtils", "class_conversion_utils.html", "class_conversion_utils" ],
+    [ "Crawler", "class_crawler.html", "class_crawler" ],
     [ "CubedProfile", "class_cubed_profile.html", "class_cubed_profile" ],
     [ "CyclePrimitives", "class_cycle_primitives.html", "class_cycle_primitives" ],
     [ "DeadbandValue", "class_deadband_value.html", "class_deadband_value" ],
@@ -86,7 +88,6 @@ var annotated_dup =
     [ "HardwareIDValidation", "class_hardware_i_d_validation.html", null ],
     [ "HoldPosition", "class_hold_position.html", "class_hold_position" ],
     [ "HoldTurretPosition", "class_hold_turret_position.html", "class_hold_turret_position" ],
-    [ "HumanPlayerFlap", "class_human_player_flap.html", "class_human_player_flap" ],
     [ "IButton", "class_i_button.html", "class_i_button" ],
     [ "IChassis", "class_i_chassis.html", "class_i_chassis" ],
     [ "IDeadband", "class_i_deadband.html", "class_i_deadband" ],
@@ -139,6 +140,7 @@ var annotated_dup =
     [ "PCMDefn", "class_p_c_m_defn.html", "class_p_c_m_defn" ],
     [ "PDPDefn", "class_p_d_p_defn.html", "class_p_d_p_defn" ],
     [ "PigeonDefn", "class_pigeon_defn.html", "class_pigeon_defn" ],
+    [ "PigeonFactory", "class_pigeon_factory.html", "class_pigeon_factory" ],
     [ "POVButton", "class_p_o_v_button.html", "class_p_o_v_button" ],
     [ "PrimitiveFactory", "class_primitive_factory.html", "class_primitive_factory" ],
     [ "PrimitiveParams", "class_primitive_params.html", "class_primitive_params" ],

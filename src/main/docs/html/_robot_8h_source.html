@@ -115,19 +115,19 @@ $(document).ready(function(){initNavTree('_robot_8h_source.html','');});
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// c++ includes</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// wpilib includes</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;frc/TimedRobot.h&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;frc/smartdashboard/SendableChooser.h&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// team 302 includes</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_cycle_primitives_8h.html">auton/CyclePrimitives.h</a>&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_chassis_state_mgr_8h.html">controllers/chassis/ChassisStateMgr.h</a>&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_ball_manipulator_8h.html">controllers/BallManipulator.h</a>&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//#include &lt;controllers/controlPanel/ControlPanelStateMgr.h&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//#include &lt;controllers/climber/ClimberStateMgr.h&gt;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_intake_state_mgr_8h.html">controllers/intake/IntakeStateMgr.h</a>&gt;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// wpilib includes</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;frc/TimedRobot.h&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;frc/smartdashboard/SendableChooser.h&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// team 302 includes</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_cycle_primitives_8h.html">auton/CyclePrimitives.h</a>&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_chassis_state_mgr_8h.html">states/chassis/ChassisStateMgr.h</a>&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_ball_manipulator_8h.html">states/BallManipulator.h</a>&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//#include &lt;states/controlPanel/ControlPanelStateMgr.h&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//#include &lt;states/climber/ClimberStateMgr.h&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_intake_state_mgr_8h.html">states/intake/IntakeStateMgr.h</a>&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_dragon_limelight_8h.html">hw/DragonLimelight.h</a>&gt;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_button_box_display_8h.html">test/ButtonBoxDisplay.h</a>&gt;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_xbox_display_8h.html">test/XboxDisplay.h</a>&gt;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_intake_state_mgr_test_8h.html">test/IntakeStateMgrTest.h</a>&gt;</span></div>
@@ -137,103 +137,108 @@ $(document).ready(function(){initNavTree('_robot_8h_source.html','');});
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &lt;ctre/Phoenix.h&gt;</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_teleop_control_8h.html">gamepad/TeleopControl.h</a>&gt;</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&gt;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// third party includes</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_robot.html">   61</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_robot.html">Robot</a> : <span class="keyword">public</span> frc::TimedRobot </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <a class="code" href="class_robot.html#a136b20cc34a9cda8da9ef2c85646f747">Robot</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <a class="code" href="class_robot.html#a359bc5b345fc76b9451abfeea4cad6e4">~Robot</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a66f23dae271748d525cf3ab046375f79">RobotInit</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27">RobotPeriodic</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a2136cfc015936285218c8a8db984d6bc">AutonomousInit</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#ac11143dd674e0e02fef5329e2df24830">AutonomousPeriodic</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#aa3e246794bfbbb4406fc87f351762038">TeleopInit</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a324322627c63b3870daf7c7ddc5bea63">TeleopPeriodic</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a9ac222d45d30a6d0c572fd36d18c6ccc">TestInit</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#af0ac44a962e609e9b042285e699d1db8">TestPeriodic</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <a class="code" href="class_cycle_primitives.html">CyclePrimitives</a>* m_cyclePrims;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <a class="code" href="class_chassis_state_mgr.html">ChassisStateMgr</a>* m_chassisStateMgr;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="comment">//IntakeStateMgr* m_intake;</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <a class="code" href="class_ball_manipulator.html">BallManipulator</a>* m_powerCells;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="comment">// ControlPanelStateMgr* m_control;</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="comment">// ClimberStateMgr* m_climer;</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_limelight_factory_8h.html">hw/factories/LimelightFactory.h</a>&gt;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// third party includes</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_robot.html">   62</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_robot.html">Robot</a> : <span class="keyword">public</span> frc::TimedRobot </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <a class="code" href="class_robot.html#a136b20cc34a9cda8da9ef2c85646f747">Robot</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <a class="code" href="class_robot.html#a359bc5b345fc76b9451abfeea4cad6e4">~Robot</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a66f23dae271748d525cf3ab046375f79">RobotInit</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27">RobotPeriodic</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a2136cfc015936285218c8a8db984d6bc">AutonomousInit</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#ac11143dd674e0e02fef5329e2df24830">AutonomousPeriodic</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#aa3e246794bfbbb4406fc87f351762038">TeleopInit</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a324322627c63b3870daf7c7ddc5bea63">TeleopPeriodic</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#a9ac222d45d30a6d0c572fd36d18c6ccc">TestInit</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_robot.html#af0ac44a962e609e9b042285e699d1db8">TestPeriodic</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <a class="code" href="class_cycle_primitives.html">CyclePrimitives</a>* m_cyclePrims;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <a class="code" href="class_chassis_state_mgr.html">ChassisStateMgr</a>* m_chassisStateMgr;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="comment">//IntakeStateMgr* m_intake;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <a class="code" href="class_ball_manipulator.html">BallManipulator</a>* m_powerCells;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="comment">// ControlPanelStateMgr* m_control;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="comment">// ClimberStateMgr* m_climer;</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <a class="code" href="class_button_box_display.html">ButtonBoxDisplay</a>* m_buttonBoxDisplay;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <a class="code" href="class_xbox_display.html">XboxDisplay</a>* m_xBoxDisplay;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <a class="code" href="class_intake_state_mgr_test.html">IntakeStateMgrTest</a>* m_intakeStateMgrTest;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <a class="code" href="class_impeller_state_mgr_test.html">ImpellerStateMgrTest</a>* m_impellerStateMgrTest;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <a class="code" href="class_ball_transfer_state_mgr_test.html">BallTransferStateMgrTest</a>* m_ballTransferStateMgrTest;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <a class="code" href="class_shooter_state_mgr_test.html">ShooterStateMgrTest</a>* m_shooterStateMgrTest;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      TalonSRX* m_shooterHood;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      TalonSRX* m_turret;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <a class="code" href="class_teleop_control.html">TeleopControl</a>* m_controller;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <a class="code" href="class_i_mechanism.html">IMechanism</a>* m_impeller;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <a class="code" href="class_i_mechanism.html">IMechanism</a>* m_shooter;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      frc::SendableChooser&lt;std::string&gt;   m_testChooser;                    </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="keyword">const</span> std::string                   m_noTest = <span class="stringliteral">&quot;No Test&quot;</span>;      </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keyword">const</span> std::string                   m_buttonBoxTest = <span class="stringliteral">&quot;Button Box&quot;</span>;      </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <span class="keyword">const</span> std::string                   m_dragonXBoxTest = <span class="stringliteral">&quot;Dragon XBox&quot;</span>;      </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keyword">const</span> std::string                   m_intakeTest = <span class="stringliteral">&quot;Intake&quot;</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keyword">const</span> std::string                   m_impellerTest = <span class="stringliteral">&quot;Impeller&quot;</span>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="keyword">const</span> std::string                   m_ballTransferTest = <span class="stringliteral">&quot;Ball Transfer&quot;</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">//    const std::string                   m_shooterTest = &quot;Shooter&quot;;</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      std::string                         m_testSelected; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <span class="keyword">enum</span> TEST_TO_RUN</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;          NONE,</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;          BUTTON_BOX,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;          XBOX,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;          INTAKE,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;          IMPELLER,</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;          TRANSFER,</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;          SHOOTER</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      };</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      TEST_TO_RUN   m_currentTest;      </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <a class="code" href="class_button_box_display.html">ButtonBoxDisplay</a>* m_buttonBoxDisplay;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <a class="code" href="class_xbox_display.html">XboxDisplay</a>* m_xBoxDisplay;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <a class="code" href="class_intake_state_mgr_test.html">IntakeStateMgrTest</a>* m_intakeStateMgrTest;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <a class="code" href="class_impeller_state_mgr_test.html">ImpellerStateMgrTest</a>* m_impellerStateMgrTest;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <a class="code" href="class_ball_transfer_state_mgr_test.html">BallTransferStateMgrTest</a>* m_ballTransferStateMgrTest;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <a class="code" href="class_shooter_state_mgr_test.html">ShooterStateMgrTest</a>* m_shooterStateMgrTest;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <a class="code" href="class_i_mechanism.html">IMechanism</a>* m_shooterHood;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <a class="code" href="class_i_mechanism.html">IMechanism</a>* m_turret;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <a class="code" href="class_teleop_control.html">TeleopControl</a>* m_controller;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <a class="code" href="class_i_mechanism.html">IMechanism</a>* m_impeller;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <a class="code" href="class_i_mechanism.html">IMechanism</a>* m_shooter;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      std::shared_ptr&lt;DragonLimelight&gt; m_limelight;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      frc::SendableChooser&lt;std::string&gt;   m_testChooser;                    </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keyword">const</span> std::string                   m_noTest = <span class="stringliteral">&quot;No Test&quot;</span>;      </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keyword">const</span> std::string                   m_buttonBoxTest = <span class="stringliteral">&quot;Button Box&quot;</span>;      </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="keyword">const</span> std::string                   m_dragonXBoxTest = <span class="stringliteral">&quot;Dragon XBox&quot;</span>;      </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="keyword">const</span> std::string                   m_intakeTest = <span class="stringliteral">&quot;Intake&quot;</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="keyword">const</span> std::string                   m_impellerTest = <span class="stringliteral">&quot;Impeller&quot;</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="keyword">const</span> std::string                   m_ballTransferTest = <span class="stringliteral">&quot;Ball Transfer&quot;</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">//    const std::string                   m_shooterTest = &quot;Shooter&quot;;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      std::string                         m_testSelected; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keyword">enum</span> TEST_TO_RUN</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;          NONE,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;          BUTTON_BOX,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;          XBOX,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;          INTAKE,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;          IMPELLER,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;          TRANSFER,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;          SHOOTER</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      };</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      TEST_TO_RUN   m_currentTest;      </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_cycle_primitives_html"><div class="ttname"><a href="class_cycle_primitives.html">CyclePrimitives</a></div><div class="ttdef"><b>Definition:</b> <a href="_cycle_primitives_8h_source.html#l00037">CyclePrimitives.h:37</a></div></div>
+<div class="ttc" id="aclass_cycle_primitives_html"><div class="ttname"><a href="class_cycle_primitives.html">CyclePrimitives</a></div><div class="ttdef"><b>Definition:</b> <a href="_cycle_primitives_8h_source.html#l00038">CyclePrimitives.h:38</a></div></div>
 <div class="ttc" id="a_cycle_primitives_8h_html"><div class="ttname"><a href="_cycle_primitives_8h.html">CyclePrimitives.h</a></div></div>
 <div class="ttc" id="aclass_intake_state_mgr_test_html"><div class="ttname"><a href="class_intake_state_mgr_test.html">IntakeStateMgrTest</a></div><div class="ttdoc">Tests for IntakeStateMgr. There are two states: OFF and ON. This will run each for 15 seconds....</div><div class="ttdef"><b>Definition:</b> <a href="_intake_state_mgr_test_8h_source.html#l00034">IntakeStateMgrTest.h:34</a></div></div>
 <div class="ttc" id="a_ball_manipulator_8h_html"><div class="ttname"><a href="_ball_manipulator_8h.html">BallManipulator.h</a></div></div>
 <div class="ttc" id="aclass_robot_html_a359bc5b345fc76b9451abfeea4cad6e4"><div class="ttname"><a href="class_robot.html#a359bc5b345fc76b9451abfeea4cad6e4">Robot::~Robot</a></div><div class="ttdeci">~Robot()=default</div></div>
 <div class="ttc" id="a_teleop_control_8h_html"><div class="ttname"><a href="_teleop_control_8h.html">TeleopControl.h</a></div></div>
 <div class="ttc" id="a_button_box_display_8h_html"><div class="ttname"><a href="_button_box_display_8h.html">ButtonBoxDisplay.h</a></div></div>
-<div class="ttc" id="aclass_robot_html_af0ac44a962e609e9b042285e699d1db8"><div class="ttname"><a href="class_robot.html#af0ac44a962e609e9b042285e699d1db8">Robot::TestPeriodic</a></div><div class="ttdeci">void TestPeriodic() override</div><div class="ttdoc">Runs every 20 milliseconds when the test state is active.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00207">Robot.cpp:207</a></div></div>
+<div class="ttc" id="a_dragon_limelight_8h_html"><div class="ttname"><a href="_dragon_limelight_8h.html">DragonLimelight.h</a></div></div>
+<div class="ttc" id="aclass_robot_html_af0ac44a962e609e9b042285e699d1db8"><div class="ttname"><a href="class_robot.html#af0ac44a962e609e9b042285e699d1db8">Robot::TestPeriodic</a></div><div class="ttdeci">void TestPeriodic() override</div><div class="ttdoc">Runs every 20 milliseconds when the test state is active.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00219">Robot.cpp:219</a></div></div>
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
 <div class="ttc" id="a_ball_transfer_state_mgr_test_8h_html"><div class="ttname"><a href="_ball_transfer_state_mgr_test_8h.html">BallTransferStateMgrTest.h</a></div></div>
-<div class="ttc" id="aclass_robot_html_a8fad82c2250bcfb83b743b5c0dd6ed27"><div class="ttname"><a href="class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27">Robot::RobotPeriodic</a></div><div class="ttdeci">void RobotPeriodic() override</div><div class="ttdoc">This function is called every robot packet, no matter the mode. This is used for items like diagnosti...</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00104">Robot.cpp:104</a></div></div>
-<div class="ttc" id="aclass_robot_html_a2136cfc015936285218c8a8db984d6bc"><div class="ttname"><a href="class_robot.html#a2136cfc015936285218c8a8db984d6bc">Robot::AutonomousInit</a></div><div class="ttdeci">void AutonomousInit() override</div><div class="ttdoc">This initializes the autonomous state.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00112">Robot.cpp:112</a></div></div>
+<div class="ttc" id="aclass_robot_html_a8fad82c2250bcfb83b743b5c0dd6ed27"><div class="ttname"><a href="class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27">Robot::RobotPeriodic</a></div><div class="ttdeci">void RobotPeriodic() override</div><div class="ttdoc">This function is called every robot packet, no matter the mode. This is used for items like diagnosti...</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00111">Robot.cpp:111</a></div></div>
+<div class="ttc" id="aclass_robot_html_a2136cfc015936285218c8a8db984d6bc"><div class="ttname"><a href="class_robot.html#a2136cfc015936285218c8a8db984d6bc">Robot::AutonomousInit</a></div><div class="ttdeci">void AutonomousInit() override</div><div class="ttdoc">This initializes the autonomous state.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00119">Robot.cpp:119</a></div></div>
 <div class="ttc" id="a_chassis_state_mgr_8h_html"><div class="ttname"><a href="_chassis_state_mgr_8h.html">ChassisStateMgr.h</a></div></div>
 <div class="ttc" id="a_shooter_state_mgr_test_8h_html"><div class="ttname"><a href="_shooter_state_mgr_test_8h.html">ShooterStateMgrTest.h</a></div></div>
-<div class="ttc" id="aclass_robot_html_a324322627c63b3870daf7c7ddc5bea63"><div class="ttname"><a href="class_robot.html#a324322627c63b3870daf7c7ddc5bea63">Robot::TeleopPeriodic</a></div><div class="ttdeci">void TeleopPeriodic() override</div><div class="ttdoc">Runs every 20 milliseconds when the teleoperated state is active.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00145">Robot.cpp:145</a></div></div>
+<div class="ttc" id="aclass_robot_html_a324322627c63b3870daf7c7ddc5bea63"><div class="ttname"><a href="class_robot.html#a324322627c63b3870daf7c7ddc5bea63">Robot::TeleopPeriodic</a></div><div class="ttdeci">void TeleopPeriodic() override</div><div class="ttdoc">Runs every 20 milliseconds when the teleoperated state is active.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00154">Robot.cpp:154</a></div></div>
 <div class="ttc" id="aclass_button_box_display_html"><div class="ttname"><a href="class_button_box_display.html">ButtonBoxDisplay</a></div><div class="ttdef"><b>Definition:</b> <a href="_button_box_display_8h_source.html#l00005">ButtonBoxDisplay.h:5</a></div></div>
 <div class="ttc" id="aclass_robot_html_a136b20cc34a9cda8da9ef2c85646f747"><div class="ttname"><a href="class_robot.html#a136b20cc34a9cda8da9ef2c85646f747">Robot::Robot</a></div><div class="ttdeci">Robot()=default</div></div>
 <div class="ttc" id="aclass_ball_transfer_state_mgr_test_html"><div class="ttname"><a href="class_ball_transfer_state_mgr_test.html">BallTransferStateMgrTest</a></div><div class="ttdoc">Tests for BallTransferStateMgr. There are three states: OFF, TO_IMPELLER, and TO_SHOOTER....</div><div class="ttdef"><b>Definition:</b> <a href="_ball_transfer_state_mgr_test_8h_source.html#l00034">BallTransferStateMgrTest.h:34</a></div></div>
-<div class="ttc" id="aclass_robot_html"><div class="ttname"><a href="class_robot.html">Robot</a></div><div class="ttdoc">Robot.h.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8h_source.html#l00061">Robot.h:61</a></div></div>
-<div class="ttc" id="aclass_robot_html_a66f23dae271748d525cf3ab046375f79"><div class="ttname"><a href="class_robot.html#a66f23dae271748d525cf3ab046375f79">Robot::RobotInit</a></div><div class="ttdeci">void RobotInit() override</div><div class="ttdoc">The main robot code. The Init methods get called when that state gets entered and then the Periodic m...</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00057">Robot.cpp:57</a></div></div>
-<div class="ttc" id="aclass_chassis_state_mgr_html"><div class="ttname"><a href="class_chassis_state_mgr.html">ChassisStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8h_source.html#l00031">ChassisStateMgr.h:31</a></div></div>
-<div class="ttc" id="aclass_robot_html_ac11143dd674e0e02fef5329e2df24830"><div class="ttname"><a href="class_robot.html#ac11143dd674e0e02fef5329e2df24830">Robot::AutonomousPeriodic</a></div><div class="ttdeci">void AutonomousPeriodic() override</div><div class="ttdoc">Runs every 20 milliseconds when the autonomous state is active.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00124">Robot.cpp:124</a></div></div>
+<div class="ttc" id="aclass_robot_html"><div class="ttname"><a href="class_robot.html">Robot</a></div><div class="ttdoc">Robot.h.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8h_source.html#l00062">Robot.h:62</a></div></div>
+<div class="ttc" id="aclass_robot_html_a66f23dae271748d525cf3ab046375f79"><div class="ttname"><a href="class_robot.html#a66f23dae271748d525cf3ab046375f79">Robot::RobotInit</a></div><div class="ttdeci">void RobotInit() override</div><div class="ttdoc">The main robot code. The Init methods get called when that state gets entered and then the Periodic m...</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00058">Robot.cpp:58</a></div></div>
+<div class="ttc" id="aclass_chassis_state_mgr_html"><div class="ttname"><a href="class_chassis_state_mgr.html">ChassisStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8h_source.html#l00032">ChassisStateMgr.h:32</a></div></div>
+<div class="ttc" id="aclass_robot_html_ac11143dd674e0e02fef5329e2df24830"><div class="ttname"><a href="class_robot.html#ac11143dd674e0e02fef5329e2df24830">Robot::AutonomousPeriodic</a></div><div class="ttdeci">void AutonomousPeriodic() override</div><div class="ttdoc">Runs every 20 milliseconds when the autonomous state is active.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00131">Robot.cpp:131</a></div></div>
 <div class="ttc" id="aclass_ball_manipulator_html"><div class="ttname"><a href="class_ball_manipulator.html">BallManipulator</a></div><div class="ttdef"><b>Definition:</b> <a href="_ball_manipulator_8h_source.html#l00034">BallManipulator.h:34</a></div></div>
 <div class="ttc" id="aclass_impeller_state_mgr_test_html"><div class="ttname"><a href="class_impeller_state_mgr_test.html">ImpellerStateMgrTest</a></div><div class="ttdoc">Tests for ImpellerStateMgr. There are the following states: OFF, HOLD and AGITATE,...</div><div class="ttdef"><b>Definition:</b> <a href="_impeller_state_mgr_test_8h_source.html#l00034">ImpellerStateMgrTest.h:34</a></div></div>
 <div class="ttc" id="a_intake_state_mgr_8h_html"><div class="ttname"><a href="_intake_state_mgr_8h.html">IntakeStateMgr.h</a></div></div>
 <div class="ttc" id="a_intake_state_mgr_test_8h_html"><div class="ttname"><a href="_intake_state_mgr_test_8h.html">IntakeStateMgrTest.h</a></div></div>
+<div class="ttc" id="a_limelight_factory_8h_html"><div class="ttname"><a href="_limelight_factory_8h.html">LimelightFactory.h</a></div></div>
 <div class="ttc" id="aclass_teleop_control_html"><div class="ttname"><a href="class_teleop_control.html">TeleopControl</a></div><div class="ttdef"><b>Definition:</b> <a href="_teleop_control_8h_source.html#l00037">TeleopControl.h:37</a></div></div>
-<div class="ttc" id="aclass_robot_html_a9ac222d45d30a6d0c572fd36d18c6ccc"><div class="ttname"><a href="class_robot.html#a9ac222d45d30a6d0c572fd36d18c6ccc">Robot::TestInit</a></div><div class="ttdeci">void TestInit() override</div><div class="ttdoc">This initializes the test state.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00163">Robot.cpp:163</a></div></div>
+<div class="ttc" id="aclass_robot_html_a9ac222d45d30a6d0c572fd36d18c6ccc"><div class="ttname"><a href="class_robot.html#a9ac222d45d30a6d0c572fd36d18c6ccc">Robot::TestInit</a></div><div class="ttdeci">void TestInit() override</div><div class="ttdoc">This initializes the test state.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00175">Robot.cpp:175</a></div></div>
 <div class="ttc" id="a_xbox_display_8h_html"><div class="ttname"><a href="_xbox_display_8h.html">XboxDisplay.h</a></div></div>
 <div class="ttc" id="aclass_shooter_state_mgr_test_html"><div class="ttname"><a href="class_shooter_state_mgr_test.html">ShooterStateMgrTest</a></div><div class="ttdoc">Tests for ShooterStateMgr. There are three states: OFF, GET_READY, and SHOOT. This will run each for ...</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_state_mgr_test_8h_source.html#l00034">ShooterStateMgrTest.h:34</a></div></div>
-<div class="ttc" id="aclass_robot_html_aa3e246794bfbbb4406fc87f351762038"><div class="ttname"><a href="class_robot.html#aa3e246794bfbbb4406fc87f351762038">Robot::TeleopInit</a></div><div class="ttdeci">void TeleopInit() override</div><div class="ttdoc">This initializes the teleoperated state.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00133">Robot.cpp:133</a></div></div>
+<div class="ttc" id="aclass_robot_html_aa3e246794bfbbb4406fc87f351762038"><div class="ttname"><a href="class_robot.html#aa3e246794bfbbb4406fc87f351762038">Robot::TeleopInit</a></div><div class="ttdeci">void TeleopInit() override</div><div class="ttdoc">This initializes the teleoperated state.</div><div class="ttdef"><b>Definition:</b> <a href="_robot_8cpp_source.html#l00142">Robot.cpp:142</a></div></div>
 <div class="ttc" id="aclass_xbox_display_html"><div class="ttname"><a href="class_xbox_display.html">XboxDisplay</a></div><div class="ttdef"><b>Definition:</b> <a href="_xbox_display_8h_source.html#l00005">XboxDisplay.h:5</a></div></div>
 <div class="ttc" id="aclass_i_mechanism_html"><div class="ttname"><a href="class_i_mechanism.html">IMechanism</a></div><div class="ttdoc">This is the interface for all subsystems.</div><div class="ttdef"><b>Definition:</b> <a href="_i_mechanism_8h_source.html#l00038">IMechanism.h:38</a></div></div>
 <div class="ttc" id="a_impeller_state_mgr_test_8h_html"><div class="ttname"><a href="_impeller_state_mgr_test_8h.html">ImpellerStateMgrTest.h</a></div></div>

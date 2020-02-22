@@ -56,6 +56,23 @@ void HoldPosition::Init(PrimitiveParams* params) {
 
 	//Get timeRemaining from m_params
 	m_timeRemaining = params->GetTime();
+	auto cd = make_shared<ControlData>( ControlModes::CONTROL_TYPE::POSITION_INCH, 
+							   			ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER,
+							   			string("HoldPosition"),
+							   			10.0,
+							   			0.0,
+							   			0.0,
+							   			0.0,
+							   			0.0,
+							   			0.0,
+							   			0.0,
+							   			1.0,
+							  			0.0   );
+	m_chassis->SetControlConstants( cd.get() );
+	auto left = m_chassis->GetCurrentLeftPosition();
+	auto right = m_chassis->GetCurrentRightPosition();
+
+	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::POSITION_INCH, left, right );	
 	/*
 	m_chassis->SetTalonMode(DragonTalon::POSITION);
 	m_chassis->EnableBrakeMode(true);

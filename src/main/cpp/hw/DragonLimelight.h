@@ -38,7 +38,7 @@ class DragonLimelight : public IDragonSensor, public IDragonDistanceSensor
         //Enums
         enum LED_MODE 
         {
-            LED_DEFUALT,
+            LED_DEFAULT,
             LED_OFF,
             LED_BLINK,
             LED_ON
@@ -158,8 +158,8 @@ class DragonLimelight : public IDragonSensor, public IDragonDistanceSensor
         std::shared_ptr<nt::NetworkTable> m_networktable;
         double m_mountHeight;
         double m_mountingHorizontalOffset;
-        double m_mountingAngle;
         double m_rotation;
+        double m_mountingAngle;
         double m_targetHeight;
         double m_targetHeight2;
 

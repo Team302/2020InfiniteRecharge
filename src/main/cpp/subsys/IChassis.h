@@ -80,6 +80,7 @@ class IChassis
             ControlData*                                pid                 
         ) = 0;
 
+        virtual double GetWheelDiameter() const = 0;
 
 	IChassis() = default;
 	virtual ~IChassis() = default;

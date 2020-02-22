@@ -558,7 +558,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/BallManipulator.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/BallManipulator.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -598,7 +598,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/IState.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/IState.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -606,7 +606,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/MechanismState.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/MechanismState.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -614,7 +614,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/MechanismState.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/MechanismState.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -638,7 +638,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/balltransfer/BallTransferOff.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/balltransfer/BallTransferOff.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -646,7 +646,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/balltransfer/BallTransferOff.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/balltransfer/BallTransferOff.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -654,7 +654,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/balltransfer/BallTransferStateMgr.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/balltransfer/BallTransferStateMgr.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -662,7 +662,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/balltransfer/BallTransferStateMgr.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/balltransfer/BallTransferStateMgr.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -670,7 +670,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/balltransfer/BallTransferToImpeller.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/balltransfer/BallTransferToImpeller.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -678,7 +678,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/balltransfer/BallTransferToImpeller.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/balltransfer/BallTransferToImpeller.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -686,7 +686,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/balltransfer/BallTransferToShooter.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/balltransfer/BallTransferToShooter.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -694,7 +694,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/balltransfer/BallTransferToShooter.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/balltransfer/BallTransferToShooter.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -702,7 +702,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/ArcadeDrive.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/ArcadeDrive.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -710,7 +710,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/ArcadeDrive.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/ArcadeDrive.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -718,7 +718,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/ChassisStateMgr.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/ChassisStateMgr.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -726,7 +726,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/ChassisStateMgr.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/ChassisStateMgr.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -734,7 +734,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/GTADrive.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/GTADrive.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -742,7 +742,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/GTADrive.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/GTADrive.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -750,7 +750,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/TankDrive.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/TankDrive.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -758,7 +758,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/TankDrive.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/TankDrive.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -766,7 +766,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/ThrottleSteerDrive.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/ThrottleSteerDrive.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -774,7 +774,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/chassis/ThrottleSteerDrive.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/chassis/ThrottleSteerDrive.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -782,7 +782,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/climber/ClimberHold.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/climber/ClimberHold.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -790,7 +790,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/climber/ClimberHold.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/climber/ClimberHold.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -798,7 +798,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/controlPanel/ControlPanelColorTurn.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/controlPanel/ControlPanelColorTurn.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -806,7 +806,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/controlPanel/ControlPanelColorTurn.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/controlPanel/ControlPanelColorTurn.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -814,7 +814,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/controlPanel/ControlPanelRaise.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/controlPanel/ControlPanelRaise.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -822,7 +822,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/controlPanel/ControlPanelRaise.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/controlPanel/ControlPanelRaise.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -830,7 +830,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/controlPanel/ControlPanelStow.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/controlPanel/ControlPanelStow.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -838,7 +838,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/controlPanel/ControlPanelStow.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/controlPanel/ControlPanelStow.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -846,7 +846,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/controlPanel/ControlPanelTurn.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/controlPanel/ControlPanelTurn.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -854,7 +854,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/controlPanel/ControlPanelTurn.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/controlPanel/ControlPanelTurn.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -862,7 +862,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/impeller/ImpellerAgitate.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/impeller/ImpellerAgitate.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -870,7 +870,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/impeller/ImpellerAgitate.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/impeller/ImpellerAgitate.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -878,7 +878,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/impeller/ImpellerOff.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/impeller/ImpellerOff.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -886,7 +886,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/impeller/ImpellerOff.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/impeller/ImpellerOff.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -894,7 +894,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/impeller/ImpellerOn.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/impeller/ImpellerOn.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -902,7 +902,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/impeller/ImpellerOn.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/impeller/ImpellerOn.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -910,7 +910,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/impeller/ImpellerStateMgr.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/impeller/ImpellerStateMgr.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -918,7 +918,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/impeller/ImpellerStateMgr.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/impeller/ImpellerStateMgr.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -926,7 +926,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/intake/IntakeOff.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/intake/IntakeOff.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -934,7 +934,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/intake/IntakeOff.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/intake/IntakeOff.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -942,7 +942,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/intake/IntakeOn.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/intake/IntakeOn.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -950,7 +950,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/intake/IntakeOn.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/intake/IntakeOn.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -958,7 +958,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/intake/IntakeStateMgr.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/intake/IntakeStateMgr.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -966,7 +966,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/intake/IntakeStateMgr.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/intake/IntakeStateMgr.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -998,7 +998,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooter/ShooterGetReady.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooter/ShooterGetReady.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1006,7 +1006,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooter/ShooterGetReady.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooter/ShooterGetReady.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1014,7 +1014,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooter/ShooterOff.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooter/ShooterOff.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1022,7 +1022,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooter/ShooterOff.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooter/ShooterOff.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1030,7 +1030,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooter/ShooterShoot.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooter/ShooterShoot.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1038,7 +1038,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooter/ShooterShoot.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooter/ShooterShoot.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1046,7 +1046,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooter/ShooterStateMgr.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooter/ShooterStateMgr.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1054,7 +1054,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooter/ShooterStateMgr.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooter/ShooterStateMgr.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1062,7 +1062,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooterhood/ShooterHoodHoldPosition.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooterhood/ShooterHoodHoldPosition.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1070,7 +1070,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooterhood/ShooterHoodHoldPosition.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooterhood/ShooterHoodHoldPosition.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1078,7 +1078,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooterhood/ShooterHoodMoveDown.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooterhood/ShooterHoodMoveDown.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1086,7 +1086,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooterhood/ShooterHoodMoveDown.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooterhood/ShooterHoodMoveDown.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1094,7 +1094,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooterhood/ShooterHoodMoveUp.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooterhood/ShooterHoodMoveUp.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1102,7 +1102,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooterhood/ShooterHoodMoveUp.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooterhood/ShooterHoodMoveUp.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1110,7 +1110,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooterhood/ShooterHoodStateMgr.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooterhood/ShooterHoodStateMgr.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1118,7 +1118,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/shooterhood/ShooterHoodStateMgr.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/shooterhood/ShooterHoodStateMgr.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1126,7 +1126,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/turret/HoldTurretPosition.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/turret/HoldTurretPosition.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1134,7 +1134,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/turret/HoldTurretPosition.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/turret/HoldTurretPosition.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1142,7 +1142,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/turret/LimelightAim.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/turret/LimelightAim.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1150,7 +1150,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/turret/LimelightAim.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/turret/LimelightAim.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1158,7 +1158,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/turret/ManualAim.cpp">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/turret/ManualAim.cpp">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>
@@ -1166,7 +1166,7 @@
 			<Option target="frcUserProgram_release_build"/>
 			<Option target="frcUserProgram_release_deploy"/>
 		</Unit>
-		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/controllers/turret/ManualAim.h">
+		<Unit filename="C:/RoboticsCM/2020InfiniteRecharge/src/main/cpp/states/turret/ManualAim.h">
 			<Option target="frcUserProgram_debug_deploy"/>
 			<Option target="fake_frcUserProgram_debug"/>
 			<Option target="frcUserProgram_debug_build"/>

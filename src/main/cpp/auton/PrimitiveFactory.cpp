@@ -16,7 +16,6 @@
 #include <auton/primitives/DoNothing.h>
 #include <auton/primitives/HoldPosition.h>
 #include <auton/primitives/TurnAngle.h>
-#include <auton/primitives/TurnToCube.h>
 #include <auton/primitives/DriveToWall.h>
 #include <auton/primitives/IPrimitive.h>
 
@@ -36,7 +35,6 @@ PrimitiveFactory::PrimitiveFactory() :
 				m_turnAngle(nullptr),
 				m_holdPosition(nullptr),
 				m_driveToWall(nullptr),
-				m_turnToCube( nullptr ),
 				m_driveLidarDistance( nullptr )
 {
 }
@@ -105,22 +103,6 @@ IPrimitive* PrimitiveFactory::GetIPrimitive(PrimitiveParams* primitivePasser)
             m_driveToWall = new DriveToWall();
         }
         primitive = m_driveToWall;
-        break;
-
-    case TURN_TO_CUBE:
-        if (m_turnToCube == nullptr)
-        {
-            m_turnToCube = new TurnToCube();
-        }
-        primitive = m_turnToCube;
-        break;
-
-    case DRIVE_LIDAR_DISTANCE:
-        if (m_driveLidarDistance == nullptr)
-        {
-            m_driveLidarDistance = new DriveToTarget();
-        }
-        primitive = m_driveLidarDistance;
         break;
 
 	default:

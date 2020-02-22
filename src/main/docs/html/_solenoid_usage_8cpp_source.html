@@ -132,34 +132,33 @@ $(document).ready(function(){initNavTree('_solenoid_usage_8cpp_source.html','');
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;SolenoidUsage::SolenoidUsage()</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    m_usageMap[<span class="stringliteral">&quot;INTAKE&quot;</span>] = SOLENOID_USAGE::INTAKE;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_usageMap[<span class="stringliteral">&quot;HUMAN_PLAYER_FLAP&quot;</span>] = SOLENOID_USAGE::HUMAN_PLAYER_FLAP;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    m_usageMap[<span class="stringliteral">&quot;BALL_TRANSFER&quot;</span>] = SOLENOID_USAGE::BALL_TRANSFER;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    m_usageMap[<span class="stringliteral">&quot;SHOOTER_HOOD&quot;</span>] = SOLENOID_USAGE::SHOOTER_HOOD;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    m_usageMap[<span class="stringliteral">&quot;CONTROL_TABLE_MANIPULATOR&quot;</span>] = SOLENOID_USAGE::CONTROL_TABLE_MANIPULATOR;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    m_usageMap[<span class="stringliteral">&quot;CLIMBER&quot;</span>] = SOLENOID_USAGE::CLIMBER;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;SolenoidUsage::~SolenoidUsage()</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_usageMap.clear();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<a class="code" href="class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7">SolenoidUsage::SOLENOID_USAGE</a> <a class="code" href="class_solenoid_usage.html#a6b9c948a50254b2e8fa3da95ba515ec5">SolenoidUsage::GetUsage</a></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_solenoid_usage.html#a6b9c948a50254b2e8fa3da95ba515ec5">   59</a></span>&#160;(</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span>              usageString</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> m_usageMap.find(usageString)-&gt;second;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_usageMap[<span class="stringliteral">&quot;BALL_TRANSFER&quot;</span>] = SOLENOID_USAGE::BALL_TRANSFER;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    m_usageMap[<span class="stringliteral">&quot;SHOOTER_HOOD&quot;</span>] = SOLENOID_USAGE::SHOOTER_HOOD;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    m_usageMap[<span class="stringliteral">&quot;CONTROL_TABLE_MANIPULATOR&quot;</span>] = SOLENOID_USAGE::CONTROL_TABLE_MANIPULATOR;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    m_usageMap[<span class="stringliteral">&quot;CLIMBER&quot;</span>] = SOLENOID_USAGE::CLIMBER;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;SolenoidUsage::~SolenoidUsage()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_usageMap.clear();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<a class="code" href="class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7">SolenoidUsage::SOLENOID_USAGE</a> <a class="code" href="class_solenoid_usage.html#a6b9c948a50254b2e8fa3da95ba515ec5">SolenoidUsage::GetUsage</a></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_solenoid_usage.html#a6b9c948a50254b2e8fa3da95ba515ec5">   58</a></span>&#160;(</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span>              usageString</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> m_usageMap.find(usageString)-&gt;second;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_solenoid_usage_html"><div class="ttname"><a href="class_solenoid_usage.html">SolenoidUsage</a></div><div class="ttdef"><b>Definition:</b> <a href="_solenoid_usage_8h_source.html#l00033">SolenoidUsage.h:33</a></div></div>
 <div class="ttc" id="aclass_solenoid_usage_html_adb45b3112fbc67f57d39931571b60ef7"><div class="ttname"><a href="class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7">SolenoidUsage::SOLENOID_USAGE</a></div><div class="ttdeci">SOLENOID_USAGE</div><div class="ttdoc">Defines solenoid usages. This should be modified for each robot.</div><div class="ttdef"><b>Definition:</b> <a href="_solenoid_usage_8h_source.html#l00040">SolenoidUsage.h:40</a></div></div>
 <div class="ttc" id="aclass_solenoid_usage_html_a1e8ae2fb28a6a229b1953994229bc7d5"><div class="ttname"><a href="class_solenoid_usage.html#a1e8ae2fb28a6a229b1953994229bc7d5">SolenoidUsage::GetInstance</a></div><div class="ttdeci">static SolenoidUsage * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_solenoid_usage_8cpp_source.html#l00032">SolenoidUsage.cpp:32</a></div></div>
-<div class="ttc" id="aclass_solenoid_usage_html_a6b9c948a50254b2e8fa3da95ba515ec5"><div class="ttname"><a href="class_solenoid_usage.html#a6b9c948a50254b2e8fa3da95ba515ec5">SolenoidUsage::GetUsage</a></div><div class="ttdeci">SOLENOID_USAGE GetUsage(const std::string usageString)</div><div class="ttdef"><b>Definition:</b> <a href="_solenoid_usage_8cpp_source.html#l00059">SolenoidUsage.cpp:59</a></div></div>
+<div class="ttc" id="aclass_solenoid_usage_html_a6b9c948a50254b2e8fa3da95ba515ec5"><div class="ttname"><a href="class_solenoid_usage.html#a6b9c948a50254b2e8fa3da95ba515ec5">SolenoidUsage::GetUsage</a></div><div class="ttdeci">SOLENOID_USAGE GetUsage(const std::string usageString)</div><div class="ttdef"><b>Definition:</b> <a href="_solenoid_usage_8cpp_source.html#l00058">SolenoidUsage.cpp:58</a></div></div>
 <div class="ttc" id="a_solenoid_usage_8h_html"><div class="ttname"><a href="_solenoid_usage_8h.html">SolenoidUsage.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

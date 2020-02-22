@@ -17,13 +17,12 @@
 #pragma once
 
 // C++ Includes
-#include <memory>
 
 // FRC includes
 
 // Team 302 includes
 #include <test/IStateTest.h>
-#include <controllers/balltransfer/BallTransferStateMgr.h>
+#include <states/balltransfer/BallTransferStateMgr.h>
 
 // Third Party Includes
 
@@ -50,7 +49,7 @@ class BallTransferStateMgrTest : public IStateTest
 		bool IsDone() override;
 		
 	private:
-		std::unique_ptr<BallTransferStateMgr>	m_stateMgr;
+		BallTransferStateMgr*					m_stateMgr;
 		bool                                    m_ranImpeller;
 		bool                                    m_ranOff;
 		bool                                    m_ranShooter;

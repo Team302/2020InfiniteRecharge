@@ -41,6 +41,9 @@ var class_teleop_control =
       [ "SHOOTER_HOOD_MANUAL_AXIS", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a9680ce9fd26c12c8165de81d6776169b", null ],
       [ "TURRET_MANUAL_AXIS", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3334c47ae393f925dd35b13c7211060b", null ],
       [ "TURRET_MANUAL_BUTTON", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aee3ff24a2c4157913cb76ec8cf859b23", null ],
+      [ "TURRET_LIMELIGHT_AIM", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a98635ab21bb0cce829a83fe475c9ae72", null ],
+      [ "GARBAGE_INCREMENT", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a2585a93b069b37669617e8a0822c8f8f", null ],
+      [ "GARBAGE_DECREMENT", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a8f8726d6e9201f625f68cfb614f0aaac", null ],
       [ "MAX_FUNCTIONS", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15af0a71fc177d1cdf5d455aa154441aafb", null ]
     ] ],
     [ "GetAxisValue", "class_teleop_control.html#a9c6affa7d87ae898c531e567fce73b15", null ],

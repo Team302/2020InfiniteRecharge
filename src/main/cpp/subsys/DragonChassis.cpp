@@ -52,7 +52,8 @@ DragonChassis::DragonChassis
 ) : m_leftSide( new DriveTrainSide( leftMaster, leftFollower, wheelDiameter ) ),
     m_rightSide( new DriveTrainSide( rightMaster, rightFollower, wheelDiameter ) ),
     m_wheelBase( wheelBase ),
-    m_wheelTrack( track )
+    m_wheelTrack( track ),
+    m_wheelDiameter( wheelDiameter )
 {
 }
 
@@ -138,6 +139,11 @@ void DragonChassis::SetControlConstants
 {
     m_leftSide->SetControlConstants( pid );
     m_rightSide->SetControlConstants( pid );
+}
+
+double DragonChassis::GetWheelDiameter() const
+{ 
+    return m_wheelDiameter; 
 }
 
 

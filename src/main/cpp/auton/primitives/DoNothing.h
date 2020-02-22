@@ -20,16 +20,21 @@
 #include <memory>
 
 // FRC includes
-#include <frc/Timer.h>
 
 // Team 302 includes
-#include <auton/PrimitiveParams.h>
-#include <subsys/IChassis.h>
 #include <auton/primitives/IPrimitive.h>
-#include <subsys/IChassis.h>
 
 // Third Party Includes
 
+// forward declares
+class IChassis;
+class PrimitiveParams;
+
+
+namespace frc
+{
+	class Timer;
+}
 
 
 //========================================================================================================

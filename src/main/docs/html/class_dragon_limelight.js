@@ -5,7 +5,7 @@ var class_dragon_limelight =
       [ "CAM_DRIVER", "class_dragon_limelight.html#aafb5de7911fc118585b3cb32e0c87f13a12f2fed7bd60b413c0cb428219f74ae7", null ]
     ] ],
     [ "LED_MODE", "class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40", [
-      [ "LED_DEFUALT", "class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40ab7dd6a5238dad33d9e9c5b91040536a0", null ],
+      [ "LED_DEFAULT", "class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40ad9c257ad846d9e7e5ca111f71660cc6c", null ],
       [ "LED_OFF", "class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40ae81aad277be42064a5119ae40c133e02", null ],
       [ "LED_BLINK", "class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40a269dc53e2b1a2fd2690580c13abb8deb", null ],
       [ "LED_ON", "class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40adbb464c1dcf76bc2aaa7164dfb5ff917", null ]

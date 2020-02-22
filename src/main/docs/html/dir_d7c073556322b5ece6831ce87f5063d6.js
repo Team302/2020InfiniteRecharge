@@ -36,6 +36,10 @@ var dir_d7c073556322b5ece6831ce87f5063d6 =
     [ "LimelightFactory.h", "_limelight_factory_8h.html", [
       [ "LimelightFactory", "class_limelight_factory.html", "class_limelight_factory" ]
     ] ],
+    [ "PigeonFactory.cpp", "_pigeon_factory_8cpp.html", null ],
+    [ "PigeonFactory.h", "_pigeon_factory_8h.html", [
+      [ "PigeonFactory", "class_pigeon_factory.html", "class_pigeon_factory" ]
+    ] ],
     [ "UltrasonicFactory.cpp", "_ultrasonic_factory_8cpp.html", null ],
     [ "UltrasonicFactory.h", "_ultrasonic_factory_8h.html", [
       [ "UltrasonicFactory", "class_ultrasonic_factory.html", "class_ultrasonic_factory" ]

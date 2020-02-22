@@ -198,36 +198,20 @@ $(document).ready(function(){initNavTree('_primitive_factory_8cpp_source.html','
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        primitive = m_driveToWall;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca59c53bd7e52c80d00e06ecb9808a3b20">TURN_TO_CUBE</a>:</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">if</span> (m_turnToCube == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            m_turnToCube = <span class="keyword">new</span> <a class="code" href="class_turn_to_cube.html">TurnToCube</a>();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        primitive = m_turnToCube;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca93e06e6982f779f2f05e34a77bcf1d0f">DRIVE_LIDAR_DISTANCE</a>:</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span> (m_driveLidarDistance == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            m_driveLidarDistance = <span class="keyword">new</span> <a class="code" href="class_drive_to_target.html">DriveToTarget</a>();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        primitive = m_driveLidarDistance;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> primitive;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> primitive;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca7021af1a324c0f7122d43ac5e7b5f03e"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca7021af1a324c0f7122d43ac5e7b5f03e">DRIVE_DISTANCE</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00034">PrimitiveEnums.h:34</a></div></div>
 <div class="ttc" id="a_i_primitive_8h_html"><div class="ttname"><a href="_i_primitive_8h.html">IPrimitive.h</a></div></div>
-<div class="ttc" id="aclass_primitive_params_html_a6d1e129031049f3c94e1c131547fc10a"><div class="ttname"><a href="class_primitive_params.html#a6d1e129031049f3c94e1c131547fc10a">PrimitiveParams::GetID</a></div><div class="ttdeci">PRIMITIVE_IDENTIFIER GetID() const</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8cpp_source.html#l00041">PrimitiveParams.cpp:41</a></div></div>
+<div class="ttc" id="aclass_primitive_params_html_a6d1e129031049f3c94e1c131547fc10a"><div class="ttname"><a href="class_primitive_params.html#a6d1e129031049f3c94e1c131547fc10a">PrimitiveParams::GetID</a></div><div class="ttdeci">PRIMITIVE_IDENTIFIER GetID() const</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8cpp_source.html#l00038">PrimitiveParams.cpp:38</a></div></div>
 <div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">HOLD_POSITION</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00033">PrimitiveEnums.h:33</a></div></div>
 <div class="ttc" id="aclass_i_primitive_html"><div class="ttname"><a href="class_i_primitive.html">IPrimitive</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_primitive_8h_source.html#l00013">IPrimitive.h:13</a></div></div>
-<div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca3aae85b99d2b329a6047aaec5b555681"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca3aae85b99d2b329a6047aaec5b555681">DRIVE_TO_WALL</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00039">PrimitiveEnums.h:39</a></div></div>
+<div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca3aae85b99d2b329a6047aaec5b555681"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca3aae85b99d2b329a6047aaec5b555681">DRIVE_TO_WALL</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00036">PrimitiveEnums.h:36</a></div></div>
 <div class="ttc" id="a_hold_position_8h_html"><div class="ttname"><a href="_hold_position_8h.html">HoldPosition.h</a></div></div>
 <div class="ttc" id="aclass_drive_to_wall_html"><div class="ttname"><a href="class_drive_to_wall.html">DriveToWall</a></div><div class="ttdef"><b>Definition:</b> <a href="_drive_to_wall_8h_source.html#l00036">DriveToWall.h:36</a></div></div>
 <div class="ttc" id="aclass_do_nothing_html"><div class="ttname"><a href="class_do_nothing.html">DoNothing</a></div><div class="ttdoc">This is an auton primitive that causes the chassis to not drive</div><div class="ttdef"><b>Definition:</b> <a href="_do_nothing_8h_source.html#l00040">DoNothing.h:40</a></div></div>
@@ -235,8 +219,6 @@ $(document).ready(function(){initNavTree('_primitive_factory_8cpp_source.html','
 <div class="ttc" id="aclass_primitive_params_html"><div class="ttname"><a href="class_primitive_params.html">PrimitiveParams</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8h_source.html#l00035">PrimitiveParams.h:35</a></div></div>
 <div class="ttc" id="aclass_hold_position_html"><div class="ttname"><a href="class_hold_position.html">HoldPosition</a></div><div class="ttdef"><b>Definition:</b> <a href="_hold_position_8h_source.html#l00034">HoldPosition.h:34</a></div></div>
 <div class="ttc" id="aclass_turn_angle_html"><div class="ttname"><a href="class_turn_angle.html">TurnAngle</a></div><div class="ttdef"><b>Definition:</b> <a href="_turn_angle_8h_source.html#l00031">TurnAngle.h:31</a></div></div>
-<div class="ttc" id="aclass_turn_to_cube_html"><div class="ttname"><a href="class_turn_to_cube.html">TurnToCube</a></div><div class="ttdef"><b>Definition:</b> <a href="_turn_to_cube_8h_source.html#l00033">TurnToCube.h:33</a></div></div>
-<div class="ttc" id="aclass_drive_to_target_html"><div class="ttname"><a href="class_drive_to_target.html">DriveToTarget</a></div><div class="ttdef"><b>Definition:</b> <a href="_drive_to_target_8h_source.html#l00034">DriveToTarget.h:34</a></div></div>
 <div class="ttc" id="aclass_drive_time_html"><div class="ttname"><a href="class_drive_time.html">DriveTime</a></div><div class="ttdef"><b>Definition:</b> <a href="_drive_time_8h_source.html#l00037">DriveTime.h:37</a></div></div>
 <div class="ttc" id="aclass_primitive_factory_html"><div class="ttname"><a href="class_primitive_factory.html">PrimitiveFactory</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8h_source.html#l00033">PrimitiveFactory.h:33</a></div></div>
 <div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca04869d144dae5ecb8bbc92d0d3bc7d5f"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca04869d144dae5ecb8bbc92d0d3bc7d5f">TURN_ANGLE_ABS</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00037">PrimitiveEnums.h:37</a></div></div>
@@ -247,7 +229,6 @@ $(document).ready(function(){initNavTree('_primitive_factory_8cpp_source.html','
 <div class="ttc" id="aclass_drive_distance_html"><div class="ttname"><a href="class_drive_distance.html">DriveDistance</a></div><div class="ttdef"><b>Definition:</b> <a href="_drive_distance_8h_source.html#l00035">DriveDistance.h:35</a></div></div>
 <div class="ttc" id="a_turn_angle_8h_html"><div class="ttname"><a href="_turn_angle_8h.html">TurnAngle.h</a></div></div>
 <div class="ttc" id="a_drive_time_8h_html"><div class="ttname"><a href="_drive_time_8h.html">DriveTime.h</a></div></div>
-<div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca93e06e6982f779f2f05e34a77bcf1d0f"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca93e06e6982f779f2f05e34a77bcf1d0f">DRIVE_LIDAR_DISTANCE</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00041">PrimitiveEnums.h:41</a></div></div>
 <div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca7898fbf6aaf783378fe66d59f9bf9b46"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca7898fbf6aaf783378fe66d59f9bf9b46">DRIVE_TIME</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00035">PrimitiveEnums.h:35</a></div></div>
 <div class="ttc" id="a_primitive_factory_8h_html"><div class="ttname"><a href="_primitive_factory_8h.html">PrimitiveFactory.h</a></div></div>
 <div class="ttc" id="aclass_primitive_factory_html_a15635e7c5ee365e8e0c7d09a7e483b8f"><div class="ttname"><a href="class_primitive_factory.html#a15635e7c5ee365e8e0c7d09a7e483b8f">PrimitiveFactory::GetInstance</a></div><div class="ttdeci">static PrimitiveFactory * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00025">PrimitiveFactory.cpp:25</a></div></div>
@@ -255,7 +236,6 @@ $(document).ready(function(){initNavTree('_primitive_factory_8cpp_source.html','
 <div class="ttc" id="a_turn_to_cube_8h_html"><div class="ttname"><a href="_turn_to_cube_8h.html">TurnToCube.h</a></div></div>
 <div class="ttc" id="a_primitive_enums_8h_html"><div class="ttname"><a href="_primitive_enums_8h.html">PrimitiveEnums.h</a></div></div>
 <div class="ttc" id="aclass_primitive_factory_html_a047888106432ca667ce2621e7b9f6a34"><div class="ttname"><a href="class_primitive_factory.html#a047888106432ca667ce2621e7b9f6a34">PrimitiveFactory::~PrimitiveFactory</a></div><div class="ttdeci">virtual ~PrimitiveFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00044">PrimitiveFactory.cpp:44</a></div></div>
-<div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca59c53bd7e52c80d00e06ecb9808a3b20"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca59c53bd7e52c80d00e06ecb9808a3b20">TURN_TO_CUBE</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00040">PrimitiveEnums.h:40</a></div></div>
 <div class="ttc" id="aclass_primitive_factory_html_a9756dcb91e1b271ac889867ecced3fce"><div class="ttname"><a href="class_primitive_factory.html#a9756dcb91e1b271ac889867ecced3fce">PrimitiveFactory::PrimitiveFactory</a></div><div class="ttdeci">PrimitiveFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00032">PrimitiveFactory.cpp:32</a></div></div>
 <div class="ttc" id="a_drive_to_wall_8h_html"><div class="ttname"><a href="_drive_to_wall_8h.html">DriveToWall.h</a></div></div>
 <div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca42009b131c97b945b3327be55bfceb13"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca42009b131c97b945b3327be55bfceb13">TURN_ANGLE_REL</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00038">PrimitiveEnums.h:38</a></div></div>

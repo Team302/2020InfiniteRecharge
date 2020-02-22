@@ -224,13 +224,12 @@ $(document).ready(function(){initNavTree('_drive_train_side_8cpp_source.html',''
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>*                                 pid                 </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;)</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// todo:  need to account for voltage mode</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">// NO-OP since we can&#39;t run closed loop since we don&#39;t have sensors</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    m_master.get()-&gt;SetControlConstants( pid );</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_drive_train_side_8h_html"><div class="ttname"><a href="_drive_train_side_8h.html">DriveTrainSide.h</a></div></div>

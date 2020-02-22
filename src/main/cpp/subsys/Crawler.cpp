@@ -98,6 +98,12 @@ double Crawler::GetCurrentPosition() const
     return 0.0; //no encoder
 }
 
+<<<<<<< HEAD
+=======
+///@brief Retrieves the target position of the mechanism
+///@return double 0.0
+
+>>>>>>> master
 ///@brief Retrieves the current speed of the mechanism.
 ///@return double 0.0
 double Crawler::GetCurrentSpeed() const
@@ -114,4 +120,8 @@ void Crawler::SetControlConstants
 )
 {
     Logger::GetLogger()->LogError( string( "Crawler::SetControlConstants" ), string("Called") ); 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master
