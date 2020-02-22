@@ -77,7 +77,15 @@ void AutonSelector::FindXMLFileNames()
 				moreFiles = false;
 				break;
 			}
-			m_xmlFiles.emplace_back(string(files->d_name));
+			else 
+			{
+				auto filename = string( files->d_name);
+				if ( filename != "." && filename != ".." && filename != "auton.dtd" )
+				{
+					m_xmlFiles.emplace_back(string(files->d_name));
+				}
+
+			} 
 		}
 	}
 	else

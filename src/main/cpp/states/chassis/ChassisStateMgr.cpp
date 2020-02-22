@@ -27,13 +27,15 @@
 #include <states/chassis/GTADrive.h>
 #include <states/chassis/TankDrive.h>
 #include <utils/Logger.h>
+#include <auton/CyclePrimitives.h>
 
 using namespace std;
 
-ChassisStateMgr::ChassisStateMgr() : m_arcade(),
-                                     m_gta(),
-                                     m_tank(),
-                                     m_currentDrive(),
+ChassisStateMgr::ChassisStateMgr() : m_arcade(make_shared<ArcadeDrive>()),
+                                     m_gta(make_shared<GTADrive>()),
+                                     m_tank(make_shared<TankDrive>()),
+                                     m_currentDrive(m_arcade),
+                                     m_cyclePrims(make_unique<CyclePrimitives>()),
                                      m_currentState( ChassisStateMgr::CHASSIS_STATE::AUTON)
 {
     
@@ -44,53 +46,54 @@ ChassisStateMgr::ChassisStateMgr() : m_arcade(),
     m_driveModeChooser.AddOption( m_driveModeGTACurve, m_driveModeGTACurve );
     m_driveModeChooser.AddOption( m_driveModeTank, m_driveModeTank );
 
-
-    // Create a chassis Object passing the chasis and controller objects
-    m_arcade = make_unique<ArcadeDrive>();
-    m_tank = make_unique<TankDrive>();
-    m_gta = make_unique<GTADrive>();
-    m_currentDrive = m_arcade;
-
     SmartDashboard::PutData("Drive Mode", &m_driveModeChooser);
 
 }
 
 void ChassisStateMgr::Init()
 {
-    m_driveModeSelected = m_driveModeChooser.GetSelected();
-    Logger::GetLogger()->LogError( string("ChassisStateMgr"), m_driveModeSelected );
-    if( m_driveModeSelected == m_driveModeArcade || m_driveModeSelected == m_driveModeArcadeCurve ) 
+    if ( m_currentState == CHASSIS_STATE::TELEOP )
     {
-        m_currentDrive = m_arcade;
-        m_arcade->SetCurvatureBased( ( m_driveModeSelected == m_driveModeArcadeCurve ) );
-        Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("arcade"));
-    }
-    else if ( m_driveModeSelected == m_driveModeGTA || m_driveModeSelected == m_driveModeGTACurve )
-    {
-        m_currentDrive = m_gta;
-        m_gta->SetCurvatureBased( ( m_driveModeSelected == m_driveModeGTACurve ) );
-        Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("gta"));
-   }
-    else if ( m_driveModeSelected == m_driveModeTank )
-    {
-        m_currentDrive = m_tank;
-        Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("tank"));
-    }
-    else
-    {
-        m_currentDrive = m_arcade;
-        Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("arcade2"));
-    }
+        m_driveModeSelected = m_driveModeChooser.GetSelected();
+        Logger::GetLogger()->LogError( string("ChassisStateMgr"), m_driveModeSelected );
+        if( m_driveModeSelected == m_driveModeArcade || m_driveModeSelected == m_driveModeArcadeCurve ) 
+        {
+            m_currentDrive = m_arcade;
+            m_arcade->SetCurvatureBased( ( m_driveModeSelected == m_driveModeArcadeCurve ) );
+            Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("arcade"));
+        }
+        else if ( m_driveModeSelected == m_driveModeGTA || m_driveModeSelected == m_driveModeGTACurve )
+        {
+            m_currentDrive = m_gta;
+            m_gta->SetCurvatureBased( ( m_driveModeSelected == m_driveModeGTACurve ) );
+            Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("gta"));
+        }
+        else if ( m_driveModeSelected == m_driveModeTank )
+        {
+            m_currentDrive = m_tank;
+            Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("tank"));
+        }
+        else
+        {
+            m_currentDrive = m_arcade;
+            Logger::GetLogger()->LogError(string("ChassisStateMgr"), string("arcade2"));
+        }
 
-    m_currentDrive->Init();
-    m_currentDrive->Run();
+        m_currentDrive->Init();
+        m_currentDrive->Run();
+    }
+    else if ( m_currentState == CHASSIS_STATE::AUTON )
+    {
+        m_cyclePrims.get()->Init();
+        m_cyclePrims.get()->Run();
+    }
 }
 
 void ChassisStateMgr::RunCurrentState()
 {
-    if ( m_currentDrive != nullptr )
+    if ( m_currentState == CHASSIS_STATE::TELEOP )
     {
-        if ( m_currentState == CHASSIS_STATE::TELEOP )
+        if ( m_currentDrive != nullptr )
         {
             m_currentDrive->Run();
         }
@@ -98,6 +101,10 @@ void ChassisStateMgr::RunCurrentState()
         {
             Logger::GetLogger()->LogError( string("ChassisStateMgr::RunCurrentState"), string("unsupported state"));
         }
+    }
+    else if ( m_currentState == CHASSIS_STATE::AUTON )
+    {
+        m_cyclePrims.get()->Run();
     }
     else
     {
@@ -112,6 +119,11 @@ void ChassisStateMgr::SetState( ChassisStateMgr::CHASSIS_STATE state )
     if ( m_currentState == CHASSIS_STATE::TELEOP )
     {
         m_currentDrive->Run();
+    }
+    else if ( m_currentState == CHASSIS_STATE::AUTON )
+    {
+        m_cyclePrims.get()->Init();
+        m_cyclePrims.get()->Run();
     }
     else
     {

@@ -33,15 +33,18 @@
 #include <auton/primitives/AutoShoot.h>
 #include <string>
 #include <vector>
+#include <states/IState.h>
 
-class CyclePrimitives 
+class CyclePrimitives : public IState
 {
 	public:
 		CyclePrimitives();
 		virtual ~CyclePrimitives() = default;
 
-		void Init();
-		void RunCurrentPrimitive();
+		void Init() override;
+		void Run() override;
+	 	bool AtTarget() const override;
+
 
 	protected:
 		void GetNextPrim();
@@ -57,5 +60,6 @@ class CyclePrimitives
 		std::unique_ptr<frc::Timer>     m_timer;
 		double                          m_maxTime;
 		AutoShoot*						m_powerCells;
+		bool							m_isDone;
 };
 

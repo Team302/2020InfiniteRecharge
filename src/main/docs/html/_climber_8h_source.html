@@ -132,27 +132,27 @@ $(document).ready(function(){initNavTree('_climber_8h_source.html','');});
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_climber.html#a6db6ada50bc8ed96d85006917fcce31e">GetCurrentPosition</a>() <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">GetCurrentSpeed</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">GetCurrentSpeed</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_climber.html#a41fe085977e8cb565a44391b0819948c">SetControlConstants</a></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        (</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="class_control_data.html">ControlData</a>*</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        ) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        std::shared_ptr&lt;IDragonMotorController&gt;             m_motorMaster;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        std::shared_ptr&lt;DragonSolenoid&gt;                     m_solenoidMaster;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">double</span>                                              m_winchDiameter;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">double</span>                                              m_target;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_climber.html#a5249f9470fa091729d36bb60b1ea7dcf">SetControlConstants</a></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        (</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="class_control_data.html">ControlData</a>*    pid</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        ) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        std::shared_ptr&lt;IDragonMotorController&gt;             m_motorMaster;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        std::shared_ptr&lt;DragonSolenoid&gt;                     m_solenoidMaster;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">double</span>                                              m_winchDiameter;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">double</span>                                              m_target;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclass_climber_html_a5249f9470fa091729d36bb60b1ea7dcf"><div class="ttname"><a href="class_climber.html#a5249f9470fa091729d36bb60b1ea7dcf">Climber::SetControlConstants</a></div><div class="ttdeci">void SetControlConstants(ControlData *pid) override</div><div class="ttdoc">Set the control constants (e.g. PIDF values)</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00157">Climber.cpp:157</a></div></div>
 <div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
 <div class="ttc" id="aclass_climber_html_aa3ac373169be2eac9efd6e817ca6fa29"><div class="ttname"><a href="class_climber.html#aa3ac373169be2eac9efd6e817ca6fa29">Climber::~Climber</a></div><div class="ttdeci">virtual ~Climber()=default</div><div class="ttdoc">Clean up memory when this object gets deleted.</div></div>
 <div class="ttc" id="a_control_data_8h_html"><div class="ttname"><a href="_control_data_8h.html">ControlData.h</a></div></div>
-<div class="ttc" id="aclass_climber_html_a496efc9ed2d6e09c9c8cc9c57748253d"><div class="ttname"><a href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">Climber::GetCurrentSpeed</a></div><div class="ttdeci">double GetCurrentSpeed() const override</div><div class="ttdoc">Return the current position of the climber in inches (positive is forward, negative is backward)</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00137">Climber.cpp:137</a></div></div>
+<div class="ttc" id="aclass_climber_html_a496efc9ed2d6e09c9c8cc9c57748253d"><div class="ttname"><a href="class_climber.html#a496efc9ed2d6e09c9c8cc9c57748253d">Climber::GetCurrentSpeed</a></div><div class="ttdeci">double GetCurrentSpeed() const override</div><div class="ttdoc">Return the current position of the climber in inches (positive is forward, negative is backward)</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00136">Climber.cpp:136</a></div></div>
 <div class="ttc" id="aclass_mechanism_types_html_adad17689ea795c3d65e2062bdc09284b"><div class="ttname"><a href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284b">MechanismTypes::MECHANISM_TYPE</a></div><div class="ttdeci">MECHANISM_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_types_8h_source.html#l00031">MechanismTypes.h:31</a></div></div>
 <div class="ttc" id="aclass_climber_html_a05d4b42803a951054d725f2197a51a3d"><div class="ttname"><a href="class_climber.html#a05d4b42803a951054d725f2197a51a3d">Climber::GetType</a></div><div class="ttdeci">MechanismTypes::MECHANISM_TYPE GetType() const override</div><div class="ttdoc">Indicates that this is Climber.</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00050">Climber.cpp:50</a></div></div>
 <div class="ttc" id="aclass_climber_html"><div class="ttname"><a href="class_climber.html">Climber</a></div><div class="ttdoc">The Climber subsystem. Includes pneumatic extender and winch.</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8h_source.html#l00016">Climber.h:16</a></div></div>
@@ -161,7 +161,6 @@ $(document).ready(function(){initNavTree('_climber_8h_source.html','');});
 <div class="ttc" id="a_dragon_solenoid_8h_html"><div class="ttname"><a href="_dragon_solenoid_8h.html">DragonSolenoid.h</a></div></div>
 <div class="ttc" id="aclass_climber_html_ae03ddf335ed70b23d656a623991f575b"><div class="ttname"><a href="class_climber.html#ae03ddf335ed70b23d656a623991f575b">Climber::ActivateSolenoid</a></div><div class="ttdeci">void ActivateSolenoid(bool activate) override</div><div class="ttdoc">Activate/deactivate the extender solenoid.</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00084">Climber.cpp:84</a></div></div>
 <div class="ttc" id="a_i_dragon_motor_controller_8h_html"><div class="ttname"><a href="_i_dragon_motor_controller_8h.html">IDragonMotorController.h</a></div></div>
-<div class="ttc" id="aclass_climber_html_a41fe085977e8cb565a44391b0819948c"><div class="ttname"><a href="class_climber.html#a41fe085977e8cb565a44391b0819948c">Climber::SetControlConstants</a></div><div class="ttdeci">void SetControlConstants(ControlData *) override</div><div class="ttdoc">Set the control constants (e.g. PIDF values)</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00160">Climber.cpp:160</a></div></div>
 <div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>
 <div class="ttc" id="aclass_climber_html_a5d98791705b1e9d5626cc31220ab3bb0"><div class="ttname"><a href="class_climber.html#a5d98791705b1e9d5626cc31220ab3bb0">Climber::Climber</a></div><div class="ttdeci">Climber()=delete</div></div>
 <div class="ttc" id="aclass_climber_html_a7bdc1cc3a27ecb23e26bf60c105a4b79"><div class="ttname"><a href="class_climber.html#a7bdc1cc3a27ecb23e26bf60c105a4b79">Climber::SetOutput</a></div><div class="ttdeci">void SetOutput(ControlModes::CONTROL_TYPE controlType, double value) override</div><div class="ttdoc">Run the Climber as defined.</div><div class="ttdef"><b>Definition:</b> <a href="_climber_8cpp_source.html#l00060">Climber.cpp:60</a></div></div>

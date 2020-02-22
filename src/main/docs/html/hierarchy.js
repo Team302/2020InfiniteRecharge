@@ -25,7 +25,6 @@ var hierarchy =
     [ "ControlPanelColors", "class_control_panel_colors.html", null ],
     [ "ControlPanelStateMgr", "class_control_panel_state_mgr.html", null ],
     [ "ConversionUtils", "class_conversion_utils.html", null ],
-    [ "CyclePrimitives", "class_cycle_primitives.html", null ],
     [ "DigitalInputDefn", "class_digital_input_defn.html", null ],
     [ "DigitalInputFactory", "class_digital_input_factory.html", null ],
     [ "DigitalInputUsage", "class_digital_input_usage.html", null ],
@@ -88,6 +87,7 @@ var hierarchy =
       [ "BallTransfer", "class_ball_transfer.html", null ],
       [ "Climber", "class_climber.html", null ],
       [ "ControlPanel", "class_control_panel.html", null ],
+      [ "Crawler", "class_crawler.html", null ],
       [ "DriveTrainSide", "class_drive_train_side.html", null ],
       [ "Impeller", "class_impeller.html", null ],
       [ "Intake", "class_intake.html", null ],
@@ -129,6 +129,7 @@ var hierarchy =
       [ "ControlPanelRaise", "class_control_panel_raise.html", null ],
       [ "ControlPanelStow", "class_control_panel_stow.html", null ],
       [ "ControlPanelTurn", "class_control_panel_turn.html", null ],
+      [ "CyclePrimitives", "class_cycle_primitives.html", null ],
       [ "LimelightAim", "class_limelight_aim.html", null ],
       [ "ManualAim", "class_manual_aim.html", null ],
       [ "MechanismState", "class_mechanism_state.html", [

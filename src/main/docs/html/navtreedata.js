@@ -55,15 +55,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_analog_axis_8cpp.html",
-"_dragon_position_sensor_8h.html",
-"_mechanism_state_8h_source.html",
-"class_analog_input_usage.html#a0a2b8dec47d570e3e015c1cf4b43dc3ea9729ca78d0d8bfa204899b1496c74167",
-"class_control_panel_stow.html#a2aea3083dad0852b8ec101a4515714ca",
-"class_dragon_talon.html#a741ea243997b62373ef198f75846704d",
-"class_i_dragon_game_pad.html#a3b3c3165d9fc69500bd69ba575216676abdde71687676a038262ff33d2492bcbf",
-"class_mechanism_factory.html#a27f451efec8f3e3850766d1dc10e276a",
-"class_solenoid_usage.html#adb45b3112fbc67f57d39931571b60ef7adbcdbd5832c8a77f81482ceeceda4f19",
-"namespacectre_1_1phoenix_1_1sensors.html"
+"_dragon_pigeon_8h_source.html",
+"_mechanism_factory_8h_source.html",
+"class_analog_input_factory.html",
+"class_control_panel_state_mgr.html#a87648a2688942ba2bbbaee7adb895c3aade574332c5e5a6d58073a43f948c64fe",
+"class_dragon_spark_max.html#af4d2ada3b631fae7e56521dc053f20a6",
+"class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29abcb358b0b55426562b3586cc09012cb6",
+"class_logger.html#a4edb2ae414fe730aa45c9279c07f013aa30505ac45161ab12db3907e4236a7417",
+"class_shooter_state_mgr_test.html#a6ab48705dfd4ba47a5c141a461ca0424",
+"functions_v.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

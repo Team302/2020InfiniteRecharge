@@ -217,7 +217,7 @@ $(document).ready(function(){initNavTree('_ball_manipulator_8cpp_source.html',''
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">case</span> BALL_MANIPULATOR_STATE::HOLD:</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            m_intake-&gt;SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, <span class="keyword">false</span> );</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            m_impeller-&gt;SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, <span class="keyword">false</span> );</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            m_transfer-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER , <span class="keyword">false</span> );</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            m_turret-&gt;SetCurrentState( TurretStateMgr::TURRET_STATE::LIMELIGHT_AIM, <span class="keyword">false</span> );</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            m_shooter-&gt;SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, <span class="keyword">false</span> );</div>

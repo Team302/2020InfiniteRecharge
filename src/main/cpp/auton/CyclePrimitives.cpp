@@ -46,7 +46,8 @@ CyclePrimitives::CyclePrimitives() : m_primParams(),
 									 m_autonSelector( new AutonSelector()) ,
 									 m_timer( make_unique<Timer>()),
 									 m_maxTime( 0.0 ),
-									 m_powerCells( new AutoShoot() )
+									 m_powerCells( new AutoShoot() ),
+									 m_isDone( false )
 {
 }
 
@@ -63,7 +64,7 @@ void CyclePrimitives::Init()
 	}
 }
 
-void CyclePrimitives::RunCurrentPrimitive()
+void CyclePrimitives::Run()
 {
 	if (m_currentPrim != nullptr)
 	{
@@ -85,10 +86,16 @@ void CyclePrimitives::RunCurrentPrimitive()
 	else
 	{
 		Logger::GetLogger()->LogError(string("CyclePrimitive"), string("Completed"));
+		m_isDone = true;
 		m_primParams.clear();	// clear the primitive params vector
 		m_currentPrimSlot = 0;  //Reset current prim slot
 		RunDoNothing();
 	}
+}
+
+bool CyclePrimitives::AtTarget() const
+{
+	return m_isDone;
 }
 
 void CyclePrimitives::GetNextPrim()

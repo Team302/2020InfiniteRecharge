@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('_dragon_limelight_8cpp_source.html',''
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;) : <a class="code" href="class_i_dragon_sensor.html">IDragonSensor</a>(),</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_i_dragon_distance_sensor.html">IDragonDistanceSensor</a>(),</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    m_usage( usage ),</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_networktable( NetworkTableInstance::GetDefault().GetTable( tableName) ),</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_networktable( NetworkTableInstance::GetDefault().GetTable( tableName.c_str()) ),</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_mountHeight( mountingHeight ),</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_mountingHorizontalOffset( mountingHorizontalOffset ),</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    m_rotation(rotation),</div>
@@ -170,18 +170,18 @@ $(document).ready(function(){initNavTree('_dragon_limelight_8cpp_source.html',''
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#a381f0a9dc0d7318e84f29942513845cb">   95</a></span>&#160;std::vector&lt;double&gt; <a class="code" href="class_dragon_limelight.html#a381f0a9dc0d7318e84f29942513845cb">DragonLimelight::Get3DSolve</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> m_networktable-&gt;GetNumberArray(<span class="stringliteral">&quot;camtran&quot;</span>, 0);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> m_networktable.get()-&gt;GetNumberArray(<span class="stringliteral">&quot;camtran&quot;</span>, 0);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#a61df6005aac9e2f90bfe5a8ed40f3456">  100</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_dragon_limelight.html#a61df6005aac9e2f90bfe5a8ed40f3456">DragonLimelight::HasTarget</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> ( m_networktable-&gt;GetNumber(<span class="stringliteral">&quot;tv&quot;</span>, 0.0) &gt; 0.1 );</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> ( m_networktable.get()-&gt;GetNumber(<span class="stringliteral">&quot;tv&quot;</span>, 0.0) &gt; 0.1 );</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#a47d04ae8a2230a52887d696109f37eed">  105</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_limelight.html#a47d04ae8a2230a52887d696109f37eed">DragonLimelight::GetTargetHorizontalOffset</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">double</span> tx = m_networktable-&gt;GetNumber(<span class="stringliteral">&quot;tx&quot;</span>, 0.0) - m_mountingHorizontalOffset;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">double</span> ty = m_networktable-&gt;GetNumber(<span class="stringliteral">&quot;ty&quot;</span>, 0.0) - m_mountingHorizontalOffset;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">double</span> tx = m_networktable.get()-&gt;GetNumber(<span class="stringliteral">&quot;tx&quot;</span>, 0.0);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">double</span> ty = m_networktable.get()-&gt;GetNumber(<span class="stringliteral">&quot;ty&quot;</span>, 0.0);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span>(m_rotation == 0.0)</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> tx;</div>
@@ -209,8 +209,8 @@ $(document).ready(function(){initNavTree('_dragon_limelight_8cpp_source.html',''
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
 <div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#ae8f2120ffbf5207fd7053860c6a591b0">  134</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_limelight.html#ae8f2120ffbf5207fd7053860c6a591b0">DragonLimelight::GetTargetVerticalOffset</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">double</span> tx = m_networktable-&gt;GetNumber(<span class="stringliteral">&quot;tx&quot;</span>, 0.0);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">double</span> ty = m_networktable-&gt;GetNumber(<span class="stringliteral">&quot;ty&quot;</span>, 0.0);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">double</span> tx = m_networktable.get()-&gt;GetNumber(<span class="stringliteral">&quot;tx&quot;</span>, 0.0);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">double</span> ty = m_networktable.get()-&gt;GetNumber(<span class="stringliteral">&quot;ty&quot;</span>, 0.0);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">if</span>(m_rotation == 0.0)</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">return</span> ty;</div>
@@ -237,17 +237,17 @@ $(document).ready(function(){initNavTree('_dragon_limelight_8cpp_source.html',''
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#a9a5145044d385e7fac479065a54f6e57">  162</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_limelight.html#a9a5145044d385e7fac479065a54f6e57">DragonLimelight::GetTargetArea</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">return</span> m_networktable-&gt;GetNumber(<span class="stringliteral">&quot;ta&quot;</span>, 0.0);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">return</span> m_networktable.get()-&gt;GetNumber(<span class="stringliteral">&quot;ta&quot;</span>, 0.0);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#a9c2b9b606d2643467df517a786545e49">  167</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_limelight.html#a9c2b9b606d2643467df517a786545e49">DragonLimelight::GetTargetSkew</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> m_networktable-&gt;GetNumber(<span class="stringliteral">&quot;ts&quot;</span>, 0.0);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> m_networktable.get()-&gt;GetNumber(<span class="stringliteral">&quot;ts&quot;</span>, 0.0);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#a597d5a2a3eed41cdfb400bdb8cc91405">  172</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_dragon_limelight.html#a597d5a2a3eed41cdfb400bdb8cc91405">DragonLimelight::GetPipelineLatency</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">return</span> m_networktable-&gt;GetNumber(<span class="stringliteral">&quot;tl&quot;</span>, 0.0);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">return</span> m_networktable.get()-&gt;GetNumber(<span class="stringliteral">&quot;tl&quot;</span>, 0.0);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
 <div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#a2a2135361297f084ea5b0bcb2eaa8f92">  182</a></span>&#160;<a class="code" href="class_i_dragon_sensor.html#a48f04b4f71b0f27f8330fd82a26b5fe9">IDragonSensor::SENSOR_USAGE</a> <a class="code" href="class_dragon_limelight.html#a2a2135361297f084ea5b0bcb2eaa8f92">DragonLimelight::GetUsage</a>()<span class="keyword"> const</span></div>
@@ -265,28 +265,28 @@ $(document).ready(function(){initNavTree('_dragon_limelight_8cpp_source.html',''
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
 <div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#a8f80d91a71106af3592ec0975f474aaf">  195</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_limelight.html#a8f80d91a71106af3592ec0975f474aaf">DragonLimelight::SetLEDMode</a>(<a class="code" href="class_dragon_limelight.html#a4968de97dbb55b78eb63a6e3ab398f40">DragonLimelight::LED_MODE</a> mode)</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;{</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    m_networktable-&gt;PutNumber(<span class="stringliteral">&quot;ledMode&quot;</span>, mode);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    m_networktable.get()-&gt;PutNumber(<span class="stringliteral">&quot;ledMode&quot;</span>, mode);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#ac6e89317d90de2e9c7c90eaa9293cab4">  200</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_limelight.html#ac6e89317d90de2e9c7c90eaa9293cab4">DragonLimelight::SetCamMode</a>(<a class="code" href="class_dragon_limelight.html#aafb5de7911fc118585b3cb32e0c87f13">DragonLimelight::CAM_MODE</a> mode)</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;{</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    m_networktable-&gt;PutNumber(<span class="stringliteral">&quot;camMode&quot;</span>, mode);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    m_networktable.get()-&gt;PutNumber(<span class="stringliteral">&quot;camMode&quot;</span>, mode);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
 <div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#a9008ec8358c4f2836b8aa4829e731104">  205</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_limelight.html#a9008ec8358c4f2836b8aa4829e731104">DragonLimelight::SetPipeline</a>(<span class="keywordtype">int</span> pipeline)</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;{</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    m_networktable-&gt;PutNumber(<span class="stringliteral">&quot;pipeline&quot;</span>, pipeline);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    m_networktable.get()-&gt;PutNumber(<span class="stringliteral">&quot;pipeline&quot;</span>, pipeline);</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
 <div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#aa90d53fedc3b0568a434c57b987b6d79">  210</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_limelight.html#aa90d53fedc3b0568a434c57b987b6d79">DragonLimelight::SetStreamMode</a>(<a class="code" href="class_dragon_limelight.html#a7e61244761896139b6cd1c72c5363f91">DragonLimelight::STREAM_MODE</a> mode)</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;{</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    m_networktable-&gt;PutNumber(<span class="stringliteral">&quot;stream&quot;</span>, mode);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    m_networktable.get()-&gt;PutNumber(<span class="stringliteral">&quot;stream&quot;</span>, mode);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">// MAX of 32 snapshots can be saved</span></div>
 <div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#a9854cde1425bf1d0d25ed15b586e599d">  216</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_limelight.html#a9854cde1425bf1d0d25ed15b586e599d">DragonLimelight::ToggleSnapshot</a>(<a class="code" href="class_dragon_limelight.html#ad153a8681f6b1f71906fba0a6c4863ed">DragonLimelight::SNAPSHOT_MODE</a> toggle)</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;{</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    m_networktable-&gt;PutNumber(<span class="stringliteral">&quot;snapshot&quot;</span>, toggle);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    m_networktable.get()-&gt;PutNumber(<span class="stringliteral">&quot;snapshot&quot;</span>, toggle);</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
 <div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="class_dragon_limelight.html#a223f0bdf47eb46ba0085cdbc17a2fbed">  221</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_dragon_limelight.html#a223f0bdf47eb46ba0085cdbc17a2fbed">DragonLimelight::PrintValues</a>()</div>

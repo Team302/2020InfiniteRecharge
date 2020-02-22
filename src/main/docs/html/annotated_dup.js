@@ -42,6 +42,7 @@ var annotated_dup =
     [ "ControlPanelStow", "class_control_panel_stow.html", "class_control_panel_stow" ],
     [ "ControlPanelTurn", "class_control_panel_turn.html", "class_control_panel_turn" ],
     [ "ConversionUtils", "class_conversion_utils.html", "class_conversion_utils" ],
+    [ "Crawler", "class_crawler.html", "class_crawler" ],
     [ "CubedProfile", "class_cubed_profile.html", "class_cubed_profile" ],
     [ "CyclePrimitives", "class_cycle_primitives.html", "class_cycle_primitives" ],
     [ "DeadbandValue", "class_deadband_value.html", "class_deadband_value" ],
