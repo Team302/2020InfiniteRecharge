@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('_ball_transfer_state_mgr_test_8cpp_sou
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_ball_transfer_state_mgr_test.html#a52c3ea920df528e26e3108b2cbca8d11">   37</a></span>&#160;<a class="code" href="class_ball_transfer_state_mgr_test.html#a52c3ea920df528e26e3108b2cbca8d11">BallTransferStateMgrTest::BallTransferStateMgrTest</a>() : <a class="code" href="class_i_state_test.html">IStateTest</a>(),</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                       m_stateMgr( make_unique&lt;<a class="code" href="class_ball_transfer_state_mgr.html">BallTransferStateMgr</a>&gt;() ),</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                       m_stateMgr( <a class="code" href="class_ball_transfer_state_mgr.html">BallTransferStateMgr</a>::GetInstance() ),</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                       m_ranImpeller( false ),</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                       m_ranOff( false ),</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                       m_ranShooter( false ),</div>
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('_ball_transfer_state_mgr_test_8cpp_sou
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_ball_transfer_state_mgr_test.html#ac214f8fa30ecd791d4b873b5ebc92b62">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_ball_transfer_state_mgr_test.html#ac214f8fa30ecd791d4b873b5ebc92b62">BallTransferStateMgrTest::Init</a>()</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    m_loopCnt = 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_stateMgr.get()-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER, <span class="keyword">true</span> );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_stateMgr-&gt;<a class="code" href="class_ball_transfer_state_mgr.html#a4ad4576d1df79e2e9749be0a6ec0daa6">SetCurrentState</a>( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER, <span class="keyword">true</span> );</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_ranImpeller = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
@@ -147,27 +147,27 @@ $(document).ready(function(){initNavTree('_ball_transfer_state_mgr_test_8cpp_sou
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> ( !m_ranImpeller )</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            m_stateMgr.get()-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            m_stateMgr-&gt;<a class="code" href="class_ball_transfer_state_mgr.html#a4ad4576d1df79e2e9749be0a6ec0daa6">SetCurrentState</a>( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER, <span class="keyword">false</span> );</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            m_ranImpeller = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( !m_ranOff )</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            m_stateMgr.get()-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            m_stateMgr-&gt;<a class="code" href="class_ball_transfer_state_mgr.html#a4ad4576d1df79e2e9749be0a6ec0daa6">SetCurrentState</a>( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, <span class="keyword">false</span> );</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            m_ranOff = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( !m_ranShooter )</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            m_stateMgr.get()-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            m_stateMgr-&gt;<a class="code" href="class_ball_transfer_state_mgr.html#a4ad4576d1df79e2e9749be0a6ec0daa6">SetCurrentState</a>( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, <span class="keyword">false</span> );</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            m_ranShooter = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            m_stateMgr.get()-&gt;SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            m_stateMgr-&gt;<a class="code" href="class_ball_transfer_state_mgr.html#a4ad4576d1df79e2e9749be0a6ec0daa6">SetCurrentState</a>( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, <span class="keyword">false</span> );</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            m_isDone = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        m_loopCnt = 0;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    m_stateMgr.get()-&gt;RunCurrentState();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    m_stateMgr-&gt;<a class="code" href="class_ball_transfer_state_mgr.html#ae9a3c67861dc9c3c1f8afafff3313a24">RunCurrentState</a>();</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_ball_transfer_state_mgr_test.html#a8012de21e229fc147eca366cea16f2fc">   91</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_ball_transfer_state_mgr_test.html#a8012de21e229fc147eca366cea16f2fc">BallTransferStateMgrTest::IsDone</a>()</div>
@@ -185,8 +185,10 @@ $(document).ready(function(){initNavTree('_ball_transfer_state_mgr_test_8cpp_sou
 <div class="ttc" id="aclass_ball_transfer_state_mgr_test_html_af88015f17e728810b7aedc89d229d163"><div class="ttname"><a href="class_ball_transfer_state_mgr_test.html#af88015f17e728810b7aedc89d229d163">BallTransferStateMgrTest::Periodic</a></div><div class="ttdeci">void Periodic() override</div><div class="ttdoc">Run the test. This will be called from Robot::TestPeriodic()</div><div class="ttdef"><b>Definition:</b> <a href="_ball_transfer_state_mgr_test_8cpp_source.html#l00059">BallTransferStateMgrTest.cpp:59</a></div></div>
 <div class="ttc" id="aclass_ball_transfer_state_mgr_test_html_a52c3ea920df528e26e3108b2cbca8d11"><div class="ttname"><a href="class_ball_transfer_state_mgr_test.html#a52c3ea920df528e26e3108b2cbca8d11">BallTransferStateMgrTest::BallTransferStateMgrTest</a></div><div class="ttdeci">BallTransferStateMgrTest()</div><div class="ttdef"><b>Definition:</b> <a href="_ball_transfer_state_mgr_test_8cpp_source.html#l00037">BallTransferStateMgrTest.cpp:37</a></div></div>
 <div class="ttc" id="aclass_ball_transfer_state_mgr_test_html_ac214f8fa30ecd791d4b873b5ebc92b62"><div class="ttname"><a href="class_ball_transfer_state_mgr_test.html#ac214f8fa30ecd791d4b873b5ebc92b62">BallTransferStateMgrTest::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdoc">Initialize the test setup. This will be called from Robot::TestInit()</div><div class="ttdef"><b>Definition:</b> <a href="_ball_transfer_state_mgr_test_8cpp_source.html#l00050">BallTransferStateMgrTest.cpp:50</a></div></div>
+<div class="ttc" id="aclass_ball_transfer_state_mgr_html_ae9a3c67861dc9c3c1f8afafff3313a24"><div class="ttname"><a href="class_ball_transfer_state_mgr.html#ae9a3c67861dc9c3c1f8afafff3313a24">BallTransferStateMgr::RunCurrentState</a></div><div class="ttdeci">void RunCurrentState()</div><div class="ttdoc">run the current state</div><div class="ttdef"><b>Definition:</b> <a href="_ball_transfer_state_mgr_8cpp_source.html#l00133">BallTransferStateMgr.cpp:133</a></div></div>
 <div class="ttc" id="a_ball_transfer_state_mgr_8h_html"><div class="ttname"><a href="_ball_transfer_state_mgr_8h.html">BallTransferStateMgr.h</a></div></div>
 <div class="ttc" id="a_i_state_test_8h_html"><div class="ttname"><a href="_i_state_test_8h.html">IStateTest.h</a></div></div>
+<div class="ttc" id="aclass_ball_transfer_state_mgr_html_a4ad4576d1df79e2e9749be0a6ec0daa6"><div class="ttname"><a href="class_ball_transfer_state_mgr.html#a4ad4576d1df79e2e9749be0a6ec0daa6">BallTransferStateMgr::SetCurrentState</a></div><div class="ttdeci">void SetCurrentState(BALL_TRANSFER_STATE state, bool run)</div><div class="ttdoc">set the current state, initialize it and run it</div><div class="ttdef"><b>Definition:</b> <a href="_ball_transfer_state_mgr_8cpp_source.html#l00174">BallTransferStateMgr.cpp:174</a></div></div>
 <div class="ttc" id="aclass_ball_transfer_state_mgr_html"><div class="ttname"><a href="class_ball_transfer_state_mgr.html">BallTransferStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_ball_transfer_state_mgr_8h_source.html#l00029">BallTransferStateMgr.h:29</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

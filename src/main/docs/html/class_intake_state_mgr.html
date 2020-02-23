@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('class_intake_state_mgr.html','');});
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_intake_state_mgr-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">IntakeStateMgr Class Reference</div>  </div>
@@ -107,11 +108,6 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a67087cabbb04c3f8145ec41a1bbf5cea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_intake_state_mgr.html#a67087cabbb04c3f8145ec41a1bbf5cea">IntakeStateMgr</a> ()</td></tr>
-<tr class="memdesc:a67087cabbb04c3f8145ec41a1bbf5cea"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize the state manager, parse the configuration file and create the states.  <a href="class_intake_state_mgr.html#a67087cabbb04c3f8145ec41a1bbf5cea">More...</a><br /></td></tr>
-<tr class="separator:a67087cabbb04c3f8145ec41a1bbf5cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f281acc2310d54a8eab7d91ef42bad7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_intake_state_mgr.html#a3f281acc2310d54a8eab7d91ef42bad7">~IntakeStateMgr</a> ()=default</td></tr>
-<tr class="separator:a3f281acc2310d54a8eab7d91ef42bad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac27ccde795f471c38f5ae0c123e1ada3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_intake_state_mgr.html#ac27ccde795f471c38f5ae0c123e1ada3">RunCurrentState</a> ()</td></tr>
 <tr class="memdesc:ac27ccde795f471c38f5ae0c123e1ada3"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the current state  <a href="class_intake_state_mgr.html#ac27ccde795f471c38f5ae0c123e1ada3">More...</a><br /></td></tr>
 <tr class="separator:ac27ccde795f471c38f5ae0c123e1ada3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,6 +117,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab830ea475e60fca1e06fbff31a4c7980"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_intake_state_mgr.html#aaa5d73e08f73a95dca5c6aaa1de6b56c">INTAKE_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_intake_state_mgr.html#ab830ea475e60fca1e06fbff31a4c7980">GetCurrentState</a> () const</td></tr>
 <tr class="memdesc:ab830ea475e60fca1e06fbff31a4c7980"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the current state  <a href="class_intake_state_mgr.html#ab830ea475e60fca1e06fbff31a4c7980">More...</a><br /></td></tr>
 <tr class="separator:ab830ea475e60fca1e06fbff31a4c7980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a9e8b03c92d18d2c115f8f352d63569fe"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_intake_state_mgr.html">IntakeStateMgr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_intake_state_mgr.html#a9e8b03c92d18d2c115f8f352d63569fe">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a9e8b03c92d18d2c115f8f352d63569fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find or create the state manmanager.  <a href="class_intake_state_mgr.html#a9e8b03c92d18d2c115f8f352d63569fe">More...</a><br /></td></tr>
+<tr class="separator:a9e8b03c92d18d2c115f8f352d63569fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -145,53 +147,6 @@ Public Member Functions</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="_intake_state_mgr_8h_source.html#l00032">32</a> of file <a class="el" href="_intake_state_mgr_8h_source.html">IntakeStateMgr.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a67087cabbb04c3f8145ec41a1bbf5cea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67087cabbb04c3f8145ec41a1bbf5cea">&#9670;&nbsp;</a></span>IntakeStateMgr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IntakeStateMgr::IntakeStateMgr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>initialize the state manager, parse the configuration file and create the states. </p>
-
-<p class="definition">Definition at line <a class="el" href="_intake_state_mgr_8cpp_source.html#l00040">40</a> of file <a class="el" href="_intake_state_mgr_8cpp_source.html">IntakeStateMgr.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a3f281acc2310d54a8eab7d91ef42bad7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f281acc2310d54a8eab7d91ef42bad7">&#9670;&nbsp;</a></span>~IntakeStateMgr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">IntakeStateMgr::~IntakeStateMgr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -226,6 +181,36 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9e8b03c92d18d2c115f8f352d63569fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e8b03c92d18d2c115f8f352d63569fe">&#9670;&nbsp;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_intake_state_mgr.html">IntakeStateMgr</a> * IntakeStateMgr::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find or create the state manmanager. </p>
+<dl class="section return"><dt>Returns</dt><dd>IntakeStateMgr* pointer to the state manager </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_intake_state_mgr_8cpp_source.html#l00042">42</a> of file <a class="el" href="_intake_state_mgr_8cpp_source.html">IntakeStateMgr.cpp</a>.</p>
+
+</div>
+</div>
 <a id="ac27ccde795f471c38f5ae0c123e1ada3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac27ccde795f471c38f5ae0c123e1ada3">&#9670;&nbsp;</a></span>RunCurrentState()</h2>
 
@@ -244,7 +229,7 @@ Public Member Functions</h2></td></tr>
 <p>run the current state </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_intake_state_mgr_8cpp_source.html#l00117">117</a> of file <a class="el" href="_intake_state_mgr_8cpp_source.html">IntakeStateMgr.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_intake_state_mgr_8cpp_source.html#l00129">129</a> of file <a class="el" href="_intake_state_mgr_8cpp_source.html">IntakeStateMgr.cpp</a>.</p>
 
 </div>
 </div>
@@ -286,7 +271,7 @@ Public Member Functions</h2></td></tr>
 <dd>
 void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_intake_state_mgr_8cpp_source.html#l00151">151</a> of file <a class="el" href="_intake_state_mgr_8cpp_source.html">IntakeStateMgr.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_intake_state_mgr_8cpp_source.html#l00165">165</a> of file <a class="el" href="_intake_state_mgr_8cpp_source.html">IntakeStateMgr.cpp</a>.</p>
 
 </div>
 </div>

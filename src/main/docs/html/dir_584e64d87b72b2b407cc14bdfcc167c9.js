@@ -83,5 +83,9 @@ var dir_584e64d87b72b2b407cc14bdfcc167c9 =
     [ "TalonTach.cpp", "_talon_tach_8cpp.html", null ],
     [ "TalonTach.h", "_talon_tach_8h.html", [
       [ "TalonTachDefn", "class_talon_tach_defn.html", "class_talon_tach_defn" ]
+    ] ],
+    [ "ThroughBoreEncoderDefn.cpp", "_through_bore_encoder_defn_8cpp.html", null ],
+    [ "ThroughBoreEncoderDefn.h", "_through_bore_encoder_defn_8h.html", [
+      [ "ThroughBoreEncoderDefn", "class_through_bore_encoder_defn.html", null ]
     ] ]
 ];

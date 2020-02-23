@@ -17,7 +17,7 @@ var searchData=
   ['balltransferoff_61',['BallTransferOff',['../class_ball_transfer_off.html',1,'BallTransferOff'],['../class_ball_transfer_off.html#a45f0cbee381443a4802b06fbcc17d94d',1,'BallTransferOff::BallTransferOff()=delete'],['../class_ball_transfer_off.html#accd4408f59fb7b05274f57e723af02c6',1,'BallTransferOff::BallTransferOff(ControlData *control, double target, MechanismTargetData::SOLENOID solState)']]],
   ['balltransferoff_2ecpp_62',['BallTransferOff.cpp',['../_ball_transfer_off_8cpp.html',1,'']]],
   ['balltransferoff_2eh_63',['BallTransferOff.h',['../_ball_transfer_off_8h.html',1,'']]],
-  ['balltransferstatemgr_64',['BallTransferStateMgr',['../class_ball_transfer_state_mgr.html',1,'BallTransferStateMgr'],['../class_ball_transfer_state_mgr.html#a90008a18c672871b973930d2906514a9',1,'BallTransferStateMgr::BallTransferStateMgr()']]],
+  ['balltransferstatemgr_64',['BallTransferStateMgr',['../class_ball_transfer_state_mgr.html',1,'']]],
   ['balltransferstatemgr_2ecpp_65',['BallTransferStateMgr.cpp',['../_ball_transfer_state_mgr_8cpp.html',1,'']]],
   ['balltransferstatemgr_2eh_66',['BallTransferStateMgr.h',['../_ball_transfer_state_mgr_8h.html',1,'']]],
   ['balltransferstatemgrtest_67',['BallTransferStateMgrTest',['../class_ball_transfer_state_mgr_test.html',1,'BallTransferStateMgrTest'],['../class_ball_transfer_state_mgr_test.html#a52c3ea920df528e26e3108b2cbca8d11',1,'BallTransferStateMgrTest::BallTransferStateMgrTest()']]],

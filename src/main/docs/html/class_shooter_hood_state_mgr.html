@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('class_shooter_hood_state_mgr.html','')
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_shooter_hood_state_mgr-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ShooterHoodStateMgr Class Reference</div>  </div>
@@ -111,11 +112,6 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3011c77c357335e5fa72af70ce787186"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_hood_state_mgr.html#a3011c77c357335e5fa72af70ce787186">ShooterHoodStateMgr</a> ()</td></tr>
-<tr class="memdesc:a3011c77c357335e5fa72af70ce787186"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize the state manager, parse the configuration file and create the states.  <a href="class_shooter_hood_state_mgr.html#a3011c77c357335e5fa72af70ce787186">More...</a><br /></td></tr>
-<tr class="separator:a3011c77c357335e5fa72af70ce787186"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a207a3805bfdbf5f0338744f9f77d1bc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_hood_state_mgr.html#a207a3805bfdbf5f0338744f9f77d1bc3">~ShooterHoodStateMgr</a> ()=default</td></tr>
-<tr class="separator:a207a3805bfdbf5f0338744f9f77d1bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ea4d12e259efebe9e17e36ec7800162"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_hood_state_mgr.html#a1ea4d12e259efebe9e17e36ec7800162">RunCurrentState</a> ()</td></tr>
 <tr class="memdesc:a1ea4d12e259efebe9e17e36ec7800162"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the current state  <a href="class_shooter_hood_state_mgr.html#a1ea4d12e259efebe9e17e36ec7800162">More...</a><br /></td></tr>
 <tr class="separator:a1ea4d12e259efebe9e17e36ec7800162"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,6 +121,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8de5d50a126019bdc3f04c8099755702"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516">SHOOTER_HOOD_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_hood_state_mgr.html#a8de5d50a126019bdc3f04c8099755702">GetCurrentState</a> () const</td></tr>
 <tr class="memdesc:a8de5d50a126019bdc3f04c8099755702"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the current state  <a href="class_shooter_hood_state_mgr.html#a8de5d50a126019bdc3f04c8099755702">More...</a><br /></td></tr>
 <tr class="separator:a8de5d50a126019bdc3f04c8099755702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a77da55f94293f56e4e626a0c315beefe"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_shooter_hood_state_mgr.html">ShooterHoodStateMgr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shooter_hood_state_mgr.html#a77da55f94293f56e4e626a0c315beefe">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a77da55f94293f56e4e626a0c315beefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find or create the state manmanager.  <a href="class_shooter_hood_state_mgr.html#a77da55f94293f56e4e626a0c315beefe">More...</a><br /></td></tr>
+<tr class="separator:a77da55f94293f56e4e626a0c315beefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Copyright 2019 Lake Orion Robotics FIRST Team 302</p>
@@ -157,53 +159,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3011c77c357335e5fa72af70ce787186"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3011c77c357335e5fa72af70ce787186">&#9670;&nbsp;</a></span>ShooterHoodStateMgr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ShooterHoodStateMgr::ShooterHoodStateMgr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>initialize the state manager, parse the configuration file and create the states. </p>
-
-<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html#l00039">39</a> of file <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html">ShooterHoodStateMgr.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a207a3805bfdbf5f0338744f9f77d1bc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a207a3805bfdbf5f0338744f9f77d1bc3">&#9670;&nbsp;</a></span>~ShooterHoodStateMgr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ShooterHoodStateMgr::~ShooterHoodStateMgr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8de5d50a126019bdc3f04c8099755702"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8de5d50a126019bdc3f04c8099755702">&#9670;&nbsp;</a></span>GetCurrentState()</h2>
@@ -231,7 +186,37 @@ Public Member Functions</h2></td></tr>
 <p>return the current state </p>
 <dl class="section return"><dt>Returns</dt><dd>SHOOTER_HOOD_STATE - the current state </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8h_source.html#l00061">61</a> of file <a class="el" href="_shooter_hood_state_mgr_8h_source.html">ShooterHoodStateMgr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8h_source.html#l00063">63</a> of file <a class="el" href="_shooter_hood_state_mgr_8h_source.html">ShooterHoodStateMgr.h</a>.</p>
+
+</div>
+</div>
+<a id="a77da55f94293f56e4e626a0c315beefe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77da55f94293f56e4e626a0c315beefe">&#9670;&nbsp;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_shooter_hood_state_mgr.html">ShooterHoodStateMgr</a> * ShooterHoodStateMgr::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find or create the state manmanager. </p>
+<dl class="section return"><dt>Returns</dt><dd>ShooterHoodStateMgr* pointer to the state manager </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html#l00041">41</a> of file <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html">ShooterHoodStateMgr.cpp</a>.</p>
 
 </div>
 </div>
@@ -253,7 +238,7 @@ Public Member Functions</h2></td></tr>
 <p>run the current state </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html#l00123">123</a> of file <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html">ShooterHoodStateMgr.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html#l00135">135</a> of file <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html">ShooterHoodStateMgr.cpp</a>.</p>
 
 </div>
 </div>
@@ -295,7 +280,7 @@ Public Member Functions</h2></td></tr>
 <dd>
 void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html#l00164">164</a> of file <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html">ShooterHoodStateMgr.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html#l00178">178</a> of file <a class="el" href="_shooter_hood_state_mgr_8cpp_source.html">ShooterHoodStateMgr.cpp</a>.</p>
 
 </div>
 </div>

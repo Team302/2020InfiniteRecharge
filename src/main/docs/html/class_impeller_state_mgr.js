@@ -7,8 +7,6 @@ var class_impeller_state_mgr =
       [ "TO_SHOOTER", "class_impeller_state_mgr.html#ac7900fc564754454bb9309032667c8b9aaa0bda4a4865af4782dc9740d015c135", null ],
       [ "MAX_IMPELLER_STATES", "class_impeller_state_mgr.html#ac7900fc564754454bb9309032667c8b9a527a033668d71cb573789847c236ca9b", null ]
     ] ],
-    [ "ImpellerStateMgr", "class_impeller_state_mgr.html#ac395a587c8a1e7192fc4563ea23eab30", null ],
-    [ "~ImpellerStateMgr", "class_impeller_state_mgr.html#adb5035685dbe8e64abafdbed68b65568", null ],
     [ "GetCurrentState", "class_impeller_state_mgr.html#acea55b039f5bdc2db2051440fe613496", null ],
     [ "RunCurrentState", "class_impeller_state_mgr.html#a493984fe4706c183ac8ba822f2e7d2c0", null ],
     [ "SetCurrentState", "class_impeller_state_mgr.html#afd05b5a5b87575f74f8f82eae0f915ce", null ]

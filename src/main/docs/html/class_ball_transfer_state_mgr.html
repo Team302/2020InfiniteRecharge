@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('class_ball_transfer_state_mgr.html',''
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_ball_transfer_state_mgr-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">BallTransferStateMgr Class Reference</div>  </div>
@@ -107,11 +108,6 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a90008a18c672871b973930d2906514a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_transfer_state_mgr.html#a90008a18c672871b973930d2906514a9">BallTransferStateMgr</a> ()</td></tr>
-<tr class="memdesc:a90008a18c672871b973930d2906514a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize the state manager, parse the configuration file and create the states.  <a href="class_ball_transfer_state_mgr.html#a90008a18c672871b973930d2906514a9">More...</a><br /></td></tr>
-<tr class="separator:a90008a18c672871b973930d2906514a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3428e4026de58f17feb5ec05b7566c88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_transfer_state_mgr.html#a3428e4026de58f17feb5ec05b7566c88">~BallTransferStateMgr</a> ()=default</td></tr>
-<tr class="separator:a3428e4026de58f17feb5ec05b7566c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9a3c67861dc9c3c1f8afafff3313a24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_transfer_state_mgr.html#ae9a3c67861dc9c3c1f8afafff3313a24">RunCurrentState</a> ()</td></tr>
 <tr class="memdesc:ae9a3c67861dc9c3c1f8afafff3313a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the current state  <a href="class_ball_transfer_state_mgr.html#ae9a3c67861dc9c3c1f8afafff3313a24">More...</a><br /></td></tr>
 <tr class="separator:ae9a3c67861dc9c3c1f8afafff3313a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,6 +117,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8e3bfb4df043294473e16315bc1d802c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ball_transfer_state_mgr.html#a60f3deceead6d874baae678a4fc7acb2">BALL_TRANSFER_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_transfer_state_mgr.html#a8e3bfb4df043294473e16315bc1d802c">GetCurrentState</a> () const</td></tr>
 <tr class="memdesc:a8e3bfb4df043294473e16315bc1d802c"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the current state  <a href="class_ball_transfer_state_mgr.html#a8e3bfb4df043294473e16315bc1d802c">More...</a><br /></td></tr>
 <tr class="separator:a8e3bfb4df043294473e16315bc1d802c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:abdb31e4aabc0a13ef56908ad433e26b7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_ball_transfer_state_mgr.html">BallTransferStateMgr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_transfer_state_mgr.html#abdb31e4aabc0a13ef56908ad433e26b7">GetInstance</a> ()</td></tr>
+<tr class="memdesc:abdb31e4aabc0a13ef56908ad433e26b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find or create the state manmanager.  <a href="class_ball_transfer_state_mgr.html#abdb31e4aabc0a13ef56908ad433e26b7">More...</a><br /></td></tr>
+<tr class="separator:abdb31e4aabc0a13ef56908ad433e26b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -145,53 +147,6 @@ Public Member Functions</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="_ball_transfer_state_mgr_8h_source.html#l00033">33</a> of file <a class="el" href="_ball_transfer_state_mgr_8h_source.html">BallTransferStateMgr.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a90008a18c672871b973930d2906514a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90008a18c672871b973930d2906514a9">&#9670;&nbsp;</a></span>BallTransferStateMgr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BallTransferStateMgr::BallTransferStateMgr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>initialize the state manager, parse the configuration file and create the states. </p>
-
-<p class="definition">Definition at line <a class="el" href="_ball_transfer_state_mgr_8cpp_source.html#l00039">39</a> of file <a class="el" href="_ball_transfer_state_mgr_8cpp_source.html">BallTransferStateMgr.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a3428e4026de58f17feb5ec05b7566c88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3428e4026de58f17feb5ec05b7566c88">&#9670;&nbsp;</a></span>~BallTransferStateMgr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">BallTransferStateMgr::~BallTransferStateMgr </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -222,7 +177,37 @@ Public Member Functions</h2></td></tr>
 <p>return the current state </p>
 <dl class="section return"><dt>Returns</dt><dd>BALL_TRANSFER_STATE - the current state </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ball_transfer_state_mgr_8h_source.html#l00061">61</a> of file <a class="el" href="_ball_transfer_state_mgr_8h_source.html">BallTransferStateMgr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ball_transfer_state_mgr_8h_source.html#l00062">62</a> of file <a class="el" href="_ball_transfer_state_mgr_8h_source.html">BallTransferStateMgr.h</a>.</p>
+
+</div>
+</div>
+<a id="abdb31e4aabc0a13ef56908ad433e26b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb31e4aabc0a13ef56908ad433e26b7">&#9670;&nbsp;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ball_transfer_state_mgr.html">BallTransferStateMgr</a> * BallTransferStateMgr::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find or create the state manmanager. </p>
+<dl class="section return"><dt>Returns</dt><dd>BallTransferStateMgr* pointer to the state manager </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ball_transfer_state_mgr_8cpp_source.html#l00042">42</a> of file <a class="el" href="_ball_transfer_state_mgr_8cpp_source.html">BallTransferStateMgr.cpp</a>.</p>
 
 </div>
 </div>
@@ -244,7 +229,7 @@ Public Member Functions</h2></td></tr>
 <p>run the current state </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ball_transfer_state_mgr_8cpp_source.html#l00119">119</a> of file <a class="el" href="_ball_transfer_state_mgr_8cpp_source.html">BallTransferStateMgr.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ball_transfer_state_mgr_8cpp_source.html#l00133">133</a> of file <a class="el" href="_ball_transfer_state_mgr_8cpp_source.html">BallTransferStateMgr.cpp</a>.</p>
 
 </div>
 </div>
@@ -286,7 +271,7 @@ Public Member Functions</h2></td></tr>
 <dd>
 void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ball_transfer_state_mgr_8cpp_source.html#l00157">157</a> of file <a class="el" href="_ball_transfer_state_mgr_8cpp_source.html">BallTransferStateMgr.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ball_transfer_state_mgr_8cpp_source.html#l00174">174</a> of file <a class="el" href="_ball_transfer_state_mgr_8cpp_source.html">BallTransferStateMgr.cpp</a>.</p>
 
 </div>
 </div>

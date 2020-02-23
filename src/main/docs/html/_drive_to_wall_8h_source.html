@@ -117,42 +117,36 @@ $(document).ready(function(){initNavTree('_drive_to_wall_8h_source.html','');});
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_primitive_params_8h.html">auton/PrimitiveParams.h</a>&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_factory_8h.html">subsys/MechanismFactory.h</a>&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_super_drive_8h.html">auton/primitives/SuperDrive.h</a>&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_chassis_8h.html">subsys/IChassis.h</a>&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_primitive_8h.html">auton/primitives/IPrimitive.h</a>&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_drive_to_wall.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_drive_to_wall.html">DriveToWall</a> : <span class="keyword">public</span> <a class="code" href="class_super_drive.html">SuperDrive</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_drive_to_wall.html#adfb42e55ae1c6ca096422d020df0154b">IsDone</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_to_wall.html#adbc157105a2be56d57e4ab92269aa472">Init</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>* params) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_to_wall.html#a84d6951824f71f2b7a0c75e681dd6517">Run</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_drive_to_wall.html#ad9ef380239cab3939c348c500974f882">DriveToWall</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_drive_to_wall.html#a991327714f3c6a5588c5d496440ae5eb">~DriveToWall</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">float</span> m_minimumTime;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">float</span> m_timeRemaining;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> m_underSpeedCounts;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> SPEED_THRESHOLD = 3;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> UNDER_SPEED_COUNT_THRESHOLD = 2;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_super_drive_8h.html">auton/primitives/SuperDrive.h</a>&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">class </span><a class="code" href="class_primitive_params.html">PrimitiveParams</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_drive_to_wall.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_drive_to_wall.html">DriveToWall</a> : <span class="keyword">public</span> <a class="code" href="class_super_drive.html">SuperDrive</a> </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_drive_to_wall.html#adfb42e55ae1c6ca096422d020df0154b">IsDone</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_to_wall.html#adbc157105a2be56d57e4ab92269aa472">Init</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>* params) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_to_wall.html#a84d6951824f71f2b7a0c75e681dd6517">Run</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_drive_to_wall.html#ad9ef380239cab3939c348c500974f882">DriveToWall</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_drive_to_wall.html#a991327714f3c6a5588c5d496440ae5eb">~DriveToWall</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">float</span> m_minimumTime;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">float</span> m_timeRemaining;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> m_underSpeedCounts;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> SPEED_THRESHOLD = 3;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> UNDER_SPEED_COUNT_THRESHOLD = 2;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_drive_to_wall_html_a84d6951824f71f2b7a0c75e681dd6517"><div class="ttname"><a href="class_drive_to_wall.html#a84d6951824f71f2b7a0c75e681dd6517">DriveToWall::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_drive_to_wall_8cpp_source.html#l00064">DriveToWall.cpp:64</a></div></div>
-<div class="ttc" id="a_i_primitive_8h_html"><div class="ttname"><a href="_i_primitive_8h.html">IPrimitive.h</a></div></div>
-<div class="ttc" id="aclass_super_drive_html"><div class="ttname"><a href="class_super_drive.html">SuperDrive</a></div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00033">SuperDrive.h:33</a></div></div>
-<div class="ttc" id="aclass_drive_to_wall_html"><div class="ttname"><a href="class_drive_to_wall.html">DriveToWall</a></div><div class="ttdef"><b>Definition:</b> <a href="_drive_to_wall_8h_source.html#l00036">DriveToWall.h:36</a></div></div>
-<div class="ttc" id="a_mechanism_factory_8h_html"><div class="ttname"><a href="_mechanism_factory_8h.html">MechanismFactory.h</a></div></div>
+<div class="ttc" id="aclass_super_drive_html"><div class="ttname"><a href="class_super_drive.html">SuperDrive</a></div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00036">SuperDrive.h:36</a></div></div>
+<div class="ttc" id="aclass_drive_to_wall_html"><div class="ttname"><a href="class_drive_to_wall.html">DriveToWall</a></div><div class="ttdef"><b>Definition:</b> <a href="_drive_to_wall_8h_source.html#l00033">DriveToWall.h:33</a></div></div>
 <div class="ttc" id="aclass_primitive_params_html"><div class="ttname"><a href="class_primitive_params.html">PrimitiveParams</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8h_source.html#l00035">PrimitiveParams.h:35</a></div></div>
-<div class="ttc" id="a_i_chassis_8h_html"><div class="ttname"><a href="_i_chassis_8h.html">IChassis.h</a></div></div>
 <div class="ttc" id="aclass_drive_to_wall_html_adbc157105a2be56d57e4ab92269aa472"><div class="ttname"><a href="class_drive_to_wall.html#adbc157105a2be56d57e4ab92269aa472">DriveToWall::Init</a></div><div class="ttdeci">void Init(PrimitiveParams *params) override</div><div class="ttdef"><b>Definition:</b> <a href="_drive_to_wall_8cpp_source.html#l00056">DriveToWall.cpp:56</a></div></div>
 <div class="ttc" id="aclass_drive_to_wall_html_a991327714f3c6a5588c5d496440ae5eb"><div class="ttname"><a href="class_drive_to_wall.html#a991327714f3c6a5588c5d496440ae5eb">DriveToWall::~DriveToWall</a></div><div class="ttdeci">virtual ~DriveToWall()=default</div></div>
-<div class="ttc" id="a_primitive_params_8h_html"><div class="ttname"><a href="_primitive_params_8h.html">PrimitiveParams.h</a></div></div>
 <div class="ttc" id="a_super_drive_8h_html"><div class="ttname"><a href="_super_drive_8h.html">SuperDrive.h</a></div></div>
 <div class="ttc" id="aclass_drive_to_wall_html_adfb42e55ae1c6ca096422d020df0154b"><div class="ttname"><a href="class_drive_to_wall.html#adfb42e55ae1c6ca096422d020df0154b">DriveToWall::IsDone</a></div><div class="ttdeci">bool IsDone() override</div><div class="ttdef"><b>Definition:</b> <a href="_drive_to_wall_8cpp_source.html#l00078">DriveToWall.cpp:78</a></div></div>
 <div class="ttc" id="aclass_drive_to_wall_html_ad9ef380239cab3939c348c500974f882"><div class="ttname"><a href="class_drive_to_wall.html#ad9ef380239cab3939c348c500974f882">DriveToWall::DriveToWall</a></div><div class="ttdeci">DriveToWall()</div><div class="ttdef"><b>Definition:</b> <a href="_drive_to_wall_8cpp_source.html#l00048">DriveToWall.cpp:48</a></div></div>

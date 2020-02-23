@@ -7,8 +7,6 @@ var class_control_panel_state_mgr =
       [ "COLOR_TURN", "class_control_panel_state_mgr.html#a87648a2688942ba2bbbaee7adb895c3aade574332c5e5a6d58073a43f948c64fe", null ],
       [ "MAX_CONTROL_PANEL_STATES", "class_control_panel_state_mgr.html#a87648a2688942ba2bbbaee7adb895c3aa1f12f7ab1e60bf0b294926174855063d", null ]
     ] ],
-    [ "ControlPanelStateMgr", "class_control_panel_state_mgr.html#acbe49bffdab1d538516a19e5f917c7c0", null ],
-    [ "~ControlPanelStateMgr", "class_control_panel_state_mgr.html#ac91ad553411d072fbd06e1872e991088", null ],
     [ "GetCurrentState", "class_control_panel_state_mgr.html#a6e7cb68402b7ded430ffe2b0806bdb55", null ],
     [ "RunCurrentState", "class_control_panel_state_mgr.html#a1e3c91c110f9fe2251f35dbd23d29220", null ],
     [ "SetCurrentState", "class_control_panel_state_mgr.html#a31133fcec10aec96a451555e40e41658", null ]

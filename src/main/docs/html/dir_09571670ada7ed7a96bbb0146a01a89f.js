@@ -10,7 +10,9 @@ var dir_09571670ada7ed7a96bbb0146a01a89f =
       [ "DragonDigitalInput", "class_dragon_digital_input.html", "class_dragon_digital_input" ]
     ] ],
     [ "DragonFalcon.cpp", "_dragon_falcon_8cpp.html", null ],
-    [ "DragonFalcon.h", "_dragon_falcon_8h.html", "_dragon_falcon_8h" ],
+    [ "DragonFalcon.h", "_dragon_falcon_8h.html", [
+      [ "DragonFalcon", "class_dragon_falcon.html", "class_dragon_falcon" ]
+    ] ],
     [ "DragonLidar.cpp", "_dragon_lidar_8cpp.html", null ],
     [ "DragonLidar.h", "_dragon_lidar_8h.html", [
       [ "DragonLidar", "class_dragon_lidar.html", "class_dragon_lidar" ]

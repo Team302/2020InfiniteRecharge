@@ -18,6 +18,7 @@ var hierarchy =
     [ "ChassisDefn", "class_chassis_defn.html", null ],
     [ "ChassisFactory", "class_chassis_factory.html", null ],
     [ "ChassisStateMgr", "class_chassis_state_mgr.html", null ],
+    [ "ClimberStateMgr", "class_climber_state_mgr.html", null ],
     [ "ColorSensorDefn", "class_color_sensor_defn.html", null ],
     [ "ControlData", "class_control_data.html", null ],
     [ "ControlDataDefn", "class_control_data_defn.html", null ],
@@ -39,6 +40,7 @@ var hierarchy =
     [ "DragonSolenoid", "class_dragon_solenoid.html", null ],
     [ "DragonTalonTach", "class_dragon_talon_tach.html", null ],
     [ "DragonVision", "class_dragon_vision.html", null ],
+    [ "DriverFeedback", "class_driver_feedback.html", null ],
     [ "FeedbackDefn", "class_feedback_defn.html", null ],
     [ "FieldDefn", "class_field_defn.html", null ],
     [ "FieldMeasurement", "class_field_measurement.html", null ],
@@ -111,9 +113,7 @@ var hierarchy =
         [ "DriveTime", "class_drive_time.html", null ],
         [ "DriveToWall", "class_drive_to_wall.html", null ]
       ] ],
-      [ "TurnAngle", "class_turn_angle.html", [
-        [ "TurnToCube", "class_turn_to_cube.html", null ]
-      ] ]
+      [ "TurnAngle", "class_turn_angle.html", null ]
     ] ],
     [ "IProfile", "class_i_profile.html", [
       [ "CubedProfile", "class_cubed_profile.html", null ],
@@ -148,7 +148,6 @@ var hierarchy =
         [ "IntakeOff", "class_intake_off.html", null ],
         [ "IntakeOn", "class_intake_on.html", null ],
         [ "ShooterGetReady", "class_shooter_get_ready.html", null ],
-        [ "ShooterHoodHold", "class_shooter_hood_hold.html", null ],
         [ "ShooterHoodHoldPosition", "class_shooter_hood_hold_position.html", null ],
         [ "ShooterHoodMoveDown", "class_shooter_hood_move_down.html", null ],
         [ "ShooterHoodMoveUp", "class_shooter_hood_move_up.html", null ],
@@ -203,6 +202,7 @@ var hierarchy =
     [ "TalonTachDefn", "class_talon_tach_defn.html", null ],
     [ "TeleopControl", "class_teleop_control.html", null ],
     [ "TestIntake", "class_test_intake.html", null ],
+    [ "ThroughBoreEncoderDefn", "class_through_bore_encoder_defn.html", null ],
     [ "TimedRobot", null, [
       [ "Robot", "class_robot.html", null ]
     ] ],

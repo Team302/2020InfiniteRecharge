@@ -1,5 +1,5 @@
 //====================================================================================================================================================
-// Copyright 2019 Lake Orion Robotics FIRST Team 302
+// Copyright 2020 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
@@ -82,7 +82,7 @@ ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
                 {
                     case SHOOTER_STATE::OFF:
                     {   
-                        auto thisState = new ShooterOff( controlData, target, solState );
+                        auto thisState = new ShooterOff( controlData, target, fbControlData, fbTarget, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -92,14 +92,14 @@ ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
 
                     case SHOOTER_STATE::GET_READY:
                     {   
-                        auto thisState = new ShooterGetReady( controlData, target, solState );
+                        auto thisState = new ShooterGetReady( controlData, target, fbControlData, fbTarget, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;
 
                     case SHOOTER_STATE::SHOOT:
                     {   
-                        auto thisState = new ShooterShoot( controlData, target, solState );
+                        auto thisState = new ShooterShoot( controlData, target, fbControlData, fbTarget, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;

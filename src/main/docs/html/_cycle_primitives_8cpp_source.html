@@ -122,57 +122,57 @@ $(document).ready(function(){initNavTree('_cycle_primitives_8cpp_source.html',''
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_primitive_params_8h.html">auton/PrimitiveParams.h</a>&gt;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_ball_manipulator_8h.html">states/BallManipulator.h</a>&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_logger_8h.html">utils/Logger.h</a>&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Third Party Includes</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">using namespace </span>frc;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_cycle_primitives.html#a56b8e26d491bf62929b3ff2a8bf88df1">   40</a></span>&#160;<a class="code" href="class_cycle_primitives.html#a56b8e26d491bf62929b3ff2a8bf88df1">CyclePrimitives::CyclePrimitives</a>() : m_primParams(), </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                     m_currentPrimSlot(0), </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                     m_currentPrim(nullptr), </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                     m_primFactory(</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                     <a class="code" href="class_primitive_factory.html">PrimitiveFactory</a>::GetInstance()), </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                     m_doNothing(nullptr), </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                     m_autonSelector( new <a class="code" href="class_auton_selector.html">AutonSelector</a>()) ,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                     m_timer( make_unique&lt;Timer&gt;()),</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                     m_maxTime( 0.0 ),</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                     m_powerCells( new <a class="code" href="class_auto_shoot.html">AutoShoot</a>() ),</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                     m_isDone( false )</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_cycle_primitives.html#a65cc624864058fc7e5baac5eaba5bb43">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_cycle_primitives.html#a65cc624864058fc7e5baac5eaba5bb43">CyclePrimitives::Init</a>()</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    m_currentPrimSlot = 0; <span class="comment">//Reset current prim</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    m_primParams.clear();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    m_primParams = <a class="code" href="class_primitive_parser.html#ad8da5211af321915cf81df5d6b0c74fa">PrimitiveParser::ParseXML</a>( m_autonSelector-&gt;<a class="code" href="class_auton_selector.html#aa3ce88e9281070ee93d9437cb80b1ce1">GetSelectedAutoFile</a>() );</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> (!m_primParams.empty())</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="class_cycle_primitives.html#a9f921368b99b36e3fe3a68671079306f">GetNextPrim</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_cycle_primitives.html#a7432e2831627ea039e9de82cb0dabb5c">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_cycle_primitives.html#a7432e2831627ea039e9de82cb0dabb5c">CyclePrimitives::Run</a>()</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (m_currentPrim != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;CyclePrimitive::RunCurrentPrimitive&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;Primitive Detected!&quot;</span>));</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        m_currentPrim-&gt;<a class="code" href="class_i_primitive.html#a3c34bd0f5ddbfe150ecade13303b6cd6">Run</a>();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">//m_powerCells-&gt;Run();</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">// todo: run gamepiece manipulator primitives in parallel here</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_auto_shoot_8h.html">auton/primitives/AutoShoot.h</a>&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// Third Party Includes</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacefrc.html">frc</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_cycle_primitives.html#a56b8e26d491bf62929b3ff2a8bf88df1">   41</a></span>&#160;<a class="code" href="class_cycle_primitives.html#a56b8e26d491bf62929b3ff2a8bf88df1">CyclePrimitives::CyclePrimitives</a>() : m_primParams(), </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                     m_currentPrimSlot(0), </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                     m_currentPrim(nullptr), </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                     m_primFactory(</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                     <a class="code" href="class_primitive_factory.html">PrimitiveFactory</a>::GetInstance()), </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                     m_doNothing(nullptr), </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                     m_autonSelector( new <a class="code" href="class_auton_selector.html">AutonSelector</a>()) ,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                     m_timer( make_unique&lt;Timer&gt;()),</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                     m_maxTime( 0.0 ),</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                     m_powerCells( new <a class="code" href="class_auto_shoot.html">AutoShoot</a>() ),</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                     m_isDone( false )</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_cycle_primitives.html#a65cc624864058fc7e5baac5eaba5bb43">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_cycle_primitives.html#a65cc624864058fc7e5baac5eaba5bb43">CyclePrimitives::Init</a>()</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    m_currentPrimSlot = 0; <span class="comment">//Reset current prim</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    m_primParams.clear();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    frc::SmartDashboard::PutString(<span class="stringliteral">&quot;Auton file&quot;</span>, m_autonSelector-&gt;<a class="code" href="class_auton_selector.html#aa3ce88e9281070ee93d9437cb80b1ce1">GetSelectedAutoFile</a>());</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    m_primParams = <a class="code" href="class_primitive_parser.html#ad8da5211af321915cf81df5d6b0c74fa">PrimitiveParser::ParseXML</a>( m_autonSelector-&gt;<a class="code" href="class_auton_selector.html#aa3ce88e9281070ee93d9437cb80b1ce1">GetSelectedAutoFile</a>() );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    frc::SmartDashboard::PutNumber(<span class="stringliteral">&quot;Prim Vector length&quot;</span>, m_primParams.size());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (!m_primParams.empty())</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="class_cycle_primitives.html#a9f921368b99b36e3fe3a68671079306f">GetNextPrim</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_cycle_primitives.html#a7432e2831627ea039e9de82cb0dabb5c">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_cycle_primitives.html#a7432e2831627ea039e9de82cb0dabb5c">CyclePrimitives::Run</a>()</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (m_currentPrim != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;CyclePrimitive::RunCurrentPrimitive&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;Primitive Detected!&quot;</span>));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        m_currentPrim-&gt;<a class="code" href="class_i_primitive.html#a3c34bd0f5ddbfe150ecade13303b6cd6">Run</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">//m_powerCells-&gt;Run();</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (m_currentPrim-&gt;<a class="code" href="class_i_primitive.html#a5b62801261f9bd974be04217bd86f668">IsDone</a>() )</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="class_cycle_primitives.html#a9f921368b99b36e3fe3a68671079306f">GetNextPrim</a>();</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( m_timer-&gt;HasPeriodPassed( m_maxTime ) )</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="comment">// timed out; for now let&#39;s just assume the previous was done</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>( <span class="stringliteral">&quot;CyclePrimitives::RunCurrentPrimitive&quot;</span>), <span class="keywordtype">string</span>( <span class="stringliteral">&quot;Primitive Timed out&quot;</span> ));</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="class_cycle_primitives.html#a9f921368b99b36e3fe3a68671079306f">GetNextPrim</a>();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">/*else if ( m_timer-&gt;HasPeriodPassed( m_maxTime ) )</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">        {</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">            // timed out; for now let&#39;s just assume the previous was done</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">            Logger::GetLogger()-&gt;LogError( string( &quot;CyclePrimitives::RunCurrentPrimitive&quot;), string( &quot;Primitive Timed out&quot; ));</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">            GetNextPrim();</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">        }*/</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
@@ -241,22 +241,24 @@ $(document).ready(function(){initNavTree('_cycle_primitives_8cpp_source.html',''
 <div class="ttc" id="a_auton_selector_8h_html"><div class="ttname"><a href="_auton_selector_8h.html">AutonSelector.h</a></div></div>
 <div class="ttc" id="aclass_auton_selector_html"><div class="ttname"><a href="class_auton_selector.html">AutonSelector</a></div><div class="ttdef"><b>Definition:</b> <a href="_auton_selector_8h_source.html#l00023">AutonSelector.h:23</a></div></div>
 <div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
-<div class="ttc" id="aclass_primitive_factory_html"><div class="ttname"><a href="class_primitive_factory.html">PrimitiveFactory</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8h_source.html#l00033">PrimitiveFactory.h:33</a></div></div>
+<div class="ttc" id="aclass_primitive_factory_html"><div class="ttname"><a href="class_primitive_factory.html">PrimitiveFactory</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8h_source.html#l00034">PrimitiveFactory.h:34</a></div></div>
 <div class="ttc" id="a_primitive_parser_8h_html"><div class="ttname"><a href="_primitive_parser_8h.html">PrimitiveParser.h</a></div></div>
-<div class="ttc" id="aclass_cycle_primitives_html_a7432e2831627ea039e9de82cb0dabb5c"><div class="ttname"><a href="class_cycle_primitives.html#a7432e2831627ea039e9de82cb0dabb5c">CyclePrimitives::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_cycle_primitives_8cpp_source.html#l00067">CyclePrimitives.cpp:67</a></div></div>
-<div class="ttc" id="aclass_primitive_parser_html_ad8da5211af321915cf81df5d6b0c74fa"><div class="ttname"><a href="class_primitive_parser.html#ad8da5211af321915cf81df5d6b0c74fa">PrimitiveParser::ParseXML</a></div><div class="ttdeci">static PrimitiveParamsVector ParseXML(std::string fileName)</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_parser_8cpp_source.html#l00025">PrimitiveParser.cpp:25</a></div></div>
+<div class="ttc" id="aclass_cycle_primitives_html_a7432e2831627ea039e9de82cb0dabb5c"><div class="ttname"><a href="class_cycle_primitives.html#a7432e2831627ea039e9de82cb0dabb5c">CyclePrimitives::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_cycle_primitives_8cpp_source.html#l00068">CyclePrimitives.cpp:68</a></div></div>
+<div class="ttc" id="aclass_primitive_parser_html_ad8da5211af321915cf81df5d6b0c74fa"><div class="ttname"><a href="class_primitive_parser.html#ad8da5211af321915cf81df5d6b0c74fa">PrimitiveParser::ParseXML</a></div><div class="ttdeci">static PrimitiveParamsVector ParseXML(std::string fileName)</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_parser_8cpp_source.html#l00035">PrimitiveParser.cpp:35</a></div></div>
 <div class="ttc" id="aclass_logger_html_a98d7aec19dcdfb9d8faa46d83d927883"><div class="ttname"><a href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">Logger::LogError</a></div><div class="ttdeci">void LogError(const std::string &amp;locationIdentifier, const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00071">Logger.cpp:71</a></div></div>
 <div class="ttc" id="aclass_auton_selector_html_aa3ce88e9281070ee93d9437cb80b1ce1"><div class="ttname"><a href="class_auton_selector.html#aa3ce88e9281070ee93d9437cb80b1ce1">AutonSelector::GetSelectedAutoFile</a></div><div class="ttdeci">std::string GetSelectedAutoFile()</div><div class="ttdef"><b>Definition:</b> <a href="_auton_selector_8cpp_source.html#l00051">AutonSelector.cpp:51</a></div></div>
 <div class="ttc" id="aclass_logger_html_ae85cfbef8b7e6940475a5012fa1935c6"><div class="ttname"><a href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a></div><div class="ttdeci">static Logger * GetLogger()</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00052">Logger.cpp:52</a></div></div>
 <div class="ttc" id="aclass_primitive_params_html_a478d763e9de6526e13de4d23d1dca71c"><div class="ttname"><a href="class_primitive_params.html#a478d763e9de6526e13de4d23d1dca71c">PrimitiveParams::GetTime</a></div><div class="ttdeci">float GetTime() const</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8cpp_source.html#l00043">PrimitiveParams.cpp:43</a></div></div>
-<div class="ttc" id="aclass_cycle_primitives_html_a65cc624864058fc7e5baac5eaba5bb43"><div class="ttname"><a href="class_cycle_primitives.html#a65cc624864058fc7e5baac5eaba5bb43">CyclePrimitives::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdef"><b>Definition:</b> <a href="_cycle_primitives_8cpp_source.html#l00054">CyclePrimitives.cpp:54</a></div></div>
+<div class="ttc" id="aclass_cycle_primitives_html_a65cc624864058fc7e5baac5eaba5bb43"><div class="ttname"><a href="class_cycle_primitives.html#a65cc624864058fc7e5baac5eaba5bb43">CyclePrimitives::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdef"><b>Definition:</b> <a href="_cycle_primitives_8cpp_source.html#l00055">CyclePrimitives.cpp:55</a></div></div>
 <div class="ttc" id="aclass_auto_shoot_html"><div class="ttname"><a href="class_auto_shoot.html">AutoShoot</a></div><div class="ttdef"><b>Definition:</b> <a href="_auto_shoot_8h_source.html#l00024">AutoShoot.h:24</a></div></div>
-<div class="ttc" id="aclass_ball_manipulator_html_a91bf71119c5fecb46b41a90485f7a9a4"><div class="ttname"><a href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4">BallManipulator::BALL_MANIPULATOR_STATE</a></div><div class="ttdeci">BALL_MANIPULATOR_STATE</div><div class="ttdef"><b>Definition:</b> <a href="_ball_manipulator_8h_source.html#l00038">BallManipulator.h:38</a></div></div>
+<div class="ttc" id="aclass_ball_manipulator_html_a91bf71119c5fecb46b41a90485f7a9a4"><div class="ttname"><a href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4">BallManipulator::BALL_MANIPULATOR_STATE</a></div><div class="ttdeci">BALL_MANIPULATOR_STATE</div><div class="ttdef"><b>Definition:</b> <a href="_ball_manipulator_8h_source.html#l00037">BallManipulator.h:37</a></div></div>
 <div class="ttc" id="aclass_cycle_primitives_html_a6c2756efaaa95f76e14a1808adc18f58"><div class="ttname"><a href="class_cycle_primitives.html#a6c2756efaaa95f76e14a1808adc18f58">CyclePrimitives::RunDoNothing</a></div><div class="ttdeci">void RunDoNothing()</div><div class="ttdef"><b>Definition:</b> <a href="_cycle_primitives_8cpp_source.html#l00118">CyclePrimitives.cpp:118</a></div></div>
 <div class="ttc" id="a_primitive_factory_8h_html"><div class="ttname"><a href="_primitive_factory_8h.html">PrimitiveFactory.h</a></div></div>
 <div class="ttc" id="a_primitive_params_8h_html"><div class="ttname"><a href="_primitive_params_8h.html">PrimitiveParams.h</a></div></div>
-<div class="ttc" id="aclass_cycle_primitives_html_a56b8e26d491bf62929b3ff2a8bf88df1"><div class="ttname"><a href="class_cycle_primitives.html#a56b8e26d491bf62929b3ff2a8bf88df1">CyclePrimitives::CyclePrimitives</a></div><div class="ttdeci">CyclePrimitives()</div><div class="ttdef"><b>Definition:</b> <a href="_cycle_primitives_8cpp_source.html#l00040">CyclePrimitives.cpp:40</a></div></div>
-<div class="ttc" id="aclass_primitive_factory_html_a4b9c4c4f1f94ff52cc26654287a475d0"><div class="ttname"><a href="class_primitive_factory.html#a4b9c4c4f1f94ff52cc26654287a475d0">PrimitiveFactory::GetIPrimitive</a></div><div class="ttdeci">IPrimitive * GetIPrimitive(PrimitiveParams *primitivePasser)</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00048">PrimitiveFactory.cpp:48</a></div></div>
+<div class="ttc" id="anamespacefrc_html"><div class="ttname"><a href="namespacefrc.html">frc</a></div><div class="ttdef"><b>Definition:</b> <a href="_do_nothing_8h_source.html#l00034">DoNothing.h:34</a></div></div>
+<div class="ttc" id="aclass_cycle_primitives_html_a56b8e26d491bf62929b3ff2a8bf88df1"><div class="ttname"><a href="class_cycle_primitives.html#a56b8e26d491bf62929b3ff2a8bf88df1">CyclePrimitives::CyclePrimitives</a></div><div class="ttdeci">CyclePrimitives()</div><div class="ttdef"><b>Definition:</b> <a href="_cycle_primitives_8cpp_source.html#l00041">CyclePrimitives.cpp:41</a></div></div>
+<div class="ttc" id="a_auto_shoot_8h_html"><div class="ttname"><a href="_auto_shoot_8h.html">AutoShoot.h</a></div></div>
+<div class="ttc" id="aclass_primitive_factory_html_a4b9c4c4f1f94ff52cc26654287a475d0"><div class="ttname"><a href="class_primitive_factory.html#a4b9c4c4f1f94ff52cc26654287a475d0">PrimitiveFactory::GetIPrimitive</a></div><div class="ttdeci">IPrimitive * GetIPrimitive(PrimitiveParams *primitivePasser)</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00046">PrimitiveFactory.cpp:46</a></div></div>
 <div class="ttc" id="a_primitive_enums_8h_html"><div class="ttname"><a href="_primitive_enums_8h.html">PrimitiveEnums.h</a></div></div>
 <div class="ttc" id="aclass_i_primitive_html_a3c34bd0f5ddbfe150ecade13303b6cd6"><div class="ttname"><a href="class_i_primitive.html#a3c34bd0f5ddbfe150ecade13303b6cd6">IPrimitive::Run</a></div><div class="ttdeci">virtual void Run()=0</div></div>
 <!-- start footer part -->

@@ -115,41 +115,35 @@ $(document).ready(function(){initNavTree('_drive_time_8h_source.html','');});
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Third Party Includes</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//Includes</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//Team302 includes</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_super_drive_8h.html">auton/primitives/SuperDrive.h</a>&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_drive_time_8h.html">auton/primitives/DriveTime.h</a>&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_chassis_8h.html">subsys/IChassis.h</a>&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_primitive_8h.html">auton/primitives/IPrimitive.h</a>&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_drive_time.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_drive_time.html">DriveTime</a>: <span class="keyword">public</span> <a class="code" href="class_super_drive.html">SuperDrive</a> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_drive_time.html#a99e41322fdec03683a725f7f607adad7">DriveTime</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_drive_time.html#a29daa826437e8bacc77d904aac3f4f9b">~DriveTime</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_time.html#a88957150638e73a701191d9caa7515f6">Init</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>* params) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_time.html#a5d686a5f2ffa3fd6a0429b7841aeb0c7">Run</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_drive_time.html#a2cb7c304e83f109a7f35f719a5b95495">IsDone</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//Includes</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//Team302 includes</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_super_drive_8h.html">auton/primitives/SuperDrive.h</a>&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">class </span><a class="code" href="class_primitive_params.html">PrimitiveParams</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_drive_time.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_drive_time.html">DriveTime</a>: <span class="keyword">public</span> <a class="code" href="class_super_drive.html">SuperDrive</a> </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_drive_time.html#a99e41322fdec03683a725f7f607adad7">DriveTime</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_drive_time.html#a29daa826437e8bacc77d904aac3f4f9b">~DriveTime</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_time.html#a88957150638e73a701191d9caa7515f6">Init</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>* params) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_time.html#a5d686a5f2ffa3fd6a0429b7841aeb0c7">Run</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_drive_time.html#a2cb7c304e83f109a7f35f719a5b95495">IsDone</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">float</span> m_timeRemaining;          <span class="comment">//In seconds</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">float</span> m_timeRemaining;          <span class="comment">//In seconds</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_drive_time_html_a2cb7c304e83f109a7f35f719a5b95495"><div class="ttname"><a href="class_drive_time.html#a2cb7c304e83f109a7f35f719a5b95495">DriveTime::IsDone</a></div><div class="ttdeci">bool IsDone() override</div><div class="ttdef"><b>Definition:</b> <a href="_drive_time_8cpp_source.html#l00066">DriveTime.cpp:66</a></div></div>
-<div class="ttc" id="a_i_primitive_8h_html"><div class="ttname"><a href="_i_primitive_8h.html">IPrimitive.h</a></div></div>
-<div class="ttc" id="aclass_super_drive_html"><div class="ttname"><a href="class_super_drive.html">SuperDrive</a></div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00033">SuperDrive.h:33</a></div></div>
+<div class="ttc" id="aclass_super_drive_html"><div class="ttname"><a href="class_super_drive.html">SuperDrive</a></div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00036">SuperDrive.h:36</a></div></div>
 <div class="ttc" id="aclass_drive_time_html_a29daa826437e8bacc77d904aac3f4f9b"><div class="ttname"><a href="class_drive_time.html#a29daa826437e8bacc77d904aac3f4f9b">DriveTime::~DriveTime</a></div><div class="ttdeci">virtual ~DriveTime()=default</div></div>
 <div class="ttc" id="aclass_primitive_params_html"><div class="ttname"><a href="class_primitive_params.html">PrimitiveParams</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8h_source.html#l00035">PrimitiveParams.h:35</a></div></div>
 <div class="ttc" id="aclass_drive_time_html_a5d686a5f2ffa3fd6a0429b7841aeb0c7"><div class="ttname"><a href="class_drive_time.html#a5d686a5f2ffa3fd6a0429b7841aeb0c7">DriveTime::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_drive_time_8cpp_source.html#l00060">DriveTime.cpp:60</a></div></div>
-<div class="ttc" id="a_i_chassis_8h_html"><div class="ttname"><a href="_i_chassis_8h.html">IChassis.h</a></div></div>
-<div class="ttc" id="aclass_drive_time_html"><div class="ttname"><a href="class_drive_time.html">DriveTime</a></div><div class="ttdef"><b>Definition:</b> <a href="_drive_time_8h_source.html#l00037">DriveTime.h:37</a></div></div>
+<div class="ttc" id="aclass_drive_time_html"><div class="ttname"><a href="class_drive_time.html">DriveTime</a></div><div class="ttdef"><b>Definition:</b> <a href="_drive_time_8h_source.html#l00033">DriveTime.h:33</a></div></div>
 <div class="ttc" id="aclass_drive_time_html_a88957150638e73a701191d9caa7515f6"><div class="ttname"><a href="class_drive_time.html#a88957150638e73a701191d9caa7515f6">DriveTime::Init</a></div><div class="ttdeci">void Init(PrimitiveParams *params) override</div><div class="ttdef"><b>Definition:</b> <a href="_drive_time_8cpp_source.html#l00053">DriveTime.cpp:53</a></div></div>
-<div class="ttc" id="a_drive_time_8h_html"><div class="ttname"><a href="_drive_time_8h.html">DriveTime.h</a></div></div>
 <div class="ttc" id="a_super_drive_8h_html"><div class="ttname"><a href="_super_drive_8h.html">SuperDrive.h</a></div></div>
 <div class="ttc" id="aclass_drive_time_html_a99e41322fdec03683a725f7f607adad7"><div class="ttname"><a href="class_drive_time.html#a99e41322fdec03683a725f7f607adad7">DriveTime::DriveTime</a></div><div class="ttdeci">DriveTime()</div><div class="ttdef"><b>Definition:</b> <a href="_drive_time_8cpp_source.html#l00046">DriveTime.cpp:46</a></div></div>
 <!-- start footer part -->

@@ -38,9 +38,5 @@ var dir_d1eff68d22c03a4c79b32822dd1a90d8 =
     [ "TurnAngle.cpp", "_turn_angle_8cpp.html", null ],
     [ "TurnAngle.h", "_turn_angle_8h.html", [
       [ "TurnAngle", "class_turn_angle.html", "class_turn_angle" ]
-    ] ],
-    [ "TurnToCube.cpp", "_turn_to_cube_8cpp.html", null ],
-    [ "TurnToCube.h", "_turn_to_cube_8h.html", [
-      [ "TurnToCube", "class_turn_to_cube.html", "class_turn_to_cube" ]
     ] ]
 ];

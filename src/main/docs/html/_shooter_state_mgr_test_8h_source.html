@@ -108,49 +108,49 @@ $(document).ready(function(){initNavTree('_shooter_state_mgr_test_8h_source.html
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// C++ Includes</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// FRC includes</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_state_test_8h.html">test/IStateTest.h</a>&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_shooter_state_mgr_8h.html">states/shooter/ShooterStateMgr.h</a>&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Third Party Includes</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// FRC includes</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Team 302 includes</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_state_test_8h.html">test/IStateTest.h</a>&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_shooter_state_mgr_8h.html">states/shooter/ShooterStateMgr.h</a>&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Third Party Includes</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_shooter_state_mgr_test.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_shooter_state_mgr_test.html">ShooterStateMgrTest</a> : <span class="keyword">public</span> <a class="code" href="class_i_state_test.html">IStateTest</a></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="class_shooter_state_mgr_test.html#a6ab48705dfd4ba47a5c141a461ca0424">ShooterStateMgrTest</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="class_shooter_state_mgr_test.html#aefb78321c029424f73a6b3d1d22eff16">~ShooterStateMgrTest</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_shooter_state_mgr_test.html#a85016fe388c963ed93f8b1dbb018c809">Init</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_shooter_state_mgr_test.html#a1465bcce1ef2d62e62db1f0ecb1ca333">Periodic</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_shooter_state_mgr_test.html#a82f2f680e75b5f6fc42937a470cc8b8c">IsDone</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        std::unique_ptr&lt;ShooterStateMgr&gt;        m_stateMgr;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">bool</span>                                    m_ranReady;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">bool</span>                                    m_ranShoot;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">bool</span>                                    m_ranOff;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">bool</span>                                    m_isDone;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">int</span>                                     m_loopCnt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>   m_nloops = 100;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_shooter_state_mgr_test.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_shooter_state_mgr_test.html">ShooterStateMgrTest</a> : <span class="keyword">public</span> <a class="code" href="class_i_state_test.html">IStateTest</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="class_shooter_state_mgr_test.html#a6ab48705dfd4ba47a5c141a461ca0424">ShooterStateMgrTest</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="class_shooter_state_mgr_test.html#aefb78321c029424f73a6b3d1d22eff16">~ShooterStateMgrTest</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_shooter_state_mgr_test.html#a85016fe388c963ed93f8b1dbb018c809">Init</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_shooter_state_mgr_test.html#a1465bcce1ef2d62e62db1f0ecb1ca333">Periodic</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_shooter_state_mgr_test.html#a82f2f680e75b5f6fc42937a470cc8b8c">IsDone</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_shooter_state_mgr.html">ShooterStateMgr</a>*                        m_stateMgr;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">bool</span>                                    m_ranReady;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">bool</span>                                    m_ranShoot;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">bool</span>                                    m_ranOff;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">bool</span>                                    m_isDone;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">int</span>                                     m_loopCnt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>   m_nloops = 100;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_i_state_test_html"><div class="ttname"><a href="class_i_state_test.html">IStateTest</a></div><div class="ttdoc">Interface for testing subsystem states.</div><div class="ttdef"><b>Definition:</b> <a href="_i_state_test_8h_source.html#l00031">IStateTest.h:31</a></div></div>
 <div class="ttc" id="aclass_shooter_state_mgr_test_html_a82f2f680e75b5f6fc42937a470cc8b8c"><div class="ttname"><a href="class_shooter_state_mgr_test.html#a82f2f680e75b5f6fc42937a470cc8b8c">ShooterStateMgrTest::IsDone</a></div><div class="ttdeci">bool IsDone() override</div><div class="ttdoc">Indicate whether the test has completed or not.</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_state_mgr_test_8cpp_source.html#l00090">ShooterStateMgrTest.cpp:90</a></div></div>
 <div class="ttc" id="a_shooter_state_mgr_8h_html"><div class="ttname"><a href="_shooter_state_mgr_8h.html">ShooterStateMgr.h</a></div></div>
+<div class="ttc" id="aclass_shooter_state_mgr_html"><div class="ttname"><a href="class_shooter_state_mgr.html">ShooterStateMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="_shooter_state_mgr_8h_source.html#l00028">ShooterStateMgr.h:28</a></div></div>
 <div class="ttc" id="aclass_shooter_state_mgr_test_html_a85016fe388c963ed93f8b1dbb018c809"><div class="ttname"><a href="class_shooter_state_mgr_test.html#a85016fe388c963ed93f8b1dbb018c809">ShooterStateMgrTest::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdoc">Initialize the test setup. This will be called from Robot::TestInit()</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_state_mgr_test_8cpp_source.html#l00049">ShooterStateMgrTest.cpp:49</a></div></div>
 <div class="ttc" id="aclass_shooter_state_mgr_test_html_a6ab48705dfd4ba47a5c141a461ca0424"><div class="ttname"><a href="class_shooter_state_mgr_test.html#a6ab48705dfd4ba47a5c141a461ca0424">ShooterStateMgrTest::ShooterStateMgrTest</a></div><div class="ttdeci">ShooterStateMgrTest()</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_state_mgr_test_8cpp_source.html#l00037">ShooterStateMgrTest.cpp:37</a></div></div>
 <div class="ttc" id="aclass_shooter_state_mgr_test_html_a1465bcce1ef2d62e62db1f0ecb1ca333"><div class="ttname"><a href="class_shooter_state_mgr_test.html#a1465bcce1ef2d62e62db1f0ecb1ca333">ShooterStateMgrTest::Periodic</a></div><div class="ttdeci">void Periodic() override</div><div class="ttdoc">Run the test. This will be called from Robot::TestPeriodic()</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_state_mgr_test_8cpp_source.html#l00058">ShooterStateMgrTest.cpp:58</a></div></div>
-<div class="ttc" id="aclass_shooter_state_mgr_test_html"><div class="ttname"><a href="class_shooter_state_mgr_test.html">ShooterStateMgrTest</a></div><div class="ttdoc">Tests for ShooterStateMgr. There are three states: OFF, GET_READY, and SHOOT. This will run each for ...</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_state_mgr_test_8h_source.html#l00034">ShooterStateMgrTest.h:34</a></div></div>
+<div class="ttc" id="aclass_shooter_state_mgr_test_html"><div class="ttname"><a href="class_shooter_state_mgr_test.html">ShooterStateMgrTest</a></div><div class="ttdoc">Tests for ShooterStateMgr. There are three states: OFF, GET_READY, and SHOOT. This will run each for ...</div><div class="ttdef"><b>Definition:</b> <a href="_shooter_state_mgr_test_8h_source.html#l00033">ShooterStateMgrTest.h:33</a></div></div>
 <div class="ttc" id="aclass_shooter_state_mgr_test_html_aefb78321c029424f73a6b3d1d22eff16"><div class="ttname"><a href="class_shooter_state_mgr_test.html#aefb78321c029424f73a6b3d1d22eff16">ShooterStateMgrTest::~ShooterStateMgrTest</a></div><div class="ttdeci">~ShooterStateMgrTest()=default</div></div>
 <div class="ttc" id="a_i_state_test_8h_html"><div class="ttname"><a href="_i_state_test_8h.html">IStateTest.h</a></div></div>
 <!-- start footer part -->
