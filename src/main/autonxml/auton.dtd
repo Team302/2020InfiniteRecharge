@@ -38,7 +38,7 @@
 <!ATTLIST primitive 
           id                ( DO_NOTHING | HOLD_POSITION | 
                               DRIVE_DISTANCE | DRIVE_TIME | DRIVE_TO_WALL | 
-                              TURN_ANGLE_ABS | TURN_ANGLE_REL ) "DO_NOTHING"
+                              TURN_ANGLE_ABS | TURN_ANGLE_REL | AUTO_SHOOT ) "DO_NOTHING"
 		  time				CDATA #IMPLIED
           distance		    CDATA "0.0"
           heading           CDATA "0.0"

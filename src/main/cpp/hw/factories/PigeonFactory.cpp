@@ -52,7 +52,10 @@ PigeonFactory* PigeonFactory::GetFactory()
 	return PigeonFactory::m_factory;
 }
 
-
+PigeonFactory::PigeonFactory()
+{
+    m_pigeon = nullptr;
+}
 
 
 /// @brief  Create the requested analog input
@@ -63,7 +66,7 @@ DragonPigeon* PigeonFactory::CreatePigeon
     int 	canID
 )
 {
-    if ( m_pigeon != nullptr )
+    if ( m_pigeon == nullptr )
     {
         m_pigeon = new DragonPigeon( canID );
     }

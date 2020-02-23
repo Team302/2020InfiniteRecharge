@@ -33,6 +33,8 @@
 #include <auton/PrimitiveParams.h>
 #include <states/BallManipulator.h>
 
+#include <utils/Logger.h>
+
 using namespace std;
 
 // Third Party Includes
@@ -47,6 +49,7 @@ AutoShoot::AutoShoot
 
 void AutoShoot::Init(PrimitiveParams* params)
 {
+    Logger::GetLogger()->LogError("AutoShoot", "AutoShootInitialized");
     auto ballManipulatorState = params -> GetBallState();
     m_ballManipulator->SetCurrentState( ballManipulatorState );
     if ( ballManipulatorState == BallManipulator::BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT )
@@ -64,5 +67,5 @@ void AutoShoot::Run()
 
 bool AutoShoot::IsDone()
 {
-    return true;
+    return false;
 }
