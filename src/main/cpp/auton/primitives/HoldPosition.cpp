@@ -19,32 +19,20 @@
 #include <string>
 
 // FRC includes
-#include <frc/Timer.h>
 
 // Team 302 includes
-#include <auton/primitives/DoNothing.h>
+#include <auton/PrimitiveFactory.h>
 #include <auton/PrimitiveParams.h>
+#include <auton/primitives/HoldPosition.h>
 #include <auton/primitives/IPrimitive.h>
-#include <subsys/ChassisFactory.h>
 #include <controllers/ControlModes.h>
-#include <subsys/IMechanism.h>
-#include <utils/Logger.h>
+#include <subsys/ChassisFactory.h>
 
 // Third Party Includes
 
 
 using namespace std;
 using namespace frc;
-
-//includes
-#include <cmath>
-#include <frc/SmartDashboard/SmartDashboard.h>
-//team302 includes
-#include <auton/primitives/HoldPosition.h>
-#include <auton/PrimitiveParams.h>
-#include <auton/PrimitiveFactory.h>
-#include <auton/primitives/IPrimitive.h>
-#include <subsys/MechanismFactory.h>
 
 HoldPosition::HoldPosition() :
 		m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis()), //Get chassis from chassis factory
@@ -73,14 +61,6 @@ void HoldPosition::Init(PrimitiveParams* params) {
 	auto right = m_chassis->GetCurrentRightPosition();
 
 	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::POSITION_INCH, left, right );	
-	/*
-	m_chassis->SetTalonMode(DragonTalon::POSITION);
-	m_chassis->EnableBrakeMode(true);
-
-	//Set params
-	m_chassis->SetVelocityParams(kP, kI, kD, kF, 0, 0);
-	m_chassis->SetLeftRightMagnitudes(m_chassis->GetLeftMasterMotorRotationCount(), m_chassis->GetRightMasterMotorRotationCount());
-	*/
 }
 
 void HoldPosition::Run() {
@@ -92,6 +72,5 @@ void HoldPosition::Run() {
 bool HoldPosition::IsDone() {
 	//Return true when the time runs out
 	bool holdDone = ((m_timeRemaining <= (IPrimitive::LOOP_LENGTH / 2.0)));
-//	return holdDone && m_placeCube->IsDone();
 	return holdDone;
 }

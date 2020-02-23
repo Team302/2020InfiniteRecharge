@@ -22,15 +22,13 @@
 #include <frc/Timer.h>
 
 // Team 302 includes
-#include <auton/primitives/DoNothing.h>
 #include <auton/PrimitiveParams.h>
 #include <auton/primitives/IPrimitive.h>
-#include <subsys/MechanismFactory.h>
+#include <auton/primitives/SuperDrive.h>
 #include <controllers/ControlData.h>
 #include <controllers/ControlModes.h>
-#include <subsys/IMechanism.h>
 #include <hw/factories/PigeonFactory.h>
-#include <utils/Logger.h>
+#include <subsys/ChassisFactory.h>
 
 // Third Party Includes
 
@@ -38,9 +36,6 @@
 using namespace std;
 using namespace frc;
 
-#include <auton/primitives/SuperDrive.h>
-#include <subsys/ChassisFactory.h>
-#include <cmath>
 
 SuperDrive::SuperDrive() : m_chassis( ChassisFactory::GetChassisFactory()->GetIChassis()),
 						   m_timer( make_unique<Timer>() ),
