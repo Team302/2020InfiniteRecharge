@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE auton SYSTEM "auton.dtd">
+<auton>
+	<primitive id="AUTO_SHOOT"
+			   ballState="SHOOT"
+               turretAngle="-15.0"/>
+</auton>

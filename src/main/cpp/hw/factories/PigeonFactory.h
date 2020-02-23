@@ -39,7 +39,7 @@ class PigeonFactory
         DragonPigeon* CreatePigeon( int canID );
 
 	private:
-		PigeonFactory() = default;
+		PigeonFactory();
 		virtual ~PigeonFactory() = default;
 
         DragonPigeon* m_pigeon;
