@@ -71,7 +71,7 @@ void CyclePrimitives::Run()
 	{
 		Logger::GetLogger()->LogError( string("CyclePrimitive::RunCurrentPrimitive"), string("Primitive Detected!"));
 		m_currentPrim->Run();
-		//m_powerCells->Run();
+		m_powerCells->Run();
 		if (m_currentPrim->IsDone() )
 		{
 			GetNextPrim();
@@ -106,7 +106,7 @@ void CyclePrimitives::GetNextPrim()
 	if (m_currentPrim != nullptr)
 	{
 		m_currentPrim->Init(currentPrimParam);
-		//m_powerCells->Init(currentPrimParam);
+		m_powerCells->Init(currentPrimParam);
 		m_maxTime = currentPrimParam->GetTime();
 		m_timer->Reset();
 		m_timer->Start();
@@ -133,7 +133,7 @@ void CyclePrimitives::RunDoNothing()
 										   );             
 		m_doNothing = m_primFactory->GetIPrimitive(params);
 		m_doNothing->Init(params);
-		//m_powerCells->Init(params);
+		m_powerCells->Init(params);
 	}
 	m_doNothing->Run();
 }

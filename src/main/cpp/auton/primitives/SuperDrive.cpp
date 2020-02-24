@@ -113,8 +113,8 @@ void SuperDrive::Init(PrimitiveParams* params)
 							   			1.0,
 							  			0.0   );
 	//m_chassis->SetControlConstants( cd.get() );
-	m_leftSpeed = 0.2;
-	m_rightSpeed = 0.2;
+	m_leftSpeed = m_targetSpeed > 0.0 ? 0.2 : -0.2;
+	m_rightSpeed = m_targetSpeed > 0.0 ? 0.2 : -0.2;
 	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::PERCENT_OUTPUT, m_leftSpeed, m_rightSpeed );
 
     //m_chassis->SetVelocityParams(PROPORTIONAL_COEFF, INTREGRAL_COEFF, DERIVATIVE_COEFF, FEET_FORWARD_COEFF,
