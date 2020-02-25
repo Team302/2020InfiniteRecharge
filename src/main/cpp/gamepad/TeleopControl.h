@@ -84,6 +84,12 @@ class TeleopControl
             GARBAGE_INCREMENT,
             GARBAGE_DECREMENT,
             GET_READY_TO_SHOOT,
+            INTAKE_HUMAN_PLAYER,
+            FLOOR_PICKUP,
+            SHOOTER_WHEELS_TO_SPEED,
+            SHOOTER_WHEELS_STOP,
+            SHOOTER_WHEELS_MANUAL,
+            IMPELLER_MANUAL,
             MAX_FUNCTIONS
         };
 

@@ -123,13 +123,40 @@ TeleopControl::TeleopControl() : m_axisIDs(),
     ctrlNo = 1;
     if ( m_controllers[ctrlNo] != nullptr && ds->GetJoystickIsXbox(ctrlNo) )
     {
-		/*m_controllerIndex[ SHOOTER_HOOD_MANUAL_AXIS] = ctrlNo;
+		m_controllerIndex[ SHOOTER_HOOD_MANUAL_AXIS] = ctrlNo;
 		m_axisIDs[ SHOOTER_HOOD_MANUAL_AXIS ] = IDragonGamePad::LEFT_JOYSTICK_Y;
 
 		m_controllerIndex[ TURRET_MANUAL_AXIS] = ctrlNo;
 		m_axisIDs[ TURRET_MANUAL_AXIS] = IDragonGamePad::LEFT_JOYSTICK_X;
 
-		m_controllerIndex[ TURRET_LIMELIGHT_AIM] = ctrlNo;
+		m_controllerIndex[ INTAKE_HUMAN_PLAYER] = ctrlNo;
+		m_buttonIDs[ INTAKE_HUMAN_PLAYER] = IDragonGamePad::B_BUTTON;
+
+		m_controllerIndex[ FLOOR_PICKUP] = ctrlNo;
+		m_buttonIDs[ FLOOR_PICKUP] = IDragonGamePad::A_BUTTON;
+
+		m_controllerIndex[ IMPELLER_MANUAL] = ctrlNo;
+		m_axisIDs[ IMPELLER_MANUAL] = IDragonGamePad::RIGHT_JOYSTICK_X;
+
+		m_controllerIndex[ SHOOTER_WHEELS_MANUAL] = ctrlNo;
+		m_axisIDs[ SHOOTER_WHEELS_MANUAL] = IDragonGamePad::RIGHT_JOYSTICK_Y;
+
+		m_controllerIndex[ IMPELLER_MANUAL] = ctrlNo;
+		m_axisIDs[ IMPELLER_MANUAL] = IDragonGamePad::RIGHT_JOYSTICK_X;
+
+
+		// 	A brings intake down, ball suck, impeller spin (floor pickup)
+		//	B Intake down, intake backwards, impeller counter, shooter wheel not shooting (Human Player Station)
+		//	X Rotate Impeller clockwise, feeder wheel 100% shoot, only if shooter is up to speed (shoot)
+		//  Left joystick X Manual turret control          DONE          , 1 button on BB changes between position and speed control (2 buttons)  
+		//  Left joystick Y Manual angle on shooter                          DONE
+		//  Right Joystick X manual impeller left: counter clockwise    right:clockwise   DON'T WORRY ABOUT YET
+		//  Right Joystick Y manual feeder control down: shoot   up: keep balls     DON'T WORRY ABOUT YET
+		//  Left Trigger limelight DON'T WORRY ABOUT YET
+		//  Button Box 10 Turn on shooter wheels to speed
+		//  Button Box 12 Turn Off shooter wheels
+
+		/*m_controllerIndex[ TURRET_LIMELIGHT_AIM] = ctrlNo;
 		m_buttonIDs[ TURRET_LIMELIGHT_AIM] = IDragonGamePad::B_BUTTON;
 
 		m_controllerIndex[ TURRET_MANUAL_BUTTON] = ctrlNo;
@@ -141,8 +168,8 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[ GARBAGE_INCREMENT ] = ctrlNo;
 		m_buttonIDs[ GARBAGE_INCREMENT ] = IDragonGamePad::POV_0;*/
 
-		m_controllerIndex[ ]
-
+	
+		// 
 	}
     else if ( m_controllers[ctrlNo] != nullptr )
     {
@@ -158,20 +185,26 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 	}
     else if ( m_controllers[ctrlNo] != nullptr )
     {
-		m_controllerIndex[INTAKE_ON] = ctrlNo;
-		m_buttonIDs[INTAKE_ON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_1;
-		m_controllerIndex[INTAKE_OFF] = ctrlNo;
-		m_buttonIDs[INTAKE_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_2;
+		m_controllerIndex[SHOOTER_WHEELS_TO_SPEED] = ctrlNo;
+		m_buttonIDs[ SHOOTER_WHEELS_TO_SPEED] = IDragonGamePad::GAMEPAD_BUTTON_10;
 
-		m_controllerIndex[IMPELLER_OFF] = ctrlNo;
-		m_buttonIDs[IMPELLER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_3;
-		m_controllerIndex[IMPELLER_HOLD] = ctrlNo;
-		m_buttonIDs[IMPELLER_HOLD] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_4;
+		m_controllerIndex[ SHOOTER_WHEELS_STOP] = ctrlNo;
+		m_buttonID[ SHOOTER_WHEELS_STOP] = IDragonGamePad::GAMEPAD_BUTTON_12;
+
+	//	m_controllerIndex[INTAKE_ON] = ctrlNo;
+		//m_buttonIDs[INTAKE_ON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_1;
+		//m_controllerIndex[INTAKE_OFF] = ctrlNo;
+	//	m_buttonIDs[INTAKE_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_2;
+
+		//m_controllerIndex[IMPELLER_OFF] = ctrlNo;
+		//m_buttonIDs[IMPELLER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_3;
+		//m_controllerIndex[IMPELLER_HOLD] = ctrlNo;
+		//m_buttonIDs[IMPELLER_HOLD] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_4;
 		/*m_controllerIndex[IMPELLER_AGITATE] = ctrlNo;
 		m_buttonIDs[IMPELLER_AGITATE] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_5;
 		*/
-		m_controllerIndex[IMPELLER_TO_SHOOTER] = ctrlNo;
-		m_buttonIDs[IMPELLER_TO_SHOOTER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_5;
+		//m_controllerIndex[IMPELLER_TO_SHOOTER] = ctrlNo;
+		//m_buttonIDs[IMPELLER_TO_SHOOTER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_5;
 		
 
 		//m_controllerIndex[CLIMBER_EXTEND] = ctrlNo;
@@ -181,12 +214,12 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		//m_controllerIndex[CLIMBER_CRAWL] = ctrlNo;
 		//m_buttonIDs[CLIMBER_CRAWL] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_DIAL_23;
 
-		m_controllerIndex[BALL_TRANSFER_OFF] = ctrlNo;
-		m_buttonIDs[BALL_TRANSFER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_6;
-		m_controllerIndex[BALL_TRANSFER_TO_IMPELLER] = ctrlNo;
-		m_buttonIDs[BALL_TRANSFER_TO_IMPELLER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_7;
-		m_controllerIndex[BALL_TRANSFER_TO_SHOOTER] = ctrlNo;
-		m_buttonIDs[BALL_TRANSFER_TO_SHOOTER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_8;
+		//m_controllerIndex[BALL_TRANSFER_OFF] = ctrlNo;
+		//m_buttonIDs[BALL_TRANSFER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_6;
+		//m_controllerIndex[BALL_TRANSFER_TO_IMPELLER] = ctrlNo;
+		//m_buttonIDs[BALL_TRANSFER_TO_IMPELLER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_7;
+		//m_controllerIndex[BALL_TRANSFER_TO_SHOOTER] = ctrlNo;
+		//m_buttonIDs[BALL_TRANSFER_TO_SHOOTER] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_8;
 		
 		/*m_controllerIndex[CONTROL_PANEL_STOW] = ctrlNo;
 		m_buttonIDs[CONTROL_PANEL_STOW] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_15_DOWN;
@@ -197,19 +230,19 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[CONTROL_PANEL_TURN_TO_COLOR] = ctrlNo;
 		m_buttonIDs[CONTROL_PANEL_TURN_TO_COLOR] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_6;
 */
-		m_controllerIndex[SHOOTER_MANUAL_SHOOT] = ctrlNo;
-		m_buttonIDs[SHOOTER_MANUAL_SHOOT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_9;
-		m_controllerIndex[SHOOTER_PREPARE_TO_SHOOT] = ctrlNo;
+		//m_controllerIndex[SHOOTER_MANUAL_SHOOT] = ctrlNo;
+		//m_buttonIDs[SHOOTER_MANUAL_SHOOT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_9;
+		//m_controllerIndex[SHOOTER_PREPARE_TO_SHOOT] = ctrlNo;
 		/*m_buttonIDs[SHOOTER_PREPARE_TO_SHOOT] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10;
 		m_controllerIndex[SHOOTER_PREPARE_TO_SHOOT] = ctrlNo;*/
-		m_buttonIDs[SHOOTER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10;
-		m_controllerIndex[SHOOTER_OFF] = ctrlNo;
+		//m_buttonIDs[SHOOTER_OFF] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10;
+		//m_controllerIndex[SHOOTER_OFF] = ctrlNo;
 
 		/*m_controllerIndex[TURRET_MANUAL_BUTTON] = ctrlNo;
-		m_buttonIDs[TURRET_MANUAL_BUTTON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_11;*/
+		m_buttonIDs[TURRET_MANUAL_BUTTON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_11;
 		m_controllerIndex[ SHOOTER_HOOD_MANUAL_BUTTON] = ctrlNo;
 		m_buttonIDs[ SHOOTER_HOOD_MANUAL_BUTTON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_12;
-		/*m_buttonIDs[SHOOTER_MANUAL_AIM] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_9;
+		m_buttonIDs[SHOOTER_MANUAL_AIM] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_9;
 		m_controllerIndex[SHOOTER_MANUAL_ADJUST_DISTANCE] = ctrlNo;
 		m_buttonIDs[SHOOTER_MANUAL_ADJUST_DISTANCE] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10;
 		*/

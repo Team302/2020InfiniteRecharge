@@ -53,6 +53,7 @@ BallManipulator::BallManipulator() : m_currentState( BALL_MANIPULATOR_STATE::OFF
                                      m_turret ( TurretStateMgr::GetInstance() ),
                                      m_shooter( ShooterStateMgr::GetInstance() ), 
                                      m_hood( ShooterHoodStateMgr::GetInstance() )
+                                    
 {
     m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
     m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
@@ -60,6 +61,7 @@ BallManipulator::BallManipulator() : m_currentState( BALL_MANIPULATOR_STATE::OFF
     m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false );
     m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
     m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );
+    
 }
 
 /// @brief  run the current state
@@ -144,6 +146,26 @@ void BallManipulator::SetCurrentState
             m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );  // todo auto aim is needed
             break;
 
+        case BALL_MANIPULATOR_STATE::TURRET_MANUAL:
+            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::MANUAL_AIM, false);
+            break;
+
+        case BALL_MANIPULATOR_STATE::IMPELLER_MANUAL:
+            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::AGITATE, false); //PUT IN NEW IMPELLER STATE
+            break;
+
+        case BALL_MANIPULATOR_STATE::SHOOTER_WHEELS_MANUAL:
+            m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false); //PUT IN NEW STATE
+            break;
+
+        case BALL_MANIPULATOR_STATE::SHOOTER_WHEELS_TO_SPEED:
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, false); 
+            break;
+
+        case BALL_MANIPULATOR_STATE::SHOOTER_WHEELS_STOP:
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false);
+            break;
+
         default:
             break;
     }
@@ -159,5 +181,53 @@ void BallManipulator::SetApproxAngle
     if ( m_turret != nullptr )
     {
         m_turret->SetApproxTargetAngle( angle );
+    }
+}
+
+void BallManipulator::teleop()
+{
+    auto control = TeleopControl::GetInstance();
+    if (control != nullptr)
+    {
+        auto isHumanPlayerPressed = control ->IsButtonPressed(TeleopControl::INTAKE_HUMAN_PLAYER);
+        auto isIntakePressed = control -> IsButtonPressed(TeleopControl::FLOOR_PICKUP);
+        auto isReadyToShootPressed = control -> IsButtonPressed(TeleopControl::GET_READY_TO_SHOOT);
+        auto turretManual = control -> GetAxisValue(TeleopControl::TURRET_MANUAL_AXIS);
+        auto impellerManual = control -> GetAxisValue(TeleopControl::IMPELLER_MANUAL);
+        auto shooterWheelsManual = control -> GetAxisValue(TeleopControl::SHOOTER_WHEELS_MANUAL);
+        auto isShooterWheelsToSpeedPressed = control -> IsButtonPressed(TeleopControl::SHOOTER_WHEELS_TO_SPEED);
+        auto isShooterWheelsStoppedPressed = control -> IsButtonPressed(TeleopControl::SHOOTER_WHEELS_STOP);
+        if (isHumanPlayerPressed)
+        {
+            SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::INTAKE_HUMAN_PLAYER);
+        }
+        else if (isIntakePressed)
+        {
+            SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::INTAKE);
+        }
+        else if (isReadyToShootPressed)
+        {
+            SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::SHOOT);
+        }
+        else if (turretManual)
+        {
+            SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::TURRET_MANUAL);
+        }
+        else if (impellerManual)
+        {
+            SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::IMPELLER_MANUAL);
+        }
+        else if (shooterWheelsManual)
+        {
+            SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::SHOOTER_WHEELS_MANUAL);
+        }
+        else if (isShooterWheelsToSpeedPressed)
+        {
+            SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::SHOOTER_WHEELS_TO_SPEED);
+        }
+        else if (isShooterWheelsStoppedPressed)
+        {
+            SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::SHOOTER_WHEELS_STOP);
+        }
     }
 }

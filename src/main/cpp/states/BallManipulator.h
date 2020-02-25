@@ -20,6 +20,7 @@
 // FRC includes
 
 // Team 302 includes
+#include <gamepad/TeleopControl.h>
 // forward declares
 class BallTransferStateMgr;
 class ImpellerStateMgr;
@@ -42,6 +43,11 @@ class BallManipulator
             HOLD,
             GET_READY_TO_SHOOT,
             SHOOT,
+            TURRET_MANUAL,
+            IMPELLER_MANUAL,
+            SHOOTER_WHEELS_MANUAL,
+            SHOOTER_WHEELS_TO_SPEED,
+            SHOOTER_WHEELS_STOP,
             MAX_BALL_MANIPULATOR_STATES
         };
 
@@ -72,6 +78,7 @@ class BallManipulator
 
         BallManipulator();
         ~BallManipulator() = default;
+        void teleop();
 		static BallManipulator*	m_instance;
 
 
@@ -82,6 +89,7 @@ class BallManipulator
         TurretStateMgr*             m_turret;
         ShooterStateMgr*            m_shooter;
         ShooterHoodStateMgr*        m_hood;
+        TeleopControl*              m_teleopControl;
 
 };
 
