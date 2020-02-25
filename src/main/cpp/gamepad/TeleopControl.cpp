@@ -192,7 +192,7 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_buttonIDs[ SHOOTER_WHEELS_TO_SPEED] = IDragonGamePad::GAMEPAD_BUTTON_10;
 
 		m_controllerIndex[ SHOOTER_WHEELS_STOP] = ctrlNo;
-		m_buttonID[ SHOOTER_WHEELS_STOP] = IDragonGamePad::GAMEPAD_BUTTON_12;
+		m_buttonIDs[ SHOOTER_WHEELS_STOP] = IDragonGamePad::GAMEPAD_BUTTON_12;
 
 	//	m_controllerIndex[INTAKE_ON] = ctrlNo;
 		//m_buttonIDs[INTAKE_ON] = IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_1;

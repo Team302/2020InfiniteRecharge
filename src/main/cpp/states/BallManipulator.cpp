@@ -197,7 +197,8 @@ void BallManipulator::teleop()
         auto isReadyToShootPressed = control -> IsButtonPressed(TeleopControl::GET_READY_TO_SHOOT);
         auto turretManual = control -> GetAxisValue(TeleopControl::TURRET_MANUAL_AXIS);
         auto impellerManual = control -> GetAxisValue(TeleopControl::IMPELLER_MANUAL);
-        auto shooterWheelsManual = control -> GetAxisValue(TeleopControl::SHOOTER_WHEELS_MANUAL);
+        auto ballTransferUp = control -> IsButtonPressed(TeleopControl::BALL_TRANSFER_WHEELS_UP);
+        auto ballTransferDown = control -> IsButtonPressed(TeleopControl::BALL_TRANSFER_WHEELS_DOWN);
         auto isShooterWheelsToSpeedPressed = control -> IsButtonPressed(TeleopControl::SHOOTER_WHEELS_TO_SPEED);
         auto isShooterWheelsStoppedPressed = control -> IsButtonPressed(TeleopControl::SHOOTER_WHEELS_STOP);
         if (isHumanPlayerPressed)
@@ -220,9 +221,13 @@ void BallManipulator::teleop()
         {
             SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::IMPELLER_MANUAL);
         }
-        else if (shooterWheelsManual)
+        else if (ballTransferUp)
         {
-            SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::SHOOTER_WHEELS_MANUAL);
+            SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::BALL_TRANSFER_UP);
+        }
+        else if (ballTransferDown)
+        {
+            SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::BALL_TRANSFER_DOWN);
         }
         else if (isShooterWheelsToSpeedPressed)
         {
