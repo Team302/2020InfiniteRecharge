@@ -151,12 +151,15 @@ void BallManipulator::SetCurrentState
             break;
 
         case BALL_MANIPULATOR_STATE::IMPELLER_MANUAL:
-            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::AGITATE, false); //PUT IN NEW IMPELLER STATE
+            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::MANUAL, false); //PUT IN NEW IMPELLER STATE
             break;
 
-        case BALL_MANIPULATOR_STATE::SHOOTER_WHEELS_MANUAL:
-            m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false); //PUT IN NEW STATE
+        case BALL_MANIPULATOR_STATE::BALL_TRANSFER_UP:
+            m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false); 
             break;
+        
+        case BALL_MANIPULATOR_STATE::BALL_TRANSFER_DOWN:
+            m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER, false);
 
         case BALL_MANIPULATOR_STATE::SHOOTER_WHEELS_TO_SPEED:
             m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::GET_READY, false); 

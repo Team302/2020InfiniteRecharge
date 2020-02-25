@@ -19,6 +19,9 @@
 	<mechanismTarget stateIdentifier="IMPELLERHOLD"
 	                 controlDataIdentifier="openloop"
 					 value="0.4"/>
+	<mechanismTarget stateIdentifier="IMPELLERMANUAL"
+					 controlDataIdentifier="openloop"
+					 value="1.0"/>
 	<!--mechanismTarget stateIdentifier="IMPELLERHOLD"
 	                 controlDataIdentifier="openloop"
 					 value="-0.30"/-->

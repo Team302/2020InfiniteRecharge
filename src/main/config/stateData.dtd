@@ -18,11 +18,11 @@
 <!ELEMENT mechanismTarget EMPTY>
 <!ATTLIST mechanismTarget 
           stateIdentifier               ( INTAKEOFF | INTAKEON | INTAKEHUMANPLAYER |
-                                          IMPELLEROFF | IMPELLERHOLD | IMPELLERAGITATE | IMPELLERTOSHOOTER |
+                                          IMPELLEROFF | IMPELLERHOLD | IMPELLERAGITATE | IMPELLERTOSHOOTER | IMPELLERMANUAL |
                                           BALLTRANSFEROFF | BALLTRANSPORTTOIMPELLER | BALLTRANSFERTOSHOOTER |
                                           SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN | SHOOTERHOODMANUAL |
                                           TURRETHOLD | TURRETAUTOAIM | TURRETMANUALAIM |
-                                          SHOOTEROFF | SHOOTERGETREADY | SHOOTERSHOOT |
+                                          SHOOTEROFF | SHOOTERGETREADY | SHOOTERSHOOT | 
                                           UNKNOWN ) "UNKNOWN"
           controlDataIdentifier         CDATA #REQUIRED
           value                         CDATA #REQUIRED

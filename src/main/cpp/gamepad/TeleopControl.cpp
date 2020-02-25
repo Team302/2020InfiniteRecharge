@@ -138,8 +138,11 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[ IMPELLER_MANUAL] = ctrlNo;
 		m_axisIDs[ IMPELLER_MANUAL] = IDragonGamePad::RIGHT_JOYSTICK_X;
 
-		m_controllerIndex[ SHOOTER_WHEELS_MANUAL] = ctrlNo;
-		m_axisIDs[ SHOOTER_WHEELS_MANUAL] = IDragonGamePad::RIGHT_JOYSTICK_Y;
+		m_controllerIndex[ BALL_TRANSFER_WHEELS_UP] = ctrlNo;
+		m_buttonIDs[ BALL_TRANSFER_WHEELS_UP] = IDragonGamePad::RIGHT_BUMPER;
+
+		m_controllerIndex[ BALL_TRANSFER_WHEELS_DOWN] = ctrlNo;
+		m_buttonIDs[ BALL_TRANSFER_WHEELS_DOWN] = IDragonGamePad::RIGHT_TRIGGER_PRESSED;
 
 		m_controllerIndex[ IMPELLER_MANUAL] = ctrlNo;
 		m_axisIDs[ IMPELLER_MANUAL] = IDragonGamePad::RIGHT_JOYSTICK_X;

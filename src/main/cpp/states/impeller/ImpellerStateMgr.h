@@ -36,6 +36,7 @@ class ImpellerStateMgr
             HOLD,
             AGITATE,
             TO_SHOOTER,
+            MANUAL,
             MAX_IMPELLER_STATES
         };
         

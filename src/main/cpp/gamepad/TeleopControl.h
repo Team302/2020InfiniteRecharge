@@ -88,7 +88,8 @@ class TeleopControl
             FLOOR_PICKUP,
             SHOOTER_WHEELS_TO_SPEED,
             SHOOTER_WHEELS_STOP,
-            SHOOTER_WHEELS_MANUAL,
+            BALL_TRANSFER_WHEELS_UP,
+            BALL_TRANSFER_WHEELS_DOWN,
             IMPELLER_MANUAL,
             MAX_FUNCTIONS
         };

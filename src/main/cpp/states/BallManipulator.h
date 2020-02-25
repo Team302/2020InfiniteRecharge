@@ -45,7 +45,8 @@ class BallManipulator
             SHOOT,
             TURRET_MANUAL,
             IMPELLER_MANUAL,
-            SHOOTER_WHEELS_MANUAL,
+            BALL_TRANSFER_UP,
+            BALL_TRANSFER_DOWN,
             SHOOTER_WHEELS_TO_SPEED,
             SHOOTER_WHEELS_STOP,
             MAX_BALL_MANIPULATOR_STATES

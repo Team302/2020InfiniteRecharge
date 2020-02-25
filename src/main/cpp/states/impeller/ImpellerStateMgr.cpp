@@ -30,6 +30,7 @@
 #include <states/impeller/ImpellerHold.h>
 #include <states/impeller/ImpellerAgitate.h>
 #include <states/impeller/ImpellerToShooter.h>
+#include <states/impeller/ImpellerManual.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/MechanismTypes.h>
 
@@ -67,6 +68,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
     stateStringToEnumMap["IMPELLERHOLD"] = IMPELLER_STATE::HOLD;
     stateStringToEnumMap["IMPELLERAGITATE"] = IMPELLER_STATE::AGITATE;
     stateStringToEnumMap["IMPELLERTOSHOOTER"]  = IMPELLER_STATE::TO_SHOOTER;
+    stateStringToEnumMap["IMPELLERMANUAL"] = IMPELLER_STATE::MANUAL;
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -119,6 +121,14 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
                         auto thisState = new ImpellerAgitate(controlData, target, solState );
                         m_stateEnumToObjectMap[IMPELLER_STATE::AGITATE] = thisState;
                         Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller Agitate State added to Map");
+                    }
+                    break;
+
+                    case IMPELLER_STATE::MANUAL:
+                    {
+                        auto thisState = new ImpellerManual(controlData, target);
+                        m_stateEnumToObjectMap[IMPELLER_STATE::MANUAL] = thisState;
+                        Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller Manual State added to Map");
                     }
                     break;
 
