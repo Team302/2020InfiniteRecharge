@@ -13,7 +13,7 @@
 	                 controlDataIdentifier="openloop"
 					 value="0.5"/>
 	<mechanismTarget stateIdentifier="SHOOTERHOODHOLD"
-	                 controlDataIdentifier="closedloop"
+	                 controlDataIdentifier="openloop"
 					 value="0.0"/>
     <mechanismTarget stateIdentifier="SHOOTERHOODMANUAL"
 	                 controlDataIdentifier="openloop"
