@@ -4,7 +4,7 @@
 
 using namespace frc;
 
-class DragonThroughBoreEncoder
+class DragonThroughBoreEncoder 
 {
     public:
         DragonThroughBoreEncoder(
@@ -21,9 +21,5 @@ class DragonThroughBoreEncoder
         ThroughBoreEncoderUsage::THROUGH_BORE_ENCODER_USAGE GetType() const;
     private:
         ThroughBoreEncoder*         m_encoder;
-        int                         m_dio
-        int                         m_pwmid
-        ThroughBoreEncoderUsage::THROUGH_BORE_ENCODER_USAGE m_usage
-                   
-
-}
+        ThroughBoreEncoderUsage::THROUGH_BORE_ENCODER_USAGE m_type;
+};
