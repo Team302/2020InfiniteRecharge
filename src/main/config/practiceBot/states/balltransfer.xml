@@ -8,9 +8,9 @@
 					 value="0.0"/>
 	<mechanismTarget stateIdentifier="BALLTRANSPORTTOIMPELLER"
 	                 controlDataIdentifier="openloop"
-					 value="-0.1"/>
+					 value="0.2"/>
 	<mechanismTarget stateIdentifier="BALLTRANSFERTOSHOOTER"
 	                 controlDataIdentifier="openloop"
-					 value="1.0"/>
+					 value="-1.0"/>
 
 </statedata>
