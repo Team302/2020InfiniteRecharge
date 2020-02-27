@@ -90,6 +90,7 @@ class TeleopControl
             HOLD,
             GET_READY_TO_SHOOT,
             SHOOT,
+            REVERSE_IMPELLER,
             MAX_FUNCTIONS
         };
 

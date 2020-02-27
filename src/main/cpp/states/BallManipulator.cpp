@@ -66,35 +66,45 @@ BallManipulator::BallManipulator() : m_currentState( BALL_MANIPULATOR_STATE::OFF
 /// @return void
 void BallManipulator::RunCurrentState()
 {
- 
+    auto controller = TeleopControl::GetInstance();
 
     // process teleop/manual interrupts
-        auto controller = TeleopControl::GetInstance();
+       
         if ( controller != nullptr )
         {
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::OFF))
             {
-                SetCurrentState( BALL_MANIPULATOR_STATE::OFF); 
+                m_currentState = BALL_MANIPULATOR_STATE::OFF; 
             }
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE))
             {
-                SetCurrentState( BALL_MANIPULATOR_STATE::INTAKE);
+                m_currentState = BALL_MANIPULATOR_STATE::INTAKE;
             }
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_HUMAN_PLAYER))
             {
-                SetCurrentState( BALL_MANIPULATOR_STATE::INTAKE_HUMAN_PLAYER); 
+                m_currentState = BALL_MANIPULATOR_STATE::INTAKE_HUMAN_PLAYER; 
             }
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::GET_READY_TO_SHOOT))
             {
-                SetCurrentState( BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT);
+                m_currentState = BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT;
             }
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOT))
             {
-                SetCurrentState( BALL_MANIPULATOR_STATE::SHOOT); 
+                m_currentState = BALL_MANIPULATOR_STATE::SHOOT; 
             }
-            
+            if(controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::REVERSE_IMPELLER))
+            {
+                m_impeller->SetCurrentState(ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false);
+                m_transfer->SetCurrentState(BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER, false);
+            }
+            else
+            {
+                SetCurrentState(m_currentState);
+            }
+    
         }
-
+    
+    
            // run the current state
     m_intake->RunCurrentState();
     m_impeller->RunCurrentState();
@@ -158,7 +168,7 @@ void BallManipulator::SetCurrentState
             break;
 
         case BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT:
-            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );
+            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER, false );
             m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false );
             m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );

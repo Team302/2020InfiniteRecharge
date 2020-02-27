@@ -50,8 +50,7 @@
 #include <subsys/ChassisFactory.h>
 #include <subsys/IChassis.h>
 #include <hw/factories/PigeonFactory.h>
-
-
+#include <frc/Solenoid.h>
 
 using namespace std;
 using namespace frc;
@@ -96,6 +95,13 @@ void Robot::RobotInit()
     m_rightSlave->Set(ControlMode::Follower, 15);*/
 
     //m_intake = new IntakeStateMgr();
+
+    m_cpm = new TalonSRX( 6 );
+    m_winch = new TalonSRX( 2 );
+
+  
+    m_cpmSol = new Solenoid( 9, 5 );
+    m_climberSol = new Solenoid( 9, 6 );
     m_powerCells = BallManipulator::GetInstance();
     m_shooterHood = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER_HOOD);
     m_turret = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET);
@@ -196,6 +202,34 @@ void Robot::TeleopPeriodic()
     frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());
     frc::SmartDashboard::PutNumber("Shooter speed", m_shooter->GetCurrentSpeed());*/
     //frc::SmartDashboard::PutNumber("Limelight tx", m_limelight.get()->GetTargetHorizontalOffset());
+    if(m_controller->IsButtonPressed(TeleopControl::CONTROL_PANEL_SPIN_WHEEL))
+    {
+        m_cpm->Set(ControlMode::PercentOutput, 0.5);
+    }
+    else
+    {
+        m_cpm->Set( ControlMode::PercentOutput, 0.0 );
+    }
+
+    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_LIFT))
+    {
+        m_winch->Set(ControlMode::PercentOutput, 1.0);
+    }
+    else
+    {
+        m_winch->Set( ControlMode::PercentOutput, 0.0 );
+    }
+
+    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_RAISE))
+    {
+        m_cpmSol->Set(!m_cpmSol->Get());
+    }
+
+    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_EXTEND))
+    {
+        m_climberSol->Set(!m_climberSol->Get());
+    }
+    frc::SmartDashboard::PutBoolean("left bumper", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_EXTEND));
 }
 
 
