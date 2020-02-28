@@ -105,10 +105,12 @@ class Robot : public frc::TimedRobot
       TalonFX* m_rightSlave;
 
       TalonSRX* m_cpm;
-      TalonSRX* m_winch;
+      TalonSRX* m_climber;
 
-      frc::Solenoid* m_cpmSol;
-      frc::Solenoid* m_climberSol;
+      frc::Solenoid* m_cpmSolenoid;
+      frc::Solenoid* m_climberSolenoid;
+
+
 
 
       frc::SendableChooser<std::string>   m_testChooser;                    

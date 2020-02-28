@@ -91,6 +91,8 @@ class TeleopControl
             GET_READY_TO_SHOOT,
             SHOOT,
             REVERSE_IMPELLER,
+            UNJAM_CLOCKWISE,
+            UNJAM_COUNTERCLOCKWISE,
             MAX_FUNCTIONS
         };
 

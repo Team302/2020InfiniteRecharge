@@ -8,7 +8,7 @@
 					 value="0.0"/>
 	<mechanismTarget stateIdentifier="BALLTRANSPORTTOIMPELLER"
 	                 controlDataIdentifier="openloop"
-					 value="0.2"/>
+					 value="0.20"/>
 	<mechanismTarget stateIdentifier="BALLTRANSFERTOSHOOTER"
 	                 controlDataIdentifier="openloop"
 					 value="-1.0"/>

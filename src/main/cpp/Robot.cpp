@@ -97,11 +97,14 @@ void Robot::RobotInit()
     //m_intake = new IntakeStateMgr();
 
     m_cpm = new TalonSRX( 6 );
-    m_winch = new TalonSRX( 2 );
+    m_climber = new TalonSRX( 2 );
 
   
-    m_cpmSol = new Solenoid( 9, 5 );
-    m_climberSol = new Solenoid( 9, 6 );
+    m_cpmSolenoid = new frc::Solenoid( 9, 5 );
+    m_climberSolenoid = new frc::Solenoid( 9, 6 );
+
+   // m_cpm = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::CONTROL_TABLE_MANIPULATOR);
+    //m_climber = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::CLIMBER);
     m_powerCells = BallManipulator::GetInstance();
     m_shooterHood = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER_HOOD);
     m_turret = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET);
@@ -208,26 +211,26 @@ void Robot::TeleopPeriodic()
     }
     else
     {
-        m_cpm->Set( ControlMode::PercentOutput, 0.0 );
+         m_cpm->Set(ControlMode::PercentOutput, 0.0);
     }
 
     if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_LIFT))
     {
-        m_winch->Set(ControlMode::PercentOutput, 1.0);
+        m_climber->Set(ControlMode::PercentOutput, 0.5);
     }
     else
     {
-        m_winch->Set( ControlMode::PercentOutput, 0.0 );
+        m_climber->Set(ControlMode::PercentOutput, 0.0);
     }
 
     if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_RAISE))
     {
-        m_cpmSol->Set(!m_cpmSol->Get());
+        m_cpmSolenoid->Set(!m_cpmSolenoid->Get());
     }
 
     if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_EXTEND))
     {
-        m_climberSol->Set(!m_climberSol->Get());
+        m_climberSolenoid->Set(!m_climberSolenoid->Get());
     }
     frc::SmartDashboard::PutBoolean("left bumper", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_EXTEND));
 }

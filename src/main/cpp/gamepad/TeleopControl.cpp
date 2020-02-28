@@ -165,8 +165,11 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[SHOOTER_OFF] = ctrlNo;
 		m_buttonIDs[SHOOTER_OFF] = IDragonGamePad::POV_180;
 
-		m_controllerIndex[ REVERSE_IMPELLER ] = ctrlNo;
-		m_buttonIDs[ REVERSE_IMPELLER ] = IDragonGamePad::RIGHT_BUMPER;
+		m_controllerIndex[ UNJAM_CLOCKWISE ] = ctrlNo;
+		m_buttonIDs[ UNJAM_CLOCKWISE ] = IDragonGamePad::RIGHT_BUMPER;
+		
+		m_controllerIndex[ UNJAM_COUNTERCLOCKWISE ] = ctrlNo;
+		m_buttonIDs[ UNJAM_COUNTERCLOCKWISE ] = IDragonGamePad::LEFT_BUMPER;
 		
 		/*m_controllerIndex[ GARBAGE_DECREMENT ] = ctrlNo;
 		m_buttonIDs[ GARBAGE_DECREMENT ] = IDragonGamePad::POV_180;

@@ -107,6 +107,6 @@ void Logger::OnDash
 {
     SmartDashboard::PutBoolean( locationIdentifier.c_str(), val );
 }
-Logger::Logger() : m_level( LOGGER_OPTION::CONSOLE )
+Logger::Logger() : m_level( LOGGER_OPTION::EAT_IT )
 {
 }
