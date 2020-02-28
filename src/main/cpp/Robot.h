@@ -41,7 +41,7 @@
 //#include <states/controlPanel/ControlPanelStateMgr.h>
 //#include <states/climber/ClimberStateMgr.h>
 #include <states/intake/IntakeStateMgr.h>
-
+#include <frc/Solenoid.h>
 #include <hw/DragonLimelight.h>
 #include <test/ButtonBoxDisplay.h>
 #include <test/XboxDisplay.h>
@@ -103,6 +103,14 @@ class Robot : public frc::TimedRobot
       TalonFX* m_leftSlave;
       TalonFX* m_rightMaster;
       TalonFX* m_rightSlave;
+
+      TalonSRX* m_cpm;
+      TalonSRX* m_climber;
+
+      frc::Solenoid* m_cpmSolenoid;
+      frc::Solenoid* m_climberSolenoid;
+
+
 
 
       frc::SendableChooser<std::string>   m_testChooser;                    

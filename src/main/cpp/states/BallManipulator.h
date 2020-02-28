@@ -42,6 +42,9 @@ class BallManipulator
             HOLD,
             GET_READY_TO_SHOOT,
             SHOOT,
+            SHOOT_AUTON,
+            UNJAM_CLOCKWISE,
+            UNJAM_COUNTERCLOCKWISE,
             MAX_BALL_MANIPULATOR_STATES
         };
 

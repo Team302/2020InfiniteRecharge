@@ -70,7 +70,7 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
     ballStringToEnumMap["HOLD"] = BallManipulator::BALL_MANIPULATOR_STATE::HOLD;
     ballStringToEnumMap["GET_READY_TO_SHOOT"] = BallManipulator::BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT;
     ballStringToEnumMap["SHOOT"] = BallManipulator::BALL_MANIPULATOR_STATE::SHOOT;
-
+    ballStringToEnumMap["SHOOT_AUTON"] = BallManipulator::BALL_MANIPULATOR_STATE::SHOOT_AUTON;
 
 
 

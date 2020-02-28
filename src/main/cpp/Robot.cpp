@@ -50,8 +50,7 @@
 #include <subsys/ChassisFactory.h>
 #include <subsys/IChassis.h>
 #include <hw/factories/PigeonFactory.h>
-
-
+#include <frc/Solenoid.h>
 
 using namespace std;
 using namespace frc;
@@ -96,6 +95,16 @@ void Robot::RobotInit()
     m_rightSlave->Set(ControlMode::Follower, 15);*/
 
     //m_intake = new IntakeStateMgr();
+
+    m_cpm = new TalonSRX( 6 );
+    m_climber = new TalonSRX( 2 );
+
+  
+    m_cpmSolenoid = new frc::Solenoid( 9, 5 );
+    m_climberSolenoid = new frc::Solenoid( 9, 6 );
+
+   // m_cpm = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::CONTROL_TABLE_MANIPULATOR);
+    //m_climber = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::CLIMBER);
     m_powerCells = BallManipulator::GetInstance();
     m_shooterHood = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER_HOOD);
     m_turret = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET);
@@ -169,8 +178,6 @@ void Robot::TeleopInit()
     m_chassisStateMgr->Init();
     m_powerCells->SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::OFF);
     m_powerCells->RunCurrentState();
-    // m_control->RunCurrentState();
-    // m_climber->RunCurrentState();
 }
 
 
@@ -178,21 +185,12 @@ void Robot::TeleopInit()
 /// @return void
 void Robot::TeleopPeriodic() 
 {
-    auto pigeon = PigeonFactory::GetFactory()->GetPigeon();
-    if(pigeon != nullptr)
-    {
-        frc::SmartDashboard::PutBoolean("Pigeon", true);
-    }
-    else
-    {
-        frc::SmartDashboard::PutBoolean("Pigeon", false);
-    }
-    frc::SmartDashboard::PutNumber("yaw", pigeon->GetYaw());
+
     m_chassisStateMgr->RunCurrentState();
     //m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
-    m_shooterHood->SetOutput(ControlModes::PERCENT_OUTPUT, .5* m_controller->GetAxisValue(TeleopControl::SHOOTER_HOOD_MANUAL_AXIS));
+    //m_shooterHood->SetOutput(ControlModes::PERCENT_OUTPUT, .5* m_controller->GetAxisValue(TeleopControl::SHOOTER_HOOD_MANUAL_AXIS));
     //m_intake->RunCurrentState();
-   //m_powerCells->RunCurrentState();
+   m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
     //double leftSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL);
     //double rightSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL);
@@ -202,11 +200,39 @@ void Robot::TeleopPeriodic()
     //m_leftMaster->Set(ControlMode::PercentOutput, leftSpeed);
     //frc::SmartDashboard::PutNumber("leftSpeed", leftSpeed);
     //frc::SmartDashboard::PutNumber("rightSpeed", rightSpeed);
-    frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
+    /*frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
     frc::SmartDashboard::PutNumber("Shooter Hood position", m_shooterHood->GetCurrentPosition());
     frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());
-    frc::SmartDashboard::PutNumber("Shooter speed", m_shooter->GetCurrentSpeed());
+    frc::SmartDashboard::PutNumber("Shooter speed", m_shooter->GetCurrentSpeed());*/
     //frc::SmartDashboard::PutNumber("Limelight tx", m_limelight.get()->GetTargetHorizontalOffset());
+    if(m_controller->IsButtonPressed(TeleopControl::CONTROL_PANEL_SPIN_WHEEL))
+    {
+        m_cpm->Set(ControlMode::PercentOutput, 0.5);
+    }
+    else
+    {
+         m_cpm->Set(ControlMode::PercentOutput, 0.0);
+    }
+
+    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_LIFT))
+    {
+        m_climber->Set(ControlMode::PercentOutput, 0.5);
+    }
+    else
+    {
+        m_climber->Set(ControlMode::PercentOutput, 0.0);
+    }
+
+    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_RAISE))
+    {
+        m_cpmSolenoid->Set(!m_cpmSolenoid->Get());
+    }
+
+    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_EXTEND))
+    {
+        m_climberSolenoid->Set(!m_climberSolenoid->Get());
+    }
+    frc::SmartDashboard::PutBoolean("left bumper", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_EXTEND));
 }
 
 
