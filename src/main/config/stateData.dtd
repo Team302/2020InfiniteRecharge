@@ -5,7 +5,7 @@
           identifier CDATA  #REQUIRED
           mode ( PERCENT_OUTPUT | VELOCITY_INCH | VELOCITY_DEGREES  | VELOCITY_RPS |
                  VOLTAGE | CURRENT | TRAPEZOID | MOTION_PROFILE | MOTION_PROFILE_ARC | POSITION_DEGREES) "PERCENT_OUTPUT"
-		  constrolServer ( MOTORCONTROLLER | ROBORIO ) "MOTORCONTROLLER"
+	  constrolServer ( MOTORCONTROLLER | ROBORIO ) "MOTORCONTROLLER"
           proportional CDATA "0.0"
           integral CDATA "0.0"
           derivative CDATA "0.0"
