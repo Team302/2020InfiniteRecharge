@@ -58,7 +58,7 @@ DragonFalcon::DragonFalcon
 	m_gearRatio(gearRatio),
 	m_diameter( 1.0 )
 {
-  auto limit = SupplyCurrentLimitConfiguration( true, 30.0, 40.0, 0.0 );
+  auto limit = SupplyCurrentLimitConfiguration( true, 25.0, 35.0, 0.0 );
   m_talon.get()->ConfigSupplyCurrentLimit( limit, 50 );
 	//m_tickOffset = m_talon.get()->GetSelectedSensorPosition();
 }

@@ -280,10 +280,9 @@ void Robot::TeleopPeriodic()
     
 
     
-    frc::SmartDashboard::PutBoolean("left bumper", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_EXTEND));
-    frc::SmartDashboard::PutBoolean("left trigger", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_LIFT));
-    frc::SmartDashboard::PutBoolean("right bumper", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_RAISE));
-    frc::SmartDashboard::PutBoolean("right trigger", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_SPIN_WHEEL));
+    
+    frc::SmartDashboard::PutBoolean("left trigger", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::TRANSFER_DOWN));
+    
 }
 
 

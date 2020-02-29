@@ -11,17 +11,20 @@
                heading="-70.0"               
 			   ballState="OFF"/>
     <primitive id="DRIVE_DISTANCE"
-			   distance="90.0"
+			   distance="80.0"
 			   drivespeed="-60.0"               
-               ballState="OFF"
+               ballState="INTAKE"
                turretAngle="0"/>
     <primitive id="TURN_ANGLE_REL"
                heading="-45.0"               
-			   ballState="OFF"/>
+			   ballState="INTAKE"/>
     <primitive id="DRIVE_DISTANCE"
 			   distance="90.0"
 			   drivespeed="-60.0"               
-               ballState="OFF"
+               ballState="INTAKE"
                turretAngle="0"/>
+    <primitive id="DO_NOTHING"
+               ballState="INTAKE"/>
+
 
 </auton>

@@ -114,7 +114,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                     {
                         auto thisState = new BallTransferToShooter(controlData, target, solState);
                         m_stateEnumToObjectMap[stateEnum] = thisState;
-                        printf("Eject state mapped");
+                    
                     }
                     break;
                     

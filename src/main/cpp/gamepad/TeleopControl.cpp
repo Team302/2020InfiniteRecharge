@@ -172,10 +172,10 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_buttonIDs[ UNJAM_COUNTERCLOCKWISE ] = IDragonGamePad::LEFT_BUMPER;
 
 		m_controllerIndex[ TRANSFER_UP ] = ctrlNo;
-		m_buttonIDs[ TRANSFER_UP ] = IDragonGamePad::RIGHT_TRIGGER_PRESSED;
+		m_buttonIDs[ TRANSFER_UP ] = IDragonGamePad::LEFT_TRIGGER_PRESSED;
 
 		m_controllerIndex[ TRANSFER_DOWN ] = ctrlNo;
-		m_buttonIDs[ TRANSFER_DOWN ] = IDragonGamePad::LEFT_TRIGGER_PRESSED;
+		m_buttonIDs[ TRANSFER_DOWN ] = IDragonGamePad::RIGHT_TRIGGER_PRESSED;
 		
 		/*m_controllerIndex[ GARBAGE_DECREMENT ] = ctrlNo;
 		m_buttonIDs[ GARBAGE_DECREMENT ] = IDragonGamePad::POV_180;
