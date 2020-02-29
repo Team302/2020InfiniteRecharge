@@ -100,8 +100,8 @@ void Robot::RobotInit()
     m_climber = new TalonSRX( 2 );
 
   
-    m_cpmSolenoid = new frc::Solenoid( 9, 5 );
-    m_climberSolenoid = new frc::Solenoid( 9, 6 );
+    m_cpmSolenoid = new frc::Solenoid( 9, 6);
+    m_climberSolenoid = new frc::Solenoid( 9, 5 );
 
    // m_cpm = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::CONTROL_TABLE_MANIPULATOR);
     //m_climber = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::CLIMBER);
@@ -130,6 +130,11 @@ void Robot::RobotInit()
     m_buttonBoxDisplay = nullptr;
     m_xBoxDisplay = nullptr;
 
+    m_climberState = false;
+    m_cpmState = false;
+
+    m_climberSolenoidState = m_climberSolenoid->Get();
+    m_cpmSolenoidState = m_cpmSolenoid->Get();
     //m_limelight = LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT );
     /*if (m_limelight.get() != nullptr )
     {
@@ -178,6 +183,7 @@ void Robot::TeleopInit()
     m_chassisStateMgr->Init();
     m_powerCells->SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::OFF);
     m_powerCells->RunCurrentState();
+
 }
 
 
@@ -207,32 +213,77 @@ void Robot::TeleopPeriodic()
     //frc::SmartDashboard::PutNumber("Limelight tx", m_limelight.get()->GetTargetHorizontalOffset());
     if(m_controller->IsButtonPressed(TeleopControl::CONTROL_PANEL_SPIN_WHEEL))
     {
-        m_cpm->Set(ControlMode::PercentOutput, 0.5);
+        m_cpmState = !m_cpmState;
+    }
+
+    
+    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_RAISE))
+    {
+        m_cpmSolenoidState = true;
+    }
+    else
+    {
+        m_cpmSolenoidState = false;
+    }
+    
+
+    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_LIFT))
+    {
+        m_climberState = !m_climberState;
+    }
+
+
+
+    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_EXTEND))
+    {
+        m_climberSolenoidState = true;
+    }
+    else
+    {
+        m_climberSolenoidState = false;
+    }
+
+    if(m_cpmState)
+    {
+        m_cpm->Set(ControlMode::PercentOutput, 1.0);
     }
     else
     {
          m_cpm->Set(ControlMode::PercentOutput, 0.0);
     }
 
-    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_LIFT))
+    if(m_climberState)
     {
-        m_climber->Set(ControlMode::PercentOutput, 0.5);
+        m_climber->Set(ControlMode::PercentOutput, 1.0);
     }
     else
     {
         m_climber->Set(ControlMode::PercentOutput, 0.0);
     }
 
-    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_RAISE))
-    {
-        m_cpmSolenoid->Set(!m_cpmSolenoid->Get());
-    }
-
-    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_EXTEND))
+    if(m_climberSolenoidState)
     {
         m_climberSolenoid->Set(!m_climberSolenoid->Get());
     }
+    else
+    {
+        
+    }
+
+    if(m_cpmSolenoidState)
+    {
+        m_cpmSolenoid->Set(!m_cpmSolenoid->Get());
+    }
+    {
+
+    }
+    
+
+    
     frc::SmartDashboard::PutBoolean("left bumper", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_EXTEND));
+    frc::SmartDashboard::PutBoolean("left trigger", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_LIFT));
+    frc::SmartDashboard::PutBoolean("right bumper", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_RAISE));
+    frc::SmartDashboard::PutBoolean("right trigger", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_SPIN_WHEEL));
 }
 
 

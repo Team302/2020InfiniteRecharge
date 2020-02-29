@@ -45,6 +45,8 @@ class BallManipulator
             SHOOT_AUTON,
             UNJAM_CLOCKWISE,
             UNJAM_COUNTERCLOCKWISE,
+            TRANSFER_UP,
+            TRANSFER_DOWN,
             MAX_BALL_MANIPULATOR_STATES
         };
 

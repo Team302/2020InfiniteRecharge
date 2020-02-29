@@ -113,12 +113,12 @@ void TurnAngle::Run() //best method ever. Does nothing, and should do nothing...
 
 	if(!sign)
 	{
-		leftSpeed = .5 * deltaAngle / m_targetAngle + .03;
+		leftSpeed = .2 * deltaAngle / m_targetAngle + .03;
 		rightSpeed = -leftSpeed;
 	}
 	else
 	{
-		rightSpeed = .5 * deltaAngle / m_targetAngle + .03;
+		rightSpeed = .2 * deltaAngle / m_targetAngle + .03;
 		leftSpeed = -rightSpeed;
 	}
 	

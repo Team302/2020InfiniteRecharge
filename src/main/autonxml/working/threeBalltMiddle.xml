@@ -5,7 +5,7 @@
                time="0.25"               
 			   ballState="GET_READY_TO_SHOOT"/>
 	<primitive id="DO_NOTHING"
-               time="4.0"               
+               time="6.0"               
 			   ballState="SHOOT_AUTON"/>
     <primitive id="TURN_ANGLE_REL"
                heading="-70.0"               

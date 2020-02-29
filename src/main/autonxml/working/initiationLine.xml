@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE auton SYSTEM "auton.dtd">
+<auton>
+    <primitive id="DRIVE_DISTANCE"
+			   distance="12.0"
+			   drivespeed="-60.0"               
+               ballState="OFF"
+               turretAngle="0"/>
+    <primitive id="DO_NOTHING"
+               ballState="OFF"/>
+</auton>
