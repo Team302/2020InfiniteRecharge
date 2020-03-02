@@ -93,6 +93,8 @@ class TeleopControl
             REVERSE_IMPELLER,
             UNJAM_CLOCKWISE,
             UNJAM_COUNTERCLOCKWISE,
+            TRANSFER_UP,
+            TRANSFER_DOWN,
             MAX_FUNCTIONS
         };
 

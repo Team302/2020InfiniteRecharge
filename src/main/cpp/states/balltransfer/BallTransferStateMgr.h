@@ -35,6 +35,7 @@ class BallTransferStateMgr
             OFF,
             TO_IMPELLER,
             TO_SHOOTER,
+            EJECT,
             MAX_BALL_TRANSFER_STATES
         };
 
