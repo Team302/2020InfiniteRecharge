@@ -115,12 +115,14 @@ $(document).ready(function(){initNavTree('_shooter_shoot_8cpp_source.html','');}
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_target_data_8h.html">controllers/MechanismTargetData.h</a>&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<a class="code" href="class_shooter_shoot.html#abdad2970e6e24b2dbf0db8b6bf959317">ShooterShoot::ShooterShoot</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_shooter_shoot.html#a8cab7b9b8b54c6c6239ceb35809ca9e7">   27</a></span>&#160;(</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_shooter_shoot.html#a2616b1aa10080cd40496922afab412f8">   27</a></span>&#160;(</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>*                    controlData, </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">double</span>                          target,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a>   solState</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;) : <a class="code" href="class_mechanism_state.html">MechanismState</a>( <a class="code" href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a>()-&gt;GetIMechanism(<a class="code" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba5751201c8cf975192a6ad9cf90e793b7">MechanismTypes::SHOOTER</a>), controlData, target, solState )</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_control_data.html">ControlData</a>*                    failoverControlData,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">double</span>                          failoverTarget,    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a>   solState</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;) : <a class="code" href="class_mechanism_state.html">MechanismState</a>( <a class="code" href="class_mechanism_factory.html#a11b20a573ca93c56cb5da66ac5cbd2c0">MechanismFactory::GetMechanismFactory</a>()-&gt;GetIMechanism(<a class="code" href="class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba5751201c8cf975192a6ad9cf90e793b7">MechanismTypes::SHOOTER</a>), controlData, target, solState )</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_mechanism_target_data_html_a1bd7dca52842f28088b36d001b0ac125"><div class="ttname"><a href="class_mechanism_target_data.html#a1bd7dca52842f28088b36d001b0ac125">MechanismTargetData::SOLENOID</a></div><div class="ttdeci">SOLENOID</div><div class="ttdef"><b>Definition:</b> <a href="_mechanism_target_data_8h_source.html#l00025">MechanismTargetData.h:25</a></div></div>

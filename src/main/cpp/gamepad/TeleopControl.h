@@ -84,6 +84,17 @@ class TeleopControl
             TURRET_LIMELIGHT_AIM,
             GARBAGE_INCREMENT,
             GARBAGE_DECREMENT,
+            OFF,
+            INTAKE,
+            INTAKE_HUMAN_PLAYER,
+            HOLD,
+            GET_READY_TO_SHOOT,
+            SHOOT,
+            REVERSE_IMPELLER,
+            UNJAM_CLOCKWISE,
+            UNJAM_COUNTERCLOCKWISE,
+            TRANSFER_UP,
+            TRANSFER_DOWN,
             MAX_FUNCTIONS
         };
 

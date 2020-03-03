@@ -56,9 +56,9 @@ void CyclePrimitives::Init()
 {
 	m_currentPrimSlot = 0; //Reset current prim
 	m_primParams.clear();
-
+	frc::SmartDashboard::PutString("Auton file", m_autonSelector->GetSelectedAutoFile());
 	m_primParams = PrimitiveParser::ParseXML( m_autonSelector->GetSelectedAutoFile() );
-
+	frc::SmartDashboard::PutNumber("Prim Vector length", m_primParams.size());
 	if (!m_primParams.empty())
 	{
 		GetNextPrim();
@@ -71,17 +71,17 @@ void CyclePrimitives::Run()
 	{
 		Logger::GetLogger()->LogError( string("CyclePrimitive::RunCurrentPrimitive"), string("Primitive Detected!"));
 		m_currentPrim->Run();
-		//m_powerCells->Run();
+		m_powerCells->Run();
 		if (m_currentPrim->IsDone() )
 		{
 			GetNextPrim();
 		}
-		else if ( m_timer->HasPeriodPassed( m_maxTime ) )
+		/*else if ( m_timer->HasPeriodPassed( m_maxTime ) )
 		{
 			// timed out; for now let's just assume the previous was done
 			Logger::GetLogger()->LogError( string( "CyclePrimitives::RunCurrentPrimitive"), string( "Primitive Timed out" ));
 			GetNextPrim();
-		}
+		}*/
 	}
 	else
 	{
@@ -106,7 +106,7 @@ void CyclePrimitives::GetNextPrim()
 	if (m_currentPrim != nullptr)
 	{
 		m_currentPrim->Init(currentPrimParam);
-		//m_powerCells->Init(currentPrimParam);
+		m_powerCells->Init(currentPrimParam);
 		m_maxTime = currentPrimParam->GetTime();
 		m_timer->Reset();
 		m_timer->Start();
@@ -133,7 +133,7 @@ void CyclePrimitives::RunDoNothing()
 										   );             
 		m_doNothing = m_primFactory->GetIPrimitive(params);
 		m_doNothing->Init(params);
-		//m_powerCells->Init(params);
+		m_powerCells->Init(params);
 	}
 	m_doNothing->Run();
 }

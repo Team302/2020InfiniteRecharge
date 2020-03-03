@@ -89,41 +89,47 @@ $(document).ready(function(){initNavTree('_i_primitive_8h_source.html','');});
 <div class="title">IPrimitive.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_i_primitive_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * IPrimitive.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: Jan 12, 2017</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: The Realest of Authors</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef SRC_INTERFACES_IPRIMITIVE_H_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define SRC_INTERFACES_IPRIMITIVE_H_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_primitive_params_8h.html">auton/PrimitiveParams.h</a>&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_i_primitive.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_primitive.html">IPrimitive</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">   16</a></span>&#160;         <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">LOOP_LENGTH</a> = 0.020; <span class="comment">//Program loop duration in seconds</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_i_primitive.html#aa67f91faaa42e0a8b1b80b905dd42cad">IPrimitive</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_i_primitive.html#a8079fb4001c84b6e715ffe521fd45897">~IPrimitive</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_primitive.html#abe9e4c3b5a5b806d2c551c0f56a075d2">Init</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>*  Parms) = 0;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_primitive.html#a3c34bd0f5ddbfe150ecade13303b6cd6">Run</a>() = 0;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_i_primitive.html#a5b62801261f9bd974be04217bd86f668">IsDone</a>() = 0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<a href="_i_primitive_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright 2019 Lake Orion Robotics FIRST Team 302</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;),</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">class </span><a class="code" href="class_primitive_params.html">PrimitiveParams</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_i_primitive.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_primitive.html">IPrimitive</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">   24</a></span>&#160;         <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">LOOP_LENGTH</a> = 0.020; <span class="comment">//Program loop duration in seconds</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SRC_IPrimitive_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_i_primitive.html#aa67f91faaa42e0a8b1b80b905dd42cad">IPrimitive</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_i_primitive.html#a8079fb4001c84b6e715ffe521fd45897">~IPrimitive</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_primitive.html#abe9e4c3b5a5b806d2c551c0f56a075d2">Init</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>*  Parms) = 0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_primitive.html#a3c34bd0f5ddbfe150ecade13303b6cd6">Run</a>() = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_i_primitive.html#a5b62801261f9bd974be04217bd86f668">IsDone</a>() = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_i_primitive_html"><div class="ttname"><a href="class_i_primitive.html">IPrimitive</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_primitive_8h_source.html#l00013">IPrimitive.h:13</a></div></div>
+<div class="ttc" id="aclass_i_primitive_html"><div class="ttname"><a href="class_i_primitive.html">IPrimitive</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_primitive_8h_source.html#l00021">IPrimitive.h:21</a></div></div>
 <div class="ttc" id="aclass_primitive_params_html"><div class="ttname"><a href="class_primitive_params.html">PrimitiveParams</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8h_source.html#l00035">PrimitiveParams.h:35</a></div></div>
 <div class="ttc" id="aclass_i_primitive_html_a5b62801261f9bd974be04217bd86f668"><div class="ttname"><a href="class_i_primitive.html#a5b62801261f9bd974be04217bd86f668">IPrimitive::IsDone</a></div><div class="ttdeci">virtual bool IsDone()=0</div></div>
 <div class="ttc" id="aclass_i_primitive_html_abe9e4c3b5a5b806d2c551c0f56a075d2"><div class="ttname"><a href="class_i_primitive.html#abe9e4c3b5a5b806d2c551c0f56a075d2">IPrimitive::Init</a></div><div class="ttdeci">virtual void Init(PrimitiveParams *Parms)=0</div></div>
-<div class="ttc" id="aclass_i_primitive_html_acd3b9501892b1950113c63ccb699cb37"><div class="ttname"><a href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">IPrimitive::LOOP_LENGTH</a></div><div class="ttdeci">const float LOOP_LENGTH</div><div class="ttdef"><b>Definition:</b> <a href="_i_primitive_8h_source.html#l00016">IPrimitive.h:16</a></div></div>
+<div class="ttc" id="aclass_i_primitive_html_acd3b9501892b1950113c63ccb699cb37"><div class="ttname"><a href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">IPrimitive::LOOP_LENGTH</a></div><div class="ttdeci">const float LOOP_LENGTH</div><div class="ttdef"><b>Definition:</b> <a href="_i_primitive_8h_source.html#l00024">IPrimitive.h:24</a></div></div>
 <div class="ttc" id="aclass_i_primitive_html_a8079fb4001c84b6e715ffe521fd45897"><div class="ttname"><a href="class_i_primitive.html#a8079fb4001c84b6e715ffe521fd45897">IPrimitive::~IPrimitive</a></div><div class="ttdeci">virtual ~IPrimitive()=default</div></div>
-<div class="ttc" id="a_primitive_params_8h_html"><div class="ttname"><a href="_primitive_params_8h.html">PrimitiveParams.h</a></div></div>
 <div class="ttc" id="aclass_i_primitive_html_aa67f91faaa42e0a8b1b80b905dd42cad"><div class="ttname"><a href="class_i_primitive.html#aa67f91faaa42e0a8b1b80b905dd42cad">IPrimitive::IPrimitive</a></div><div class="ttdeci">IPrimitive()=default</div></div>
 <div class="ttc" id="aclass_i_primitive_html_a3c34bd0f5ddbfe150ecade13303b6cd6"><div class="ttname"><a href="class_i_primitive.html#a3c34bd0f5ddbfe150ecade13303b6cd6">IPrimitive::Run</a></div><div class="ttdeci">virtual void Run()=0</div></div>
 <!-- start footer part -->

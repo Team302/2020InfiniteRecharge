@@ -134,4 +134,3 @@ class DragonFalcon : public IDragonMotorController
 
 };
 
-typedef std::vector<DragonFalcon*> DragonFalconVector;

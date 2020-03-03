@@ -6,14 +6,14 @@
 	<mechanismTarget stateIdentifier="INTAKEOFF"
 	                 controlDataIdentifier="openloop"
 					 value="0.0"
-					 solenoid="OFF"/>
+					 solenoid="ON"/>
 	<mechanismTarget stateIdentifier="INTAKEON"
 	                 controlDataIdentifier="openloop"
-					 value=".5"
-					 solenoid="ON"/>
+					 value=".75"
+					 solenoid="OFF"/>
 	<mechanismTarget stateIdentifier="INTAKEHUMANPLAYER"
 	                 controlDataIdentifier="openloop"
-					 value="-0.5"
-					 solenoid="ON"/>
+					 value="-0.75"
+					 solenoid="OFF"/>
 
 </statedata>

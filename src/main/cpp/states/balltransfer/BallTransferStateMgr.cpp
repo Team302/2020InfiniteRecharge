@@ -63,6 +63,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
     stateMap["BALLTRANSFEROFF"] = BALL_TRANSFER_STATE::OFF;
     stateMap["BALLTRANSPORTTOIMPELLER"]  = BALL_TRANSFER_STATE::TO_IMPELLER;
     stateMap["BALLTRANSFERTOSHOOTER"]  = BALL_TRANSFER_STATE::TO_SHOOTER;
+    stateMap["BALLTRANSFEREJECT"] = BALL_TRANSFER_STATE::EJECT;
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -109,6 +110,14 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                     }
                     break;
 
+                    case BALL_TRANSFER_STATE::EJECT:
+                    {
+                        auto thisState = new BallTransferToShooter(controlData, target, solState);
+                        m_stateEnumToObjectMap[stateEnum] = thisState;
+                    
+                    }
+                    break;
+                    
                     default:
                     {
                         Logger::GetLogger()->LogError( string("BallTransferStateMgr::BallTransferStateMgr"), string("unknown state"));

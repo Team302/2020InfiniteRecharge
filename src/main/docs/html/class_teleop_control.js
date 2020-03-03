@@ -14,6 +14,7 @@ var class_teleop_control =
       [ "CLIMBER_EXTEND", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a28572b334fad1f837f9c010c6b1f9e46", null ],
       [ "CLIMBER_LIFT", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15aaad6666ff47670ed1b6d5d21023c82ce", null ],
       [ "CLIMBER_CRAWL", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a99ec8c8b04aa477537e9f23ca91fb544", null ],
+      [ "CLIMBER_HOLD", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3335a30aad87f7d75a6ed4321a5b8070", null ],
       [ "IMPELLER_OFF", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a554663d63f2c91d5a3d48ecd0e24002b", null ],
       [ "IMPELLER_HOLD", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15a3f87a76a9481d0207d162cd0bc406808", null ],
       [ "IMPELLER_AGITATE", "class_teleop_control.html#a7d4c2a365d8eaf21214611064c8a3a15afbf864cd90eeab272729dffbb26dc27c", null ],

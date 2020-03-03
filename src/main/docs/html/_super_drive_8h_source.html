@@ -111,76 +111,80 @@ $(document).ready(function(){initNavTree('_super_drive_8h_source.html','');});
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// FRC includes</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;frc/Timer.h&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_chassis_8h.html">subsys/IChassis.h</a>&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_primitive_8h.html">auton/primitives/IPrimitive.h</a>&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Team 302 includes</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_primitive_8h.html">auton/primitives/IPrimitive.h</a>&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Third Party Includes</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Third Party Includes</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_super_drive.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_super_drive.html">SuperDrive</a> : <span class="keyword">public</span> <a class="code" href="class_i_primitive.html">IPrimitive</a> </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_super_drive.html#a8141ce7485eae0c7dd5f1a4bb67f9e9c">Init</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>* params) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_super_drive.html#a1720ed2254cf46c03d8ad34e2b38bbfa">Run</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_super_drive.html#a3f2c91eb6f751219b900eaa022907b0e">IsDone</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_super_drive.html#aa8baae85dbb3bcfb38f22c25b820562a">SlowDown</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_super_drive.html#a7055bb29e2de08785fecfe8804e245fe">ReachedTargetSpeed</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_super_drive.html#a97309413dd3b3f1d68324476d57daba0">   42</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_super_drive.html#a97309413dd3b3f1d68324476d57daba0">GYRO_CORRECTION_CONSTANT</a> = 6; <span class="comment">//2.3</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_super_drive.html#aa7ab753722262aae87138667bb0bac2f">   43</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_super_drive.html#aa7ab753722262aae87138667bb0bac2f">INCHES_PER_SECOND_SECOND</a> = 120; <span class="comment">//120</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_super_drive.html#ac415c90fe844cd40e438ec7f05061e32">   44</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_super_drive.html#ac415c90fe844cd40e438ec7f05061e32">MIN_SPEED_SLOWDOWN</a>       = 13;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">protected</span>: </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="class_super_drive.html#ab57095c722e3cd8396c04297b5463900">SuperDrive</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_super_drive.html#ace10b7100be6b746d68af9a5cd253741">~SuperDrive</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> PROPORTIONAL_COEFF  = 12.0; <span class="comment">//16</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> INTREGRAL_COEFF     = 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> DERIVATIVE_COEFF    = 0.0; <span class="comment">//.16</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> FEET_FORWARD_COEFF  = 0.0;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        std::shared_ptr&lt;IChassis&gt; m_chassis;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        std::unique_ptr&lt;frc::Timer&gt; m_timer;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">class </span><a class="code" href="class_i_chassis.html">IChassis</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefrc.html">frc</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">class </span>Timer;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_super_drive.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_super_drive.html">SuperDrive</a> : <span class="keyword">public</span> <a class="code" href="class_i_primitive.html">IPrimitive</a> </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_super_drive.html#a8141ce7485eae0c7dd5f1a4bb67f9e9c">Init</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>* params) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_super_drive.html#a1720ed2254cf46c03d8ad34e2b38bbfa">Run</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_super_drive.html#a3f2c91eb6f751219b900eaa022907b0e">IsDone</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_super_drive.html#aa8baae85dbb3bcfb38f22c25b820562a">SlowDown</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_super_drive.html#a7055bb29e2de08785fecfe8804e245fe">ReachedTargetSpeed</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_super_drive.html#a97309413dd3b3f1d68324476d57daba0">   45</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_super_drive.html#a97309413dd3b3f1d68324476d57daba0">GYRO_CORRECTION_CONSTANT</a> = 6; <span class="comment">//2.3</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_super_drive.html#aa7ab753722262aae87138667bb0bac2f">   46</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_super_drive.html#aa7ab753722262aae87138667bb0bac2f">INCHES_PER_SECOND_SECOND</a> = 120; <span class="comment">//120</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_super_drive.html#ac415c90fe844cd40e438ec7f05061e32">   47</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_super_drive.html#ac415c90fe844cd40e438ec7f05061e32">MIN_SPEED_SLOWDOWN</a>       = 13;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">protected</span>: </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="class_super_drive.html#ab57095c722e3cd8396c04297b5463900">SuperDrive</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_super_drive.html#ace10b7100be6b746d68af9a5cd253741">~SuperDrive</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> PROPORTIONAL_COEFF  = 12.0; <span class="comment">//16</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> INTREGRAL_COEFF     = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> DERIVATIVE_COEFF    = 0.0; <span class="comment">//.16</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> FEET_FORWARD_COEFF  = 0.0;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">float</span> m_targetSpeed;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">float</span> m_currentSpeed;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">float</span> m_speedOffset;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">float</span> m_leftSpeed;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">float</span> m_rightSpeed;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        std::shared_ptr&lt;IChassis&gt; m_chassis;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        std::unique_ptr&lt;frc::Timer&gt; m_timer;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">float</span> m_targetSpeed;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">float</span> m_currentSpeed;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">float</span> m_speedOffset;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">float</span> m_currentHeading;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">float</span> m_startHeading;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">float</span> m_leftSpeed;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">float</span> m_rightSpeed;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">bool</span> m_slowingDown;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">bool</span> m_reachedTargetSpeed;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">float</span> m_accelDecelTime;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">float</span> m_currentTime;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">float</span> m_minSpeedSlowdown;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">float</span> m_currentHeading;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">float</span> m_startHeading;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">bool</span> m_slowingDown;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">bool</span> m_reachedTargetSpeed;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">float</span> m_accelDecelTime;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">float</span> m_currentTime;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">float</span> m_minSpeedSlowdown;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_super_drive_html_ac415c90fe844cd40e438ec7f05061e32"><div class="ttname"><a href="class_super_drive.html#ac415c90fe844cd40e438ec7f05061e32">SuperDrive::MIN_SPEED_SLOWDOWN</a></div><div class="ttdeci">const float MIN_SPEED_SLOWDOWN</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00044">SuperDrive.h:44</a></div></div>
+<div class="ttc" id="aclass_super_drive_html_ac415c90fe844cd40e438ec7f05061e32"><div class="ttname"><a href="class_super_drive.html#ac415c90fe844cd40e438ec7f05061e32">SuperDrive::MIN_SPEED_SLOWDOWN</a></div><div class="ttdeci">const float MIN_SPEED_SLOWDOWN</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00047">SuperDrive.h:47</a></div></div>
 <div class="ttc" id="a_i_primitive_8h_html"><div class="ttname"><a href="_i_primitive_8h.html">IPrimitive.h</a></div></div>
-<div class="ttc" id="aclass_super_drive_html_a3f2c91eb6f751219b900eaa022907b0e"><div class="ttname"><a href="class_super_drive.html#a3f2c91eb6f751219b900eaa022907b0e">SuperDrive::IsDone</a></div><div class="ttdeci">bool IsDone() override</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8cpp_source.html#l00210">SuperDrive.cpp:210</a></div></div>
-<div class="ttc" id="aclass_super_drive_html_a7055bb29e2de08785fecfe8804e245fe"><div class="ttname"><a href="class_super_drive.html#a7055bb29e2de08785fecfe8804e245fe">SuperDrive::ReachedTargetSpeed</a></div><div class="ttdeci">bool ReachedTargetSpeed()</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8cpp_source.html#l00220">SuperDrive.cpp:220</a></div></div>
-<div class="ttc" id="aclass_super_drive_html"><div class="ttname"><a href="class_super_drive.html">SuperDrive</a></div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00033">SuperDrive.h:33</a></div></div>
-<div class="ttc" id="aclass_i_primitive_html"><div class="ttname"><a href="class_i_primitive.html">IPrimitive</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_primitive_8h_source.html#l00013">IPrimitive.h:13</a></div></div>
-<div class="ttc" id="aclass_super_drive_html_aa7ab753722262aae87138667bb0bac2f"><div class="ttname"><a href="class_super_drive.html#aa7ab753722262aae87138667bb0bac2f">SuperDrive::INCHES_PER_SECOND_SECOND</a></div><div class="ttdeci">const float INCHES_PER_SECOND_SECOND</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00043">SuperDrive.h:43</a></div></div>
+<div class="ttc" id="aclass_super_drive_html_a3f2c91eb6f751219b900eaa022907b0e"><div class="ttname"><a href="class_super_drive.html#a3f2c91eb6f751219b900eaa022907b0e">SuperDrive::IsDone</a></div><div class="ttdeci">bool IsDone() override</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8cpp_source.html#l00205">SuperDrive.cpp:205</a></div></div>
+<div class="ttc" id="aclass_super_drive_html_a7055bb29e2de08785fecfe8804e245fe"><div class="ttname"><a href="class_super_drive.html#a7055bb29e2de08785fecfe8804e245fe">SuperDrive::ReachedTargetSpeed</a></div><div class="ttdeci">bool ReachedTargetSpeed()</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8cpp_source.html#l00215">SuperDrive.cpp:215</a></div></div>
+<div class="ttc" id="aclass_super_drive_html"><div class="ttname"><a href="class_super_drive.html">SuperDrive</a></div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00036">SuperDrive.h:36</a></div></div>
+<div class="ttc" id="aclass_i_primitive_html"><div class="ttname"><a href="class_i_primitive.html">IPrimitive</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_primitive_8h_source.html#l00021">IPrimitive.h:21</a></div></div>
+<div class="ttc" id="aclass_super_drive_html_aa7ab753722262aae87138667bb0bac2f"><div class="ttname"><a href="class_super_drive.html#aa7ab753722262aae87138667bb0bac2f">SuperDrive::INCHES_PER_SECOND_SECOND</a></div><div class="ttdeci">const float INCHES_PER_SECOND_SECOND</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00046">SuperDrive.h:46</a></div></div>
 <div class="ttc" id="aclass_primitive_params_html"><div class="ttname"><a href="class_primitive_params.html">PrimitiveParams</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8h_source.html#l00035">PrimitiveParams.h:35</a></div></div>
-<div class="ttc" id="aclass_super_drive_html_a8141ce7485eae0c7dd5f1a4bb67f9e9c"><div class="ttname"><a href="class_super_drive.html#a8141ce7485eae0c7dd5f1a4bb67f9e9c">SuperDrive::Init</a></div><div class="ttdeci">void Init(PrimitiveParams *params) override</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8cpp_source.html#l00062">SuperDrive.cpp:62</a></div></div>
-<div class="ttc" id="a_i_chassis_8h_html"><div class="ttname"><a href="_i_chassis_8h.html">IChassis.h</a></div></div>
-<div class="ttc" id="aclass_super_drive_html_ab57095c722e3cd8396c04297b5463900"><div class="ttname"><a href="class_super_drive.html#ab57095c722e3cd8396c04297b5463900">SuperDrive::SuperDrive</a></div><div class="ttdeci">SuperDrive()</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8cpp_source.html#l00045">SuperDrive.cpp:45</a></div></div>
+<div class="ttc" id="aclass_super_drive_html_a8141ce7485eae0c7dd5f1a4bb67f9e9c"><div class="ttname"><a href="class_super_drive.html#a8141ce7485eae0c7dd5f1a4bb67f9e9c">SuperDrive::Init</a></div><div class="ttdeci">void Init(PrimitiveParams *params) override</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8cpp_source.html#l00057">SuperDrive.cpp:57</a></div></div>
+<div class="ttc" id="aclass_super_drive_html_ab57095c722e3cd8396c04297b5463900"><div class="ttname"><a href="class_super_drive.html#ab57095c722e3cd8396c04297b5463900">SuperDrive::SuperDrive</a></div><div class="ttdeci">SuperDrive()</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8cpp_source.html#l00040">SuperDrive.cpp:40</a></div></div>
 <div class="ttc" id="aclass_super_drive_html_ace10b7100be6b746d68af9a5cd253741"><div class="ttname"><a href="class_super_drive.html#ace10b7100be6b746d68af9a5cd253741">SuperDrive::~SuperDrive</a></div><div class="ttdeci">virtual ~SuperDrive()=default</div></div>
-<div class="ttc" id="aclass_super_drive_html_aa8baae85dbb3bcfb38f22c25b820562a"><div class="ttname"><a href="class_super_drive.html#aa8baae85dbb3bcfb38f22c25b820562a">SuperDrive::SlowDown</a></div><div class="ttdeci">void SlowDown()</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8cpp_source.html#l00215">SuperDrive.cpp:215</a></div></div>
-<div class="ttc" id="aclass_super_drive_html_a1720ed2254cf46c03d8ad34e2b38bbfa"><div class="ttname"><a href="class_super_drive.html#a1720ed2254cf46c03d8ad34e2b38bbfa">SuperDrive::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8cpp_source.html#l00131">SuperDrive.cpp:131</a></div></div>
-<div class="ttc" id="aclass_super_drive_html_a97309413dd3b3f1d68324476d57daba0"><div class="ttname"><a href="class_super_drive.html#a97309413dd3b3f1d68324476d57daba0">SuperDrive::GYRO_CORRECTION_CONSTANT</a></div><div class="ttdeci">const float GYRO_CORRECTION_CONSTANT</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00042">SuperDrive.h:42</a></div></div>
+<div class="ttc" id="aclass_i_chassis_html"><div class="ttname"><a href="class_i_chassis.html">IChassis</a></div><div class="ttdoc">Interface for differential drives.</div><div class="ttdef"><b>Definition:</b> <a href="_i_chassis_8h_source.html#l00034">IChassis.h:34</a></div></div>
+<div class="ttc" id="anamespacefrc_html"><div class="ttname"><a href="namespacefrc.html">frc</a></div><div class="ttdef"><b>Definition:</b> <a href="_do_nothing_8h_source.html#l00034">DoNothing.h:34</a></div></div>
+<div class="ttc" id="aclass_super_drive_html_aa8baae85dbb3bcfb38f22c25b820562a"><div class="ttname"><a href="class_super_drive.html#aa8baae85dbb3bcfb38f22c25b820562a">SuperDrive::SlowDown</a></div><div class="ttdeci">void SlowDown()</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8cpp_source.html#l00210">SuperDrive.cpp:210</a></div></div>
+<div class="ttc" id="aclass_super_drive_html_a1720ed2254cf46c03d8ad34e2b38bbfa"><div class="ttname"><a href="class_super_drive.html#a1720ed2254cf46c03d8ad34e2b38bbfa">SuperDrive::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8cpp_source.html#l00126">SuperDrive.cpp:126</a></div></div>
+<div class="ttc" id="aclass_super_drive_html_a97309413dd3b3f1d68324476d57daba0"><div class="ttname"><a href="class_super_drive.html#a97309413dd3b3f1d68324476d57daba0">SuperDrive::GYRO_CORRECTION_CONSTANT</a></div><div class="ttdeci">const float GYRO_CORRECTION_CONSTANT</div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00045">SuperDrive.h:45</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

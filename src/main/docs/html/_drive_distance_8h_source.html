@@ -115,66 +115,56 @@ $(document).ready(function(){initNavTree('_drive_distance_8h_source.html','');})
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Third Party Includes</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_super_drive_8h.html">auton/primitives/SuperDrive.h</a>&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_primitive_params_8h.html">auton/PrimitiveParams.h</a>&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_factory_8h.html">subsys/MechanismFactory.h</a>&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_super_drive_8h.html">auton/primitives/SuperDrive.h</a>&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_chassis_8h.html">subsys/IChassis.h</a>&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_primitive_8h.html">auton/primitives/IPrimitive.h</a>&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_drive_distance.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_drive_distance.html">DriveDistance</a> : <span class="keyword">public</span> <a class="code" href="class_super_drive.html">SuperDrive</a> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_drive_distance.html#acbd6bfcdbecd3b81ddb9201d8025f0d6">IsDone</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_distance.html#a7a4a90ed63d01052a9bfb8b13b402fc7">Init</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>* params) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_distance.html#a5658e8083b0b1cc87580297e173a9a27">Run</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_drive_distance.html#aa7670c4f0b0b5ae3c05c4057318e3a34">DriveDistance</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_drive_distance.html#aa5461891c0ccb527a10d71d489485d7d">~DriveDistance</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_distance.html#a8a39fae7fc4f3991163613994447e84e">SetDistance</a></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    (</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">double</span> distance</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    );</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> CalculateSlowDownDistance();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//TODO: remove timeout. it is no longer being used</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//  const float TIMEOUT_MULTIPIER = 200000; // Multiplier for the max expected time (speed * distance) * TIMEOUT_MULTIPLIER = expected time</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                    <span class="comment">//1.4</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_primitive_params.html">PrimitiveParams</a>* m_params;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">float</span> m_targetDistance;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">float</span> m_initialDistance;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">float</span> m_timeRemaining;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">float</span> m_minSpeedCountTime;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> m_underSpeedCounts;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span> m_startHeading;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">float</span> m_endHeading;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">float</span> m_minSpeed;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> m_arcing;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">class </span><a class="code" href="class_primitive_params.html">PrimitiveParams</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_drive_distance.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_drive_distance.html">DriveDistance</a> : <span class="keyword">public</span> <a class="code" href="class_super_drive.html">SuperDrive</a> </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_drive_distance.html#acbd6bfcdbecd3b81ddb9201d8025f0d6">IsDone</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_distance.html#a7a4a90ed63d01052a9bfb8b13b402fc7">Init</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>* params) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_distance.html#a5658e8083b0b1cc87580297e173a9a27">Run</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_drive_distance.html#aa7670c4f0b0b5ae3c05c4057318e3a34">DriveDistance</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_drive_distance.html#aa5461891c0ccb527a10d71d489485d7d">~DriveDistance</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_drive_distance.html#a8a39fae7fc4f3991163613994447e84e">SetDistance</a></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    (</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">double</span> distance</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> CalculateSlowDownDistance();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_primitive_params.html">PrimitiveParams</a>* m_params;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">float</span> m_targetDistance;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">float</span> m_initialDistance;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">float</span> m_timeRemaining;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">float</span> m_minSpeedCountTime;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">int</span> m_underSpeedCounts;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">float</span> m_startHeading;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">float</span> m_endHeading;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">float</span> m_minSpeed;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> m_arcing;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> SPEED_THRESHOLD = 1.5;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> MIN_SPEED_COUNT_TIME = 0.5; <span class="comment">//seconds before we start checking for wall collisions</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> UNDER_SPEED_COUNT_THRESHOLD = 4;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> DECEL_TIME_MULTIPLIER = 0.85; <span class="comment">//0.75</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> SPEED_THRESHOLD = 1.5;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> MIN_SPEED_COUNT_TIME = 0.5; <span class="comment">//seconds before we start checking for wall collisions</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> UNDER_SPEED_COUNT_THRESHOLD = 4;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> DECEL_TIME_MULTIPLIER = 0.85; <span class="comment">//0.75</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_drive_distance_html_aa5461891c0ccb527a10d71d489485d7d"><div class="ttname"><a href="class_drive_distance.html#aa5461891c0ccb527a10d71d489485d7d">DriveDistance::~DriveDistance</a></div><div class="ttdeci">virtual ~DriveDistance()=default</div></div>
-<div class="ttc" id="a_i_primitive_8h_html"><div class="ttname"><a href="_i_primitive_8h.html">IPrimitive.h</a></div></div>
-<div class="ttc" id="aclass_super_drive_html"><div class="ttname"><a href="class_super_drive.html">SuperDrive</a></div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00033">SuperDrive.h:33</a></div></div>
-<div class="ttc" id="a_mechanism_factory_8h_html"><div class="ttname"><a href="_mechanism_factory_8h.html">MechanismFactory.h</a></div></div>
+<div class="ttc" id="aclass_super_drive_html"><div class="ttname"><a href="class_super_drive.html">SuperDrive</a></div><div class="ttdef"><b>Definition:</b> <a href="_super_drive_8h_source.html#l00036">SuperDrive.h:36</a></div></div>
 <div class="ttc" id="aclass_primitive_params_html"><div class="ttname"><a href="class_primitive_params.html">PrimitiveParams</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8h_source.html#l00035">PrimitiveParams.h:35</a></div></div>
-<div class="ttc" id="a_i_chassis_8h_html"><div class="ttname"><a href="_i_chassis_8h.html">IChassis.h</a></div></div>
-<div class="ttc" id="aclass_drive_distance_html_a8a39fae7fc4f3991163613994447e84e"><div class="ttname"><a href="class_drive_distance.html#a8a39fae7fc4f3991163613994447e84e">DriveDistance::SetDistance</a></div><div class="ttdeci">void SetDistance(double distance)</div><div class="ttdef"><b>Definition:</b> <a href="_drive_distance_8cpp_source.html#l00145">DriveDistance.cpp:145</a></div></div>
-<div class="ttc" id="aclass_drive_distance_html_acbd6bfcdbecd3b81ddb9201d8025f0d6"><div class="ttname"><a href="class_drive_distance.html#acbd6bfcdbecd3b81ddb9201d8025f0d6">DriveDistance::IsDone</a></div><div class="ttdeci">bool IsDone() override</div><div class="ttdef"><b>Definition:</b> <a href="_drive_distance_8cpp_source.html#l00113">DriveDistance.cpp:113</a></div></div>
+<div class="ttc" id="aclass_drive_distance_html_a8a39fae7fc4f3991163613994447e84e"><div class="ttname"><a href="class_drive_distance.html#a8a39fae7fc4f3991163613994447e84e">DriveDistance::SetDistance</a></div><div class="ttdeci">void SetDistance(double distance)</div><div class="ttdef"><b>Definition:</b> <a href="_drive_distance_8cpp_source.html#l00147">DriveDistance.cpp:147</a></div></div>
+<div class="ttc" id="aclass_drive_distance_html_acbd6bfcdbecd3b81ddb9201d8025f0d6"><div class="ttname"><a href="class_drive_distance.html#acbd6bfcdbecd3b81ddb9201d8025f0d6">DriveDistance::IsDone</a></div><div class="ttdeci">bool IsDone() override</div><div class="ttdef"><b>Definition:</b> <a href="_drive_distance_8cpp_source.html#l00114">DriveDistance.cpp:114</a></div></div>
 <div class="ttc" id="aclass_drive_distance_html_a7a4a90ed63d01052a9bfb8b13b402fc7"><div class="ttname"><a href="class_drive_distance.html#a7a4a90ed63d01052a9bfb8b13b402fc7">DriveDistance::Init</a></div><div class="ttdeci">void Init(PrimitiveParams *params) override</div><div class="ttdef"><b>Definition:</b> <a href="_drive_distance_8cpp_source.html#l00066">DriveDistance.cpp:66</a></div></div>
-<div class="ttc" id="aclass_drive_distance_html"><div class="ttname"><a href="class_drive_distance.html">DriveDistance</a></div><div class="ttdef"><b>Definition:</b> <a href="_drive_distance_8h_source.html#l00035">DriveDistance.h:35</a></div></div>
-<div class="ttc" id="aclass_drive_distance_html_a5658e8083b0b1cc87580297e173a9a27"><div class="ttname"><a href="class_drive_distance.html#a5658e8083b0b1cc87580297e173a9a27">DriveDistance::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_drive_distance_8cpp_source.html#l00082">DriveDistance.cpp:82</a></div></div>
+<div class="ttc" id="aclass_drive_distance_html"><div class="ttname"><a href="class_drive_distance.html">DriveDistance</a></div><div class="ttdef"><b>Definition:</b> <a href="_drive_distance_8h_source.html#l00031">DriveDistance.h:31</a></div></div>
+<div class="ttc" id="aclass_drive_distance_html_a5658e8083b0b1cc87580297e173a9a27"><div class="ttname"><a href="class_drive_distance.html#a5658e8083b0b1cc87580297e173a9a27">DriveDistance::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_drive_distance_8cpp_source.html#l00083">DriveDistance.cpp:83</a></div></div>
 <div class="ttc" id="aclass_drive_distance_html_aa7670c4f0b0b5ae3c05c4057318e3a34"><div class="ttname"><a href="class_drive_distance.html#aa7670c4f0b0b5ae3c05c4057318e3a34">DriveDistance::DriveDistance</a></div><div class="ttdeci">DriveDistance()</div><div class="ttdef"><b>Definition:</b> <a href="_drive_distance_8cpp_source.html#l00051">DriveDistance.cpp:51</a></div></div>
-<div class="ttc" id="a_primitive_params_8h_html"><div class="ttname"><a href="_primitive_params_8h.html">PrimitiveParams.h</a></div></div>
 <div class="ttc" id="a_super_drive_8h_html"><div class="ttname"><a href="_super_drive_8h.html">SuperDrive.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -76,7 +76,7 @@ void TurnAngle::Init(PrimitiveParams* params)
 									0.0,
 									1.0,
 									0.0   );
-	m_chassis->SetControlConstants( cd.get() );
+	//m_chassis->SetControlConstants( cd.get() );
 
 	// todo re-work
 	/*
@@ -106,7 +106,25 @@ void TurnAngle::Run() //best method ever. Does nothing, and should do nothing...
 	}
 
 	float deltaAngle = m_targetAngle - heading;
-	float velocity = deltaAngle * ANGLE_DIFFERENCE_VELOCITY_MULTIPLIER;
+
+	bool sign = deltaAngle > 0;
+	double leftSpeed;
+	double rightSpeed;
+
+	if(!sign)
+	{
+		leftSpeed = .2 * deltaAngle / m_targetAngle + .03;
+		rightSpeed = -leftSpeed;
+	}
+	else
+	{
+		rightSpeed = .2 * deltaAngle / m_targetAngle + .03;
+		leftSpeed = -rightSpeed;
+	}
+	
+	m_chassis->SetOutput(ControlModes::PERCENT_OUTPUT, leftSpeed, rightSpeed);
+
+	/*float velocity = deltaAngle * ANGLE_DIFFERENCE_VELOCITY_MULTIPLIER;
 	bool sign = velocity > 0;	//Store sign of velocity as positive = true
 	velocity = clamp(abs(velocity), MIN_VELOCITY, MAX_VELOCITY);
 	if (!sign)  				//If the sign was negative...
@@ -119,6 +137,7 @@ void TurnAngle::Run() //best method ever. Does nothing, and should do nothing...
 
 	//m_chassis->SetLeftRightMagnitudes(m_leftPos, m_rightPos);
 	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::POSITION_INCH, m_leftPos, m_rightPos );
+	*/
 }
 
 bool TurnAngle::IsDone() 
@@ -139,5 +158,5 @@ bool TurnAngle::IsDone()
 			//m_chassis->SetLeftRightMagnitudes(0, 0);
 		}
 	}
-	return m_isDone || m_timer->HasPeriodPassed( m_maxTime );
+	return m_isDone; //|| m_timer->HasPeriodPassed( m_maxTime );
 }

@@ -61,6 +61,7 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
     primStringToEnumMap["DRIVE_TO_WALL"] = DRIVE_TO_WALL;
     primStringToEnumMap["TURN_ANGLE_ABS"] = TURN_ANGLE_ABS;
     primStringToEnumMap["TURN_ANGLE_REL"] = TURN_ANGLE_REL;
+    primStringToEnumMap["AUTO_SHOOT"] = AUTO_SHOOT;
 
     map<string, BallManipulator::BALL_MANIPULATOR_STATE> ballStringToEnumMap;
     ballStringToEnumMap["OFF"] = BallManipulator::BALL_MANIPULATOR_STATE::OFF;
@@ -69,7 +70,7 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
     ballStringToEnumMap["HOLD"] = BallManipulator::BALL_MANIPULATOR_STATE::HOLD;
     ballStringToEnumMap["GET_READY_TO_SHOOT"] = BallManipulator::BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT;
     ballStringToEnumMap["SHOOT"] = BallManipulator::BALL_MANIPULATOR_STATE::SHOOT;
-
+    ballStringToEnumMap["SHOOT_AUTON"] = BallManipulator::BALL_MANIPULATOR_STATE::SHOOT_AUTON;
 
 
 

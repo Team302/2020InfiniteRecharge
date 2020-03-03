@@ -115,10 +115,10 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
         talon->ConfigSelectedFeedbackSensor( feedbackDevice, 0, 50 );
         talon->ConfigSelectedFeedbackSensor( feedbackDevice, 1, 50 );
 
-        talon->ConfigPeakCurrentLimit( peakCurrentLimit, 50 );
-        talon->ConfigPeakCurrentDuration( peakCurrentDuration, 50 );
-        talon->ConfigContinuousCurrentLimit( continuousCurrentLimit, 50 );
-        talon->EnableCurrentLimiting( enableCurrentLimit );
+        /*talon->ConfigPeakCurrentLimit( 40, 50 );
+        talon->ConfigPeakCurrentDuration( 1, 50 );
+        talon->ConfigContinuousCurrentLimit( 30, 50 );
+        talon->EnableCurrentLimiting( true );*/
         if ( forwardLimitSwitch )
         {
             talon->SetForwardLimitSwitch(forwardLimitSwitchNormallyOpen);

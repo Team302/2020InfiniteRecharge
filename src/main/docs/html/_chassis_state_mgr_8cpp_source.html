@@ -170,13 +170,13 @@ $(document).ready(function(){initNavTree('_chassis_state_mgr_8cpp_source.html','
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;ChassisStateMgr&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;arcade2&quot;</span>));</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        m_currentDrive-&gt;Init();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        m_currentDrive-&gt;Run();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        m_currentDrive.get()-&gt;Init();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">//        m_currentDrive-&gt;Run();</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;   }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( m_currentState == CHASSIS_STATE::AUTON )</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        m_cyclePrims.get()-&gt;Init();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        m_cyclePrims.get()-&gt;Run();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; <span class="comment">//       m_cyclePrims.get()-&gt;Run();</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
@@ -184,9 +184,9 @@ $(document).ready(function(){initNavTree('_chassis_state_mgr_8cpp_source.html','
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> ( m_currentState == CHASSIS_STATE::TELEOP )</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> ( m_currentDrive != <span class="keyword">nullptr</span> )</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> ( m_currentDrive.get() != nullptr )</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            m_currentDrive-&gt;Run();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            m_currentDrive.get()-&gt;Run();</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
@@ -207,23 +207,25 @@ $(document).ready(function(){initNavTree('_chassis_state_mgr_8cpp_source.html','
 <div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="class_chassis_state_mgr.html#aee10455f341306f03501a486e83a78cc">  116</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_chassis_state_mgr.html#aee10455f341306f03501a486e83a78cc">ChassisStateMgr::SetState</a>( <a class="code" href="class_chassis_state_mgr.html#aa0a242007069f6ac807a0bffda4011b4">ChassisStateMgr::CHASSIS_STATE</a> state )</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    m_currentState = state;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> ( m_currentState == CHASSIS_STATE::TELEOP )</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        m_currentDrive-&gt;Run();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( m_currentState == CHASSIS_STATE::AUTON )</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        m_cyclePrims.get()-&gt;Init();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        m_cyclePrims.get()-&gt;Run();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;ChassisStateMgr::SetState&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;unsupported state&quot;</span>));</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span> ( m_currentState == CHASSIS_STATE::TELEOP )</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        m_currentDrive-&gt;Run();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( m_currentState == CHASSIS_STATE::AUTON )</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        m_cyclePrims.get()-&gt;Init();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        m_cyclePrims.get()-&gt;Run();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="class_logger.html#ae85cfbef8b7e6940475a5012fa1935c6">Logger::GetLogger</a>()-&gt;<a class="code" href="class_logger.html#a98d7aec19dcdfb9d8faa46d83d927883">LogError</a>( <span class="keywordtype">string</span>(<span class="stringliteral">&quot;ChassisStateMgr::SetState&quot;</span>), <span class="keywordtype">string</span>(<span class="stringliteral">&quot;unsupported state&quot;</span>));</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_cycle_primitives_html"><div class="ttname"><a href="class_cycle_primitives.html">CyclePrimitives</a></div><div class="ttdef"><b>Definition:</b> <a href="_cycle_primitives_8h_source.html#l00038">CyclePrimitives.h:38</a></div></div>
+<div class="ttc" id="aclass_cycle_primitives_html"><div class="ttname"><a href="class_cycle_primitives.html">CyclePrimitives</a></div><div class="ttdef"><b>Definition:</b> <a href="_cycle_primitives_8h_source.html#l00041">CyclePrimitives.h:41</a></div></div>
 <div class="ttc" id="a_cycle_primitives_8h_html"><div class="ttname"><a href="_cycle_primitives_8h.html">CyclePrimitives.h</a></div></div>
 <div class="ttc" id="a_g_t_a_drive_8h_html"><div class="ttname"><a href="_g_t_a_drive_8h.html">GTADrive.h</a></div></div>
 <div class="ttc" id="aclass_chassis_state_mgr_html_ac5c821136e187f2057a9c4b956975df8"><div class="ttname"><a href="class_chassis_state_mgr.html#ac5c821136e187f2057a9c4b956975df8">ChassisStateMgr::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdoc">initialize this object</div><div class="ttdef"><b>Definition:</b> <a href="_chassis_state_mgr_8cpp_source.html#l00053">ChassisStateMgr.cpp:53</a></div></div>

@@ -32,6 +32,7 @@
 
 // Third Party Includes
 #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
+#include <ctre/phoenix/motorcontrol/SupplyCurrentLimitConfiguration.h>
 
 
 using namespace frc;
@@ -57,12 +58,14 @@ DragonFalcon::DragonFalcon
 	m_gearRatio(gearRatio),
 	m_diameter( 1.0 )
 {
+  auto limit = SupplyCurrentLimitConfiguration( true, 25.0, 35.0, 0.0 );
+  m_talon.get()->ConfigSupplyCurrentLimit( limit, 50 );
 	//m_tickOffset = m_talon.get()->GetSelectedSensorPosition();
 }
 
 double DragonFalcon::GetRotations() const
 {
-	return (ConversionUtils::CountsToRevolutions( (m_talon.get()->GetSelectedSensorPosition()), m_countsPerRev) * m_gearRatio);
+	return (ConversionUtils::CountsToRevolutions( (m_talon.get()->GetSelectedSensorPosition()), m_countsPerRev) / m_gearRatio);
 }
 
 double DragonFalcon::GetRPS() const
@@ -177,7 +180,11 @@ void DragonFalcon::SetVoltageRamping(double ramping, double rampingClosedLoop)
 
 void DragonFalcon::EnableCurrentLimiting(bool enabled)
 {
-//    m_talon.get()->Enable(enabled);
+		SupplyCurrentLimitConfiguration limit;
+		int timeout = 50.0;
+		m_talon.get()->ConfigGetSupplyCurrentLimit( limit, timeout );
+		limit.enable = enabled;
+		m_talon.get()->ConfigSupplyCurrentLimit( limit, timeout );
 }
 
 void DragonFalcon::EnableBrakeMode(bool enabled)
@@ -246,9 +253,9 @@ int DragonFalcon::ConfigSelectedFeedbackSensor
 )
 {
 	int error = 0;
-	if ( m_talon != nullptr )
+	if ( m_talon.get() != nullptr )
 	{
-		error = m_talon->ConfigSelectedFeedbackSensor( feedbackDevice, pidIdx, timeoutMs );
+		error = m_talon.get()->ConfigSelectedFeedbackSensor( feedbackDevice, pidIdx, timeoutMs );
 	}
 	else
 	{
@@ -264,11 +271,12 @@ int DragonFalcon::ConfigPeakCurrentLimit
 )
 {
 	int error = 0;
-	if ( m_talon != nullptr )
+	if ( m_talon.get() != nullptr )
 	{
-        // todo need to contruct other objects
-		//error = m_talon->ConfigStatorCurrentLimit( amps, timeoutMs );
-        //error = m_talon->ConfigSupplyCurrentLimit( amps, timeoutMs );
+		SupplyCurrentLimitConfiguration limit;
+		m_talon.get()->ConfigGetSupplyCurrentLimit( limit, timeoutMs );
+		limit.triggerThresholdCurrent = amps;
+		m_talon.get()->ConfigSupplyCurrentLimit( limit, timeoutMs );
 	}
 	else
 	{
@@ -284,9 +292,12 @@ int DragonFalcon::ConfigPeakCurrentDuration
 )
 {
 	int error = 0;
-	if ( m_talon != nullptr )
+	if ( m_talon.get() != nullptr )
 	{
-		//error = m_talon->ConfigPeakCurrentDuration( milliseconds, timeoutMs );
+		SupplyCurrentLimitConfiguration limit;
+		m_talon.get()->ConfigGetSupplyCurrentLimit( limit, timeoutMs );
+		limit.triggerThresholdTime = milliseconds;
+		m_talon.get()->ConfigSupplyCurrentLimit( limit, timeoutMs );
 	}
 	else
 	{
@@ -302,9 +313,12 @@ int DragonFalcon::ConfigContinuousCurrentLimit
 )
 {
 	int error = 0;
-	if ( m_talon != nullptr )
+	if ( m_talon.get() != nullptr )
 	{
-	//	error = m_talon->ConfigContinuousCurrentLimit( amps, timeoutMs );
+		SupplyCurrentLimitConfiguration limit;
+		m_talon.get()->ConfigGetSupplyCurrentLimit( limit, timeoutMs );
+		limit.currentLimit = amps;
+		m_talon.get()->ConfigSupplyCurrentLimit( limit, timeoutMs );
 	}
 	else
 	{
@@ -318,7 +332,7 @@ void DragonFalcon::SetAsSlave
     int         masterCANID         // <I> - master motor
 )
 {
-    m_talon->Set( ControlMode::Follower, masterCANID );
+    m_talon.get()->Set( ControlMode::Follower, masterCANID );
 }
 
 
@@ -328,11 +342,11 @@ void DragonFalcon::SetAsSlave
 void DragonFalcon::SetControlConstants(ControlData* controlInfo)
 {
 	auto peak = controlInfo->GetPeakValue();
-	m_talon->ConfigPeakOutputForward(peak);
-	m_talon->ConfigPeakOutputReverse(-1.0*peak);
+	m_talon.get()->ConfigPeakOutputForward(peak);
+	m_talon.get()->ConfigPeakOutputReverse(-1.0*peak);
 
 	auto nom = controlInfo->GetNominalValue();
-	m_talon->ConfigPeakOutputForward(nom);
+	m_talon.get()->ConfigPeakOutputForward(nom);
 	m_talon.get()->ConfigPeakOutputReverse(-1.0*nom);
 
 	switch ( controlInfo->GetMode() )

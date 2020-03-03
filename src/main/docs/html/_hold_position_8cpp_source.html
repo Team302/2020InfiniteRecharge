@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('_hold_position_8cpp_source.html','');}
 <div class="contents">
 <a href="_hold_position_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//====================================================================================================================================================</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright 2019 Lake Orion Robotics FIRST Team 302</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright 2020 Lake Orion Robotics FIRST Team 302</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;),</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span></div>
@@ -110,101 +110,77 @@ $(document).ready(function(){initNavTree('_hold_position_8cpp_source.html','');}
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// FRC includes</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;frc/Timer.h&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Team 302 includes</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_do_nothing_8h.html">auton/primitives/DoNothing.h</a>&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_primitive_params_8h.html">auton/PrimitiveParams.h</a>&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Team 302 includes</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_primitive_factory_8h.html">auton/PrimitiveFactory.h</a>&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_primitive_params_8h.html">auton/PrimitiveParams.h</a>&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_hold_position_8h.html">auton/primitives/HoldPosition.h</a>&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_primitive_8h.html">auton/primitives/IPrimitive.h</a>&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_chassis_factory_8h.html">subsys/ChassisFactory.h</a>&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_control_modes_8h.html">controllers/ControlModes.h</a>&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_mechanism_8h.html">subsys/IMechanism.h</a>&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_logger_8h.html">utils/Logger.h</a>&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_control_modes_8h.html">controllers/ControlModes.h</a>&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_chassis_factory_8h.html">subsys/ChassisFactory.h</a>&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Third Party Includes</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Third Party Includes</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">using namespace </span>frc;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//includes</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;frc/SmartDashboard/SmartDashboard.h&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//team302 includes</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_hold_position_8h.html">auton/primitives/HoldPosition.h</a>&gt;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_primitive_params_8h.html">auton/PrimitiveParams.h</a>&gt;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_primitive_factory_8h.html">auton/PrimitiveFactory.h</a>&gt;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_primitive_8h.html">auton/primitives/IPrimitive.h</a>&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_mechanism_factory_8h.html">subsys/MechanismFactory.h</a>&gt;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_hold_position.html#ae88ab3bc8436d67a1821478fcbe4a939">   49</a></span>&#160;<a class="code" href="class_hold_position.html#ae88ab3bc8436d67a1821478fcbe4a939">HoldPosition::HoldPosition</a>() :</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        m_chassis( <a class="code" href="class_chassis_factory.html">ChassisFactory</a>::GetChassisFactory()-&gt;GetIChassis()), <span class="comment">//Get chassis from chassis factory</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        m_timeRemaining(0.0)       <span class="comment">//Value will be changed in init</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_hold_position.html#a6059d2b98170913f3051b9a24de13cce">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_hold_position.html#a6059d2b98170913f3051b9a24de13cce">HoldPosition::Init</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>* params) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">//Get timeRemaining from m_params</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    m_timeRemaining = params-&gt;<a class="code" href="class_primitive_params.html#a478d763e9de6526e13de4d23d1dca71c">GetTime</a>();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">auto</span> cd = make_shared&lt;ControlData&gt;( ControlModes::CONTROL_TYPE::POSITION_INCH, </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                        ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                        <span class="keywordtype">string</span>(<span class="stringliteral">&quot;HoldPosition&quot;</span>),</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                        10.0,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                        0.0,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                        0.0,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                        0.0,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                        0.0,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                        0.0,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                        0.0,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                        1.0,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                        0.0   );</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    m_chassis-&gt;SetControlConstants( cd.get() );</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">auto</span> left = m_chassis-&gt;GetCurrentLeftPosition();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">auto</span> right = m_chassis-&gt;GetCurrentRightPosition();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    m_chassis-&gt;SetOutput( ControlModes::CONTROL_TYPE::POSITION_INCH, left, right ); </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">    m_chassis-&gt;SetTalonMode(DragonTalon::POSITION);</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">    m_chassis-&gt;EnableBrakeMode(true);</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">    //Set params</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">    m_chassis-&gt;SetVelocityParams(kP, kI, kD, kF, 0, 0);</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">    m_chassis-&gt;SetLeftRightMagnitudes(m_chassis-&gt;GetLeftMasterMotorRotationCount(), m_chassis-&gt;GetRightMasterMotorRotationCount());</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_hold_position.html#ae6bb9e7d3948d36e724293e252607030">   86</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_hold_position.html#ae6bb9e7d3948d36e724293e252607030">HoldPosition::Run</a>() {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">//Decrement time remaining</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    m_timeRemaining -= <a class="code" href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">IPrimitive::LOOP_LENGTH</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_hold_position.html#a33c4a23d63999bc25845e7dd0ef2fdab">   92</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_hold_position.html#a33c4a23d63999bc25845e7dd0ef2fdab">HoldPosition::IsDone</a>() {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">//Return true when the time runs out</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">bool</span> holdDone = ((m_timeRemaining &lt;= (<a class="code" href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">IPrimitive::LOOP_LENGTH</a> / 2.0)));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">//  return holdDone &amp;&amp; m_placeCube-&gt;IsDone();</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> holdDone;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacefrc.html">frc</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_hold_position.html#ae88ab3bc8436d67a1821478fcbe4a939">   37</a></span>&#160;<a class="code" href="class_hold_position.html#ae88ab3bc8436d67a1821478fcbe4a939">HoldPosition::HoldPosition</a>() :</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        m_chassis( <a class="code" href="class_chassis_factory.html">ChassisFactory</a>::GetChassisFactory()-&gt;GetIChassis()), <span class="comment">//Get chassis from chassis factory</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        m_timeRemaining(0.0)       <span class="comment">//Value will be changed in init</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_hold_position.html#a6059d2b98170913f3051b9a24de13cce">   43</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_hold_position.html#a6059d2b98170913f3051b9a24de13cce">HoldPosition::Init</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>* params) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//Get timeRemaining from m_params</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    m_timeRemaining = params-&gt;<a class="code" href="class_primitive_params.html#a478d763e9de6526e13de4d23d1dca71c">GetTime</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">auto</span> cd = make_shared&lt;ControlData&gt;( ControlModes::CONTROL_TYPE::POSITION_INCH, </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                        ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                        <span class="keywordtype">string</span>(<span class="stringliteral">&quot;HoldPosition&quot;</span>),</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                        10.0,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                        0.0,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                        0.0,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                        0.0,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                        0.0,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                        0.0,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                        0.0,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                        1.0,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                        0.0   );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    m_chassis-&gt;SetControlConstants( cd.get() );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">auto</span> left = m_chassis-&gt;GetCurrentLeftPosition();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">auto</span> right = m_chassis-&gt;GetCurrentRightPosition();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    m_chassis-&gt;SetOutput( ControlModes::CONTROL_TYPE::POSITION_INCH, left, right ); </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_hold_position.html#ae6bb9e7d3948d36e724293e252607030">   66</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_hold_position.html#ae6bb9e7d3948d36e724293e252607030">HoldPosition::Run</a>() {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">//Decrement time remaining</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    m_timeRemaining -= <a class="code" href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">IPrimitive::LOOP_LENGTH</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_hold_position.html#a33c4a23d63999bc25845e7dd0ef2fdab">   72</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_hold_position.html#a33c4a23d63999bc25845e7dd0ef2fdab">HoldPosition::IsDone</a>() {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">//Return true when the time runs out</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span> holdDone = ((m_timeRemaining &lt;= (<a class="code" href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">IPrimitive::LOOP_LENGTH</a> / 2.0)));</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> holdDone;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_hold_position_html_a33c4a23d63999bc25845e7dd0ef2fdab"><div class="ttname"><a href="class_hold_position.html#a33c4a23d63999bc25845e7dd0ef2fdab">HoldPosition::IsDone</a></div><div class="ttdeci">bool IsDone() override</div><div class="ttdef"><b>Definition:</b> <a href="_hold_position_8cpp_source.html#l00092">HoldPosition.cpp:92</a></div></div>
+<div class="ttc" id="aclass_hold_position_html_a33c4a23d63999bc25845e7dd0ef2fdab"><div class="ttname"><a href="class_hold_position.html#a33c4a23d63999bc25845e7dd0ef2fdab">HoldPosition::IsDone</a></div><div class="ttdeci">bool IsDone() override</div><div class="ttdef"><b>Definition:</b> <a href="_hold_position_8cpp_source.html#l00072">HoldPosition.cpp:72</a></div></div>
 <div class="ttc" id="a_i_primitive_8h_html"><div class="ttname"><a href="_i_primitive_8h.html">IPrimitive.h</a></div></div>
-<div class="ttc" id="a_i_mechanism_8h_html"><div class="ttname"><a href="_i_mechanism_8h.html">IMechanism.h</a></div></div>
-<div class="ttc" id="aclass_hold_position_html_ae6bb9e7d3948d36e724293e252607030"><div class="ttname"><a href="class_hold_position.html#ae6bb9e7d3948d36e724293e252607030">HoldPosition::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_hold_position_8cpp_source.html#l00086">HoldPosition.cpp:86</a></div></div>
+<div class="ttc" id="aclass_hold_position_html_ae6bb9e7d3948d36e724293e252607030"><div class="ttname"><a href="class_hold_position.html#ae6bb9e7d3948d36e724293e252607030">HoldPosition::Run</a></div><div class="ttdeci">void Run() override</div><div class="ttdef"><b>Definition:</b> <a href="_hold_position_8cpp_source.html#l00066">HoldPosition.cpp:66</a></div></div>
 <div class="ttc" id="a_hold_position_8h_html"><div class="ttname"><a href="_hold_position_8h.html">HoldPosition.h</a></div></div>
-<div class="ttc" id="a_mechanism_factory_8h_html"><div class="ttname"><a href="_mechanism_factory_8h.html">MechanismFactory.h</a></div></div>
 <div class="ttc" id="aclass_primitive_params_html"><div class="ttname"><a href="class_primitive_params.html">PrimitiveParams</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8h_source.html#l00035">PrimitiveParams.h:35</a></div></div>
 <div class="ttc" id="a_chassis_factory_8h_html"><div class="ttname"><a href="_chassis_factory_8h.html">ChassisFactory.h</a></div></div>
-<div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
 <div class="ttc" id="aclass_chassis_factory_html"><div class="ttname"><a href="class_chassis_factory.html">ChassisFactory</a></div><div class="ttdef"><b>Definition:</b> <a href="_chassis_factory_8h_source.html#l00010">ChassisFactory.h:10</a></div></div>
-<div class="ttc" id="a_do_nothing_8h_html"><div class="ttname"><a href="_do_nothing_8h.html">DoNothing.h</a></div></div>
-<div class="ttc" id="aclass_hold_position_html_ae88ab3bc8436d67a1821478fcbe4a939"><div class="ttname"><a href="class_hold_position.html#ae88ab3bc8436d67a1821478fcbe4a939">HoldPosition::HoldPosition</a></div><div class="ttdeci">HoldPosition()</div><div class="ttdef"><b>Definition:</b> <a href="_hold_position_8cpp_source.html#l00049">HoldPosition.cpp:49</a></div></div>
-<div class="ttc" id="aclass_i_primitive_html_acd3b9501892b1950113c63ccb699cb37"><div class="ttname"><a href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">IPrimitive::LOOP_LENGTH</a></div><div class="ttdeci">const float LOOP_LENGTH</div><div class="ttdef"><b>Definition:</b> <a href="_i_primitive_8h_source.html#l00016">IPrimitive.h:16</a></div></div>
-<div class="ttc" id="aclass_hold_position_html_a6059d2b98170913f3051b9a24de13cce"><div class="ttname"><a href="class_hold_position.html#a6059d2b98170913f3051b9a24de13cce">HoldPosition::Init</a></div><div class="ttdeci">void Init(PrimitiveParams *params) override</div><div class="ttdef"><b>Definition:</b> <a href="_hold_position_8cpp_source.html#l00055">HoldPosition.cpp:55</a></div></div>
+<div class="ttc" id="aclass_hold_position_html_ae88ab3bc8436d67a1821478fcbe4a939"><div class="ttname"><a href="class_hold_position.html#ae88ab3bc8436d67a1821478fcbe4a939">HoldPosition::HoldPosition</a></div><div class="ttdeci">HoldPosition()</div><div class="ttdef"><b>Definition:</b> <a href="_hold_position_8cpp_source.html#l00037">HoldPosition.cpp:37</a></div></div>
+<div class="ttc" id="aclass_i_primitive_html_acd3b9501892b1950113c63ccb699cb37"><div class="ttname"><a href="class_i_primitive.html#acd3b9501892b1950113c63ccb699cb37">IPrimitive::LOOP_LENGTH</a></div><div class="ttdeci">const float LOOP_LENGTH</div><div class="ttdef"><b>Definition:</b> <a href="_i_primitive_8h_source.html#l00024">IPrimitive.h:24</a></div></div>
+<div class="ttc" id="aclass_hold_position_html_a6059d2b98170913f3051b9a24de13cce"><div class="ttname"><a href="class_hold_position.html#a6059d2b98170913f3051b9a24de13cce">HoldPosition::Init</a></div><div class="ttdeci">void Init(PrimitiveParams *params) override</div><div class="ttdef"><b>Definition:</b> <a href="_hold_position_8cpp_source.html#l00043">HoldPosition.cpp:43</a></div></div>
 <div class="ttc" id="aclass_primitive_params_html_a478d763e9de6526e13de4d23d1dca71c"><div class="ttname"><a href="class_primitive_params.html#a478d763e9de6526e13de4d23d1dca71c">PrimitiveParams::GetTime</a></div><div class="ttdeci">float GetTime() const</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8cpp_source.html#l00043">PrimitiveParams.cpp:43</a></div></div>
 <div class="ttc" id="a_primitive_factory_8h_html"><div class="ttname"><a href="_primitive_factory_8h.html">PrimitiveFactory.h</a></div></div>
 <div class="ttc" id="a_primitive_params_8h_html"><div class="ttname"><a href="_primitive_params_8h.html">PrimitiveParams.h</a></div></div>
+<div class="ttc" id="anamespacefrc_html"><div class="ttname"><a href="namespacefrc.html">frc</a></div><div class="ttdef"><b>Definition:</b> <a href="_do_nothing_8h_source.html#l00034">DoNothing.h:34</a></div></div>
 <div class="ttc" id="a_control_modes_8h_html"><div class="ttname"><a href="_control_modes_8h.html">ControlModes.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

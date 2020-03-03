@@ -60,8 +60,8 @@
      ====================================================  -->
     <chassis type="TANK"
 			 wheelDiameter="6.0"
-             wheelBase="25.0"  
-             track="18.0">
+             wheelBase="22.75"  
+             track="24.0">
 			 
 		<motor usage="LEFT_DRIVE_MASTER"
 				canId="12"
@@ -74,9 +74,9 @@
 				gearRatio="8.4"
 				brakeMode="true"
 				slaveTo="-1"
-				peakCurrentDuration="50"
-				continuousCurrentLimit="30"
-				peakCurrentLimit="40"
+				peakCurrentDuration="15.0"
+				continuousCurrentLimit="40.0"
+				peakCurrentLimit="50.0"
 				currentLimiting="true" 
 				forwardlimitswitch="false"
 				forwardlimitswitchopen="true"
@@ -93,9 +93,9 @@
 				gearRatio="8.4"
 				brakeMode="true"
 				slaveTo="12"
-				peakCurrentDuration="50"
-				continuousCurrentLimit="30"
-				peakCurrentLimit="40"
+				peakCurrentDuration="15.0"
+				continuousCurrentLimit="40.0"
+				peakCurrentLimit="50.0"
 				currentLimiting="true" 
 				forwardlimitswitch="false"
 				forwardlimitswitchopen="true"
@@ -114,10 +114,10 @@
 				gearRatio="8.4"
 				brakeMode="true"
 				slaveTo="-1"
-				peakCurrentDuration="50"
-				continuousCurrentLimit="30"
-				peakCurrentLimit="40"
-				currentLimiting="true"
+				peakCurrentDuration="15.0"
+				continuousCurrentLimit="40.0"
+				peakCurrentLimit="50.0"
+				currentLimiting="true" 
 				forwardlimitswitch="false"
 				forwardlimitswitchopen="true"
 				reverselimitswitch="false"
@@ -133,9 +133,9 @@
 				gearRatio="8.4"
 				brakeMode="true"
 				slaveTo="15"
-				peakCurrentDuration="50"
-				continuousCurrentLimit="30"
-				peakCurrentLimit="40"
+				peakCurrentDuration="15.0"
+				continuousCurrentLimit="40.0"
+				peakCurrentLimit="50.0"
 				currentLimiting="true" 
 				forwardlimitswitch="false"
 				forwardlimitswitchopen="true"
@@ -260,9 +260,9 @@
 				gearRatio="1.0"
 				brakeMode="true"
 				slaveTo="16"
-				peakCurrentDuration="50"
-				continuousCurrentLimit="30"
-				peakCurrentLimit="40"
+				peakCurrentDuration="15.0"
+				continuousCurrentLimit="40.0"
+				peakCurrentLimit="50.0"
 				currentLimiting="true" 
 				forwardlimitswitch="false"
 				forwardlimitswitchopen="true"
@@ -285,9 +285,9 @@
 				countsPerRev="0"
 				gearRatio="1.0"
 				brakeMode="false"
-				peakCurrentDuration="50"
-				continuousCurrentLimit="30"
-				peakCurrentLimit="40"
+				peakCurrentDuration="15.0"
+				continuousCurrentLimit="40.0"
+				peakCurrentLimit="50.0"
 				currentLimiting="true" 
 				forwardlimitswitch="false"
 				forwardlimitswitchopen="true"
@@ -319,7 +319,7 @@
 		<!-- todo need to add limit switches -->
 	</mechanism>
     
-	<mechanism type="CONTROL_TABLE_MANIPULATOR">
+	<!--mechanism type="CONTROL_TABLE_MANIPULATOR">
 		<motor usage="CONTROL_TABLE_MANIPULATOR"
 				canId="6"
 				pdpID="6"
@@ -340,12 +340,12 @@
 				reverselimitswitchopen="true"/>
     	<solenoid usage="CONTROL_TABLE_MANIPULATOR"
     		      canId="9"
-    		      channel="1"
+    		      channel="5"
     		      reversed="false" />
 		<colorsensor port="kOnboard" />
-	</mechanism>
+	</mechanism-->
     
-	<mechanism type="CLIMBER">
+	<!--mechanism type="CLIMBER">
 		<motor usage="CONTROL_TABLE_MANIPULATOR"
 				canId="2"
 				pdpID="2"
@@ -366,9 +366,9 @@
 				reverselimitswitchopen="true"/>
     	<solenoid usage="CLIMBER"
     		      canId="9"
-    		      channel="2"
+    		      channel="6"
     		      reversed="false" />
-	</mechanism>
+	</mechanism-->
     
 	<!--mechanism type="CRAWLER">
 		<motor usage="CONTROL_TABLE_MANIPULATOR"

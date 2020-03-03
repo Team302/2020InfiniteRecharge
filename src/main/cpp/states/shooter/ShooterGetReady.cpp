@@ -27,6 +27,8 @@ ShooterGetReady::ShooterGetReady
 (
     ControlData*                    controlData, 
     double                          target,
+    ControlData*                    failoverControlData,
+    double                          failoverTarget,
     MechanismTargetData::SOLENOID   solState
 ) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER), controlData, target, solState ) 
 {

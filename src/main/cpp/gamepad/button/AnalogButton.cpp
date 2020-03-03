@@ -44,7 +44,7 @@ AnalogButton::AnalogButton
 (
     AnalogAxis*                         axis            // <I> - axis to turn into a button
 ) : m_axis( axis ), 
-    m_minValue( 0.4 ),
+    m_minValue( 0.2 ),
     m_maxValue( 1.0 )                                  
 {
 }

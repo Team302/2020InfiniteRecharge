@@ -8,6 +8,10 @@ var dir_49f77ca2034db6b858a053239e82a1fc =
     [ "ClimberRaise.h", "_climber_raise_8h.html", [
       [ "ClimberRaise", "class_climber_raise.html", "class_climber_raise" ]
     ] ],
+    [ "ClimberStateMgr.cpp", "_climber_state_mgr_8cpp.html", null ],
+    [ "ClimberStateMgr.h", "_climber_state_mgr_8h.html", [
+      [ "ClimberStateMgr", "class_climber_state_mgr.html", "class_climber_state_mgr" ]
+    ] ],
     [ "ClimberStowed.cpp", "_climber_stowed_8cpp.html", null ],
     [ "ClimberStowed.h", "_climber_stowed_8h.html", [
       [ "ClimberStowed", "class_climber_stowed.html", "class_climber_stowed" ]

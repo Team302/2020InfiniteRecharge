@@ -27,8 +27,9 @@ var searchData=
   ['dragonvision_1858',['DragonVision',['../class_dragon_vision.html#a0dd728beb9547093a20d2b9e0bc82b51',1,'DragonVision']]],
   ['dragonxbox_1859',['DragonXBox',['../class_dragon_x_box.html#a8449a1f3089fcea5a6b93c12e9bbc5a9',1,'DragonXBox']]],
   ['drivedistance_1860',['DriveDistance',['../class_drive_distance.html#aa7670c4f0b0b5ae3c05c4057318e3a34',1,'DriveDistance']]],
-  ['drivetime_1861',['DriveTime',['../class_drive_time.html#a99e41322fdec03683a725f7f607adad7',1,'DriveTime']]],
-  ['drivetotarget_1862',['DriveToTarget',['../class_drive_to_target.html#a74a34143222aaf914cf400e1bebc5c7c',1,'DriveToTarget']]],
-  ['drivetowall_1863',['DriveToWall',['../class_drive_to_wall.html#ad9ef380239cab3939c348c500974f882',1,'DriveToWall']]],
-  ['drivetrainside_1864',['DriveTrainSide',['../class_drive_train_side.html#ab5e77f5f59f0b8082a549abf6f96abf0',1,'DriveTrainSide::DriveTrainSide(std::shared_ptr&lt; IDragonMotorController &gt; master, std::shared_ptr&lt; IDragonMotorController &gt; follower, double wheelSize)'],['../class_drive_train_side.html#a00bafd1aef6c17238ef5a180cbe21dc1',1,'DriveTrainSide::DriveTrainSide()=delete']]]
+  ['driverfeedback_1861',['DriverFeedback',['../class_driver_feedback.html#a74cf03148d2f12c11cbbcf9f8d0a2b1b',1,'DriverFeedback']]],
+  ['drivetime_1862',['DriveTime',['../class_drive_time.html#a99e41322fdec03683a725f7f607adad7',1,'DriveTime']]],
+  ['drivetotarget_1863',['DriveToTarget',['../class_drive_to_target.html#a74a34143222aaf914cf400e1bebc5c7c',1,'DriveToTarget']]],
+  ['drivetowall_1864',['DriveToWall',['../class_drive_to_wall.html#ad9ef380239cab3939c348c500974f882',1,'DriveToWall']]],
+  ['drivetrainside_1865',['DriveTrainSide',['../class_drive_train_side.html#ab5e77f5f59f0b8082a549abf6f96abf0',1,'DriveTrainSide::DriveTrainSide(std::shared_ptr&lt; IDragonMotorController &gt; master, std::shared_ptr&lt; IDragonMotorController &gt; follower, double wheelSize)'],['../class_drive_train_side.html#a00bafd1aef6c17238ef5a180cbe21dc1',1,'DriveTrainSide::DriveTrainSide()=delete']]]
 ];

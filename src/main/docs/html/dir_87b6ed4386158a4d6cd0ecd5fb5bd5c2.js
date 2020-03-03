@@ -8,6 +8,10 @@ var dir_87b6ed4386158a4d6cd0ecd5fb5bd5c2 =
     [ "ControlModes.h", "_control_modes_8h.html", [
       [ "ControlModes", "class_control_modes.html", "class_control_modes" ]
     ] ],
+    [ "DriverFeedback.cpp", "_driver_feedback_8cpp.html", null ],
+    [ "DriverFeedback.h", "_driver_feedback_8h.html", [
+      [ "DriverFeedback", "class_driver_feedback.html", "class_driver_feedback" ]
+    ] ],
     [ "MechanismTargetData.cpp", "_mechanism_target_data_8cpp.html", null ],
     [ "MechanismTargetData.h", "_mechanism_target_data_8h.html", [
       [ "MechanismTargetData", "class_mechanism_target_data.html", "class_mechanism_target_data" ]

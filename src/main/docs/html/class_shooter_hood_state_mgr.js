@@ -7,8 +7,6 @@ var class_shooter_hood_state_mgr =
       [ "MANUAL", "class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516af202be2be3a8149075a13aa6757dff00", null ],
       [ "MAX_SHOOTER_HOOD_STATES", "class_shooter_hood_state_mgr.html#ae13e856863447b4380950e00d27d0516a77f499c0daa3398c4872a9613b9d3f25", null ]
     ] ],
-    [ "ShooterHoodStateMgr", "class_shooter_hood_state_mgr.html#a3011c77c357335e5fa72af70ce787186", null ],
-    [ "~ShooterHoodStateMgr", "class_shooter_hood_state_mgr.html#a207a3805bfdbf5f0338744f9f77d1bc3", null ],
     [ "GetCurrentState", "class_shooter_hood_state_mgr.html#a8de5d50a126019bdc3f04c8099755702", null ],
     [ "RunCurrentState", "class_shooter_hood_state_mgr.html#a1ea4d12e259efebe9e17e36ec7800162", null ],
     [ "SetCurrentState", "class_shooter_hood_state_mgr.html#a2d6262e573c83bb178742eb36588c7f4", null ]

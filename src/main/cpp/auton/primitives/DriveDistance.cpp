@@ -77,6 +77,7 @@ void DriveDistance::Init(PrimitiveParams* params)
 	//Get parameters from params
 	m_targetDistance = params->GetDistance();
 	m_initialDistance =  ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition();
+	frc::SmartDashboard::PutNumber("Initial Distance", m_initialDistance);
 }
 
 void DriveDistance::Run() 
@@ -114,11 +115,12 @@ bool DriveDistance::IsDone()
 {
 	float progress =  ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition() - m_initialDistance;
 	bool reachedTarget = abs(progress) > abs(m_targetDistance);
-
+	frc::SmartDashboard::PutNumber("current chassis dist", progress);
+	frc::SmartDashboard::PutNumber("Target chassis distance", m_targetDistance);
 	m_timeRemaining -= IPrimitive::LOOP_LENGTH;
 
-	bool notMoving = m_underSpeedCounts >= UNDER_SPEED_COUNT_THRESHOLD;
-	bool done = reachedTarget || notMoving;
+	//bool notMoving = m_underSpeedCounts >= UNDER_SPEED_COUNT_THRESHOLD;
+	bool done = reachedTarget;
 	if (done) 
 	{
 		 //ChassisFactory::GetChassisFactory()->GetIChassis()->SetTargetHeading(m_endHeading);
