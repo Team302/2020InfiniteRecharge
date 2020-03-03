@@ -43,6 +43,7 @@ class BallManipulator
             GET_READY_TO_SHOOT,
             SHOOT,
             SHOOT_AUTON,
+            AUTO_AIM,
             UNJAM_CLOCKWISE,
             UNJAM_COUNTERCLOCKWISE,
             TRANSFER_UP,

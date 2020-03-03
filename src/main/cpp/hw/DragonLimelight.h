@@ -110,6 +110,7 @@ class DragonLimelight : public IDragonSensor, public IDragonDistanceSensor
         double GetTargetArea() const;
         double GetTargetSkew() const;
         double GetPipelineLatency() const;
+        double EstimateTargetDistance() const;
         std::vector<double> Get3DSolve() const;
 
         ///-----------------------------------------------------------------------
@@ -162,5 +163,8 @@ class DragonLimelight : public IDragonSensor, public IDragonDistanceSensor
         double m_mountingAngle;
         double m_targetHeight;
         double m_targetHeight2;
+
+        double PI = 3.14159265;
+
 
 };
