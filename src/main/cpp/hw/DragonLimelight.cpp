@@ -17,6 +17,7 @@
 // C++ Includes
 #include <string>
 #include <vector>
+#include <cmath>
 
 // FRC includes
 #include <networktables/NetworkTableInstance.h>
@@ -228,3 +229,8 @@ void DragonLimelight::PrintValues()
     Logger::GetLogger()->LogError( "DragonLimelight::PrintValues Latency", to_string( GetPipelineLatency() ) ); 
 }
 
+double DragonLimelight::EstimateTargetDistance() const
+{
+    double angleDifference = (47 + GetTargetVerticalOffset()) / 180 * PI;
+    return (91.25-21.5) / tan(angleDifference);
+}

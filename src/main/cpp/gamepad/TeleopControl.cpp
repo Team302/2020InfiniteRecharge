@@ -165,6 +165,9 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[SHOOTER_OFF] = ctrlNo;
 		m_buttonIDs[SHOOTER_OFF] = IDragonGamePad::POV_180;
 
+		m_controllerIndex[TURRET_LIMELIGHT_AIM] = ctrlNo;
+		m_buttonIDs[TURRET_LIMELIGHT_AIM] = IDragonGamePad::POV_270;
+
 		m_controllerIndex[ UNJAM_CLOCKWISE ] = ctrlNo;
 		m_buttonIDs[ UNJAM_CLOCKWISE ] = IDragonGamePad::RIGHT_BUMPER;
 		

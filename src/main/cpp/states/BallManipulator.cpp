@@ -211,6 +211,14 @@ void BallManipulator::SetCurrentState
         case BALL_MANIPULATOR_STATE::TRANSFER_DOWN:
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::EJECT, false);
             break;
+        
+        case BALL_MANIPULATOR_STATE::AUTO_AIM:
+            m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
+            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
+            m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, false );
+            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::LIMELIGHT_AIM, false );
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
+            m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );
 
         default:
             break;

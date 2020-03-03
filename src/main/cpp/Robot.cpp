@@ -179,10 +179,11 @@ void Robot::AutonomousPeriodic()
 /// @return void
 void Robot::TeleopInit() 
 {
-    m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
+   m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
     m_chassisStateMgr->Init();
     m_powerCells->SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::OFF);
     m_powerCells->RunCurrentState();
+    
 
 }
 
@@ -191,12 +192,12 @@ void Robot::TeleopInit()
 /// @return void
 void Robot::TeleopPeriodic() 
 {
-
     m_chassisStateMgr->RunCurrentState();
     //m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
     //m_shooterHood->SetOutput(ControlModes::PERCENT_OUTPUT, .5* m_controller->GetAxisValue(TeleopControl::SHOOTER_HOOD_MANUAL_AXIS));
     //m_intake->RunCurrentState();
-   m_powerCells->RunCurrentState();
+  m_powerCells->RunCurrentState();
+  frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
     // m_control->RunCurrentState();
     //double leftSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL);
     //double rightSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL);
@@ -211,7 +212,7 @@ void Robot::TeleopPeriodic()
     frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());
     frc::SmartDashboard::PutNumber("Shooter speed", m_shooter->GetCurrentSpeed());*/
     //frc::SmartDashboard::PutNumber("Limelight tx", m_limelight.get()->GetTargetHorizontalOffset());
-    if(m_controller->IsButtonPressed(TeleopControl::CONTROL_PANEL_SPIN_WHEEL))
+    /*if(m_controller->IsButtonPressed(TeleopControl::CONTROL_PANEL_SPIN_WHEEL))
     {
         m_cpmState = !m_cpmState;
     }
@@ -282,7 +283,7 @@ void Robot::TeleopPeriodic()
     
     
     frc::SmartDashboard::PutBoolean("left trigger", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::TRANSFER_DOWN));
-    
+    */
 }
 
 
