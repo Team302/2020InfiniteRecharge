@@ -16,6 +16,7 @@
 // C++ Includes
 #include <map>
 #include <memory>
+#include <vector>
 
 // FRC includes
 
@@ -51,7 +52,7 @@ BallTransferStateMgr* BallTransferStateMgr::GetInstance()
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
 BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
-                                               m_stateEnumToObjectMap(),
+                                               m_stateVector(),
                                                m_currentStateEnum(BALL_TRANSFER_STATE::OFF)
 {
     // Parse the configuration file 
@@ -64,7 +65,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
     stateMap["BALLTRANSPORTTOIMPELLER"]  = BALL_TRANSFER_STATE::TO_IMPELLER;
     stateMap["BALLTRANSFERTOSHOOTER"]  = BALL_TRANSFER_STATE::TO_SHOOTER;
     stateMap["BALLTRANSFEREJECT"] = BALL_TRANSFER_STATE::EJECT;
-
+    m_stateVector.resize(4);
     // create the states passing the configuration data
     for ( auto td: targetData )
     {
@@ -73,8 +74,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
         if ( stateStringToEnumItr != stateMap.end() )
         {
             auto stateEnum = stateStringToEnumItr->second;
-            auto stateEnumToObjectItr = m_stateEnumToObjectMap.find( stateEnum );
-            if ( stateEnumToObjectItr == m_stateEnumToObjectMap.end() )
+            if ( m_stateVector[stateEnum] == nullptr )
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
@@ -87,7 +87,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                     {   
                         Logger::GetLogger()->LogError(string("creating ball transfer off"), string(""));
                         auto thisState = new BallTransferOff( controlData, target, solState );
-                        m_stateEnumToObjectMap[stateEnum] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
@@ -98,7 +98,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                     {   
                         Logger::GetLogger()->LogError(string("creating ball transfer to impeller"), string(""));
                         auto thisState = new BallTransferToImpeller( controlData, target, solState );
-                        m_stateEnumToObjectMap[stateEnum] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
@@ -106,14 +106,14 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                     {   
                         Logger::GetLogger()->LogError(string("creating ball transfer to shooter"), string(""));
                         auto thisState = new BallTransferToShooter( controlData, target, solState );
-                        m_stateEnumToObjectMap[stateEnum] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case BALL_TRANSFER_STATE::EJECT:
                     {
                         auto thisState = new BallTransferToShooter(controlData, target, solState);
-                        m_stateEnumToObjectMap[stateEnum] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     
                     }
                     break;
@@ -185,26 +185,24 @@ void BallTransferStateMgr::SetCurrentState
     bool                    run
 )
 {
-    auto stateEnumToObjectMapItr = m_stateEnumToObjectMap.find( stateEnum );
+   
+    
+    
     Logger::GetLogger()->LogError( string("about to set state current "), to_string(stateEnum));
-    if ( stateEnumToObjectMapItr != m_stateEnumToObjectMap.end() )
-    {
-        Logger::GetLogger()->LogError( string("found state"), string(""));
-        auto state = stateEnumToObjectMapItr->second;
-        if ( state != m_currentState )
+    auto state = m_stateVector[stateEnum];
+    if ( state != nullptr && state != m_currentState)
+    {    
+        m_currentState = state;
+        m_currentStateEnum = stateEnum;
+        m_currentState->Init();
+        if ( run )
         {
-            Logger::GetLogger()->LogError( string("prev state"), to_string(m_currentStateEnum));
-            m_currentState = state;
-            m_currentStateEnum = stateEnum;
-            m_currentState->Init();
-            if ( run )
+            if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::BALL_TRANSFER ) != nullptr )
             {
-                if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::BALL_TRANSFER ) != nullptr )
-                {
-                    m_currentState->Run();
-                }
+                m_currentState->Run();
             }
         }
+        
     }
 }
 

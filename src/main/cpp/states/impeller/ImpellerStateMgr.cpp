@@ -16,6 +16,7 @@
 // C++ Includes
 #include <map>
 #include <memory>
+#include <vector>
 
 // FRC includes
 
@@ -50,7 +51,8 @@ ImpellerStateMgr* ImpellerStateMgr::GetInstance()
 }
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
-ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
+ImpellerStateMgr::ImpellerStateMgr() : 
+                                       m_stateVector(),
                                        m_currentState(),
                                        m_impeller(  MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER) ),
                                        m_reverse( false ),
@@ -67,7 +69,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
     stateStringToEnumMap["IMPELLERHOLD"] = IMPELLER_STATE::HOLD;
     stateStringToEnumMap["IMPELLERAGITATE"] = IMPELLER_STATE::AGITATE;
     stateStringToEnumMap["IMPELLERTOSHOOTER"]  = IMPELLER_STATE::TO_SHOOTER;
-
+    m_stateVector.resize(4);
     // create the states passing the configuration data
     for ( auto td: targetData )
     {
@@ -76,8 +78,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
         if ( stateStringToEnumMapItr != stateStringToEnumMap.end() )
         {
             auto stateEnum = stateStringToEnumMapItr->second;
-            auto stateEnumToObjectMapItr = m_stateEnumToObjectMap.find( stateEnum );
-            if ( stateEnumToObjectMapItr == m_stateEnumToObjectMap.end() )
+            if ( m_stateVector[stateEnum] == nullptr )
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
@@ -90,7 +91,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
                     case IMPELLER_STATE::HOLD:
                     {   
                         auto thisState = new ImpellerHold(controlData, target, solState );
-                        m_stateEnumToObjectMap[IMPELLER_STATE::HOLD] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                         Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller Hold State added to Map");
                     }
                     break;
@@ -98,7 +99,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
                     case IMPELLER_STATE::TO_SHOOTER:
                     {   
                         auto thisState = new ImpellerToShooter(controlData, target, solState );
-                        m_stateEnumToObjectMap[IMPELLER_STATE::TO_SHOOTER] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                         Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller To Shooter State added to Map");
                     }
                     break;
@@ -106,7 +107,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
                     case IMPELLER_STATE::OFF:
                     {   
                         auto thisState = new ImpellerOff(controlData, target, solState );
-                        m_stateEnumToObjectMap[IMPELLER_STATE::OFF] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
@@ -117,7 +118,7 @@ ImpellerStateMgr::ImpellerStateMgr() : m_stateEnumToObjectMap(),
                     case IMPELLER_STATE::AGITATE:
                     {   
                         auto thisState = new ImpellerAgitate(controlData, target, solState );
-                        m_stateEnumToObjectMap[IMPELLER_STATE::AGITATE] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                         Logger::GetLogger()->LogError("ImpellerStateMgr::ImpellerStateMgr", "Impeller Agitate State added to Map");
                     }
                     break;
@@ -266,14 +267,13 @@ void ImpellerStateMgr::SetCurrentState
     bool            run
 )
 {
-    auto itr = m_stateEnumToObjectMap.find( stateEnum );
-    if ( itr != m_stateEnumToObjectMap.end() )
-    {
-        auto state = itr->second;
+    
+  
         
-        m_currentState = state;
-        m_currentStateEnum = stateEnum;
-        Logger::GetLogger()->LogError("ImpellerStateMgr::SetCurrentState", "Setting current state");
+    m_currentState = m_stateVector[stateEnum];
+    m_currentStateEnum = stateEnum;
+    if (m_currentState != nullptr)
+    {
         m_currentState->Init();
         if ( run )
         {
@@ -283,6 +283,8 @@ void ImpellerStateMgr::SetCurrentState
             }            
         }
     }
+    
+    
 }
 
 

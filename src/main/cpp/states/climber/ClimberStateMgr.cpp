@@ -16,6 +16,7 @@
 // C++ Includes
 #include <map>
 #include <memory>
+#include <vector>
 
 // FRC includes
 
@@ -49,7 +50,7 @@ ClimberStateMgr* ClimberStateMgr::GetInstance()
 
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
-ClimberStateMgr::ClimberStateMgr() : m_stateEnumToObjectMap(),
+ClimberStateMgr::ClimberStateMgr() : m_stateVector(),
                                    m_currentState()
 {
     // Parse the configuration file 
@@ -62,6 +63,7 @@ ClimberStateMgr::ClimberStateMgr() : m_stateEnumToObjectMap(),
     stateStringToEnumMap["RAISE"]  = CLIMBER_STATE::RAISE;
     stateStringToEnumMap["STOWED"] = CLIMBER_STATE::STOWED;
     //stateStringToEnumMap["CRAWL"] = CLIMBER_STATE::CRAWL;
+    m_stateVector.resize(4);
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -71,8 +73,7 @@ ClimberStateMgr::ClimberStateMgr() : m_stateEnumToObjectMap(),
         if ( stateStringToEnumItr != stateStringToEnumMap.end() )
         {
             auto stateEnum = stateStringToEnumItr->second;
-            auto stateEnumToObjectMapItr = m_stateEnumToObjectMap.find( stateEnum );
-            if ( stateEnumToObjectMapItr == m_stateEnumToObjectMap.end() )
+            if ( m_stateVector[stateEnum] == nullptr)
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
@@ -85,21 +86,21 @@ ClimberStateMgr::ClimberStateMgr() : m_stateEnumToObjectMap(),
                     case CLIMBER_STATE::HOLD:
                     {   
                         auto thisState = new ClimberRaise( controlData, target, solState );
-                        m_stateEnumToObjectMap[CLIMBER_STATE::HOLD] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case CLIMBER_STATE::RAISE:
                     {   
                         auto thisState = new ClimberRaise( controlData, target, solState );
-                        m_stateEnumToObjectMap[CLIMBER_STATE::RAISE] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case CLIMBER_STATE::STOWED:
                     {   
                         auto thisState = new ClimberStowed( controlData, target, solState );
-                        m_stateEnumToObjectMap[CLIMBER_STATE::STOWED] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
@@ -179,12 +180,9 @@ void ClimberStateMgr::SetCurrentState
     bool            run
 )
 {
-    auto itr = m_stateEnumToObjectMap.find( stateEnum );
-    if ( itr != m_stateEnumToObjectMap.end() )
+    auto state = m_stateVector[stateEnum];
+    if ( state != nullptr && state != m_currentState  )
     {
-        auto state = itr->second;
-        
-        
         m_currentState = state;
         m_currentStateEnum = stateEnum;
         m_currentState->Init();

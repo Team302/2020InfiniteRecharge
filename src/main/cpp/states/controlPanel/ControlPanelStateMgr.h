@@ -3,6 +3,7 @@
 
 // C++ Includes
 #include <map>
+#include <vector>
 
 // FRC includes
 
@@ -48,7 +49,7 @@ class ControlPanelStateMgr
 
     private:
 
-        std::map<CONTROL_PANEL_STATE,IState*> m_stateMap;
+        std::vector<IState*> m_stateVector;
         IState* m_currentState;
         CONTROL_PANEL_STATE m_currentStateEnum;
 

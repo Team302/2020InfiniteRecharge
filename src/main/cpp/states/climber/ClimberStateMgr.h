@@ -17,6 +17,7 @@
 
 // C++ Includes
 #include <map>
+#include <vector>
 
 // FRC includes
 
@@ -66,7 +67,7 @@ class ClimberStateMgr
         ~ClimberStateMgr() = default;
         static ClimberStateMgr* m_instance;
 
-        std::map<CLIMBER_STATE,IState*> m_stateEnumToObjectMap;
+        std::vector<IState*> m_stateVector;
         IState* m_currentState;
         CLIMBER_STATE m_currentStateEnum;
 

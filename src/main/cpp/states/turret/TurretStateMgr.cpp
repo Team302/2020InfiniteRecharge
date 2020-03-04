@@ -5,6 +5,9 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+#include <map>
+#include <vector>
+
 #include "states/turret/TurretStateMgr.h"
 #include <states/IState.h>
 #include <states/shooterHood/ShooterHoodStateMgr.h>
@@ -33,7 +36,7 @@ TurretStateMgr* TurretStateMgr::GetInstance()
 	return TurretStateMgr::m_instance;
 }
 
-TurretStateMgr::TurretStateMgr() : m_stateMap(),
+TurretStateMgr::TurretStateMgr() : m_stateVector(),
                                    m_currentState(),
                                    m_approxTargetAngle( 0.0 )
 {
@@ -48,6 +51,7 @@ TurretStateMgr::TurretStateMgr() : m_stateMap(),
     stateMap["TURRETHOLD"] = TURRET_STATE::HOLD;
     stateMap["TURRETAUTOAIM"] = TURRET_STATE::LIMELIGHT_AIM;
     stateMap["TURRETMANUALAIM"] = TURRET_STATE::MANUAL_AIM;
+    m_stateVector.resize(3);
 
     for ( auto td: targetData )
     {
@@ -56,8 +60,7 @@ TurretStateMgr::TurretStateMgr() : m_stateMap(),
         if ( stateItr != stateMap.end() )
         {
             auto stateEnum = stateItr->second;
-            auto stateIt = m_stateMap.find( stateEnum );
-            if ( stateIt == m_stateMap.end() )
+            if ( m_stateVector[stateEnum] == nullptr )
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
@@ -69,7 +72,7 @@ TurretStateMgr::TurretStateMgr() : m_stateMap(),
                     case TURRET_STATE::HOLD:
                     {
                         auto thisState = new HoldTurretPosition(controlData, m_approxTargetAngle, MechanismTargetData::SOLENOID::NONE);
-                        m_stateMap[TURRET_STATE::HOLD] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
@@ -79,14 +82,14 @@ TurretStateMgr::TurretStateMgr() : m_stateMap(),
                     case TURRET_STATE::LIMELIGHT_AIM:
                     {
                         auto thisState = new LimelightAim(controlData, target);
-                        m_stateMap[TURRET_STATE::LIMELIGHT_AIM] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case TURRET_STATE::MANUAL_AIM:
                     {
                         auto thisState = new ManualAim(controlData);
-                        m_stateMap[TURRET_STATE::MANUAL_AIM] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
@@ -135,30 +138,28 @@ void TurretStateMgr::SetCurrentState
     bool         run
 )
 {
-    auto itr = m_stateMap.find( stateEnum );
-    if ( itr != m_stateMap.end() )
+    auto state = m_stateVector[stateEnum];
+    if ( state != nullptr && state != m_currentState )
     {
-        auto state = itr->second;
-        if ( state != m_currentState )
+        
+        m_currentState = state;
+        m_currentStateEnum = stateEnum;
+        m_currentState->Init();
+        if ( stateEnum == LIMELIGHT_AIM )
         {
-            m_currentState = state;
-            m_currentStateEnum = stateEnum;
-            m_currentState->Init();
-            if ( stateEnum == LIMELIGHT_AIM )
+            auto llAim = dynamic_cast<LimelightAim*>(m_currentState);
+            if ( llAim != nullptr )
             {
-                auto llAim = dynamic_cast<LimelightAim*>(m_currentState);
-                if ( llAim != nullptr )
-                {
-                    llAim->UpdateTarget( m_approxTargetAngle );
-                }
-            }
-            if ( run )
-            {
-                if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::TURRET) != nullptr )
-                {
-                    m_currentState->Run();
-                }
+                llAim->UpdateTarget( m_approxTargetAngle );
             }
         }
+        if ( run )
+        {
+            if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::TURRET) != nullptr )
+            {
+                m_currentState->Run();
+            }
+        }
+        
     }
 }

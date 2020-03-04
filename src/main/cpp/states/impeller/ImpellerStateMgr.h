@@ -17,6 +17,7 @@
 
 // C++ Includes
 #include <map>
+#include <vector>
 
 // FRC includes
 
@@ -65,7 +66,7 @@ class ImpellerStateMgr
 
     private:
 
-        std::map<IMPELLER_STATE,IState*> m_stateEnumToObjectMap;
+        std::vector<IState*> m_stateVector;
         IState* m_currentState;
         IMPELLER_STATE m_currentStateEnum;
         IMechanism*     m_impeller;

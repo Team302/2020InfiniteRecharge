@@ -17,7 +17,7 @@
 
 // C++ Includes
 #include <map>
-
+#include <vector>
 // FRC includes
 
 // Team 302 includes
@@ -63,8 +63,7 @@ class ShooterHoodStateMgr
         inline SHOOTER_HOOD_STATE GetCurrentState() const { return m_currentStateEnum; };
 
     private:
-
-        std::map<SHOOTER_HOOD_STATE,IState*> m_stateMap;
+        std::vector<IState*> m_stateVector;
         IState* m_currentState;
         SHOOTER_HOOD_STATE m_currentStateEnum;
 

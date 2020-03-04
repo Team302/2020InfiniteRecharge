@@ -15,6 +15,7 @@
 
 #include <map>
 #include <memory>
+#include <vector>
 
 // FRC includes
 
@@ -48,7 +49,7 @@ ShooterHoodStateMgr* ShooterHoodStateMgr::GetInstance()
 }
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
-ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
+ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateVector(),
                                        m_currentState()
 {
     // Parse the configuration file 
@@ -61,7 +62,8 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
     stateMap["SHOOTERHOODDOWN"]  = SHOOTER_HOOD_STATE::MOVE_DOWN;
     stateMap["SHOOTERHOODHOLD"] = SHOOTER_HOOD_STATE::HOLD_POSITION;
     stateMap["SHOOTERHOODMANUAL"] = SHOOTER_HOOD_STATE::MANUAL;
-
+    m_stateVector.resize(4);
+    
     // create the states passing the configuration data
     for ( auto td: targetData )
     {
@@ -70,8 +72,7 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
         if ( stateItr != stateMap.end() )
         {
             auto stateEnum = stateItr->second;
-            auto stateIt = m_stateMap.find( stateEnum );
-            if ( stateIt == m_stateMap.end() )
+            if ( m_stateVector[stateEnum] == nullptr )
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
@@ -83,21 +84,21 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
                     case SHOOTER_HOOD_STATE::MOVE_UP:
                     {   // todo update the constructor take in controlData and target
                         auto thisState = new ShooterHoodMoveUp(controlData, target, MechanismTargetData::SOLENOID::NONE);
-                        m_stateMap[SHOOTER_HOOD_STATE::MOVE_UP] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case SHOOTER_HOOD_STATE::MOVE_DOWN:
                     {   // todo update the constructor take in controlData and target
                         auto thisState = new ShooterHoodMoveDown(controlData, target, MechanismTargetData::SOLENOID::NONE);
-                        m_stateMap[SHOOTER_HOOD_STATE::MOVE_DOWN] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case SHOOTER_HOOD_STATE::HOLD_POSITION:
                     {   // todo update the constructor take in controlData and target
                         auto thisState = new ShooterHoodHoldPosition(controlData, target, MechanismTargetData::SOLENOID::NONE);
-                        m_stateMap[SHOOTER_HOOD_STATE::HOLD_POSITION] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
@@ -107,7 +108,7 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
                     case SHOOTER_HOOD_STATE::MANUAL:
                     {
                         auto thisState = new ShooterHoodManual(controlData, target);
-                        m_stateMap[SHOOTER_HOOD_STATE::MANUAL] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
@@ -180,23 +181,21 @@ void ShooterHoodStateMgr::SetCurrentState
     bool            run
 )
 {
-    auto itr = m_stateMap.find( stateEnum );
-    if ( itr != m_stateMap.end() )
+    auto state = m_stateVector[stateEnum];
+    if ( state != nullptr && state != m_currentState )
     {
-        auto state = itr->second;
-        if ( state != m_currentState )
+        
+        m_currentState = state;
+        m_currentStateEnum = stateEnum;
+        m_currentState->Init();
+        if ( run )
         {
-            m_currentState = state;
-            m_currentStateEnum = stateEnum;
-            m_currentState->Init();
-            if ( run )
+            if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD) != nullptr )
             {
-                if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD) != nullptr )
-                {
-                    m_currentState->Run();
-                }
+                m_currentState->Run();
             }
         }
+        
     }
 }
 

@@ -1,5 +1,6 @@
 #include <map>
 #include <memory>
+#include <vector>
 
 // FRC includes
 
@@ -33,7 +34,7 @@ ControlPanelStateMgr* ControlPanelStateMgr::GetInstance()
 }
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
-ControlPanelStateMgr::ControlPanelStateMgr() : m_stateMap(),
+ControlPanelStateMgr::ControlPanelStateMgr() :m_stateVector(),
                                        m_currentState()
 {
     // Parse the configuration file 
@@ -46,6 +47,7 @@ ControlPanelStateMgr::ControlPanelStateMgr() : m_stateMap(),
     stateMap["STOW"]  = CONTROL_PANEL_STATE::STOW;
     stateMap["TURN"] = CONTROL_PANEL_STATE::TURN;
     stateMap["COLORTURN"] = CONTROL_PANEL_STATE::COLOR_TURN;
+    m_stateVector.resize(4);
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -55,8 +57,7 @@ ControlPanelStateMgr::ControlPanelStateMgr() : m_stateMap(),
         if ( stateItr != stateMap.end() )
         {
             auto stateEnum = stateItr->second;
-            auto stateIt = m_stateMap.find( stateEnum );
-            if ( stateIt == m_stateMap.end() )
+            if ( m_stateVector[stateEnum] == nullptr )
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
@@ -68,7 +69,7 @@ ControlPanelStateMgr::ControlPanelStateMgr() : m_stateMap(),
                     case CONTROL_PANEL_STATE::RAISE:
                     {   // todo update the constructor take in controlData and target
                         auto thisState = new ControlPanelRaise();
-                        m_stateMap[CONTROL_PANEL_STATE::RAISE] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
@@ -78,21 +79,21 @@ ControlPanelStateMgr::ControlPanelStateMgr() : m_stateMap(),
                     case CONTROL_PANEL_STATE::STOW:
                     {   // todo update the constructor take in controlData and target
                         auto thisState = new ControlPanelStow();
-                        m_stateMap[CONTROL_PANEL_STATE::STOW] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case CONTROL_PANEL_STATE::TURN:
                     {   // todo update the constructor take in controlData and target
                         auto thisState = new ControlPanelTurn(controlData, target);
-                        m_stateMap[CONTROL_PANEL_STATE::TURN] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case CONTROL_PANEL_STATE::COLOR_TURN:
                     {
                         auto thisState = new ControlPanelColorTurn(controlData, target);
-                        m_stateMap[CONTROL_PANEL_STATE::COLOR_TURN] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
@@ -160,23 +161,21 @@ void ControlPanelStateMgr::SetCurrentState
     bool            run
 )
 {
-    auto itr = m_stateMap.find( stateEnum );
-    if ( itr != m_stateMap.end() )
+    auto state = m_stateVector[stateEnum];
+    if ( state != nullptr && state != m_currentState )
     {
-        auto state = itr->second;
-        if ( state != m_currentState )
+        
+        m_currentState = state;
+        m_currentStateEnum = stateEnum;
+        m_currentState->Init();
+        if ( run )
         {
-            m_currentState = state;
-            m_currentStateEnum = stateEnum;
-            m_currentState->Init();
-            if ( run )
+            if ( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::CONTROL_TABLE_MANIPULATOR) != nullptr )
             {
-                if ( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::CONTROL_TABLE_MANIPULATOR) != nullptr )
-                {
-                    m_currentState->Run();
-                }
+                m_currentState->Run();
             }
         }
+        
     }
 }
 
