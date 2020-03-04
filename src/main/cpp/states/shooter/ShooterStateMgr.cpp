@@ -61,6 +61,7 @@ ShooterStateMgr::ShooterStateMgr() : m_stateVector(),
     stateStringToEnumMap["SHOOTEROFF"] = SHOOTER_STATE::OFF;
     stateStringToEnumMap["SHOOTERGETREADY"]  = SHOOTER_STATE::GET_READY;
     stateStringToEnumMap["SHOOTERSHOOT"] = SHOOTER_STATE::SHOOT;
+    m_stateVector.resize(3);
 
     // create the states passing the configuration data
     for ( auto td: targetData )

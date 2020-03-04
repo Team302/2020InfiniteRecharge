@@ -69,7 +69,7 @@ ImpellerStateMgr::ImpellerStateMgr() :
     stateStringToEnumMap["IMPELLERHOLD"] = IMPELLER_STATE::HOLD;
     stateStringToEnumMap["IMPELLERAGITATE"] = IMPELLER_STATE::AGITATE;
     stateStringToEnumMap["IMPELLERTOSHOOTER"]  = IMPELLER_STATE::TO_SHOOTER;
-
+    m_stateVector.resize(4);
     // create the states passing the configuration data
     for ( auto td: targetData )
     {

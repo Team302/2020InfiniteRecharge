@@ -63,6 +63,7 @@ ClimberStateMgr::ClimberStateMgr() : m_stateVector(),
     stateStringToEnumMap["RAISE"]  = CLIMBER_STATE::RAISE;
     stateStringToEnumMap["STOWED"] = CLIMBER_STATE::STOWED;
     //stateStringToEnumMap["CRAWL"] = CLIMBER_STATE::CRAWL;
+    m_stateVector.resize(4);
 
     // create the states passing the configuration data
     for ( auto td: targetData )

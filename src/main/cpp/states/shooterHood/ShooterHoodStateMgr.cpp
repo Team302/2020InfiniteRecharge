@@ -62,7 +62,8 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateVector(),
     stateMap["SHOOTERHOODDOWN"]  = SHOOTER_HOOD_STATE::MOVE_DOWN;
     stateMap["SHOOTERHOODHOLD"] = SHOOTER_HOOD_STATE::HOLD_POSITION;
     stateMap["SHOOTERHOODMANUAL"] = SHOOTER_HOOD_STATE::MANUAL;
-
+    m_stateVector.resize(4);
+    
     // create the states passing the configuration data
     for ( auto td: targetData )
     {

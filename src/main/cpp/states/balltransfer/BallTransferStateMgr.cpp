@@ -65,7 +65,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
     stateMap["BALLTRANSPORTTOIMPELLER"]  = BALL_TRANSFER_STATE::TO_IMPELLER;
     stateMap["BALLTRANSFERTOSHOOTER"]  = BALL_TRANSFER_STATE::TO_SHOOTER;
     stateMap["BALLTRANSFEREJECT"] = BALL_TRANSFER_STATE::EJECT;
-
+    m_stateVector.resize(4);
     // create the states passing the configuration data
     for ( auto td: targetData )
     {

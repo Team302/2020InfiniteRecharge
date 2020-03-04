@@ -62,6 +62,7 @@ IntakeStateMgr::IntakeStateMgr() : m_stateVector(),
     stateStringToEnumMap["INTAKEOFF"] = INTAKE_STATE::OFF;
     stateStringToEnumMap["INTAKEON"]  = INTAKE_STATE::ON;
     stateStringToEnumMap["INTAKEHUMANPLAYER"] = INTAKE_STATE::HUMANPLAYER;
+    m_stateVector.resize(3);
 
     // create the states passing the configuration data
     for ( auto td: targetData )

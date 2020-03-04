@@ -47,6 +47,7 @@ ControlPanelStateMgr::ControlPanelStateMgr() :m_stateVector(),
     stateMap["STOW"]  = CONTROL_PANEL_STATE::STOW;
     stateMap["TURN"] = CONTROL_PANEL_STATE::TURN;
     stateMap["COLORTURN"] = CONTROL_PANEL_STATE::COLOR_TURN;
+    m_stateVector.resize(4);
 
     // create the states passing the configuration data
     for ( auto td: targetData )

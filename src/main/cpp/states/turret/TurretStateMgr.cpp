@@ -51,6 +51,7 @@ TurretStateMgr::TurretStateMgr() : m_stateVector(),
     stateMap["TURRETHOLD"] = TURRET_STATE::HOLD;
     stateMap["TURRETAUTOAIM"] = TURRET_STATE::LIMELIGHT_AIM;
     stateMap["TURRETMANUALAIM"] = TURRET_STATE::MANUAL_AIM;
+    m_stateVector.resize(3);
 
     for ( auto td: targetData )
     {
