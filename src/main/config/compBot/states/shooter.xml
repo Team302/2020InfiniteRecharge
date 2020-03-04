@@ -15,6 +15,7 @@
 					 value="0.5"/>
 	<mechanismTarget stateIdentifier="SHOOTERSHOOT"
 	                 controlDataIdentifier="closedloop"
-					 value="46.0"/>
+					 value="46.0"
+					 secondValue="10.0"/>
 
 </statedata>

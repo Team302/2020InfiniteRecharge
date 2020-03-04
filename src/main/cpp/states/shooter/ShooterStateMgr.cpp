@@ -74,6 +74,7 @@ ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
+                auto secondTarget = td->GetSecondTarget();
                 auto solState = td->GetSolenoidState();
                 auto fbControlData = td->GetFailoverController(); // todo pass through to the states
                 auto fbTarget = td->GetFailoverTarget();  // todo pass through to the states
@@ -99,7 +100,7 @@ ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
 
                     case SHOOTER_STATE::SHOOT:
                     {   
-                        auto thisState = new ShooterShoot( controlData, target, fbControlData, fbTarget, solState );
+                        auto thisState = new ShooterShoot( controlData, target, secondTarget, fbControlData, fbTarget, solState );
                         m_stateEnumToObjectMap[stateEnum] = thisState;
                     }
                     break;

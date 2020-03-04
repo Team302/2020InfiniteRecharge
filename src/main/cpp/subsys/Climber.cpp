@@ -77,6 +77,9 @@ void Climber::SetOutput
     
 }
 
+void Climber::SetOutput(ControlModes::CONTROL_TYPE controlType, double value1, double value2)
+{}
+
 ///@brief Activate/Deactivate the extender Solenoid
 ///@param [in] bool - true == extend, false == retract 
 ///@return void

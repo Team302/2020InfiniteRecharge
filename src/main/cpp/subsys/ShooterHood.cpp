@@ -65,6 +65,10 @@ double                                   value
   m_shmotor.get()->SetControlMode(controlType);
   m_shmotor.get()->Set( value );
 } 
+
+void ShooterHood::SetOutput(ControlModes::CONTROL_TYPE controlType, double value1, double value2)
+{}
+
 /// @brief      Activate/deactivate pneumatic solenoid 
 /// @param [in] bool - true == extend, false == retract 
 /// @return     void  

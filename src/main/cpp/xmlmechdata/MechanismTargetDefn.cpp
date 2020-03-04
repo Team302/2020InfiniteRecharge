@@ -48,6 +48,7 @@ MechanismTargetData*  MechanismTargetDefn::ParseXML
     string stateName;
     string controllerIdentifier;
     double target = 0.0;
+    double secondTarget = 0.0;
     MechanismTargetData::SOLENOID solenoid = MechanismTargetData::SOLENOID::NONE; 
     string failoverControllerIdentifier;
     double failoverTarget = 0.0;
@@ -66,6 +67,10 @@ MechanismTargetData*  MechanismTargetDefn::ParseXML
         else if ( strcmp( attr.name(), "value") == 0 )
         {
             target = attr.as_double();
+        }
+        else if ( strcmp( attr.name(), "secondTarget") == 0 )
+        {
+            secondTarget = attr.as_double();
         }
         else if( strcmp( attr.name(), "solenoid" ) == 0 )
         {
@@ -106,7 +111,7 @@ MechanismTargetData*  MechanismTargetDefn::ParseXML
 
     if ( !hasError && !stateName.empty() && !controllerIdentifier.empty() )
     {
-        mechData = new MechanismTargetData( stateName, controllerIdentifier, target, solenoid, failoverControllerIdentifier, failoverTarget );
+        mechData = new MechanismTargetData( stateName, controllerIdentifier, target, secondTarget, solenoid, failoverControllerIdentifier, failoverTarget );
     }
     else
     {

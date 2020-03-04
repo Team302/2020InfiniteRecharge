@@ -97,6 +97,9 @@ void Impeller::SetOutput
     m_target = value;
 }
 
+void Impeller::SetOutput(ControlModes::CONTROL_TYPE controlType, double value1, double value2)
+{}
+
 /// @brief      Activate/deactivate pneumatic solenoid
 /// @param [in] bool - true == extend, false == retract
 /// @return     void 

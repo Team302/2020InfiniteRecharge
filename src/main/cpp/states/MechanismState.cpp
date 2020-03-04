@@ -115,6 +115,89 @@ MechanismState::MechanismState
     
 }
 
+MechanismState::MechanismState
+(
+    IMechanism*                     mechanism,
+    ControlData*                    control,
+    double                          target,
+    double                          secondTarget,
+    MechanismTargetData::SOLENOID   solState
+) : IState(),
+    m_mechanism( mechanism ),
+    m_control( control ),
+    m_target( target ),
+    m_secondTarget( secondTarget),
+    m_solenoidState( solState ),
+    m_positionBased( false ),
+    m_speedBased( false )
+{
+    if ( mechanism == nullptr )
+    {
+        Logger::GetLogger()->LogError( string("MechanismState::MechanismState"), string("no mechanism"));
+    }    
+    
+    if ( control == nullptr )
+    {
+        Logger::GetLogger()->LogError( string("MechanismState::MechanismState"), string("no control data"));
+    }
+    else
+    {
+        auto mode = control->GetMode();
+        switch (mode)
+        {
+            case ControlModes::CONTROL_TYPE::PERCENT_OUTPUT:
+                m_positionBased = false;
+                m_speedBased = false;
+                break;
+
+            case ControlModes::CONTROL_TYPE::VOLTAGE:
+                m_positionBased = false;
+                m_speedBased = false;
+                break;
+
+            case ControlModes::CONTROL_TYPE::POSITION_DEGREES:
+            case ControlModes::CONTROL_TYPE::POSITION_INCH:
+                m_positionBased = true;
+                m_speedBased = false;
+                break;
+            
+            case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
+            case ControlModes::CONTROL_TYPE::VELOCITY_INCH:
+            case ControlModes::CONTROL_TYPE::VELOCITY_RPS:
+                m_positionBased = false;
+                m_speedBased = true;
+                break;
+
+            case ControlModes::CONTROL_TYPE::CURRENT:
+                m_positionBased = false;
+                m_speedBased = false;
+                break;
+
+            case ControlModes::CONTROL_TYPE::MOTION_PROFILE:
+                m_positionBased = false;
+                m_speedBased = false;
+                break;
+
+            case ControlModes::CONTROL_TYPE::MOTION_PROFILE_ARC:
+                m_positionBased = false;
+                m_speedBased = false;
+                break;
+
+            case ControlModes::CONTROL_TYPE::TRAPEZOID:
+                m_positionBased = false;
+                m_speedBased = false;
+                break;
+
+            default:
+                m_positionBased = false;
+                m_speedBased = false;
+                break;
+        }
+    }
+    
+}
+
+
 void MechanismState::Init()
 {
     if ( m_mechanism != nullptr && m_control != nullptr )
@@ -140,7 +223,14 @@ void MechanismState::Run()
             m_target *= 0.9;
         }
 
-        m_mechanism->SetOutput( m_control->GetMode(), m_target );
+        if(!isnan(m_secondTarget))
+        {
+            m_mechanism->SetOutput(m_control->GetMode(), m_target, m_secondTarget);
+        }
+        else
+        {
+            m_mechanism->SetOutput( m_control->GetMode(), m_target );
+        }
         switch ( m_solenoidState )
         {
             case MechanismTargetData::SOLENOID::OFF:

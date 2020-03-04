@@ -69,6 +69,9 @@ void Intake::SetOutput
     }
 }
 
+void Intake::SetOutput(ControlModes::CONTROL_TYPE controlType, double value1, double value2)
+{}
+
 void Intake::ActivateSolenoid
 (
     bool activate

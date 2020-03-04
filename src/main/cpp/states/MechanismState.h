@@ -32,6 +32,14 @@ class MechanismState : public IState
             double                          target,
             MechanismTargetData::SOLENOID   solState
         );
+        MechanismState
+        (
+            IMechanism*                     mechanism,
+            ControlData*                    control,
+            double                          target,
+            double                          secondTarget,
+            MechanismTargetData::SOLENOID   solState
+        );
         MechanismState() = delete;
         ~MechanismState() = default;
 
@@ -44,6 +52,7 @@ class MechanismState : public IState
         IMechanism*                     m_mechanism;
         ControlData*                    m_control;
         double                          m_target;
+        double                          m_secondTarget;
         MechanismTargetData::SOLENOID   m_solenoidState;
         bool                            m_positionBased;
         bool                            m_speedBased;

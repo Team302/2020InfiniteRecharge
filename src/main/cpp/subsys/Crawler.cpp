@@ -70,6 +70,9 @@ void Crawler::SetOutput
     }
 };
 
+void Crawler::SetOutput(ControlModes::CONTROL_TYPE controlType, double value1, double value2)
+{}
+
 ///@brief extends or retracts the solenoid
 ///@param [in] bool activate: true = extend, false = retract
 ///@return void

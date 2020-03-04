@@ -27,8 +27,9 @@ ShooterShoot::ShooterShoot
 (
     ControlData*                    controlData, 
     double                          target,
+    double                          secondTarget,
     ControlData*                    failoverControlData,
     double                          failoverTarget,    
     MechanismTargetData::SOLENOID   solState
-) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER), controlData, target, solState )
+) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER), controlData, target, secondTarget, solState )
 {}

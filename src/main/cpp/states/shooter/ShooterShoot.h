@@ -29,6 +29,7 @@ class ShooterShoot : public MechanismState
         (
             ControlData*                    controlData,
             double                          target,
+            double                          secondTarget,
             ControlData*                    failoverControlData,
             double                          failoverTarget,            
             MechanismTargetData::SOLENOID   solState

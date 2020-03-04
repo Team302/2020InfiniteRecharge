@@ -88,6 +88,9 @@ void ControlPanel::SetOutput
     }
 }
 
+void ControlPanel::SetOutput(ControlModes::CONTROL_TYPE controlType, double value1, double value2)
+{}
+
 void ControlPanel::ActivateSolenoid
 (
     bool activate

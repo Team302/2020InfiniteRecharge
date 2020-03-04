@@ -54,6 +54,13 @@ class IMechanism
             double                                   value       
         ) = 0;
 
+        virtual void SetOutput
+        (
+           ControlModes::CONTROL_TYPE controlType,
+           double value1,
+           double value2
+        ) = 0;
+
         /// @brief      Activate/deactivate pneumatic solenoid
         /// @param [in] bool - true == extend, false == retract
         /// @return     void 

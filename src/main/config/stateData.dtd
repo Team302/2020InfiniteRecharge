@@ -26,6 +26,7 @@
                                           UNKNOWN ) "UNKNOWN"
           controlDataIdentifier         CDATA #REQUIRED
           value                         CDATA #REQUIRED
+          secondValue                   CDATA "0.0"
           solenoid                      ( NONE | ON | OFF ) "NONE"
           failoverControlDataIdentifier CDATA #IMPLIED
           failoverValue                 CDATA #IMPLIED

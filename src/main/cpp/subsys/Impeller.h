@@ -59,6 +59,14 @@ class Impeller : public IMechanism
             double                                   value       
         ) override;
 
+        void SetOutput
+        (
+            ControlModes::CONTROL_TYPE controlType,
+            double value1,
+            double value2
+        ) override;
+
+
         /// @brief      Activate/deactivate pneumatic solenoid
         /// @param [in] bool - true == extend, false == retract
         /// @return     void 

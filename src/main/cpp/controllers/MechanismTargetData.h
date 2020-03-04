@@ -42,6 +42,7 @@ class MechanismTargetData
             std::string                                 state,
             std::string                                 controller,
             double                                      target,
+            double                                      secondTarget,
             SOLENOID                                    solenoid,
             std::string                                 failoverController,
             double                                      failoverTarget
@@ -65,6 +66,10 @@ class MechanismTargetData
         /// @brief  Retrieve the target value
         /// @return double - target value
         inline double GetTarget() const { return m_target; };
+
+        /// @brief  Retrieve the second target value
+        /// @return double - second target value
+        inline double GetSecondTarget() const { return m_secondTarget; };
 
         /// @brief get the solenoid state
         /// @return SOLENOID state of the solenoid
@@ -94,6 +99,7 @@ class MechanismTargetData
         std::string                                 m_state;
         std::string                                 m_controller;
         double                                      m_target;
+        double                                      m_secondTarget;
         ControlData*                                m_controlData;
         SOLENOID                                    m_solenoid;
         std::string                                 m_failoverController;

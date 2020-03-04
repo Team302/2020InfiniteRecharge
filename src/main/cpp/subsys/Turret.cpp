@@ -47,6 +47,9 @@ void Turret::SetOutput(ControlModes::CONTROL_TYPE controlType, double value)
 
 }
 
+void Turret::SetOutput(ControlModes::CONTROL_TYPE controlType, double value1, double value2)
+{}
+
 void Turret::ActivateSolenoid(bool activate)
 {
 

@@ -45,6 +45,13 @@ class Climber : public IMechanism
             double                                  value
         ) override;
 
+        void SetOutput
+        (
+        ControlModes::CONTROL_TYPE controlType,
+        double value1,
+        double value2
+        ) override;
+
         ///@brief Activate/deactivate the extender solenoid
         ///@param [in] bool - true == extended, false == retracted
         ///@return void

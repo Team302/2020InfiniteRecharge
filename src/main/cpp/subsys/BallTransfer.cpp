@@ -63,6 +63,9 @@ void BallTransfer::SetOutput
     }
 }
 
+void BallTransfer::SetOutput(ControlModes::CONTROL_TYPE controlType, double value1, double value2)
+{}
+
 void BallTransfer::ActivateSolenoid
 (
     bool     activate
