@@ -17,6 +17,7 @@
 
 // C++ Includes
 #include <map>
+#include <vector>
 
 // FRC includes
 
@@ -64,7 +65,7 @@ class ShooterStateMgr
 
     private:
 
-        std::map<SHOOTER_STATE,IState*> m_stateEnumToObjectMap;
+        std::vector<IState*> m_stateVector;
         IState* m_currentState;
         SHOOTER_STATE m_currentStateEnum;
 

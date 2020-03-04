@@ -8,6 +8,7 @@
 #pragma once
 
 #include <map>
+#include <vector>
 
 #include <states/IState.h>
 
@@ -48,7 +49,7 @@ class TurretStateMgr {
 
     private:
 
-        std::map<TURRET_STATE,IState*> m_stateMap;
+        std::vector<IState*> m_stateVector;
         IState* m_currentState;
         TURRET_STATE m_currentStateEnum;
         double m_approxTargetAngle;

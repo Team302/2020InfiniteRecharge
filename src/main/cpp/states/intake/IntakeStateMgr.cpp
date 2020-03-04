@@ -16,6 +16,7 @@
 // C++ Includes
 #include <map>
 #include <memory>
+#include <vector>
 
 // FRC includes
 
@@ -49,7 +50,7 @@ IntakeStateMgr* IntakeStateMgr::GetInstance()
 }
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
-IntakeStateMgr::IntakeStateMgr() : m_stateEnumToObjectMap(),
+IntakeStateMgr::IntakeStateMgr() : m_stateVector(),
                                    m_currentState()
 {
     // Parse the configuration file 
@@ -70,8 +71,7 @@ IntakeStateMgr::IntakeStateMgr() : m_stateEnumToObjectMap(),
         if ( stateStringToEnumItr != stateStringToEnumMap.end() )
         {
             auto stateEnum = stateStringToEnumItr->second;
-            auto stateEnumToObjectMapItr = m_stateEnumToObjectMap.find( stateEnum );
-            if ( stateEnumToObjectMapItr == m_stateEnumToObjectMap.end() )
+            if ( m_stateVector[stateEnum] == nullptr )
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
@@ -84,21 +84,21 @@ IntakeStateMgr::IntakeStateMgr() : m_stateEnumToObjectMap(),
                     case INTAKE_STATE::ON:
                     {   
                         auto thisState = new IntakeOn( controlData, target, solState );
-                        m_stateEnumToObjectMap[INTAKE_STATE::ON] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case INTAKE_STATE::HUMANPLAYER:
                     {   
                         auto thisState = new IntakeHPSState( controlData, target, solState );
-                        m_stateEnumToObjectMap[INTAKE_STATE::HUMANPLAYER] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case INTAKE_STATE::OFF:
                     {   
                         auto thisState = new IntakeOff( controlData, target, solState );
-                        m_stateEnumToObjectMap[INTAKE_STATE::OFF] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
@@ -167,12 +167,9 @@ void IntakeStateMgr::SetCurrentState
     bool            run
 )
 {
-    auto itr = m_stateEnumToObjectMap.find( stateEnum );
-    if ( itr != m_stateEnumToObjectMap.end() )
+    auto state = m_stateVector[stateEnum];
+    if ( state != nullptr && state != m_currentState )
     {
-        auto state = itr->second;
-        
-        
         m_currentState = state;
         m_currentStateEnum = stateEnum;
         m_currentState->Init();

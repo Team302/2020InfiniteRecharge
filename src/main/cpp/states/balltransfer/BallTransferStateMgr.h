@@ -18,11 +18,13 @@
 
 // C++ Includes
 #include <map>
+#include <vector>
 
 // FRC includes
 
 // Team 302 includes
 #include <states/IState.h>
+
 
 // Third Party Includes
 
@@ -65,7 +67,7 @@ class BallTransferStateMgr
     private:
 
         IState* m_currentState;
-        std::map<BALL_TRANSFER_STATE,IState*> m_stateEnumToObjectMap;
+        std::vector<IState*> m_stateVector;
         BALL_TRANSFER_STATE m_currentStateEnum;
 
         BallTransferStateMgr();

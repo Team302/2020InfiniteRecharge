@@ -16,6 +16,7 @@
 // C++ Includes
 #include <map>
 #include <memory>
+#include <vector>
 
 // FRC includes
 
@@ -48,7 +49,7 @@ ShooterStateMgr* ShooterStateMgr::GetInstance()
 }
 
 /// @brief    initialize the state manager, parse the configuration file and create the states.
-ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
+ShooterStateMgr::ShooterStateMgr() : m_stateVector(),
                                      m_currentState()
 {
     // Parse the configuration file 
@@ -69,8 +70,7 @@ ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
         if ( stateStringToEnumMapItr != stateStringToEnumMap.end() )
         {
             auto stateEnum = stateStringToEnumMapItr->second;
-            auto stateEnumToObjectMapItr = m_stateEnumToObjectMap.find( stateEnum );
-            if ( stateEnumToObjectMapItr == m_stateEnumToObjectMap.end() )
+            if ( m_stateVector[stateEnum] == nullptr )
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
@@ -83,7 +83,7 @@ ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
                     case SHOOTER_STATE::OFF:
                     {   
                         auto thisState = new ShooterOff( controlData, target, fbControlData, fbTarget, solState );
-                        m_stateEnumToObjectMap[stateEnum] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
                         m_currentState->Init();
@@ -93,14 +93,14 @@ ShooterStateMgr::ShooterStateMgr() : m_stateEnumToObjectMap(),
                     case SHOOTER_STATE::GET_READY:
                     {   
                         auto thisState = new ShooterGetReady( controlData, target, fbControlData, fbTarget, solState );
-                        m_stateEnumToObjectMap[stateEnum] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case SHOOTER_STATE::SHOOT:
                     {   
                         auto thisState = new ShooterShoot( controlData, target, fbControlData, fbTarget, solState );
-                        m_stateEnumToObjectMap[stateEnum] = thisState;
+                        m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
@@ -167,12 +167,9 @@ void ShooterStateMgr::SetCurrentState
     bool            run
 )
 {
-    auto stateEnumToObjectMapItr = m_stateEnumToObjectMap.find( stateEnum );
-    if ( stateEnumToObjectMapItr != m_stateEnumToObjectMap.end() )
+    auto state = m_stateVector[stateEnum];
+    if ( state != nullptr && state != m_currentState )
     {
-        auto state = stateEnumToObjectMapItr->second;
-        if ( state != m_currentState )
-        {
             m_currentState = state;
             m_currentStateEnum = stateEnum;
             m_currentState->Init();
@@ -183,7 +180,6 @@ void ShooterStateMgr::SetCurrentState
                     m_currentState->Run();
                 }
             }
-        }
     }
 }
 

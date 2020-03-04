@@ -17,6 +17,7 @@
 
 // C++ Includes
 #include <map>
+#include <vector>
 
 // FRC includes
 
@@ -61,7 +62,7 @@ class IntakeStateMgr
 
     private:
 
-        std::map<INTAKE_STATE,IState*> m_stateEnumToObjectMap;
+        std::vector<IState*> m_stateVector;
         IState* m_currentState;
         INTAKE_STATE m_currentStateEnum;
 
