@@ -37,7 +37,9 @@
 // FRC includes
 
 // Team 302 includes
+#include <xmlhw/CameraDefn.h>
 #include <xmlhw/ChassisDefn.h>
+#include <xmlhw/FeedbackDefn.h>
 #include <xmlhw/RobotDefn.h>
 #include <xmlhw/MechanismDefn.h>
 #include <xmlhw/LimelightDefn.h>
@@ -71,11 +73,13 @@ void RobotDefn::ParseXML()
     // if it is good
     if (result)
     {
+        unique_ptr<CameraDefn> cameraXML = make_unique<CameraDefn>();
         unique_ptr<ChassisDefn> chassisXML = make_unique<ChassisDefn>();
         unique_ptr<MechanismDefn> mechanismXML = make_unique<MechanismDefn>();
         unique_ptr<PDPDefn> pdpXML = make_unique<PDPDefn>();
         unique_ptr<PigeonDefn> pigeonXML = make_unique<PigeonDefn>();
         unique_ptr<LimelightDefn> limelightXML = make_unique<LimelightDefn>();
+        unique_ptr<FeedbackDefn> feedbackXML = make_unique<FeedbackDefn>();
 
         // get the root node <robot>
         xml_node parent = doc.root();
@@ -92,6 +96,10 @@ void RobotDefn::ParseXML()
                 {
                     mechanismXML.get()->ParseXML(child);
                 }
+                else if (strcmp(child.name(), "camera") == 0)
+                {
+                    cameraXML.get()->ParseXML(child);
+                }
                 else if (strcmp(child.name(), "pdp") == 0)
                 {
                     pdpXML.get()->ParseXML(child);
@@ -102,7 +110,6 @@ void RobotDefn::ParseXML()
                 }
                 else if ( strcmp(child.name(), "feedback") == 0 )
                 {
-                    
                 }
                 else if ( strcmp(child.name(), "pigeon") == 0 )
                 {
