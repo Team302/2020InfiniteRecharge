@@ -180,15 +180,10 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[ TRANSFER_DOWN ] = ctrlNo;
 		m_buttonIDs[ TRANSFER_DOWN ] = IDragonGamePad::RIGHT_TRIGGER_PRESSED;
 		
-		/*m_controllerIndex[ GARBAGE_DECREMENT ] = ctrlNo;
-		m_buttonIDs[ GARBAGE_DECREMENT ] = IDragonGamePad::POV_180;
-
-		m_controllerIndex[ GARBAGE_INCREMENT ] = ctrlNo;
-		m_buttonIDs[ GARBAGE_INCREMENT ] = IDragonGamePad::POV_0;
-
+		/*
 		m_controllerIndex[ TURRET_LIMELIGHT_AIM] = ctrlNo;
 		m_buttonIDs[ TURRET_LIMELIGHT_AIM] = IDragonGamePad::B_BUTTON;
-*/
+		*/
 	}
     else if ( m_controllers[ctrlNo] != nullptr )
     {
