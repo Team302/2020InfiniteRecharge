@@ -23,9 +23,7 @@
 // Team 302 includes
 #include <states/IState.h>
 #include <states/shooter/ShooterStateMgr.h>
-#include <states/shooter/ShooterOff.h>
-#include <states/shooter/ShooterGetReady.h>
-#include <states/shooter/ShooterShoot.h>
+#include <states/shooter/ShooterState.h>
 #include <xmlmechdata/StateDataDefn.h>
 #include <controllers/MechanismTargetData.h>
 #include <utils/Logger.h>
@@ -83,7 +81,7 @@ ShooterStateMgr::ShooterStateMgr() : m_stateVector(),
                 {
                     case SHOOTER_STATE::OFF:
                     {   
-                        auto thisState = new ShooterOff( controlData, target, fbControlData, fbTarget, solState );
+                        auto thisState = new ShooterState( controlData, target, fbControlData, fbTarget, solState );
                         m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -93,14 +91,14 @@ ShooterStateMgr::ShooterStateMgr() : m_stateVector(),
 
                     case SHOOTER_STATE::GET_READY:
                     {   
-                        auto thisState = new ShooterGetReady( controlData, target, fbControlData, fbTarget, solState );
+                        auto thisState = new ShooterState( controlData, target, fbControlData, fbTarget, solState );
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case SHOOTER_STATE::SHOOT:
                     {   
-                        auto thisState = new ShooterShoot( controlData, target, fbControlData, fbTarget, solState );
+                        auto thisState = new ShooterState( controlData, target, fbControlData, fbTarget, solState );
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
