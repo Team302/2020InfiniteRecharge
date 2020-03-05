@@ -41,6 +41,8 @@ class IntakeOn : public MechanismState
         (
             ControlData* control,
             double target,
+            ControlData*      failoverControlData,
+            double            failoverTarget,
             MechanismTargetData::SOLENOID solState
         );
 

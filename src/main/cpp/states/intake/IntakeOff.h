@@ -36,6 +36,8 @@ class IntakeOff : public MechanismState
     (
         ControlData* control,
         double target,
+        ControlData* fbControl,
+        double fbTarget,
         MechanismTargetData::SOLENOID solState
     );
     IntakeOff() = delete;

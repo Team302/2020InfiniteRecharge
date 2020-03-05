@@ -41,6 +41,8 @@ IntakeHPSState::IntakeHPSState
 (
     ControlData* control,
     double target,
+    ControlData* fbControl,
+    double fbTarget,
     MechanismTargetData::SOLENOID solState
 ) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::INTAKE), control, target, solState)
 {

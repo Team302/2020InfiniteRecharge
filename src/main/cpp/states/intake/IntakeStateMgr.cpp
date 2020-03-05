@@ -83,24 +83,24 @@ IntakeStateMgr::IntakeStateMgr() : m_stateEnumToObjectMap(),
                 {
                     case INTAKE_STATE::ON:
                     {   
-                        auto thisState = new IntakeOn( controlData, target, solState );
+                        auto thisState = new IntakeOn( controlData, target, fbControlData, fbTarget, solState );
                         m_stateEnumToObjectMap[INTAKE_STATE::ON] = thisState;
                     }
                     break;
 
                     case INTAKE_STATE::HUMANPLAYER:
                     {   
-                        auto thisState = new IntakeHPSState( controlData, target, solState );
+                        auto thisState = new IntakeHPSState( controlData, target, fbControlData, fbTarget, solState );
                         m_stateEnumToObjectMap[INTAKE_STATE::HUMANPLAYER] = thisState;
                     }
                     break;
 
                     case INTAKE_STATE::OFF:
                     {   
-                        auto thisState = new IntakeOff( controlData, target, solState );
+                        auto thisState = new IntakeOff( controlData, target, fbControlData, fbTarget, solState );
                         m_stateEnumToObjectMap[INTAKE_STATE::OFF] = thisState;
                         m_currentState = thisState;
-                        m_currentStateEnum = stateEnum;
+                        m_currentStateEnum = stateEnum; 
                         m_currentState->Init();
                     }
                     break;
