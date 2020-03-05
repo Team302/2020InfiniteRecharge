@@ -2,6 +2,7 @@
 #include <hw/DragonThroughBoreEncoder.h>
 #include <hw/usages/ThroughBoreEncoderUsage.h>
 #include <utils/Logger.h>
+#include <frc/Encoder.h>
 
 using namespace frc;
 DragonThroughBoreEncoder::DragonThroughBoreEncoder(
@@ -9,20 +10,32 @@ DragonThroughBoreEncoder::DragonThroughBoreEncoder(
     int                                            DIOA,
     int                                            DIOB,
     int                                            PWMID
-) : m_encoder(new ThroughBoreEncoder(PWMID)),
-    m_dioa( DIOA ),
-    m_diob( DIOB ),
+) : m_encoder(new Encoder( DIOA, DIOB )),
+    m_pwmid( PWMID ),
     m_type( usage )
 {
 }
 
-DragonThroughBoreEncoder::~DragonThroughBoreEncoder()\
+DragonThroughBoreEncoder::~DragonThroughBoreEncoder()
 {
     delete m_encoder;
 }
 ThroughBoreEncoderUsage::THROUGH_BORE_ENCODER_USAGE::GetType() const
 {
     return m_type;
+}
+int DragonThroughBoreEncoder::GetChannel() const
+{
+    in channel = 0;
+    if (m_encoder != nullptr )
+    {
+        channel = m_encoder->GetChannel();
+    }
+    else
+    {
+        Logger::GetLogger()->LogError( string("DragonSolenoid::GetChannel"), string(" m_encoder ptr is nullptr"));
+    }
+    
 }
 bool DragonThroughBoreEncoder::Get() const
 {
