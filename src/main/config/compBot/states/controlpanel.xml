@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE statedata SYSTEM "stateData.dtd">
+<statedata>
+	<controlData identifier="openloop" 
+	             mode="PERCENT_OUTPUT"/>
+	<mechanismTarget stateIdentifier="CONTROLPANELSTOW"
+	                 controlDataIdentifier="openloop"
+					 value="0.0"/>
+	<mechanismTarget stateIdentifier="CONTROLPANELRAISE"
+	                 controlDataIdentifier="openloop"
+					 value="1.0"/>
+	<mechanismTarget stateIdentifier="CONTROLPANELCOLOR"
+	                 controlDataIdentifier="openloop"
+					 value="0.5"/>
+	<mechanismTarget stateIdentifier="CONTROLPANELTURN"
+					 controlDataIdentifier="openloop"
+				     value="0.5"/>
+    <mechanismTarget stateIdentifier="CONTROLPANELMANUAL"
+                     controlDataIdentifier="openloop"
+                     value="1.0"
+
+</statedata>
