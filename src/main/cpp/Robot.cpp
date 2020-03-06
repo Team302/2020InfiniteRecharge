@@ -51,6 +51,7 @@
 #include <subsys/IChassis.h>
 #include <hw/factories/PigeonFactory.h>
 #include <frc/Solenoid.h>
+#include <states/climber/ClimberStateMgr.h>
 
 using namespace std;
 using namespace frc;
@@ -75,6 +76,7 @@ void Robot::RobotInit()
     // Create the Chassis Control (state) modes which puts the auton choices and teleop drive modes 
     // on the dashboard for selection.
     m_chassisStateMgr = new ChassisStateMgr();
+    m_climberStateMgr = ClimberStateMgr::GetInstance();
 
     /*m_leftMaster = new TalonFX(12);
     m_leftSlave = new TalonFX(13);
@@ -184,6 +186,7 @@ void Robot::TeleopInit()
     m_powerCells->SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::OFF);
     m_powerCells->RunCurrentState();
     
+    m_climberStateMgr->RunCurrentState();
 
 }
 
@@ -193,6 +196,7 @@ void Robot::TeleopInit()
 void Robot::TeleopPeriodic() 
 {
     m_chassisStateMgr->RunCurrentState();
+    m_climberStateMgr->RunCurrentState();
     //m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
     //m_shooterHood->SetOutput(ControlModes::PERCENT_OUTPUT, .5* m_controller->GetAxisValue(TeleopControl::SHOOTER_HOOD_MANUAL_AXIS));
     //m_intake->RunCurrentState();

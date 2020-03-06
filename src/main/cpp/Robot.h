@@ -37,6 +37,7 @@
 // team 302 includes
 #include <auton/CyclePrimitives.h>
 #include <states/chassis/ChassisStateMgr.h>
+#include <states/climber/ClimberStateMgr.h>
 #include <states/BallManipulator.h>
 //#include <states/controlPanel/ControlPanelStateMgr.h>
 //#include <states/climber/ClimberStateMgr.h>
@@ -78,6 +79,7 @@ class Robot : public frc::TimedRobot
 
   private:
       CyclePrimitives* m_cyclePrims;
+      ClimberStateMgr* m_climberStateMgr;
       ChassisStateMgr* m_chassisStateMgr;
       //IntakeStateMgr* m_intake;
       BallManipulator* m_powerCells;

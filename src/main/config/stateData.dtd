@@ -22,6 +22,7 @@
                                           SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN | SHOOTERHOODMANUAL |
                                           TURRETHOLD | TURRETAUTOAIM | TURRETMANUALAIM |
                                           SHOOTEROFF | SHOOTERGETREADY | SHOOTERSHOOT |
+                                          CLIMBERHOLD | CLIMBERRAISE | CLIMBERSTOWED | CLIMBERWINCH |
                                           UNKNOWN ) "UNKNOWN"
           controlDataIdentifier         CDATA #REQUIRED
           value                         CDATA #REQUIRED

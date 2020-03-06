@@ -30,6 +30,7 @@
 #include <states/climber/ClimberHold.h>
 #include <states/climber/ClimberRaise.h>
 #include <states/climber/ClimberStowed.h>
+#include <states/climber/ClimberWinch.h>
 //Put in climber crawl file when done
 #include <frc/smartdashboard/SmartDashboard.h>
 
@@ -59,11 +60,12 @@ ClimberStateMgr::ClimberStateMgr() : m_stateVector(),
 
     // initialize the xml string to state map
     map<string, CLIMBER_STATE> stateStringToEnumMap;
-    stateStringToEnumMap["HOLD"] = CLIMBER_STATE::HOLD;
-    stateStringToEnumMap["RAISE"]  = CLIMBER_STATE::RAISE;
-    stateStringToEnumMap["STOWED"] = CLIMBER_STATE::STOWED;
+    stateStringToEnumMap["CLIMBERHOLD"] = CLIMBER_STATE::HOLD;
+    stateStringToEnumMap["CLIMBERRAISE"]  = CLIMBER_STATE::RAISE;
+    stateStringToEnumMap["CLIMBERSTOWED"] = CLIMBER_STATE::STOWED;
+    stateStringToEnumMap["CLIMBERWINCH"] = CLIMBER_STATE::WINCH;
     //stateStringToEnumMap["CRAWL"] = CLIMBER_STATE::CRAWL;
-    m_stateVector.resize(4);
+    //m_stateVector.resize(4);
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -107,6 +109,12 @@ ClimberStateMgr::ClimberStateMgr() : m_stateVector(),
                     }
                     break;
 
+                    case CLIMBER_STATE::WINCH:
+                    {
+                        auto thisState = new ClimberWinch( controlData, target, solState );
+                        m_stateVector[stateEnum] = thisState;
+                    }
+
                    /* case CLIMBER_STATE::CRAWL:
                     {   
                         auto thisState = new ClimberCrawl( controlData, target, solState );
@@ -148,18 +156,18 @@ void ClimberStateMgr::RunCurrentState()
         {
             SetCurrentState( CLIMBER_STATE::HOLD, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_LIFT ) )
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_RAISE ) )
         {
             SetCurrentState( CLIMBER_STATE::RAISE, false );
         }
-        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_LIFT ) )
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_STOW ) )
         {
             SetCurrentState( CLIMBER_STATE::STOWED, false );
         }
-        /*else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_CRAWL ) )
+        else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_WINCH ) )
         {
-            SetCurrentState( CLIMBER_STATE::CRAWL, false );
-        }*/
+            SetCurrentState( CLIMBER_STATE::WINCH, false );
+        }
     }
 
     Logger::GetLogger()->OnDash(string("Climber State"), to_string(m_currentStateEnum));

@@ -35,6 +35,7 @@ class ClimberStateMgr
             HOLD,
             RAISE,
             STOWED,
+            WINCH,
             //CRAWL,
             MAX_INTAKE_STATES
         };

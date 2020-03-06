@@ -114,17 +114,17 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[ SWITCH_DRIVE_MODE ]          = ctrlNo;
 		m_buttonIDs[ SWITCH_DRIVE_MODE ]                = IDragonGamePad::A_BUTTON;
 
-		m_controllerIndex[ CLIMBER_EXTEND ] = ctrlNo;
-		m_buttonIDs[ CLIMBER_EXTEND ] = IDragonGamePad::A_BUTTON;
+		m_controllerIndex[ CLIMBER_RAISE ] = ctrlNo;
+		m_buttonIDs[ CLIMBER_RAISE ] = IDragonGamePad::A_BUTTON;
 
-		m_controllerIndex[ CLIMBER_LIFT ] = ctrlNo;
-		m_buttonIDs[ CLIMBER_LIFT ] = IDragonGamePad::X_BUTTON;
+		m_controllerIndex[ CLIMBER_WINCH ] = ctrlNo;
+		m_buttonIDs[ CLIMBER_WINCH ] = IDragonGamePad::X_BUTTON;
 
-		m_controllerIndex[ CONTROL_PANEL_RAISE ] = ctrlNo;
-		m_buttonIDs[ CONTROL_PANEL_RAISE] = IDragonGamePad::Y_BUTTON;
+		m_controllerIndex[ CLIMBER_STOW ] = ctrlNo;
+		m_buttonIDs[ CLIMBER_STOW ] = IDragonGamePad::Y_BUTTON;
 
-		m_controllerIndex[ CONTROL_PANEL_SPIN_WHEEL] = ctrlNo;
-		m_buttonIDs[ CONTROL_PANEL_SPIN_WHEEL] = IDragonGamePad::B_BUTTON;
+		m_controllerIndex[ CLIMBER_HOLD] = ctrlNo;
+		m_buttonIDs[ CLIMBER_HOLD ] = IDragonGamePad::B_BUTTON;
 
     }
     else
