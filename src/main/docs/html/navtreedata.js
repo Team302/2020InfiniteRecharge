@@ -55,15 +55,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_analog_axis_8cpp.html",
-"_dragon_pigeon_8cpp.html",
-"_mechanism_defn_8cpp.html",
-"class_analog_input_defn.html#a9d6f4b85dd390192f22c4213bdcc8c74",
-"class_control_panel_raise.html#afb2ac9fb693b7561a856c0b28b5ceb6b",
-"class_dragon_spark_max.html#a73ec6f1d7783143f62b2b1935b292051",
-"class_i_dragon_game_pad.html#a07a7fc32b5cb69f2019006c0eb0f7d29a6dad4543955b8814dc3700295003ca48",
-"class_limelight_factory.html",
-"class_shooter_state_mgr_test.html#a6ab48705dfd4ba47a5c141a461ca0424",
-"globals.html"
+"_dragon_limelight_8cpp.html",
+"_lidar_defn_8cpp.html",
+"_toggle_button_8h.html",
+"class_control_data_defn.html#ac2b5103565cfea91b4aa352c443aed98",
+"class_dragon_limelight.html#ad524ba4ce87697fa883882f5c41e9b60",
+"class_hold_turret_position.html#a759d7432e3d32253775197b3680076a1",
+"class_impeller_state_mgr.html",
+"class_robot.html#a8fad82c2250bcfb83b743b5c0dd6ed27",
+"class_turret_state_mgr.html#aa185afc9e9d378aca360e2f2376c1b98"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

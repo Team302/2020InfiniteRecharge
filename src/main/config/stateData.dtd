@@ -23,6 +23,7 @@
                                           TURRETHOLD | TURRETAUTOAIM | TURRETMANUALAIM |
                                           SHOOTEROFF | SHOOTERGETREADY | SHOOTERSHOOT |
                                           CONTROLPANELRAISE | CONTROLPANELMANUAL | CONTROLPANELSTOW | CONTROLPANELTURN | CONTROLPANELCOLOR | CONTROLPANELMANUAL |
+                                          HOOKDELIVERYSTOW | HOOKDELIVERYRAISE | HOOKDELIVERYHOLD | HOOKDELIVERYLOWER | HOOKDELIVERYMANUAL |
                                           UNKNOWN ) "UNKNOWN"
           controlDataIdentifier         CDATA #REQUIRED
           value                         CDATA #REQUIRED

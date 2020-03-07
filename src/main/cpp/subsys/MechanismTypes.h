@@ -41,6 +41,7 @@ class MechanismTypes
             CONTROL_TABLE_MANIPULATOR,
             CLIMBER,
             CRAWLER,
+            HOOK_DELIVERY,
             MAX_MECHANISM_TYPES
         };
 };
