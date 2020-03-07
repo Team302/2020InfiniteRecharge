@@ -1,12 +1,16 @@
 #include <iostream>
-#include <hw/DragonThroughBoreEncoder.h>
-#include <hw/usages/ThroughBoreEncoderUsage.h>
 #include <utils/Logger.h>
+
 #include <frc/Encoder.h>
 
+#include <hw/DragonThroughBoreEncoder.h>
+#include <hw/usages/ThroughBoreEncoderUsage.h>
+
 using namespace frc;
-DragonThroughBoreEncoder::DragonThroughBoreEncoder(
-    ThroughBoreEncoder::THROUGH_BORE_ENCODER_USAGE usage,
+using namespace std;
+DragonThroughBoreEncoder::DragonThroughBoreEncoder
+(
+    ThroughBoreEncoderUsage::THROUGH_BORE_ENCODER_USAGE usage,
     int                                            DIOA,
     int                                            DIOB,
     int                                            PWMID
@@ -20,22 +24,9 @@ DragonThroughBoreEncoder::~DragonThroughBoreEncoder()
 {
     delete m_encoder;
 }
-ThroughBoreEncoderUsage::THROUGH_BORE_ENCODER_USAGE::GetType() const
+ThroughBoreEncoderUsage::THROUGH_BORE_ENCODER_USAGE DragonThroughBoreEncoder::GetType() const
 {
     return m_type;
-}
-int DragonThroughBoreEncoder::GetChannel() const
-{
-    in channel = 0;
-    if (m_encoder != nullptr )
-    {
-        channel = m_encoder->GetChannel();
-    }
-    else
-    {
-        Logger::GetLogger()->LogError( string("DragonSolenoid::GetChannel"), string(" m_encoder ptr is nullptr"));
-    }
-    
 }
 bool DragonThroughBoreEncoder::Get() const
 {
@@ -47,5 +38,6 @@ bool DragonThroughBoreEncoder::Get() const
     else 
     {
         Logger::GetLogger()->LogError( string("DragonThroughBoreEncoder::Get"), string("m_encoder ptr is nullptr"));
+
     }
 }

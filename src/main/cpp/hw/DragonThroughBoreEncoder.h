@@ -8,7 +8,8 @@ using namespace frc;
 class DragonThroughBoreEncoder 
 {
     public:
-        DragonThroughBoreEncoder(
+        DragonThroughBoreEncoder
+        (
             ThroughBoreEncoderUsage::THROUGH_BORE_ENCODER_USAGE usage,
             int                                                 DIOA,
             int                                                 DIOB,
@@ -18,6 +19,7 @@ class DragonThroughBoreEncoder
         virtual ~DragonThroughBoreEncoder();
 
         bool Get() const;
+        int GetChannel() const;
 
         ThroughBoreEncoderUsage::THROUGH_BORE_ENCODER_USAGE GetType() const;
     private:
