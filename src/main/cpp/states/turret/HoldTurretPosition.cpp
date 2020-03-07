@@ -13,7 +13,7 @@
 #include "states/MechanismState.h"
 #include "controllers/MechanismTargetData.h"
 
-HoldTurretPosition::HoldTurretPosition(ControlData* controlData, double target, MechanismTargetData::SOLENOID solenoid) : 
+HoldTurretPosition::HoldTurretPosition(ControlData* controlData, double target, ControlData* fbControlData, double fbTarget, MechanismTargetData::SOLENOID solenoid) : 
     MechanismState(MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET),controlData, 0.0, solenoid)
 {
 }

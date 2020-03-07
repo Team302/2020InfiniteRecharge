@@ -29,6 +29,8 @@ class ShooterHoodHoldPosition : public MechanismState
         (
             ControlData*                    control,
             double                          target,
+            ControlData*                    fbControlData,
+            double                          fbTarget,
             MechanismTargetData::SOLENOID   solState
         );
         ~ShooterHoodHoldPosition() =default;

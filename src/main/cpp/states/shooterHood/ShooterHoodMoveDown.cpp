@@ -31,6 +31,8 @@ ShooterHoodMoveDown::ShooterHoodMoveDown
 (
     ControlData*                    control,
     double                          target,
+    ControlData*                    fbControlData,
+    double                          fbTarget,
     MechanismTargetData::SOLENOID   solState
 ) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD), control, target, solState)
 {

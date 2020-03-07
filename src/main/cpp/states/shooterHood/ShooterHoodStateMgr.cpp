@@ -82,21 +82,21 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
                 {
                     case SHOOTER_HOOD_STATE::MOVE_UP:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodMoveUp(controlData, target, MechanismTargetData::SOLENOID::NONE);
+                        auto thisState = new ShooterHoodMoveUp(controlData, target, fbControlData, fbTarget, MechanismTargetData::SOLENOID::NONE);
                         m_stateMap[SHOOTER_HOOD_STATE::MOVE_UP] = thisState;
                     }
                     break;
 
                     case SHOOTER_HOOD_STATE::MOVE_DOWN:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodMoveDown(controlData, target, MechanismTargetData::SOLENOID::NONE);
+                        auto thisState = new ShooterHoodMoveDown(controlData, target, fbControlData, fbTarget, MechanismTargetData::SOLENOID::NONE);
                         m_stateMap[SHOOTER_HOOD_STATE::MOVE_DOWN] = thisState;
                     }
                     break;
 
                     case SHOOTER_HOOD_STATE::HOLD_POSITION:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodHoldPosition(controlData, target, MechanismTargetData::SOLENOID::NONE);
+                        auto thisState = new ShooterHoodHoldPosition(controlData, target, fbControlData, fbTarget, MechanismTargetData::SOLENOID::NONE);
                         m_stateMap[SHOOTER_HOOD_STATE::HOLD_POSITION] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -106,7 +106,7 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateMap(),
 
                     case SHOOTER_HOOD_STATE::MANUAL:
                     {
-                        auto thisState = new ShooterHoodManual(controlData, target);
+                        auto thisState = new ShooterHoodManual(controlData, target, fbControlData, fbTarget);
                         m_stateMap[SHOOTER_HOOD_STATE::MANUAL] = thisState;
                     }
                     break;

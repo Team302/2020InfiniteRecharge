@@ -27,6 +27,8 @@ ShooterHoodHoldPosition::ShooterHoodHoldPosition
 (
     ControlData*                    control,
     double                          target,
+    ControlData*                    fbControlData,
+    double                          fbTarget,
     MechanismTargetData::SOLENOID   solState
 ) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD), control,  0.0, solState )
 {

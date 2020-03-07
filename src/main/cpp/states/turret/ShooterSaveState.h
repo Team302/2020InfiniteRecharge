@@ -35,7 +35,9 @@ class ShooterSaveState : public IState
     ShooterSaveState
     (
         ControlData*    control,
-        double          target
+        double          target,
+        ControlData*    fbControlData,
+        double          fbTarget
     );
 
  

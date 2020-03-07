@@ -12,7 +12,9 @@ using namespace std;
 ShooterHoodManual::ShooterHoodManual
 (
     ControlData* control,
-    double target
+    double target,
+    ControlData* fbControlData,
+    double fbTarget
 ) : IState(),
     m_shooterHood( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::SHOOTER_HOOD)),
     m_control( control ),

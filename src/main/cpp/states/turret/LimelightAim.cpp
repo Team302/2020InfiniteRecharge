@@ -25,7 +25,7 @@
 
 using namespace std;
 
-LimelightAim::LimelightAim(ControlData* controlData, double target): m_controlData(controlData),
+LimelightAim::LimelightAim(ControlData* controlData, double target, ControlData* fbControlData, double fbTarget): m_controlData(controlData),
     m_atTarget(false),
     m_target(target),
     m_turret( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::TURRET) ),

@@ -28,7 +28,9 @@
 ShooterSaveState::ShooterSaveState
 (
     ControlData*    control,
-    double          target
+    double          target,
+    ControlData*    fbControlData,
+    double         fbTarget
 ) : IState(),
     m_control( control ),
     m_target( target )

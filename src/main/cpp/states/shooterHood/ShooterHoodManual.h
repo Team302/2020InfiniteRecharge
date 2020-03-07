@@ -10,7 +10,9 @@ class ShooterHoodManual : public IState
     ShooterHoodManual
     (
         ControlData* control,
-        double target
+        double target,
+        ControlData* fbControlData,
+        double fbTarget
     );
     ShooterHoodManual() = delete;
     ~ShooterHoodManual() = default;

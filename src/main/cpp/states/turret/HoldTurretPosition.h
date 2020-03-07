@@ -21,6 +21,8 @@ class HoldTurretPosition : public MechanismState
   (
     ControlData* controlData,
     double target,
+    ControlData* fbControlData,
+    double fbTarget,
     MechanismTargetData::SOLENOID solenoid
   );
   /*void Init() override;

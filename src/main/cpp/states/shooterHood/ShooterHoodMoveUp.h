@@ -29,6 +29,8 @@ class ShooterHoodMoveUp : public MechanismState
         (
             ControlData*                    control,
             double                          target,
+            ControlData*                    fbControlData,
+            double                          fbTarget,
             MechanismTargetData::SOLENOID   solState
         );
         ~ShooterHoodMoveUp() =default;

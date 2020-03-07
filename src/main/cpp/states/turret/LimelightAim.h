@@ -27,7 +27,9 @@ class LimelightAim : public IState
         LimelightAim
         (
             ControlData* controlData,
-            double target
+            double target,
+            ControlData* fbControlData,
+            double fbTarget
         );
         void Init() override;
         void Run() override;
