@@ -17,6 +17,7 @@
 // C++ Includes
 #include <iostream>
 #include <memory>
+#include <string>
 
 // FRC includes
 #include <frc/smartdashboard/SmartDashboard.h>
@@ -51,6 +52,7 @@
 #include <subsys/IChassis.h>
 #include <hw/factories/PigeonFactory.h>
 #include <frc/Solenoid.h>
+#include <utils/Logger.h>
 
 using namespace std;
 using namespace frc;
@@ -193,8 +195,8 @@ void Robot::TeleopPeriodic()
 {
 
     m_chassisStateMgr->RunCurrentState();
-    //m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
-    //m_shooterHood->SetOutput(ControlModes::PERCENT_OUTPUT, .5* m_controller->GetAxisValue(TeleopControl::SHOOTER_HOOD_MANUAL_AXIS));
+    m_turret->SetOutput(ControlModes::PERCENT_OUTPUT, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
+    m_shooterHood->SetOutput(ControlModes::PERCENT_OUTPUT, .5* m_controller->GetAxisValue(TeleopControl::SHOOTER_HOOD_MANUAL_AXIS));
     //m_intake->RunCurrentState();
    m_powerCells->RunCurrentState();
     // m_control->RunCurrentState();
