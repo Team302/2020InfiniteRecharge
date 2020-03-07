@@ -1,3 +1,4 @@
+
 //====================================================================================================================================================
 // Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
@@ -13,7 +14,7 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once 
+#pragma once
 
 
 // C++ Includes
@@ -22,31 +23,28 @@
 // FRC includes
 
 // Team 302 includes
-#include <xmlhw/LEDDefn.h>
 #include <hw/LED.h>
-#include <frc/Spark.h>
+
 // Third Party Includes
+#include <pugixml/pugixml.hpp>
+#include <xmlhw/BLINKin.h>
 
-/// @class 
-/// @brief 
 
-class BLINKin
+
+/// @class PDPDefn
+/// @brief XML parsing for the PDP node in the Robot definition xml file.  Upon successful parsing, it will
+///     create a PDP singleton object. The parsing leverages the 3rd party Open Source Pugixml library (https://pugixml.org/).
+class BlinkinDefn
 {
     public:
 
-        BLINKin() = delete;
-        BLINKin( int pwmid );
-        virtual ~BLINKin() = default;
+        BlinkinDefn() = default;
+        virtual ~BlinkinDefn() = default;
 
-        /// @brief
-        /// @param
-        /// @return
-        
-    private:
+    BLINKin* ParseXML
+    (
+            pugi::xml_node      BLINKinNode
+    );
 
-    void    Set( double signal );
-    double  Get() const;
-
-    frc::Spark*     spark;
-        
 };
+

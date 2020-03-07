@@ -1,3 +1,4 @@
+
 //====================================================================================================================================================
 // Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
@@ -13,40 +14,68 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-#pragma once 
 
 
 // C++ Includes
+#include <iostream>
 #include <memory>
 
 // FRC includes
 
+
 // Team 302 includes
-#include <xmlhw/LEDDefn.h>
+#include <utils/HardwareIDValidation.h>
+#include <utils/Logger.h>
+#include <xmlhw/BlinknDefn.h>
 #include <hw/LED.h>
-#include <frc/Spark.h>
+#include <cstring>
+#include <string>
+#include <xmlhw/BLINKin.h>
+
 // Third Party Includes
+#include <pugixml/pugixml.hpp>
 
-/// @class 
-/// @brief 
+using namespace pugi;
+using namespace std;
 
-class BLINKin
+
+BLINKin* BlinkinDefn::ParseXML
+(
+    pugi::xml_node      BlinkinNode    /// <I> - PDP node in the XML file
+)
 {
-    public:
+    // initialize output
+    BLINKin* blinkin = nullptr;
 
-        BLINKin() = delete;
-        BLINKin( int pwmid );
-        virtual ~BLINKin() = default;
+    // initialize attributes to default values
+    int pwmID = 0;
 
-        /// @brief
-        /// @param
-        /// @return
-        
-    private:
+    bool hasError = false;
 
-    void    Set( double signal );
-    double  Get() const;
+    // parse/validate the PDP XML node
+    for (xml_attribute attr = BlinkinNode.first_attribute(); attr && !hasError; attr = attr.next_attribute())
+    {
+        if ( strcmp( attr.name(), "pwmId" ) == 0 )
+        {
+            pwmID = attr.as_int();
+            hasError = HardwareIDValidation::ValidateCANID( pwmID, string( "BlinkinDefn::ParseXML" ) ); //TODO be able to change this line to a PWM
+        }
+        else
+        {
+            string msg = "unknown attribute ";
+            msg += attr.name();
+            Logger::GetLogger()->LogError( "BlinkinDefn::ParseXML", msg );
+            hasError = true;
+        }
+    }
 
-    frc::Spark*     spark;
-        
-};
+    // If no errors, create the object
+    if ( !hasError )
+    {
+        blinkin = new BLINKin( pwmID );
+        return blinkin;
+    }
+    
+}
+
+

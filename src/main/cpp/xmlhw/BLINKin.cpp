@@ -13,69 +13,31 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //====================================================================================================================================================
 
-/// @class PDPDefn
-/// @brief XML parsing for the PDP node in the Robot definition xml file.  Upon successful parsing, it will
-///     create a PDP singleton object. The parsing leverages the 3rd party Open Source Pugixml library (https://pugixml.org/).
 
-// C++ Includes
-#include <iostream>
-#include <memory>
+#include <xmlhw/BlinknDefn.h>
+#include <xmlhw/BLINKin.h>
+#include <frc/Spark.h>
 
-// FRC includes
-#include <frc/PowerDistributionPanel.h>
-
-// Team 302 includes
-#include <hw/DragonPDP.h>
-#include <utils/HardwareIDValidation.h>
-#include <utils/Logger.h>
-#include <xmlhw/PDPDefn.h>
-
-// Third Party Includes
-#include <pugixml/pugixml.hpp>
-
-using namespace frc;
-using namespace pugi;
 using namespace std;
+using namespace frc;
 
-/// @brief      Parse a pcm XML element and create a PowerDistributionPanel* from its definition.
-/// @param [in] xml_node PDPNode the <PDP element in the xml document
-/// @return     
-BLINKinModule* BLINKin::ParseXML
-(
-    xml_node      BLINKin         /// <I> - PDP node in the XML file
-)
+BLINKin::BLINKin( int pwmid )
 {
-    // initialize output
-    BLINKinModule* pdp = nullptr;
+    spark = new frc::Spark( pwmid );
+}
 
-    // initialize attributes to default values
-    int canID = 0;
+//( int PWMid )
+//{
+   
+//}
 
-    bool hasError = false;
-
-    // parse/validate the PDP XML node
-    for (xml_attribute attr = BLINKin.first_attribute(); attr && !hasError; attr = attr.next_attribute())
-    {
-        if ( strcmp( attr.name(), "canId" ) == 0 )
-        {
-            canID = attr.as_int();
-            hasError = HardwareIDValidation::ValidateCANID( canID, string( "BLINKin::ParseXML" ) );
-        }
-        else
-        {
-            string msg = "unknown attribute ";
-            msg += attr.name();
-            Logger::GetLogger()->LogError( "BLINKin::ParseXML", msg );
-            hasError = true;
-        }
-    }
-
-    // If no errors, create the object
-    if ( !hasError )
-    {
-        pdp = DragonPDP::GetInstance()->CreatePDP( canID );
-    }
-    return pdp;
+void BLINKin::Set( double signal )
+{
+    spark-> Set( signal );
 }
 
 
+double BLINKin::Get() const
+{
+    return spark-> Get();
+}
