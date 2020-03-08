@@ -48,6 +48,7 @@ class BallManipulator
             UNJAM_COUNTERCLOCKWISE,
             TRANSFER_UP,
             TRANSFER_DOWN,
+            TURRET_TURN_ANGLE,
             MAX_BALL_MANIPULATOR_STATES
         };
 
@@ -65,7 +66,8 @@ class BallManipulator
         /// @return void
         void SetCurrentState
         (
-            BALL_MANIPULATOR_STATE      state
+            BALL_MANIPULATOR_STATE      state,
+            double                      turretAngle
         );
 
         /// @brief  return the current state

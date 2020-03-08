@@ -46,7 +46,7 @@
           enddrivespeed     CDATA "0.0"
           xloc				CDATA "0.0"
           yloc				CDATA "0.0"
-          ballState         ( OFF | INTAKE | INTAKE_HUMAN_PLAYER | HOLD | GET_READY_TO_SHOOT | SHOOT ) "OFF"
+          ballState         ( OFF | INTAKE | INTAKE_HUMAN_PLAYER | HOLD | GET_READY_TO_SHOOT | SHOOT | TURRET_TURN_ANGLE ) "OFF"
           turretAngle       CDATA #IMPLIED
 >
 
