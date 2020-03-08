@@ -15,5 +15,9 @@
 	<mechanismTarget stateIdentifier="TURRETMANUALAIM"
 	                 controlDataIdentifier="openloop"
 					 value="1.0"/>
+	<mechanismTarget stateIdentifier="TURRETTURNANGLE"
+	                 controlDataIdentifier="closedloop"
+					 value="1.0"/>
+
 
 </statedata>

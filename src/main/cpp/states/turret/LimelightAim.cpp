@@ -29,7 +29,7 @@ LimelightAim::LimelightAim(ControlData* controlData, double target): m_controlDa
     m_atTarget(false),
     m_target(target),
     m_turret( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::TURRET) ),
-    m_limelight(new DragonLimelight(IDragonSensor::MAIN_LIMELIGHT, "limelight", 0.0, 0.0, 90.0, 0.0, 0.0, 0.0)),
+    m_limelight(new DragonLimelight(IDragonSensor::MAIN_LIMELIGHT, "limelight", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)),
     m_targetPosition(0.0),
     m_start(false)
 {
@@ -38,6 +38,7 @@ LimelightAim::LimelightAim(ControlData* controlData, double target): m_controlDa
 void LimelightAim::Init()
 {
     m_turret->SetControlConstants(m_controlData);
+    m_limelight->SetLEDMode(DragonLimelight::LED_ON);
 }
 
 void LimelightAim::Run()
@@ -71,7 +72,7 @@ void LimelightAim::Run()
    {
        scaledOffset = targetHorizontalOffset + 2.0 + (targetHorizontalOffset/28.0) * 5.0;
    }*/
-   m_turret->SetOutput(ControlModes::POSITION_DEGREES, currentPosition);
+   m_turret->SetOutput(ControlModes::POSITION_DEGREES, currentPosition + targetHorizontalOffset + 2.5);
 }
 
 bool LimelightAim::AtTarget() const

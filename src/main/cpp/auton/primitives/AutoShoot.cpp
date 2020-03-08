@@ -51,7 +51,7 @@ void AutoShoot::Init(PrimitiveParams* params)
 {
     Logger::GetLogger()->LogError("AutoShoot", "AutoShootInitialized");
     auto ballManipulatorState = params -> GetBallState();
-    m_ballManipulator->SetCurrentState( ballManipulatorState );
+    m_ballManipulator->SetCurrentState( ballManipulatorState , params->GetTurretAngle());
     if ( ballManipulatorState == BallManipulator::BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT )
     {
         BallManipulator::GetInstance()->SetApproxAngle( params->GetTurretAngle());

@@ -27,7 +27,9 @@
 #include <controllers/MechanismTargetData.h>
 #include <utils/Logger.h>
 #include <gamepad/TeleopControl.h>
-#include <states/balltransfer/BallTransferState.h>
+#include <states/balltransfer/BallTransferOff.h>
+#include <states/balltransfer/BallTransferToImpeller.h>
+#include <states/balltransfer/BallTransferToShooter.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/MechanismTypes.h>
 
@@ -84,7 +86,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                     case BALL_TRANSFER_STATE::OFF:
                     {   
                         Logger::GetLogger()->LogError(string("creating ball transfer off"), string(""));
-                        auto thisState = new BallTransferState( controlData, target, solState );
+                        auto thisState = new BallTransferOff( controlData, target, solState );
                         m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -95,7 +97,7 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                     case BALL_TRANSFER_STATE::TO_IMPELLER:
                     {   
                         Logger::GetLogger()->LogError(string("creating ball transfer to impeller"), string(""));
-                        auto thisState = new BallTransferState( controlData, target, solState );
+                        auto thisState = new BallTransferToImpeller( controlData, target, solState );
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
@@ -103,14 +105,14 @@ BallTransferStateMgr::BallTransferStateMgr() : m_currentState(),
                     case BALL_TRANSFER_STATE::TO_SHOOTER:
                     {   
                         Logger::GetLogger()->LogError(string("creating ball transfer to shooter"), string(""));
-                        auto thisState = new BallTransferState( controlData, target, solState );
+                        auto thisState = new BallTransferToShooter( controlData, target, solState );
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case BALL_TRANSFER_STATE::EJECT:
                     {
-                        auto thisState = new BallTransferState(controlData, target, solState);
+                        auto thisState = new BallTransferToShooter(controlData, target, solState);
                         m_stateVector[stateEnum] = thisState;
                     
                     }
