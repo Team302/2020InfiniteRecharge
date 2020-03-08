@@ -146,7 +146,7 @@
 <!ELEMENT mechanism (motor*, solenoid*, servo*, analogInput*, digitalInput*, canCoder*, colorsensor?)>
 <!ATTLIST mechanism
           type              ( INTAKE | HUMAN_PLAYER_FLAP | IMPELLER | BALL_TRANSFER | SHOOTER | SHOOTER_HOOD | TURRET |
-							  CONTROL_TABLE_MANIPULATOR | CLIMBER | CRAWLER ) "INTAKE"
+							  CONTROL_TABLE_MANIPULATOR | CLIMBER | CRAWLER | HOOK_DELIVER ) "INTAKE"
 >
 
 <!ELEMENT solenoid EMPTY >
@@ -189,7 +189,7 @@
                                       INTAKE | IMPELLER | BALL_TRANSFER | TURRET | 
                                       SHOOTER_1 | SHOOTER_2 | SHOOTER_HOOD |
                                       CONTROL_TABLE_MANIPULATOR | 
-                                      CLIMBER | CRAWLER ) "LEFT_DRIVE_MASTER"
+                                      CLIMBER | CRAWLER | HOOK_DELIVERY ) "LEFT_DRIVE_MASTER"
           canId             		(  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 
                               		  10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 
                               		  20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 
