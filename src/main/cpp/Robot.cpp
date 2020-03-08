@@ -185,7 +185,7 @@ void Robot::TeleopInit()
 {
     m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
     m_chassisStateMgr->Init();
-    m_powerCells->SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::OFF);
+    m_powerCells->SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::OFF, 0.0);
     m_powerCells->RunCurrentState();
     
 
