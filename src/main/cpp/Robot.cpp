@@ -100,12 +100,12 @@ void Robot::RobotInit()
 
     //m_intake = new IntakeStateMgr();
 
-    m_cpm = new TalonSRX( 6 );
-    m_climber = new TalonSRX( 2 );
+    //m_cpm = new TalonSRX( 6 );
+    //m_climber = new TalonSRX( 2 );
 
   
-    m_cpmSolenoid = new frc::Solenoid( 9, 6);
-    m_climberSolenoid = new frc::Solenoid( 9, 5 );
+    //m_cpmSolenoid = new frc::Solenoid( 9, 6);
+    //m_climberSolenoid = new frc::Solenoid( 9, 5 );
 
    // m_cpm = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::CONTROL_TABLE_MANIPULATOR);
     //m_climber = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::CLIMBER);
@@ -200,13 +200,13 @@ void Robot::TeleopPeriodic()
     //m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
     //m_shooterHood->SetOutput(ControlModes::PERCENT_OUTPUT, .5* m_controller->GetAxisValue(TeleopControl::SHOOTER_HOOD_MANUAL_AXIS));
     //m_intake->RunCurrentState();
-  m_powerCells->RunCurrentState();
-  frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
+   m_powerCells->RunCurrentState();
+   frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
 
 
     m_winch->RunCurrentState();
     m_hook->RunCurrentState();
-    
+
     // m_control->RunCurrentState();
     //double leftSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL);
     //double rightSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL);

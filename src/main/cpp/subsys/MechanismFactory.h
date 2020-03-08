@@ -129,7 +129,7 @@ class MechanismFactory
 			AnalogInputUsage::ANALOG_SENSOR_USAGE			usage
 		);
 
-		MechanismFactory() = default;
+		MechanismFactory();
 		virtual ~MechanismFactory() = default;
 
 		static MechanismFactory*	m_mechanismFactory;

@@ -344,8 +344,29 @@
     		      reversed="false" />
 		<colorsensor port="kOnboard" />
 	</mechanism-->
+
+	<mechanism type="HOOK_DELIVERY">
+		<motor usage="HOOK_DELIVERY"
+				canId="6"
+				pdpID="6"
+				type="TALONSRX"
+				inverted="false"
+				sensorInverted="false"
+				feedbackDevice="NONE"
+				countsPerRev="0"
+				gearRatio="1.0"
+				brakeMode="true"
+				peakCurrentDuration="50"
+				continuousCurrentLimit="30"
+				peakCurrentLimit="40"
+				currentLimiting="true" 
+				forwardlimitswitch="false"
+				forwardlimitswitchopen="true"
+				reverselimitswitch="false"
+				reverselimitswitchopen="true"/>
+	</mechanism>
     
-	<!--mechanism type="CLIMBER">
+	<mechanism type="CLIMBER">
 		<motor usage="CONTROL_TABLE_MANIPULATOR"
 				canId="2"
 				pdpID="2"
@@ -364,11 +385,11 @@
 				forwardlimitswitchopen="true"
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
-    	<solenoid usage="CLIMBER"
+    	<!-- solenoid usage="CLIMBER"
     		      canId="9"
     		      channel="6"
-    		      reversed="false" />
-	</mechanism-->
+    		      reversed="false" / -->
+	</mechanism>
     
 	<!--mechanism type="CRAWLER">
 		<motor usage="CONTROL_TABLE_MANIPULATOR"

@@ -78,6 +78,15 @@ MechanismFactory* MechanismFactory::GetMechanismFactory()
 	return MechanismFactory::m_mechanismFactory;
 }
 
+MechanismFactory::MechanismFactory()
+{
+	m_mechanisms.resize( MechanismTypes::MECHANISM_TYPE::MAX_MECHANISM_TYPES );
+	for ( auto inx=0; inx<MechanismTypes::MECHANISM_TYPE::MAX_MECHANISM_TYPES; ++inx )
+	{
+		m_mechanisms[inx] = nullptr;
+	}
+}
+
 /// @brief      Find the requested mechanism
 /// @param [in] MechanismTypes::MECHANISM_TYPE  type - the type of mechanism to retrieve
 /// @return     IMechanism*  pointer to the mechanism or nullptr if mechanism doesn't exist.
@@ -129,6 +138,9 @@ IMechanism*  MechanismFactory::CreateIMechanism
     }
     else
     {
+        string msg = "about to create mechanism";
+        msg += to_string( type );
+        Logger::GetLogger()->LogError( string("MechansimFactory::CreateIMechanism" ), msg );
         // Create the mechanism
         switch ( type )
         {
