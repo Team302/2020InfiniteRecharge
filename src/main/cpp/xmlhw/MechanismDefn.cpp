@@ -124,10 +124,6 @@ IMechanism* MechanismDefn::ParseXML
             {
                 type = MechanismTypes::MECHANISM_TYPE::CRAWLER;
             }
-            else if ( typeStr.compare( "HOOK_DELIVERY") == 0 )
-            {
-                type = MechanismTypes::MECHANISM_TYPE::HOOK_DELIVERY;
-            }
             else
             {
                     string msg = "unknown Mechanism type ";

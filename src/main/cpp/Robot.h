@@ -55,8 +55,6 @@
 #include <hw/factories/LimelightFactory.h>
 #include <subsys/ChassisFactory.h>
 #include <subsys/IChassis.h>
-#include <states/hookdelivery/HookDeliveryStateMgr.h>
-#include <states/climber/ClimberStateMgr.h>
 
 // third party includes
 
@@ -93,8 +91,6 @@ class Robot : public frc::TimedRobot
 	  ImpellerStateMgrTest* m_impellerStateMgrTest;
 	  BallTransferStateMgrTest* m_ballTransferStateMgrTest;
 	  ShooterStateMgrTest* m_shooterStateMgrTest;
-      ClimberStateMgr*  m_winch;
-      HookDeliveryStateMgr* m_hook;
 
       //std::shared_ptr<IChassis> m_chassis;
       IMechanism* m_shooterHood;

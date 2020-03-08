@@ -12,8 +12,10 @@
 #include <utils/Logger.h>
 #include <gamepad/TeleopControl.h>
 //Put in shooter hood state includes
-#include <states/controlPanel/ControlPanelState.h>
-#include <states/controlPanel/ControlPanelManual.h>
+#include <states/controlPanel/ControlPanelColorTurn.h>
+#include <states/controlPanel/ControlPanelRaise.h>
+#include <states/controlPanel/ControlPanelStow.h>
+#include <states/controlPanel/ControlPanelTurn.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/MechanismTypes.h>
 
@@ -45,8 +47,7 @@ ControlPanelStateMgr::ControlPanelStateMgr() :m_stateVector(),
     stateMap["STOW"]  = CONTROL_PANEL_STATE::STOW;
     stateMap["TURN"] = CONTROL_PANEL_STATE::TURN;
     stateMap["COLORTURN"] = CONTROL_PANEL_STATE::COLOR_TURN;
-    stateMap["MANUAL"] = CONTROL_PANEL_STATE::MANUAL;
-    m_stateVector.resize(5);
+    m_stateVector.resize(4);
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -67,7 +68,7 @@ ControlPanelStateMgr::ControlPanelStateMgr() :m_stateVector(),
                 {
                     case CONTROL_PANEL_STATE::RAISE:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ControlPanelState(controlData, target, solState);
+                        auto thisState = new ControlPanelRaise();
                         m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -77,30 +78,24 @@ ControlPanelStateMgr::ControlPanelStateMgr() :m_stateVector(),
 
                     case CONTROL_PANEL_STATE::STOW:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ControlPanelState(controlData, target, solState);
+                        auto thisState = new ControlPanelStow();
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case CONTROL_PANEL_STATE::TURN:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ControlPanelState(controlData, target, solState);
+                        auto thisState = new ControlPanelTurn(controlData, target);
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case CONTROL_PANEL_STATE::COLOR_TURN:
                     {
-                        auto thisState = new ControlPanelState(controlData, target, solState);
+                        auto thisState = new ControlPanelColorTurn(controlData, target);
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
-
-                    case CONTROL_PANEL_STATE::MANUAL:
-                    {
-                        auto thisState = new ControlPanelManual(controlData, target);
-                        m_stateVector[stateEnum] = thisState;
-                    }
 
                     default:
                     {

@@ -16,10 +16,6 @@ var dir_25ee5274912bb4000ece7f06d6fba96a =
     [ "ShooterHoodMoveUp.h", "_shooter_hood_move_up_8h.html", [
       [ "ShooterHoodMoveUp", "class_shooter_hood_move_up.html", "class_shooter_hood_move_up" ]
     ] ],
-    [ "ShooterHoodState.cpp", "_shooter_hood_state_8cpp.html", null ],
-    [ "ShooterHoodState.h", "_shooter_hood_state_8h.html", [
-      [ "ShooterHoodState", "class_shooter_hood_state.html", "class_shooter_hood_state" ]
-    ] ],
     [ "ShooterHoodStateMgr.cpp", "_shooter_hood_state_mgr_8cpp.html", null ],
     [ "ShooterHoodStateMgr.h", "_shooter_hood_state_mgr_8h.html", [
       [ "ShooterHoodStateMgr", "class_shooter_hood_state_mgr.html", "class_shooter_hood_state_mgr" ]

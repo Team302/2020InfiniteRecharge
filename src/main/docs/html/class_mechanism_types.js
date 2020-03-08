@@ -12,7 +12,6 @@ var class_mechanism_types =
       [ "CONTROL_TABLE_MANIPULATOR", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba422b9ac24cc1a10cb3e94e67e664b31b", null ],
       [ "CLIMBER", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284bad0d0b09b660101fd3ba4c2c0264eca03", null ],
       [ "CRAWLER", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284bae40ff7f9e6c285175d78bd2bb37b4b81", null ],
-      [ "HOOK_DELIVERY", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284bab2fda0b45de9de15896debee86e301ce", null ],
       [ "MAX_MECHANISM_TYPES", "class_mechanism_types.html#adad17689ea795c3d65e2062bdc09284ba56460d0cccd455dc6a5beaef20b49a5d", null ]
     ] ]
 ];

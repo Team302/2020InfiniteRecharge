@@ -22,7 +22,6 @@ var class_dragon_limelight =
     [ "DragonLimelight", "class_dragon_limelight.html#a003d6b9c140e33c5d4291075b16c868a", null ],
     [ "DragonLimelight", "class_dragon_limelight.html#a5e786728aa7dfcfae40f57c55d238fbc", null ],
     [ "~DragonLimelight", "class_dragon_limelight.html#ad524ba4ce87697fa883882f5c41e9b60", null ],
-    [ "EstimateTargetDistance", "class_dragon_limelight.html#aa85abbe7363b8c06c09ac5cc31488869", null ],
     [ "Get3DSolve", "class_dragon_limelight.html#a381f0a9dc0d7318e84f29942513845cb", null ],
     [ "GetConfidence", "class_dragon_limelight.html#aac8b4e5ba88a7e0539c5b6cbc6974471", null ],
     [ "GetDistance", "class_dragon_limelight.html#a0db4976887ba1e7dda441b7053ca0f67", null ],

@@ -108,107 +108,100 @@ $(document).ready(function(){initNavTree('_primitive_factory_8cpp_source.html','
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_hold_position_8h.html">auton/primitives/HoldPosition.h</a>&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_turn_angle_8h.html">auton/primitives/TurnAngle.h</a>&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_drive_to_wall_8h.html">auton/primitives/DriveToWall.h</a>&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_auto_shoot_8h.html">auton/primitives/AutoShoot.h</a>&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_primitive_8h.html">auton/primitives/IPrimitive.h</a>&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<a class="code" href="class_primitive_factory.html">PrimitiveFactory</a>* PrimitiveFactory::m_instance = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_primitive_factory.html#a15635e7c5ee365e8e0c7d09a7e483b8f">   25</a></span>&#160;<a class="code" href="class_primitive_factory.html">PrimitiveFactory</a>* <a class="code" href="class_primitive_factory.html#a15635e7c5ee365e8e0c7d09a7e483b8f">PrimitiveFactory::GetInstance</a>() {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (PrimitiveFactory::m_instance == <span class="keyword">nullptr</span>) {                  <span class="comment">//If we do not have an instance</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        PrimitiveFactory::m_instance = <span class="keyword">new</span> <a class="code" href="class_primitive_factory.html#a9756dcb91e1b271ac889867ecced3fce">PrimitiveFactory</a>();      <span class="comment">//Create a new instance</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> PrimitiveFactory::m_instance;                            <span class="comment">//Return said instance</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_primitive_factory.html#a9756dcb91e1b271ac889867ecced3fce">   32</a></span>&#160;<a class="code" href="class_primitive_factory.html#a9756dcb91e1b271ac889867ecced3fce">PrimitiveFactory::PrimitiveFactory</a>() :</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                m_doNothing(nullptr),</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                m_driveTime(nullptr),</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                m_driveDistance(nullptr),</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                m_turnAngle(nullptr),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                m_holdPosition(nullptr),</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                m_driveToWall(nullptr),</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                m_driveLidarDistance( nullptr ),</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                m_autoShoot( nullptr )</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_primitive_factory.html#a047888106432ca667ce2621e7b9f6a34">   44</a></span>&#160;<a class="code" href="class_primitive_factory.html#a047888106432ca667ce2621e7b9f6a34">PrimitiveFactory::~PrimitiveFactory</a>() {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    PrimitiveFactory::m_instance = <span class="keyword">nullptr</span>; <span class="comment">//todo: do we have to delete this pointer?</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_primitive_factory.html#a4b9c4c4f1f94ff52cc26654287a475d0">   48</a></span>&#160;<a class="code" href="class_i_primitive.html">IPrimitive</a>* <a class="code" href="class_primitive_factory.html#a4b9c4c4f1f94ff52cc26654287a475d0">PrimitiveFactory::GetIPrimitive</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>* primitivePasser)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_i_primitive.html">IPrimitive</a>* primitive = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">switch</span> (primitivePasser-&gt;<a class="code" href="class_primitive_params.html#a6d1e129031049f3c94e1c131547fc10a">GetID</a>())               <span class="comment">//Decides which primitive to get or make</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dcaa3c06bc7e4d652a970cab72026c6fed1">DO_NOTHING</a>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (m_doNothing == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            m_doNothing = <span class="keyword">new</span> <a class="code" href="class_do_nothing.html">DoNothing</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        primitive =  m_doNothing;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca7898fbf6aaf783378fe66d59f9bf9b46">DRIVE_TIME</a>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (m_driveTime == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            m_driveTime = <span class="keyword">new</span> <a class="code" href="class_drive_time.html">DriveTime</a>();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        primitive = m_driveTime;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca7021af1a324c0f7122d43ac5e7b5f03e">DRIVE_DISTANCE</a>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> (m_driveDistance == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            m_driveDistance = <span class="keyword">new</span> <a class="code" href="class_drive_distance.html">DriveDistance</a>();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        primitive = m_driveDistance;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca04869d144dae5ecb8bbc92d0d3bc7d5f">TURN_ANGLE_ABS</a>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (m_turnAngle == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            m_turnAngle = <span class="keyword">new</span> <a class="code" href="class_turn_angle.html">TurnAngle</a>();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        primitive = m_turnAngle;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca42009b131c97b945b3327be55bfceb13">TURN_ANGLE_REL</a>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// TODO: need new primitive</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (m_turnAngle == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            m_turnAngle = <span class="keyword">new</span> <a class="code" href="class_turn_angle.html">TurnAngle</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        primitive = m_turnAngle;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">HOLD_POSITION</a>:</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span> (m_holdPosition == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            m_holdPosition = <span class="keyword">new</span> <a class="code" href="class_hold_position.html">HoldPosition</a>();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        primitive = m_holdPosition;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca3aae85b99d2b329a6047aaec5b555681">DRIVE_TO_WALL</a>:</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> (m_driveToWall == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            m_driveToWall = <span class="keyword">new</span> <a class="code" href="class_drive_to_wall.html">DriveToWall</a>();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        primitive = m_driveToWall;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dcab125963850fa5d66063b8dff563f62a0">AUTO_SHOOT</a> :</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> (m_autoShoot == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            m_autoShoot = <span class="keyword">new</span> <a class="code" href="class_auto_shoot.html">AutoShoot</a>();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        primitive = <span class="keyword">new</span> <a class="code" href="class_auto_shoot.html">AutoShoot</a>();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> primitive;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_primitive_8h.html">auton/primitives/IPrimitive.h</a>&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="class_primitive_factory.html">PrimitiveFactory</a>* PrimitiveFactory::m_instance = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_primitive_factory.html#a15635e7c5ee365e8e0c7d09a7e483b8f">   24</a></span>&#160;<a class="code" href="class_primitive_factory.html">PrimitiveFactory</a>* <a class="code" href="class_primitive_factory.html#a15635e7c5ee365e8e0c7d09a7e483b8f">PrimitiveFactory::GetInstance</a>() {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> (PrimitiveFactory::m_instance == <span class="keyword">nullptr</span>) {                  <span class="comment">//If we do not have an instance</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        PrimitiveFactory::m_instance = <span class="keyword">new</span> <a class="code" href="class_primitive_factory.html#a9756dcb91e1b271ac889867ecced3fce">PrimitiveFactory</a>();      <span class="comment">//Create a new instance</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> PrimitiveFactory::m_instance;                            <span class="comment">//Return said instance</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_primitive_factory.html#a9756dcb91e1b271ac889867ecced3fce">   31</a></span>&#160;<a class="code" href="class_primitive_factory.html#a9756dcb91e1b271ac889867ecced3fce">PrimitiveFactory::PrimitiveFactory</a>() :</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                m_doNothing(nullptr),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                m_driveTime(nullptr),</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                m_driveDistance(nullptr),</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                m_turnAngle(nullptr),</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                m_holdPosition(nullptr),</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                m_driveToWall(nullptr),</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                m_driveLidarDistance( nullptr )</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_primitive_factory.html#a047888106432ca667ce2621e7b9f6a34">   42</a></span>&#160;<a class="code" href="class_primitive_factory.html#a047888106432ca667ce2621e7b9f6a34">PrimitiveFactory::~PrimitiveFactory</a>() {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    PrimitiveFactory::m_instance = <span class="keyword">nullptr</span>; <span class="comment">//todo: do we have to delete this pointer?</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_primitive_factory.html#a4b9c4c4f1f94ff52cc26654287a475d0">   46</a></span>&#160;<a class="code" href="class_i_primitive.html">IPrimitive</a>* <a class="code" href="class_primitive_factory.html#a4b9c4c4f1f94ff52cc26654287a475d0">PrimitiveFactory::GetIPrimitive</a>(<a class="code" href="class_primitive_params.html">PrimitiveParams</a>* primitivePasser)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_i_primitive.html">IPrimitive</a>* primitive = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">switch</span> (primitivePasser-&gt;<a class="code" href="class_primitive_params.html#a6d1e129031049f3c94e1c131547fc10a">GetID</a>())               <span class="comment">//Decides which primitive to get or make</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dcaa3c06bc7e4d652a970cab72026c6fed1">DO_NOTHING</a>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (m_doNothing == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            m_doNothing = <span class="keyword">new</span> <a class="code" href="class_do_nothing.html">DoNothing</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        primitive =  m_doNothing;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca7898fbf6aaf783378fe66d59f9bf9b46">DRIVE_TIME</a>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (m_driveTime == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            m_driveTime = <span class="keyword">new</span> <a class="code" href="class_drive_time.html">DriveTime</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        primitive = m_driveTime;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca7021af1a324c0f7122d43ac5e7b5f03e">DRIVE_DISTANCE</a>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (m_driveDistance == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            m_driveDistance = <span class="keyword">new</span> <a class="code" href="class_drive_distance.html">DriveDistance</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        primitive = m_driveDistance;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca04869d144dae5ecb8bbc92d0d3bc7d5f">TURN_ANGLE_ABS</a>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (m_turnAngle == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            m_turnAngle = <span class="keyword">new</span> <a class="code" href="class_turn_angle.html">TurnAngle</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        primitive = m_turnAngle;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca42009b131c97b945b3327be55bfceb13">TURN_ANGLE_REL</a>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// TODO: need new primitive</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> (m_turnAngle == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            m_turnAngle = <span class="keyword">new</span> <a class="code" href="class_turn_angle.html">TurnAngle</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        primitive = m_turnAngle;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca8b045ada4084b1a31ad00174fdda0f41">HOLD_POSITION</a>:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (m_holdPosition == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            m_holdPosition = <span class="keyword">new</span> <a class="code" href="class_hold_position.html">HoldPosition</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        primitive = m_holdPosition;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca3aae85b99d2b329a6047aaec5b555681">DRIVE_TO_WALL</a>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">if</span> (m_driveToWall == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            m_driveToWall = <span class="keyword">new</span> <a class="code" href="class_drive_to_wall.html">DriveToWall</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        primitive = m_driveToWall;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> primitive;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca7021af1a324c0f7122d43ac5e7b5f03e"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca7021af1a324c0f7122d43ac5e7b5f03e">DRIVE_DISTANCE</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00034">PrimitiveEnums.h:34</a></div></div>
@@ -222,7 +215,6 @@ $(document).ready(function(){initNavTree('_primitive_factory_8cpp_source.html','
 <div class="ttc" id="aclass_do_nothing_html"><div class="ttname"><a href="class_do_nothing.html">DoNothing</a></div><div class="ttdoc">This is an auton primitive that causes the chassis to not drive</div><div class="ttdef"><b>Definition:</b> <a href="_do_nothing_8h_source.html#l00045">DoNothing.h:45</a></div></div>
 <div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dcaa3c06bc7e4d652a970cab72026c6fed1"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dcaa3c06bc7e4d652a970cab72026c6fed1">DO_NOTHING</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00032">PrimitiveEnums.h:32</a></div></div>
 <div class="ttc" id="aclass_primitive_params_html"><div class="ttname"><a href="class_primitive_params.html">PrimitiveParams</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_params_8h_source.html#l00035">PrimitiveParams.h:35</a></div></div>
-<div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dcab125963850fa5d66063b8dff563f62a0"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dcab125963850fa5d66063b8dff563f62a0">AUTO_SHOOT</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00039">PrimitiveEnums.h:39</a></div></div>
 <div class="ttc" id="aclass_hold_position_html"><div class="ttname"><a href="class_hold_position.html">HoldPosition</a></div><div class="ttdef"><b>Definition:</b> <a href="_hold_position_8h_source.html#l00033">HoldPosition.h:33</a></div></div>
 <div class="ttc" id="aclass_turn_angle_html"><div class="ttname"><a href="class_turn_angle.html">TurnAngle</a></div><div class="ttdef"><b>Definition:</b> <a href="_turn_angle_8h_source.html#l00036">TurnAngle.h:36</a></div></div>
 <div class="ttc" id="aclass_drive_time_html"><div class="ttname"><a href="class_drive_time.html">DriveTime</a></div><div class="ttdef"><b>Definition:</b> <a href="_drive_time_8h_source.html#l00033">DriveTime.h:33</a></div></div>
@@ -235,15 +227,13 @@ $(document).ready(function(){initNavTree('_primitive_factory_8cpp_source.html','
 <div class="ttc" id="aclass_drive_distance_html"><div class="ttname"><a href="class_drive_distance.html">DriveDistance</a></div><div class="ttdef"><b>Definition:</b> <a href="_drive_distance_8h_source.html#l00031">DriveDistance.h:31</a></div></div>
 <div class="ttc" id="a_turn_angle_8h_html"><div class="ttname"><a href="_turn_angle_8h.html">TurnAngle.h</a></div></div>
 <div class="ttc" id="a_drive_time_8h_html"><div class="ttname"><a href="_drive_time_8h.html">DriveTime.h</a></div></div>
-<div class="ttc" id="aclass_auto_shoot_html"><div class="ttname"><a href="class_auto_shoot.html">AutoShoot</a></div><div class="ttdef"><b>Definition:</b> <a href="_auto_shoot_8h_source.html#l00024">AutoShoot.h:24</a></div></div>
 <div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca7898fbf6aaf783378fe66d59f9bf9b46"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca7898fbf6aaf783378fe66d59f9bf9b46">DRIVE_TIME</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00035">PrimitiveEnums.h:35</a></div></div>
 <div class="ttc" id="a_primitive_factory_8h_html"><div class="ttname"><a href="_primitive_factory_8h.html">PrimitiveFactory.h</a></div></div>
-<div class="ttc" id="aclass_primitive_factory_html_a15635e7c5ee365e8e0c7d09a7e483b8f"><div class="ttname"><a href="class_primitive_factory.html#a15635e7c5ee365e8e0c7d09a7e483b8f">PrimitiveFactory::GetInstance</a></div><div class="ttdeci">static PrimitiveFactory * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00025">PrimitiveFactory.cpp:25</a></div></div>
-<div class="ttc" id="a_auto_shoot_8h_html"><div class="ttname"><a href="_auto_shoot_8h.html">AutoShoot.h</a></div></div>
-<div class="ttc" id="aclass_primitive_factory_html_a4b9c4c4f1f94ff52cc26654287a475d0"><div class="ttname"><a href="class_primitive_factory.html#a4b9c4c4f1f94ff52cc26654287a475d0">PrimitiveFactory::GetIPrimitive</a></div><div class="ttdeci">IPrimitive * GetIPrimitive(PrimitiveParams *primitivePasser)</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00048">PrimitiveFactory.cpp:48</a></div></div>
+<div class="ttc" id="aclass_primitive_factory_html_a15635e7c5ee365e8e0c7d09a7e483b8f"><div class="ttname"><a href="class_primitive_factory.html#a15635e7c5ee365e8e0c7d09a7e483b8f">PrimitiveFactory::GetInstance</a></div><div class="ttdeci">static PrimitiveFactory * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00024">PrimitiveFactory.cpp:24</a></div></div>
+<div class="ttc" id="aclass_primitive_factory_html_a4b9c4c4f1f94ff52cc26654287a475d0"><div class="ttname"><a href="class_primitive_factory.html#a4b9c4c4f1f94ff52cc26654287a475d0">PrimitiveFactory::GetIPrimitive</a></div><div class="ttdeci">IPrimitive * GetIPrimitive(PrimitiveParams *primitivePasser)</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00046">PrimitiveFactory.cpp:46</a></div></div>
 <div class="ttc" id="a_primitive_enums_8h_html"><div class="ttname"><a href="_primitive_enums_8h.html">PrimitiveEnums.h</a></div></div>
-<div class="ttc" id="aclass_primitive_factory_html_a047888106432ca667ce2621e7b9f6a34"><div class="ttname"><a href="class_primitive_factory.html#a047888106432ca667ce2621e7b9f6a34">PrimitiveFactory::~PrimitiveFactory</a></div><div class="ttdeci">virtual ~PrimitiveFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00044">PrimitiveFactory.cpp:44</a></div></div>
-<div class="ttc" id="aclass_primitive_factory_html_a9756dcb91e1b271ac889867ecced3fce"><div class="ttname"><a href="class_primitive_factory.html#a9756dcb91e1b271ac889867ecced3fce">PrimitiveFactory::PrimitiveFactory</a></div><div class="ttdeci">PrimitiveFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00032">PrimitiveFactory.cpp:32</a></div></div>
+<div class="ttc" id="aclass_primitive_factory_html_a047888106432ca667ce2621e7b9f6a34"><div class="ttname"><a href="class_primitive_factory.html#a047888106432ca667ce2621e7b9f6a34">PrimitiveFactory::~PrimitiveFactory</a></div><div class="ttdeci">virtual ~PrimitiveFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00042">PrimitiveFactory.cpp:42</a></div></div>
+<div class="ttc" id="aclass_primitive_factory_html_a9756dcb91e1b271ac889867ecced3fce"><div class="ttname"><a href="class_primitive_factory.html#a9756dcb91e1b271ac889867ecced3fce">PrimitiveFactory::PrimitiveFactory</a></div><div class="ttdeci">PrimitiveFactory()</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_factory_8cpp_source.html#l00031">PrimitiveFactory.cpp:31</a></div></div>
 <div class="ttc" id="a_drive_to_wall_8h_html"><div class="ttname"><a href="_drive_to_wall_8h.html">DriveToWall.h</a></div></div>
 <div class="ttc" id="a_primitive_enums_8h_html_a35fa04dbcd6e8ebd76550c9b14ade0dca42009b131c97b945b3327be55bfceb13"><div class="ttname"><a href="_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca42009b131c97b945b3327be55bfceb13">TURN_ANGLE_REL</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_enums_8h_source.html#l00038">PrimitiveEnums.h:38</a></div></div>
 <!-- start footer part -->

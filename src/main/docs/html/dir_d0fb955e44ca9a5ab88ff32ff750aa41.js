@@ -4,10 +4,6 @@ var dir_d0fb955e44ca9a5ab88ff32ff750aa41 =
     [ "BallTransferOff.h", "_ball_transfer_off_8h.html", [
       [ "BallTransferOff", "class_ball_transfer_off.html", "class_ball_transfer_off" ]
     ] ],
-    [ "BallTransferState.cpp", "_ball_transfer_state_8cpp.html", null ],
-    [ "BallTransferState.h", "_ball_transfer_state_8h.html", [
-      [ "BallTransferState", "class_ball_transfer_state.html", "class_ball_transfer_state" ]
-    ] ],
     [ "BallTransferStateMgr.cpp", "_ball_transfer_state_mgr_8cpp.html", null ],
     [ "BallTransferStateMgr.h", "_ball_transfer_state_mgr_8h.html", [
       [ "BallTransferStateMgr", "class_ball_transfer_state_mgr.html", "class_ball_transfer_state_mgr" ]

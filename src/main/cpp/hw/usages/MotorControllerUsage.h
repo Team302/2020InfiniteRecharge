@@ -1,6 +1,6 @@
 
 //====================================================================================================================================================
-// Copyright 2020 Lake Orion Robotics FIRST Team 302
+// Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -54,7 +54,6 @@ class MotorControllerUsage
             CONTROL_TABLE_MANIPULATOR,
             CLIMBER,
             CRAWLER,
-            HOOK_DELIVERY,
             MAX_MOTOR_CONTROLLER_USAGES
         };
 

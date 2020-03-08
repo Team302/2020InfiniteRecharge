@@ -12,10 +12,6 @@ var dir_bbc6e7419dec88a47d0fdaa34da7096c =
     [ "ControlPanelRaise.h", "_control_panel_raise_8h.html", [
       [ "ControlPanelRaise", "class_control_panel_raise.html", "class_control_panel_raise" ]
     ] ],
-    [ "ControlPanelState.cpp", "_control_panel_state_8cpp.html", null ],
-    [ "ControlPanelState.h", "_control_panel_state_8h.html", [
-      [ "ControlPanelState", "class_control_panel_state.html", "class_control_panel_state" ]
-    ] ],
     [ "ControlPanelStateMgr.cpp", "_control_panel_state_mgr_8cpp.html", null ],
     [ "ControlPanelStateMgr.h", "_control_panel_state_mgr_8h.html", [
       [ "ControlPanelStateMgr", "class_control_panel_state_mgr.html", "class_control_panel_state_mgr" ]

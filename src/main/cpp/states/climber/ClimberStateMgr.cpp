@@ -27,7 +27,9 @@
 #include <controllers/MechanismTargetData.h>
 #include <utils/Logger.h>
 #include <gamepad/TeleopControl.h>
-#include <states/climber/ClimberState.h>
+#include <states/climber/ClimberHold.h>
+#include <states/climber/ClimberRaise.h>
+#include <states/climber/ClimberStowed.h>
 //Put in climber crawl file when done
 #include <frc/smartdashboard/SmartDashboard.h>
 
@@ -83,21 +85,21 @@ ClimberStateMgr::ClimberStateMgr() : m_stateVector(),
                 {
                     case CLIMBER_STATE::HOLD:
                     {   
-                        auto thisState = new ClimberState( controlData, target, solState );
+                        auto thisState = new ClimberRaise( controlData, target, solState );
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case CLIMBER_STATE::RAISE:
                     {   
-                        auto thisState = new ClimberState( controlData, target, solState );
+                        auto thisState = new ClimberRaise( controlData, target, solState );
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case CLIMBER_STATE::STOWED:
                     {   
-                        auto thisState = new ClimberState( controlData, target, solState );
+                        auto thisState = new ClimberStowed( controlData, target, solState );
                         m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;
@@ -107,7 +109,7 @@ ClimberStateMgr::ClimberStateMgr() : m_stateVector(),
 
                    /* case CLIMBER_STATE::CRAWL:
                     {   
-                        auto thisState = new ClimberState( controlData, target, solState );
+                        auto thisState = new ClimberCrawl( controlData, target, solState );
                         m_stateEnumToObjectMap[CLIMBER_STATE::CRAWL] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;

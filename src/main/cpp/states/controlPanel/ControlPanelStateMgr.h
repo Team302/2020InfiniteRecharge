@@ -22,7 +22,6 @@ class ControlPanelStateMgr
             STOW,
             TURN,
             COLOR_TURN,
-            MANUAL,
             MAX_CONTROL_PANEL_STATES
         };
 

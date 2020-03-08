@@ -27,7 +27,9 @@
 #include <utils/Logger.h>
 #include <gamepad/TeleopControl.h>
 //Put in shooter hood state includes
-#include <states/shooterHood/ShooterHoodState.h>
+#include <states/shooterHood/ShooterHoodHoldPosition.h>
+#include <states/shooterHood/ShooterHoodMoveDown.h>
+#include <states/shooterHood/ShooterHoodMoveUp.h>
 #include <states/shooterHood/ShooterHoodManual.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/MechanismTypes.h>
@@ -81,21 +83,21 @@ ShooterHoodStateMgr::ShooterHoodStateMgr() : m_stateVector(),
                 {
                     case SHOOTER_HOOD_STATE::MOVE_UP:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodState(controlData, target, MechanismTargetData::SOLENOID::NONE);
+                        auto thisState = new ShooterHoodMoveUp(controlData, target, MechanismTargetData::SOLENOID::NONE);
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case SHOOTER_HOOD_STATE::MOVE_DOWN:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodState(controlData, target, MechanismTargetData::SOLENOID::NONE);
+                        auto thisState = new ShooterHoodMoveDown(controlData, target, MechanismTargetData::SOLENOID::NONE);
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case SHOOTER_HOOD_STATE::HOLD_POSITION:
                     {   // todo update the constructor take in controlData and target
-                        auto thisState = new ShooterHoodState(controlData, target, MechanismTargetData::SOLENOID::NONE);
+                        auto thisState = new ShooterHoodHoldPosition(controlData, target, MechanismTargetData::SOLENOID::NONE);
                         m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;

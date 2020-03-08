@@ -27,7 +27,9 @@
 #include <controllers/MechanismTargetData.h>
 #include <utils/Logger.h>
 #include <gamepad/TeleopControl.h>
-#include <states/intake/IntakeState.h>
+#include <states/intake/IntakeOff.h>
+#include <states/intake/IntakeOn.h>
+#include <states/intake/IntakeHPSState.h>
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/MechanismTypes.h>
@@ -82,21 +84,21 @@ IntakeStateMgr::IntakeStateMgr() : m_stateVector(),
                 {
                     case INTAKE_STATE::ON:
                     {   
-                        auto thisState = new IntakeState( controlData, target, solState );
+                        auto thisState = new IntakeOn( controlData, target, solState );
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case INTAKE_STATE::HUMANPLAYER:
                     {   
-                        auto thisState = new IntakeState( controlData, target, solState );
+                        auto thisState = new IntakeHPSState( controlData, target, solState );
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
 
                     case INTAKE_STATE::OFF:
                     {   
-                        auto thisState = new IntakeState( controlData, target, solState );
+                        auto thisState = new IntakeOff( controlData, target, solState );
                         m_stateVector[stateEnum] = thisState;
                         m_currentState = thisState;
                         m_currentStateEnum = stateEnum;

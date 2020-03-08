@@ -1,6 +1,6 @@
 
 //====================================================================================================================================================
-// Copyright 2020 Lake Orion Robotics FIRST Team 302
+// Copyright 2019 Lake Orion Robotics FIRST Team 302
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -57,9 +57,7 @@ MotorControllerUsage::MotorControllerUsage()
     m_usageMap["CONTROL_TABLE_MANIPULATOR"] = MOTOR_CONTROLLER_USAGE::CONTROL_TABLE_MANIPULATOR;
 
     m_usageMap["CLIMBER"] = MOTOR_CONTROLLER_USAGE::CLIMBER;
-    m_usageMap["CRAWLER"] = MOTOR_CONTROLLER_USAGE::CRAWLER;    
-    m_usageMap["HOOK_DELIVERY"] = MOTOR_CONTROLLER_USAGE::HOOK_DELIVERY;
-
+    m_usageMap["CRAWLER"] = MOTOR_CONTROLLER_USAGE::CRAWLER;
 }
 
 MotorControllerUsage::~MotorControllerUsage()

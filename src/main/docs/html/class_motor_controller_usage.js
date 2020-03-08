@@ -16,7 +16,6 @@ var class_motor_controller_usage =
       [ "CONTROL_TABLE_MANIPULATOR", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa9ddaa99fe32a6be0572e8429d46edcfd", null ],
       [ "CLIMBER", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa4fc105897b53d7f2e0098b83f381982f", null ],
       [ "CRAWLER", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa0c0f4a43eeced46406ddeb09ea021335", null ],
-      [ "HOOK_DELIVERY", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aa6061af32f9e42382adbf990c0eb68537", null ],
       [ "MAX_MOTOR_CONTROLLER_USAGES", "class_motor_controller_usage.html#a03b7ee94f8c7e42884d5da8974e3a51aaa1e41d1d7157cac6ca75d23905704de1", null ]
     ] ],
     [ "GetUsage", "class_motor_controller_usage.html#a0848ff0dafad9b93b252cefb8fc82bd0", null ]
