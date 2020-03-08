@@ -51,6 +51,7 @@
 #include <subsys/IChassis.h>
 #include <hw/factories/PigeonFactory.h>
 #include <frc/Solenoid.h>
+#include <states/hookdelivery/HookDeliveryStateMgr.h>
 
 using namespace std;
 using namespace frc;
@@ -75,6 +76,9 @@ void Robot::RobotInit()
     // Create the Chassis Control (state) modes which puts the auton choices and teleop drive modes 
     // on the dashboard for selection.
     m_chassisStateMgr = new ChassisStateMgr();
+
+    m_hook = HookDeliveryStateMgr::GetInstance();
+    m_winch = ClimberStateMgr::GetInstance();
 
     /*m_leftMaster = new TalonFX(12);
     m_leftSlave = new TalonFX(13);
@@ -130,11 +134,11 @@ void Robot::RobotInit()
     m_buttonBoxDisplay = nullptr;
     m_xBoxDisplay = nullptr;
 
-    m_climberState = false;
-    m_cpmState = false;
+    //m_climberState = false;
+    //m_cpmState = false;
 
-    m_climberSolenoidState = m_climberSolenoid->Get();
-    m_cpmSolenoidState = m_cpmSolenoid->Get();
+    //m_climberSolenoidState = m_climberSolenoid->Get();
+    //m_cpmSolenoidState = m_cpmSolenoid->Get();
     //m_limelight = LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT );
     /*if (m_limelight.get() != nullptr )
     {
@@ -179,7 +183,7 @@ void Robot::AutonomousPeriodic()
 /// @return void
 void Robot::TeleopInit() 
 {
-   m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
+    m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
     m_chassisStateMgr->Init();
     m_powerCells->SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::OFF);
     m_powerCells->RunCurrentState();
@@ -198,6 +202,11 @@ void Robot::TeleopPeriodic()
     //m_intake->RunCurrentState();
   m_powerCells->RunCurrentState();
   frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
+
+
+    m_winch->RunCurrentState();
+    m_hook->RunCurrentState();
+    
     // m_control->RunCurrentState();
     //double leftSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL);
     //double rightSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL);
