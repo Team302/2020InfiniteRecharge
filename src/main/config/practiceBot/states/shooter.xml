@@ -6,7 +6,7 @@
 	<controlData identifier="closedloop"
 				 mode="VELOCITY_RPS"
 				 proportional="0.01"
-				 feedforward="0.5"/>
+				 feedforward="0.55"/>
 	<mechanismTarget stateIdentifier="SHOOTEROFF"
 	                 controlDataIdentifier="openloop"
 					 value="0.0"/>
@@ -15,6 +15,6 @@
 					 value="0.5"/>
 	<mechanismTarget stateIdentifier="SHOOTERSHOOT"
 	                 controlDataIdentifier="closedloop"
-					 value="50.0"/>
+					 value="40.0"/>
 
 </statedata>
