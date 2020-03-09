@@ -5,7 +5,8 @@
 	             mode="PERCENT_OUTPUT"/>
 	<controlData identifier="closedloop"
 				 mode="POSITION_DEGREES"
-				 proportional="1.0"/>
+				 proportional="3.0"
+				 feedforward="0.10"/>
 	<mechanismTarget stateIdentifier="TURRETHOLD"
 	                 controlDataIdentifier="openloop"
 					 value="0.0"/>
@@ -15,5 +16,9 @@
 	<mechanismTarget stateIdentifier="TURRETMANUALAIM"
 	                 controlDataIdentifier="openloop"
 					 value="1.0"/>
+	<mechanismTarget stateIdentifier="TURRETTURNANGLE"
+	                 controlDataIdentifier="closedloop"
+					 value="1.0"/>
+
 
 </statedata>
