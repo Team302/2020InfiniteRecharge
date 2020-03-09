@@ -60,8 +60,8 @@ void LimelightAim::Run()
     frc::SmartDashboard::PutNumber("limelight position", targetHorizontalOffset);
     */
    //m_turret->SetOutput(m_controlData->GetMode(), 90.0);
-   double targetHorizontalOffset = m_limelight->GetTargetHorizontalOffset();
-   frc::SmartDashboard::PutNumber("horizontal offset", targetHorizontalOffset);
+   double targetHorizontalOffset = m_limelight->GetTargetHorizontalOffset() + 1.25;
+   //frc::SmartDashboard::PutNumber("horizontal offset", targetHorizontalOffset);
    double currentPosition = m_turret->GetCurrentPosition();
    /*double scaledOffset;
    if(targetHorizontalOffset < 0)
@@ -72,7 +72,7 @@ void LimelightAim::Run()
    {
        scaledOffset = targetHorizontalOffset + 2.0 + (targetHorizontalOffset/28.0) * 5.0;
    }*/
-   m_turret->SetOutput(ControlModes::POSITION_DEGREES, currentPosition + targetHorizontalOffset);
+   m_turret->SetOutput(ControlModes::POSITION_DEGREES, currentPosition + targetHorizontalOffset + 1.0);
 }
 
 bool LimelightAim::AtTarget() const

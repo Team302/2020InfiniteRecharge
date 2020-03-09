@@ -192,13 +192,13 @@ void Robot::TeleopInit()
 /// @return void
 void Robot::TeleopPeriodic() 
 {
-    frc::SmartDashboard::PutNumber("shooter speed", m_shooter->GetCurrentSpeed());
+    //frc::SmartDashboard::PutNumber("shooter speed", m_shooter->GetCurrentSpeed());
     m_chassisStateMgr->RunCurrentState();
     //m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
     //m_shooterHood->SetOutput(ControlModes::PERCENT_OUTPUT, .5* m_controller->GetAxisValue(TeleopControl::SHOOTER_HOOD_MANUAL_AXIS));
     //m_intake->RunCurrentState();
   m_powerCells->RunCurrentState();
-  frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
+  //frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
     // m_control->RunCurrentState();
     //double leftSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL);
     //double rightSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL);
