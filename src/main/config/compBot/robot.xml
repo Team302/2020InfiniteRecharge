@@ -259,7 +259,7 @@
 				countsPerRev="2048"
 				gearRatio="1.0"
 				brakeMode="false"
-				slaveTo="16"
+				slaveTo="-1"
 				peakCurrentDuration="15.0"
 				continuousCurrentLimit="40.0"
 				peakCurrentLimit="50.0"
