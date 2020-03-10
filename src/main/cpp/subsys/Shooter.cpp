@@ -11,8 +11,8 @@
 #include "controllers/ControlModes.h"
 Shooter::Shooter(std::shared_ptr<IDragonMotorController> motor1,
 std::shared_ptr<IDragonMotorController> motor2
-): m_masterMotor(motor1),
-m_slaveMotor(motor2),
+): m_topMotor(motor1),
+m_bottomMotor(motor2),
 m_targetSpeed(0.0)
 {}
 
@@ -35,8 +35,31 @@ void Shooter::SetOutput(ControlModes::CONTROL_TYPE controlType, double value)
             break;
         
     }
-    m_masterMotor.get()->SetControlMode(controlType);
-    m_masterMotor.get()->Set(value);
+    m_topMotor.get()->SetControlMode(controlType);
+    m_bottomMotor.get()->SetControlMode(controlType);
+    m_topMotor.get()->Set(value);
+    m_bottomMotor.get()->Set(value);
+}
+
+void Shooter::SetOutput(ControlModes::CONTROL_TYPE controlType, double upperValue, double lowerValue)
+{
+    switch(controlType)
+    {
+        case ControlModes::CONTROL_TYPE::PERCENT_OUTPUT:
+            m_targetSpeed1 = upperValue;
+            m_targetSpeed2 = lowerValue;
+            break;
+        case ControlModes::CONTROL_TYPE::VELOCITY_DEGREES:
+            m_targetSpeed1 = upperValue;
+            m_targetSpeed2 = lowerValue;
+            break;
+        default:
+            break;
+    }
+    m_topMotor.get()->SetControlMode(controlType);
+    m_bottomMotor.get()->SetControlMode(controlType);
+    m_topMotor.get()->Set(upperValue);
+    m_bottomMotor.get()->Set(lowerValue);
 }
 
 void Shooter::ActivateSolenoid(bool activate)
@@ -49,16 +72,19 @@ bool Shooter::IsSolenoidActivated()
 
 double Shooter::GetCurrentPosition() const
 {
-    return m_masterMotor.get()->GetRotations() * 360.0;
+    return m_topMotor.get()->GetRotations() * 360.0;
+    return m_bottomMotor.get()->GetRotations() * 360.0;
 }
 
 double Shooter::GetCurrentSpeed() const 
 {
-    m_masterMotor.get()->GetRPS();
+    m_topMotor.get()->GetRPS();
+    m_bottomMotor.get()->GetRPS();
 }
 
 
 void Shooter::SetControlConstants(ControlData* pid)
 {
-    m_masterMotor.get()->SetControlConstants(pid);
+    m_topMotor.get()->SetControlConstants(pid);
+    m_bottomMotor.get()->SetControlConstants(pid);
 }
