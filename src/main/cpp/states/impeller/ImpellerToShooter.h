@@ -28,6 +28,8 @@ class ImpellerToShooter : public MechanismState
         (
             ControlData*                    control,
             double                          target,
+            ControlData*                    fbControlData,
+            double                          fbTarget,
             MechanismTargetData::SOLENOID   solState
         );
         ImpellerToShooter() = delete;

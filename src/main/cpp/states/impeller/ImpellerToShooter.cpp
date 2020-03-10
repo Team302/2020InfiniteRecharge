@@ -28,6 +28,8 @@ ImpellerToShooter::ImpellerToShooter
 (
     ControlData*                    control,
     double                          target,
+    ControlData*                    fbControlData,
+    double                          fbTarget,
     MechanismTargetData::SOLENOID   solState
 ) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER), control, target, solState )
 {

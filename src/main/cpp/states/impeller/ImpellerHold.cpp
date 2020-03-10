@@ -31,6 +31,7 @@ ImpellerHold::ImpellerHold
 (
     ControlData*                    control,
     double                          target,
+    ControlData*                    fbControlData,
     MechanismTargetData::SOLENOID   solState
 ) : MechanismState( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER), control, target, solState )
 {

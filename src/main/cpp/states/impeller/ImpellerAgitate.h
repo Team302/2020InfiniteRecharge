@@ -28,6 +28,8 @@ class ImpellerAgitate : public MechanismState
         (
             ControlData*                    control,
             double                          target,
+            ControlData*                    fbControlData,
+            double                          fbTarget,
             MechanismTargetData::SOLENOID   solState
         );
         ImpellerAgitate() = delete;

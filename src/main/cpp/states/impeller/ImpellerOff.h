@@ -28,6 +28,8 @@ class ImpellerOff : public MechanismState
         (
             ControlData*                    control,
             double                          target,
+            ControlData*                    fbControlData,
+            double                          fbTarget,
             MechanismTargetData::SOLENOID   solState
         );
         ImpellerOff() = delete;
