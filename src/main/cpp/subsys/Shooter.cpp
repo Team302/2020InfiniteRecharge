@@ -73,13 +73,11 @@ bool Shooter::IsSolenoidActivated()
 double Shooter::GetCurrentPosition() const
 {
     return m_topMotor.get()->GetRotations() * 360.0;
-    return m_bottomMotor.get()->GetRotations() * 360.0;
 }
 
 double Shooter::GetCurrentSpeed() const 
 {
-    m_topMotor.get()->GetRPS();
-    m_bottomMotor.get()->GetRPS();
+    return m_topMotor.get()->GetRPS();
 }
 
 
