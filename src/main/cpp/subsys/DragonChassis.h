@@ -111,6 +111,12 @@ class DragonChassis : public IChassis
         double                          m_wheelBase;
         double                          m_wheelTrack;
         double                          m_wheelDiameter;
+
+        bool                            m_useVelocityMode;
+        bool                            m_goingStraight;
+        double                          m_targetHeading;
+        const double                    m_maxVelocity = 12.66;  // revolution per second including gear ratio
+        const double                    m_servoKp = 0.05;
 };
 
 

@@ -30,6 +30,8 @@
 #include <controllers/ControlData.h>
 #include <subsys/DriveTrainSide.h>
 #include <utils/Logger.h>
+#include <hw/factories/PigeonFactory.h>
+#include <hw/DragonPigeon.h>
 
 // Third Party Includes
 
@@ -53,7 +55,10 @@ DragonChassis::DragonChassis
     m_rightSide( new DriveTrainSide( rightMaster, rightFollower, wheelDiameter ) ),
     m_wheelBase( wheelBase ),
     m_wheelTrack( track ),
-    m_wheelDiameter( wheelDiameter )
+    m_wheelDiameter( wheelDiameter ),
+    m_useVelocityMode( true ),
+    m_goingStraight( false ),
+    m_targetHeading( 0.0 )
 {
 }
 
@@ -77,8 +82,42 @@ void DragonChassis::SetOutput
     double                                   rightValue     
 )
 {
-    m_leftSide->SetOutput( controlType, leftValue );
-    m_rightSide->SetOutput( controlType, rightValue );
+    if ( controlType == ControlModes::CONTROL_TYPE::PERCENT_OUTPUT && m_useVelocityMode )
+    {
+        auto left = leftValue * m_maxVelocity;
+        auto right = rightValue * m_maxVelocity;
+
+        auto factory = PigeonFactory::GetFactory();
+        auto pigeon = factory != nullptr ? factory->GetPigeon() : nullptr;
+        auto goStraight = ( abs(leftValue-rightValue) < 0.01 );
+        if ( !m_goingStraight && goStraight )
+        {
+            m_goingStraight = true;
+            m_targetHeading = pigeon->GetYaw();
+        }
+        else if ( !goStraight )
+        {
+            m_goingStraight = false;
+        }
+
+        if ( m_goingStraight )
+        {
+            auto heading = pigeon != nullptr ? pigeon->GetYaw() : m_targetHeading;
+            auto turn = m_targetHeading - heading;
+            turn *= m_servoKp;
+
+            left -= turn;
+            right += turn;
+        }
+
+        m_leftSide->SetOutput( ControlModes::CONTROL_TYPE::VELOCITY_RPS, left );
+        m_rightSide->SetOutput( ControlModes::CONTROL_TYPE::VELOCITY_RPS, right );
+    }
+    else
+    {
+        m_leftSide->SetOutput( controlType, leftValue );
+        m_rightSide->SetOutput( controlType, rightValue );
+    }
 }
 
 
@@ -137,8 +176,29 @@ void DragonChassis::SetControlConstants
     ControlData*                                 pid               
 )
 {
-    m_leftSide->SetControlConstants( pid );
-    m_rightSide->SetControlConstants( pid );
+    if ( pid->GetMode() == ControlModes::CONTROL_TYPE::PERCENT_OUTPUT && m_useVelocityMode )
+    {
+        auto cd = make_unique<ControlData>( ControlModes::CONTROL_TYPE::VELOCITY_RPS, 
+                                            ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER,
+                                            string( "test"),
+                                            0.5,             // kp
+                                            0.0,             // ki
+                                            0.0,             // kd
+                                            0.15,            // kf
+                                            0.0,             // izone
+                                            0.0,             // max accel
+                                            0.0,             // cruise vel
+                                            1.0,             // peak val
+                                            0.0 );           // nominal val
+        m_leftSide->SetControlConstants( cd.get() );
+        m_rightSide->SetControlConstants( cd.get() );
+
+    }
+    else
+    {
+        m_leftSide->SetControlConstants( pid );
+        m_rightSide->SetControlConstants( pid );
+    }
 }
 
 double DragonChassis::GetWheelDiameter() const
