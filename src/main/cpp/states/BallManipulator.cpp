@@ -57,7 +57,7 @@ BallManipulator::BallManipulator() : m_currentState( BALL_MANIPULATOR_STATE::OFF
     m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
     m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
     m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, false );
-    m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false );
+    m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false, 0.0 );
     m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
     m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );
 }
@@ -74,39 +74,39 @@ void BallManipulator::RunCurrentState()
         {
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::OFF))
             {
-                SetCurrentState( BALL_MANIPULATOR_STATE::OFF); 
+                SetCurrentState( BALL_MANIPULATOR_STATE::OFF, 0.0); 
             }
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE))
             {
-                SetCurrentState(BALL_MANIPULATOR_STATE::INTAKE);
+                SetCurrentState(BALL_MANIPULATOR_STATE::INTAKE, 0.0);
             }
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::INTAKE_HUMAN_PLAYER))
             {
-                SetCurrentState( BALL_MANIPULATOR_STATE::INTAKE_HUMAN_PLAYER); 
+                SetCurrentState( BALL_MANIPULATOR_STATE::INTAKE_HUMAN_PLAYER, 0.0); 
             }
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::GET_READY_TO_SHOOT))
             {
-                SetCurrentState(BALL_MANIPULATOR_STATE ::GET_READY_TO_SHOOT);
+                SetCurrentState(BALL_MANIPULATOR_STATE ::GET_READY_TO_SHOOT, 0.0);
             }
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOT))
             {
-                SetCurrentState(BALL_MANIPULATOR_STATE::SHOOT); 
+                SetCurrentState(BALL_MANIPULATOR_STATE::SHOOT, 0.0); 
             }
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::UNJAM_CLOCKWISE))
             {
-                SetCurrentState(BALL_MANIPULATOR_STATE::UNJAM_CLOCKWISE); 
+                SetCurrentState(BALL_MANIPULATOR_STATE::UNJAM_CLOCKWISE, 0.0); 
             }
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::UNJAM_COUNTERCLOCKWISE))
             {
-                SetCurrentState(BALL_MANIPULATOR_STATE::UNJAM_COUNTERCLOCKWISE); 
+                SetCurrentState(BALL_MANIPULATOR_STATE::UNJAM_COUNTERCLOCKWISE, 0.0); 
             }     
             if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TRANSFER_UP)) 
             {
-                SetCurrentState(BALL_MANIPULATOR_STATE::TRANSFER_UP);
+                SetCurrentState(BALL_MANIPULATOR_STATE::TRANSFER_UP, 0.0);
             } 
             if (controller->IsButtonPressed (TeleopControl::FUNCTION_IDENTIFIER::TRANSFER_DOWN))
             {
-                SetCurrentState(BALL_MANIPULATOR_STATE::TRANSFER_DOWN);
+                SetCurrentState(BALL_MANIPULATOR_STATE::TRANSFER_DOWN, 0.0);
             }    
     
         }
@@ -126,7 +126,8 @@ void BallManipulator::RunCurrentState()
 /// @return void
 void BallManipulator::SetCurrentState
 (
-    BALL_MANIPULATOR_STATE  state
+    BALL_MANIPULATOR_STATE  state,
+    double turretAngle
 )
 {
     m_currentState = state;
@@ -136,14 +137,14 @@ void BallManipulator::SetCurrentState
             m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
             m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, false );
-            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false );
-            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
+            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false , 0.0);
+            //m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
             m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );
             break;
 
         case BALL_MANIPULATOR_STATE::INTAKE:
             m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::ON, false );
-            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::HOLD, false );
+            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER , false );
             break;
 
@@ -157,24 +158,24 @@ void BallManipulator::SetCurrentState
             m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
             m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER , false );
-            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false );
-            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
+            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false , 0.0);
+            //m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
             m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );  // todo auto aim is needed
             break;
 
         case BALL_MANIPULATOR_STATE::GET_READY_TO_SHOOT:
             m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
-            m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_IMPELLER, false );
-            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false );
-            //m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
+            m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, false );
+            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::LIMELIGHT_AIM, false, 0.0 );
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
             m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );  // todo auto aim is needed
             break;
 
         case BALL_MANIPULATOR_STATE::SHOOT:
             m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false );
-            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false );
-            //m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
+            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false,0.0 );
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
             m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );  // todo auto aim is needed
             break;
         
@@ -199,7 +200,7 @@ void BallManipulator::SetCurrentState
         case BALL_MANIPULATOR_STATE::SHOOT_AUTON:
             m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false );
-            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false );
+            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false,0.0 );
             m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
             m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );  
             break;// todo auto aim is needed
@@ -216,10 +217,19 @@ void BallManipulator::SetCurrentState
             m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
             m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, false );
-            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::LIMELIGHT_AIM, false );
+            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::LIMELIGHT_AIM, false ,0.0);
             m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
             m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );
-
+            break;
+        
+        case BALL_MANIPULATOR_STATE::TURRET_TURN_ANGLE:
+            m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::ON, false );
+            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
+            m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, false );
+            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::TURN_ANGLE, false , turretAngle);
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
+            m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );
+            break;
         default:
             break;
     }

@@ -20,6 +20,7 @@
 
 // FRC includes
 #include <frc/Timer.h>
+#include <frc/DriverStation.h>
 
 // Team 302 includes
 #include <auton/CyclePrimitives.h>
@@ -56,9 +57,7 @@ void CyclePrimitives::Init()
 {
 	m_currentPrimSlot = 0; //Reset current prim
 	m_primParams.clear();
-	frc::SmartDashboard::PutString("Auton file", m_autonSelector->GetSelectedAutoFile());
 	m_primParams = PrimitiveParser::ParseXML( m_autonSelector->GetSelectedAutoFile() );
-	frc::SmartDashboard::PutNumber("Prim Vector length", m_primParams.size());
 	if (!m_primParams.empty())
 	{
 		GetNextPrim();
@@ -76,12 +75,6 @@ void CyclePrimitives::Run()
 		{
 			GetNextPrim();
 		}
-		/*else if ( m_timer->HasPeriodPassed( m_maxTime ) )
-		{
-			// timed out; for now let's just assume the previous was done
-			Logger::GetLogger()->LogError( string( "CyclePrimitives::RunCurrentPrimitive"), string( "Primitive Timed out" ));
-			GetNextPrim();
-		}*/
 	}
 	else
 	{
@@ -120,8 +113,9 @@ void CyclePrimitives::RunDoNothing()
 	if (m_doNothing == nullptr)
 	{	
 		BallManipulator::BALL_MANIPULATOR_STATE state = BallManipulator::BALL_MANIPULATOR_STATE::HOLD;
+		auto time = DriverStation::GetInstance().GetMatchTime();
 		auto params = new PrimitiveParams( DO_NOTHING,          // identifier
-		                                   100000.0,            // time
+		                                   time,              	// time
 		                                   0.0,                 // distance
 		                                   0.0,                 // target x location
 		                                   0.0,                 // target y location

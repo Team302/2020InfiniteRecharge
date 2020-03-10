@@ -30,6 +30,7 @@
 #include <auton/CyclePrimitives.h>
 
 using namespace std;
+using namespace frc;
 
 ChassisStateMgr::ChassisStateMgr() : m_arcade(make_shared<ArcadeDrive>()),
                                      m_gta(make_shared<GTADrive>()),

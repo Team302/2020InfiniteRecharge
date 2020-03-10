@@ -107,7 +107,15 @@ Public Types</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4aea96e42a3f8fe443ff14633c93543d16">GET_READY_TO_SHOOT</a>, 
 <a class="el" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4ad9c30dc49f618d7d4e44f902f9829ddb">SHOOT</a>, 
-<a class="el" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4a9a093e6e6802b3513eb69230dd590167">MAX_BALL_MANIPULATOR_STATES</a>
+<a class="el" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4aca697a78927960dde01fc439350ae747">SHOOT_AUTON</a>, 
+<a class="el" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4af7b56d9746ada4045682e10f28673676">AUTO_AIM</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4ab71df697d611ab99469889666c8175dc">UNJAM_CLOCKWISE</a>, 
+<a class="el" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4a7f6b7e8dfed0b9ca0cf7ad84663c4d60">UNJAM_COUNTERCLOCKWISE</a>, 
+<a class="el" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4a6dacee08643ab129f905b69e611531f2">TRANSFER_UP</a>, 
+<a class="el" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4a5512a93c59bfce04c8b9a5e0c42fc395">TRANSFER_DOWN</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_ball_manipulator.html#a91bf71119c5fecb46b41a90485f7a9a4a9a093e6e6802b3513eb69230dd590167">MAX_BALL_MANIPULATOR_STATES</a>
 <br />
  }</td></tr>
 <tr class="separator:a91bf71119c5fecb46b41a90485f7a9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,6 +162,12 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a91bf71119c5fecb46b41a90485f7a9a4a01c99115b3dc9fabf0d04543463096d1"></a>HOLD&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a91bf71119c5fecb46b41a90485f7a9a4aea96e42a3f8fe443ff14633c93543d16"></a>GET_READY_TO_SHOOT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a91bf71119c5fecb46b41a90485f7a9a4ad9c30dc49f618d7d4e44f902f9829ddb"></a>SHOOT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a91bf71119c5fecb46b41a90485f7a9a4aca697a78927960dde01fc439350ae747"></a>SHOOT_AUTON&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a91bf71119c5fecb46b41a90485f7a9a4af7b56d9746ada4045682e10f28673676"></a>AUTO_AIM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a91bf71119c5fecb46b41a90485f7a9a4ab71df697d611ab99469889666c8175dc"></a>UNJAM_CLOCKWISE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a91bf71119c5fecb46b41a90485f7a9a4a7f6b7e8dfed0b9ca0cf7ad84663c4d60"></a>UNJAM_COUNTERCLOCKWISE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a91bf71119c5fecb46b41a90485f7a9a4a6dacee08643ab129f905b69e611531f2"></a>TRANSFER_UP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a91bf71119c5fecb46b41a90485f7a9a4a5512a93c59bfce04c8b9a5e0c42fc395"></a>TRANSFER_DOWN&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a91bf71119c5fecb46b41a90485f7a9a4a9a093e6e6802b3513eb69230dd590167"></a>MAX_BALL_MANIPULATOR_STATES&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
@@ -188,7 +202,7 @@ Static Public Member Functions</h2></td></tr>
 <p>return the current state </p>
 <dl class="section return"><dt>Returns</dt><dd>INTAKE_STATE - the current state </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ball_manipulator_8h_source.html#l00067">67</a> of file <a class="el" href="_ball_manipulator_8h_source.html">BallManipulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ball_manipulator_8h_source.html#l00073">73</a> of file <a class="el" href="_ball_manipulator_8h_source.html">BallManipulator.h</a>.</p>
 
 </div>
 </div>
@@ -263,7 +277,7 @@ BallManipulator* singleton class </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_ball_manipulator_8cpp_source.html#l00155">155</a> of file <a class="el" href="_ball_manipulator_8cpp_source.html">BallManipulator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ball_manipulator_8cpp_source.html#l00231">231</a> of file <a class="el" href="_ball_manipulator_8cpp_source.html">BallManipulator.cpp</a>.</p>
 
 </div>
 </div>
@@ -294,7 +308,7 @@ BallManipulator* singleton class </dd></dl>
 <dd>
 void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ball_manipulator_8cpp_source.html#l00082">82</a> of file <a class="el" href="_ball_manipulator_8cpp_source.html">BallManipulator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ball_manipulator_8cpp_source.html#l00128">128</a> of file <a class="el" href="_ball_manipulator_8cpp_source.html">BallManipulator.cpp</a>.</p>
 
 </div>
 </div>

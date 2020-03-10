@@ -109,6 +109,10 @@ vector<MechanismTargetData*> StateDataDefn::ParseXML
             filename += string( "crawler.xml");
             break;
 
+        case MechanismTypes::HOOK_DELIVERY:
+            filename += string( "hookdelivery.xml");
+            break;
+
         default:
             Logger::GetLogger()->LogError( "StateDataDefn::ParseXML", "invalid mechanism" );
             hasError = true;

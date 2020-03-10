@@ -51,6 +51,7 @@
 #include <subsys/IChassis.h>
 #include <hw/factories/PigeonFactory.h>
 #include <frc/Solenoid.h>
+#include <states/hookdelivery/HookDeliveryStateMgr.h>
 
 using namespace std;
 using namespace frc;
@@ -76,6 +77,9 @@ void Robot::RobotInit()
     // on the dashboard for selection.
     m_chassisStateMgr = new ChassisStateMgr();
 
+    m_hook = HookDeliveryStateMgr::GetInstance();
+    m_winch = ClimberStateMgr::GetInstance();
+
     /*m_leftMaster = new TalonFX(12);
     m_leftSlave = new TalonFX(13);
     m_rightMaster = new TalonFX(15);
@@ -96,12 +100,12 @@ void Robot::RobotInit()
 
     //m_intake = new IntakeStateMgr();
 
-    m_cpm = new TalonSRX( 6 );
-    m_climber = new TalonSRX( 2 );
+    //m_cpm = new TalonSRX( 6 );
+    //m_climber = new TalonSRX( 2 );
 
   
-    m_cpmSolenoid = new frc::Solenoid( 9, 6);
-    m_climberSolenoid = new frc::Solenoid( 9, 5 );
+    //m_cpmSolenoid = new frc::Solenoid( 9, 6);
+    //m_climberSolenoid = new frc::Solenoid( 9, 5 );
 
    // m_cpm = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::CONTROL_TABLE_MANIPULATOR);
     //m_climber = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::CLIMBER);
@@ -130,11 +134,11 @@ void Robot::RobotInit()
     m_buttonBoxDisplay = nullptr;
     m_xBoxDisplay = nullptr;
 
-    m_climberState = false;
-    m_cpmState = false;
+    //m_climberState = false;
+    //m_cpmState = false;
 
-    m_climberSolenoidState = m_climberSolenoid->Get();
-    m_cpmSolenoidState = m_cpmSolenoid->Get();
+    //m_climberSolenoidState = m_climberSolenoid->Get();
+    //m_cpmSolenoidState = m_cpmSolenoid->Get();
     //m_limelight = LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT );
     /*if (m_limelight.get() != nullptr )
     {
@@ -179,9 +183,9 @@ void Robot::AutonomousPeriodic()
 /// @return void
 void Robot::TeleopInit() 
 {
-   m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
+    m_chassisStateMgr->SetState( ChassisStateMgr::CHASSIS_STATE::TELEOP );
     m_chassisStateMgr->Init();
-    m_powerCells->SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::OFF);
+    m_powerCells->SetCurrentState(BallManipulator::BALL_MANIPULATOR_STATE::OFF, 0.0);
     m_powerCells->RunCurrentState();
     
 
@@ -196,8 +200,13 @@ void Robot::TeleopPeriodic()
     //m_turret->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS) * .5);
     //m_shooterHood->SetOutput(ControlModes::PERCENT_OUTPUT, .5* m_controller->GetAxisValue(TeleopControl::SHOOTER_HOOD_MANUAL_AXIS));
     //m_intake->RunCurrentState();
-  m_powerCells->RunCurrentState();
-  frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
+   m_powerCells->RunCurrentState();
+   frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
+
+
+    m_winch->RunCurrentState();
+    m_hook->RunCurrentState();
+
     // m_control->RunCurrentState();
     //double leftSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_LEFT_CONTROL);
     //double rightSpeed = m_controller->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TANK_DRIVE_RIGHT_CONTROL);

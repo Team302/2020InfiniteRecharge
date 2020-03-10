@@ -19,6 +19,7 @@ class TurretStateMgr {
         HOLD,
         LIMELIGHT_AIM,
         MANUAL_AIM,
+        TURN_ANGLE,
         MAX_TURRET_STATES
       };
 
@@ -38,7 +39,8 @@ class TurretStateMgr {
         void SetCurrentState
         (
             TURRET_STATE  state,
-            bool            run
+            bool            run,
+            double          turretAngle
         );
 
         /// @brief  return the current state

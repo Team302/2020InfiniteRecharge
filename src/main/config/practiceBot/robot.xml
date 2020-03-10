@@ -170,7 +170,7 @@
     	<solenoid usage="INTAKE"
     		      canId="9"
     		      channel="0"
-    		      reversed="false" />
+    		      reversed="true" />
 	</mechanism>
 
 	<!-- mechanism type="HUMAN_PLAYER_FLAP">
@@ -239,7 +239,7 @@
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
 				gearRatio="1.0"
-				brakeMode="true"
+				brakeMode="false"
 				slaveTo="-1"
 				peakCurrentDuration="15.0"
 				continuousCurrentLimit="40.0"
@@ -258,7 +258,7 @@
 				feedbackDevice="INTERNAL"
 				countsPerRev="2048"
 				gearRatio="1.0"
-				brakeMode="true"
+				brakeMode="false"
 				slaveTo="16"
 				peakCurrentDuration="15.0"
 				continuousCurrentLimit="40.0"
@@ -284,7 +284,7 @@
 				feedbackDevice="NONE"
 				countsPerRev="0"
 				gearRatio="1.0"
-				brakeMode="false"
+				brakeMode="true"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"
@@ -305,7 +305,7 @@
 				inverted="false"
 				sensorInverted="false"
 				feedbackDevice="QUADENCODER"
-				countsPerRev="6000"
+				countsPerRev="12143"
 				gearRatio="1.0"
 				brakeMode="true"
 				peakCurrentDuration="50"

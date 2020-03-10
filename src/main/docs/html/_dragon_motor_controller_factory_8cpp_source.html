@@ -206,10 +206,10 @@ $(document).ready(function(){initNavTree('_dragon_motor_controller_factory_8cpp_
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        talon-&gt;ConfigSelectedFeedbackSensor( feedbackDevice, 0, 50 );</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        talon-&gt;ConfigSelectedFeedbackSensor( feedbackDevice, 1, 50 );</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        talon-&gt;ConfigPeakCurrentLimit( peakCurrentLimit, 50 );</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        talon-&gt;ConfigPeakCurrentDuration( peakCurrentDuration, 50 );</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        talon-&gt;ConfigContinuousCurrentLimit( continuousCurrentLimit, 50 );</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        talon-&gt;EnableCurrentLimiting( enableCurrentLimit );</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">/*talon-&gt;ConfigPeakCurrentLimit( 40, 50 );</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">        talon-&gt;ConfigPeakCurrentDuration( 1, 50 );</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">        talon-&gt;ConfigContinuousCurrentLimit( 30, 50 );</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">        talon-&gt;EnableCurrentLimiting( true );*/</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> ( forwardLimitSwitch )</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        {</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            talon-&gt;SetForwardLimitSwitch(forwardLimitSwitchNormallyOpen);</div>

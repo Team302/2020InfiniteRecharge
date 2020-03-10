@@ -125,7 +125,7 @@ void SuperDrive::Init(PrimitiveParams* params)
 
 void SuperDrive::Run() 
 {
-	/*auto pigeon = PigeonFactory::GetFactory()->GetPigeon();
+	auto pigeon = PigeonFactory::GetFactory()->GetPigeon();
 	if ( pigeon != nullptr )
 	{
 		m_currentHeading = pigeon->GetYaw() - m_startHeading;
@@ -133,6 +133,7 @@ void SuperDrive::Run()
 	//m_currentHeading = m_chassis->GetHeading() - m_chassis->GetTargetHeading(); //Calculate target heading
 
 	//Calculate ramp up speed if we are not already slowing down
+	/*
 	if (!m_slowingDown) 
 	{
 		if (std::abs(m_currentSpeed) < std::abs(m_targetSpeed)) 
@@ -187,14 +188,14 @@ void SuperDrive::Run()
 			}
 		}
 	}
-
+	*/
 
 	m_rightSpeed = m_currentSpeed;
 	m_leftSpeed = m_currentSpeed;
 
 	m_leftSpeed -= m_currentHeading * GYRO_CORRECTION_CONSTANT;
 	m_rightSpeed += m_currentHeading * GYRO_CORRECTION_CONSTANT;
-*/
+
 	m_chassis->SetOutput( ControlModes::CONTROL_TYPE::PERCENT_OUTPUT, m_leftSpeed, m_rightSpeed );
 
 	//m_chassis->SetVelocityParams(PROPORTIONAL_COEFF, INTREGRAL_COEFF, DERIVATIVE_COEFF, FEET_FORWARD_COEFF, m_leftSpeed, m_rightSpeed);

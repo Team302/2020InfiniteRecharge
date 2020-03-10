@@ -12,6 +12,10 @@ var dir_5fda87a21b6a0f55da3c225aae6f0d56 =
     [ "ImpellerOff.h", "_impeller_off_8h.html", [
       [ "ImpellerOff", "class_impeller_off.html", "class_impeller_off" ]
     ] ],
+    [ "ImpellerState.cpp", "_impeller_state_8cpp.html", null ],
+    [ "ImpellerState.h", "_impeller_state_8h.html", [
+      [ "ImpellerState", "class_impeller_state.html", "class_impeller_state" ]
+    ] ],
     [ "ImpellerStateMgr.cpp", "_impeller_state_mgr_8cpp.html", null ],
     [ "ImpellerStateMgr.h", "_impeller_state_mgr_8h.html", [
       [ "ImpellerStateMgr", "class_impeller_state_mgr.html", "class_impeller_state_mgr" ]

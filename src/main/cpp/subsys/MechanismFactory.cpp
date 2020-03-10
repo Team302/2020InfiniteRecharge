@@ -42,6 +42,7 @@
 #include <hw/DragonDigitalInput.h>
 #include <subsys/ControlPanel.h>
 #include <subsys/MechanismFactory.h>
+#include <subsys/HookDelivery.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismTypes.h>
 #include <subsys/Intake.h>
@@ -77,6 +78,15 @@ MechanismFactory* MechanismFactory::GetMechanismFactory()
 	return MechanismFactory::m_mechanismFactory;
 }
 
+MechanismFactory::MechanismFactory()
+{
+	m_mechanisms.resize( MechanismTypes::MECHANISM_TYPE::MAX_MECHANISM_TYPES );
+	for ( auto inx=0; inx<MechanismTypes::MECHANISM_TYPE::MAX_MECHANISM_TYPES; ++inx )
+	{
+		m_mechanisms[inx] = nullptr;
+	}
+}
+
 /// @brief      Find the requested mechanism
 /// @param [in] MechanismTypes::MECHANISM_TYPE  type - the type of mechanism to retrieve
 /// @return     IMechanism*  pointer to the mechanism or nullptr if mechanism doesn't exist.
@@ -85,21 +95,14 @@ IMechanism*  MechanismFactory::GetIMechanism
 	MechanismTypes::MECHANISM_TYPE			type		
 )
 {
-	IMechanism* subsys = nullptr;
-
     // See if the mechanism was created already, if it wasn't create it
-    auto it = m_mechanisms.find( type );  
-    if ( it != m_mechanisms.end() )      //  found
-    {
-        subsys = it->second;
-    }
-    else
+	IMechanism* subsys = m_mechanisms[type];
+	if ( subsys == nullptr )
     {
         string msg = "mechanism doesn't exists";
         msg += to_string( type );
         Logger::GetLogger()->LogError( string("MechansimFactory::GetIMechanism" ), msg );
     }
-
 	return subsys;
 }
 
@@ -125,19 +128,19 @@ IMechanism*  MechanismFactory::CreateIMechanism
 	shared_ptr<CANCoder>					canCoder
 )
 {
-	IMechanism* subsys = nullptr;
-
     // See if the mechanism was created already, if it wasn't create it
-    auto it = m_mechanisms.find( type );  
-    if ( it != m_mechanisms.end() )      //  found
+	IMechanism* subsys = m_mechanisms[type];
+	if ( subsys != nullptr )
     {
-        subsys = it->second;
         string msg = "mechanism already exists";
         msg += to_string( type );
         Logger::GetLogger()->LogError( string("MechansimFactory::CreateIMechanism" ), msg );
     }
     else
     {
+        string msg = "about to create mechanism";
+        msg += to_string( type );
+        Logger::GetLogger()->LogError( string("MechansimFactory::CreateIMechanism" ), msg );
         // Create the mechanism
         switch ( type )
         {
@@ -240,7 +243,18 @@ IMechanism*  MechanismFactory::CreateIMechanism
 				}
 			}
 			break;
-        
+
+			case MechanismTypes::MECHANISM_TYPE::HOOK_DELIVERY:
+			{
+				auto motor = GetMotorController(motorControllers, MotorControllerUsage::MOTOR_CONTROLLER_USAGE::HOOK_DELIVERY);
+				if(motor.get() != nullptr)
+				{
+					auto hook = new HookDelivery(motor);
+					subsys = dynamic_cast<IMechanism*>(hook);
+				}
+			}
+			break;
+
             default:
 			{
 				string msg = "unknown Mechanism type ";

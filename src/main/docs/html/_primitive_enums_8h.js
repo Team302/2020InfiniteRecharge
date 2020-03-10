@@ -9,6 +9,7 @@ var _primitive_enums_8h =
       [ "DRIVE_TO_WALL", "_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca3aae85b99d2b329a6047aaec5b555681", null ],
       [ "TURN_ANGLE_ABS", "_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca04869d144dae5ecb8bbc92d0d3bc7d5f", null ],
       [ "TURN_ANGLE_REL", "_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca42009b131c97b945b3327be55bfceb13", null ],
+      [ "AUTO_SHOOT", "_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dcab125963850fa5d66063b8dff563f62a0", null ],
       [ "MAX_AUTON_PRIMITIVES", "_primitive_enums_8h.html#a35fa04dbcd6e8ebd76550c9b14ade0dca425b9a3fd3b0aa38ad428aeadc59eb67", null ]
     ] ]
 ];

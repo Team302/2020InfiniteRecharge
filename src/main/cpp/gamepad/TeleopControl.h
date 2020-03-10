@@ -16,23 +16,20 @@
 
 #pragma once 
 
-
 // C++ Includes
-
-// FRC includes
-
-// Team 302 includes
-
-// Third Party Includes
 #include <memory>
 #include <map>
 
+
+// FRC includes
+#include <frc/Driverstation.h>
+
+// Team 302 includes
 #include <gamepad/IDragonGamePad.h>
 #include <gamepad/DragonXbox.h>
 #include <gamepad/DragonGamePad.h>
-#include <frc/driverstation.h>
 
-using namespace frc;
+// Third Party Includes
 
 class TeleopControl
 {
@@ -93,6 +90,8 @@ class TeleopControl
             UNJAM_COUNTERCLOCKWISE,
             TRANSFER_UP,
             TRANSFER_DOWN,
+            MANUAL_HOOK_CONTROL_UP,
+            MANUAL_HOOK_CONTROL_DOWN,
             MAX_FUNCTIONS
         };
 
@@ -182,7 +181,7 @@ class TeleopControl
         std::vector<IDragonGamePad::BUTTON_IDENTIFIER>   m_buttonIDs;
         std::vector<int>							     m_controllerIndex;
 
-        IDragonGamePad*			            m_controllers[DriverStation::kJoystickPorts];
+        IDragonGamePad*			            m_controllers[frc::DriverStation::kJoystickPorts];
 
         mutable int                         m_count;
 };
