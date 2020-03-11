@@ -29,7 +29,7 @@ LimelightAim::LimelightAim(ControlData* controlData, double target): m_controlDa
     m_atTarget(false),
     m_target(target),
     m_turret( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::TURRET) ),
-    m_limelight(new DragonLimelight(IDragonSensor::MAIN_LIMELIGHT, "limelight", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)),
+    m_limelight(LimelightFactory::GetLimelightFactory() -> GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT)),
     m_targetPosition(0.0),
     m_start(false)
 {
