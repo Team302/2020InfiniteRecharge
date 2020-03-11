@@ -3,13 +3,10 @@
 <statedata>
 	<controlData identifier="openloop" 
 	             mode="PERCENT_OUTPUT"/>
-	<mechanismTarget stateIdentifier="HOOKDELIVERYOFF"
+	<mechanismTarget stateIdentifier="CLIMBEROFF"
 	                 controlDataIdentifier="openloop"
 					 value="0.0"/>
-	<mechanismTarget stateIdentifier="HOOKDELIVERYUP"
+    <mechanismTarget stateIdentifier="CLIMBERWINCHUP"
 	                 controlDataIdentifier="openloop"
-					 value="0.2"/>
-	<mechanismTarget stateIdentifier="HOOKDELIVERYDOWN"
-	                 controlDataIdentifier="openloop"
-					 value="-0.1"/>
+					 value="1.0"/>
 </statedata>

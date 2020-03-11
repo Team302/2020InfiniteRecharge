@@ -114,22 +114,22 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[ SWITCH_DRIVE_MODE ]          = ctrlNo;
 		m_buttonIDs[ SWITCH_DRIVE_MODE ]                = IDragonGamePad::A_BUTTON;
 
-		m_controllerIndex[ CLIMBER_EXTEND ] = ctrlNo;
-		m_buttonIDs[ CLIMBER_EXTEND ] = IDragonGamePad::A_BUTTON;
+		/*m_controllerIndex[ CLIMBER_EXTEND ] = ctrlNo;
+		m_buttonIDs[ CLIMBER_EXTEND ] = IDragonGamePad::A_BUTTON;*/
 
-		m_controllerIndex[ CLIMBER_LIFT ] = ctrlNo;
-		m_buttonIDs[ CLIMBER_LIFT ] = IDragonGamePad::X_BUTTON;
+		m_controllerIndex[ CLIMBER_WINCH_UP ] = ctrlNo;
+		m_buttonIDs[ CLIMBER_WINCH_UP ] = IDragonGamePad::X_BUTTON;
 
-		m_controllerIndex[ MANUAL_HOOK_CONTROL_UP ] 	= ctrlNo;
-		m_axisIDs[ MANUAL_HOOK_CONTROL_UP ]				= IDragonGamePad::RIGHT_TRIGGER;
-		m_controllerIndex[ MANUAL_HOOK_CONTROL_DOWN ] 	= ctrlNo;
-		m_axisIDs[ MANUAL_HOOK_CONTROL_DOWN ]         	= IDragonGamePad::LEFT_TRIGGER;
+		m_controllerIndex[ HOOK_DELIVERY_UP] 	= ctrlNo;
+		m_axisIDs[ HOOK_DELIVERY_UP]				= IDragonGamePad::RIGHT_TRIGGER;
+		m_controllerIndex[ HOOK_DELIVERY_DOWN ] 	= ctrlNo;
+		m_axisIDs[ HOOK_DELIVERY_DOWN ]         	= IDragonGamePad::LEFT_TRIGGER;
 
-		m_controllerIndex[ CONTROL_PANEL_RAISE ] = ctrlNo;
+		/*m_controllerIndex[ CONTROL_PANEL_RAISE ] = ctrlNo;
 		m_buttonIDs[ CONTROL_PANEL_RAISE] = IDragonGamePad::Y_BUTTON;
 
 		m_controllerIndex[ CONTROL_PANEL_SPIN_WHEEL] = ctrlNo;
-		m_buttonIDs[ CONTROL_PANEL_SPIN_WHEEL] = IDragonGamePad::B_BUTTON;
+		m_buttonIDs[ CONTROL_PANEL_SPIN_WHEEL] = IDragonGamePad::B_BUTTON;*/
 
     }
     else
@@ -141,7 +141,7 @@ TeleopControl::TeleopControl() : m_axisIDs(),
     if ( m_controllers[ctrlNo] != nullptr && ds->GetJoystickIsXbox(ctrlNo) )
     {
 		m_controllerIndex[ SHOOTER_HOOD_MANUAL_AXIS] = ctrlNo;
-		m_axisIDs[ SHOOTER_HOOD_MANUAL_AXIS ] = IDragonGamePad::LEFT_JOYSTICK_Y;
+		m_axisIDs[ SHOOTER_HOOD_MANUAL_AXIS ] = IDragonGamePad::RIGHT_JOYSTICK_Y;
 
 		m_controllerIndex[ TURRET_MANUAL_AXIS] = ctrlNo;
 		m_axisIDs[ TURRET_MANUAL_AXIS] = IDragonGamePad::LEFT_JOYSTICK_X;

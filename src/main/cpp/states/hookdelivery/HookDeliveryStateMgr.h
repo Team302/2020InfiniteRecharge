@@ -34,11 +34,14 @@ class HookDeliveryStateMgr
         /// @enum the various states of the BallTransfer
         enum HOOK_DELIVERY_STATE
         {
-            DOWN,
+            /*DOWN,
             RAISE,
             HIGH,
             LOWER,
-            MANUAL,
+            MANUAL,*/
+            UP,
+            DOWN,
+            OFF,
             MAX_HOOK_DELIVERY_STATES
         };
 
