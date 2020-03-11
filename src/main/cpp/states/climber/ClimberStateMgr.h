@@ -32,9 +32,9 @@ class ClimberStateMgr
         /// @enum the various states of the climber
         enum CLIMBER_STATE
         {
-            HOLD,
-            RAISE,
-            STOWED,
+            OFF,
+            WINCH_UP,
+            //STOWED,
             //CRAWL,
             MAX_INTAKE_STATES
         };

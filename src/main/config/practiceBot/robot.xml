@@ -319,8 +319,8 @@
 		<!-- todo need to add limit switches -->
 	</mechanism>
     
-	<mechanism type="CONTROL_TABLE_MANIPULATOR">
-		<motor usage="CONTROL_TABLE_MANIPULATOR"
+	<mechanism type="HOOK_DELIVERY">
+		<motor usage="HOOK_DELIVERY"
 				canId="6"
 				pdpID="6"
 				type="TALONSRX"
@@ -329,7 +329,7 @@
 				feedbackDevice="NONE"
 				countsPerRev="0"
 				gearRatio="1.0"
-				brakeMode="false"
+				brakeMode="true"
 				peakCurrentDuration="50"
 				continuousCurrentLimit="30"
 				peakCurrentLimit="40"
@@ -338,11 +338,6 @@
 				forwardlimitswitchopen="true"
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
-    	<solenoid usage="CONTROL_TABLE_MANIPULATOR"
-    		      canId="9"
-    		      channel="1"
-    		      reversed="false" />
-		<colorsensor port="kOnboard" />
 	</mechanism>
     
 	<mechanism type="CLIMBER">
@@ -364,10 +359,10 @@
 				forwardlimitswitchopen="true"
 				reverselimitswitch="false"
 				reverselimitswitchopen="true"/>
-    	<solenoid usage="CLIMBER"
+    	<!-- solenoid usage="CLIMBER"
     		      canId="9"
-    		      channel="2"
-    		      reversed="false" />
+    		      channel="6"
+    		      reversed="false" / -->
 	</mechanism>
     
 	<!--mechanism type="CRAWLER">

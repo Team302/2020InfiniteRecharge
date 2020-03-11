@@ -90,8 +90,12 @@ class TeleopControl
             UNJAM_COUNTERCLOCKWISE,
             TRANSFER_UP,
             TRANSFER_DOWN,
+            HOOK_DELIVERY_UP,
+            HOOK_DELIVERY_DOWN,
             MANUAL_HOOK_CONTROL_UP,
             MANUAL_HOOK_CONTROL_DOWN,
+            CLIMBER_OFF,
+            CLIMBER_WINCH_UP,
             MAX_FUNCTIONS
         };
 

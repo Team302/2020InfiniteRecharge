@@ -53,15 +53,15 @@ ClimberStateMgr::ClimberStateMgr() : m_stateVector(),
 {
     // Parse the configuration file 
     auto stateXML = make_unique<StateDataDefn>();
-    vector<MechanismTargetData*> targetData = stateXML.get()->ParseXML( MechanismTypes::MECHANISM_TYPE::INTAKE );
+    vector<MechanismTargetData*> targetData = stateXML.get()->ParseXML( MechanismTypes::MECHANISM_TYPE::CLIMBER );
 
     // initialize the xml string to state map
     map<string, CLIMBER_STATE> stateStringToEnumMap;
-    stateStringToEnumMap["HOLD"] = CLIMBER_STATE::HOLD;
-    stateStringToEnumMap["RAISE"]  = CLIMBER_STATE::RAISE;
-    stateStringToEnumMap["STOWED"] = CLIMBER_STATE::STOWED;
+    stateStringToEnumMap["CLIMBEROFF"] = CLIMBER_STATE::OFF;
+    stateStringToEnumMap["CLIMBERWINCHUP"]  = CLIMBER_STATE::WINCH_UP;
+    //stateStringToEnumMap["STOWED"] = CLIMBER_STATE::STOWED;
     //stateStringToEnumMap["CRAWL"] = CLIMBER_STATE::CRAWL;
-    m_stateVector.resize(4);
+    m_stateVector.resize(2);
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -81,7 +81,7 @@ ClimberStateMgr::ClimberStateMgr() : m_stateVector(),
 
                 switch ( stateEnum )
                 {
-                    case CLIMBER_STATE::HOLD:
+                    /*case CLIMBER_STATE::HOLD:
                     {   
                         auto thisState = new ClimberState( controlData, target, solState );
                         m_stateVector[stateEnum] = thisState;
@@ -94,8 +94,8 @@ ClimberStateMgr::ClimberStateMgr() : m_stateVector(),
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
-
-                    case CLIMBER_STATE::STOWED:
+                    */
+                    case CLIMBER_STATE::OFF:
                     {   
                         auto thisState = new ClimberState( controlData, target, solState );
                         m_stateVector[stateEnum] = thisState;
@@ -105,15 +105,12 @@ ClimberStateMgr::ClimberStateMgr() : m_stateVector(),
                     }
                     break;
 
-                   /* case CLIMBER_STATE::CRAWL:
+                   case CLIMBER_STATE::WINCH_UP:
                     {   
                         auto thisState = new ClimberState( controlData, target, solState );
-                        m_stateEnumToObjectMap[CLIMBER_STATE::CRAWL] = thisState;
-                        m_currentState = thisState;
-                        m_currentStateEnum = stateEnum;
-                        m_currentState->Init();
+                        m_stateVector[stateEnum] = thisState;
                     }
-                    break; */
+                    break; 
 
                     default:
                     {
@@ -142,7 +139,15 @@ void ClimberStateMgr::RunCurrentState()
     auto controller = TeleopControl::GetInstance();
     if ( controller != nullptr )
     {
-        if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_HOLD ) )
+        if( controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_WINCH_UP))
+        {
+            SetCurrentState(CLIMBER_STATE::WINCH_UP, false);
+        }
+        else
+        {
+            SetCurrentState(CLIMBER_STATE::OFF, false);
+        }
+        /*if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_HOLD ) )
         {
             SetCurrentState( CLIMBER_STATE::HOLD, false );
         }
@@ -153,7 +158,7 @@ void ClimberStateMgr::RunCurrentState()
         else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_LIFT ) )
         {
             SetCurrentState( CLIMBER_STATE::STOWED, false );
-        }
+        }*/
         /*else if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_CRAWL ) )
         {
             SetCurrentState( CLIMBER_STATE::CRAWL, false );

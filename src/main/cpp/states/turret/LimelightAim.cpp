@@ -72,7 +72,7 @@ void LimelightAim::Run()
    {
        scaledOffset = targetHorizontalOffset + 2.0 + (targetHorizontalOffset/28.0) * 5.0;
    }*/
-   m_turret->SetOutput(ControlModes::POSITION_DEGREES, currentPosition + targetHorizontalOffset + 1.0);
+   m_turret->SetOutput(ControlModes::POSITION_DEGREES, currentPosition + targetHorizontalOffset + 2.0);
 }
 
 bool LimelightAim::AtTarget() const

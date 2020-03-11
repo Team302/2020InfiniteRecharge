@@ -218,8 +218,8 @@ void Robot::TeleopPeriodic()
     //frc::SmartDashboard::PutNumber("rightSpeed", rightSpeed);
     /*frc::SmartDashboard::PutNumber("Turret position", m_turret->GetCurrentPosition());
     frc::SmartDashboard::PutNumber("Shooter Hood position", m_shooterHood->GetCurrentPosition());
-    frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());
-    frc::SmartDashboard::PutNumber("Shooter speed", m_shooter->GetCurrentSpeed());*/
+    frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());*/
+    frc::SmartDashboard::PutNumber("Shooter speed", m_shooter->GetCurrentSpeed());
     //frc::SmartDashboard::PutNumber("Limelight tx", m_limelight.get()->GetTargetHorizontalOffset());
     /*if(m_controller->IsButtonPressed(TeleopControl::CONTROL_PANEL_SPIN_WHEEL))
     {
