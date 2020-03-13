@@ -41,7 +41,7 @@ m_button()
     m_button[YELLOW_PAD] = new DigitalButton(m_gamepad, YELLOW_PAD_DIGITAL_ID);
     m_button[BLUE_PAD] = new DigitalButton(m_gamepad, BLUE_PAD_DIGITAL_ID);
     m_button[GREEN_PAD] = new DigitalButton(m_gamepad, GREEN_PAD_DIGITAL_ID);
-
+}
     /*DragonDrumset::~DragonDrumset()
     {
     delete m_gamepad;
@@ -89,7 +89,7 @@ m_button()
     }
     }
 
-    void DragonGamepad::SetAxisProfile
+    void DragonDrumset::SetAxisProfile
     (
     AXIS_IDENTIFIER axis,
     AXIS_PROFILE curve
@@ -105,7 +105,7 @@ m_button()
     }
     }
 
-    void DragonGamepad::SetAxisScale
+    void DragonDrumset::SetAxisScale
     (
     AXIS_IDENTIFIER axis,
     float scaleFactor
@@ -121,7 +121,7 @@ m_button()
     }
     }
 
-    void DragonGamepad::SetButtonMode
+    void DragonDrumset::SetButtonMode
     (
     BUTTON_IDENTIFIER button,
     BUTTON_MODE mode
@@ -144,7 +144,7 @@ m_button()
     }
 
 
-    bool DragonGamepad::WasButtonPressed
+    bool DragonDrumset::WasButtonPressed
     (
     BUTTON_IDENTIFIER button
     ) const
@@ -161,7 +161,7 @@ m_button()
     return isPressed;
     }
 
-    bool DragonGamepad::WasButtonReleased
+    bool DragonDrumset::WasButtonReleased
     (
     BUTTON_IDENTIFIER button
     ) const
