@@ -92,7 +92,7 @@ class IDragonGamePad
             RED_PAD,
             GREEN_PAD,
             BLUE_PAD,
-            YELLOW_PAD,
+            YELLOW_PAD
         };
 
 

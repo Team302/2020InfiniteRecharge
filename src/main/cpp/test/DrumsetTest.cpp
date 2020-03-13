@@ -21,4 +21,6 @@ void DrumsetTest::periodic()
     frc::SmartDashboard::PutBoolean("Yellow Pad", YellowPad);
     bool GreenPad = m_drumset -> IsButtonPressed(IDragonGamePad::BUTTON_IDENTIFIER::GREEN_PAD);
     frc::SmartDashboard::PutBoolean("Green Pad", GreenPad);
+    bool BluePad = m_drumset -> IsButtonPressed(IDragonGamePad::BUTTON_IDENTIFIER::BLUE_PAD);
+    frc::SmartDashboard::PutBoolean("Blue Pad", BluePad);
 }
