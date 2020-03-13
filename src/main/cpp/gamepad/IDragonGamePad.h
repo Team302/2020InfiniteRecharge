@@ -88,7 +88,11 @@ class IDragonGamePad
             GAMEPAD_DIAL_26,
             GAMEPAD_DIAL_27,
             GAMEPAD_BIG_RED_BUTTON,
-            MAX_BUTTONS
+            MAX_BUTTONS,
+            RED_PAD,
+            GREEN_PAD,
+            BLUE_PAD,
+            YELLOW_PAD,
         };
 
 
