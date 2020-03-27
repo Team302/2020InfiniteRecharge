@@ -149,4 +149,31 @@ bool DragonDDR::WasButtonPressed
 ) const
 {
     bool isPressed = false;
+    if ( m_button[button] != nullptr )
+    {
+        isPressed = m_button[button] -> WasButtonPressed();
+    }
+    else
+    {
+        Logger::GetLogger() -> LogError( string("DragonGamepad::WasButtonPressed no button"), to_string(button) );
+    }
+    return isPressed;
 }
+
+bool DragonDDR::WasButtonReleased
+(
+    BUTTON_IDENTIFIER button
+) const
+{
+    bool isPressed = false;
+    if ( m_button[button] != nullptr )
+    {
+        isPressed = m_button[button] -> WasButtonReleased();
+    }
+    else
+    {
+        Logger::GetLogger() -> LogError( string("DragonGamepad::WasButtonReleased no button"), to_string(button) );
+    }
+    return isPressed;
+}
+
