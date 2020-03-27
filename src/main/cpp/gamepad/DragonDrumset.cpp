@@ -42,25 +42,25 @@ m_button()
     m_button[BLUE_PAD] = new DigitalButton(m_gamepad, BLUE_PAD_DIGITAL_ID);
     m_button[GREEN_PAD] = new DigitalButton(m_gamepad, GREEN_PAD_DIGITAL_ID);
 }
-    /*DragonDrumset::~DragonDrumset()
-    {
+/*DragonDrumset::~DragonDrumset()
+{
     delete m_gamepad;
     m_gamepad = nullptr;
-    }*/
+}*/
 
-    double DragonDrumset::GetAxisValue
-    (
+double DragonDrumset::GetAxisValue
+(
     AXIS_IDENTIFIER axis
-    ) const
-    {
+) const
+{
     double value = 0.0;
-    }
+}
 
-    bool DragonDrumset::IsButtonPressed
-    (
+bool DragonDrumset::IsButtonPressed
+(
     BUTTON_IDENTIFIER button
-    ) const
-    {
+) const
+{
     bool isPressed = false;
     if ( m_button[button] != nullptr )
     {
@@ -71,14 +71,14 @@ m_button()
         Logger::GetLogger()->LogError( string("DragonGamepad::IsButtonPressed no button"), to_string(button) );
     }
     return isPressed;
-    }
+}
 
-    void DragonDrumset::SetAxisDeadband
-    (
+void DragonDrumset::SetAxisDeadband
+(
     AXIS_IDENTIFIER axis,
     AXIS_DEADBAND type
-    )
-    {
+)
+{
     if ( m_axis[axis] != nullptr )
     {
         m_axis[axis]->SetDeadBand( type );
@@ -87,14 +87,14 @@ m_button()
     {
         Logger::GetLogger()->LogError( string("DragonGamepad::SetAxisDeadband no axis"), to_string(axis) );
     }
-    }
+}
 
-    void DragonDrumset::SetAxisProfile
-    (
+void DragonDrumset::SetAxisProfile
+(
     AXIS_IDENTIFIER axis,
     AXIS_PROFILE curve
-    )
-    {
+)
+{
     if ( m_axis[axis] != nullptr )
     {
         m_axis[axis]->SetAxisProfile( curve );
@@ -103,14 +103,14 @@ m_button()
     {
         Logger::GetLogger()->LogError( string("DragonGamepad::SetAxisProfile no axis"), to_string(axis) );
     }
-    }
+}
 
-    void DragonDrumset::SetAxisScale
-    (
+void DragonDrumset::SetAxisScale
+(
     AXIS_IDENTIFIER axis,
     float scaleFactor
-    )
-    {
+)
+{
     if ( m_axis[axis] != nullptr )
     {
         m_axis[axis]->SetAxisScaleFactor( scaleFactor );
@@ -119,14 +119,14 @@ m_button()
     {
         Logger::GetLogger()->LogError( string("DragonGamepad::SetAxisScale no axis"), to_string(axis) );
     }
-    }
+}
 
-    void DragonDrumset::SetButtonMode
-    (
+void DragonDrumset::SetButtonMode
+(
     BUTTON_IDENTIFIER button,
     BUTTON_MODE mode
-    ) 
-    {
+) 
+{
     if ( m_button[button] != nullptr )
     {
         if ( mode == BUTTON_MODE::TOGGLE)
@@ -140,15 +140,14 @@ m_button()
     {
         Logger::GetLogger()->LogError( string("DragonGamepad::SetButtonMode no button"), to_string(button) );
     }
+}
 
-    }
 
-
-    bool DragonDrumset::WasButtonPressed
-    (
+bool DragonDrumset::WasButtonPressed
+(
     BUTTON_IDENTIFIER button
-    ) const
-    {
+) const
+{
     bool isPressed = false;
     if ( m_button[button] != nullptr )
     {
@@ -159,13 +158,13 @@ m_button()
         Logger::GetLogger()->LogError( string("DragonGamepad::WasButtonPressed no button"), to_string(button) );
     }
     return isPressed;
-    }
+}
 
-    bool DragonDrumset::WasButtonReleased
-    (
+bool DragonDrumset::WasButtonReleased
+(
     BUTTON_IDENTIFIER button
-    ) const
-    {
+) const
+{
     bool isPressed = false;
     if ( m_button[button] != nullptr )
     {
@@ -176,9 +175,9 @@ m_button()
         Logger::GetLogger()->LogError( string("DragonGamepad::WasButtonReleased no button"), to_string(button) );
     }
     return isPressed;
-
-    
-    
-    
 }
+    
+    
+    
+
 

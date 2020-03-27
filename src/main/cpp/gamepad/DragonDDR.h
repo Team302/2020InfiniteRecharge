@@ -24,6 +24,12 @@ class DragonDDR : IDragonGamePad
         BUTTON_IDENTIFIER button
     ) const override;
 
+    void SetAxisDeadband
+    (
+        AXIS_IDENTIFIER axis,
+        AXIS_DEADBAND type
+    ) override;
+
     void SetAxisProfile
     (
         AXIS_IDENTIFIER axis,
@@ -63,7 +69,14 @@ class DragonDDR : IDragonGamePad
         vector <AnalogAxis*> m_axis;
         vector <float> m_axisScale;
         vector <float> m_axisInversionFactor;
-        vector<AXIS_PROFILE> m_axisProfile;
-        
+        vector <AXIS_PROFILE> m_axisProfile;
+        vector <IButton*> m_button;
+
+        const int DDR_UP_DIGITAL_ID = 0;
+        const int DDR_RIGHT_DIGITAL_ID = 1;
+        const int DDR_DOWN_DIGITAL_ID = 3;
+        const int DDR_LEFT_DIGITAL_ID = 4;
+
+        DragonDDR() = delete;
 
 };
