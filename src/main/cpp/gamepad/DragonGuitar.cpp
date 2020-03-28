@@ -110,6 +110,22 @@ void DragonGuitar::SetAxisProfile
     }
 }
 
+void DragonGuitar::SetAxisScale
+(
+    AXIS_IDENTIFIER axis,
+    float scaleFactor
+)
+{
+    if ( m_axis[axis] != nullptr )
+    {
+        m_axis[axis]->SetAxisScaleFactor( scaleFactor );
+    }        
+    else
+    {
+        Logger::GetLogger()->LogError( string("DragonGuitar::SetAxisScale no axis"), to_string(axis) );
+    }
+}
+
 void DragonGuitar::SetButtonMode
 (
     BUTTON_IDENTIFIER button,

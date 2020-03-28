@@ -13,6 +13,7 @@ using namespace std;
 
 class DragonDDR : IDragonGamePad
 {
+    public:
     DragonDDR 
     (
         int port

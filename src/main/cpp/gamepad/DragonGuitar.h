@@ -34,7 +34,7 @@ class DragonGuitar : public IDragonGamePad
         void SetAxisProfile
         (
             AXIS_IDENTIFIER axis,
-            AXIS_PROFILE
+            AXIS_PROFILE curve
         ) override;
 
         void SetAxisScale
