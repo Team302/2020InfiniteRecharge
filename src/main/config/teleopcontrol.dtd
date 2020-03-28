@@ -38,6 +38,7 @@
                               GAMEPAD_BUTTON_14_UP | GAMEPAD_BUTTON_14_DOWN | GAMEPAD_BUTTON_15_UP | GAMEPAD_BUTTON_15_DOWN |
                               GAMEPAD_DIAL_22 | GAMEPAD_DIAL_23 | GAMEPAD_DIAL_24 | GAMEPAD_DIAL_25 | GAMEPAD_DIAL_26 | GAMEPAD_DIAL_27 | GAMEPAD_BIG_RED_BUTTON |
                               RED_PAD | YELLOW_PAD | GREEN_PAD | BLUE_PAD | 
+                              DDR_UP | DDR_RIGHT | DDR_DOWN | DDR_LEFT |
                               MAX_BUTTONS | UNDEFINED_BUTTON) "UNDEFINED_BUTTON"
 
             axisID                  (LEFT_JOYSTICK_X | LEFT_JOYSTICK_Y | RIGHT_JOYSTICK_X | RIGHT_JOYSTICK_Y |
