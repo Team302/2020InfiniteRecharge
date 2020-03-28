@@ -96,7 +96,14 @@ class IDragonGamePad
             DDR_UP,
             DDR_RIGHT,
             DDR_DOWN,
-            DDR_LEFT
+            DDR_LEFT,
+            GUITAR_GREEN,
+            GUITAR_RED,
+            GUITAR_YELLOW,
+            GUITAR_BLUE,
+            GUITAR_ORANGE,
+            GUITAR_STRUM_UP,
+            GUITAR_STRUM_DOWN
         };
 
 

@@ -70,7 +70,7 @@ bool DragonDDR::IsButtonPressed
     }
     else
     {
-        Logger::GetLogger() -> LogError( string("DragonGamepad::IsButtonPressed no button"), to_string(button) );
+        Logger::GetLogger() -> LogError( string("DragonDDR::IsButtonPressed no button"), to_string(button) );
     }
     return isPressed;
 }
@@ -87,7 +87,7 @@ void DragonDDR::SetAxisDeadband
     }
     else
     {
-        Logger::GetLogger() -> LogError( string("DragonGamepad::SetAxisDeadband no axis"), to_string(axis) );
+        Logger::GetLogger() -> LogError( string("DragonDDR::SetAxisDeadband no axis"), to_string(axis) );
     }
 }
 
@@ -103,7 +103,7 @@ void DragonDDR::SetAxisProfile
     }
     else
     {
-        Logger::GetLogger() -> LogError( string("DragonGamepad::SetAxisProfile no axis"), to_string(axis) );
+        Logger::GetLogger() -> LogError( string("DragonDDR::SetAxisProfile no axis"), to_string(axis) );
     }
 }
 
@@ -119,7 +119,7 @@ void DragonDDR::SetAxisScale
     }
     else
     {
-        Logger::GetLogger() -> LogError( string("DragonGamepad::SetAxisScale no axis"), to_string(axis) );
+        Logger::GetLogger() -> LogError( string("DragonDDR::SetAxisScale no axis"), to_string(axis) );
     }
 }
 
@@ -139,7 +139,7 @@ void DragonDDR::SetButtonMode
     }
     else
     {
-        Logger::GetLogger() -> LogError( string("DragonGamepad::SetButtonMode no button"), to_string(button) );
+        Logger::GetLogger() -> LogError( string("DragonDDR::SetButtonMode no button"), to_string(button) );
     }
 }
 
@@ -155,7 +155,7 @@ bool DragonDDR::WasButtonPressed
     }
     else
     {
-        Logger::GetLogger() -> LogError( string("DragonGamepad::WasButtonPressed no button"), to_string(button) );
+        Logger::GetLogger() -> LogError( string("DragonDDR::WasButtonPressed no button"), to_string(button) );
     }
     return isPressed;
 }
@@ -172,7 +172,7 @@ bool DragonDDR::WasButtonReleased
     }
     else
     {
-        Logger::GetLogger() -> LogError( string("DragonGamepad::WasButtonReleased no button"), to_string(button) );
+        Logger::GetLogger() -> LogError( string("DragonDDR::WasButtonReleased no button"), to_string(button) );
     }
     return isPressed;
 }

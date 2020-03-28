@@ -68,7 +68,7 @@ bool DragonDrumset::IsButtonPressed
     }
     else
     {
-        Logger::GetLogger()->LogError( string("DragonGamepad::IsButtonPressed no button"), to_string(button) );
+        Logger::GetLogger()->LogError( string("DragonDrumset::IsButtonPressed no button"), to_string(button) );
     }
     return isPressed;
 }
@@ -85,7 +85,7 @@ void DragonDrumset::SetAxisDeadband
     }        
     else
     {
-        Logger::GetLogger()->LogError( string("DragonGamepad::SetAxisDeadband no axis"), to_string(axis) );
+        Logger::GetLogger()->LogError( string("DragonDrumset::SetAxisDeadband no axis"), to_string(axis) );
     }
 }
 
@@ -101,7 +101,7 @@ void DragonDrumset::SetAxisProfile
     }        
     else
     {
-        Logger::GetLogger()->LogError( string("DragonGamepad::SetAxisProfile no axis"), to_string(axis) );
+        Logger::GetLogger()->LogError( string("DragonDrumset::SetAxisProfile no axis"), to_string(axis) );
     }
 }
 
@@ -117,7 +117,7 @@ void DragonDrumset::SetAxisScale
     }        
     else
     {
-        Logger::GetLogger()->LogError( string("DragonGamepad::SetAxisScale no axis"), to_string(axis) );
+        Logger::GetLogger()->LogError( string("DragonDrumset::SetAxisScale no axis"), to_string(axis) );
     }
 }
 
@@ -138,7 +138,7 @@ void DragonDrumset::SetButtonMode
     }
     else
     {
-        Logger::GetLogger()->LogError( string("DragonGamepad::SetButtonMode no button"), to_string(button) );
+        Logger::GetLogger()->LogError( string("DragonDrumset::SetButtonMode no button"), to_string(button) );
     }
 }
 
@@ -155,7 +155,7 @@ bool DragonDrumset::WasButtonPressed
     }
     else
     {
-        Logger::GetLogger()->LogError( string("DragonGamepad::WasButtonPressed no button"), to_string(button) );
+        Logger::GetLogger()->LogError( string("DragonDrumset::WasButtonPressed no button"), to_string(button) );
     }
     return isPressed;
 }
@@ -172,7 +172,7 @@ bool DragonDrumset::WasButtonReleased
     }
     else
     {
-        Logger::GetLogger()->LogError( string("DragonGamepad::WasButtonReleased no button"), to_string(button) );
+        Logger::GetLogger()->LogError( string("DragonDrumset::WasButtonReleased no button"), to_string(button) );
     }
     return isPressed;
 }
