@@ -36,11 +36,8 @@ void Shooter::SetOutput(ControlModes::CONTROL_TYPE controlType, double value)
         
     }
     m_topMotor.get()->SetControlMode(controlType);
-    m_bottomMotor.get()->SetControlMode(controlType);
     m_topMotor.get()->Set(value);
-    m_bottomMotor.get()->Set(value);
 }
-
 void Shooter::SetOutput(ControlModes::CONTROL_TYPE controlType, double upperValue, double lowerValue)
 {
     switch(controlType)

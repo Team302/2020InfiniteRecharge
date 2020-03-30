@@ -35,6 +35,7 @@ class ShooterStateMgr
             OFF,
             GET_READY,
             SHOOT,
+            DIFFERENT_SPEEDS,
             MAX_SHOOTER_STATES
         };
 
