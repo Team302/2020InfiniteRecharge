@@ -21,13 +21,15 @@
                                           BALLTRANSFEROFF | BALLTRANSPORTTOIMPELLER | BALLTRANSFERTOSHOOTER | BALLTRANSFEREJECT |
                                           SHOOTERHOODHOLD | SHOOTERHOODUP | SHOOTERHOODDOWN | SHOOTERHOODMANUAL |
                                           TURRETHOLD | TURRETAUTOAIM | TURRETMANUALAIM | TURRETTURNANGLE |
-                                          SHOOTEROFF | SHOOTERGETREADY | SHOOTERSHOOT |
+                                          SHOOTEROFF | SHOOTERGETREADY | SHOOTERSHOOT | SHOOTERDIFFERENTSPEEDS |
                                           CONTROLPANELRAISE | CONTROLPANELMANUAL | CONTROLPANELSTOW | CONTROLPANELTURN | CONTROLPANELCOLOR | CONTROLPANELMANUAL |
                                           HOOKDELIVERYOFF | HOOKDELIVERYUP | HOOKDELIVERYDOWN |
                                           CLIMBEROFF | CLIMBERWINCHUP |
                                           UNKNOWN ) "UNKNOWN"
           controlDataIdentifier         CDATA #REQUIRED
           value                         CDATA #REQUIRED
+          upperTarget                   CDATA #REQUIRED
+          lowerTarget                   CDATA #REQUIRED 
           solenoid                      ( NONE | ON | OFF ) "NONE"
           failoverControlDataIdentifier CDATA #IMPLIED
           failoverValue                 CDATA #IMPLIED

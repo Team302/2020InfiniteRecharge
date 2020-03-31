@@ -16,5 +16,9 @@
 	<mechanismTarget stateIdentifier="SHOOTERSHOOT"
 	                 controlDataIdentifier="closedloop"
 					 value="36.50"/>
+	<mechanismTarget stateIdentifier="SHOOTERDIFFERENTSPEEDS"
+					 controlDataIdentifier="openloop"
+					 upperTarget="1"
+					 lowerTarget="1*upperTarget"
 
 </statedata>
