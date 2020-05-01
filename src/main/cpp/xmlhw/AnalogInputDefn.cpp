@@ -53,7 +53,6 @@ shared_ptr<DragonAnalogInput> AnalogInputDefn::ParseXML
 )
 {
     shared_ptr<DragonAnalogInput> sensor;
-    string  usage;
 	string  type;
 	int 	analogID = 0;
     float	voltageMin = 0.0;
@@ -65,11 +64,7 @@ shared_ptr<DragonAnalogInput> AnalogInputDefn::ParseXML
 
     for (xml_attribute attr = analogInputNode.first_attribute(); attr; attr = attr.next_attribute())
     {
-        if ( strcmp( attr.name(), "usage" ) == 0 )
-        {
-            usage = attr.as_string();
-        }
-        else if ( strcmp( attr.name(), "type" ) == 0 )
+        if ( strcmp( attr.name(), "type" ) == 0 )
         {
             type = attr.as_string();
         }

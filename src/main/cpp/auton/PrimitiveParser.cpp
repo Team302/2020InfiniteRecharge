@@ -37,19 +37,8 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
 )
 {
 
-    PrimitiveParamsVector paramVector;
+    PrimitiveParamsVector paramVector;   //  output
 
-    PRIMITIVE_IDENTIFIER        primitiveType = UNKNOWN_PRIMITIVE;
-    float                       time = 15.0;
-    float                       distance = 0.0;
-    float                       heading = 0.0;
-    float                       startDriveSpeed = 0.0;
-    float                       endDriveSpeed = 0.0;
-    float                       xloc = 0.0;
-    float                       yloc = 0.0;
-    BallManipulator::BALL_MANIPULATOR_STATE ballState = BallManipulator::BALL_MANIPULATOR_STATE::OFF;
-    float                       turretAngle = 0.0;
-    bool hasError = false;
     string fulldirfile = string("/home/lvuser/auton/");
     fulldirfile += fileName;
     // initialize the xml string to enum maps
@@ -89,7 +78,17 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
                 Logger::GetLogger()->LogError( string("PrimitiveParser::ParseXML"), string(primitiveNode.name()));
                 if ( strcmp( primitiveNode.name(), "primitive") == 0 )
                 {
-
+                    PRIMITIVE_IDENTIFIER primitiveType = UNKNOWN_PRIMITIVE;
+                    float time = 15.0;
+                    float distance = 0.0;
+                    float heading = 0.0;
+                    float startDriveSpeed = 0.0;
+                    float endDriveSpeed = 0.0;
+                    float xloc = 0.0;
+                    float yloc = 0.0;
+                    BallManipulator::BALL_MANIPULATOR_STATE ballState = BallManipulator::BALL_MANIPULATOR_STATE::OFF;
+                    float turretAngle = 0.0;
+                    bool hasError = false;
                     for (xml_attribute attr = primitiveNode.first_attribute(); attr; attr = attr.next_attribute())
                     {
                         if ( strcmp( attr.name(), "id" ) == 0 )

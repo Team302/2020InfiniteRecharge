@@ -85,18 +85,18 @@ void DriveDistance::Run()
 	Logger::GetLogger() -> LogError(string("DriveDistance::Run()"), string("Arrived!"));
 	SuperDrive::Run();
 
-	if (m_arcing) 
-	{
+	//if (m_arcing)
+	//{
 		//Calculate progress from 0 to 1
-		float progress = abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition() - m_initialDistance);
-		progress /= abs(m_targetDistance); //progress = progress / targetDistance
+		//float progress = abs( ChassisFactory::GetChassisFactory()->GetIChassis()->GetCurrentPosition() - m_initialDistance);
+		//progress /= abs(m_targetDistance); //progress = progress / targetDistance
 
-		float newTargetHeading = 0;
+		//float newTargetHeading = 0;
 		//Linear interpolation between start heading and end heading based on progress
-		newTargetHeading += (1.0 - progress) * m_startHeading;// newTargetheading = newTargetHeading + (1.0 - progress) * m_startHeading
-		newTargetHeading += (progress) * m_endHeading;
+		//newTargetHeading += (1.0 - progress) * m_startHeading;// newTargetheading = newTargetHeading + (1.0 - progress) * m_startHeading
+		//newTargetHeading += (progress) * m_endHeading;
 		//ChassisFactory::GetChassisFactory()->GetIChassis()->SetTargetHeading(newTargetHeading);
-	}
+	//}
 
 
 	CalculateSlowDownDistance();

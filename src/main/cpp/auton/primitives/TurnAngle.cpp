@@ -55,15 +55,15 @@ TurnAngle::TurnAngle() : m_chassis( ChassisFactory::GetChassisFactory()->GetICha
 void TurnAngle::Init(PrimitiveParams* params) 
 {
 	m_isDone = false;
-	auto startHeading = 0.0;
 	auto pigeon = PigeonFactory::GetFactory()->GetPigeon();
 	if ( pigeon != nullptr )
 	{
-		startHeading = pigeon->GetYaw();
+		auto startHeading = pigeon->GetYaw();
 		m_targetAngle = startHeading + params->GetHeading();
 	}
 
 
+	/**
 	auto cd = make_shared<ControlData>( ControlModes::CONTROL_TYPE::POSITION_INCH, 
 									ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER,
 									string("TurnAngle"),
@@ -76,6 +76,7 @@ void TurnAngle::Init(PrimitiveParams* params)
 									0.0,
 									1.0,
 									0.0   );
+									**/
 	//m_chassis->SetControlConstants( cd.get() );
 
 	// todo re-work

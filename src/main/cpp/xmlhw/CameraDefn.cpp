@@ -143,7 +143,6 @@ cs::UsbCamera CameraDefn::ParseXML
 		{
             string msg = "camera server not found ";
             Logger::GetLogger()->LogError( "CameraDefn::ParseXML", msg );
-            hasError = true;
 		}
 	}
 	return camera;

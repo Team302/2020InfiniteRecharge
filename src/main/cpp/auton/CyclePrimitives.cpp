@@ -96,7 +96,7 @@ void CyclePrimitives::GetNextPrim()
 	PrimitiveParams* currentPrimParam = (m_currentPrimSlot < (int) m_primParams.size()) ? m_primParams[m_currentPrimSlot] : nullptr;
 
 	m_currentPrim = (currentPrimParam != nullptr) ? m_primFactory->GetIPrimitive(currentPrimParam) : nullptr;
-	if (m_currentPrim != nullptr)
+	if (m_currentPrim != nullptr && currentPrimParam != nullptr)
 	{
 		m_currentPrim->Init(currentPrimParam);
 		m_powerCells->Init(currentPrimParam);

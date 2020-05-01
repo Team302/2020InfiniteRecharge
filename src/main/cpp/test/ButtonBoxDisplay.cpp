@@ -27,7 +27,7 @@ void ButtonBoxDisplay::periodic()
     bool ButtonTen = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_10);
     bool ButtonEleven = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_11);
     bool ButtonTwelve = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_12);
-    bool ButtonThirteen = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_13);
+    //bool ButtonThirteen = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_13);
 
     bool ButtonFourteenUp = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_14_UP);
     bool ButtonFourteenDown = m_GamePad -> IsButtonPressed( IDragonGamePad::BUTTON_IDENTIFIER::GAMEPAD_BUTTON_14_DOWN);

@@ -80,6 +80,6 @@ ColorSensorV3* ColorSensorDefn::ParseXML
     if(!hasError)
     {
         sensor = new ColorSensorV3(port);
-    };
+    }
     return sensor;
 }

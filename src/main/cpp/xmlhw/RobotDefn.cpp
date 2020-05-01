@@ -113,11 +113,11 @@ void RobotDefn::ParseXML()
                 }
                 else if ( strcmp(child.name(), "pigeon") == 0 )
                 {
-                    auto pigeon = pigeonXML.get()->ParseXML( child);
+                    pigeonXML.get()->ParseXML( child);
                 }
                 else if ( strcmp(child.name(), "limelight") == 0 )
                 {
-                    ///auto limelight = limelightXML.get()->ParseXML( child);
+                    limelightXML.get()->ParseXML( child);
                 }
                 else
                 {

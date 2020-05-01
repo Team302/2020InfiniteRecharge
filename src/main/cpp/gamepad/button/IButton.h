@@ -66,8 +66,8 @@ class IButton
 
     protected:
         IButton() = default;
-        IButton(const IButton& that);
-        IButton& operator= (const IButton& that);
+        IButton(const IButton& that) = delete;
+        IButton& operator= (const IButton& that) = delete;
         virtual ~IButton() = default;
 };
 

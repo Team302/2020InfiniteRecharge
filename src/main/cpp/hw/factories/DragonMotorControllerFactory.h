@@ -26,12 +26,12 @@
 //========================================================================================================
 
 // C++ Includes
-
-
-// FRC includes
 #include <map>
 #include <memory>
 #include <string>
+
+// FRC includes
+
 
 // Team 302 includes
 #include <subsys/IMechanism.h>

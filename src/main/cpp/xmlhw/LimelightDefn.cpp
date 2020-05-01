@@ -157,7 +157,7 @@ DragonLimelight* LimelightDefn::ParseXML(pugi::xml_node    limelightNode)
         {
             limelight = LimelightFactory::GetLimelightFactory()->CreateLimelight
             (
-                IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT,
+                usage,
                 tableName,
                 mountingHeight,
                 horizontalOffset,

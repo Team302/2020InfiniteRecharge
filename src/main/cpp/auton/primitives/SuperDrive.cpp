@@ -100,6 +100,7 @@ void SuperDrive::Init(PrimitiveParams* params)
 	{
 		m_startHeading = pigeon->GetYaw();
 	}
+	/**
 	auto cd = make_shared<ControlData>( ControlModes::CONTROL_TYPE::PERCENT_OUTPUT, 
 							   			ControlModes::CONTROL_RUN_LOCS::MOTOR_CONTROLLER,
 							   			string("SuperDrive"),
@@ -112,6 +113,7 @@ void SuperDrive::Init(PrimitiveParams* params)
 							   			0.0,
 							   			1.0,
 							  			0.0   );
+							  			**/
 	//m_chassis->SetControlConstants( cd.get() );
 	m_leftSpeed = m_targetSpeed > 0.0 ? 0.2 : -0.2;
 	m_rightSpeed = m_targetSpeed > 0.0 ? 0.2 : -0.2;

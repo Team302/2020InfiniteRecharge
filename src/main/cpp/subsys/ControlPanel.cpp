@@ -161,8 +161,8 @@ void ControlPanel::SetControlConstants
 ControlPanelColors::COLOR ControlPanel::GetColorSeen()
 {
     frc::Color detectedColor = m_color->GetColor();
-    uint32_t detectedProximity = m_color->GetProximity();
-    std::string colorString;
+    //uint32_t detectedProximity = m_color->GetProximity();
+    //std::string colorString;
     double confidence = 0.0;
     frc::Color matchedColor = m_colorMatcher->MatchClosestColor(detectedColor, confidence);
     if(matchedColor == kGreenTarget && confidence >= 0.94 )

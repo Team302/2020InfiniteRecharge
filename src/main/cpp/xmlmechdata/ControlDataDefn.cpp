@@ -93,7 +93,7 @@ ControlData* ControlDataDefn::ParseXML
 				mode = it->second;
 			}
         }
-		else if (( attr.name(), "constrolServer" ) == 0 )
+		else if ( strcmp( attr.name(), "constrolServer" ) == 0 )
 		{
 			auto itr = serverMap.find( string( attr.value() ) );
 			if ( itr != serverMap.end() )
@@ -105,7 +105,7 @@ ControlData* ControlDataDefn::ParseXML
         {
             p = attr.as_double();
         }       
-         else if ( strcmp( attr.name(), "integral") == 0 )
+        else if ( strcmp( attr.name(), "integral") == 0 )
         {
             i = attr.as_double();
         }        

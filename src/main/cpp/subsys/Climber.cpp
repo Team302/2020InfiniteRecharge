@@ -100,7 +100,7 @@ void Climber::ActivateSolenoid
 ///@return  bool - true == extended, false == retracted
 bool Climber::IsSolenoidActivated()
 {
-    bool solenoidStatus;
+    bool solenoidStatus = false;
     if ( m_solenoidMaster.get() != nullptr )
     {
        solenoidStatus = m_solenoidMaster.get()->Get();

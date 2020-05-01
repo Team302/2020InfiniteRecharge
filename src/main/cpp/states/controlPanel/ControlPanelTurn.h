@@ -8,7 +8,8 @@ class ControlPanelTurn : public IState
 {
     public:
     ControlPanelTurn(ControlData* control_data, double target);
-    ~ControlPanelTurn();
+    ControlPanelTurn() = delete;
+    ~ControlPanelTurn() = default;
 
     void Init() override;
     void Run() override;

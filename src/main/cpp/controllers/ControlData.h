@@ -58,6 +58,10 @@ class ControlData
         /// @return ControlModes::CONTROL_TYPE
         inline ControlModes::CONTROL_TYPE GetMode() const { return m_mode; };
 
+        /// @brief Retrieve where to run the controller on
+        /// @return ConrolModes::CONTROL_RUN_LOCS
+        inline ControlModes::CONTROL_RUN_LOCS GetRunLoc() const { return m_runLoc; };
+
         /// @brief  Retrieve the identifier
         /// @return std::string the identifier
         inline std::string GetIdentifier() const { return m_identifier; };
@@ -103,6 +107,7 @@ class ControlData
         ControlData() = delete;
 
         ControlModes::CONTROL_TYPE                  m_mode;
+        ControlModes::CONTROL_RUN_LOCS              m_runLoc;
         std::string                                 m_identifier;
         double                                      m_proportional;
         double                                      m_integral;

@@ -37,6 +37,7 @@ ControlData::ControlData
     double                                      peakVal,
     double                                      nominalVal
 ) : m_mode( mode ),
+    m_runLoc( server ),
     m_identifier( identifier ),
     m_proportional( proportional ),
     m_integral( integral ),

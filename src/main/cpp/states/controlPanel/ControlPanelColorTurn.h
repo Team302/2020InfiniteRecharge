@@ -30,7 +30,7 @@ class ControlPanelColorTurn : public IState
         double          target
     );
 
-    ControlPanelColorTurn();
+    ControlPanelColorTurn() = delete;
     ~ControlPanelColorTurn() = default;
 
     void Init() override;

@@ -63,30 +63,25 @@ std::string AutonSelector::GetSelectedAutoFile()
 //---------------------------------------------------------------------
 void AutonSelector::FindXMLFileNames()
 {
-	DIR* directory;
-	struct dirent* files;
-
-	directory = opendir("/home/lvuser/auton/");
+	DIR* directory = opendir("/home/lvuser/auton/");
 	if (directory != nullptr)
 	{
 		bool moreFiles = true;
 		while (moreFiles)
 		{
-			files = readdir(directory);
-			if (files == nullptr)
-			{
-				moreFiles = false;
-				break;
-			}
-			else 
+            struct dirent* files = readdir(directory);
+			if (files != nullptr)
 			{
 				auto filename = string( files->d_name);
 				if ( filename != "." && filename != ".." && filename != "auton.dtd" )
 				{
 					m_xmlFiles.emplace_back(string(files->d_name));
 				}
-
-			} 
+			}
+            else
+            {
+                moreFiles = false;
+            }
 		}
 	}
 	else
@@ -111,6 +106,7 @@ void AutonSelector::PutChoicesOnDashboard()
 			if ( !gotDefault )
 			{
 				m_chooser.SetDefaultOption(  m_xmlFiles[inx], m_xmlFiles[inx] );
+				gotDefault = true;
 			}
 			else
 			{

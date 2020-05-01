@@ -76,15 +76,15 @@ std::shared_ptr<DragonLidar> LidarDefn::ParseXML
         // validate/set the input pin
         else if ( strcmp( attr.name(), "inputpin" ) == 0 )
         {
-            int iVal = attr.as_int();
-            hasError = HardwareIDValidation::ValidateDIOID( iVal, string( "LidarDefn::ParseXML(input pin)" ) );
+            inputPin = attr.as_int();
+            hasError = HardwareIDValidation::ValidateDIOID( inputPin, string( "LidarDefn::ParseXML(input pin)" ) );
         }
 
         // validate/set the trigger pin
         else if ( strcmp( attr.name(), "triggerpin" ) == 0 )
         {
-            int iVal = attr.as_int();
-            hasError = HardwareIDValidation::ValidateDIOID( iVal, string( "LidarDefn::ParseXML(trigger pin)" ) );
+            triggerPin = attr.as_int();
+            hasError = HardwareIDValidation::ValidateDIOID( triggerPin, string( "LidarDefn::ParseXML(trigger pin)" ) );
         }
 
         // everything else is an unknown attribute; write an error

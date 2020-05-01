@@ -138,9 +138,6 @@ IMechanism*  MechanismFactory::CreateIMechanism
     }
     else
     {
-        string msg = "about to create mechanism";
-        msg += to_string( type );
-        Logger::GetLogger()->LogError( string("MechansimFactory::CreateIMechanism" ), msg );
         // Create the mechanism
         switch ( type )
         {

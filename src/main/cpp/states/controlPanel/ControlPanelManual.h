@@ -26,7 +26,8 @@ class ControlPanelManual : public IState
 {
     public:
     ControlPanelManual(ControlData* control_data, double target);
-    ~ControlPanelManual();
+    ControlPanelManual() = delete;
+    ~ControlPanelManual() = default;
 
     void Init() override;
     void Run() override;

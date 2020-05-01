@@ -145,7 +145,6 @@ void ImpellerStateMgr::RunCurrentState()
 {
     if ( MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::MECHANISM_TYPE::IMPELLER) != nullptr )
     {
-        auto changingStates = false;
         // process teleop/manual interrupts
         auto controller = TeleopControl::GetInstance();
         if ( controller != nullptr )
@@ -153,26 +152,22 @@ void ImpellerStateMgr::RunCurrentState()
             if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_TO_SHOOTER ) && m_currentStateEnum != IMPELLER_STATE::TO_SHOOTER)
             {
                 SetCurrentState( IMPELLER_STATE::TO_SHOOTER, false );
-                changingStates = true;
                 m_numReverseLoops = 0;
             }
             if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_OFF ) && m_currentStateEnum != IMPELLER_STATE::OFF)
             {
                 SetCurrentState( IMPELLER_STATE::OFF, false );
-                changingStates = true;
                 m_numReverseLoops = 0;
             }
             if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_AGITATE  ) && m_currentStateEnum != IMPELLER_STATE::AGITATE)
             {
                 SetCurrentState( IMPELLER_STATE::AGITATE, false );
-                changingStates = true;
                 m_numReverseLoops = 0;
             }
             
             if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::IMPELLER_HOLD ) && m_currentStateEnum != IMPELLER_STATE::HOLD )
             {
                 SetCurrentState( IMPELLER_STATE::HOLD, false );
-                changingStates = true;
                 m_numReverseLoops = 0;
             }
             

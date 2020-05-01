@@ -68,7 +68,7 @@ void Crawler::SetOutput
     {
         Logger::GetLogger()->LogError( string("Crawler::SetOutput"), string("No motorMaster") );
     }
-};
+}
 
 ///@brief extends or retracts the solenoid
 ///@param [in] bool activate: true = extend, false = retract
