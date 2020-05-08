@@ -15,21 +15,20 @@
 
 #pragma once
 
-#include <states/MechanismState.h>
-#include <controllers/MechanismTargetData.h>
+class MechanismTargetData;
+class IDragonMotorController;
 
-class ControlData;
-
-class ImpellerToShooter : public MechanismState
+class IDragonController
 {
     public:
+        IDragonController() = default;
+        virtual ~IDragonController()() = default;
 
-        ImpellerToShooter
+        virtual Init
         (
-            ControlData*                    control,
-            double                          target,
-            MechanismTargetData::SOLENOID   solState
-        );
-        ImpellerToShooter() = delete;
-        ~ImpellerToShooter() = default;
+            MechanismTargetData*      target,
+            IDragonMotorController*   motor
+        ) = 0;
+
+        virtual Run() = 0;
 };
