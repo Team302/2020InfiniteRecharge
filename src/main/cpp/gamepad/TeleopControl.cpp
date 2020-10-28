@@ -108,8 +108,8 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[ GTA_DRIVE_STEER ] 		    = ctrlNo;
 		m_axisIDs[ GTA_DRIVE_STEER ]         		    = IDragonGamePad::LEFT_JOYSTICK_X;
 
-		m_controllerIndex[ CURVATURE_DRIVE_QUICK_TURN ]	= ctrlNo;
-		m_buttonIDs[ CURVATURE_DRIVE_QUICK_TURN ]		= IDragonGamePad::RIGHT_BUMPER;
+		/*m_controllerIndex[ CURVATURE_DRIVE_QUICK_TURN ]	= ctrlNo;
+		m_buttonIDs[ CURVATURE_DRIVE_QUICK_TURN ]		= IDragonGamePad::RIGHT_BUMPER;*/
 
 		m_controllerIndex[ SWITCH_DRIVE_MODE ]          = ctrlNo;
 		m_buttonIDs[ SWITCH_DRIVE_MODE ]                = IDragonGamePad::A_BUTTON;
@@ -121,9 +121,9 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_buttonIDs[ CLIMBER_WINCH_UP ] = IDragonGamePad::X_BUTTON;
 
 		m_controllerIndex[ HOOK_DELIVERY_UP] 	= ctrlNo;
-		m_axisIDs[ HOOK_DELIVERY_UP]				= IDragonGamePad::RIGHT_TRIGGER;
+		m_buttonIDs[ HOOK_DELIVERY_UP]				= IDragonGamePad::RIGHT_BUMPER;
 		m_controllerIndex[ HOOK_DELIVERY_DOWN ] 	= ctrlNo;
-		m_axisIDs[ HOOK_DELIVERY_DOWN ]         	= IDragonGamePad::LEFT_TRIGGER;
+		m_buttonIDs[ HOOK_DELIVERY_DOWN ]         	= IDragonGamePad::LEFT_BUMPER;
 
 		/*m_controllerIndex[ CONTROL_PANEL_RAISE ] = ctrlNo;
 		m_buttonIDs[ CONTROL_PANEL_RAISE] = IDragonGamePad::Y_BUTTON;

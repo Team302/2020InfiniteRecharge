@@ -14,7 +14,7 @@
           cruisevelocity CDATA "0.0"
 > 
 
-<!ELEMENT mechanismTarget EMPTY>
+<!ELEMENT mechanismTarget (target*, failoverTarget*)>
 <!ATTLIST mechanismTarget 
           stateIdentifier               ( INTAKEOFF | INTAKEON | INTAKEHUMANPLAYER |
                                           IMPELLEROFF | IMPELLERHOLD | IMPELLERAGITATE | IMPELLERTOSHOOTER |
@@ -27,11 +27,12 @@
                                           CLIMBEROFF | CLIMBERWINCHUP |
                                           UNKNOWN ) "UNKNOWN"
           controlDataIdentifier         CDATA #REQUIRED
-          value                         CDATA #REQUIRED
-          upperTarget                   CDATA #REQUIRED
-          lowerTarget                   CDATA #REQUIRED 
           solenoid                      ( NONE | ON | OFF ) "NONE"
           failoverControlDataIdentifier CDATA #IMPLIED
-          failoverValue                 CDATA #IMPLIED
 >
 
+<!ELEMENT target EMPTY>
+<!ATTLIST target value                  CDATA #REQUIRED >
+
+<!ELEMENT failoverTarget EMPTY>
+<!ATTLIST failoverTarget value                  CDATA #REQUIRED >

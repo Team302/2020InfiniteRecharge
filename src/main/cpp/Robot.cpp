@@ -34,6 +34,7 @@
 //#include <states/climber/ClimberStateMgr.h>
 #include <hw/factories/LimelightFactory.h>
 #include <hw/DragonLimelight.h>
+#include <cameraserver/CameraServer.h>
 
 #include <ctre/Phoenix.h>
 
@@ -144,6 +145,14 @@ void Robot::RobotInit()
     {
         m_limelight.get()->SetLEDMode( DragonLimelight::LED_MODE::LED_OFF);
     } */  
+
+    CameraServer* server = CameraServer::GetInstance();
+    if ( server != nullptr )
+    {
+        cs::UsbCamera camera = server->StartAutomaticCapture();
+//                camera.SetVideoMode( cs::VideoMode::kMJPEG, 640, 360, 15 );
+        camera.SetVideoMode( cs::VideoMode::kMJPEG, 320, 180, 20 );
+    }
 }
 
 /// @brief This function is called every robot packet, no matter the  mode. This is used for items like diagnostics that run 
