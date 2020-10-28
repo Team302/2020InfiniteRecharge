@@ -71,6 +71,7 @@ void ArcadeDrive::Init()
     if ( controller != nullptr )
     {
         controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_THROTTLE, IDragonGamePad::AXIS_PROFILE::CUBED );
+		controller->SetAxisScaleFactor( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_STEER, .5);
         controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_STEER, IDragonGamePad::AXIS_PROFILE::CUBED );
     }
 }

@@ -25,7 +25,8 @@ class ShooterDifferentSpeeds : public IState
         ShooterDifferentSpeeds
         (
             ControlData* controlData,
-            double target
+            double upperTarget,
+            double lowerTarget
         );
         ShooterDifferentSpeeds() = delete;
         ~ShooterDifferentSpeeds() = delete;

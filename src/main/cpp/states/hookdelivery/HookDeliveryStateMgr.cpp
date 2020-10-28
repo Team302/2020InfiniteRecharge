@@ -17,6 +17,7 @@
 #include <map>
 #include <memory>
 #include <vector>
+#include <string>
 
 // FRC includes
 
@@ -74,6 +75,7 @@ HookDeliveryStateMgr::HookDeliveryStateMgr() : m_currentState(),
     {
         auto stateString = td->GetStateString();
         auto stateStringToEnumItr = stateMap.find( stateString );
+
         if ( stateStringToEnumItr != stateMap.end() )
         {
             auto stateEnum = stateStringToEnumItr->second;
@@ -97,8 +99,11 @@ HookDeliveryStateMgr::HookDeliveryStateMgr() : m_currentState(),
                     break;
 
                     case HOOK_DELIVERY_STATE::UP:
-                    {   
+                    {  
+                        Logger::GetLogger()->LogError(string(stateString), std::to_string(stateEnum));
                         auto thisState = new HookDeliveryState( controlData, target, solState );
+
+                        Logger::GetLogger()->LogError(string("Big Chief Waz Here"), std::to_string(target));
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
@@ -163,20 +168,24 @@ HookDeliveryStateMgr::HookDeliveryStateMgr() : m_currentState(),
 /// @return void
 void HookDeliveryStateMgr::RunCurrentState()
 {
+    Logger::GetLogger()->LogError(string("Hook Delivery State Manager"), string("1"));
     if ( MechanismFactory::GetMechanismFactory()->GetIMechanism( MechanismTypes::MECHANISM_TYPE::HOOK_DELIVERY ) != nullptr )
     {
         // process teleop/manual interrupts
-        
+          Logger::GetLogger()->LogError(string("Hook Delivery State Manager"), string("2"));
         auto controller = TeleopControl::GetInstance();
         if ( controller != nullptr )
         {
+              Logger::GetLogger()->LogError(string("Hook Delivery State Manager"), string("2.5"));
             if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::HOOK_DELIVERY_UP))
             {
                 SetCurrentState( HOOK_DELIVERY_STATE::UP, false );
+                Logger::GetLogger()->LogError(string("Hook Delivery State Manager"), string("3"));
             }
             if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::HOOK_DELIVERY_DOWN))
             {
                 SetCurrentState( HOOK_DELIVERY_STATE::DOWN, false );
+                  Logger::GetLogger()->LogError(string("Hook Delivery State Manager"), string("4"));
             }
             else
             {

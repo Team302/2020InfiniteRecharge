@@ -8,8 +8,8 @@
 					 value="0.0"/>
 	<mechanismTarget stateIdentifier="HOOKDELIVERYUP"
 	                 controlDataIdentifier="openloop"
-					 value="0.2"/>
+					 value="-0.1"/>
 	<mechanismTarget stateIdentifier="HOOKDELIVERYDOWN"
 	                 controlDataIdentifier="openloop"
-					 value="-0.1"/>
+					 value="0.6"/>
 </statedata>

@@ -27,7 +27,8 @@
 ShooterDifferentSpeeds::ShooterDifferentSpeeds
 (
     ControlData*                    controlData, 
-    double                          target
+    double                          upperTarget,
+    double                          lowerTarget
     
 ) : m_positionBased( false ),
     m_speedBased( false )

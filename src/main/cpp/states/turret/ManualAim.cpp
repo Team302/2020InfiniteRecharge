@@ -5,6 +5,8 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+#include <string>
+
 #include "states/turret/ManualAim.h"
 #include "subsys/MechanismFactory.h"
 #include "subsys/IMechanism.h"
@@ -12,6 +14,9 @@
 #include "controllers/ControlData.h"
 #include "frc/smartdashboard/SmartDashboard.h"
 #include "gamepad/TeleopControl.h"
+#include "utils/Logger.h"
+using namespace std;
+
 ManualAim::ManualAim(ControlData* controlData) : m_controlData(controlData), 
     m_atTarget(false)
 {
@@ -29,6 +34,7 @@ void ManualAim::Run()
     double val = TeleopControl::GetInstance()->GetAxisValue(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_AXIS);
     frc::SmartDashboard::PutNumber("Turret Joystick", val);
     m_turret->SetOutput(m_controlData->GetMode(), val * .75); //scaled to a percentage of a 45 degree turn
+    Logger::GetLogger()->LogError( string("Manual AIm"), string("Manual aim is working"));
     //m_turret->SetOutput(ControlModes::POSITION_DEGREES, 0.0);
     m_atTarget = true;
 }

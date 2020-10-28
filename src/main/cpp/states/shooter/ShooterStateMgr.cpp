@@ -24,6 +24,7 @@
 #include <states/IState.h>
 #include <states/shooter/ShooterStateMgr.h>
 #include <states/shooter/ShooterState.h>
+#include <states/shooter/ShooterDifferentSpeeds.h>
 #include <xmlmechdata/StateDataDefn.h>
 #include <controllers/MechanismTargetData.h>
 #include <utils/Logger.h>
@@ -59,7 +60,8 @@ ShooterStateMgr::ShooterStateMgr() : m_stateVector(),
     stateStringToEnumMap["SHOOTEROFF"] = SHOOTER_STATE::OFF;
     stateStringToEnumMap["SHOOTERGETREADY"]  = SHOOTER_STATE::GET_READY;
     stateStringToEnumMap["SHOOTERSHOOT"] = SHOOTER_STATE::SHOOT;
-    m_stateVector.resize(3);
+    stateStringToEnumMap["SHOOTERDIFFERENTSPEEDS"] = SHOOTER_STATE::DIFFERENT_SPEEDS;
+    m_stateVector.resize(4);
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -73,6 +75,8 @@ ShooterStateMgr::ShooterStateMgr() : m_stateVector(),
             {
                 auto controlData = td->GetController();
                 auto target = td->GetTarget();
+                auto upperTarget = td->GetTarget();
+                auto lowerTarget = td->GetTarget();
                 auto solState = td->GetSolenoidState();
                 auto fbControlData = td->GetFailoverController(); // todo pass through to the states
                 auto fbTarget = td->GetFailoverTarget();  // todo pass through to the states
@@ -99,6 +103,13 @@ ShooterStateMgr::ShooterStateMgr() : m_stateVector(),
                     case SHOOTER_STATE::SHOOT:
                     {   
                         auto thisState = new ShooterState( controlData, target, fbControlData, fbTarget, solState );
+                        m_stateVector[stateEnum] = thisState;
+                    }
+                    break;
+
+                    case SHOOTER_STATE::DIFFERENT_SPEEDS:
+                    {
+                        auto thisState = new ShooterDifferentSpeeds( controlData, upperTarget, lowerTarget);
                         m_stateVector[stateEnum] = thisState;
                     }
                     break;
